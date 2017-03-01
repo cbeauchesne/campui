@@ -1,0 +1,3 @@
+[run]
+source = campui
+omit = campui/test*
