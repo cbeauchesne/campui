@@ -35,6 +35,12 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             url: "/outings",
             templateUrl: "static/views/outings.html",
         })
+
+        .state('login', {
+            //abstract: true,
+            url: "/login",
+            templateUrl: "static/views/login.html",
+        })
 }
 angular
     .module('campui')
