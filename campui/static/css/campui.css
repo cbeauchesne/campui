@@ -1,0 +1,8 @@
+.gallery{
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.gallery.a{
+    white-space: nowrap;
+}

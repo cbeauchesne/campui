@@ -1,0 +1,81 @@
+<!-- Main view  -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div ng-controller="images" class="ibox-content gallery" style="display: block;">
+                <div class="gallery">
+                    <a ng-repeat="image in images.documents"
+                       href="https://www.camptocamp.org/images/{{image.document_id}}">
+                        <img alt="{{image.locales[0].title}}"
+                             title="{{image.locales[0].title}}"
+                             ng-src="https://media.camptocamp.org/c2corg_active/{{image.filename.replace('.', 'MI.')}}"
+                             height="180px"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Sorties</h5>
+            </div>
+
+            <div ng-controller="outings" class="ibox-content" style="display: block;">
+                <ul>
+                    <li ng-repeat="outing in outings.documents ">
+                        <a href="https://www.camptocamp.org/outings/{{outing.document_id}}">
+                            <img ng-repeat="activity in outing.activities"
+                                 alt="{{activity}}"
+                                 ng-src="static/img/{{activity}}-16x16.png"/>
+                            {{outing.locales[0].title}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Articles</h5>
+            </div>
+
+            <div ng-controller="articles" class="ibox-content" style="display: block;">
+                <ul>
+                    <li ng-repeat="article in articles.documents|limitTo:10">
+                        <span>
+                            <a href="https://www.camptocamp.org/articles/{{article.document_id}}">
+                                {{article.locales[0].title}}
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Accidents</h5>
+            </div>
+            <div ng-controller="xreports" class="ibox-content" style="display: block;">
+                <ul>
+                    <li ng-repeat="xreport in xreports.documents|limitTo:6">
+                        <span>
+                            <a href="https://www.camptocamp.org/xreport/{{xreport.document_id}}">
+                                {{xreport.locales[0].title}}
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
