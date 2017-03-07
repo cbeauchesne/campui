@@ -26,16 +26,16 @@
             </div>
 
             <div ng-controller="outings" class="ibox-content" style="display: block;">
-                <ul>
-                    <li ng-repeat="outing in outings.documents ">
-                        <a href="https://www.camptocamp.org/outings/{{outing.document_id}}">
-                            <img ng-repeat="activity in outing.activities"
-                                 alt="{{activity}}"
-                                 ng-src="static/img/{{activity}}-16x16.png"/>
-                            {{outing.locales[0].title}}
-                        </a>
-                    </li>
-                </ul>
+
+                <a ng-repeat="outing in outings.documents"
+                   href="https://www.camptocamp.org/outings/{{outing.document_id}}"
+                   style="display: block;">
+                    <img ng-repeat="activity in outing.activities"
+                         alt="{{activity}}"
+                         ng-src="static/img/{{activity}}-24x24.png"/>
+                    {{outing.locales[0].title}}
+                </a>
+
             </div>
 
         </div>

@@ -12,7 +12,11 @@ requires = [
     'pyramid',
     'pyramid_jinja2',
     'pyramid_debugtoolbar',
+    'pyramid_tm',
     'waitress',
+    'sqlalchemy',
+    'zope.sqlalchemy',
+    'cryptacular',
 ]
 
 tests_require = [
@@ -47,5 +51,8 @@ setup(
         'paste.app_factory': [
             'main = campui:main',
         ],
+        'console_scripts':[
+            'initialize_campui_db = campui.scripts.initializedb:main'
+        ]
     },
 )

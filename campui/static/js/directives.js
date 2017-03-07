@@ -113,6 +113,7 @@ function minimalizaSidebar($timeout) {
  */
 angular
     .module('campui')
+
     .directive('pageTitle', pageTitle)
     .directive('sideNavigation', sideNavigation)
     .directive('iboxTools', iboxTools)

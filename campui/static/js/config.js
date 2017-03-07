@@ -19,32 +19,37 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
 
         .state('dashboard', {
-            //abstract: true,
             url: "/",
             templateUrl: "static/views/dashboard.html",
         })
 
         .state('topos', {
-            //abstract: true,
             url: "/topos",
             templateUrl: "static/views/topos.html",
         })
 
         .state('outings', {
-            //abstract: true,
             url: "/outings",
             templateUrl: "static/views/outings.html",
         })
 
         .state('login', {
-            //abstract: true,
             url: "/login",
             templateUrl: "static/views/login.html",
+        })
+
+        .state('register', {
+            url: "/register",
+            templateUrl: "static/views/register.html",
+        })
+
+        .state('credits', {
+            url: "/credits",
+            templateUrl: "static/views/credits.html",
         })
 }
 angular
     .module('campui')
-
 
     .config(config)
     .config(["$locationProvider", function($locationProvider) {
