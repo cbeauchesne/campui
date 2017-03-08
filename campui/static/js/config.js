@@ -41,6 +41,8 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('register', {
             url: "/register",
             templateUrl: "static/views/register.html",
+            controller: 'RegisterController',
+            controllerAs: 'vm'
         })
 
         .state('credits', {
@@ -55,6 +57,7 @@ angular
     .config(["$locationProvider", function($locationProvider) {
         $locationProvider.html5Mode(true);
         }])
+
     .run(function($rootScope, $state) {
         $rootScope.$state = $state;
     });
