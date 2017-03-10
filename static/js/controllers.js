@@ -74,7 +74,6 @@ function Routes($scope, $http) {
 
 var app = angular.module('campui')
 
-app.controller('MainCtrl', MainCtrl);
 app.controller("outings", Outings);
 app.controller("articles", Articles);
 app.controller("images", Images);

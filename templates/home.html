@@ -39,73 +39,17 @@
 
 <!-- ControllerAs syntax -->
 <!-- Main controller with serveral data used in Inspinia theme on diferent view -->
-<body class="top-navigation" ng-controller="MainCtrl as main">
-
-
-<div ng-controller="authController" ng-init="authState.user='{{user.username}}'"/>
+<body class="top-navigation">
 
 <div id="wrapper">
     <div id="page-wrapper" class="gray-bg">
-        <div class="row border-bottom">
-            <nav class="navbar navbar-static-top white-bg" role="navigation">
-                <div class="navbar-header">
-                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
-                            class="navbar-toggle collapsed" type="button">
-                        <i class="fa fa-reorder"></i>
-                    </button>
-                    <a href="#" class="navbar-brand">CampUI</a>
-                </div>
 
-                <div class="navbar-collapse collapse" id="navbar">
-                    <ul class="nav navbar-nav">
-                        <li ui-sref-active="active">
-                            <a ui-sref="dashboard"><i class="fa fa-dashboard"></i> <span
-                                    class="nav-label">Dashboard</span> </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <a ui-sref="topos"><i class="fa fa-university"></i> <span class="nav-label">Topos</span></a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <a ui-sref="outings"><i class="fa fa-file-image-o"></i> <span
-                                    class="nav-label">Sorties</span></a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <a ui-sref="credits"><i class="fa fa-copyright"></i> <span class="nav-label">Credits</span></a>
-                        </li>
-                    </ul>
+        <div ng-include="'static/views/common/navbar.html'"></div>
 
-                    <ul class="nav navbar-top-links navbar-right" ng-controller="authController">
-                        <li ng-show="authState.user">
-                            <a href="/" ng-click="logout()">
-                                <i class="fa fa-sign-out"></i> Log out
-                            </a>
-                        </li>
-
-                        <li ng-hide="authState.user">
-                            <form id="id_auth_form" class="navbar-form navbar-right" ng-submit="login()">
-                                <div class="form-group">
-                                    <input ng-model="username" required name="username" type="text"
-                                           placeholder="username"
-                                           class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <input ng-model="password" required name="password" type="password"
-                                           placeholder="password" class="form-control">
-                                </div>
-                                <div class="btn-group">
-                                    <input type="submit" class="btn btn-primary" value="login">
-                                    <input type="submit" class="btn btn-info" value="register"
-                                           ng-click="register($event)">
-                                </div>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
         <div class="wrapper wrapper-content">
             <div class="container" ui-view></div>
         </div>
+
         <div ng-include="'static/views/common/footer.html'"></div>
 
     </div> <!-- End page wrapper-->
@@ -145,15 +89,28 @@
 <script src="static/js/config.js"></script>
 <script src="static/js/directives.js"></script>
 
+
+
 <script>
 
-function MainCtrl() {
-    this.user = {
+
+angular.module('campui')
+    .service('authState', function () {
+        return {
+            user:
+{% if user.is_authenticated %}
+    {
         username:'{{user.username}}',
-    };
-};
+    }
+{% else %}
+    undefined
+{% endif %}
+
+        };
+    })
 
 </script>
+
 
 <script src="static/js/controllers.js"></script>
 

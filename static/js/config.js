@@ -16,7 +16,6 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     });
 
     $stateProvider
-
         .state('dashboard', {
             url: "/",
             templateUrl: "static/views/dashboard.html",
@@ -30,11 +29,6 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('outings', {
             url: "/outings",
             templateUrl: "static/views/outings.html",
-        })
-
-        .state('login', {
-            url: "/login",
-            templateUrl: "static/views/login.html",
         })
 
         .state('register', {
@@ -63,12 +57,6 @@ angular.module('campui')
         $httpProvider.defaults.xsrfCookieName = 'csrftoken';
     }])
 
-    .service('authState', function () {
-        return {
-            user: undefined
-        };
-    })
-
     .factory('api', function($resource, $http){
         function add_auth_header(data, headersGetter){
             $http.defaults.headers.common['Authorization'] = ('Basic ' + btoa(data.username +
@@ -94,11 +82,12 @@ angular.module('campui')
         $scope.getCredentials = function(){
             return {username: $scope.username, password: $scope.password};
         };
+
         $scope.login = function(){
             api.auth.login($scope.getCredentials()).
                 $promise.
                     then(function(data){
-                        authState.user = data.username;
+                        authState.user = {username:data.username};
                     }).
                     catch(function(data){
                         alert(data.data.detail);
