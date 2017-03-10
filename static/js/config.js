@@ -31,13 +31,6 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             templateUrl: "static/views/outings.html",
         })
 
-        .state('register', {
-            url: "/register",
-            templateUrl: "static/views/register.html",
-            controller: 'RegisterController',
-            controllerAs: 'vm'
-        })
-
         .state('credits', {
             url: "/credits",
             templateUrl: "static/views/credits.html",
@@ -69,43 +62,57 @@ angular.module('campui')
         };
     })
 
-    .controller('authController', function($scope, api, authState, $http) {
+    .factory('c2c', function($http){
 
-//        $('#id_auth_form input').checkAndTriggerAutoFillEvent();
+        function c2c_query(base_url){
+            return function($scope, query){
 
-        $scope.authState = authState;
+                query = (typeof query === 'undefined') ? {} : query;
+                url_query = jQuery.param(query)
 
-        $scope.getCredentials = function(){
-            return {username: $scope.username, password: $scope.password};
-        };
-
-        $scope.login = function(){
-            creds = $scope.getCredentials();
-            $http.defaults.headers.common['Authorization'] = ('Basic ' + btoa(creds.username +
-                                        ':' + creds.password));
-            api.auth.login(creds).
-                $promise.
-                    then(function(data){
-                        authState.user = {username:data.username};
-                    }).
-                    catch(function(data){
-                        alert(data.data.detail);
+                $http.get(base_url + '?' + url_query)
+                    .success(function(data, status, headers, config) {
+                        $scope.items = data.documents;
+                    })
+                    .error(function(data, status, headers, config) {
+                        // log error
                     });
-        };
-        $scope.logout = function(){
-            api.auth.logout(function(){
-                authState.user = undefined;
-            });
-        };
-        $scope.register = function($event){
-            $event.preventDefault();
-            api.users.create($scope.getCredentials()).
-                $promise.
-                    then($scope.login).
-                    catch(function(data){
-                        alert(data.data.username);
-                    });
-        };
+            }
+        }
+
+        return {
+            getOutings : c2c_query('https://api.camptocamp.org/outings'),
+            getImages : c2c_query('https://api.camptocamp.org/images'),
+        }
+    })
+
+    .factory('queries', function(){
+        return {
+            outings : {
+                skitouring : {act : "skitouring"},
+                snow_ice_mixed : {act : "snow_ice_mixed"},
+                mountain_climbing : {act : "mountain_climbing"},
+                rock_climbing : {act : "rock_climbing"},
+                ice_climbing : {act : "ice_climbing"},
+                hiking : {act : "hiking"},
+                snowshoeing : {act : "snowshoeing"},
+                paragliding : {act : "paragliding"},
+                mountain_biking : {act : "mountain_biking"},
+                via_ferrata : {act : "via_ferrata"},
+            },
+            images : {
+                skitouring : {act : "skitouring"},
+                snow_ice_mixed : {act : "snow_ice_mixed"},
+                mountain_climbing : {act : "mountain_climbing"},
+                rock_climbing : {act : "rock_climbing"},
+                ice_climbing : {act : "ice_climbing"},
+                hiking : {act : "hiking"},
+                snowshoeing : {act : "snowshoeing"},
+                paragliding : {act : "paragliding"},
+                mountain_biking : {act : "mountain_biking"},
+                via_ferrata : {act : "via_ferrata"},
+            },
+        }
     })
 
     .run(function($rootScope, $state) {
