@@ -16,7 +16,7 @@
 
     <!-- Page title set in pageTitle directive -->
     <title page-title></title>
-    <link rel="shortcut icon" href="static/favicon.png" />
+    <link rel="shortcut icon" href="static/favicon.png"/>
 
     <!-- Font awesome -->
     <link href="static/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -29,7 +29,8 @@
     <link id="loadBefore" href="static/css/style.css" rel="stylesheet">
 
     <!-- ui-grid CSS files -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css">
 
     <link href="static/css/campui.css" rel="stylesheet">
 
@@ -38,26 +39,75 @@
 
 <!-- ControllerAs syntax -->
 <!-- Main controller with serveral data used in Inspinia theme on diferent view -->
-<body ng-controller="MainCtrl as main"  >
+<body class="top-navigation" ng-controller="MainCtrl as main">
 
 
-<!-- Wrapper-->
+<div ng-controller="authController" ng-init="authState.user='{{user.username}}'"/>
+
 <div id="wrapper">
-
-    <!-- Navigation -->
-    <div ng-include="'static/views/common/navigation.html'"></div>
-
-    <!-- Page wraper -->
     <div id="page-wrapper" class="gray-bg">
-    <div ng-controller="authController" ng-init="authState.user='{{user.username}}'"/>
-        <!-- Page wrapper-->
-        <div ng-include="'static/views/common/topnavbar.html'"></div>
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
+                            class="navbar-toggle collapsed" type="button">
+                        <i class="fa fa-reorder"></i>
+                    </button>
+                    <a href="#" class="navbar-brand">CampUI</a>
+                </div>
 
-        <!-- Main view  -->
-        <div class="wrapper wrapper-content">
-            <div ui-view></div>
+
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li ui-sref-active="active">
+                            <a ui-sref="dashboard"><i class="fa fa-dashboard"></i> <span
+                                    class="nav-label">Dashboard</span> </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="topos"><i class="fa fa-university"></i> <span class="nav-label">Topos</span></a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="outings"><i class="fa fa-file-image-o"></i> <span
+                                    class="nav-label">Sorties</span></a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="credits"><i class="fa fa-copyright"></i> <span class="nav-label">Credits</span></a>
+                        </li>
+                    </ul>
+
+
+                    <ul class="nav navbar-top-links navbar-right" ng-controller="authController">
+                        <li ng-show="authState.user">
+                            <a href="/" ng-click="logout()">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+
+                        <li ng-hide="authState.user">
+                            <form id="id_auth_form" class="navbar-form navbar-right" ng-submit="login()">
+                                <div class="form-group">
+                                    <input ng-model="username" required name="username" type="text"
+                                           placeholder="username"
+                                           class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input ng-model="password" required name="password" type="password"
+                                           placeholder="password" class="form-control">
+                                </div>
+                                <div class="btn-group">
+                                    <input type="submit" class="btn btn-primary" value="login">
+                                    <input type="submit" class="btn btn-info" value="register"
+                                           ng-click="register($event)">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <!-- Footer -->
+        <div class="wrapper wrapper-content">
+            <div class="container" ui-view></div>
+        </div>
         <div ng-include="'static/views/common/footer.html'"></div>
 
     </div> <!-- End page wrapper-->
@@ -103,6 +153,10 @@ function MainCtrl() {
     this.helloText = 'Welcome in SeedProject';
     this.descriptionText = 'It is an application skeleton for a typical AngularJS web app. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.';
 };
+
+
+
+
 </script>
 
 <script src="static/js/controllers.js"></script>
