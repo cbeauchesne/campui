@@ -56,7 +56,6 @@
                     <a href="#" class="navbar-brand">CampUI</a>
                 </div>
 
-
                 <div class="navbar-collapse collapse" id="navbar">
                     <ul class="nav navbar-nav">
                         <li ui-sref-active="active">
@@ -74,7 +73,6 @@
                             <a ui-sref="credits"><i class="fa fa-copyright"></i> <span class="nav-label">Credits</span></a>
                         </li>
                     </ul>
-
 
                     <ul class="nav navbar-top-links navbar-right" ng-controller="authController">
                         <li ng-show="authState.user">
@@ -148,26 +146,16 @@
 <script src="static/js/directives.js"></script>
 
 <script>
+
 function MainCtrl() {
-    this.userName = 'Example user';
-    this.helloText = 'Welcome in SeedProject';
-    this.descriptionText = 'It is an application skeleton for a typical AngularJS web app. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.';
+    this.user = {
+        username:'{{user.username}}',
+    };
 };
-
-
-
 
 </script>
 
 <script src="static/js/controllers.js"></script>
-
-
-<script src="static/js/app-services/authentication.service.js"></script>
-<script src="static/js/app-services/flash.service.js"></script>
-<script src="static/js/app-services/user.service.js"></script>
-
-<script src="static/js/controllers/register.controller.js"></script>
-<script src="static/js/controllers/login.controller.js"></script>
 
 </body>
 </html>
