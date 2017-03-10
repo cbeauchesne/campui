@@ -12,6 +12,7 @@
         'ui.grid.autoResize',
         'ngCookies',
         'ngResource',
+        'angular.filter',
     ])
 
     angular.module('core.phone', ['ngResource']);
