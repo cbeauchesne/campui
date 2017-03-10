@@ -58,13 +58,9 @@ angular.module('campui')
     }])
 
     .factory('api', function($resource, $http){
-        function add_auth_header(data, headersGetter){
-            $http.defaults.headers.common['Authorization'] = ('Basic ' + btoa(data.username +
-                                        ':' + data.password));
-        }
         return {
             auth: $resource('/api/auth\\/', {}, {
-                login:  {method: 'POST', transformRequest: add_auth_header},
+                login:  {method: 'POST'},
                 logout: {method: 'DELETE'}
             }),
             users: $resource('/api/users\\/', {}, {
@@ -73,7 +69,7 @@ angular.module('campui')
         };
     })
 
-    .controller('authController', function($scope, api, authState) {
+    .controller('authController', function($scope, api, authState, $http) {
 
 //        $('#id_auth_form input').checkAndTriggerAutoFillEvent();
 
@@ -84,7 +80,10 @@ angular.module('campui')
         };
 
         $scope.login = function(){
-            api.auth.login($scope.getCredentials()).
+            creds = $scope.getCredentials();
+            $http.defaults.headers.common['Authorization'] = ('Basic ' + btoa(creds.username +
+                                        ':' + creds.password));
+            api.auth.login(creds).
                 $promise.
                     then(function(data){
                         authState.user = {username:data.username};
