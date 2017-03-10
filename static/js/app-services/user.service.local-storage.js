@@ -13,7 +13,6 @@
         service.GetAll = GetAll;
         service.GetById = GetById;
         service.GetByUsername = GetByUsername;
-        service.GetByEmail = GetByEmail;
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
@@ -37,14 +36,6 @@
         function GetByUsername(username) {
             var deferred = $q.defer();
             var filtered = $filter('filter')(getUsers(), { username: username });
-            var user = filtered.length ? filtered[0] : null;
-            deferred.resolve(user);
-            return deferred.promise;
-        }
-
-        function GetByEmail(email) {
-            var deferred = $q.defer();
-            var filtered = $filter('filter')(getUsers(), { email: email });
             var user = filtered.length ? filtered[0] : null;
             deferred.resolve(user);
             return deferred.promise;

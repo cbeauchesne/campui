@@ -49,7 +49,7 @@
 
     <!-- Page wraper -->
     <div id="page-wrapper" class="gray-bg">
-
+    <div ng-controller="authController" ng-init="authState.user='{{user.username}}'"/>
         <!-- Page wrapper-->
         <div ng-include="'static/views/common/topnavbar.html'"></div>
 
@@ -84,6 +84,7 @@
 <!-- Main Angular scripts-->
 <script src="static/js/angular/angular.js"></script>
 <script src="static/js/angular/angular-cookies.js"></script>
+<script src="static/js/angular/angular-resource.min.js"></script>
 <script src="static/js/plugins/oclazyload/dist/ocLazyLoad.js"></script>
 <script src="static/js/ui-router/angular-ui-router.js"></script>
 <script src="static/js/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>
@@ -109,7 +110,7 @@ function MainCtrl() {
 
 <script src="static/js/app-services/authentication.service.js"></script>
 <script src="static/js/app-services/flash.service.js"></script>
-<script src="static/js/app-services/user.service.local-storage.js"></script>
+<script src="static/js/app-services/user.service.js"></script>
 
 <script src="static/js/controllers/register.controller.js"></script>
 <script src="static/js/controllers/login.controller.js"></script>

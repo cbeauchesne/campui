@@ -9,20 +9,12 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 requires = [
-    'pyramid',
-    'pyramid_jinja2',
-    'pyramid_debugtoolbar',
-    'pyramid_tm',
-    'waitress',
-    'sqlalchemy',
-    'zope.sqlalchemy',
-    'cryptacular',
+    'django==1.10.6',
+    'markdown==2.6.8',
+    'djangorestframework==3.6.0',
 ]
 
 tests_require = [
-    'WebTest >= 1.3.1',  # py3 compat
-    'pytest',
-    'pytest-cov',
 ]
 
 setup(
@@ -32,14 +24,14 @@ setup(
     long_description=README + '\n\n' + CHANGES,
     classifiers=[
         'Programming Language :: Python',
-        'Framework :: Pyramid',
+        'Framework :: Django',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
     ],
     author='',
     author_email='',
     url='',
-    keywords='web pyramid pylons',
+    keywords='',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
@@ -47,12 +39,5 @@ setup(
         'testing': tests_require,
     },
     install_requires=requires,
-    entry_points={
-        'paste.app_factory': [
-            'main = campui:main',
-        ],
-        'console_scripts':[
-            'initialize_campui_db = campui.scripts.initializedb:main'
-        ]
-    },
+    entry_points={},
 )

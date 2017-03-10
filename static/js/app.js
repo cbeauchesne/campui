@@ -11,7 +11,9 @@
         'ui.grid',                      // ui-grid
         'ui.grid.autoResize',
         'ngCookies',
+        'ngResource',
     ])
+
     angular.module('core.phone', ['ngResource']);
 })();
 

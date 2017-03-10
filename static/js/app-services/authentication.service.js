@@ -15,13 +15,13 @@
 
         return service;
 
-        function Login(email, password, callback) {
+        function Login(username, password, callback) {
 
             /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
+             ----------------------------------------------
             $timeout(function () {
                 var response;
-                UserService.GetByEmail(email)
+                UserService.GetByUsername(username)
                     .then(function (user) {
                         if (user !== null && user.password === password) {
                             response = { success: true };
@@ -34,11 +34,13 @@
 
             /* Use this for real authentication
              ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
-
+            $http.post('/api/authenticate', { username: username, password: password })
+                .success(function (response) {
+                    callback(response);
+                })
+                .error(function (response) {
+                    callback(response);
+                });
         }
 
         function SetCredentials(username, password) {

@@ -20,6 +20,4 @@ Data.fs*
 coverage
 test
 .idea/
-Inspinia.zip
-Inspinia/
-campui.db
+db.sqlite3
