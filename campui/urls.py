@@ -3,6 +3,8 @@ from django.contrib import admin
 from django.views.generic.base import TemplateView
 from api.urls import urlpatterns as api_urls
 
+admin.autodiscover()
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(api_urls)),

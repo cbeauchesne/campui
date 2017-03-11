@@ -20,4 +20,7 @@ Data.fs*
 coverage
 test
 .idea/
+api/__pycache__/
+campui/__pycache__/
 db.sqlite3
+media/
