@@ -20,14 +20,13 @@ function Outings($scope, c2c, queries) {
     c2c.getOutings($scope);
 }
 
-function Articles($scope, $http) {
-  $http.get('https://api.camptocamp.org/articles').
-    success(function(data, status, headers, config) {
-      $scope.articles = data;
-    }).
-    error(function(data, status, headers, config) {
-      // log error
-    });
+function Articles($scope, c2c, queries)  {
+    $scope.queries = queries.articles;
+    $scope.setQuery = function(query){
+        c2c.getArticles($scope, query);
+    }
+
+    c2c.getArticles($scope);
 }
 
 function Images($scope, c2c, queries) {
@@ -45,24 +44,19 @@ function Xreports($scope, c2c, queries) {
         c2c.getXreports($scope, query);
     }
 
-    $scope.columnDefs = [{  name:'Date', field: 'date' , width: '10%'
-                        },
-
-                        {   field: 'nb_impacted' , width: '10%'
-                        },
-                        {   field: 'severity' , width: '10%'
-                        },
-
-                        {   name:'Title', field: 'locales[0].title', width: '*',
+    $scope.columnDefs = [
+                        {  name:'Date', field: 'date' , width: '10%' },
+                        {   field: 'nb_impacted' , width: '10%' },
+                        {   field: 'severity' , width: '10%'},
+                        {
+                            name:'Title', field: 'locales[0].title', width: '*',
                             cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/xreports/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'
                         },
-
                         {   name:'Activities',
                             field: 'activities',
                             width: '10%',
                             cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'
                         },
-
                         {   name:'Type',
                             field: 'event_type',
                             width: '10%',
@@ -74,23 +68,29 @@ function Xreports($scope, c2c, queries) {
 }
 
 
-function Routes($scope, $http) {
-  $http.get('https://api.camptocamp.org/routes').
-    success(function(data, status, headers, config) {
-      $scope.routes = data;
+function Routes($scope, c2c, queries) {
+    $scope.queries = queries.routes;
+    $scope.setQuery = function(query){
+        c2c.getRoutes($scope, query);
+    }
 
-      $scope.columnDefs =  [
-                              { name:'Title', field: 'locales[0].title', width: '*',
-                              cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/routes/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'},
-                              { name:'Activities', field: 'activities', width: '15%',
-                              cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'},
-                              { name:'Global rating', field: 'labande_global_rating', width: '15%'}
-                            ]
+    $scope.columnDefs = [
+                        {
+                            name:'Title',
+                            field: 'locales[0].title',
+                            width: '*',
+                            cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/routes/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'
+                        },
+                        {
+                            name:'Activities',
+                            field: 'activities',
+                            width: '15%',
+                            cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'
+                        },
+                        { name:'Global rating', field: 'labande_global_rating', width: '15%'},
+                        ]
 
-    }).
-    error(function(data, status, headers, config) {
-      // log error
-    });
+    c2c.getRoutes($scope);
 }
 
 function authController($scope, api, authState, $http) {

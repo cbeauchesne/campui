@@ -77,7 +77,7 @@ angular.module('campui')
 
                 $http.get(base_url + '?' + url_query)
                     .success(function(data, status, headers, config) {
-                        $scope.items = data.documents;
+                        $scope.data = data;
                     })
                     .error(function(data, status, headers, config) {
                         // log error
@@ -89,6 +89,8 @@ angular.module('campui')
             getOutings : c2c_query('https://api.camptocamp.org/outings'),
             getImages : c2c_query('https://api.camptocamp.org/images'),
             getXreports : c2c_query('https://api.camptocamp.org/xreports'),
+            getRoutes : c2c_query('https://api.camptocamp.org/routes'),
+            getArticles : c2c_query('https://api.camptocamp.org/articles'),
         }
     })
 
