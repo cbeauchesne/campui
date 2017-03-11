@@ -16,14 +16,14 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     });
 
     $stateProvider
-        .state('dashboard', {
+        .state('home', {
             url: "/",
-            templateUrl: "static/views/dashboard.html",
+            templateUrl: "static/views/home.html",
         })
 
-        .state('topos', {
-            url: "/topos",
-            templateUrl: "static/views/topos.html",
+        .state('routes', {
+            url: "/routes",
+            templateUrl: "static/views/routes.html",
         })
 
         .state('outings', {

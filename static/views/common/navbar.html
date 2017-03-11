@@ -5,21 +5,21 @@
                     class="navbar-toggle collapsed" type="button">
                 <i class="fa fa-reorder"></i>
             </button>
-            <a ui-sref="dashboard" class="navbar-brand">CampUI</a>
+            <a ui-sref="home" class="navbar-brand">CampUI</a>
         </div>
 
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav">
                 <li ui-sref-active="active">
-                    <a ui-sref="dashboard"><i class="fa fa-home"></i> <span
+                    <a ui-sref="home"><i class="fa fa-home"></i> <span
                             class="nav-label">Home</span> </a>
                 </li>
                 <li ui-sref-active="active">
-                    <a ui-sref="topos"><i class="fa fa-university"></i> <span class="nav-label">Topos</span></a>
+                    <a ui-sref="routes"><i class="fa fa-university"></i> <span class="nav-label">Routes</span></a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="outings"><i class="fa fa-file-image-o"></i> <span
-                            class="nav-label">Sorties</span></a>
+                            class="nav-label">Outings</span></a>
                 </li>
 
                 <li ng-controller="authController" ng-show="authState.user" class="dropdown">
@@ -31,13 +31,9 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sorties</a></li>
-                        <li><a href="#">Paramètres</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">XXX</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">YYY</a></li>
+                        <li><a href="#">User page</a></li>
+                        <li><a href="#">Outings</a></li>
+                        <li><a href="#">Parameters</a></li>
                     </ul>
                 </li>
 
