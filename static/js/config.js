@@ -40,6 +40,12 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             url: "/xreports",
             templateUrl: "static/views/xreports.html",
         })
+
+        .state('user', {
+            url: "/user/{username}",
+            templateUrl: 'static/views/user.html',
+        })
+
 }
 
 angular.module('campui')

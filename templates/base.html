@@ -102,6 +102,7 @@ angular.module('campui')
 {% if user.is_authenticated %}
     {
         username:'{{user.username}}',
+        parameters:{{user.profile.parameters}},
     }
 {% else %}
     undefined
