@@ -107,6 +107,7 @@ angular.module('campui')
                 paragliding : {act : "paragliding"},
                 mountain_biking : {act : "mountain_biking"},
                 via_ferrata : {act : "via_ferrata"},
+                mine : {u : "286726"}
             },
             images : {
                 skitouring : {act : "skitouring"},

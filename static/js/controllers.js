@@ -1,96 +1,85 @@
 
+function c2cController($scope, c2cGet, queries, columnDefs){
+
+    $scope.queries = queries
+
+    $scope.setQuery = function(query){
+        $scope.currentQuery = query
+        c2cGet($scope, query);
+    }
+
+    $scope.columnDefs = columnDefs
+
+    $scope.setQuery()
+}
+
 
 function Outings($scope, c2c, queries) {
 
-    $scope.queries = queries.outings
-
-    $scope.setQuery = function(query){
-        c2c.getOutings($scope, query);
-    }
-
-    $scope.columnDefs =  [
+    var columnDefs =  [
                           { name:'Date', field: 'date_start' , width: '10%'},
                           { name:'Title', field: 'locales[0].title', width: '*',
                           cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/outings/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'},
                           { name:'Activities', field: 'activities', width: '10%',
                           cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'},
                           { name:'Author', field: 'author.name', width: '20%'}
-                        ]
+                        ];
 
-    c2c.getOutings($scope);
+    c2cController($scope, c2c.getOutings, queries.outings, columnDefs);
 }
 
 function Articles($scope, c2c, queries)  {
-    $scope.queries = queries.articles;
-    $scope.setQuery = function(query){
-        c2c.getArticles($scope, query);
-    }
-
-    c2c.getArticles($scope);
+    c2cController($scope, c2c.getArticles, queries.articles);
 }
 
 function Images($scope, c2c, queries) {
-    $scope.queries = queries.images;
-    $scope.setQuery = function(query){
-        c2c.getImages($scope, query);
-    }
-
-    c2c.getImages($scope);
+    c2cController($scope, c2c.getImages, queries.images);
 }
 
 function Xreports($scope, c2c, queries) {
-    $scope.queries = queries.xreports;
-    $scope.setQuery = function(query){
-        c2c.getXreports($scope, query);
-    }
+    columnDefs = [
+                {  name:'Date', field: 'date' , width: '10%' },
+                {   field: 'nb_impacted' , width: '10%' },
+                {   field: 'severity' , width: '10%'},
+                {
+                    name:'Title', field: 'locales[0].title', width: '*',
+                    cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/xreports/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'
+                },
+                {   name:'Activities',
+                    field: 'activities',
+                    width: '10%',
+                    cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'
+                },
+                {   name:'Type',
+                    field: 'event_type',
+                    width: '10%',
+                    cellTemplate:'<span ng-repeat="type in row.entity.event_type">{{type}}</span>'
+                },
+                ];
 
-    $scope.columnDefs = [
-                        {  name:'Date', field: 'date' , width: '10%' },
-                        {   field: 'nb_impacted' , width: '10%' },
-                        {   field: 'severity' , width: '10%'},
-                        {
-                            name:'Title', field: 'locales[0].title', width: '*',
-                            cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/xreports/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'
-                        },
-                        {   name:'Activities',
-                            field: 'activities',
-                            width: '10%',
-                            cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'
-                        },
-                        {   name:'Type',
-                            field: 'event_type',
-                            width: '10%',
-                            cellTemplate:'<span ng-repeat="type in row.entity.event_type">{{type}}</span>'
-                        },
-                        ]
-
-    c2c.getXreports($scope);
+    c2cController($scope, c2c.getXreports, queries.xreports, columnDefs);
 }
 
 
 function Routes($scope, c2c, queries) {
-    $scope.queries = queries.routes;
-    $scope.setQuery = function(query){
-        c2c.getRoutes($scope, query);
-    }
 
-    $scope.columnDefs = [
-                        {
-                            name:'Title',
-                            field: 'locales[0].title',
-                            width: '*',
-                            cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/routes/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'
-                        },
-                        {
-                            name:'Activities',
-                            field: 'activities',
-                            width: '15%',
-                            cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'
-                        },
-                        { name:'Global rating', field: 'labande_global_rating', width: '15%'},
-                        ]
+    columnDefs = [
+                {
+                    name:'Title',
+                    field: 'locales[0].title',
+                    width: '*',
+                    cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/routes/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'
+                },
+                {
+                    name:'Activities',
+                    field: 'activities',
+                    width: '15%',
+                    cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'
+                },
+                { name:'Global rating', field: 'labande_global_rating', width: '15%'},
+                ];
 
-    c2c.getRoutes($scope);
+    c2cController($scope, c2c.getRoutes, queries.xreports, columnDefs);
 }
 
 function authController($scope, api, authState, $http) {
