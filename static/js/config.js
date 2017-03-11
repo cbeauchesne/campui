@@ -35,6 +35,11 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             url: "/credits",
             templateUrl: "static/views/credits.html",
         })
+
+        .state('xreports', {
+            url: "/xreports",
+            templateUrl: "static/views/xreports.html",
+        })
 }
 
 angular.module('campui')
@@ -83,6 +88,7 @@ angular.module('campui')
         return {
             getOutings : c2c_query('https://api.camptocamp.org/outings'),
             getImages : c2c_query('https://api.camptocamp.org/images'),
+            getXreports : c2c_query('https://api.camptocamp.org/xreports'),
         }
     })
 
@@ -112,6 +118,7 @@ angular.module('campui')
                 mountain_biking : {act : "mountain_biking"},
                 via_ferrata : {act : "via_ferrata"},
             },
+            xreports : {},
         }
     })
 

@@ -18,8 +18,17 @@
                     <a ui-sref="routes"><i class="fa fa-university"></i> <span class="nav-label">Routes</span></a>
                 </li>
                 <li ui-sref-active="active">
-                    <a ui-sref="outings"><i class="fa fa-file-image-o"></i> <span
-                            class="nav-label">Outings</span></a>
+                    <a ui-sref="outings">
+                        <i class="fa fa-file-image-o"></i>
+                        <span class="nav-label">Outings</span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="xreports">
+                        <i class="fa fa-warning"></i>
+                        <span class="nav-label">Incidents</span>
+                    </a>
                 </li>
 
                 <li ng-controller="authController" ng-show="authState.user" class="dropdown">
