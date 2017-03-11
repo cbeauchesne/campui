@@ -6,3 +6,7 @@
 .gallery.a{
     white-space: nowrap;
 }
+
+.ibox-tools .dropdown-menu > li > a {
+    padding: 0px 10px;
+}

@@ -57,7 +57,7 @@
 
             <div class="ibox-content" style="display: block;">
                 <ul>
-                    <li ng-repeat="article in articles.documents|limitTo:10">
+                    <li ng-repeat="article in articles.documents|limitTo:15">
                         <span>
                             <a href="https://www.camptocamp.org/articles/{{article.document_id}}">
                                 {{article.locales[0].title}}
@@ -68,23 +68,23 @@
             </div>
         </div>
 
-        <div class="ibox float-e-margins">
+        <div ng-controller="routes" class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Accidents</h5>
+                <h5>Topos</h5>
                 <div ibox-tools></div>
             </div>
-            <div ng-controller="xreports" class="ibox-content" style="display: block;">
+
+            <div class="ibox-content" style="display: block;">
                 <ul>
-                    <li ng-repeat="xreport in xreports.documents|limitTo:6">
+                    <li ng-repeat="route in routes.documents|limitTo:15">
                         <span>
-                            <a href="https://www.camptocamp.org/xreport/{{xreport.document_id}}">
-                                {{xreport.locales[0].title}}
+                            <a href="https://www.camptocamp.org/routes/{{route.document_id}}">
+                                {{route.locales[0].title}}
                             </a>
                         </span>
                     </li>
                 </ul>
             </div>
         </div>
-
     </div>
 </div>
