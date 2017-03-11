@@ -1,6 +1,7 @@
 <div class="ibox-tools dropdown" dropdown>
+
     <a ng-click="showhide()"> <i class="fa fa-chevron-up"></i></a>
-    <a ng-show="queries" class="dropdown-toggle" data-toggle="dropdown" href="#">
+    <a ng-show="queries" ng-class="{active: currentQuery}" class="dropdown-toggle" data-toggle="dropdown" href="#">
         <i class="fa fa-filter"></i>
     </a>
     <ul class="dropdown-menu dropdown-user">

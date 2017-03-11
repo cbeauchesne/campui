@@ -10,3 +10,13 @@
 .ibox-tools .dropdown-menu > li > a {
     padding: 0px 10px;
 }
+
+.ibox-tools > a.active > i {
+    color: #1ab394;
+}
+
+.ibox-tools > a > i.fa {
+    font-size: 16px;
+}
+
+
