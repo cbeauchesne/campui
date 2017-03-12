@@ -17,6 +17,7 @@ def _is_json(s):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     parameters = models.TextField(blank=True, validators=[_is_json])
+    c2c_id = models.IntegerField(blank=True, null=True)
 
 
 @receiver(post_save, sender=User)
