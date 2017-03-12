@@ -47,14 +47,19 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('user', {
             url: "/user/{username}",
             templateUrl: 'static/views/user.html',
-            controller: function($scope, $stateParams, api, c2c){
+            controller: function($scope, $stateParams, api, c2c, authState){
                 $scope.user = api.user.get({username:$stateParams.username}, function() {
                       $scope.outings = c2c.outings.get({query:"u=" + $scope.user.profile.c2c_id})
-                      $scope.user.profile._parameters = JSON.stringify($scope.user.profile.parameters, null, 4)
+                      $scope.user.profile._parameters = JSON.stringify($scope.user.profile.parameters, null, 2)
+                      $scope.user.profile._outing_queries = JSON.stringify($scope.user.profile.outing_queries, null, 2)
                     });
 
                 $scope.save = function(){
-                    api.user.save({username:$stateParams.username}, $scope.user)
+                    $scope.user.profile.outing_queries = JSON.parse($scope.user.profile._outing_queries);
+                    api.user.save({username:$stateParams.username}, $scope.user, function(){
+                        if($stateParams.username==authState.user.username)
+                            authState.user.profile = $scope.user.profile;
+                    });
                 };
             }
         })

@@ -10,7 +10,18 @@ function c2cController($scope, c2cGet, queries, columnDefs, label){
         $scope.currentQuery = query
 
         query = (typeof query === 'undefined') ? {} : query;
-        url_query = jQuery.param(query)
+
+        var output = [];
+        for (var prop in query) {
+            if (query.hasOwnProperty(prop)) {
+                value = query[prop];
+                if(value.constructor === Array)
+                    output.push(prop + '=' + query[prop].join(','));
+                else
+                    output.push(prop + '=' + value);
+            }
+        }
+        url_query =  output.join('&');
 
         $scope.data = c2cGet({query:url_query})
     }
