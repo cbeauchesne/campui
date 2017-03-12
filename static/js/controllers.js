@@ -4,13 +4,16 @@ function c2cController($scope, c2cGet, queries, columnDefs, label){
     $scope.label = label
     $scope.queries = queries
     $scope.columnDefs = columnDefs
+    $scope.data = c2cGet()
 
     $scope.setQuery = function(query){
         $scope.currentQuery = query
-        c2cGet($scope, query);
-    }
 
-    $scope.setQuery()
+        query = (typeof query === 'undefined') ? {} : query;
+        url_query = jQuery.param(query)
+
+        $scope.data = c2cGet({query:url_query})
+    }
 }
 
 
@@ -25,15 +28,15 @@ function outingsController($scope, c2c, queries) {
                           { name:'Author', field: 'author.name', width: '20%'}
                         ];
 
-    c2cController($scope, c2c.getOutings, queries.outings, columnDefs, "Outings");
+    c2cController($scope, c2c.outings.get, queries.outings, columnDefs, "Outings");
 }
 
 function articlesController($scope, c2c, queries)  {
-    c2cController($scope, c2c.getArticles, queries.articles, undefined, "Articles");
+    c2cController($scope, c2c.articles.get, queries.articles, undefined, "Articles");
 }
 
 function Images($scope, c2c, queries) {
-    c2cController($scope, c2c.getImages, queries.images);
+    c2cController($scope, c2c.images.get, queries.images);
 }
 
 function xreportsController($scope, c2c, queries) {
@@ -57,7 +60,7 @@ function xreportsController($scope, c2c, queries) {
                 },
                 ];
 
-    c2cController($scope, c2c.getXreports, queries.xreports, columnDefs, "Incidents and accidents");
+    c2cController($scope, c2c.xreports.get, queries.xreports, columnDefs, "Incidents and accidents");
 }
 
 
@@ -79,47 +82,48 @@ function routesController($scope, c2c, queries) {
                 { name:'Global rating', field: 'labande_global_rating', width: '15%'},
                 ];
 
-    c2cController($scope, c2c.getRoutes, queries.xreports, columnDefs, "Routes");
+    c2cController($scope, c2c.routes.get, queries.xreports, columnDefs, "Routes");
 }
+
 
 function authController($scope, api, authState, $http) {
 
 //        $('#id_auth_form input').checkAndTriggerAutoFillEvent();
 
-        $scope.authState = authState;
+    $scope.authState = authState;
 
-        $scope.getCredentials = function(){
-            return {username: $scope.username, password: $scope.password};
-        };
+    $scope.getCredentials = function(){
+        return {username: $scope.username, password: $scope.password};
+    };
 
-        $scope.login = function(){
-            creds = $scope.getCredentials();
-            $http.defaults.headers.common['Authorization'] = ('Basic ' + btoa(creds.username +
-                                        ':' + creds.password));
-            api.auth.login(creds).
-                $promise.
-                    then(function(data){
-                        authState.user = {username:data.username};
-                    }).
-                    catch(function(data){
-                        alert(data.data.detail);
-                    });
-        };
-        $scope.logout = function(){
-            api.auth.logout(function(){
-                authState.user = undefined;
-            });
-        };
-        $scope.register = function($event){
-            $event.preventDefault();
-            api.users.create($scope.getCredentials()).
-                $promise.
-                    then($scope.login).
-                    catch(function(data){
-                        alert(data.data.username);
-                    });
-        };
-    }
+    $scope.login = function(){
+        creds = $scope.getCredentials();
+        $http.defaults.headers.common['Authorization'] = ('Basic ' + btoa(creds.username +
+                                    ':' + creds.password));
+        api.auth.login(creds).
+            $promise.
+                then(function(data){
+                    authState.user = {username:data.username};
+                }).
+                catch(function(data){
+                    alert(data.data.detail);
+                });
+    };
+    $scope.logout = function(){
+        api.auth.logout(function(){
+            authState.user = undefined;
+        });
+    };
+    $scope.register = function($event){
+        $event.preventDefault();
+        api.users.create($scope.getCredentials()).
+            $promise.
+                then($scope.login).
+                catch(function(data){
+                    alert(data.data.username);
+                });
+    };
+}
 
 
 var app = angular.module('campui')
@@ -129,4 +133,5 @@ app.controller("outings",outingsController);
 app.controller("articles", articlesController);
 app.controller("images", Images);
 app.controller("xreports", xreportsController);
+app.controller("routes", routesController);
 app.controller("routes", routesController);

@@ -47,31 +47,11 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('user', {
             url: "/user/{username}",
             templateUrl: 'static/views/user.html',
-            controller: function ($scope, $stateParams, api, c2c) {
+            controller: function($scope, $stateParams, api, c2c){
+                $scope.user = api.user.get({username:$stateParams.username});
                 $scope.save = function(){
-                    console.log($scope.user);
-                    api.user.save({username:$stateParams.username}, $scope.user).
-                        $promise.
-                            then(function(data){
-                                console.log("saved");
-                            }).
-                            catch(function(data){
-                                console.log(data.data.detail);
-                            });
-
+                    api.user.save({username:$stateParams.username}, $scope.user)
                 };
-
-                api.user.get({username:$stateParams.username}).
-                    $promise.
-                        then(function(data){
-                            $scope.user = data;
-                            $scope.user.profile._parameters = JSON.stringify($scope.user.profile.parameters, null, 4);
-                            c2c.getOutings($scope, {"u":286726});
-
-                        }).
-                        catch(function(data){
-                            alert(data.data.detail);
-                        });
             }
         })
 }
@@ -105,30 +85,28 @@ angular.module('campui')
         };
     })
 
-    .factory('c2c', function($http){
-
-        function c2c_query(base_url){
-            return function($scope, query){
-
-                query = (typeof query === 'undefined') ? {} : query;
-                url_query = jQuery.param(query)
-
-                $http.get(base_url + '?' + url_query)
-                    .success(function(data, status, headers, config) {
-                        $scope.data = data;
-                    })
-                    .error(function(data, status, headers, config) {
-                        // log error
-                    });
-            }
-        }
-
+    .factory('c2c', function($resource){
         return {
-            getOutings : c2c_query('https://api.camptocamp.org/outings'),
-            getImages : c2c_query('https://api.camptocamp.org/images'),
-            getXreports : c2c_query('https://api.camptocamp.org/xreports'),
-            getRoutes : c2c_query('https://api.camptocamp.org/routes'),
-            getArticles : c2c_query('https://api.camptocamp.org/articles'),
+            outings: $resource('https://api.camptocamp.org/outings?:query', {query:''},{
+                get : {method: 'GET'}
+            }),
+            images: $resource('https://api.camptocamp.org/images?:query', {query:''},{
+                get : {method: 'GET'}
+            }),
+            xreports: $resource('https://api.camptocamp.org/xreports?:query', {query:''},{
+                get : {method: 'GET'}
+            }),
+            routes: $resource('https://api.camptocamp.org/routes?:query', {query:''},{
+                get : {method: 'GET'}
+            }),
+            articles: $resource('https://api.camptocamp.org/articles?:query', {query:''},{
+                get : {method: 'GET'}
+            }),
+        }
+    })
+
+    .factory('user', function(){
+        return {
         }
     })
 
