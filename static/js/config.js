@@ -39,6 +39,12 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             controller: xreportsController,
         })
 
+        .state('articles', {
+            url: "/articles",
+            templateUrl: "static/views/c2c_items.html",
+            controller: articlesController,
+        })
+
         .state('credits', {
             url: "/credits",
             templateUrl: "static/views/credits.html",
