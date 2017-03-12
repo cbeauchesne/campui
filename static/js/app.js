@@ -13,6 +13,7 @@
         'ngCookies',
         'ngResource',
         'angular.filter',
+        'ui.codemirror'
     ])
 
     angular.module('core.phone', ['ngResource']);
