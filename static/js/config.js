@@ -48,7 +48,11 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             url: "/user/{username}",
             templateUrl: 'static/views/user.html',
             controller: function($scope, $stateParams, api, c2c){
-                $scope.user = api.user.get({username:$stateParams.username});
+                $scope.user = api.user.get({username:$stateParams.username}, function() {
+                      $scope.outings = c2c.outings.get({query:"u=" + $scope.user.profile.c2c_id})
+                      $scope.user.profile._parameters = JSON.stringify($scope.user.profile.parameters, null, 4)
+                    });
+
                 $scope.save = function(){
                     api.user.save({username:$stateParams.username}, $scope.user)
                 };
@@ -102,11 +106,6 @@ angular.module('campui')
             articles: $resource('https://api.camptocamp.org/articles?:query', {query:''},{
                 get : {method: 'GET'}
             }),
-        }
-    })
-
-    .factory('user', function(){
-        return {
         }
     })
 

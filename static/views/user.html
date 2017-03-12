@@ -48,11 +48,11 @@
     <div class="col-lg-6">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Outings</h5>
+                <h5>Outings ({{outings.total}})</h5>
             </div>
 
             <div class="ibox-content" style="display: block;">
-                <a ng-repeat="outing in data.documents"
+                <a ng-repeat="outing in outings.documents"
                    href="https://www.camptocamp.org/outings/{{outing.document_id}}"
                    style="display: block;">
                     <img ng-repeat="activity in outing.activities"

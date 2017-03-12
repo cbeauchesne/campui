@@ -17,7 +17,7 @@ function c2cController($scope, c2cGet, queries, columnDefs, label){
 }
 
 
-function outingsController($scope, c2c, queries) {
+function outingsController($scope, c2c, queries, authState) {
 
     var columnDefs =  [
                           { name:'Date', field: 'date_start' , width: '10%'},
@@ -28,7 +28,9 @@ function outingsController($scope, c2c, queries) {
                           { name:'Author', field: 'author.name', width: '20%'}
                         ];
 
-    c2cController($scope, c2c.outings.get, queries.outings, columnDefs, "Outings");
+    q = authState.user.profile.outing_queries;
+
+    c2cController($scope, c2c.outings.get, q, columnDefs, "Outings");
 }
 
 function articlesController($scope, c2c, queries)  {
@@ -103,7 +105,7 @@ function authController($scope, api, authState, $http) {
         api.auth.login(creds).
             $promise.
                 then(function(data){
-                    authState.user = {username:data.username};
+                    authState.user = api.user.get({username:data.username})
                 }).
                 catch(function(data){
                     alert(data.data.detail);
@@ -111,7 +113,7 @@ function authController($scope, api, authState, $http) {
     };
     $scope.logout = function(){
         api.auth.logout(function(){
-            authState.user = undefined;
+            authState.user = authState.userAnonymous;
         });
     };
     $scope.register = function($event){

@@ -96,7 +96,7 @@
 
 
 <!-- CodeMirror -->
-<script src="static/js/plugins/ui-codemirror.js"></script>
+<script src="static/js/plugins/ui-codemirror.js "></script>
 <script src="static/js/plugins/codemirror/codemirror.js"></script>
 <script src="static/js/plugins/codemirror/mode/javascript/javascript.js"></script>
 
@@ -105,18 +105,38 @@
 
 
 angular.module('campui')
-    .service('authState', function () {
-        return {
-            user:
-{% if user.is_authenticated %}
-    {
-        username:'{{user.username}}',
-        parameters:{{user.profile.parameters}},
-    }
-{% else %}
-    undefined
-{% endif %}
+    .service('authState', function (api) {
+        anonymousUser = {
+            username:undefined,
+            profile:{
+                outing_queries:{
+                    skitouring : {act : "skitouring"},
+                    snow_ice_mixed : {act : "snow_ice_mixed"},
+                    mountain_climbing : {act : "mountain_climbing"},
+                    rock_climbing : {act : "rock_climbing"},
+                    ice_climbing : {act : "ice_climbing"},
+                    hiking : {act : "hiking"},
+                    snowshoeing : {act : "snowshoeing"},
+                    paragliding : {act : "paragliding"},
+                    mountain_biking : {act : "mountain_biking"},
+                    via_ferrata : {act : "via_ferrata"},
+                }
+            }
+        };
 
+        return {
+            anonymousUser:anonymousUser,
+{% if user.is_authenticated %}
+            user:{
+                username:"{{user.username}}",
+                profile:{
+                    outing_queries:{% autoescape off %}{{user.profile.outing_queries}}{% endautoescape %}
+                }
+            }
+
+{% else %}
+            user:anonymousUser,
+{% endif %}
         };
     })
 

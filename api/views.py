@@ -11,21 +11,12 @@ from . import serializers, permissions, authenticators
 import json
 
 
-# class UserView(viewsets.ModelViewSet):
-#     serializer_class = serializers.UserSerializer
-#     model = User
-#
-#     def get_permissions(self):
-#         # allow non-authenticated user to create
-#         return (AllowAny() if self.request.method == 'POST'
-#                 else permissions.IsStaffOrTargetUser()),
-
-
 class UserView(APIView):
     def get(self, request, *args, **kwargs):
         user = User.objects.get(username=self.kwargs['username'])
         data = serializers.UserSerializer(user).data
         data["profile"]["parameters"] = json.loads(data["profile"]["parameters"])
+        data["profile"]["outing_queries"] = json.loads(data["profile"]["outing_queries"])
         return Response(data)
 
     def put(self, request, *args, **kwargs):
@@ -37,8 +28,9 @@ class UserView(APIView):
         if not request.user.is_staff and request.user.username != user.username:
             return HttpResponseBadRequest()
 
-        print(user)
         user.profile.c2c_id = request.data["profile"]["c2c_id"]
+        user.profile.outing_queries = json.dumps(request.data["profile"]["outing_queries"])
+
         user.profile.save()
 
         return Response("ok")

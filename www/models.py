@@ -18,6 +18,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     parameters = models.TextField(blank=True, validators=[_is_json])
     c2c_id = models.IntegerField(blank=True, null=True)
+    outing_queries = models.TextField(validators=[_is_json], default='{"français":{"l":"fr"}}')
 
 
 @receiver(post_save, sender=User)

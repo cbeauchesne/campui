@@ -31,7 +31,7 @@
                     </a>
                 </li>
 
-                <li ng-controller="authController" ng-show="authState.user" class="dropdown">
+                <li ng-controller="authController" ng-show="authState.user.username" class="dropdown">
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
@@ -50,14 +50,14 @@
             </ul>
 
             <ul class="nav navbar-top-links navbar-right" ng-controller="authController">
-                <li ng-show="authState.user">
+                <li ng-show="authState.user.username">
                     <a href="/" ng-click="logout()">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>
             </ul>
 
-            <form id="id_auth_form" ng-hide="authState.user" class="navbar-form navbar-right" ng-submit="login()"
+            <form id="id_auth_form" ng-hide="authState.user.username" class="navbar-form navbar-right" ng-submit="login()"
                   ng-controller="authController">
                 <div class="form-group">
                     <input ng-model="username" required name="username" type="text"
