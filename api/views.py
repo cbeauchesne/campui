@@ -17,6 +17,9 @@ class UserView(APIView):
         data = serializers.UserSerializer(user).data
         data["profile"]["parameters"] = json.loads(data["profile"]["parameters"])
         data["profile"]["outing_queries"] = json.loads(data["profile"]["outing_queries"])
+        data["profile"]["image_queries"] = json.loads(data["profile"]["image_queries"])
+        data["profile"]["route_queries"] = json.loads(data["profile"]["route_queries"])
+        data["profile"]["xreport_queries"] = json.loads(data["profile"]["xreport_queries"])
         return Response(data)
 
     def put(self, request, *args, **kwargs):
@@ -30,6 +33,9 @@ class UserView(APIView):
 
         user.profile.c2c_id = request.data["profile"]["c2c_id"]
         user.profile.outing_queries = json.dumps(request.data["profile"]["outing_queries"])
+        user.profile.image_queries = json.dumps(request.data["profile"]["image_queries"])
+        user.profile.route_queries = json.dumps(request.data["profile"]["route_queries"])
+        user.profile.xreport_queries = json.dumps(request.data["profile"]["xreport_queries"])
 
         user.profile.save()
 

@@ -19,6 +19,9 @@ class Profile(models.Model):
     parameters = models.TextField(blank=True, validators=[_is_json])
     c2c_id = models.IntegerField(blank=True, null=True)
     outing_queries = models.TextField(validators=[_is_json], default='{"français":{"l":"fr"}}')
+    image_queries = models.TextField(validators=[_is_json], default='{"français":{"l":"fr"}}')
+    route_queries = models.TextField(validators=[_is_json], default='{"français":{"l":"fr"}}')
+    xreport_queries = models.TextField(validators=[_is_json], default='{}')
 
 
 @receiver(post_save, sender=User)

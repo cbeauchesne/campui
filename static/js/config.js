@@ -52,10 +52,17 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
                       $scope.outings = c2c.outings.get({query:"u=" + $scope.user.profile.c2c_id})
                       $scope.user.profile._parameters = JSON.stringify($scope.user.profile.parameters, null, 2)
                       $scope.user.profile._outing_queries = JSON.stringify($scope.user.profile.outing_queries, null, 2)
+                      $scope.user.profile._xreport_queries = JSON.stringify($scope.user.profile.xreport_queries, null, 2)
+                      $scope.user.profile._image_queries = JSON.stringify($scope.user.profile.image_queries, null, 2)
+                      $scope.user.profile._route_queries = JSON.stringify($scope.user.profile.route_queries, null, 2)
                     });
 
                 $scope.save = function(){
                     $scope.user.profile.outing_queries = JSON.parse($scope.user.profile._outing_queries);
+                    $scope.user.profile.xreport_queries = JSON.parse($scope.user.profile._xreport_queries);
+                    $scope.user.profile.image_queries = JSON.parse($scope.user.profile._image_queries);
+                    $scope.user.profile.route_queries = JSON.parse($scope.user.profile._route_queries);
+
                     api.user.save({username:$stateParams.username}, $scope.user, function(){
                         if($stateParams.username==authState.user.username)
                             authState.user.profile = $scope.user.profile;
@@ -111,37 +118,6 @@ angular.module('campui')
             articles: $resource('https://api.camptocamp.org/articles?:query', {query:''},{
                 get : {method: 'GET'}
             }),
-        }
-    })
-
-    .factory('queries', function(){
-        return {
-            outings : {
-                skitouring : {act : "skitouring"},
-                snow_ice_mixed : {act : "snow_ice_mixed"},
-                mountain_climbing : {act : "mountain_climbing"},
-                rock_climbing : {act : "rock_climbing"},
-                ice_climbing : {act : "ice_climbing"},
-                hiking : {act : "hiking"},
-                snowshoeing : {act : "snowshoeing"},
-                paragliding : {act : "paragliding"},
-                mountain_biking : {act : "mountain_biking"},
-                via_ferrata : {act : "via_ferrata"},
-                mine : {u : "286726"}
-            },
-            images : {
-                skitouring : {act : "skitouring"},
-                snow_ice_mixed : {act : "snow_ice_mixed"},
-                mountain_climbing : {act : "mountain_climbing"},
-                rock_climbing : {act : "rock_climbing"},
-                ice_climbing : {act : "ice_climbing"},
-                hiking : {act : "hiking"},
-                snowshoeing : {act : "snowshoeing"},
-                paragliding : {act : "paragliding"},
-                mountain_biking : {act : "mountain_biking"},
-                via_ferrata : {act : "via_ferrata"},
-            },
-            xreports : {},
         }
     })
 

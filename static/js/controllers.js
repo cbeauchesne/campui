@@ -28,7 +28,7 @@ function c2cController($scope, c2cGet, queries, columnDefs, label){
 }
 
 
-function outingsController($scope, c2c, queries, authState) {
+function outingsController($scope, c2c, authState) {
 
     var columnDefs =  [
                           { name:'Date', field: 'date_start' , width: '10%'},
@@ -44,15 +44,16 @@ function outingsController($scope, c2c, queries, authState) {
     c2cController($scope, c2c.outings.get, q, columnDefs, "Outings");
 }
 
-function articlesController($scope, c2c, queries)  {
-    c2cController($scope, c2c.articles.get, queries.articles, undefined, "Articles");
+function articlesController($scope, c2c, authState)  {
+    c2cController($scope, c2c.articles.get, undefined, undefined, "Articles");
 }
 
-function Images($scope, c2c, queries) {
-    c2cController($scope, c2c.images.get, queries.images);
+function Images($scope, c2c, authState) {
+    q = authState.user.profile.image_queries;
+    c2cController($scope, c2c.images.get, q);
 }
 
-function xreportsController($scope, c2c, queries) {
+function xreportsController($scope, c2c, authState) {
     columnDefs = [
                 {  name:'Date', field: 'date' , width: '10%' },
                 {   field: 'nb_impacted' , width: '10%' },
@@ -73,11 +74,12 @@ function xreportsController($scope, c2c, queries) {
                 },
                 ];
 
-    c2cController($scope, c2c.xreports.get, queries.xreports, columnDefs, "Incidents and accidents");
+    q = authState.user.profile.xreport_queries;
+    c2cController($scope, c2c.xreports.get, q, columnDefs, "Incidents and accidents");
 }
 
 
-function routesController($scope, c2c, queries) {
+function routesController($scope, c2c, authState) {
 
     columnDefs = [
                 {
@@ -95,7 +97,8 @@ function routesController($scope, c2c, queries) {
                 { name:'Global rating', field: 'labande_global_rating', width: '15%'},
                 ];
 
-    c2cController($scope, c2c.routes.get, queries.xreports, columnDefs, "Routes");
+    q = authState.user.profile.route_queries;
+    c2cController($scope, c2c.routes.get, q, columnDefs, "Routes");
 }
 
 

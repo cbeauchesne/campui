@@ -31,13 +31,33 @@
                         </div>
                     </div>
 
+
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Parameters</label>
+                        <label class="col-sm-3 control-label">Image queries</label>
                         <div class="col-sm-9">
-                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}" ng-model="user.profile._parameters">
+                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}" ng-model="user.profile._image_queries">
                             </ui-codemirror>
                         </div>
                     </div>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Route queries</label>
+                        <div class="col-sm-9">
+                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}" ng-model="user.profile._route_queries">
+                            </ui-codemirror>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Xreport queries</label>
+                        <div class="col-sm-9">
+                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}" ng-model="user.profile._xreport_queries">
+                            </ui-codemirror>
+                        </div>
+                    </div>
+
 
                     <div class="hr-line-dashed"></div>
 
