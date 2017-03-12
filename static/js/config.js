@@ -44,8 +44,18 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('user', {
             url: "/user/{username}",
             templateUrl: 'static/views/user.html',
+            controller: function ($scope, $stateParams, api) {
+                api.user.get({username:$stateParams.username}).
+                    $promise.
+                        then(function(data){
+                            $scope.user = data;
+                            $scope.parameters = JSON.stringify(data, null, 4);
+                        }).
+                        catch(function(data){
+                            alert(data.data.detail);
+                        });
+            }
         })
-
 }
 
 angular.module('campui')
@@ -69,6 +79,9 @@ angular.module('campui')
             }),
             users: $resource('/api/users\\/', {}, {
                 create: {method: 'POST'}
+            }),
+            user: $resource('/api/user/:username', {}, {
+                get: {method: 'GET'}
             }),
         };
     })
