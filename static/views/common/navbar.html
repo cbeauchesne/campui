@@ -15,7 +15,9 @@
                             class="nav-label">Home</span> </a>
                 </li>
                 <li ui-sref-active="active">
-                    <a ui-sref="routes"><i class="fa fa-university"></i> <span class="nav-label">Routes</span></a>
+                    <a ui-sref="routes">
+                        <i class="fa fa-road"></i> <span class="nav-label">Routes</span>
+                    </a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="outings">
@@ -31,21 +33,39 @@
                     </a>
                 </li>
 
-                <li ng-controller="authController" ng-show="authState.user.username" class="dropdown">
+                <li ui-sref-active="active" ng-controller="authController" ng-show="authState.user.username" >
+                    <a ui-sref="user({username : authState.user.username})">
+                        <i class="fa fa-user"></i>
+                        <span class="nav-label">{{authState.user.username}}</span>
+                    </a>
+                </li>
+
+                <li class="dropdown">
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
-                        <i class="fa fa-user"></i>
-                        {{authState.user.username}}
+                        <i class="fa fa-rocket"></i>
+                        Misc
                         <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a ui-sref="user({username : authState.user.username})">User page</a></li>
-                    </ul>
-                </li>
 
-                <li ui-sref-active="active">
-                    <a ui-sref="credits"><i class="fa fa-copyright"></i> <span class="nav-label">Credits</span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="https://forum.camptocamp.org/users/CharlesB/summary">
+                                <i class="fa fa-phone"></i> <span class="nav-label">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/cbeauchesne/campui/issues/new">
+                                <i class="fa fa-bug"></i> <span class="nav-label">Report a bug</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="credits">
+                                <i class="fa fa-copyright"></i> <span class="nav-label">Credits</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
 
