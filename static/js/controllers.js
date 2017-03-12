@@ -1,20 +1,20 @@
 
-function c2cController($scope, c2cGet, queries, columnDefs){
+function c2cController($scope, c2cGet, queries, columnDefs, label){
 
+    $scope.label = label
     $scope.queries = queries
+    $scope.columnDefs = columnDefs
 
     $scope.setQuery = function(query){
         $scope.currentQuery = query
         c2cGet($scope, query);
     }
 
-    $scope.columnDefs = columnDefs
-
     $scope.setQuery()
 }
 
 
-function Outings($scope, c2c, queries) {
+function outingsController($scope, c2c, queries) {
 
     var columnDefs =  [
                           { name:'Date', field: 'date_start' , width: '10%'},
@@ -25,18 +25,18 @@ function Outings($scope, c2c, queries) {
                           { name:'Author', field: 'author.name', width: '20%'}
                         ];
 
-    c2cController($scope, c2c.getOutings, queries.outings, columnDefs);
+    c2cController($scope, c2c.getOutings, queries.outings, columnDefs, "Outings");
 }
 
-function Articles($scope, c2c, queries)  {
-    c2cController($scope, c2c.getArticles, queries.articles);
+function articlesController($scope, c2c, queries)  {
+    c2cController($scope, c2c.getArticles, queries.articles, undefined, "Articles");
 }
 
 function Images($scope, c2c, queries) {
     c2cController($scope, c2c.getImages, queries.images);
 }
 
-function Xreports($scope, c2c, queries) {
+function xreportsController($scope, c2c, queries) {
     columnDefs = [
                 {  name:'Date', field: 'date' , width: '10%' },
                 {   field: 'nb_impacted' , width: '10%' },
@@ -57,11 +57,11 @@ function Xreports($scope, c2c, queries) {
                 },
                 ];
 
-    c2cController($scope, c2c.getXreports, queries.xreports, columnDefs);
+    c2cController($scope, c2c.getXreports, queries.xreports, columnDefs, "Incidents and accidents");
 }
 
 
-function Routes($scope, c2c, queries) {
+function routesController($scope, c2c, queries) {
 
     columnDefs = [
                 {
@@ -79,7 +79,7 @@ function Routes($scope, c2c, queries) {
                 { name:'Global rating', field: 'labande_global_rating', width: '15%'},
                 ];
 
-    c2cController($scope, c2c.getRoutes, queries.xreports, columnDefs);
+    c2cController($scope, c2c.getRoutes, queries.xreports, columnDefs, "Routes");
 }
 
 function authController($scope, api, authState, $http) {
@@ -125,8 +125,8 @@ function authController($scope, api, authState, $http) {
 var app = angular.module('campui')
 
 app.controller('authController', authController)
-app.controller("outings", Outings);
-app.controller("articles", Articles);
+app.controller("outings",outingsController);
+app.controller("articles", articlesController);
 app.controller("images", Images);
-app.controller("xreports", Xreports);
-app.controller("routes", Routes);
+app.controller("xreports", xreportsController);
+app.controller("routes", routesController);
