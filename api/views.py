@@ -6,18 +6,26 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-
 from . import serializers, permissions, authenticators
 
+import json
 
-class UserView(viewsets.ModelViewSet):
-    serializer_class = serializers.UserSerializer
-    model = User
+# class UserView(viewsets.ModelViewSet):
+#     serializer_class = serializers.UserSerializer
+#     model = User
+#
+#     def get_permissions(self):
+#         # allow non-authenticated user to create
+#         return (AllowAny() if self.request.method == 'POST'
+#                 else permissions.IsStaffOrTargetUser()),
 
-    def get_permissions(self):
-        # allow non-authenticated user to create
-        return (AllowAny() if self.request.method == 'POST'
-                else permissions.IsStaffOrTargetUser()),
+
+class UserView(APIView):
+    def get(self, request, *args, **kwargs):
+        user = User.objects.get(username=self.kwargs['username'])
+        data = serializers.UserSerializer(user).data
+        data["profile"]["parameters"] = json.loads(data["profile"]["parameters"])
+        return Response(data)
 
 
 class AuthView(APIView):
@@ -33,15 +41,3 @@ class AuthView(APIView):
     def delete(self, request, *args, **kwargs):
         logout(request)
         return Response()
-
-#
-# class PostView(viewsets.ModelViewSet):
-#     """view that serves posts"""
-#     model = models.PostModel
-#     serializer_class = serializers.PostSerializer
-#     permission_classes = (permissions.IsOwner,)
-#
-#     def pre_save(self, obj):
-#         # add user to object if user is logged in
-#         if isinstance(self.request.user, User):
-#             obj.user = self.request.user

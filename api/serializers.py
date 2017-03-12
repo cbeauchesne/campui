@@ -1,14 +1,21 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from www.models import Profile
+
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ('parameters',)
 
 
 class UserSerializer(serializers.ModelSerializer):
+    profile = ProfileSerializer(required=True)
+
     class Meta:
         model = User
-        fields = ('id', 'username', 'password', 'first_name',
-                  'last_name', 'email')
+        fields = ('id', 'username', 'profile')
         read_only_fields = ('id',)
-        write_only_fields = ('password',)
 
     def restore_object(self, attrs, instance=None):
         user = super(UserSerializer, self).restore_object(attrs, instance)
