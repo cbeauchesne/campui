@@ -1,16 +1,68 @@
-<div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>Parameters</h5>
-                </div>
-                <div class="ibox-content" style="display: block;">
-                    <ui-codemirror ui-codemirror-opts="{lineNumbers: true}" ng-model="parameters">
-                    </ui-codemirror>
-                </div>
+<div class="row">
+
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Parameters</h5>
+            </div>
+            <div class="ibox-content" style="display: block;">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">ID C2C</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <input type="number" min="1" class="form-control input-sm"
+                                       ng-model="user.profile.c2c_id"/>
+                                <span class="input-group-btn">
+                                    <a type="button" class="btn btn-primary btn-sm" target="_blank"
+                                       href="https://www.camptocamp.org/profiles/{{user.profile.c2c_id}}">
+                                    Test!
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Parameters</label>
+                        <div class="col-sm-9">
+                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}" ng-model="user.profile._parameters">
+                            </ui-codemirror>
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit" ng-click="save()">
+                                <strong>Save</strong>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Outings</h5>
+            </div>
+
+            <div class="ibox-content" style="display: block;">
+                <a ng-repeat="outing in data.documents"
+                   href="https://www.camptocamp.org/outings/{{outing.document_id}}"
+                   style="display: block;">
+                    <img ng-repeat="activity in outing.activities"
+                         alt="{{activity}}"
+                         ng-src="static/img/{{activity}}-24x24.png"/>
+                    {{outing.locales[0].title}}
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div>
 

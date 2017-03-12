@@ -47,12 +47,27 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('user', {
             url: "/user/{username}",
             templateUrl: 'static/views/user.html',
-            controller: function ($scope, $stateParams, api) {
+            controller: function ($scope, $stateParams, api, c2c) {
+                $scope.save = function(){
+                    console.log($scope.user);
+                    api.user.save({username:$stateParams.username}, $scope.user).
+                        $promise.
+                            then(function(data){
+                                console.log("saved");
+                            }).
+                            catch(function(data){
+                                console.log(data.data.detail);
+                            });
+
+                };
+
                 api.user.get({username:$stateParams.username}).
                     $promise.
                         then(function(data){
                             $scope.user = data;
-                            $scope.parameters = JSON.stringify(data, null, 4);
+                            $scope.user.profile._parameters = JSON.stringify($scope.user.profile.parameters, null, 4);
+                            c2c.getOutings($scope, {"u":286726});
+
                         }).
                         catch(function(data){
                             alert(data.data.detail);
@@ -78,13 +93,14 @@ angular.module('campui')
         return {
             auth: $resource('/api/auth\\/', {}, {
                 login:  {method: 'POST'},
-                logout: {method: 'DELETE'}
+                logout: {method: 'DELETE'},
             }),
             users: $resource('/api/users\\/', {}, {
-                create: {method: 'POST'}
+                create: {method: 'POST'},
             }),
             user: $resource('/api/user/:username', {}, {
-                get: {method: 'GET'}
+                get: {method: 'GET'},
+                save: {method: 'PUT'},
             }),
         };
     })

@@ -1,10 +1,19 @@
 .gallery{
     overflow: auto;
     white-space: nowrap;
+    height : 195px;
 }
 
 .gallery.a{
     white-space: nowrap;
+}
+
+.gallery > a{
+    height : 180px;
+}
+
+.gallery > a > img{
+    height : 180px;
 }
 
 .ibox-tools .dropdown-menu > li > a {
