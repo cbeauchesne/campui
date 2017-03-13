@@ -12,6 +12,7 @@ requires = [
     'django==1.10.6',
     'markdown==2.6.8',
     'djangorestframework==3.6.0',
+    'psycopg2==2.7.1',
 ]
 
 tests_require = [

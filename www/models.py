@@ -16,7 +16,7 @@ def _is_json(s):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    parameters = models.TextField(blank=True, validators=[_is_json])
+    parameters = models.TextField(blank=True, validators=[_is_json], default='{}')
     c2c_id = models.IntegerField(blank=True, null=True)
     outing_queries = models.TextField(validators=[_is_json], default='{"français":{"l":"fr"}}')
     image_queries = models.TextField(validators=[_is_json], default='{"français":{"l":"fr"}}')

@@ -56,11 +56,21 @@ WSGI_APPLICATION = 'campui.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'dev': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'postgresql_local': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'campui',
+        'USER': 'charles',
+        'PASSWORD': 'charles',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
+DATABASES['default'] = DATABASES['postgresql_local']
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

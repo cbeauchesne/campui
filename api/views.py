@@ -15,7 +15,10 @@ class UserView(APIView):
     def get(self, request, *args, **kwargs):
         user = User.objects.get(username=self.kwargs['username'])
         data = serializers.UserSerializer(user).data
-        data["profile"]["parameters"] = json.loads(data["profile"]["parameters"])
+
+        data["profile"]["parameters"] = "{}"
+
+        data["profile"]["parameters"] = json.loads(data["profile"].get("parameters", "{}"))
         data["profile"]["outing_queries"] = json.loads(data["profile"]["outing_queries"])
         data["profile"]["image_queries"] = json.loads(data["profile"]["image_queries"])
         data["profile"]["route_queries"] = json.loads(data["profile"]["route_queries"])
