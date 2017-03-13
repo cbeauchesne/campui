@@ -12,10 +12,10 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <input type="number" min="1" class="form-control input-sm"
-                                       ng-model="user.profile.c2c_id"/>
+                                       ng-model="user.profile.params.c2c_id"/>
                                 <span class="input-group-btn">
                                     <a type="button" class="btn btn-primary btn-sm" target="_blank"
-                                       href="https://www.camptocamp.org/profiles/{{user.profile.c2c_id}}">
+                                       href="https://www.camptocamp.org/profiles/{{user.profile.params.c2c_id}}">
                                     Test!
                                     </a>
                                 </span>
@@ -26,7 +26,8 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Outing queries</label>
                         <div class="col-sm-9">
-                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}" ng-model="user.profile._outing_queries">
+                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
+                                           ng-model="user.profile.params._outing_queries">
                             </ui-codemirror>
                         </div>
                     </div>
@@ -35,7 +36,8 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Image queries</label>
                         <div class="col-sm-9">
-                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}" ng-model="user.profile._image_queries">
+                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
+                                           ng-model="user.profile.params._image_queries">
                             </ui-codemirror>
                         </div>
                     </div>
@@ -44,7 +46,8 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Route queries</label>
                         <div class="col-sm-9">
-                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}" ng-model="user.profile._route_queries">
+                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
+                                           ng-model="user.profile.params._route_queries">
                             </ui-codemirror>
                         </div>
                     </div>
@@ -53,7 +56,8 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Xreport queries</label>
                         <div class="col-sm-9">
-                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}" ng-model="user.profile._xreport_queries">
+                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true, mode: 'application/json'}"
+                                           ng-model="user.profile.params._xreport_queries">
                             </ui-codemirror>
                         </div>
                     </div>

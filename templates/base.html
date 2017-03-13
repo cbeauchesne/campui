@@ -144,11 +144,7 @@ angular.module('campui')
             user:{
                 username:"{{user.username}}",
                 profile:{
-                    c2c_id:{{user.profile.c2c_id|default_if_none:"undefined"}},
-                    outing_queries:{% autoescape off %}{{user.profile.outing_queries}}{% endautoescape %},
-                    image_queries:{% autoescape off %}{{user.profile.image_queries}}{% endautoescape %},
-                    route_queries:{% autoescape off %}{{user.profile.route_queries}}{% endautoescape %},
-                    xreport_queries:{% autoescape off %}{{user.profile.xreport_queries}}{% endautoescape %},
+                    params:{% autoescape off %}{{user.profile.params}}{% endautoescape %},
                 }
             }
 

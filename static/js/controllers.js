@@ -39,7 +39,7 @@ function outingsController($scope, c2c, authState) {
                           { name:'Author', field: 'author.name', width: '20%'}
                         ];
 
-    q = authState.user.profile.outing_queries;
+    q = authState.user.profile.params.outing_queries;
 
     c2cController($scope, c2c.outings.get, q, columnDefs, "Outings");
 }
@@ -49,7 +49,7 @@ function articlesController($scope, c2c, authState)  {
 }
 
 function Images($scope, c2c, authState) {
-    q = authState.user.profile.image_queries;
+    q = authState.user.profile.params.image_queries;
     c2cController($scope, c2c.images.get, q);
 }
 
@@ -74,7 +74,7 @@ function xreportsController($scope, c2c, authState) {
                 },
                 ];
 
-    q = authState.user.profile.xreport_queries;
+    q = authState.user.profile.params.xreport_queries;
     c2cController($scope, c2c.xreports.get, q, columnDefs, "Incidents and accidents");
 }
 
@@ -97,7 +97,7 @@ function routesController($scope, c2c, authState) {
                 { name:'Global rating', field: 'labande_global_rating', width: '15%'},
                 ];
 
-    q = authState.user.profile.route_queries;
+    q = authState.user.profile.params.route_queries;
     c2cController($scope, c2c.routes.get, q, columnDefs, "Routes");
 }
 

@@ -54,20 +54,27 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             url: "/user/{username}",
             templateUrl: 'static/views/user.html',
             controller: function($scope, $stateParams, api, c2c, authState){
+
+                json_props = ["outing_queries","xreport_queries","image_queries","route_queries"]
+
                 $scope.user = api.user.get({username:$stateParams.username}, function() {
-                      $scope.outings = c2c.outings.get({query:"u=" + $scope.user.profile.c2c_id})
-                      $scope.user.profile._parameters = JSON.stringify($scope.user.profile.parameters, null, 2)
-                      $scope.user.profile._outing_queries = JSON.stringify($scope.user.profile.outing_queries, null, 2)
-                      $scope.user.profile._xreport_queries = JSON.stringify($scope.user.profile.xreport_queries, null, 2)
-                      $scope.user.profile._image_queries = JSON.stringify($scope.user.profile.image_queries, null, 2)
-                      $scope.user.profile._route_queries = JSON.stringify($scope.user.profile.route_queries, null, 2)
-                    });
+                        params = $scope.user.profile.params;
+
+                        $scope.outings = c2c.outings.get({query:"u=" + params.c2c_id})
+
+                        for (i = 0; i < json_props.length; ++i)
+                            if(params[json_props[i]])
+                                params["_" + json_props[i]] = JSON.stringify(params[json_props[i]], null, 2);
+                    }
+                );
 
                 $scope.save = function(){
-                    $scope.user.profile.outing_queries = JSON.parse($scope.user.profile._outing_queries);
-                    $scope.user.profile.xreport_queries = JSON.parse($scope.user.profile._xreport_queries);
-                    $scope.user.profile.image_queries = JSON.parse($scope.user.profile._image_queries);
-                    $scope.user.profile.route_queries = JSON.parse($scope.user.profile._route_queries);
+
+                    params = $scope.user.profile.params;
+
+                    for (i = 0; i < json_props.length; ++i)
+                        if(params["_" + json_props[i]])
+                            params[json_props[i]] = JSON.parse(params["_" + json_props[i]], null, 2);
 
                     api.user.save({username:$stateParams.username}, $scope.user, function(){
                         if($stateParams.username==authState.user.username)
@@ -122,6 +129,9 @@ angular.module('campui')
                 get : {method: 'GET'}
             }),
             articles: $resource('https://api.camptocamp.org/articles?:query', {query:''},{
+                get : {method: 'GET'}
+            }),
+            outing: $resource('https://api.camptocamp.org/outings/:id', {},{
                 get : {method: 'GET'}
             }),
         }

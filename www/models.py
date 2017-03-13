@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.core.exceptions import ValidationError
+from django.contrib.postgres.fields import JSONField
 
 import json
 
@@ -16,12 +17,7 @@ def _is_json(s):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    parameters = models.TextField(blank=True, validators=[_is_json], default='{}')
-    c2c_id = models.IntegerField(blank=True, null=True)
-    outing_queries = models.TextField(validators=[_is_json], default='{"français":{"l":"fr"}}')
-    image_queries = models.TextField(validators=[_is_json], default='{"français":{"l":"fr"}}')
-    route_queries = models.TextField(validators=[_is_json], default='{"français":{"l":"fr"}}')
-    xreport_queries = models.TextField(validators=[_is_json], default='{}')
+    params = JSONField(default=dict)
 
 
 @receiver(post_save, sender=User)

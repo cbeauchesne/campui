@@ -6,8 +6,7 @@ from www.models import Profile
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ('parameters', 'c2c_id',
-                  'outing_queries', 'image_queries', 'route_queries', 'xreport_queries')
+        fields = ('params',)
 
 
 class UserSerializer(serializers.ModelSerializer):
