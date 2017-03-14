@@ -13,6 +13,7 @@ requires = [
     'markdown==2.6.8',
     'djangorestframework==3.6.0',
     'psycopg2==2.7.1',
+    'django-simple-captcha==0.5.3',
 ]
 
 tests_require = [

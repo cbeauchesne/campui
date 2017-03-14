@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'www',
     'api',
+    'captcha',
 )
 
 MIDDLEWARE_CLASSES = (
