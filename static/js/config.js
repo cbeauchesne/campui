@@ -24,25 +24,25 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('routes', {
             url: "/routes",
             templateUrl: "static/views/c2c_items.html",
-            controller: routesController,
+            controller: "routesController",
         })
 
         .state('outings', {
             url: "/outings",
             templateUrl: "static/views/c2c_items.html",
-            controller: outingsController,
+            controller: "outingsController",
         })
 
         .state('xreports', {
             url: "/xreports",
             templateUrl: "static/views/c2c_items.html",
-            controller: xreportsController,
+            controller: "xreportsController",
         })
 
         .state('articles', {
             url: "/articles",
             templateUrl: "static/views/c2c_items.html",
-            controller: articlesController,
+            controller: "articlesController",
         })
 
         .state('credits', {
