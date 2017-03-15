@@ -98,44 +98,6 @@ angular.module('campui')
         $httpProvider.defaults.xsrfCookieName = 'csrftoken';
     }])
 
-    .factory('api', function($resource, $http){
-        return {
-            auth: $resource('/api/auth\\/', {}, {
-                login:  {method: 'POST'},
-                logout: {method: 'DELETE'},
-            }),
-            users: $resource('/api/users\\/', {}, {
-                create: {method: 'POST'},
-            }),
-            user: $resource('/api/user/:username', {}, {
-                get: {method: 'GET'},
-                save: {method: 'PUT'},
-            }),
-        };
-    })
-
-    .factory('c2c', function($resource){
-        return {
-            outings: $resource('https://api.camptocamp.org/outings?:query', {query:''},{
-                get : {method: 'GET'}
-            }),
-            images: $resource('https://api.camptocamp.org/images?:query', {query:''},{
-                get : {method: 'GET'}
-            }),
-            xreports: $resource('https://api.camptocamp.org/xreports?:query', {query:''},{
-                get : {method: 'GET'}
-            }),
-            routes: $resource('https://api.camptocamp.org/routes?:query', {query:''},{
-                get : {method: 'GET'}
-            }),
-            articles: $resource('https://api.camptocamp.org/articles?:query', {query:''},{
-                get : {method: 'GET'}
-            }),
-            outing: $resource('https://api.camptocamp.org/outings/:id', {},{
-                get : {method: 'GET'}
-            }),
-        }
-    })
 
     .run(function($rootScope, $state) {
         $rootScope.$state = $state;
