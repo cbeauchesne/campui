@@ -1,10 +1,9 @@
 
-function c2cController($scope, c2cGet, queries, columnDefs, label){
+function c2cController($scope, c2cGet, user_params, columnDefs, c2c_item){
 
-    $scope.label = label
-    $scope.queries = queries
+    $scope.label = c2c_item + "s"
+    $scope.queries = user_params[c2c_item + "_queries"]
     $scope.columnDefs = columnDefs
-    $scope.data = c2cGet()
 
     $scope.setQuery = function(query){
         $scope.currentQuery = query
@@ -25,6 +24,9 @@ function c2cController($scope, c2cGet, queries, columnDefs, label){
 
         $scope.data = c2cGet({query:url_query})
     }
+
+    queries = (typeof $scope.queries === 'undefined') ? {} : $scope.queries;
+    $scope.setQuery(queries[user_params[c2c_item + "DefaultQuery"]])
 }
 
 
@@ -39,18 +41,15 @@ function outingsController($scope, c2c, authState) {
                           { name:'Author', field: 'author.name', width: '20%'}
                         ];
 
-    q = authState.user.profile.params.outing_queries;
-
-    c2cController($scope, c2c.outings.get, q, columnDefs, "Outings");
+    c2cController($scope, c2c.outings.get, authState.user.profile.params, columnDefs, "outing");
 }
 
 function articlesController($scope, c2c, authState)  {
-    c2cController($scope, c2c.articles.get, undefined, undefined, "Articles");
+    c2cController($scope, c2c.articles.get, authState.user.profile.params, undefined, "article");
 }
 
 function Images($scope, c2c, authState) {
-    q = authState.user.profile.params.image_queries;
-    c2cController($scope, c2c.images.get, q);
+    c2cController($scope, c2c.images.get, authState.user.profile.params, undefined, "image");
 }
 
 function xreportsController($scope, c2c, authState) {
@@ -74,8 +73,7 @@ function xreportsController($scope, c2c, authState) {
                 },
                 ];
 
-    q = authState.user.profile.params.xreport_queries;
-    c2cController($scope, c2c.xreports.get, q, columnDefs, "Incidents and accidents");
+    c2cController($scope, c2c.xreports.get, authState.user.profile.params, columnDefs, "xreport");
 }
 
 
@@ -97,8 +95,7 @@ function routesController($scope, c2c, authState) {
                 { name:'Global rating', field: 'labande_global_rating', width: '15%'},
                 ];
 
-    q = authState.user.profile.params.route_queries;
-    c2cController($scope, c2c.routes.get, q, columnDefs, "Routes");
+    c2cController($scope, c2c.routes.get, authState.user.profile.params, columnDefs, "route");
 }
 
 

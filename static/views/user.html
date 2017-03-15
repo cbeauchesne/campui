@@ -23,46 +23,87 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Outing queries</label>
-                        <div class="col-sm-9">
-                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
-                                           ng-model="user.profile.params._outing_queries">
-                            </ui-codemirror>
-                        </div>
-                    </div>
-
+                    <div class="hr-line-dashed"></div>
 
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Image queries</label>
-                        <div class="col-sm-9">
-                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
-                                           ng-model="user.profile.params._image_queries">
-                            </ui-codemirror>
-                        </div>
+                        <a>
+                            <label class="col-sm-3 control-label" ng-click="hideCustomQueries = !hideCustomQueries">Custom
+                                queries</label>
+                        </a>
                     </div>
 
+                    <div ng-show="!hideCustomQueries">
 
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Route queries</label>
-                        <div class="col-sm-9">
-                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
-                                           ng-model="user.profile.params._route_queries">
-                            </ui-codemirror>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Default for outings</label>
+                            <div class="col-sm-8">
+                                <input type="text" min="1" class="form-control input-sm"
+                                       ng-model="user.profile.params.outingDefaultQuery"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Default for images</label>
+                            <div class="col-sm-8">
+                                <input type="text" min="1" class="form-control input-sm"
+                                       ng-model="user.profile.params.imageDefaultQuery"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Default for routes</label>
+                            <div class="col-sm-8">
+                                <input type="text" min="1" class="form-control input-sm"
+                                       ng-model="user.profile.params.routeDefaultQuery"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Default for xreports</label>
+                            <div class="col-sm-8">
+                                <input type="text" min="1" class="form-control input-sm"
+                                       ng-model="user.profile.params.xreportDefaultQuery"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Outing queries</label>
+                            <div class="col-sm-9">
+                                <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
+                                               ng-model="user.profile.params._outing_queries">
+                                </ui-codemirror>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Image queries</label>
+                            <div class="col-sm-9">
+                                <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
+                                               ng-model="user.profile.params._image_queries">
+                                </ui-codemirror>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Route queries</label>
+                            <div class="col-sm-9">
+                                <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
+                                               ng-model="user.profile.params._route_queries">
+                                </ui-codemirror>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Xreport queries</label>
+                            <div class="col-sm-9">
+                                <ui-codemirror ui-codemirror-opts="{lineNumbers: true, mode: 'application/json'}"
+                                               ng-model="user.profile.params._xreport_queries">
+                                </ui-codemirror>
+                            </div>
                         </div>
                     </div>
-
-
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Xreport queries</label>
-                        <div class="col-sm-9">
-                            <ui-codemirror ui-codemirror-opts="{lineNumbers: true, mode: 'application/json'}"
-                                           ng-model="user.profile.params._xreport_queries">
-                            </ui-codemirror>
-                        </div>
-                    </div>
-
-
                     <div class="hr-line-dashed"></div>
 
                     <div class="form-group">
