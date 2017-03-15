@@ -114,14 +114,16 @@ function authController($scope, api, authState, $http) {
 
     $scope.login = function(){
         creds = $scope.getCredentials();
-        $http.defaults.headers.common['Authorization'] = ('Basic ' + btoa(creds.username +
+        $http.defaults.headers.common.Authorization = ('Basic ' + btoa(creds.username +
                                     ':' + creds.password));
         api.auth.login(creds).
             $promise.
                 then(function(data){
-                    authState.user = api.user.get({username:data.username})
+                    delete $http.defaults.headers.common.Authorization;
+                    authState.user = api.user.get({username:data.username});
                 }).
                 catch(function(data){
+                    delete $http.defaults.headers.common.Authorization;
                     alert(data.data.detail);
                 });
     };
