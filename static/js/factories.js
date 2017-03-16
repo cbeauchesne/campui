@@ -1,6 +1,6 @@
 app = angular.module('campui')
 
-app.factory('api', function($resource, $http){
+app.factory('api', function($resource){
     return {
         auth: $resource('/api/auth\\/', {}, {
             login:  {method: 'POST'},
@@ -11,10 +11,17 @@ app.factory('api', function($resource, $http){
         }),
         user: $resource('/api/user/:username', {}, {
             get: {method: 'GET'},
+        }),
+        currentUser: $resource('/api/current_user', {}, {
+            get: {method: 'GET'},
             save: {method: 'PUT'},
         }),
     };
 });
+
+app.factory('currentUser', function(api){
+    return api.currentUser.get();
+})
 
 app.factory('c2c', function($resource){
     return {
@@ -49,7 +56,7 @@ app.factory('columnDefs', function(){
                 },
                 {
                     name:'Activities', field: 'activities', width: '10%',
-                    cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'
+                    cellTemplate:'<activities ng-model="row.entity.activities"/>'
                 },
                 { name:'Author', field: 'author.name', width: '20%'}
         ],
@@ -64,7 +71,7 @@ app.factory('columnDefs', function(){
                  {   name:'Activities',
                      field: 'activities',
                      width: '10%',
-                     cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'
+                     cellTemplate:'<activities ng-model="row.entity.activities"/>',
                  },
                  {   name:'Type',
                      field: 'event_type',
@@ -84,7 +91,7 @@ app.factory('columnDefs', function(){
                     name:'Activities',
                     field: 'activities',
                     width: '15%',
-                    cellTemplate:'<img ng-repeat="activity in row.entity.activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>'
+                    cellTemplate:'<activities ng-model="row.entity.activities"/>',
                 },
                 { name:'Global rating', field: 'labande_global_rating', width: '15%'},
         ],

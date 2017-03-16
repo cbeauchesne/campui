@@ -21,8 +21,7 @@ SECRET_KEY = '!(t!6j=-sf=#8ga)0v+r&9p6*1x%5asp-7n9mzu&!_m%t6@wo5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.41', '127.0.0.1', 'localhost', 'campui.freeboxos.fr', '82.226.125.69']
 
 # Application definition
 

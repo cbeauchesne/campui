@@ -53,7 +53,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('user', {
             url: "/user/{username}",
             templateUrl: 'static/views/user.html',
-            controller: function($scope, $stateParams, api, c2c, authState){
+            controller: function($scope, $stateParams, api, c2c, currentUser){
 
                 json_props = ["outing_queries","xreport_queries","image_queries","route_queries"]
 
@@ -76,9 +76,8 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
                         if(params["_" + json_props[i]])
                             params[json_props[i]] = JSON.parse(params["_" + json_props[i]], null, 2);
 
-                    api.user.save({username:$stateParams.username}, $scope.user, function(){
-                        if($stateParams.username==authState.user.username)
-                            authState.user.profile = $scope.user.profile;
+                    api.currentUser.save($scope.user, function(){
+                        currentUser.profile = $scope.user.profile;
                     });
                 };
             }

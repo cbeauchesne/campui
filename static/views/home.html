@@ -37,9 +37,7 @@
                     <a ng-repeat="outing in values"
                         href="https://www.camptocamp.org/outings/{{outing.document_id}}"
                         style="display: block;">
-                        <img ng-repeat="activity in outing.activities"
-                             alt="{{activity}}"
-                             ng-src="static/img/{{activity}}-24x24.png"/>
+                        <activities ng-model="outing.activities"/>
                         {{outing.locales[0].title}}
                     </a>
                 </div>

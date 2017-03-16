@@ -1,13 +1,9 @@
 
 function getC2cController(c2c_item){
 
-    return function($scope, c2c, authState, columnDefs){
-        user_params = authState.user.profile.params;
+    return function($scope, c2c, currentUser, columnDefs){
 
-        c2cGet = c2c[c2c_item + "s"].get;
         $scope.label = c2c_item + "s"
-        $scope.queries = user_params[c2c_item + "_queries"]
-        $scope.columnDefs = columnDefs[c2c_item]
 
         $scope.setQuery = function(query){
             $scope.currentQuery = query
@@ -26,19 +22,24 @@ function getC2cController(c2c_item){
             }
             url_query =  output.join('&');
 
-            $scope.data = c2cGet({query:url_query})
+            $scope.data = c2c[c2c_item + "s"].get({query:url_query})
         }
 
-        queries = (typeof $scope.queries === 'undefined') ? {} : $scope.queries;
-        $scope.setQuery(queries[user_params[c2c_item + "DefaultQuery"]])
+        currentUser.$promise.then(function(){
+            user_params = currentUser.profile.params;
+            $scope.queries = user_params[c2c_item + "_queries"]
+            $scope.columnDefs = columnDefs[c2c_item]
+            queries = (typeof $scope.queries === 'undefined') ? {} : $scope.queries;
+            $scope.setQuery(queries[user_params[c2c_item + "DefaultQuery"]])
+        })
     }
 }
 
-function authController($scope, api, authState, $http) {
+function authController($scope, api, currentUser, $http) {
 
 //        $('#id_auth_form input').checkAndTriggerAutoFillEvent();
 
-    $scope.authState = authState;
+    $scope.currentUser = currentUser;
 
     $scope.getCredentials = function(){
         return {username: $scope.username, password: $scope.password};
@@ -48,30 +49,24 @@ function authController($scope, api, authState, $http) {
         creds = $scope.getCredentials();
         $http.defaults.headers.common.Authorization = ('Basic ' + btoa(creds.username +
                                     ':' + creds.password));
-        api.auth.login(creds).
-            $promise.
+        api.auth.login(creds).$promise.
                 then(function(data){
                     delete $http.defaults.headers.common.Authorization;
-                    authState.user = api.user.get({username:data.username});
+                    currentUser.username = data.username
+                    currentUser.profile = data.profile
                 }).
                 catch(function(data){
                     delete $http.defaults.headers.common.Authorization;
                     alert(data.data.detail);
                 });
     };
+
     $scope.logout = function(){
         api.auth.logout(function(){
-            authState.user = authState.userAnonymous;
+            currentUser.username = undefined
+            currentUser.profile = {params:{}}
+
         });
-    };
-    $scope.register = function($event){
-        $event.preventDefault();
-        api.users.create($scope.getCredentials()).
-            $promise.
-                then($scope.login).
-                catch(function(data){
-                    alert(data.data.username);
-                });
     };
 }
 

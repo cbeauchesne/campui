@@ -81,3 +81,17 @@ angular.module('campui')
     .directive('pageTitle', pageTitle)
     .directive('sideNavigation', sideNavigation)
     .directive('iboxTools', iboxTools)
+
+    .directive('activities', function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            scope: {
+                ngModel: '=',
+            },
+            template: '<img ng-repeat="activity in ngModel" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>',
+            link: function($scope, elem, attr, ctrl) {
+                console.debug($scope);
+            }
+        };
+    })

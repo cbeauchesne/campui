@@ -1,34 +1,36 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from django.http.response import HttpResponseBadRequest
-from rest_framework import viewsets
-from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from . import serializers, permissions, authenticators
+from . import serializers, authenticators
 
 
-class UserView(APIView):
+class CurrentUserView(APIView):
     def get(self, request, *args, **kwargs):
-        user = User.objects.get(username=self.kwargs['username'])
-        data = serializers.UserSerializer(user).data
+        data = serializers.UserSerializer(request.user).data
         return Response(data)
 
     def put(self, request, *args, **kwargs):
         if request.user.is_anonymous():
             return HttpResponseBadRequest()
 
-        user = User.objects.get(username=self.kwargs['username'])
+        request.user.profile.params = request.data["profile"]["params"]
 
-        if not request.user.is_staff and request.user.username != user.username:
-            return HttpResponseBadRequest()
-
-        user.profile.params = request.data["profile"]["params"]
-
-        user.profile.save()
+        request.user.profile.save()
 
         return Response("ok")
+
+
+class UserView(APIView):
+    def get(self, request, *args, **kwargs):
+        user = User.objects.get(username=self.kwargs['username'])
+        data = serializers.UserSerializer(user).data
+        if user.is_anonymous():
+            data["profile"]["params"] = {}
+
+        return Response(data)
 
 
 class AuthView(APIView):
