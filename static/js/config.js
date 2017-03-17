@@ -50,36 +50,42 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             templateUrl: "static/views/credits.html",
         })
 
+        .state('me', {
+            url: "/me",
+            templateUrl: 'static/views/me.html',
+            controller: function($scope, api, c2c, currentUser){
+                currentUser.$promise.then(function(){
+                    $scope.user = jQuery.extend(true, {}, currentUser);
+                    params = $scope.user.profile.params;
+
+                    json_props = ["outing_queries","xreport_queries","image_queries","route_queries"]
+
+                    for (i = 0; i < json_props.length; ++i)
+                        if(params[json_props[i]])
+                            result["_" + json_props[i]] = JSON.stringify(params[json_props[i]], null, 2);
+
+                    $scope.save = function(){
+                        for (i = 0; i < json_props.length; ++i)
+                            if(params["_" + json_props[i]])
+                                params[json_props[i]] = JSON.parse(params["_" + json_props[i]]);
+
+                        api.currentUser.save($scope.user, function(){
+                            currentUser.profile = $scope.user.profile;
+                        });
+                    };
+                })
+            }
+        })
+
         .state('user', {
             url: "/user/{username}",
             templateUrl: 'static/views/user.html',
-            controller: function($scope, $stateParams, api, c2c, currentUser){
-
-                json_props = ["outing_queries","xreport_queries","image_queries","route_queries"]
+            controller: function($scope, $stateParams, api, c2c){
 
                 $scope.user = api.user.get({username:$stateParams.username}, function() {
-                        params = $scope.user.profile.params;
-
-                        $scope.outings = c2c.outings.get({query:"u=" + params.c2c_id})
-
-                        for (i = 0; i < json_props.length; ++i)
-                            if(params[json_props[i]])
-                                params["_" + json_props[i]] = JSON.stringify(params[json_props[i]], null, 2);
-                    }
-                );
-
-                $scope.save = function(){
-
                     params = $scope.user.profile.params;
-
-                    for (i = 0; i < json_props.length; ++i)
-                        if(params["_" + json_props[i]])
-                            params[json_props[i]] = JSON.parse(params["_" + json_props[i]], null, 2);
-
-                    api.currentUser.save($scope.user, function(){
-                        currentUser.profile = $scope.user.profile;
-                    });
-                };
+                    $scope.outings = c2c.outings.get({query:"u=" + params.c2c_id})
+                });
             }
         })
 }

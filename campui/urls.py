@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^xreports$', TemplateView.as_view(template_name='base.html'), name='home'),
     url(r'^credits$', TemplateView.as_view(template_name='base.html'), name='home'),
     url(r'^user/.*$', TemplateView.as_view(template_name='base.html'), name='home'),
+    url(r'^me$', TemplateView.as_view(template_name='base.html'), name='home'),
     url(r'^$', TemplateView.as_view(template_name='base.html'), name='home'),
 ]

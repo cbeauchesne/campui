@@ -90,8 +90,5 @@ angular.module('campui')
                 ngModel: '=',
             },
             template: '<img ng-repeat="activity in ngModel" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>',
-            link: function($scope, elem, attr, ctrl) {
-                console.debug($scope);
-            }
         };
     })

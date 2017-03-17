@@ -1,0 +1,113 @@
+<div class="row">
+
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Parameters</h5>
+            </div>
+            <div class="ibox-content" style="display: block;">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">ID C2C</label>
+                        <div class="col-sm-2">
+                            <div class="input-group">
+                                <input type="number" min="1" class="form-control input-sm"
+                                       ng-model="user.profile.params.c2c_id"/>
+                                <span class="input-group-btn">
+                                    <a type="button" class="btn btn-primary btn-sm" target="_blank"
+                                       href="https://www.camptocamp.org/profiles/{{user.profile.params.c2c_id}}">
+                                    Test!
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Default for outings</label>
+                            <div class="col-sm-2">
+                                <input type="text" min="1" class="form-control input-sm"
+                                       ng-model="user.profile.params.outingDefaultQuery"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Default for images</label>
+                            <div class="col-sm-2">
+                                <input type="text" min="1" class="form-control input-sm"
+                                       ng-model="user.profile.params.imageDefaultQuery"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Default for routes</label>
+                            <div class="col-sm-2">
+                                <input type="text" min="1" class="form-control input-sm"
+                                       ng-model="user.profile.params.routeDefaultQuery"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Default for xreports</label>
+                            <div class="col-sm-2">
+                                <input type="text" min="1" class="form-control input-sm"
+                                       ng-model="user.profile.params.xreportDefaultQuery"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Outing queries</label>
+                            <div class="col-sm-9">
+                                <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
+                                               ng-model="user.profile.params._outing_queries">
+                                </ui-codemirror>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Image queries</label>
+                            <div class="col-sm-9">
+                                <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
+                                               ng-model="user.profile.params._image_queries">
+                                </ui-codemirror>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Route queries</label>
+                            <div class="col-sm-9">
+                                <ui-codemirror ui-codemirror-opts="{lineNumbers: true}"
+                                               ng-model="user.profile.params._route_queries">
+                                </ui-codemirror>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Xreport queries</label>
+                            <div class="col-sm-9">
+                                <ui-codemirror ui-codemirror-opts="{lineNumbers: true, mode: 'application/json'}"
+                                               ng-model="user.profile.params._xreport_queries">
+                                </ui-codemirror>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit" ng-click="save()">
+                                <strong>Save</strong>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

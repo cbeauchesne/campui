@@ -41,12 +41,33 @@
                     </a>
                 </li>
 
-                <li ui-sref-active="active" ng-controller="authController" ng-show="currentUser.username" >
-                    <a ui-sref="user({username : currentUser.username})">
+                <li class="dropdown" ng-controller="authController" ng-show="currentUser.username">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
                         <i class="fa fa-user"></i>
-                        <span class="nav-label">{{currentUser.username}}</span>
+                        {{currentUser.username}}
+                        <span class="caret"></span>
                     </a>
-                </li>
+
+                    <ul class="dropdown-menu">
+
+                        <li ui-sref-active="active">
+                            <a ui-sref="user({username : currentUser.username})">
+                                <i class="fa fa-user"></i>
+                                <span class="nav-label">My page</span>
+                            </a>
+                        </li>
+
+
+                        <li ui-sref-active="active">
+                            <a ui-sref="me">
+                                <i class="fa fa-gears"></i>
+                                <span class="nav-label">Parameters</span>
+                            </a>
+                        </li>
+
+                    </ul>
 
                 <li class="dropdown">
 
