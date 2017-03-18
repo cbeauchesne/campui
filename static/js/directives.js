@@ -104,7 +104,6 @@ angular.module('campui')
         };
     })
 
-
     .directive('routeLinkC2c', function(){
         return {
             restrict: 'E',
@@ -117,6 +116,16 @@ angular.module('campui')
     })
 
     .directive('outingLink', function(){
+        return {
+            restrict: 'E',
+            scope: {
+                outing: '=',
+            },
+            template: '<a href="/outing/{{outing.document_id}}">{{outing.locales[0].title}}</a>',
+        };
+    })
+
+    .directive('outingLinkC2c', function(){
         return {
             restrict: 'E',
             scope: {
@@ -146,6 +155,15 @@ angular.module('campui')
         };
     })
 
+    .directive('rating', function(){
+        return {
+            restrict: 'E',
+            scope: {
+                route: '=',
+            },
+            template: '<span>{{route.global_rating}} {{route.rock_free_rating}}>{{route.rock_required_rating}} {{route.engagement_rating}} {{route.equipement_rating}}{{route.exposition_rock_rating}}</span>',
+        };
+    })
 
     .directive('outingList', function(){
         return {
@@ -154,10 +172,9 @@ angular.module('campui')
             scope: {
                 outings: '=',
             },
-            templateUrl: '/static/views/outing_list.html',
+            templateUrl: '/static/views/components/outing_list.html',
         };
     })
-
 
     .provider('markdownConverter', function () {
         var opts = {simpleLineBreaks:true};

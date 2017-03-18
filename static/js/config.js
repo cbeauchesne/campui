@@ -58,6 +58,14 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             },
         })
 
+        .state('outing', {
+            url: "/outing/{id}",
+            templateUrl: "static/views/outing.html",
+            controller: function($scope, $stateParams, c2c){
+                $scope.outing = c2c.outing.get($stateParams)
+            },
+        })
+
         .state('me', {
             url: "/me",
             templateUrl: 'static/views/me.html',

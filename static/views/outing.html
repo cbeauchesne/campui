@@ -1,0 +1,23 @@
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h4>
+            <activities activities="outing.activities"/>
+            <outing-link-c2c outing="outing"/>
+        </h4>
+    </div>
+
+    <div class="ibox-content" style="display: block;">
+        <h3>Description</h3>
+        <div markdown="outing.locales[0].description"/>
+
+        <ul>
+            <li ng-repeat="route in outing.associations.routes">
+                <route-link route="route"/>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+
+<!--{{outing}}-->

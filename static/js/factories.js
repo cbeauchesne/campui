@@ -96,7 +96,11 @@ app.factory('columnDefs', function(){
                     width: '15%',
                     cellTemplate:'<activities activities="row.entity.activities" class="ui-grid-cell-contents"/>',
                 },
-                { name:'Global rating', field: 'labande_global_rating', width: '15%'},
+                {
+                    name:'Rating',
+                    width: '15%',
+                    cellTemplate:'<rating route="row.entity" class="ui-grid-cell-contents"/>',
+                 },
         ],
 
         article:[
