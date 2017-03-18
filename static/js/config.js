@@ -50,6 +50,14 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             templateUrl: "static/views/credits.html",
         })
 
+        .state('route', {
+            url: "/route/{id}",
+            templateUrl: "static/views/route.html",
+            controller: function($scope, $stateParams, c2c){
+                $scope.route = c2c.route.get($stateParams)
+            },
+        })
+
         .state('me', {
             url: "/me",
             templateUrl: 'static/views/me.html',
@@ -62,7 +70,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
                     for (i = 0; i < json_props.length; ++i)
                         if(params[json_props[i]])
-                            result["_" + json_props[i]] = JSON.stringify(params[json_props[i]], null, 2);
+                            params["_" + json_props[i]] = JSON.stringify(params[json_props[i]], null, 2);
 
                     $scope.save = function(){
                         for (i = 0; i < json_props.length; ++i)

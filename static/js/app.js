@@ -9,7 +9,8 @@
         'ngCookies',
         'ngResource',
         'angular.filter',
-        'ui.codemirror'
+        'ui.codemirror',
+        'ngSanitize',
     ])
 
     angular.module('core.phone', ['ngResource']);

@@ -44,6 +44,9 @@ app.factory('c2c', function($resource){
         outing: $resource('https://api.camptocamp.org/outings/:id', {},{
             get : {method: 'GET'}
         }),
+        route: $resource('https://api.camptocamp.org/routes/:id', {},{
+            get : {method: 'GET'}
+        }),
     }
 });
 
@@ -52,11 +55,11 @@ app.factory('columnDefs', function(){
         outing:[{ name:'Date', field: 'date_start' , width: '10%'},
                 {
                     name:'Title', field: 'locales[0].title', width: '*',
-                    cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/outings/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'
+                    cellTemplate:'<outing-link outing="row.entity" class="ui-grid-cell-contents"/>',
                 },
                 {
                     name:'Activities', field: 'activities', width: '10%',
-                    cellTemplate:'<activities ng-model="row.entity.activities"/>'
+                    cellTemplate:'<activities activities="row.entity.activities" class="ui-grid-cell-contents"/>'
                 },
                 { name:'Author', field: 'author.name', width: '20%'}
         ],
@@ -65,13 +68,14 @@ app.factory('columnDefs', function(){
                  {   field: 'nb_impacted' , width: '10%' },
                  {   field: 'severity' , width: '10%'},
                  {
-                     name:'Title', field: 'locales[0].title', width: '*',
-                     cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/xreports/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'
+                     name:'Title',
+                     width: '*',
+                     cellTemplate:'<xreport-link xreport="row.entity" class="ui-grid-cell-contents"/>',
                  },
                  {   name:'Activities',
                      field: 'activities',
                      width: '10%',
-                     cellTemplate:'<activities ng-model="row.entity.activities"/>',
+                     cellTemplate:'<activities activities="row.entity.activities" class="ui-grid-cell-contents"/>',
                  },
                  {   name:'Type',
                      field: 'event_type',
@@ -83,17 +87,38 @@ app.factory('columnDefs', function(){
         route:[
                 {
                     name:'Title',
-                    field: 'locales[0].title',
                     width: '*',
-                    cellTemplate:'<div class="ui-grid-cell-contents"><a href="https://www.camptocamp.org/routes/{{row.entity.document_id}}">{{row.entity.locales[0].title}}</a></div>'
+                    cellTemplate:'<route-link route="row.entity" class="ui-grid-cell-contents"/>',
                 },
                 {
                     name:'Activities',
                     field: 'activities',
                     width: '15%',
-                    cellTemplate:'<activities ng-model="row.entity.activities"/>',
+                    cellTemplate:'<activities activities="row.entity.activities" class="ui-grid-cell-contents"/>',
                 },
                 { name:'Global rating', field: 'labande_global_rating', width: '15%'},
+        ],
+
+        article:[
+                {
+                    name:'Title',
+                    field: 'locales[0].title',
+                    cellTemplate:'<route-link route="row.entity" class="ui-grid-cell-contents"/>',
+                },
+                {
+                    name:'Activities',
+                    field: 'activities',
+                    width: '20%',
+                    cellTemplate:'<activities activities="row.entity.activities" class="ui-grid-cell-contents"/>',
+                },
+                {
+                    field: 'quality',
+                    width: '15%',
+                },
+                {
+                    field: 'categories',
+                    width: '15%',
+                },
         ],
     }
 })

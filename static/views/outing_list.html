@@ -1,0 +1,12 @@
+
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h5>Outings ({{outings.total}})</h5>
+    </div>
+    <div class="ibox-content" style="display: block;">
+        <div ng-repeat="outing in outings.documents">
+            <activities activities="outing.activities"/>
+            <outing-link outing="outing"/>
+        </div>
+    </div>
+</div>

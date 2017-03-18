@@ -1,0 +1,22 @@
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h4>
+            <activities activities="route.activities"/>
+            <route-link-c2c route="route"/>
+            {{route.global_rating}} {{route.rock_free_rating}}>{{route.rock_required_rating}} {{route.engagement_rating}} {{route.equipement_rating}}{{route.exposition_rock_rating}}
+        </h4>
+    </div>
+
+    <div class="ibox-content" style="display: block;">
+        <h3>Summary</h3>
+        <div markdown="route.locales[0].summary"/>
+
+        <h3>Description</h3>
+        <div markdown="route.locales[0].description"/>
+        <div markdown="route.locales[0].remarks"/>
+    </div>
+</div>
+
+<outing-list outings="route.associations.recent_outings"/>
+
+{{route}}

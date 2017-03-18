@@ -1,21 +1,6 @@
 <div class="row">
-
     <div class="col-lg-12">
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>Outings ({{outings.total}})</h5>
-            </div>
-
-            <div class="ibox-content" style="display: block;">
-                <a ng-repeat="outing in outings.documents"
-                   href="https://www.camptocamp.org/outings/{{outing.document_id}}"
-                   style="display: block;">
-                    <activities ng-model="outing.activities"/>',
-                    {{outing.locales[0].title}}
-                </a>
-            </div>
-        </div>
+        <outing-list outings="outings"/>
     </div>
-
 </div>
 
