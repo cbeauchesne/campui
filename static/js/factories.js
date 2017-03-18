@@ -106,8 +106,7 @@ app.factory('columnDefs', function(){
         article:[
                 {
                     name:'Title',
-                    field: 'locales[0].title',
-                    cellTemplate:'<route-link route="row.entity" class="ui-grid-cell-contents"/>',
+                    cellTemplate:'<article-link article="row.entity" class="ui-grid-cell-contents"/>',
                 },
                 {
                     name:'Activities',

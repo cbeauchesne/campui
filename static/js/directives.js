@@ -100,7 +100,7 @@ angular.module('campui')
             scope: {
                 route: '=',
             },
-            template: '<a href="/route/{{route.document_id}}">{{route.locales[0].title}}</a>',
+            template: '<a ui-sref="route({id:route.document_id})">{{route.locales[0].title_prefix}} : {{route.locales[0].title}}</a>',
         };
     })
 
@@ -111,7 +111,7 @@ angular.module('campui')
             scope: {
                 route: '=',
             },
-            template: '<a class="c2c" href="https://www.camptocamp.org/routes/{{route.document_id}}">{{route.locales[0].title}}</a>',
+            template: '<a class="c2c" href="https://www.camptocamp.org/routes/{{route.document_id}}">{{route.locales[0].title_prefix}} : {{route.locales[0].title}}</a>',
         };
     })
 
@@ -121,7 +121,7 @@ angular.module('campui')
             scope: {
                 outing: '=',
             },
-            template: '<a href="/outing/{{outing.document_id}}">{{outing.locales[0].title}}</a>',
+            template: '<a ui-sref="outing({id:outing.document_id})">{{outing.locales[0].title}}</a>',
         };
     })
 
@@ -162,6 +162,21 @@ angular.module('campui')
                 route: '=',
             },
             template: '<span>{{route.global_rating}} {{route.rock_free_rating}}>{{route.rock_required_rating}} {{route.engagement_rating}} {{route.equipement_rating}}{{route.exposition_rock_rating}}</span>',
+        };
+    })
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+    .directive('imageGallery', function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            scope: {
+                images: '=',
+            },
+            templateUrl: '/static/views/components/image_gallery.html',
         };
     })
 

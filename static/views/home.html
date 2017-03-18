@@ -8,15 +8,7 @@
                 <div ibox-tools></div>
             </div>
             <div class="ibox-content" style="display: block;">
-                <div class="gallery">
-                    <a ng-repeat="image in data.documents"
-                       href="https://www.camptocamp.org/images/{{image.document_id}}">
-                        <img alt="{{image.locales[0].title}}"
-                             title="{{image.locales[0].title}}"
-                             ng-src="https://media.camptocamp.org/c2corg_active/{{image.filename.replace('.', 'MI.')}}"
-                        />
-                    </a>
-                </div>
+                <image_gallery images="data.documents"/>
             </div>
         </div>
     </div>

@@ -1,0 +1,9 @@
+<div class="gallery">
+    <a ng-repeat="image in images"
+       href="https://www.camptocamp.org/images/{{image.document_id}}">
+        <img alt="{{image.locales[0].title}}"
+             title="{{image.locales[0].title}}"
+             ng-src="https://media.camptocamp.org/c2corg_active/{{image.filename.replace('.', 'MI.')}}"
+        />
+    </a>
+</div>

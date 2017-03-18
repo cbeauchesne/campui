@@ -122,4 +122,10 @@ angular.module('campui')
 
     .run(function($rootScope, $state) {
         $rootScope.$state = $state;
+
+        //scroll top when state change
+        $rootScope.$on('$stateChangeSuccess', function() {
+           document.body.scrollTop = document.documentElement.scrollTop = 0;
+        });
+
     });

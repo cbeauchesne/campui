@@ -1,14 +1,16 @@
 <div class="ibox float-e-margins">
     <div class="ibox-title">
-        <h4>
-            <activities activities="route.activities"/>
+        <h2>
             <route-link-c2c route="route"/>
-            <rating route="route"/>
-        </h4>
+            <activities activities="route.activities"/>
+        </h2>
     </div>
 
     <div class="ibox-content" style="display: block;">
-        <h3>Summary</h3>
+        <div>
+            <rating route="route"/>
+        </div>
+        <h3 ng-if="route.locales[0].summary">Summary</h3>
         <div markdown="route.locales[0].summary"/>
 
         <h3>Description</h3>
