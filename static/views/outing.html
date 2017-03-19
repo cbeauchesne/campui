@@ -1,27 +1,36 @@
 <div class="ibox float-e-margins">
 
-
     <div class="ibox-title">
-        <h4>
+        <h1>
             <activities activities="outing.activities"/>
             <outing-link-c2c outing="outing"/>
-        </h4>
+        </h1>
     </div>
 
     <div class="ibox-content" style="display: block;">
+        <div class="row">
+            <div image_gallery class="col-sm-12" ng-if="outing.associations.images.length"
+                 images="outing.associations.images"/>
+        </div>
+        <div class="row">
+            <div class="col-sm-9 b-r">
+                <h1>Description</h1>
+                <div markdown="outing.locales[0].description"/>
+                <h1>Conditions</h1>
+                <div markdown="outing.locales[0].conditions"/>
 
-        <image_gallery images="outing.associations.images"/>
+                <ul>
+                    <li ng-repeat="route in outing.associations.routes">
+                        <route-link route="route"/>
+                    </li>
+                </ul>
 
-        <div markdown="outing.locales[0].description"/>
-
-        <ul>
-            <li ng-repeat="route in outing.associations.routes">
-                <route-link route="route"/>
-            </li>
-        </ul>
-
+            </div>
+            <div class="col-sm-3">
+                <div><activities activities="outing.activities"/></div>
+                <div><label>Frequentation :</label>{{outing.frequentation}}</div>
+            </div>
+        </div>
     </div>
-
 </div>
 
-<!--{{outing}}-->

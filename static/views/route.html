@@ -17,6 +17,11 @@
 
                 <h1 ng-if="route.locales[0].remarks">Remarks</h1>
                 <div markdown="route.locales[0].remarks"/>
+
+                <h1 ng-if="route.locales[0].gear">Gears</h1>
+                <div markdown="route.locales[0].gear"></div>
+
+
             </div>
             <div class="col-sm-4">
                 <div>
@@ -25,26 +30,24 @@
                 </div>
 
                 <div>
-                    <label>Orientations :</label>{{route.configuration}}
+                    <label>Orientations :</label>{{route.configuration.join(', ')}}
                 </div>
 
-                <div>
+                <div ng-if="route.route_types">
                     <label>Route type :</label>{{route.route_types}}
                 </div>
 
                 <div>
-                    <label>Configuration :</label>{{route.orientations}}
+                    <label>Configuration :</label>{{route.orientations.join(', ')}}
                 </div>
 
-                <div>
-                    <label>Gears :</label>
-                    <span markdown="route.locales[0].gear"></span>
-                </div>
                 <div>
                     <label>Glacier gears :</label> {{route.glacier_gear}}
                 </div>
 
-                <h3>Recent outings</h3>
+                <h3>Recent outings
+                    <button class="btn btn-sm btn-primary">Add outing</button>
+                </h3>
                 <outing-list outings="route.associations.recent_outings.documents"/>
             </div>
         </div>

@@ -171,7 +171,7 @@ angular.module('campui')
 
     .directive('imageGallery', function(){
         return {
-            restrict: 'E',
+            restrict: 'EA',
             replace: true,
             scope: {
                 images: '=',
