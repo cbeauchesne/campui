@@ -101,6 +101,11 @@ app.factory('columnDefs', function(){
                     width: '15%',
                     cellTemplate:'<rating route="row.entity" class="ui-grid-cell-contents"/>',
                  },
+                {
+                    name:'Orientations',
+                    width: '15%',
+                    field: 'orientations',
+                 },
         ],
 
         article:[

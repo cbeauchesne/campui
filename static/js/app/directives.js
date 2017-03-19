@@ -161,7 +161,7 @@ angular.module('campui')
             scope: {
                 route: '=',
             },
-            template: '<span>{{route.global_rating}} {{route.rock_free_rating}}>{{route.rock_required_rating}} {{route.engagement_rating}} {{route.equipement_rating}}{{route.exposition_rock_rating}}</span>',
+            templateUrl: '/static/views/components/rating.html',
         };
     })
 
@@ -177,6 +177,17 @@ angular.module('campui')
                 images: '=',
             },
             templateUrl: '/static/views/components/image_gallery.html',
+        };
+    })
+
+    .directive('outingIbox', function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            scope: {
+                outings: '=',
+            },
+            templateUrl: '/static/views/components/outing_ibox.html',
         };
     })
 

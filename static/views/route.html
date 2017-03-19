@@ -1,24 +1,52 @@
 <div class="ibox float-e-margins">
     <div class="ibox-title">
-        <h2>
+        <h1>
             <route-link-c2c route="route"/>
-            <activities activities="route.activities"/>
-        </h2>
+
+        </h1>
     </div>
 
     <div class="ibox-content" style="display: block;">
-        <div>
-            <rating route="route"/>
-        </div>
-        <h3 ng-if="route.locales[0].summary">Summary</h3>
-        <div markdown="route.locales[0].summary"/>
+        <div class="row">
+            <div class="col-sm-8 b-r">
+                <h1 ng-if="route.locales[0].summary">Summary</h1>
+                <div markdown="route.locales[0].summary"/>
 
-        <h3>Description</h3>
-        <div markdown="route.locales[0].description"/>
-        <div markdown="route.locales[0].remarks"/>
+                <h1 ng-if="route.locales[0].description">Description</h1>
+                <div markdown="route.locales[0].description"/>
+
+                <h1 ng-if="route.locales[0].remarks">Remarks</h1>
+                <div markdown="route.locales[0].remarks"/>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <activities activities="route.activities"/>
+                    <rating route="route"/>
+                </div>
+
+                <div>
+                    <label>Orientations :</label>{{route.configuration}}
+                </div>
+
+                <div>
+                    <label>Route type :</label>{{route.route_types}}
+                </div>
+
+                <div>
+                    <label>Configuration :</label>{{route.orientations}}
+                </div>
+
+                <div>
+                    <label>Gears :</label>
+                    <span markdown="route.locales[0].gear"></span>
+                </div>
+                <div>
+                    <label>Glacier gears :</label> {{route.glacier_gear}}
+                </div>
+
+                <h3>Recent outings</h3>
+                <outing-list outings="route.associations.recent_outings.documents"/>
+            </div>
+        </div>
     </div>
 </div>
-
-<outing-list outings="route.associations.recent_outings"/>
-
-<!--{{route}}-->
