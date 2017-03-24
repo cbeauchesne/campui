@@ -71,6 +71,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             templateUrl: 'static/views/me.html',
             controller: function($scope, api, c2c, currentUser){
                 currentUser.$promise.then(function(){
+                    $scope.errors = {}
                     $scope.user = jQuery.extend(true, {}, currentUser);
                     params = $scope.user.profile.params;
 
@@ -79,11 +80,26 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
                     $scope.save = function(){
                         if(params._queries)
+                        try{
                             params.queries = JSON.parse(params._queries);
+                        }
+                        catch (err){
+                            $scope.errors.queries = err.message;
+                            return
+                        }
 
-                        api.currentUser.save($scope.user, function(){
-                            currentUser.profile = $scope.user.profile;
-                        });
+                        $scope.saving = true;
+                        api.currentUser.save($scope.user,
+                            function(){
+                                currentUser.profile = $scope.user.profile;
+                                delete $scope.saving;
+                                delete $scope.errors;
+                            },
+                            function(response){
+                                delete $scope.saving;
+                                $scope.errors.global = response;
+                            }
+                        );
                     };
                 })
             }
