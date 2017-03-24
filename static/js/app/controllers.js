@@ -9,25 +9,14 @@ function getC2cController(c2c_item){
             $scope.currentQuery = query
 
             query = (typeof query === 'undefined') ? {} : query;
+            url_query = (typeof query.url === 'undefined') ? "" : query.url;
 
-            var output = [];
-            for (var prop in query) {
-                if (query.hasOwnProperty(prop)) {
-                    value = query[prop];
-                    if(value.constructor === Array)
-                        output.push(prop + '=' + query[prop].join(','));
-                    else
-                        output.push(prop + '=' + value);
-                }
-            }
-            url_query =  output.join('&');
-
-            $scope.data = c2c[c2c_item + "s"].get({query:url_query})
+            $scope.data = c2c[c2c_item + "s"].get({query:query.url})
         }
 
         currentUser.$promise.then(function(){
             user_params = currentUser.profile.params;
-            $scope.queries = user_params[c2c_item + "_queries"]
+            $scope.queries = user_params.queries;
             $scope.columnDefs = columnDefs[c2c_item]
             queries = (typeof $scope.queries === 'undefined') ? {} : $scope.queries;
             $scope.setQuery(queries[user_params[c2c_item + "DefaultQuery"]])

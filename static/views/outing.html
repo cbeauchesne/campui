@@ -16,19 +16,15 @@
             <div class="col-sm-9 b-r">
                 <h1>Description</h1>
                 <div markdown="outing.locales[0].description"/>
-                <h1>Conditions</h1>
+                <h1 ng-if="outing.locales[0].conditions">Conditions</h1>
                 <div markdown="outing.locales[0].conditions"/>
-
-                <ul>
-                    <li ng-repeat="route in outing.associations.routes">
-                        <route-link route="route"/>
-                    </li>
-                </ul>
 
             </div>
             <div class="col-sm-3">
                 <div><activities activities="outing.activities"/></div>
                 <div><label>Frequentation :</label>{{outing.frequentation}}</div>
+                <h3>Routes</h3>
+                <route_list routes="outing.associations.routes"/>
             </div>
         </div>
     </div>

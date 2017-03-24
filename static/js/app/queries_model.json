@@ -4,3 +4,18 @@
     "for":["images","routes"]
   }
 }
+
+{
+  "grimpe": {
+    "act": [
+      "rock_climbing",
+      "moutin_climbing",
+      "snow_ice_mixed"
+    ]
+  },
+  "Parapente": {
+    "act": [
+      "paragliding"
+    ]
+  }
+}

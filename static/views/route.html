@@ -2,7 +2,6 @@
     <div class="ibox-title">
         <h1>
             <route-link-c2c route="route"/>
-
         </h1>
     </div>
 
@@ -29,8 +28,12 @@
                     <rating route="route"/>
                 </div>
 
+                <div ng-if="route.height_diff_difficulties">
+                    <label>Difficulties height :</label>{{route.height_diff_difficulties}}
+                </div>
+
                 <div>
-                    <label>Orientations :</label>{{route.configuration.join(', ')}}
+                    <label>Configuration :</label>{{route.configuration.join(', ')}}
                 </div>
 
                 <div ng-if="route.route_types">
@@ -38,12 +41,16 @@
                 </div>
 
                 <div>
-                    <label>Configuration :</label>{{route.orientations.join(', ')}}
+                    <label>Orientation :</label>{{route.orientations.join(', ')}}
                 </div>
 
                 <div>
                     <label>Glacier gears :</label> {{route.glacier_gear}}
                 </div>
+
+                <h3>Waypoints
+                </h3>
+                <waypoint-list waypoints="route.associations.waypoints"/>
 
                 <h3>Recent outings
                     <button class="btn btn-sm btn-primary">Add outing</button>

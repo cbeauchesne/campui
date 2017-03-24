@@ -74,16 +74,12 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
                     $scope.user = jQuery.extend(true, {}, currentUser);
                     params = $scope.user.profile.params;
 
-                    json_props = ["outing_queries","xreport_queries","image_queries","route_queries"]
-
-                    for (i = 0; i < json_props.length; ++i)
-                        if(params[json_props[i]])
-                            params["_" + json_props[i]] = JSON.stringify(params[json_props[i]], null, 2);
+                    if(params.queries)
+                        params._queries = JSON.stringify(params.queries, null, 2);
 
                     $scope.save = function(){
-                        for (i = 0; i < json_props.length; ++i)
-                            if(params["_" + json_props[i]])
-                                params[json_props[i]] = JSON.parse(params["_" + json_props[i]]);
+                        if(params._queries)
+                            params.queries = JSON.parse(params._queries);
 
                         api.currentUser.save($scope.user, function(){
                             currentUser.profile = $scope.user.profile;

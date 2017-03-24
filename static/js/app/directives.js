@@ -155,6 +155,16 @@ angular.module('campui')
         };
     })
 
+    .directive('waypointLink', function(){
+        return {
+            restrict: 'E',
+            scope: {
+                waypoint: '=',
+            },
+            template: '<a class="c2c" href="https://www.camptocamp.org/waypoints/{{waypoint.document_id}}">{{waypoint.locales[0].title}}</a>',
+        };
+    })
+
     .directive('rating', function(){
         return {
             restrict: 'E',
@@ -199,6 +209,28 @@ angular.module('campui')
                 outings: '=',
             },
             templateUrl: '/static/views/components/outing_list.html',
+        };
+    })
+
+    .directive('routeList', function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            scope: {
+                routes: '=',
+            },
+            templateUrl: '/static/views/components/route_list.html',
+        };
+    })
+
+    .directive('waypointList', function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            scope: {
+                waypoints: '=',
+            },
+            templateUrl: '/static/views/components/waypoint_list.html',
         };
     })
 
