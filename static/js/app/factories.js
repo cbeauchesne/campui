@@ -37,7 +37,6 @@ app.factory('c2c', function($resource){
         routes: $resource('https://api.camptocamp.org/routes?:query', {query:''},{
             get : {method: 'GET'}
         }),
-
         articles: $resource('https://api.camptocamp.org/articles?:query', {query:''},{
             get : {method: 'GET'}
         }),

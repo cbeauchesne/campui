@@ -2,9 +2,10 @@
 
     <div class="ibox-title">
         <h1>
-            <activities activities="outing.activities"/>
             <outing-link-c2c outing="outing"/>
         </h1>
+        <span>{{outing.date_start}}</span>,&nbsp;
+        <span ng-repeat="user in outing.associations.users"><user-link-c2c user="user"/>&nbsp;</span>
     </div>
 
     <div class="ibox-content" style="display: block;">

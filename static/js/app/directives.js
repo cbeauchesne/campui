@@ -78,6 +78,7 @@ function iboxTools($timeout) {
  * Pass all functions into module
  */
 angular.module('campui')
+
     .directive('pageTitle', pageTitle)
     .directive('sideNavigation', sideNavigation)
     .directive('iboxTools', iboxTools)
@@ -90,78 +91,6 @@ angular.module('campui')
                 activities: '=',
             },
             template: '<img ng-repeat="activity in activities" alt="{{activity}}" ng-src="static/img/{{activity}}-24x24.png"/>',
-        };
-    })
-
-    .directive('routeLink', function(){
-        return {
-            restrict: 'E',
-            replace:true,
-            scope: {
-                route: '=',
-            },
-            template: '<a ui-sref="route({id:route.document_id})">{{route.locales[0].title_prefix}} : {{route.locales[0].title}}</a>',
-        };
-    })
-
-    .directive('routeLinkC2c', function(){
-        return {
-            restrict: 'E',
-            replace:true,
-            scope: {
-                route: '=',
-            },
-            template: '<a class="c2c" href="https://www.camptocamp.org/routes/{{route.document_id}}">{{route.locales[0].title_prefix}} : {{route.locales[0].title}}</a>',
-        };
-    })
-
-    .directive('outingLink', function(){
-        return {
-            restrict: 'E',
-            scope: {
-                outing: '=',
-            },
-            template: '<a ui-sref="outing({id:outing.document_id})">{{outing.locales[0].title}}</a>',
-        };
-    })
-
-    .directive('outingLinkC2c', function(){
-        return {
-            restrict: 'E',
-            scope: {
-                outing: '=',
-            },
-            template: '<a class="c2c" href="https://www.camptocamp.org/outings/{{outing.document_id}}">{{outing.locales[0].title}}</a>',
-        };
-    })
-
-    .directive('xreportLink', function(){
-        return {
-            restrict: 'E',
-            scope: {
-                xreport: '=',
-            },
-            template: '<a class="c2c" href="https://www.camptocamp.org/xreports/{{xreport.document_id}}">{{xreport.locales[0].title}}</a>',
-        };
-    })
-
-    .directive('articleLink', function(){
-        return {
-            restrict: 'E',
-            scope: {
-                article: '=',
-            },
-            template: '<a class="c2c" href="https://www.camptocamp.org/articles/{{article.document_id}}">{{article.locales[0].title}}</a>',
-        };
-    })
-
-    .directive('waypointLink', function(){
-        return {
-            restrict: 'E',
-            scope: {
-                waypoint: '=',
-            },
-            template: '<a class="c2c" href="https://www.camptocamp.org/waypoints/{{waypoint.document_id}}">{{waypoint.locales[0].title}}</a>',
         };
     })
 
@@ -201,39 +130,6 @@ angular.module('campui')
         };
     })
 
-    .directive('outingList', function(){
-        return {
-            restrict: 'E',
-            replace: true,
-            scope: {
-                outings: '=',
-            },
-            templateUrl: '/static/views/components/outing_list.html',
-        };
-    })
-
-    .directive('routeList', function(){
-        return {
-            restrict: 'E',
-            replace: true,
-            scope: {
-                routes: '=',
-            },
-            templateUrl: '/static/views/components/route_list.html',
-        };
-    })
-
-    .directive('waypointList', function(){
-        return {
-            restrict: 'E',
-            replace: true,
-            scope: {
-                waypoints: '=',
-            },
-            templateUrl: '/static/views/components/waypoint_list.html',
-        };
-    })
-
     .provider('markdownConverter', function () {
         var opts = {simpleLineBreaks:true};
         return {
@@ -263,3 +159,58 @@ angular.module('campui')
             }
         };
     }]);
+
+
+c2cItems = {
+    user:{
+        label:"name"
+    },
+    outing:{},
+    route:{},
+    article:{},
+    waypoint:{},
+    xreport:{},
+}
+
+$.each(c2cItems, (item, params) => {
+
+    params.label = params.label ? params.label : "locales[0].title"
+
+    angular.module('campui').directive(item + 'LinkC2c', function(){
+        result = {
+            restrict: 'E',
+            scope: {},
+            template: '<a class="c2c" href="https://www.camptocamp.org/' + item + 's/{{' + item + '.document_id}}">{{' + item + '.' + params.label + '}}</a>',
+        };
+
+        result.scope[item] = "=";
+
+        return result;
+    })
+
+    angular.module('campui').directive(item + 'Link', function(){
+        result =  {
+            restrict: 'E',
+            scope: {},
+            template: '<a ui-sref="' + item + '({id:' + item + '.document_id})">{{' + item + '.' + params.label + '}}</a>',
+        };
+
+        result.scope[item] = "=";
+
+        return result;
+    })
+
+    angular.module('campui').directive(item + 'List', function(){
+        result =   {
+            restrict: 'E',
+            replace: true,
+            scope: {},
+            templateUrl: '/static/views/components/' + item + '_list.html',
+        };
+
+        result.scope[item + "s"] = "=";
+
+        return result;
+    })
+
+})
