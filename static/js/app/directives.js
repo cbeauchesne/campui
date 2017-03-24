@@ -163,13 +163,18 @@ angular.module('campui')
 
 c2cItems = {
     user:{
-        label:"name"
+        label:"name",
+        detailled_controller:function($scope, $stateParams, api, c2c){
+            $scope.user = c2c.user.get($stateParams);
+            $scope.outings = c2c.outings.get({query:"u=" + $stateParams.id});
+        }
     },
     outing:{},
     route:{},
     article:{},
     waypoint:{},
     xreport:{},
+    image:{},
 }
 
 $.each(c2cItems, (item, params) => {

@@ -24,29 +24,20 @@ app.factory('currentUser', function(api){
 })
 
 app.factory('c2c', function($resource){
-    return {
-        outings: $resource('https://api.camptocamp.org/outings?:query', {query:''},{
+
+    result = {}
+
+    $.each(c2cItems, (item, params) => {
+        _item = item == 'user' ? 'profile' : item
+        result[item] = $resource('https://api.camptocamp.org/' + _item + 's/:id', {},{
             get : {method: 'GET'}
-        }),
-        images: $resource('https://api.camptocamp.org/images?:query', {query:''},{
+        })
+
+        result[item + 's'] = $resource('https://api.camptocamp.org/' + _item + 's?:query', {query:''},{
             get : {method: 'GET'}
-        }),
-        xreports: $resource('https://api.camptocamp.org/xreports?:query', {query:''},{
-            get : {method: 'GET'}
-        }),
-        routes: $resource('https://api.camptocamp.org/routes?:query', {query:''},{
-            get : {method: 'GET'}
-        }),
-        articles: $resource('https://api.camptocamp.org/articles?:query', {query:''},{
-            get : {method: 'GET'}
-        }),
-        outing: $resource('https://api.camptocamp.org/outings/:id', {},{
-            get : {method: 'GET'}
-        }),
-        route: $resource('https://api.camptocamp.org/routes/:id', {},{
-            get : {method: 'GET'}
-        }),
-    }
+        })
+    })
+    return result;
 });
 
 app.factory('columnDefs', function(){
