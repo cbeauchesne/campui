@@ -20,11 +20,13 @@ urlpatterns = [
     url(r'^articles$', TemplateView.as_view(template_name='base.html'), name='home'),
     url(r'^xreports$', TemplateView.as_view(template_name='base.html'), name='home'),
     url(r'^credits$', TemplateView.as_view(template_name='base.html'), name='home'),
+    url(r'^waypoints$', TemplateView.as_view(template_name='base.html'), name='home'),
     url(r'^me$', TemplateView.as_view(template_name='base.html'), name='home'),
 
     url(r'^user/.*$', TemplateView.as_view(template_name='base.html'), name='home'),
     url(r'^route/.*$', TemplateView.as_view(template_name='base.html'), name='home'),
     url(r'^outing/.*$', TemplateView.as_view(template_name='base.html'), name='home'),
+    url(r'^waypoint/.*$', TemplateView.as_view(template_name='base.html'), name='home'),
 
     url(r'^$', TemplateView.as_view(template_name='base.html'), name='home'),
 ]

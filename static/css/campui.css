@@ -32,8 +32,18 @@
 display:block
 }
 
+
+a {
+color:#676a6c;
+}
+
+a:hover {
+color:#1ab394;
+}
+
 a.c2c:hover {
     color: #FFAA45;
 }
+
 
 

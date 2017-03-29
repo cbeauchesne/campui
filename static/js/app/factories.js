@@ -101,7 +101,7 @@ app.factory('columnDefs', function(){
         article:[
                 {
                     name:'Title',
-                    cellTemplate:'<article-link article="row.entity" class="ui-grid-cell-contents"/>',
+                    cellTemplate:'<article-link-c2c article="row.entity" class="ui-grid-cell-contents"/>',
                 },
                 {
                     name:'Activities',

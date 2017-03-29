@@ -69,3 +69,4 @@ app.controller("articlesController", getC2cController('article'));
 app.controller("imagesController", getC2cController('image'));
 app.controller("xreportsController", getC2cController('xreport'));
 app.controller("routesController", getC2cController('route'));
+app.controller("waypointsController", getC2cController('waypoint'));

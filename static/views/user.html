@@ -1,3 +1,19 @@
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h1>
+            <user-link-c2c user="user"/>
+        </h1>
+    </div>
+
+    <div class="ibox-content" style="display: block;">
+        <div class="row">
+            <div image_gallery class="col-sm-12" ng-if="user.associations.images.length"
+                 images="user.associations.images"/>
+        </div>
+    </div>
+</div>
+
+
 <div class="row">
     <div class="col-lg-12">
         <outing-ibox outings="outings"/>
