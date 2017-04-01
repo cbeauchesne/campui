@@ -11,7 +11,14 @@ function getC2cController(c2c_item){
             query = (typeof query === 'undefined') ? {} : query;
             url_query = (typeof query.url === 'undefined') ? "" : query.url;
 
-            $scope.data = c2c[c2c_item + "s"].get({query:query.url})
+            c2c[c2c_item + "s"].get({query:query.url},
+                (data) => {
+                    $scope.data = data
+                    delete $scope.error
+                },
+                (response) => {
+                    $scope.error = "CampToCamp error"
+                })
         }
 
         currentUser.$promise.then(function(){

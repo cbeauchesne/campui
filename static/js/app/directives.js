@@ -108,6 +108,16 @@ angular.module('campui')
 /////////////////////////////////////////////////////////////////////
 
 
+    .directive('loadingInfo', function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            scope: true,
+            templateUrl: '/static/views/components/loading_info.html',
+        };
+    })
+
+
     .directive('imageGallery', function(){
         return {
             restrict: 'EA',
@@ -170,7 +180,9 @@ c2cItems = {
         }
     },
     outing:{},
-    route:{},
+    route:{
+        label_prefix:"locales[0].title_prefix",
+    },
     article:{},
     waypoint:{},
     xreport:{},
@@ -181,11 +193,17 @@ $.each(c2cItems, (item, params) => {
 
     params.label = params.label ? params.label : "locales[0].title"
 
+    var label = '{{' + item + '.' + params.label + '}}';
+
+    if(params.label_prefix)
+        label = '{{' + item + '.' + params.label_prefix + '}} : ' + label
+
     angular.module('campui').directive(item + 'LinkC2c', function(){
+
         result = {
             restrict: 'E',
             scope: {},
-            template: '<a class="c2c" href="https://www.camptocamp.org/' + item + 's/{{' + item + '.document_id}}">{{' + item + '.' + params.label + '}}</a>',
+            template: '<a class="c2c" href="https://www.camptocamp.org/' + item + 's/{{' + item + '.document_id}}">' + label + '</a>',
         };
 
         result.scope[item] = "=";
@@ -197,7 +215,7 @@ $.each(c2cItems, (item, params) => {
         result =  {
             restrict: 'E',
             scope: {},
-            template: '<a ui-sref="' + item + '({id:' + item + '.document_id})">{{' + item + '.' + params.label + '}}</a>',
+            template: '<a ui-sref="' + item + '({id:' + item + '.document_id})">' + label + '</a>',
         };
 
         result.scope[item] = "=";

@@ -4,8 +4,11 @@
         <h1>
             <outing-link-c2c outing="outing"/>
         </h1>
-        <span>{{outing.date_start}}</span>,&nbsp;
-        <span ng-repeat="user in outing.associations.users"><user-link user="user"/>&nbsp;</span>
+        <h3>
+            <span>{{outing.date_start}}</span>,&nbsp;
+            <span ng-repeat="user in outing.associations.users"><user-link user="user"/>,&nbsp;</span>
+            {{outing.locales[0].participants}}
+        </h3>
     </div>
 
     <div class="ibox-content" style="display: block;">
@@ -15,16 +18,18 @@
         </div>
         <div class="row">
             <div class="col-sm-9 b-r">
-                <h1>Description</h1>
+                <h2 ng-if="outing.locales[0].route_description">Route description</h2>
+                <div markdown="outing.locales[0].route_description"/>
+                <h2 ng-if="outing.locales[0].description">Description</h2>
                 <div markdown="outing.locales[0].description"/>
-                <h1 ng-if="outing.locales[0].conditions">Conditions</h1>
+                <h2 ng-if="outing.locales[0].conditions">Conditions</h2>
                 <div markdown="outing.locales[0].conditions"/>
 
             </div>
-            <div class="col-sm-3">
-                <div><activities activities="outing.activities"/></div>
+            <div class="col-sm-3 b-l">
                 <div ng-if="outing.frequentation"><label>Frequentation :</label>{{outing.frequentation}}</div>
-                <h3>Routes</h3>
+                <div ng-if="outing.locales[0].timing"><label>Timing :</label>{{outing.locales[0].timing}}</div>
+                <div ng-if="outing.locales[0].weather"><label>Weather :</label>{{outing.locales[0].weather}}</div>
                 <route_list routes="outing.associations.routes"/>
             </div>
         </div>

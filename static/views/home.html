@@ -8,6 +8,7 @@
                 <div ibox-tools></div>
             </div>
             <div class="ibox-content" style="display: block;">
+                <loading-info/>
                 <image_gallery images="data.documents"/>
             </div>
         </div>
@@ -15,7 +16,7 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-7">
         <div ng-controller="outingsController" class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Outings</h5>
@@ -23,6 +24,7 @@
             </div>
 
             <div class="ibox-content" style="display: block;">
+                <loading-info/>
 
                 <div ng-repeat="(date, values) in data.documents | groupBy: 'date_start'">
                     <h3>{{ date | date : 'EEEE d MMMM'}}</h3>
@@ -36,7 +38,7 @@
         </div>
     </div>
 
-    <div class="col-lg-4">
+    <div class="col-lg-5">
         <div ng-controller="articlesController" class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Articles</h5>
@@ -44,6 +46,7 @@
             </div>
 
             <div class="ibox-content" style="display: block;">
+                <loading-info/>
                 <ul>
                     <li ng-repeat="article in data.documents|limitTo:15">
                         <span>
@@ -61,6 +64,7 @@
             </div>
 
             <div class="ibox-content" style="display: block;">
+                <loading-info/>
                 <ul>
                     <li ng-repeat="route in data.documents|limitTo:15">
                         <span>

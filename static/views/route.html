@@ -7,6 +7,10 @@
 
     <div class="ibox-content" style="display: block;">
         <div class="row">
+            <div image_gallery class="col-sm-12" ng-if="route.associations.images.length"
+                 images="route.associations.images"/>
+        </div>
+        <div class="row">
             <div class="col-sm-8 b-r">
                 <h1 ng-if="route.locales[0].summary">Summary</h1>
                 <div markdown="route.locales[0].summary"/>

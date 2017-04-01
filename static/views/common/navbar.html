@@ -15,23 +15,34 @@
                             class="nav-label">Home</span> </a>
                 </li>
 
-                <li ui-sref-active="active">
-                    <a ui-sref="outings">
-                        <i class="fa fa-file-image-o"></i>
-                        <span class="nav-label">Outings</span>
-                    </a>
-                </li>
+                <li class="dropdown">
 
-                <li ui-sref-active="active">
-                    <a ui-sref="routes">
-                        <i class="fa fa-road"></i> <span class="nav-label">Routes</span>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <i class="fa fa-cubes"></i>
+                        Topo
+                        <span class="caret"></span>
                     </a>
-                </li>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active">
+                            <a ui-sref="outings">
+                                <i class="fa fa-file-image-o"></i>
+                                <span class="nav-label">Outings</span>
+                            </a>
+                        </li>
 
-                <li ui-sref-active="active">
-                    <a ui-sref="waypoints">
-                        <i class="fa fa-arrows"></i> <span class="nav-label">Waypoints</span>
-                    </a>
+                        <li ui-sref-active="active">
+                            <a ui-sref="routes">
+                                <i class="fa fa-road"></i> <span class="nav-label">Routes</span>
+                            </a>
+                        </li>
+
+                        <li ui-sref-active="active">
+                            <a ui-sref="waypoints">
+                                <i class="fa fa-map-marker"></i> <span class="nav-label">Waypoints</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li ui-sref-active="active">
