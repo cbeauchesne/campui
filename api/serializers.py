@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from www.models import Profile
+from api.models import Profile
 
 
 class ProfileSerializer(serializers.ModelSerializer):
@@ -10,7 +10,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    profile = ProfileSerializer(required=True)
+    profile = ProfileSerializer(required=False)
 
     class Meta:
         model = User
