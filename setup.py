@@ -9,10 +9,8 @@ with open(os.path.join(here, 'README.txt')) as f:
 
 requires = [
     'django==1.10.6',
-    'markdown==2.6.8',
     'djangorestframework==3.6.0',
-    'psycopg2==2.7.1',
-    'django-simple-captcha==0.5.3',
+    'psycopg2==2.7.1',  # postgresql
 ]
 
 tests_require = [
