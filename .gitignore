@@ -25,4 +25,4 @@ campui/__pycache__/
 db.sqlite3
 media/
 api/migrations/__pycache__/
-/prod_settings.py
+campui/prod_settings.py
