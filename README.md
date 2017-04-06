@@ -2,7 +2,7 @@
 Backend for [CampToCamp friendly user interface](https://github.com/cbeauchesne/campui-frontend)
 
 ## Installing
-Asserting you have still installed [Git](https://git-scm.com/), [Python 3.5](https://www.python.org/) and [PostgreSQL](https://www.postgresql.org/)
+Asserting you have still installed [Git](https://git-scm.com/), [Python 3.5](https://www.python.org/) and [PostgreSQL](https://www.postgresql.org/).
 
 * create a DB called `campui` in PostgreSQL (running on port 5432)
 * Download package, unzip it, and in root folder in prompt : 
