@@ -1,5 +1,5 @@
 # CampUI
-API for CampToCamp friendly user interface
+API for [CampToCamp friendly user interface](https://github.com/cbeauchesne/campui-frontend)
 
 ## Installing
 Asserting you have still installed [Git](https://git-scm.com/), [Python 3.5](https://www.python.org/) and [PostgreSQL](https://www.postgresql.org/)
