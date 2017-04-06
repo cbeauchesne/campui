@@ -52,11 +52,11 @@ try:
     DEBUG = prod_settings.DEBUG
     ALLOWED_HOSTS = prod_settings.ALLOWED_HOSTS
 
-    DATABASES['postgresql']['NAME'] = prod_settings.DB_NAME,
-    DATABASES['postgresql']['HOST'] = prod_settings.DB_HOST,
-    DATABASES['postgresql']['PORT'] = prod_settings.DB_PORT,
-    DATABASES['postgresql']['USER'] = prod_settings.DB_USER,
-    DATABASES['postgresql']['PASSWORD'] = prod_settings.DB_PASSWORD,
+    DATABASES['default']['NAME'] = prod_settings.DB_NAME
+    DATABASES['default']['HOST'] = prod_settings.DB_HOST
+    DATABASES['default']['PORT'] = prod_settings.DB_PORT
+    DATABASES['default']['USER'] = prod_settings.DB_USER
+    DATABASES['default']['PASSWORD'] = prod_settings.DB_PASSWORD
 
 except ImportError:
     pass
