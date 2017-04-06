@@ -1,38 +1,14 @@
-"""
-Django settings for campui project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.7/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.7/ref/settings/
-"""
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-with open(os.path.join(BASE_DIR, 'etc/secret_key.txt')) as f:
-    SECRET_KEY = f.read().strip()
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ['192.168.0.41', '127.0.0.1', 'localhost', 'campui.freeboxos.fr', '82.226.125.69']
-
 # Application definition
-
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # 'django.contrib.staticfiles',
     'rest_framework',
     'api',
 )
@@ -48,18 +24,15 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'campui.urls'
-
 WSGI_APPLICATION = 'campui.wsgi.application'
+TIME_ZONE = 'UTC'
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+SECRET_KEY = "dev_not_for_prod"
+DEBUG = True
+ALLOWED_HOSTS = []
 
 DATABASES = {
-    'dev': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
-    'postgresql_local': {
+    'postgresql': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'campui',
         'USER': 'charles',
@@ -69,45 +42,22 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = DATABASES['postgresql_local']
+DATABASES['default'] = DATABASES['postgresql']
 
-# Internationalization
-# https://docs.djangoproject.com/en/1.7/topics/i18n/
+# prod param overwriting
+try:
+    import prod_settings
 
-# LANGUAGE_CODE = 'en-us'
+    SECRET_KEY = prod_settings.SECRET_KEY
+    DEBUG = prod_settings.DEBUG
+    ALLOWED_HOSTS = prod_settings.ALLOWED_HOSTS
 
-TIME_ZONE = 'UTC'
+    DATABASES['postgresql']['NAME'] = prod_settings.DB_NAME,
+    DATABASES['postgresql']['HOST'] = prod_settings.DB_HOST,
+    DATABASES['postgresql']['PORT'] = prod_settings.DB_PORT,
+    DATABASES['postgresql']['USER'] = prod_settings.DB_USER,
+    DATABASES['postgresql']['PASSWORD'] = prod_settings.DB_PASSWORD,
 
-# USE_I18N = True
-#
-# USE_L10N = True
-#
-# USE_TZ = True
+except ImportError:
+    pass
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
-#
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = (
-#     BASE_DIR + '/static/',
-# )
-#
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR + '/media/'
-#
-# TEMPLATES = [
-#     {
-#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-#         'DIRS': ['templates'],
-#         'APP_DIRS': True,
-#         'OPTIONS': {
-#             'debug': DEBUG,
-#             'context_processors': [
-#                 'django.template.context_processors.debug',
-#                 'django.template.context_processors.request',
-#                 'django.contrib.auth.context_processors.auth',
-#                 'django.contrib.messages.context_processors.messages',
-#             ],
-#         },
-#     },
-# ]

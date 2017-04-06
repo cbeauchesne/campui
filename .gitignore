@@ -26,3 +26,4 @@ db.sqlite3
 media/
 /etc/secret_key.txt
 api/migrations/__pycache__/
+/prod_settings.py
