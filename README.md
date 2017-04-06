@@ -1,5 +1,5 @@
 # CampUI
-CampToCamp friendly user interface
+API for CampToCamp friendly user interface
 
 ## Installing
 Asserting you have still installed [Git](https://git-scm.com/), [Python 3.5](https://www.python.org/) and [PostgreSQL](https://www.postgresql.org/)
