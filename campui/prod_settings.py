@@ -8,4 +8,4 @@ DB_NAME = 'campui'
 DB_USER = 'charles'
 DB_PASSWORD = 'charles'
 DB_HOST = 'localhost'
-DB_PORT = '5432'
+DB_PORT = 5432
