@@ -9,6 +9,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'rest_framework',
     'api',
 )
@@ -22,6 +23,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+
 
 ROOT_URLCONF = 'campui.urls'
 WSGI_APPLICATION = 'campui.wsgi.application'
@@ -46,7 +49,7 @@ DATABASES['default'] = DATABASES['postgresql']
 
 # prod param overwriting
 try:
-    import prod_settings
+    import campui.aws_dev_settings as prod_settings
 
     SECRET_KEY = prod_settings.SECRET_KEY
     DEBUG = prod_settings.DEBUG
@@ -59,5 +62,30 @@ try:
     DATABASES['default']['PASSWORD'] = prod_settings.DB_PASSWORD
 
 except ImportError:
-    pass
+    print("No settings for prod, asserting dev")
 
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    BASE_DIR + '/static/',
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR + '/media/'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'debug': DEBUG,
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]

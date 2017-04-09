@@ -3,15 +3,11 @@ import os
 from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, 'README.txt')) as f:
+with open(os.path.join(here, 'README.md')) as f:
     README = f.read()
 
-
-requires = [
-    'django==1.10.6',
-    'djangorestframework==3.6.0',
-    'psycopg2==2.7.1',  # postgresql
-]
+with open('requirements.txt') as f:
+    requires = f.read().splitlines()
 
 tests_require = [
 ]
