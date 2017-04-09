@@ -6,7 +6,7 @@ Asserting you have still installed [Python 3.4](https://www.python.org/), and [P
 
 * create a DB called `campui` in PostgreSQL running on port 5432. Add a connection user charles@charles (or modify campui/settings.py).
 * [Download package](https://github.com/cbeauchesne/campui/archive/master.zip), unzip it, and in root folder in prompt : 
-* run `python setup.py install` : install all dependencies
+* run `pip install -r requirements.txt` :  install all dependencies
 * run `python manage.py migrate` : create tables in DB
 * run `python manage.py createsuperuser` : create first admin user
 
