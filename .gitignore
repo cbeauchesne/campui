@@ -24,4 +24,4 @@ bower_components/
 # exclude useless .mo files
 po/*.mo
 
-
+build.zip

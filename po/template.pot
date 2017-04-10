@@ -1,0 +1,396 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: me.html:86
+msgid "Actions"
+msgstr ""
+
+#: components/query_editor.html:7
+#: factories.js:113
+#: factories.js:151
+#: factories.js:169
+#: factories.js:191
+msgid "Activities"
+msgstr ""
+
+#: components/query_editor.html:16
+msgid "Apply"
+msgstr ""
+
+#: common/navbar.html:50
+#: factories.js:213
+#: outing.html:23
+msgid "Areas"
+msgstr ""
+
+#: common/navbar.html:70
+msgid "Articles"
+msgstr ""
+
+#: factories.js:123
+msgid "Author"
+msgstr ""
+
+#: credits.html:6
+msgid "Because we are not genius..."
+msgstr ""
+
+#: me.html:85
+msgid "CampToCamp URL"
+msgstr ""
+
+#: factories.js:201
+msgid "Categories"
+msgstr ""
+
+#: outing.html:37
+msgid "Conditions"
+msgstr ""
+
+#: route.html:38
+msgid "Configuration :"
+msgstr ""
+
+#: common/navbar.html:86
+msgid "Contact"
+msgstr ""
+
+#: common/navbar.html:96
+msgid "Credits"
+msgstr ""
+
+#: factories.js:136
+msgid "Date"
+msgstr ""
+
+#: me.html:43
+msgid "Default for images"
+msgstr ""
+
+#: me.html:35
+msgid "Default for outings"
+msgstr ""
+
+#: me.html:51
+msgid "Default for routes"
+msgstr ""
+
+#: me.html:59
+msgid "Default for xreports"
+msgstr ""
+
+#: area.html:18
+#: outing.html:31
+#: route.html:14
+msgid "Description"
+msgstr ""
+
+#: route.html:34
+msgid "Difficulties height :"
+msgstr ""
+
+#: login.html:16
+msgid "Do not have an account?"
+msgstr ""
+
+#: factories.js:217
+msgid "Elevation"
+msgstr ""
+
+#: components/rating.html:11
+msgid "Engagement rating"
+msgstr ""
+
+#: components/rating.html:19
+msgid "Equipement rating"
+msgstr ""
+
+#: factories.js:156
+msgid "Event type"
+msgstr ""
+
+#: components/rating.html:22
+msgid "Exposition rating"
+msgstr ""
+
+#: outing.html:59
+msgid "Frequentation"
+msgstr ""
+
+#: route.html:20
+msgid "Gears"
+msgstr ""
+
+#: route.html:50
+msgid "Glacier gears :"
+msgstr ""
+
+#: components/rating.html:2
+msgid "Global rating"
+msgstr ""
+
+#: route.html:23
+msgid "History"
+msgstr ""
+
+#: common/navbar.html:15
+msgid "Home"
+msgstr ""
+
+#: me.html:16
+msgid "ID C2C"
+msgstr ""
+
+#: components/rating.html:25
+msgid "Ice rating"
+msgstr ""
+
+#: home.html:6
+msgid "Images"
+msgstr ""
+
+#: factories.js:141
+msgid "Impacted people"
+msgstr ""
+
+#: common/navbar.html:77
+msgid "Incidents"
+msgstr ""
+
+#: common/navbar.html:156
+msgid "Log out"
+msgstr ""
+
+#: common/navbar.html:121
+#: login.html:13
+msgid "Login"
+msgstr ""
+
+#: common/navbar.html:62
+msgid "Misc"
+msgstr ""
+
+#: components/rating.html:28
+msgid "Mixed rating"
+msgstr ""
+
+#: common/navbar.html:139
+msgid "My page"
+msgstr ""
+
+#: factories.js:209
+#: factories.js:230
+#: me.html:79
+msgid "Name"
+msgstr ""
+
+#: common/ibox_tools.html:12
+msgid "No filter"
+msgstr ""
+
+#: route.html:46
+msgid "Orientation :"
+msgstr ""
+
+#: factories.js:179
+msgid "Orientations"
+msgstr ""
+
+#: common/navbar.html:31
+#: home.html:21
+msgid "Outings"
+msgstr ""
+
+#: components/outing_ibox.html:4
+msgid "Outings ({{outings.total}})"
+msgstr ""
+
+#: common/ibox_tools.html:20
+#: common/navbar.html:147
+#: me.html:6
+msgid "Parameters"
+msgstr ""
+
+#: outing.html:43
+msgid "Participants"
+msgstr ""
+
+#: factories.js:196
+msgid "Quality"
+msgstr ""
+
+#: me.html:68
+msgid "Queries"
+msgstr ""
+
+#: factories.js:174
+msgid "Rating"
+msgstr ""
+
+#: route.html:56
+#: waypoint.html:19
+msgid "Recent outings"
+msgstr ""
+
+#: route.html:17
+msgid "Remarks"
+msgstr ""
+
+#: common/navbar.html:91
+msgid "Report a bug"
+msgstr ""
+
+#: components/rating.html:15
+msgid "Risk rating"
+msgstr ""
+
+#: components/rating.html:5
+msgid "Rock free rating"
+msgstr ""
+
+#: components/rating.html:8
+msgid "Rock required rating"
+msgstr ""
+
+#: outing.html:34
+msgid "Route description"
+msgstr ""
+
+#: route.html:42
+msgid "Route type :"
+msgstr ""
+
+#: common/navbar.html:37
+#: search.html:13
+#: waypoint.html:16
+msgid "Routes"
+msgstr ""
+
+#: me.html:116
+msgid "Save"
+msgstr ""
+
+#: me.html:117
+msgid "Saving..."
+msgstr ""
+
+#: common/navbar.html:108
+msgid "Search"
+msgstr ""
+
+#: search.html:5
+msgid "Search results"
+msgstr ""
+
+#: factories.js:146
+msgid "Severity"
+msgstr ""
+
+#: components/rating.html:31
+msgid "Ski rating"
+msgstr ""
+
+#: me.html:22
+msgid "Test!"
+msgstr ""
+
+#: outing.html:49
+msgid "Timing"
+msgstr ""
+
+#: factories.js:108
+#: factories.js:131
+#: factories.js:164
+#: factories.js:187
+msgid "Title"
+msgstr ""
+
+#: common/navbar.html:24
+msgid "Topo"
+msgstr ""
+
+#: factories.js:222
+#: factories.js:234
+msgid "Type"
+msgstr ""
+
+#: common/navbar.html:43
+#: route.html:53
+#: search.html:24
+msgid "Waypoints"
+msgstr ""
+
+#: outing.html:54
+msgid "Weather"
+msgstr ""
+
+#: login.html:3
+msgid "Welcome to CampUI"
+msgstr ""
+
+#: fixed_strings.html:10
+msgid "average"
+msgstr ""
+
+#: fixed_strings.html:9
+msgid "awful"
+msgstr ""
+
+#: fixed_strings.html:7
+msgid "excellent"
+msgstr ""
+
+#: fixed_strings.html:8
+msgid "good"
+msgstr ""
+
+#: fixed_strings.html:17
+msgid "hiking"
+msgstr ""
+
+#: fixed_strings.html:16
+msgid "ice_climbing"
+msgstr ""
+
+#: components/loading_info.html:5
+msgid "loading..."
+msgstr ""
+
+#: fixed_strings.html:20
+msgid "mountain_biking"
+msgstr ""
+
+#: fixed_strings.html:14
+msgid "mountain_climbing"
+msgstr ""
+
+#: fixed_strings.html:19
+msgid "paragliding"
+msgstr ""
+
+#: fixed_strings.html:6
+msgid "poor"
+msgstr ""
+
+#: fixed_strings.html:15
+msgid "rock_climbing"
+msgstr ""
+
+#: fixed_strings.html:11
+msgid "skitouring"
+msgstr ""
+
+#: fixed_strings.html:13
+msgid "snow_ice_mixed"
+msgstr ""
+
+#: fixed_strings.html:18
+msgid "snowshoeing"
+msgstr ""
+
+#: fixed_strings.html:21
+msgid "via_ferrata"
+msgstr ""

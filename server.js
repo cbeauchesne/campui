@@ -12,11 +12,11 @@ var apiProxy = proxyMiddleware('/api', {
 });
 
 app.use(apiProxy);
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/static'));
 
 app.get('/[^\.]+$', function(req, res){
     res.set('Content-Type', 'text/html')
-        .sendFile(__dirname + '/dist/index.html');
+        .sendFile(__dirname + '/static/index.html');
 });
 
 app.listen(port, function () {
