@@ -1,0 +1,19 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h3>{{getLabel()}}</h3>
+                    <div ng-if="data" ibox-tools></div>
+                </div>
+                <div class="ibox-content" style="display: block;">
+                    <!--
+                    <query-editor></query-editor>
+                    <div class="hr-line-dashed"></div>-->
+                    <loading-info></loading-info>
+                    <div ng-if="data" ui-grid="{data:data.documents, columnDefs:columnDefs}" style="height: 500px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

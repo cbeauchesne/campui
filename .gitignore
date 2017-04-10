@@ -10,9 +10,9 @@ env/
 /campui/aws_dev_settings.py
 
 # build with gulp
-app/static/css/
-app/static/translations/
-app/static/angular-i18n/
+app/css/
+app/translations/
+app/angular-i18n/
 
 # this ont if fully build with gulp
 static/
