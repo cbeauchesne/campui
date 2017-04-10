@@ -3,26 +3,25 @@
 *.pyc
 *$py.class
 *~
-.coverage
-coverage.xml
-build/
-dist/
-.tox/
-nosetests.xml
-env*/
-tmp/
-Data.fs*
-*.sublime-project
-*.sublime-workspace
-.*.sw?
-.sw?
-.DS_Store
-coverage
-test
+env/
 .idea/
-api/__pycache__/
-campui/__pycache__/
-db.sqlite3
-media/
-api/migrations/__pycache__/
-campui/prod_settings.py
+
+/campui/local_dev_settings.py
+/campui/aws_dev_settings.py
+
+# build with gulp
+app/static/css/
+app/static/translations/
+app/static/angular-i18n/
+
+# this ont if fully build with gulp
+static/
+
+# exclude node and bower packages
+node_modules/
+bower_components/
+
+# exclude useless .mo files
+po/*.mo
+
+
