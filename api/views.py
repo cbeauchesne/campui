@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 from django.http.response import HttpResponseBadRequest
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.authentication import BasicAuthentication
 
 
-from . import serializers, authenticators
+from . import serializers
 
 
 class CurrentUserView(APIView):
@@ -35,16 +36,19 @@ class UserView(APIView):
 
 
 class AuthView(APIView):
-    authentication_classes = (authenticators.QuietBasicAuthentication,)
 
     def post(self, request, *args, **kwargs):
-        if request.user.is_anonymous():
-            return HttpResponseBadRequest()
+        userid, password = request.data['username'], request.data['password']
 
-        login(request, request.user)
-        return Response(serializers.UserSerializer(request.user).data)
+        auth = BasicAuthentication()
+        user, _ = auth.authenticate_credentials(userid, password)
+
+        if user.is_anonymous():
+            return HttpResponseBadRequest("Fail to connect")
+
+        login(request, user)
+        return Response(serializers.UserSerializer(user).data)
 
     def delete(self, request, *args, **kwargs):
         logout(request)
         return Response()
-
