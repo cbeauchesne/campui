@@ -32,7 +32,7 @@ TIME_ZONE = 'UTC'
 
 SECRET_KEY = "dev_not_for_prod"
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 DATABASES = {
     'postgresql': {
@@ -66,6 +66,10 @@ except ImportError:
 
 #
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
 
 TEMPLATES = [
     {
