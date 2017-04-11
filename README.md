@@ -1,5 +1,7 @@
 ## Install
 
+[Download package](https://github.com/cbeauchesne/campui/archive/master.zip), unzip it, and execute : 
+
 ### Front-end (stand alone Web app)
 1. `npm install` : install node package
 2. `bower install` : install web package
@@ -10,11 +12,10 @@
 You must install [Python 3.4](https://www.python.org/), and [PostgreSQL 9.4](https://www.postgresql.org/).
 
 1. create a DB called `campui` in PostgreSQL running on port 5432. Add a connection user named *campui* and password *campui* (or modify campui/settings.py).
-2. [Download package](https://github.com/cbeauchesne/campui/archive/master.zip), unzip it, and execute : 
-3. `pip install -r requirements.txt` :  install all dependencies
-4. `python manage.py migrate` : create tables in DB
-5. `python manage.py createsuperuser` : create first admin user
-6. `python manage.py runserver` : got to http://localhost:3000, it will be able to use your backend. :tada:
+2. `pip install -r requirements.txt` :  install all dependencies
+3. `python manage.py migrate` : create tables in DB
+4. `python manage.py createsuperuser` : create first admin user
+5. `python manage.py runserver` : got to http://localhost:3000, it will be able to use your backend. :tada:
 
 ## Develop
 * When `gulp` is running, modify whatever on app/
