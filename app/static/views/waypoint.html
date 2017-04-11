@@ -8,19 +8,33 @@
 
     <div class="ibox-content" style="display: block;">
         <div class="row">
-            <div gallery class="col-sm-12" ng-if="waypoint.associations.images.length"
-                 images="waypoint.associations.images"></div>
+            <div class="col-sm-12">
+
+                <h2 ng-if="currentLocale.description" translate>Description</h2>
+                <div markdown="currentLocale.description"></div>
+
+                <h2 ng-if="currentLocale.access" translate>Access</h2>
+                <div markdown="currentLocale.access"></div>
+
+
+            </div>
         </div>
         <div class="row">
-            <div class="col-sm-8 b-r">
+            <div class="col-sm-6 b-r">
+
                 <h2 translate>Routes</h2>
                 <route-list routes="waypoint.associations.all_routes.documents"></route-list>
+            </div>
+            <div class="col-sm-6 b-r">
 
                 <h2 translate>Recent outings</h2>
                 <outing-list outings="waypoint.associations.recent_outings.documents"></outing-list>
             </div>
-            <div class="col-sm-4 b-r">
-            </div>
+        </div>
+        <div class="row"  ng-if="waypoint.associations.images.length">
+            <h2 translate>Images</h2>
+            <div gallery class="col-sm-12"
+                 images="waypoint.associations.images"></div>
         </div>
     </div>
 </div>
