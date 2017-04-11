@@ -30,45 +30,30 @@ ROOT_URLCONF = 'campui.urls'
 WSGI_APPLICATION = 'campui.wsgi.application'
 TIME_ZONE = 'UTC'
 
-SECRET_KEY = "dev_not_for_prod"
-DEBUG = True
+SECRET_KEY = os.environ.get("CAMPUI_SECRET_KEY", "dev_not_for_prod")
+DEBUG = "CAMPUI_DEBUG" in os.environ
+
 ALLOWED_HOSTS = ["*"]
 
 DATABASES = {
     'postgresql': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'campui',
-        'USER': 'charles',
-        'PASSWORD': 'charles',
-        'HOST': 'localhost',
-        'PORT': '5432',
+
+        'NAME': os.environ.get("CAMPUI_DB_NAME", "campui"),
+        'USER': os.environ.get("CAMPUI_DB_USER", "charles"),
+        'PASSWORD': os.environ.get("CAMPUI_DB_PASSWORD", "charles"),
+        'HOST': os.environ.get("CAMPUI_DB_HOST", "localhost"),
+        'PORT': os.environ.get("CAMPUI_DB_PORT", "5432"),
     }
 }
 
 DATABASES['default'] = DATABASES['postgresql']
 
-# prod param overwriting
-try:
-    import campui.aws_dev_settings as prod_settings
-
-    SECRET_KEY = prod_settings.SECRET_KEY
-    DEBUG = prod_settings.DEBUG
-    ALLOWED_HOSTS = prod_settings.ALLOWED_HOSTS
-
-    DATABASES['default']['NAME'] = prod_settings.DB_NAME
-    DATABASES['default']['HOST'] = prod_settings.DB_HOST
-    DATABASES['default']['PORT'] = prod_settings.DB_PORT
-    DATABASES['default']['USER'] = prod_settings.DB_USER
-    DATABASES['default']['PASSWORD'] = prod_settings.DB_PASSWORD
-
-except ImportError:
-    print("No settings for prod, asserting dev")
-
 #
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "www/static"),
-    '/var/www/static/',
+    os.path.join(BASE_DIR, "static"),
 ]
 
 TEMPLATES = [

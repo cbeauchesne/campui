@@ -3,7 +3,6 @@ from django.contrib import admin
 from api.urls import urlpatterns as api_urls
 from .settings import BASE_DIR
 from django.views import static
-import os
 
 admin.autodiscover()
 
@@ -13,7 +12,7 @@ urlpatterns = [
 ]
 
 angular_view = {"view": static.serve,
-                "kwargs": {'path': 'index.html', 'document_root': os.path.join(BASE_DIR, 'www')}}
+                "kwargs": {'path': 'index.html', 'document_root': BASE_DIR}}
 
 urlpatterns += [url(r'^$', **angular_view),
                 url(r'^credits$', **angular_view),
