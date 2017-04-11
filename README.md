@@ -16,14 +16,12 @@ You must install [Python 3.4](https://www.python.org/), and [PostgreSQL 9.4](htt
 3. `pip install -r requirements.txt` :  install all dependencies
 4. `python manage.py migrate` : create tables in DB
 5. `python manage.py createsuperuser` : create first admin user
-6. `python manage.py runserver`
-**=> you're web app on http://localhost:3000 will be able to use your backend**
-
-### Run
+6. `python manage.py runserver` : got to http://localhost:3000, it will be able to use your backend. Enjoy :wink:
 
 ### Develop
 * When `gulp` is running, modify whatever on app/
 * When `python manage.py runserver` is running, modify whatever in api/
 * `guild build` : Build web app. Test it on http://localhost:8000
+* Enjoy :wink:
 
 
