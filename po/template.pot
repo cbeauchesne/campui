@@ -4,6 +4,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: waypoint.html:17
+msgid "Access"
+msgstr ""
+
 #: me.html:86
 msgid "Actions"
 msgstr ""
@@ -23,6 +27,7 @@ msgstr ""
 #: common/navbar.html:49
 #: factories.js:213
 #: outing.html:23
+#: route.html:13
 msgid "Areas"
 msgstr ""
 
@@ -50,7 +55,7 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: route.html:38
+#: route.html:45
 msgid "Configuration :"
 msgstr ""
 
@@ -60,6 +65,10 @@ msgstr ""
 
 #: common/navbar.html:95
 msgid "Credits"
+msgstr ""
+
+#: components/license.html:2
+msgid "Credits :"
 msgstr ""
 
 #: factories.js:136
@@ -82,13 +91,14 @@ msgstr ""
 msgid "Default for xreports"
 msgstr ""
 
-#: area.html:18
+#: area.html:15
 #: outing.html:31
-#: route.html:14
+#: route.html:19
+#: waypoint.html:14
 msgid "Description"
 msgstr ""
 
-#: route.html:34
+#: route.html:41
 msgid "Difficulties height :"
 msgstr ""
 
@@ -120,15 +130,15 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: outing.html:59
+#: outing.html:61
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:20
+#: route.html:25
 msgid "Gears"
 msgstr ""
 
-#: route.html:50
+#: route.html:57
 msgid "Glacier gears :"
 msgstr ""
 
@@ -136,7 +146,7 @@ msgstr ""
 msgid "Global rating"
 msgstr ""
 
-#: route.html:23
+#: route.html:28
 msgid "History"
 msgstr ""
 
@@ -153,6 +163,7 @@ msgid "Ice rating"
 msgstr ""
 
 #: home.html:6
+#: waypoint.html:36
 msgid "Images"
 msgstr ""
 
@@ -162,6 +173,10 @@ msgstr ""
 
 #: common/navbar.html:76
 msgid "Incidents"
+msgstr ""
+
+#: components/license.html:16
+msgid "List of authors"
 msgstr ""
 
 #: common/navbar.html:161
@@ -195,12 +210,16 @@ msgstr ""
 msgid "No filter"
 msgstr ""
 
-#: route.html:46
+#: route.html:53
 msgid "Orientation :"
 msgstr ""
 
 #: factories.js:179
 msgid "Orientations"
+msgstr ""
+
+#: components/license.html:5
+msgid "Original page"
 msgstr ""
 
 #: common/navbar.html:31
@@ -234,12 +253,12 @@ msgstr ""
 msgid "Rating"
 msgstr ""
 
-#: route.html:56
-#: waypoint.html:19
+#: route.html:65
+#: waypoint.html:31
 msgid "Recent outings"
 msgstr ""
 
-#: route.html:17
+#: route.html:22
 msgid "Remarks"
 msgstr ""
 
@@ -263,13 +282,13 @@ msgstr ""
 msgid "Route description"
 msgstr ""
 
-#: route.html:42
+#: route.html:49
 msgid "Route type :"
 msgstr ""
 
 #: common/navbar.html:37
 #: search.html:13
-#: waypoint.html:16
+#: waypoint.html:26
 msgid "Routes"
 msgstr ""
 
@@ -301,7 +320,7 @@ msgstr ""
 msgid "Test!"
 msgstr ""
 
-#: outing.html:49
+#: outing.html:51
 msgid "Timing"
 msgstr ""
 
@@ -322,12 +341,12 @@ msgid "Type"
 msgstr ""
 
 #: common/navbar.html:43
-#: route.html:53
+#: route.html:62
 #: search.html:24
 msgid "Waypoints"
 msgstr ""
 
-#: outing.html:54
+#: outing.html:56
 msgid "Weather"
 msgstr ""
 

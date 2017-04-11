@@ -9,6 +9,11 @@
     <div class="ibox-content" style="display: block;">
         <div class="row">
             <div class="col-sm-8 b-r">
+                <p>
+                    <i class="fa fa-chevron-right" uib-tooltip="{{'Areas' | translate }}"></i>
+                    <i areas="route.areas"></i>
+                </p>
+
                 <div class="summary" ng-if="currentLocale.summary" markdown="currentLocale.summary"></div>
 
                 <h2 ng-if="currentLocale.description" translate>Description</h2>
@@ -25,9 +30,11 @@
 
             </div>
             <div class="col-sm-4">
+
                 <div>
                     <activities activities="route.activities"></activities>
                     <rating route="route"></rating>
+                    <label>&nbsp;</label>
                 </div>
 
                 <div ng-if="route.height_diff_difficulties">
@@ -50,11 +57,14 @@
                     <label translate>Glacier gears :</label> {{route.glacier_gear}}
                 </div>
 
+                <div license type="'route'" id="route.document_id"></div>
+
                 <h3 translate>Waypoints</h3>
                 <waypoint-list waypoints="route.associations.waypoints"></waypoint-list>
 
                 <h3 translate>Recent outings</h3>
                 <outing-list outings="route.associations.recent_outings.documents"></outing-list>
+
             </div>
         </div>
         <div class="row">

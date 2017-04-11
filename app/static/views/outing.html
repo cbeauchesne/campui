@@ -41,13 +41,15 @@
             <div class="col-sm-3 b-l">
                 <div>
                     <i class="fa fa-user" uib-tooltip="{{'Participants' | translate }}"></i>
-                    <span ng-repeat="user in outing.associations.users"><user-link user="user"></user-link>{{$last ? "" : ", "}}</span>
+                    <span ng-repeat="user in outing.associations.users">
+                        <user-link user="user"></user-link>{{$last ? "" : ", "}}
+                    </span>
                     {{outing.locales[0].participants}}
                 </div>
 
                 <div ng-if="outing.locales[0].timing">
                     <i class="fa fa-clock-o" uib-tooltip="{{'Timing' | translate }}"></i>
-                    <div markdown="outing.locales[0].timing"</div>
+                    <div markdown="outing.locales[0].timing"></div>
                 </div>
 
                 <div ng-if="outing.locales[0].weather">
@@ -59,6 +61,8 @@
                     <i class="fa fa-users" uib-tooltip="{{'Frequentation' | translate }}"></i>
                     {{outing.frequentation}}
                 </div>
+
+                <div license type="'outing'" id="outing.document_id"></div>
             </div>
         </div>
     </div>

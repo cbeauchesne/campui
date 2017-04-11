@@ -34,7 +34,17 @@ app.directive('iboxTools', ['$timeout', function ($timeout) {
     };
 }])
 
+app.directive('license', function(){
+    return {
+        restrict: 'EA',
+        scope: {
+            type:"=",
+            id:"="
+        },
+        templateUrl: 'static/views/components/license.html',
 
+    }
+})
 
 angular.module('campui')
 

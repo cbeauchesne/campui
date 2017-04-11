@@ -8,15 +8,19 @@
 
     <div class="ibox-content" style="display: block;">
         <div class="row">
-            <div gallery class="col-sm-12" ng-if="area.associations.images.length"
-                 images="area.associations.images"></div>
-        </div>
-        <div class="row">
             <div class="col-sm-12">
+                <div license type="'area'" id="area.document_id"></div>
                 <div class="summary" ng-if="currentLocale.summary" markdown="currentLocale.summary"></div>
 
                 <h2 ng-if="currentLocale.description" translate>Description</h2>
                 <div markdown="currentLocale.description"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div gallery class="col-sm-12" ng-if="area.associations.images.length"
+                     images="area.associations.images"></div>
             </div>
         </div>
     </div>
