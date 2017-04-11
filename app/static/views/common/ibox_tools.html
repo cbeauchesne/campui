@@ -1,0 +1,22 @@
+<div class="ibox-tools dropdown" dropdown>
+    <a ng-click="previous()"> <i class="fa fa-chevron-left"></i></a>
+
+    {{offset+1}}-{{offset+30}} / {{data.total}}
+
+    <a ng-click="next()"> <i class="fa fa-chevron-right"></i></a>
+
+    <a ng-show="queries" ng-class="{active: currentQuery}" class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-filter"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-user">
+        <li ng-click="setQuery()"><a href><i class="fa fa-remove"></i> <span translate>No filter</span></a></li>
+        <li role="separator" class="divider"></li>
+        <li ng-repeat="query in queries"
+            ng-click="setQuery(query)"
+            ng-class="{active:query.name==currentQuery.name}">
+            <a href>{{query.name}}</a>
+        </li>
+        <li ng-if="!user.isAnonymous" role="separator" class="divider"></li>
+        <li ng-if="!user.isAnonymous"><a ui-sref="me"><i class="fa fa-gear"></i> <span translate>Parameters</span></a></li>
+    </ul>
+</div>

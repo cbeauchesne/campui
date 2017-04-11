@@ -1,0 +1,23 @@
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h1>
+            <i class="fa fa-map-o"></i>
+            <area-link-c2c area="area"></area-link-c2c>
+        </h1>
+    </div>
+
+    <div class="ibox-content" style="display: block;">
+        <div class="row">
+            <div gallery class="col-sm-12" ng-if="area.associations.images.length"
+                 images="area.associations.images"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="summary" ng-if="currentLocale.summary" markdown="currentLocale.summary"></div>
+
+                <h2 ng-if="currentLocale.description" translate>Description</h2>
+                <div markdown="currentLocale.description"></div>
+            </div>
+        </div>
+    </div>
+</div>

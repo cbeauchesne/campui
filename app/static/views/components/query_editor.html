@@ -1,0 +1,33 @@
+<div class="row">
+    <form id="queryForm">
+        <div class="col-sm-8">
+            <div class="btn-group">
+
+                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                    <span translate>Activities</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="act in qe.conf.activities">
+                        <input type="checkbox" id="{{act}}" name="act" value="{{act}}"/>
+                        <label for="{{act}}">{{act}}</label>
+                    </li>
+                </ul>
+                <button class="btn btn-primary" ng-click="qe.apply()" translate>
+                    Apply
+                </button>
+            </div>
+        </div>
+        <div class="col-sm-4" style="height:200px">
+            <ng-map
+                    center="[46.71, 2.81]" zoom="6"
+                    street-view-control="false"
+                    map-type-control-options='{position:"top_right", mapTypeIds:["ROADMAP","TERRAIN"]}'
+                    map-type-id="TERRAIN"
+                    default-style="false"
+                    style="height:200px"
+            ></ng-map>
+        </div>
+
+    </form>
+</div>
