@@ -10,5 +10,20 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(api_urls)),
-    url(r'^$', static.serve, kwargs={'path': 'index.html', 'document_root' : os.path.join(BASE_DIR, 'static')}),
 ]
+
+angular_view = {"view": static.serve,
+                "kwargs": {'path': 'index.html', 'document_root': os.path.join(BASE_DIR, 'www')}}
+
+urlpatterns += [url(r'^$', **angular_view),
+                url(r'^credits$', **angular_view),
+                url(r'^faq$', **angular_view),
+                url(r'^me$', **angular_view),
+                url(r'^login$', **angular_view),
+                ]
+
+for item in ["user", "outing", "route", "area", "waypoint", "article", "xreport"]:
+    urlpatterns += [
+        url(r'^{}/'.format(item), **angular_view),
+        url(r'^{}s$'.format(item), **angular_view),
+    ]
