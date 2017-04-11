@@ -45,6 +45,14 @@ app.provider('markdownConverter', function () {
 
         var url = {
             type: 'lang',
+            regex: /\[url\]([^\[]*)\[\/url\]/g,
+            replace: function (match, url) {
+                return '<a href="' + url + '">' + url + '</a>';
+            }
+        };
+
+        var url2 = {
+            type: 'lang',
             regex: /\[url=([^\]]+)\]([^\[]*)\[\/url\]/g,
             replace: function (match, url, text) {
                 return '<a href="' + url + '">' + text + '</a>';
@@ -59,7 +67,7 @@ app.provider('markdownConverter', function () {
             }
         };
 
-        return [italic, bold, img, imgLegend, url, c2cItem];
+        return [italic, bold, img, imgLegend, url, url2, c2cItem];
     }
 
     showdown.extension('c2c_folies', c2c_folies);
