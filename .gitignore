@@ -3,25 +3,25 @@
 *.pyc
 *$py.class
 *~
-env/
-.idea/
+/env/
+/.idea/
 
 # build with gulp
-app/static/css/
-app/static/translations/
-app/static/angular-i18n/
+/app/static/css/
+/app/static/translations/
+/app/static/angular-i18n/
 
 # this dir exists only if fully build with gulp
-static/
-dist/
-www/
-index.html
+/static/
+/dist/
+/www/
+/index.html
 
 # exclude node and bower packages
-node_modules/
-bower_components/
+/node_modules/
+/bower_components/
 
 # exclude useless .mo files
-po/*.mo
+/po/*.mo
 
-build.zip
+/build.zip
