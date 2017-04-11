@@ -132,7 +132,7 @@ gulp.task('useref', function(){
     .pipe(gulpIf('*.js', uglify().on('error', gulpUtil.log)))
 
     .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('www'))
 });
 
 gulp.task('pot', function(){
@@ -181,7 +181,8 @@ gulp.task('zip', function() {
 
 gulp.task('build', function (callback) {
   runSequence('clean:build',
-    ['sass', 'useref', 'images', 'fonts', 'slick', 'photoswipe', 'po', 'angular-i18n', 'html'],
+    ['sass'],
+    ['useref', 'images', 'fonts', 'slick', 'photoswipe', 'po', 'angular-i18n', 'html'],
     ['zip'],
     callback
   )
