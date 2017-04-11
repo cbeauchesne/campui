@@ -20,13 +20,13 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: common/navbar.html:50
+#: common/navbar.html:49
 #: factories.js:213
 #: outing.html:23
 msgid "Areas"
 msgstr ""
 
-#: common/navbar.html:70
+#: common/navbar.html:69
 msgid "Articles"
 msgstr ""
 
@@ -54,11 +54,11 @@ msgstr ""
 msgid "Configuration :"
 msgstr ""
 
-#: common/navbar.html:86
+#: common/navbar.html:85
 msgid "Contact"
 msgstr ""
 
-#: common/navbar.html:96
+#: common/navbar.html:95
 msgid "Credits"
 msgstr ""
 
@@ -156,7 +156,7 @@ msgstr ""
 msgid "Impacted people"
 msgstr ""
 
-#: common/navbar.html:77
+#: common/navbar.html:76
 msgid "Incidents"
 msgstr ""
 
@@ -164,12 +164,12 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:121
+#: common/navbar.html:120
 #: login.html:13
 msgid "Login"
 msgstr ""
 
-#: common/navbar.html:62
+#: common/navbar.html:61
 msgid "Misc"
 msgstr ""
 
@@ -239,7 +239,7 @@ msgstr ""
 msgid "Remarks"
 msgstr ""
 
-#: common/navbar.html:91
+#: common/navbar.html:90
 msgid "Report a bug"
 msgstr ""
 
@@ -277,7 +277,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:108
+#: common/navbar.html:107
 msgid "Search"
 msgstr ""
 
