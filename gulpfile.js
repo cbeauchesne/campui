@@ -19,9 +19,9 @@ var zip = require('gulp-zip');
 var browserSync = require('browser-sync').create();
 
 gulp.task('sass', function(){
-  return gulp.src('app/scss/**/*.scss')
+  return gulp.src('app/static/scss/**/*.scss')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(gulp.dest('app/css'))
+    .pipe(gulp.dest('app/static/css'))
 
     .pipe(browserSync.reload({
       stream: true
@@ -29,7 +29,7 @@ gulp.task('sass', function(){
 });
 
 gulp.task('images', function(){
-  return gulp.src('app/img/**/*.+(png|jpg|gif|svg)')
+  return gulp.src('app/static/img/**/*.+(png|jpg|gif|svg)')
   .pipe(cache(imagemin()))
   .pipe(gulp.dest('static/img'))
 });
@@ -60,18 +60,18 @@ gulp.task('slick', function() {
 });
 
 gulp.task('fonts', ['font-awesome', 'font-bootstrap', 'font-ui-grid', 'font-slick'], function() {
-  return gulp.src('app/fonts/**/*.*')
+  return gulp.src('app/static/fonts/**/*.*')
   .pipe(gulp.dest('static/fonts'))
 })
 
 gulp.task('html', function() {
-  return gulp.src('app/views/**/*')
+  return gulp.src('app/static/views/**/*')
   .pipe(gulp.dest('static/views'))
 })
 
 gulp.task('angular-i18n', function() {
   return gulp.src('bower_components/angular-i18n/*.js')
-  .pipe(gulp.dest('app/angular-i18n'))
+  .pipe(gulp.dest('app/static/angular-i18n'))
   .pipe(gulp.dest('static/angular-i18n'))
 })
 
@@ -136,7 +136,7 @@ gulp.task('useref', function(){
 });
 
 gulp.task('pot', function(){
-  return gulp.src(['app/views/**/*.html', 'app/js/**/*.js'])
+  return gulp.src(['app/static/views/**/*.html', 'app/static/js/**/*.js'])
     .pipe(gettext.extract('template.pot', {}))
     .pipe(gulp.dest('po/'))
 });
@@ -145,7 +145,7 @@ gulp.task('po', function () {
   return gulp.src('po/**/*.po')
     .pipe(gettext.compile({format: 'json'}))
     .pipe(gulp.dest('static/translations/'))
-    .pipe(gulp.dest('app/translations/'))
+    .pipe(gulp.dest('app/static/translations/'))
 });
 
 gulp.task('clean:build', function() {
@@ -153,12 +153,12 @@ gulp.task('clean:build', function() {
 })
 
 gulp.task('watch', ['browserSync', 'sass', 'pot','po'], function(){
-  gulp.watch('app/scss/**/*.scss', ['sass']);
+  gulp.watch('app/static/scss/**/*.scss', ['sass']);
 
-  gulp.watch(['app/**/*.html','app/js/**/*.js'], ["pot"]);
+  gulp.watch(['app/static/**/*.html','app/static/js/**/*.js'], ["pot"]);
   gulp.watch('po/**/*.po', ['po']);
 
-  gulp.watch(['app/**/*.html','app/js/**/*.js'], browserSync.reload);
+  gulp.watch(['app/static/**/*.html','app/static/js/**/*.js'], browserSync.reload);
   gulp.watch('app/index.html', browserSync.reload);
 
 })
