@@ -5,7 +5,7 @@
 #### Front-end (stand alone Web app)
 1. `npm install` : install node package
 2. `bower install` : install web package
-3. `gulp` : it will open http://localhost:3000. 
+3. `gulp` : it will open http://localhost:3000. Enjoy :wink:
 
 
 #### Back end
@@ -21,7 +21,7 @@ You must install [Python 3.4](https://www.python.org/), and [PostgreSQL 9.4](htt
 
 ### Run
 
-### develop
+### Develop
 * When `gulp` is running, modify whatever on app/
 * When `python manage.py runserver` is running, modify whatever in api/
 * `guild build` : Build web app. Test it on http://localhost:8000
