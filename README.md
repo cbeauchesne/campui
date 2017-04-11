@@ -1,6 +1,6 @@
-# CampUI
+## CampUI
 
-## Installing
+### Installing
 You must installed [Python 3.4](https://www.python.org/), and [PostgreSQL 9.4](https://www.postgresql.org/).
 
 * create a DB called `campui` in PostgreSQL running on port 5432. Add a connection user named *campui* and password *campui* (or modify campui/settings.py).
@@ -12,10 +12,10 @@ You must installed [Python 3.4](https://www.python.org/), and [PostgreSQL 9.4](h
 * `bower install` : install web package
 * `guild build` : Build web app
 
-## Run
+### Run
 * `python manage.py runserver`
 * go to http://localhost:8000/
 
-## develop
+### develop
 * `gulp`
 * it will open http://localhost:3000. You can modify whatever you want in app/ (front-end) or in api/ (back-end)
