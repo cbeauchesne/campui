@@ -30,19 +30,18 @@ gallery{
 display:block
 }
 
-
 a {
 color:#676a6c;
 }
 
+.faq-view a {
+color:blue;
+}
+
 a:hover {
 color:#1ab394;
+text-decoration: underline;
 }
-
-a.c2c:hover {
-    color: #FFAA45;
-}
-
 
 .ibox {
   padding: 0px;
@@ -130,3 +129,9 @@ color:#8B0000;
   border-radius: 2px;
   border-left: 3px solid #1ab394;
 }
+
+h3{
+margin-top:15px;
+margin-bottom:5px;
+}
+

@@ -116,6 +116,10 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
+#: common/navbar.html:102
+msgid "FAQ"
+msgstr ""
+
 #: outing.html:59
 msgid "Frequentation"
 msgstr ""
@@ -160,11 +164,11 @@ msgstr ""
 msgid "Incidents"
 msgstr ""
 
-#: common/navbar.html:156
+#: common/navbar.html:161
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:120
+#: common/navbar.html:125
 #: login.html:13
 msgid "Login"
 msgstr ""
@@ -177,7 +181,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:139
+#: common/navbar.html:144
 msgid "My page"
 msgstr ""
 
@@ -209,7 +213,7 @@ msgid "Outings ({{outings.total}})"
 msgstr ""
 
 #: common/ibox_tools.html:20
-#: common/navbar.html:147
+#: common/navbar.html:152
 #: me.html:6
 msgid "Parameters"
 msgstr ""
@@ -277,7 +281,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:107
+#: common/navbar.html:112
 msgid "Search"
 msgstr ""
 

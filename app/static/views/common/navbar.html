@@ -97,6 +97,11 @@
                         </li>
                     </ul>
                 </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="faq">
+                        <i class="fa fa-question"></i> <span class="nav-label" translate>FAQ</span>
+                    </a>
+                </li>
             </ul>
 
             <form class="navbar-form navbar-left" role="search">
@@ -163,7 +168,8 @@
 
                     <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
-                        <img width="16" height="16" src="static/img/flags/16/{{getCurrentLanguage()}}.png"/> {{getCurrentLanguage()}}
+                        <img width="16" height="16" src="static/img/flags/16/{{getCurrentLanguage()}}.png"/>
+                        {{getCurrentLanguage()}}
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
