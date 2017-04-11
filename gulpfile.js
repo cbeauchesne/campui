@@ -31,53 +31,53 @@ gulp.task('sass', function(){
 gulp.task('images', function(){
   return gulp.src('app/static/img/**/*.+(png|jpg|gif|svg)')
   .pipe(cache(imagemin()))
-  .pipe(gulp.dest('static/img'))
+  .pipe(gulp.dest('www/static/img'))
 });
 
 gulp.task('font-awesome', function() {
   return gulp.src(['bower_components/components-font-awesome/fonts/fontawesome-webfont.*'])
-  .pipe(gulp.dest('static/fonts'));
+  .pipe(gulp.dest('www/static/fonts'));
 });
 
 gulp.task('font-bootstrap', function() {
   return gulp.src(['bower_components/bootstrap/fonts/glyphicons-halflings-regular.*'])
-  .pipe(gulp.dest('static/fonts'));
+  .pipe(gulp.dest('www/static/fonts'));
 });
 
 gulp.task('font-ui-grid', function() {
   return gulp.src(['bower_components/angular-ui-grid/ui-grid.{ttf,eot,svg,woff}'])
-  .pipe(gulp.dest('static/css'));
+  .pipe(gulp.dest('www/static/css'));
 });
 
 gulp.task('font-slick', function() {
   return gulp.src(['bower_components/slick-carousel/slick/fonts/slick.{ttf,eot,svg,woff}'])
-  .pipe(gulp.dest('static/css/fonts'));
+  .pipe(gulp.dest('www/static/css/fonts'));
 });
 
 gulp.task('slick', function() {
   return gulp.src(['bower_components/slick-carousel/slick/ajax-loader.gif'])
-  .pipe(gulp.dest('static/css'));
+  .pipe(gulp.dest('www/static/css'));
 });
 
 gulp.task('fonts', ['font-awesome', 'font-bootstrap', 'font-ui-grid', 'font-slick'], function() {
   return gulp.src('app/static/fonts/**/*.*')
-  .pipe(gulp.dest('static/fonts'))
+  .pipe(gulp.dest('www/static/fonts'))
 })
 
 gulp.task('html', function() {
   return gulp.src('app/static/views/**/*')
-  .pipe(gulp.dest('static/views'))
+  .pipe(gulp.dest('www/static/views'))
 })
 
 gulp.task('angular-i18n', function() {
   return gulp.src('bower_components/angular-i18n/*.js')
   .pipe(gulp.dest('app/static/angular-i18n'))
-  .pipe(gulp.dest('static/angular-i18n'))
+  .pipe(gulp.dest('www/static/angular-i18n'))
 })
 
 gulp.task('photoswipe', function() {
   return gulp.src('bower_components/photoswipe/dist/default-skin/*.*')
-  .pipe(gulp.dest('static/css'))
+  .pipe(gulp.dest('www/static/css'))
 })
 
 function getServer(baseDir){
@@ -144,12 +144,12 @@ gulp.task('pot', function(){
 gulp.task('po', function () {
   return gulp.src('po/**/*.po')
     .pipe(gettext.compile({format: 'json'}))
-    .pipe(gulp.dest('static/translations/'))
+    .pipe(gulp.dest('www/static/translations/'))
     .pipe(gulp.dest('app/static/translations/'))
 });
 
 gulp.task('clean:build', function() {
-  return del.sync(['static', 'build.zip']);
+  return del.sync(['www', 'build.zip']);
 })
 
 gulp.task('watch', ['browserSync', 'sass', 'pot','po'], function(){
