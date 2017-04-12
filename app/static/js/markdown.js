@@ -91,11 +91,11 @@ app.provider('markdownConverter', function () {
 
         line_count = 40
 
-        content_pattern = "(?:[^](?!\\nL#|\\n\\n|\\|))*."
-        first_cellPattern = "(L#" + content_pattern + ")"
+        content_pattern = "(?:[^]*?(?=\\nL#|\\nR#|\\n\\n|\\|))"
+        first_cellPattern = "([LR]#" + content_pattern + ")"
         cell_pattern = "(\\|" + content_pattern + ")?"
 
-        row_pattern = "(?:" + first_cellPattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + "\\n)"
+        row_pattern = "(" + first_cellPattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + "\\|?\\n)"
 
         pattern = row_pattern
         for(l=1;l<line_count;l++)
@@ -106,12 +106,13 @@ app.provider('markdownConverter', function () {
             regex: RegExp(pattern, 'gm'),
             replace: function () {
                 result = ["<table>"]
-                pos = 1
+                pos = 2
                 n = 1
                 for(l=0;l<line_count;l++){
-                    result.push("<tr>")
-                    if(!arguments[pos])
+                    if(!arguments[pos]) //full line
                         break
+
+                    result.push("<tr>")
 
                     cell1 = (arguments[pos] || "").trim()
                     cotation = (arguments[pos+1] || "").trim().replace("|","")
@@ -133,13 +134,13 @@ app.provider('markdownConverter', function () {
                         result.push("<td colspan='5'>" + cell1.replace("|","") + "</td>")
                     else{
                         result.push("<td>" + cell1 + "</td>")
-                        if(cotation) result.push("<td>" + cotation + "</td>")
-                        if(length) result.push("<td>" + length + "</td>")
-                        if(gears) result.push("<td>" + gears + "</td>")
-                        if(description) result.push("<td>" + description + "</td>")
-                        if(belay) result.push("<td>" + belay + "</td>")
+                        result.push("<td>" + cotation + "</td>")
+                        result.push("<td>" + length + "</td>")
+                        result.push("<td>" + gears + "</td>")
+                        result.push("<td>" + description + "</td>")
+                        result.push("<td>" + belay + "</td>")
                     }
-                    pos +=6
+                    pos +=7
 
                     result.push("</tr>")
                 }
