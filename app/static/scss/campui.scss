@@ -47,16 +47,13 @@ a[href^="https://forum.camptocamp.org"]:hover {
 }
 
 //but in markdown, we must show what is a link
-[markdown] a,
-markdown a {
+[markdown] a{
 color:#1ab394;
 }
 
 //and what is a c2c link
 [markdown] a[href^="https://www.camptocamp.org"],
-[markdown] a[href^="https://forum.camptocamp.org"],
-markdown a[href^="https://www.camptocamp.org"],
-markdown a[href^="https://forum.camptocamp.org"]{
+[markdown] a[href^="https://forum.camptocamp.org"],{
     color: #FFAA45;
 }
 

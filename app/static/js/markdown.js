@@ -138,7 +138,7 @@ app.provider('markdownConverter', function () {
 
 app.directive('markdown', ['$sanitize', 'markdownConverter', function ($sanitize, markdownConverter) {
     return {
-        restrict: 'AE',
+        restrict: 'A',
         link: function (scope, element, attrs) {
             if (attrs.markdown) {
                 scope.$watch(attrs.markdown, function (newVal) {
