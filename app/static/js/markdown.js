@@ -67,7 +67,63 @@ app.provider('markdownConverter', function () {
             }
         };
 
-        return [italic, bold, img, imgLegend, url, url2, c2cItem];
+        line_count = 4
+
+        content_pattern = "(?:[^](?!\\nL#|\\n\\n|\\|))*."
+        first_cellPattern = "(L#" + content_pattern + ")"
+        cell_pattern = "(\\|" + content_pattern + ")?"
+
+        row_pattern = "(?:" + first_cellPattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + "\\n)"
+        pattern = row_pattern + row_pattern + "?" + row_pattern + "?" + row_pattern + "?" + row_pattern
+
+        var ltag = {
+            type: 'lang',
+            regex: RegExp(pattern, 'gm'),
+            replace: function () {
+                result = ["<table>"]
+                pos = 1
+                n = 1
+                for(l=0;l<line_count;l++){
+                    result.push("<tr>")
+                    if(!arguments[pos])
+                        break
+
+                    cell1 = (arguments[pos] || "").trim()
+                    cotation = (arguments[pos+1] || "").trim()
+                    length = (arguments[pos+2] || "").trim()
+                    gears = (arguments[pos+3] || "").trim()
+                    description = (arguments[pos+4] || "").trim()
+                    belay = (arguments[pos+5] || "").trim()
+
+
+                    if(cell1.substring(0,3)=="L#~"){
+                        cell1 = cell1.replace("L#~", "")
+                    }
+                    else if(cell1=="L#"){
+                        cell1 = cell1.replace("L#", "L" + n)
+                        n++
+                    }
+
+                    if(!cotation && !length && !gears && !belay)
+                        result.push("<td colspan='5'>" + cell1.replace("|","") + "</td>")
+                    else{
+                        result.push("<td>" + cell1 + "</td>")
+                        result.push("<td>" + cotation.replace("|","") + "</td>")
+                        result.push("<td>" + length.replace("|","") + "</td>")
+                        result.push("<td>" + gears.replace("|","") + "</td>")
+                        result.push("<td>" + description.replace("|","") + "</td>")
+                        result.push("<td>" + belay.replace("|","") + "</td>")
+                    }
+                    pos +=6
+
+                    result.push("</tr>")
+                }
+                result.push("</table>")
+                return result.join("");
+            }
+        };
+
+        return [ltag, italic, bold, img, imgLegend, url, url2, c2cItem];
     }
 
     showdown.extension('c2c_folies', c2c_folies);
