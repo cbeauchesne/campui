@@ -80,7 +80,7 @@ app.provider('markdownConverter', function () {
 
         var c2cItem = {
             type: 'lang',
-            regex: /\[\[(book|waypoint|route)s\/([\d]+)(\/fr\/?)?\|([^\]]*)\]\]/g,
+            regex: /\[\[(book|waypoint|route)s\/([\d]+)([^|]*)\|([^\]]*)\]\]/g,
             replace: function (match, item, id, lang, text) {
                 if(item=="book")
                     return '<a href="https://www.camptocamp.org/' + item + 's/' + id + '">' + text + '</a>';
