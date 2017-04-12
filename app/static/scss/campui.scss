@@ -29,21 +29,34 @@ gallery{
 .ui-grid-cell-contents {
 display:block
 }
-
+// by default, link are in normal color
 a {
 color:#676a6c;
 }
 
-.faq-view a {
-color:blue;
-}
-
+// by default, link hover is green underlyed
 a:hover {
 color:#1ab394;
 text-decoration: underline;
 }
 
-a.c2c:hover {
+//and orange for c2c
+a[href^="https://www.camptocamp.org"]:hover,
+a[href^="https://forum.camptocamp.org"]:hover {
+    color: #FFAA45;
+}
+
+//but in markdown, we must show what is a link
+[markdown] a,
+markdown a {
+color:#1ab394;
+}
+
+//and what is a c2c link
+[markdown] a[href^="https://www.camptocamp.org"],
+[markdown] a[href^="https://forum.camptocamp.org"],
+markdown a[href^="https://www.camptocamp.org"],
+markdown a[href^="https://forum.camptocamp.org"]{
     color: #FFAA45;
 }
 

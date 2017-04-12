@@ -215,7 +215,7 @@ $.each(c2cItems, function(item, params){
         result = {
             restrict: 'E',
             scope: {},
-            template: '<a class="c2c" target="_blank" href="https://www.camptocamp.org/' + item + 's/{{' + item + '.document_id}}">' + label + '</a>',
+            template: '<a target="_blank" href="https://www.camptocamp.org/' + item + 's/{{' + item + '.document_id}}">' + label + '</a>',
             controller: controller
         };
 
