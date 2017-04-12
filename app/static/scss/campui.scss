@@ -212,3 +212,9 @@ margin-bottom:5px;
     max-width: 100%!important;
 }
 
+[markdown] table td{
+    border:1px solid lightgrey;
+    vertical-align: text-top;
+    padding:2px 4px 2px 4px;
+    font-size:90%;
+}

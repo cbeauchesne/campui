@@ -89,14 +89,17 @@ app.provider('markdownConverter', function () {
             }
         };
 
-        line_count = 4
+        line_count = 40
 
         content_pattern = "(?:[^](?!\\nL#|\\n\\n|\\|))*."
         first_cellPattern = "(L#" + content_pattern + ")"
         cell_pattern = "(\\|" + content_pattern + ")?"
 
         row_pattern = "(?:" + first_cellPattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + "\\n)"
-        pattern = row_pattern + row_pattern + "?" + row_pattern + "?" + row_pattern + "?" + row_pattern
+
+        pattern = row_pattern
+        for(l=1;l<line_count;l++)
+            pattern += row_pattern + "?"
 
         var ltag = {
             type: 'lang',
@@ -111,11 +114,11 @@ app.provider('markdownConverter', function () {
                         break
 
                     cell1 = (arguments[pos] || "").trim()
-                    cotation = (arguments[pos+1] || "").trim()
-                    length = (arguments[pos+2] || "").trim()
-                    gears = (arguments[pos+3] || "").trim()
-                    description = (arguments[pos+4] || "").trim()
-                    belay = (arguments[pos+5] || "").trim()
+                    cotation = (arguments[pos+1] || "").trim().replace("|","")
+                    length = (arguments[pos+2] || "").trim().replace("|","")
+                    gears = (arguments[pos+3] || "").trim().replace("|","")
+                    description = (arguments[pos+4] || "").trim().replace("|","")
+                    belay = (arguments[pos+5] || "").trim().replace("|","")
 
 
                     if(cell1.substring(0,3)=="L#~"){
@@ -130,11 +133,11 @@ app.provider('markdownConverter', function () {
                         result.push("<td colspan='5'>" + cell1.replace("|","") + "</td>")
                     else{
                         result.push("<td>" + cell1 + "</td>")
-                        result.push("<td>" + cotation.replace("|","") + "</td>")
-                        result.push("<td>" + length.replace("|","") + "</td>")
-                        result.push("<td>" + gears.replace("|","") + "</td>")
-                        result.push("<td>" + description.replace("|","") + "</td>")
-                        result.push("<td>" + belay.replace("|","") + "</td>")
+                        if(cotation) result.push("<td>" + cotation + "</td>")
+                        if(length) result.push("<td>" + length + "</td>")
+                        if(gears) result.push("<td>" + gears + "</td>")
+                        if(description) result.push("<td>" + description + "</td>")
+                        if(belay) result.push("<td>" + belay + "</td>")
                     }
                     pos +=6
 
