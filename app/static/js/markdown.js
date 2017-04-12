@@ -12,7 +12,7 @@ app.provider('markdownConverter', function () {
     var c2c_folies = function () {
         var italic = {
             type: 'lang',
-            regex: /\[i\](.*)\[\/i\]/g,
+            regex: /\[i\]([^\]]*)\[\/i\]/g,
             replace: function (match, text) {
                 return '<i>'+ text + '</i>';
             }
@@ -20,26 +20,45 @@ app.provider('markdownConverter', function () {
 
         var bold = {
             type: 'lang',
-            regex: /\[b\](.*)\[\/b\]/g,
+            regex: /\[b\]([^\]]*)\[\/b\]/g,
             replace: function (match, text) {
                 return '<strong>'+ text + '</strong>';
             }
         };
 
+        function image(imgId, size, position, legend){
+            position = position ? position.trim() : ""
+            size = size ? size.trim() : ""
+
+            css = " "
+            if(position) css+= ' image-' + position
+            if(size) css+= ' image-' + size
+
+            css=" class='" + css + "'"
+
+            size = size =="big" ? "BI" : "MI"
+
+            return '<figure' + css + '>' +
+                '<a href="https://www.camptocamp.org/images/' + imgId + '" target="_blank">' +
+                '<img src="https://api.camptocamp.org/images/proxy/' + imgId + '?size=' + size + '" />' +
+                '</a>' +
+                '</figure>'
+
+        }
+
         var img = {
             type: 'lang',
-            regex: /\[img=([\d]+)( right| center| big| inline)*\/\]/g,
-            replace: function (match, imgId, position, size) {
-                return '<img src="https://api.camptocamp.org/images/proxy/' + imgId + '?size=MI" />';
+            regex: /\[img=([\d]+)( big)?( right| center| left | inline)?( no_border)?( no_legend)?\/\]/g,
+            replace: function (match, imgId, size, position, border, legend) {
+                return image(imgId, size, position, legend)
             }
         };
 
         var imgLegend = {
             type: 'lang',
-            regex: /\[img=([\d]+)( right| center| big| inline)*\]([^\[]*)\[\/img\]/g,
-            replace: function (match, imgId, position, legend) {
-                console.log(match,imgId,position,legend)
-                return '<img src="https://api.camptocamp.org/images/proxy/' + imgId + '?size=MI" />';
+            regex: /\[img=([\d]+)( big)?( right| center| left| inline)?\]([^\[]*)\[\/img\]/g,
+            replace: function (match, imgId, size, position, legend) {
+                return image(imgId, size, position, legend)
             }
         };
 
@@ -61,9 +80,12 @@ app.provider('markdownConverter', function () {
 
         var c2cItem = {
             type: 'lang',
-            regex: /\[\[(waypoint|route)s\/([\d]+)(\/fr)?\|([^\]]*)\]\]/g,
+            regex: /\[\[(book|waypoint|route)s\/([\d]+)(\/fr\/?)?\|([^\]]*)\]\]/g,
             replace: function (match, item, id, lang, text) {
-                return '<a href="' + item + '/' + id + '">' + text + '</a>';
+                if(item=="book")
+                    return '<a href="https://www.camptocamp.org/' + item + 's/' + id + '">' + text + '</a>';
+                else
+                    return '<a href="' + item + '/' + id + '">' + text + '</a>';
             }
         };
 
@@ -123,7 +145,16 @@ app.provider('markdownConverter', function () {
             }
         };
 
-        return [ltag, italic, bold, img, imgLegend, url, url2, c2cItem];
+
+        var toc = {
+            type: 'lang',
+            regex: /\[toc2( right)?\]/g,
+            replace: function () {
+                return '';
+            }
+        };
+
+        return [italic, bold, img, imgLegend, url, url2, c2cItem, toc, ltag];
     }
 
     showdown.extension('c2c_folies', c2c_folies);
