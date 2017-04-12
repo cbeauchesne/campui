@@ -65,16 +65,8 @@
           }
 
           scope.gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default || false, scope.slides, scope.options);
-          scope.gallery.init();
-          scope.item = scope.gallery.currItem;
 
-          scope.gallery.listen('destroy', function () {
-            scope.safeApply(function () {
-              (scope.onClose || angular.noop)();
-            });
-          });
-
-          // Image loaded 
+          // Image loaded
           scope.gallery.listen('gettingData', function(index, item) {
               if (item.w < 1 || item.h < 1) { // unknown size
                   var img = new Image();
@@ -86,6 +78,15 @@
                   }
                   img.src = item.src; // let's download image
               }
+          });
+
+          scope.gallery.init();
+          scope.item = scope.gallery.currItem;
+
+          scope.gallery.listen('destroy', function () {
+            scope.safeApply(function () {
+              (scope.onClose || angular.noop)();
+            });
           });
 
           scope.gallery.listen('afterChange', function () {
