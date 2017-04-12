@@ -134,7 +134,7 @@ app.provider('markdownConverter', function () {
                     }
                     else if(suffix=="_"){
                         current_postfix = ""
-                        cell1 = tag + n + current_postfix
+                        cell1 = tag + n
                         n++
                     }
                     else if($.isNumeric(suffix)){
