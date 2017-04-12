@@ -3,6 +3,7 @@
 [Download package](https://github.com/cbeauchesne/campui/archive/master.zip), unzip it, and execute : 
 
 ### Front-end (stand alone Web app)
+You must install [Node.js](https://nodejs.org/en/)
 1. `npm install` : install node package
 2. `bower install` : install web package
 3. `gulp` : it will open http://localhost:3000. :tada:
