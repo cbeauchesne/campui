@@ -103,6 +103,7 @@ function getServer(baseDir){
                 || fileName.indexOf("/credit") >= 0
                 || fileName.indexOf("/login") >= 0
                 || fileName.indexOf("/faq") >= 0
+                || fileName.indexOf("/markdown") >= 0
                 || fileName.indexOf("/xreport") >= 0)
         ) {
             req.url = "/index.html";

@@ -62,6 +62,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
         templateUrl: "static/views/faq.html",
     })
 
+    $stateProvider.state('markdown', {
+        url: "/markdown",
+        templateUrl: "static/views/markdown.html",
+    })
+
     $stateProvider.state('me', {
         url: "/me",
         templateUrl: 'static/views/me.html',
