@@ -105,7 +105,8 @@ angular.module('campui')
                         ps.slides.push({
                             src:"https://media.camptocamp.org/c2corg_active/" + image.filename.replace('.', 'BI.').replace('.svg', '.jpg'),
                             w:0,h:0,
-                            title:locale.get(image).title
+                            title:locale.get(image).title,
+                            document_id:image.document_id,
                         })
                     })
                     ps.open = true;

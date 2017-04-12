@@ -219,6 +219,7 @@ msgid "Orientations"
 msgstr ""
 
 #: components/license.html:5
+#: components/ng-photoswipe.html:35
 msgid "Original page"
 msgstr ""
 
