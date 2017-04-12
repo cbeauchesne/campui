@@ -99,7 +99,38 @@ app.factory('searchData', function(){
         query:"",
         result:undefined
     }
-})
+});
+
+app.service('photoswipe', ["locale", function(locale){
+    _this = this
+
+    // https://github.com/dimsemenov/PhotoSwipe/issues/580
+    // history is important, see comment of mutac
+    _this.opts={
+        index:0,
+        history:false
+    }
+
+    _this.getImages = undefined
+
+    _this.showGallery = function (i) {
+        _this.opts.index = i;
+        _this.slides = []
+        _this.getImages().forEach(function (image) {
+            _this.slides.push({
+                src:"https://media.camptocamp.org/c2corg_active/" + image.filename.replace('.', 'BI.').replace('.svg', '.jpg'),
+                w:0,h:0,
+                title:locale.get(image).title,
+                document_id:image.document_id,
+            })
+        })
+        _this.open = true;
+    }
+
+    _this.closeGallery = function () {
+        _this.open = false;
+    };
+}]);
 
 app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
     return {

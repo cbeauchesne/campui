@@ -92,29 +92,11 @@ angular.module('campui')
                 images: '=',
             },
             templateUrl: '/static/views/components/image_gallery.html',
-            controller:["$scope","locale", function($scope, locale){
+            controller:["$scope","locale","photoswipe", function($scope, locale, photoswipe){
                 // https://github.com/dimsemenov/PhotoSwipe/issues/580
                 // history is important, see comment of mutac
-                $scope.photoswipe = {opts:{index:0,history:false}}
-                ps = $scope.photoswipe
-
-                ps.showGallery = function (i) {
-                    ps.opts.index = i;
-                    ps.slides = []
-                    $scope.images.forEach(function (image) {
-                        ps.slides.push({
-                            src:"https://media.camptocamp.org/c2corg_active/" + image.filename.replace('.', 'BI.').replace('.svg', '.jpg'),
-                            w:0,h:0,
-                            title:locale.get(image).title,
-                            document_id:image.document_id,
-                        })
-                    })
-                    ps.open = true;
-                };
-
-                ps.closeGallery = function () {
-                    ps.open = false;
-                };
+                $scope.photoswipe = photoswipe
+                $scope.photoswipe.getImages = function() {return $scope.images}
             }]
         };
     })
