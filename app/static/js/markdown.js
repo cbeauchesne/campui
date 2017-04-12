@@ -48,7 +48,7 @@ app.provider('markdownConverter', function () {
 
         var img = {
             type: 'lang',
-            regex: /\[img=([\d]+)( big)?( right| center| left | inline)?( no_border)?( no_legend)?\/\]/g,
+            regex: /\[img=([\d]+)( big)?( right| center| left | inline)?( no_border)?( no_legend)? *\/\]/g,
             replace: function (match, imgId, size, position, border, legend) {
                 return image(imgId, size, position, legend)
             }
@@ -92,7 +92,7 @@ app.provider('markdownConverter', function () {
         line_count = 40
 
         content_pattern = "(?:[^]*?(?=\\nL#|\\nR#|\\n\\n|\\|))"
-        first_cellPattern = "([LR]#" + content_pattern + ")"
+        first_cellPattern = "([LR])#(" + content_pattern + ")"
         cell_pattern = "(\\|" + content_pattern + ")?"
 
         row_pattern = "(" + first_cellPattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + "\\|?\\n)"
@@ -108,30 +108,45 @@ app.provider('markdownConverter', function () {
                 result = ["<table>"]
                 pos = 2
                 n = 1
+                current_postfix = ""
+
                 for(l=0;l<line_count;l++){
                     if(!arguments[pos]) //full line
                         break
 
                     result.push("<tr>")
 
-                    cell1 = (arguments[pos] || "").trim()
-                    cotation = (arguments[pos+1] || "").trim().replace("|","")
-                    length = (arguments[pos+2] || "").trim().replace("|","")
-                    gears = (arguments[pos+3] || "").trim().replace("|","")
-                    description = (arguments[pos+4] || "").trim().replace("|","")
-                    belay = (arguments[pos+5] || "").trim().replace("|","")
+                    tag = (arguments[pos] || "").trim()
+                    suffix = (arguments[pos+1] || "").trim()
+                    cotation = (arguments[pos+2] || "").trim().replace("|","")
+                    length = (arguments[pos+3] || "").trim().replace("|","")
+                    gears = (arguments[pos+4] || "").trim().replace("|","")
+                    description = (arguments[pos+5] || "").trim().replace("|","")
+                    belay = (arguments[pos+6] || "").trim().replace("|","")
 
-
-                    if(cell1.substring(0,3)=="L#~"){
-                        cell1 = cell1.replace("L#~", "")
-                    }
-                    else if(cell1=="L#"){
-                        cell1 = cell1.replace("L#", "L" + n)
+                    if(suffix.length==0){
+                        cell1 = tag + n + current_postfix
                         n++
                     }
+                    else if(suffix=="'"){
+                        current_postfix = "'"
+                        cell1 = tag + (n-1) + "'"
+                    }
+                    else if(suffix=="_"){
+                        current_postfix = ""
+                        cell1 = tag + n + current_postfix
+                        n++
+                    }
+                    else if($.isNumeric(suffix)){
+                        n = parseInt(suffix)
+                        cell1 = tag + n + current_postfix
+                        n++
+                    }
+                    else
+                        cell1 = tag + "#" + suffix
 
-                    if(!cotation && !length && !gears && !belay)
-                        result.push("<td colspan='5'>" + cell1.replace("|","") + "</td>")
+                    if(suffix.substring(0,1)=="~")
+                        result.push("<td colspan='6'>" + suffix.replace("~","") + "</td>")
                     else{
                         result.push("<td>" + cell1 + "</td>")
                         result.push("<td>" + cotation + "</td>")
@@ -140,7 +155,7 @@ app.provider('markdownConverter', function () {
                         result.push("<td>" + description + "</td>")
                         result.push("<td>" + belay + "</td>")
                     }
-                    pos +=7
+                    pos +=8
 
                     result.push("</tr>")
                 }
