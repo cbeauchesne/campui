@@ -3,14 +3,14 @@
 [Download package](https://github.com/cbeauchesne/campui/archive/master.zip), unzip it, and execute : 
 
 ### Front-end (stand alone Web app)
-You must install [Node.js](https://nodejs.org/en/)
+You must have installed [Node.js](https://nodejs.org/en/)
 1. `npm install` : install node package
 2. `bower install` : install web package
 3. `gulp` : it will open http://localhost:3000. :tada:
 
 
 ### Back end
-You must install [Python 3.4](https://www.python.org/), and [PostgreSQL 9.4](https://www.postgresql.org/).
+You must have installed [Python 3.4](https://www.python.org/), and [PostgreSQL 9.4](https://www.postgresql.org/).
 
 1. create a DB called `campui` in PostgreSQL running on port 5432. Add a connection user named *campui* and password *campui* (or modify campui/settings.py).
 2. `pip install -r requirements.txt` :  install all dependencies
