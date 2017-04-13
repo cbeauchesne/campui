@@ -30,7 +30,8 @@
                         <div ng-repeat="outing in values" class="outing-line">
                             <div class="pull-left">
                                 <outing-link outing="outing"></outing-link>
-                                <condition-icon condition="outing.condition_rating"></condition-icon>
+                                <span class="outing-area">{{getLocale(outing.areas[outing.areas.length-1]).title}}</span>
+                                <condition-icon ng-if="outing.condition_rating" condition="outing.condition_rating"></condition-icon>
                             </div>
                             <div class="pull-right">
                                 <activities activities="outing.activities"></activities>
@@ -52,13 +53,11 @@
 
                 <div class="ibox-content" style="display: block;">
                     <loading-info></loading-info>
-                    <ul>
-                        <li ng-repeat="article in data.documents|limitTo:5">
+                        <div ng-repeat="article in data.documents|limitTo:5">
                         <span>
                             <article-link-c2c article="article"></article-link-c2c>
                         </span>
-                        </li>
-                    </ul>
+                        </div>
                 </div>
             </div>
 
@@ -70,13 +69,12 @@
 
                 <div class="ibox-content" style="display: block;">
                     <loading-info></loading-info>
-                    <ul>
-                        <li ng-repeat="route in data.documents|limitTo:25">
+                        <div ng-repeat="route in data.documents|limitTo:25">
                         <span>
                             <activities activities="route.activities"></activities>
                             <route-link route="route"></route-link>
                         </span>
-                        </li>
+                        </div>
                     </ul>
                 </div>
             </div>

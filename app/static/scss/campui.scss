@@ -118,9 +118,22 @@ visibility:none
 }
 
 .home-view .toggle-qe-button{
-display:none
+display:none;
 }
 
+.home-view .outing-area{
+font-style:italic;
+}
+
+.home-view .outing-area::before{
+content : "\2219  ";
+font-style:normal;
+}
+
+.home-view [class^="condition-"]::before{
+content : "\2219  ";
+color:#676a6c;
+}
 
 
 .condition-excellent{

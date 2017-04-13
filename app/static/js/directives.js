@@ -136,7 +136,7 @@ angular.module('campui')
             restrict: 'E',
             scope: {condition:"="},
             replace: true,
-            template: '<i ng-show="condition" class="fa fa-circle condition-{{condition}}" uib-tooltip="' + tooltip + '"></i>',
+            template: '<span class=" condition-{{condition}}"><i ng-show="condition" class="fa fa-circle" uib-tooltip="' + tooltip + '"></i></span>',
         };
     })
 
