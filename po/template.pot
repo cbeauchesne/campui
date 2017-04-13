@@ -110,7 +110,7 @@ msgstr ""
 msgid "Do not have an account?"
 msgstr ""
 
-#: common/ibox_tools.html:22
+#: common/ibox_tools.html:23
 msgid "Edit filter"
 msgstr ""
 
@@ -138,7 +138,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: common/ibox_tools.html:28
+#: common/ibox_tools.html:29
 msgid "Filters"
 msgstr ""
 
@@ -222,7 +222,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: common/ibox_tools.html:36
+#: common/ibox_tools.html:37
 msgid "No filter"
 msgstr ""
 
@@ -248,7 +248,7 @@ msgstr ""
 msgid "Outings ({{outings.total}})"
 msgstr ""
 
-#: common/ibox_tools.html:50
+#: common/ibox_tools.html:51
 #: common/navbar.html:152
 #: me.html:6
 msgid "Parameters"
