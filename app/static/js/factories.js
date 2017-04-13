@@ -232,22 +232,26 @@ app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
         outing:[{ name:'Date', field: 'date_start' , width: '10%'},
                 {
                     name:gettextCatalog.getString('Title'),
+                    field: 'locales[0].title',
                     width: '*',
                     cellTemplate:'<outing-link outing="row.entity" class="ui-grid-cell-contents"></outing-link>',
                 },
                 {
                     name:gettextCatalog.getString('Activities'),
+                    field: 'activities',
                     width: '10%',
                     cellTemplate:'<div class="ui-grid-cell-contents"><activities activities="row.entity.activities"></activities></div>'
                 },
                 {
                     name:'C',
                     width: '5%',
+                    field: 'condition_rating',
                     cellTemplate:'<div class="ui-grid-cell-contents"><condition-icon condition="row.entity.condition_rating"></condition-icon></div>'
                 },
                 {
                     name:gettextCatalog.getString('Author'),
-                    field: 'author.name', width: '20%',
+                    field: 'author.name',
+                    width: '20%',
                     cellTemplate:'<author-link author="row.entity.author" class="ui-grid-cell-contents"></author-link>',
                 }
         ],
@@ -255,6 +259,7 @@ app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
         xreport:[
                  {
                      name:gettextCatalog.getString('Title'),
+                     field: 'locales[0].title',
                      width: '*',
                      cellTemplate:'<xreport-link-c2c xreport="row.entity" class="ui-grid-cell-contents"/>',
                  },
@@ -275,29 +280,34 @@ app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
                  },
                  {
                      name:gettextCatalog.getString('Activities'),
+                     field: 'activities',
                      width: '10%',
                      cellTemplate:'<div class="ui-grid-cell-contents"><activities activities="row.entity.activities" /></div>',
                  },
                  {
                     name:gettextCatalog.getString('Event type'),
-                     width: '10%',
-                     cellTemplate:'<span ng-repeat="type in row.entity.event_type">{{type}}</span>'
+                    field:'event_type',
+                    width: '10%',
+                    cellTemplate:'<span ng-repeat="type in row.entity.event_type">{{type}}</span>'
                  },
         ],
 
         route:[
             {
                 name:gettextCatalog.getString('Title'),
+                field: 'locales[0].title',
                 width: '*',
                 cellTemplate:'<route-link route="row.entity" class="ui-grid-cell-contents"/>',
             },
             {
                 name:gettextCatalog.getString('Activities'),
+                field: 'activities',
                 width: '15%',
                 cellTemplate:'<activities activities="row.entity.activities" class="ui-grid-cell-contents"></activities>',
             },
             {
                 name:gettextCatalog.getString('Rating'),
+                field:"global_rating",
                 width: '15%',
                 cellTemplate:'<rating route="row.entity" class="ui-grid-cell-contents"/>',
             },
@@ -311,10 +321,12 @@ app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
         article:[
             {
                 name:gettextCatalog.getString('Title'),
+                field: 'locales[0].title',
                 cellTemplate:'<article-link-c2c article="row.entity" class="ui-grid-cell-contents"></article-link-c2c>',
             },
             {
                 name:gettextCatalog.getString('Activities'),
+                field: 'activities',
                 width: '20%',
                 cellTemplate:'<activities activities="row.entity.activities"></activities>',
             },
@@ -333,10 +345,12 @@ app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
         waypoint:[
             {
                 name:gettextCatalog.getString("Name"),
+                field: 'locales[0].title',
                 cellTemplate:'<waypoint-link waypoint="row.entity" class="ui-grid-cell-contents"/>',
             },
             {
                 name:gettextCatalog.getString("Areas"),
+                field:'areas',
                 cellTemplate:'<div areas="row.entity.areas" class="ui-grid-cell-contents"/>',
             },
             {
@@ -354,6 +368,7 @@ app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
         area:[
             {
                 name:gettextCatalog.getString("Name"),
+                field: 'locales[0].title',
                 cellTemplate:'<area-link area="row.entity" class="ui-grid-cell-contents"/>',
             },
             {

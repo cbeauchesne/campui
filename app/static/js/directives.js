@@ -225,8 +225,11 @@ $.each(c2cItems, function(item, params){
         result =   {
             restrict: 'E',
             replace: true,
-            scope: {item:"="},
-            template: '<a class="badge badge-success" ui-sref="' + item + 's({[item.type]:item.document_id})" translate>All ' + item + 's</a>',
+            scope: {
+                item:"=",
+                itemType:"=?",
+            },
+            template: '<a class="badge badge-success" ui-sref="' + item + 's({[item.type || itemType]:item.document_id})" translate>All ' + item + 's</a>',
         };
         return result;
     })
