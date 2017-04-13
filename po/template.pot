@@ -32,6 +32,7 @@ msgid "Areas"
 msgstr ""
 
 #: common/navbar.html:69
+#: home.html:50
 msgid "Articles"
 msgstr ""
 
@@ -308,6 +309,7 @@ msgid "Route type :"
 msgstr ""
 
 #: common/navbar.html:37
+#: home.html:66
 #: search.html:13
 #: waypoint.html:26
 msgid "Routes"
