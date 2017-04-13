@@ -93,7 +93,7 @@ app.provider('markdownConverter', function () {
 
         line_count = 40
 
-        content_pattern = "(?:[^]*?(?=\\nL#|\\nR#|\\n\\n|\\|))"
+        content_pattern = "(?:[^]*?(?=\\n[LR]#|\\n\\n|\\|))"
         first_cellPattern = "(?:\\n)([LR])#(" + content_pattern + ")"
         cell_pattern = "(\\|" + content_pattern + ")?"
 

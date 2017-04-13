@@ -19,35 +19,81 @@ app.factory('api', ['$resource', function($resource){
     };
 }]);
 
-app.factory('currentUser', ["api", "gettextCatalog", function(api, gettextCatalog){
-    return api.currentUser.get(function(user){
-        user.isAnonymous = user.username === ""
-        if(user.isAnonymous){
-            user.profile = {
-                params:{
-                    queries:[]
+app.factory('anonymousProfile', ["gettextCatalog", function(gettextCatalog){
+    profile = {
+        params:{
+            queries:[]
+        }
+    }
+
+    activities = ["skitouring",
+        "snow_ice_mixed",
+        "mountain_climbing",
+        "rock_climbing",
+        "ice_climbing",
+        "hiking",
+        "snowshoeing",
+        "paragliding",
+        "mountain_biking",
+        "via_ferrata"]
+
+    activities.forEach(function(activity){
+        profile.params.queries.push({
+            "name": gettextCatalog.getString(activity),
+            "url": "act=" + activity,
+        })
+    })
+
+    return profile
+
+}])
+
+app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousProfile){
+    user = api.currentUser.get(function(){
+        if(user.username === ""){
+            user.isAnonymous = true
+            user.profile = anonymousProfile
+        }
+        else {
+            user.isAnonymous = false
+
+            user.profile = user.profile || {}
+            user.profile.params = user.profile.params || {}
+            user.profile.params.queries = user.profile.params.queries || []
+
+            user.save = function(){
+                user.saving = true;
+                api.currentUser.save({profile:user.profile},
+                    function(){
+                        delete user.saving;
+                        delete user.errors;
+                    },
+                    function(response){
+                        delete user.saving;
+                        user.errors = response;
+                    }
+                );
+            };
+
+            user.deleteQuery = function(query){
+                index = user.profile.params.queries.indexOf(query);
+
+                if(index != -1) {
+                    delete query.name
+                    delete query.url
+                    user.profile.params.queries.splice(index, 1);
                 }
             }
-
-            activities = ["skitouring",
-                "snow_ice_mixed",
-                "mountain_climbing",
-                "rock_climbing",
-                "ice_climbing",
-                "hiking",
-                "snowshoeing",
-                "paragliding",
-                "mountain_biking",
-                "via_ferrata"]
-
-            activities.forEach(function(activity){
-                user.profile.params.queries.push({
-                    "name": gettextCatalog.getString(activity),
-                    "url": "act=" + activity,
-                })
-            })
         }
+    },
+    function(){
+        user.isAnonymous = true
+        user.profile = anonymousProfile
     });
+
+    user.isAnonymous = true
+
+    return user
 }]);
 
 app.factory('locale', ['gettextCatalog', function(gettextCatalog){

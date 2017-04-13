@@ -99,7 +99,7 @@
                                                 Test!
                                             </a>
                                             <button class="btn btn-danger btn-sm"
-                                                    ng-click="deleteQuery(query)">
+                                                    ng-click="user.deleteQuery(query)">
                                                 <i class="fa fa-trash"></i>
                                             </button>
                                         </td>
@@ -111,12 +111,12 @@
 
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"
-                                        ng-click="save()">
-                                    <strong translate>Save</strong>
-                                    <strong ng-if="saving" translate>Saving...</strong>
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs"
+                                        type="submit"
+                                        ng-click="user.save()">
+                                    <strong ng-if="!user.saving" translate>Save</strong>
+                                    <strong ng-if="user.saving" translate>Saving...</strong>
                                 </button>
-                                {{save_error}}
                             </div>
                         </div>
                     </div>

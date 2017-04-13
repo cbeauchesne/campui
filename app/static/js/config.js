@@ -70,38 +70,8 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
     $stateProvider.state('me', {
         url: "/me",
         templateUrl: 'static/views/me.html',
-        controller: ['$scope', 'api', 'c2c', 'currentUser', function($scope, api, c2c, currentUser){
-            currentUser.$promise.then(function(){
-                $scope.errors = {}
-                $scope.user = jQuery.extend(true, {}, currentUser);
-                $scope.user.profile.params = $scope.user.profile.params || {}
-                $scope.user.profile.params.queries = $scope.user.profile.params.queries || []
-
-                params = $scope.user.profile.params;
-
-                $scope.deleteQuery = function(query){
-                    index = params.queries.indexOf(query);
-
-                    if(index != -1) {
-                        params.queries.splice(index, 1);
-                    }
-                }
-
-                $scope.save = function(){
-                    $scope.saving = true;
-                    api.currentUser.save($scope.user,
-                        function(){
-                            currentUser.profile = $scope.user.profile;
-                            delete $scope.saving;
-                            delete $scope.errors;
-                        },
-                        function(response){
-                            delete $scope.saving;
-                            $scope.errors.global = response;
-                        }
-                    );
-                };
-            })
+        controller: ['$scope', 'currentUser', function($scope, currentUser){
+            $scope.user = currentUser
         }]
     })
 }]);

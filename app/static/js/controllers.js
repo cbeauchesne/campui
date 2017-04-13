@@ -13,7 +13,6 @@ function getC2cController(c2c_item){
         $scope.user = currentUser
         $scope.columnDefs = columnDefs[c2c_item]
 
-       // $scope.label = c2c_item + "s"
         $scope.offset = 0
 
         $scope.next = function(){
@@ -53,11 +52,10 @@ function getC2cController(c2c_item){
         currentUser.$promise.then(function(){
             defaultQuery = undefined
 
-            profile = currentUser.profile || {}
-            user_params = profile.params || {};
-            $scope.queries = user_params.queries || [];
+            user_params = currentUser.profile.params
+
             defaultQueryName = user_params[c2c_item + "DefaultQuery"]
-            defaultQuery = $scope.queries.find(function(item){return item.name == defaultQueryName})
+            defaultQuery = user_params.queries.find(function(item){return item.name == defaultQueryName})
 
             $scope.setQuery(defaultQuery)
         },
@@ -66,6 +64,12 @@ function getC2cController(c2c_item){
         })
 
         $scope.qe = {}
+
+        $scope.qe.visible = false
+
+        $scope.qe.toggle = function(){
+            $scope.qe.visible = !$scope.qe.visible
+        }
 
         $scope.qe.conf = {}
         $scope.qe.conf.activities = ["snow_ice_mixed","skitouring","hiking","snowshoeing",
