@@ -1,6 +1,8 @@
 
 app = angular.module('campui')
 
+ltag_memory = {L : 0, R:0}
+        
 app.provider('markdownConverter', function () {
     var opts = {
         simpleLineBreaks : true,
@@ -92,29 +94,29 @@ app.provider('markdownConverter', function () {
         line_count = 40
 
         content_pattern = "(?:[^]*?(?=\\nL#|\\nR#|\\n\\n|\\|))"
-        first_cellPattern = "([LR])#(" + content_pattern + ")"
+        first_cellPattern = "(?:\\n)([LR])#(" + content_pattern + ")"
         cell_pattern = "(\\|" + content_pattern + ")?"
 
-        row_pattern = "(" + first_cellPattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + "\\|?\\n)"
+        row_pattern = "(" + first_cellPattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + cell_pattern + "\\|?)"
 
         pattern = row_pattern
         for(l=1;l<line_count;l++)
             pattern += row_pattern + "?"
 
+        suffix_parser = /^(_)?(\+[\d]*|[\d]+)?(\-\+?[\d]+)?([^\d\-+!][^ !]*)?(!)?$/
+        
         var ltag = {
             type: 'lang',
             regex: RegExp(pattern, 'gm'),
             replace: function () {
-                result = ["<table>"]
+                result = ['<table>']
+                                        
                 pos = 2
-                n = 1
                 current_postfix = ""
 
                 for(l=0;l<line_count;l++){
                     if(!arguments[pos]) //full line
                         break
-
-                    result.push("<tr>")
 
                     tag = (arguments[pos] || "").trim()
                     suffix = (arguments[pos+1] || "").trim()
@@ -124,40 +126,114 @@ app.provider('markdownConverter', function () {
                     description = (arguments[pos+5] || "").trim().replace("|","")
                     belay = (arguments[pos+6] || "").trim().replace("|","")
 
-                    if(suffix.length==0){
-                        cell1 = tag + n + current_postfix
-                        n++
+                    if(suffix.startsWith("~"))
+                        result.push("<tr><td colspan='6'>" + suffix.substring(1) + "</td></tr>")
+                    else if(suffix.startsWith("=")){
+                        
+                        result.push("<tr>")
+                        result.push("<th>" + suffix.substring(1) + "</th>")
+                        result.push("<th>" + cotation + "</th>")
+                        result.push("<th>" + length + "</th>")
+                        result.push("<th>" + gears + "</th>")
+                        result.push("<th>" + description + "</th>")
+                        result.push("<th>" + belay + "</th>")
+                        result.push("</tr>")
+                        
                     }
-                    else if(suffix=="'"){
-                        current_postfix = "'"
-                        cell1 = tag + (n-1) + "'"
-                    }
-                    else if(suffix=="_"){
-                        current_postfix = ""
-                        cell1 = tag + n
-                        n++
-                    }
-                    else if($.isNumeric(suffix)){
-                        n = parseInt(suffix)
-                        cell1 = tag + n + current_postfix
-                        n++
-                    }
-                    else
-                        cell1 = tag + "#" + suffix
-
-                    if(suffix.substring(0,1)=="~")
-                        result.push("<td colspan='6'>" + suffix.replace("~","") + "</td>")
                     else{
+                        
+                        console.log([suffix, suffix_parser.exec(suffix)])
+                        
+                        suffix_data = suffix_parser.exec(suffix)
+                        if(suffix_data){
+                            modifier = suffix_data[1]       // _ or =
+                            fixed_number = suffix_data[2]   // <number> or +<number>
+                            group_number = suffix_data[3]   // -<+>?<number>
+                            label = suffix_data[4]          // whatever without spaces, and not starting with number nor  _-+!
+                            local_ref = suffix_data[5]      // ! 
+                             
+                            // _ means kill any bis pitch and restart from main_end that contains last main pitch
+                            // delete useless main_start and main_end
+                            if(modifier=="_"){                                
+                                current_postfix = ""
+                                ltag_memory[tag] = ltag_memory[tag + "_main_end"] 
+                                delete ltag_memory[tag + "_main_start"]
+                                delete ltag_memory[tag + "_main_end"]
+                            }                            
+                            
+                            // <number> or +<number>
+                            if(fixed_number){
+                                if (fixed_number=="+") //only one '+' : add 1
+                                    ltag_memory[tag]++
+                                else if (fixed_number.startsWith("+")) //only +N  : add N
+                                    ltag_memory[tag]+= parseInt(fixed_number)
+                                else   //  number : set to it
+                                    ltag_memory[tag] = parseInt(fixed_number)
+                            }
+                            else // no specified number : add 1
+                                ltag_memory[tag]++
+                                                        
+                            if(local_ref){  // set local ref for multi bis pitch : save start and end of main pitch                              
+                                ltag_memory[tag + "_main_start"] = ltag_memory[tag]
+                                ltag_memory[tag + "_main_end"] = ltag_memory[tag]
+                            }
+                                
+                            if(label){ // bis pitch called label                                 
+                                if(label!=current_postfix){ // new bis pitch
+                                    if(!ltag_memory[tag + "_main_start"]) // there is no local_ref : save start and end of main pitch  
+                                    {
+                                        ltag_memory[tag + "_main_start"] = ltag_memory[tag] -1
+                                        ltag_memory[tag + "_main_end"] = ltag_memory[tag] -1
+                                    }
+                                    
+                                    ltag_memory[tag] = ltag_memory[tag + "_main_start"] // use start of main pitch
+                                }
+                                
+                                current_postfix = label //save bis pitch's label
+                            }                            
+                                
+                            
+                            if(group_number){    // several pitchs on one row
+                                group_number = group_number.substring(1)                         
+                                 if (group_number.startsWith("+"))
+                                    group_postfix = "-" + (ltag_memory[tag] + parseInt(group_number))
+                                else 
+                                    group_postfix = "-" + parseInt(group_number)
+                                
+                            }
+                            else
+                                group_postfix = ""
+                        
+                            //build final label
+                            cell1 = tag + ltag_memory[tag] + group_postfix + current_postfix    
+                            
+                            if(group_number){ // if there is grup_number, we must add it to current ltag_memory
+                                 if (group_number.startsWith("+"))
+                                    ltag_memory[tag]+= parseInt(group_number) -1
+                                else 
+                                    ltag_memory[tag] = parseInt(group_number)
+                            }
+                            
+                            if(!current_postfix) // means we are on main pitch                                
+                                if(ltag_memory[tag + "_main_end"]) //and a local ref has been set, you must save end
+                                    ltag_memory[tag + "_main_end"] = ltag_memory[tag]
+                                    
+                        }
+                        else{
+                            cell1 = tag + "#" + suffix
+                        }
+                        
+                        result.push("<tr>")
                         result.push("<td>" + cell1 + "</td>")
                         result.push("<td>" + cotation + "</td>")
                         result.push("<td>" + length + "</td>")
                         result.push("<td>" + gears + "</td>")
                         result.push("<td>" + description + "</td>")
                         result.push("<td>" + belay + "</td>")
+                        result.push("</tr>")
                     }
                     pos +=8
 
-                    result.push("</tr>")
                 }
                 result.push("</table>")
                 return result.join("");
@@ -192,10 +268,14 @@ app.directive('markdown', ['$sanitize', 'markdownConverter', function ($sanitize
         link: function (scope, element, attrs) {
             if (attrs.markdown) {
                 scope.$watch(attrs.markdown, function (newVal) {
+                    ltag_memory.R = 0
+                    ltag_memory.L = 0
                     var html = newVal ? $sanitize(markdownConverter.makeHtml(newVal)) : '';
                     element.html(html);
                 });
             } else {
+                ltag_memory.R = 0
+                ltag_memory.L = 0
                 var html = $sanitize(markdownConverter.makeHtml(element.text()));
                 element.html(html);
             }
