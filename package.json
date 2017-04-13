@@ -9,7 +9,7 @@
   "author": "Charles de Beauchesne",
   "repository": {
     "type": "git",
-    "url": "git://github.com/cbeauchesne/campui-frontend.git"
+    "url": "git://github.com/cbeauchesne/campui.git"
   },
   "license": "ISC",
   "devDependencies": {
