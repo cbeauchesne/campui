@@ -28,7 +28,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
         })
 
         $stateProvider.state(item + 's', {
-            url: "/" + item + "s",
+            url: "/" + item + "s?u&r&a&w",
             templateUrl: "static/views/c2c_items.html",
             controller: item + "sController",
         })

@@ -220,6 +220,17 @@ $.each(c2cItems, function(item, params){
         return result;
     })
 
+    Item = item.charAt(0).toUpperCase() + item.slice(1) //capitalize first letter
+    angular.module('campui').directive('linked' + Item + 's', function(){
+        result =   {
+            restrict: 'E',
+            replace: true,
+            scope: {item:"="},
+            template: '<a class="badge badge-success" ui-sref="' + item + 's({[item.type]:item.document_id})" translate>All ' + item + 's</a>',
+        };
+        return result;
+    })
+
     angular.module('campui').directive(item + 'List', function(){
         result =   {
             restrict: 'E',

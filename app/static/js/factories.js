@@ -75,8 +75,17 @@ app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousPr
                 );
             };
 
+            user.getQueryIndex = function(query){
+                return user.profile.params.queries.indexOf(query)
+            }
+
+            user.addQuery = function(query){
+                query=query || {}
+                user.profile.params.queries.push(query)
+            }
+
             user.deleteQuery = function(query){
-                index = user.profile.params.queries.indexOf(query);
+                index = user.getQueryIndex(query);
 
                 if(index != -1) {
                     delete query.name

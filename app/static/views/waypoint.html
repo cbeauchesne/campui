@@ -9,7 +9,13 @@
     <div class="ibox-content" style="display: block;">
         <div class="row">
             <div class="col-sm-12">
-                <div license type="'waypoint'" id="waypoint.document_id"></div>
+                <p>
+                    <i class="fa fa-chevron-right" uib-tooltip="{{'Areas' | translate }}"></i>
+                    <i areas="waypoint.areas"></i>
+                </p>
+                <linked-routes item="waypoint"></linked-routes>
+                <linked-outings item="waypoint"></linked-outings>
+                <span license type="'waypoint'" id="waypoint.document_id"></span>
 
                 <h2 ng-if="currentLocale.description" translate>Description</h2>
                 <div markdown="currentLocale.description"></div>

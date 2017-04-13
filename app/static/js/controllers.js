@@ -71,12 +71,20 @@ function getC2cController(c2c_item){
             $scope.setQuery(query)
         }
 
+
         $scope.qe = {}
 
         $scope.qe.visible = false
 
         $scope.qe.toggle = function(){
             $scope.qe.visible = !$scope.qe.visible
+        }
+
+        $scope.qe.save = function(){
+            if(user.getQueryIndex($scope.currentQuery) == -1 && ($scope.currentQuery.url || $scope.currentQuery.name))
+                user.addQuery($scope.currentQuery)
+
+            user.save()
         }
     }]
 }

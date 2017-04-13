@@ -59,10 +59,11 @@
 
                 <div license type="'route'" id="route.document_id"></div>
 
-                <h3 translate>Waypoints</h3>
+                <label translate>Waypoints</label>
                 <waypoint-list waypoints="route.associations.waypoints"></waypoint-list>
 
-                <h3 translate>Recent outings</h3>
+                <label translate>Recent outings</label>
+                <linked-outings item="route"></linked-outings>
                 <outing-list outings="route.associations.recent_outings.documents"></outing-list>
 
             </div>

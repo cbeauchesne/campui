@@ -12,7 +12,7 @@
     </a>
 
     <a ng-if="!user.isAnonymous && qe.visible"
-       ng-click="user.save()"
+       ng-click="qe.save()"
        uib-tooltip="{{ 'Save'| translate }}">
         <i class="fa fa-save"></i>
     </a>
@@ -42,7 +42,9 @@
         <li ng-repeat="query in user.profile.params.queries"
             ng-click="setQuery(query)"
             ng-class="{active:query.name==currentQuery.name}">
-            <a href>{{query.name}}</a>
+
+            <a ng-if="query.name" href>{{query.name}}</a>
+            <a ng-if="!query.name" href><i>* no name *</i></a>
         </li>
 
         <li ng-if="!user.isAnonymous" role="separator" class="divider"></li>

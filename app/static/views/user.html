@@ -3,11 +3,18 @@
         <h1>
             <i class="fa fa-user"></i>
             <user-link-c2c user="user"></user-link-c2c>
+
         </h1>
     </div>
 
     <div class="ibox-content" style="display: block;">
         <div class="row">
+            <div class="col-lg-12">
+                <linked-outings item="user"></linked-outings>
+            </div>
+        </div>
+        <div class="row">
+
             <div gallery class="col-sm-12" ng-if="user.associations.images.length"
                  images="user.associations.images"></div>
         </div>
