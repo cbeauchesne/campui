@@ -20,8 +20,8 @@ msgstr "Accès"
 msgid "Actions"
 msgstr "Actions"
 
-#: components/query_editor.html:7 factories.js:113 factories.js:151
-#: factories.js:169 factories.js:191
+#: components/query_editor.html:7 factories.js:190 factories.js:228
+#: factories.js:246 factories.js:268
 msgid "Activities"
 msgstr "Activitées"
 
@@ -29,7 +29,7 @@ msgstr "Activitées"
 msgid "Apply"
 msgstr "Appliquer"
 
-#: common/navbar.html:49 factories.js:213 outing.html:23 route.html:13
+#: common/navbar.html:49 factories.js:290 outing.html:23 route.html:13
 msgid "Areas"
 msgstr "Régions"
 
@@ -37,7 +37,7 @@ msgstr "Régions"
 msgid "Articles"
 msgstr "Articles"
 
-#: factories.js:123
+#: factories.js:200
 msgid "Author"
 msgstr "Auteur"
 
@@ -49,9 +49,9 @@ msgstr "Parce que nous ne sommes pas des génies…"
 msgid "CampToCamp URL"
 msgstr "URL CampToCamp"
 
-#: factories.js:201
+#: factories.js:278
 msgid "Categories"
-msgstr "Catégories"
+msgstr "catégories"
 
 #: outing.html:37
 msgid "Conditions"
@@ -73,7 +73,7 @@ msgstr "Crédits"
 msgid "Credits :"
 msgstr "Crédits :"
 
-#: factories.js:136
+#: factories.js:213
 msgid "Date"
 msgstr "Date"
 
@@ -93,6 +93,10 @@ msgstr "Par défaut pour les itinéraires"
 msgid "Default for xreports"
 msgstr "Par défaut pour les incidents"
 
+#: c2c_items.html:28
+msgid "Delete"
+msgstr "Supprimer"
+
 #: area.html:15 outing.html:31 route.html:19 waypoint.html:14
 msgid "Description"
 msgstr "Description"
@@ -105,7 +109,11 @@ msgstr "Dénivelé des difficultés :"
 msgid "Do not have an account?"
 msgstr "Vous n’avez pas encore un compte?"
 
-#: factories.js:217
+#: common/ibox_tools.html:23
+msgid "Edit filter"
+msgstr "Modifier le filtre"
+
+#: factories.js:294
 msgid "Elevation"
 msgstr "Altitude"
 
@@ -117,7 +125,7 @@ msgstr "Engagement"
 msgid "Equipement rating"
 msgstr "Qualité de l’équipement"
 
-#: factories.js:156
+#: factories.js:233
 msgid "Event type"
 msgstr "Type d’incident"
 
@@ -128,6 +136,10 @@ msgstr "Exposition"
 #: common/navbar.html:102
 msgid "FAQ"
 msgstr "FAQ"
+
+#: common/ibox_tools.html:29
+msgid "Filters"
+msgstr "Filtres"
 
 #: outing.html:61
 msgid "Frequentation"
@@ -165,7 +177,7 @@ msgstr "Cotation glace"
 msgid "Images"
 msgstr "Images"
 
-#: factories.js:141
+#: factories.js:218
 msgid "Impacted people"
 msgstr "Personnes importées"
 
@@ -173,7 +185,7 @@ msgstr "Personnes importées"
 msgid "Incidents"
 msgstr "Incidents"
 
-#: components/license.html:16
+#: components/license.html:11
 msgid "List of authors"
 msgstr "Liste des auteurs"
 
@@ -197,11 +209,15 @@ msgstr "Cotation mixe"
 msgid "My page"
 msgstr "Ma Page"
 
-#: factories.js:209 factories.js:230 me.html:79
+#: factories.js:286 factories.js:307 me.html:79
 msgid "Name"
 msgstr "Nom"
 
-#: common/ibox_tools.html:12
+#: common/ibox_tools.html:10
+msgid "Next"
+msgstr "Suivant"
+
+#: common/ibox_tools.html:37
 msgid "No filter"
 msgstr "Aucun filtre"
 
@@ -209,11 +225,11 @@ msgstr "Aucun filtre"
 msgid "Orientation :"
 msgstr "Orientation :"
 
-#: factories.js:179
+#: factories.js:256
 msgid "Orientations"
 msgstr "Orientations"
 
-#: components/license.html:5
+#: components/license.html:5 components/ng-photoswipe.html:35
 msgid "Original page"
 msgstr "Page originale"
 
@@ -225,7 +241,7 @@ msgstr "Sorties"
 msgid "Outings ({{outings.total}})"
 msgstr "Sorties ({{outings.total}})"
 
-#: common/ibox_tools.html:20 common/navbar.html:152 me.html:6
+#: common/ibox_tools.html:51 common/navbar.html:152 me.html:6
 msgid "Parameters"
 msgstr "Paramètres"
 
@@ -233,7 +249,11 @@ msgstr "Paramètres"
 msgid "Participants"
 msgstr "Participants"
 
-#: factories.js:196
+#: common/ibox_tools.html:3
+msgid "Previous"
+msgstr "Précédent"
+
+#: factories.js:273
 msgid "Quality"
 msgstr "Qualité"
 
@@ -241,7 +261,7 @@ msgstr "Qualité"
 msgid "Queries"
 msgstr "Requêtes"
 
-#: factories.js:174
+#: factories.js:251
 msgid "Rating"
 msgstr "Cotations"
 
@@ -281,11 +301,11 @@ msgstr "Type d’itinéraire :"
 msgid "Routes"
 msgstr "Itinéraires"
 
-#: me.html:116
+#: common/ibox_tools.html:16 me.html:117
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: me.html:117
+#: me.html:118
 msgid "Saving..."
 msgstr "Sauvegarde en cours…"
 
@@ -297,7 +317,7 @@ msgstr "Rechercher"
 msgid "Search results"
 msgstr "Résultats de la recherche"
 
-#: factories.js:146
+#: factories.js:223
 msgid "Severity"
 msgstr "Gravité"
 
@@ -313,7 +333,7 @@ msgstr "Test!"
 msgid "Timing"
 msgstr "Horaires"
 
-#: factories.js:108 factories.js:131 factories.js:164 factories.js:187
+#: factories.js:185 factories.js:208 factories.js:241 factories.js:264
 msgid "Title"
 msgstr "Titre"
 
@@ -321,7 +341,7 @@ msgstr "Titre"
 msgid "Topo"
 msgstr "Topo"
 
-#: factories.js:222 factories.js:234
+#: factories.js:299 factories.js:311
 msgid "Type"
 msgstr "Type"
 
@@ -355,11 +375,11 @@ msgstr "bon"
 
 #: fixed_strings.html:17
 msgid "hiking"
-msgstr "Randonnée"
+msgstr "randonnée"
 
 #: fixed_strings.html:16
 msgid "ice_climbing"
-msgstr "Cascade de glace"
+msgstr "cascade de glace"
 
 #: components/loading_info.html:5
 msgid "loading..."
@@ -367,15 +387,15 @@ msgstr "chargement..."
 
 #: fixed_strings.html:20
 msgid "mountain_biking"
-msgstr "VTT"
+msgstr "vélo"
 
 #: fixed_strings.html:14
 msgid "mountain_climbing"
-msgstr "Rocher haute montagne"
+msgstr "rocher haute montagne"
 
 #: fixed_strings.html:19
 msgid "paragliding"
-msgstr "Parapente"
+msgstr "parapente"
 
 #: fixed_strings.html:6
 msgid "poor"
@@ -383,25 +403,23 @@ msgstr "mauvais"
 
 #: fixed_strings.html:15
 msgid "rock_climbing"
-msgstr "Escalade"
+msgstr "escalade"
 
 #: fixed_strings.html:11
-#, fuzzy
-#| msgid "skitouring<"
 msgid "skitouring"
-msgstr "Ski"
+msgstr "ski"
 
 #: fixed_strings.html:13
 msgid "snow_ice_mixed"
-msgstr "Neige, glace et mixte"
+msgstr "neige, glace et mixte"
 
 #: fixed_strings.html:18
 msgid "snowshoeing"
-msgstr "Raquette"
+msgstr "raquette"
 
 #: fixed_strings.html:21
 msgid "via_ferrata"
-msgstr "Via ferrata"
+msgstr "via ferrata"
 
 #~ msgid "Clear"
 #~ msgstr "Effacer"
