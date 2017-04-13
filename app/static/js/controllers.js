@@ -1,7 +1,8 @@
 
 function getC2cController(c2c_item){
 
-    return ['$scope','c2c','currentUser','columnDefs','gettextCatalog','locale', function($scope, c2c, currentUser, columnDefs, gettextCatalog, locale){
+    return ['$scope','c2c','currentUser','columnDefs','gettextCatalog','locale','urlQuery',
+    function($scope, c2c, currentUser, columnDefs, gettextCatalog, locale, urlQuery){
 
         $scope.getLocale = function(item){ return locale.get(item)}
 
@@ -50,18 +51,25 @@ function getC2cController(c2c_item){
         }
 
         currentUser.$promise.then(function(){
-            defaultQuery = undefined
-
-            user_params = currentUser.profile.params
-
-            defaultQueryName = user_params[c2c_item + "DefaultQuery"]
-            defaultQuery = user_params.queries.find(function(item){return item.name == defaultQueryName})
-
-            $scope.setQuery(defaultQuery)
+            firstLoad(currentUser.profile.params[c2c_item + "DefaultQuery"])
         },
         function(){ //api failed
-            $scope.setQuery() //api failed, => no queries
+            firstLoad() //api failed, => no queries
         })
+
+        //function that will be called on first load
+        var firstLoad = function(defaultQueryName){
+            url = urlQuery.getCurrent()
+
+            if(url)
+                query = {url:url}
+            else
+                query = currentUser.profile.params.queries.find(function(item){
+                    return item.name == defaultQueryName
+                })
+
+            $scope.setQuery(query)
+        }
 
         $scope.qe = {}
 
@@ -69,31 +77,6 @@ function getC2cController(c2c_item){
 
         $scope.qe.toggle = function(){
             $scope.qe.visible = !$scope.qe.visible
-        }
-
-        $scope.qe.conf = {}
-        $scope.qe.conf.activities = ["snow_ice_mixed","skitouring","hiking","snowshoeing",
-                                "paragliding","mountain_climbing","rock_climbing",
-                                "mountain_biking","via_ferrata","ice_climbing"]
-
-        $scope.qe.apply = function(){
-            items = $('#queryForm').serializeArray()
-
-            console.log(items)
-
-            result = {}
-            items.forEach(function(item){
-                if(typeof result[item.name] === 'undefined')
-                    result[item.name] = item.value
-                else
-                    result[item.name] += "," + item.value
-            })
-
-            console.log(jQuery.param(result))
-
-            url = jQuery.param(result).replace("%2C",",")
-            $scope.offset = 0
-            $scope.setQuery({url:url})
         }
     }]
 }
