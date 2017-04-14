@@ -257,7 +257,11 @@ app.provider('markdownConverter', function () {
     return {
         $get: function () {
 
-            return new showdown.Converter(opts);
+            return function(code){
+                ltag_memory.R = 0
+                ltag_memory.L = 0
+                return (new showdown.Converter(opts)).makeHtml(code);
+            }
         }
     };
 })
@@ -268,15 +272,11 @@ app.directive('markdown', ['$sanitize', 'markdownConverter', function ($sanitize
         link: function (scope, element, attrs) {
             if (attrs.markdown) {
                 scope.$watch(attrs.markdown, function (newVal) {
-                    ltag_memory.R = 0
-                    ltag_memory.L = 0
-                    var html = newVal ? $sanitize(markdownConverter.makeHtml(newVal)) : '';
+                    var html = newVal ? $sanitize(markdownConverter(newVal)) : '';
                     element.html(html);
                 });
             } else {
-                ltag_memory.R = 0
-                ltag_memory.L = 0
-                var html = $sanitize(markdownConverter.makeHtml(element.text()));
+                var html = $sanitize(markdownConverter(element.text()));
                 element.html(html);
             }
         }
