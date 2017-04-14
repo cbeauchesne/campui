@@ -20,6 +20,18 @@ msgstr ""
 msgid "Activities"
 msgstr ""
 
+#: fixed_strings.html:22
+msgid "All outings"
+msgstr ""
+
+#: fixed_strings.html:23
+msgid "All routes"
+msgstr ""
+
+#: fixed_strings.html:24
+msgid "All waypoints"
+msgstr ""
+
 #: components/query_editor.html:16
 msgid "Apply"
 msgstr ""
