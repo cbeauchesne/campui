@@ -1,41 +1,29 @@
 <div class="row faq-view">
-    <div class="col-lg-12">
-        <div markdown>
+    <div class="col-lg-1">
+        #Test
+    </div>
+    <div class="col-lg-3">
+        Code
+    </div>
+    <div class="col-lg-4">
+        Expected HTML
+    </div>
+    <div class="col-lg-4">
+        Result
+    </div>
+</div>
 
-[My best friend : https://regex101.com/](https://regex101.com/)
-
-# titre 1
-## titre 2
-### titre 3
-#### titre 4
-
-
-un texte [b]gras[/b] et un en [i]italic[/i], un lien Du [[waypoints/106822|Col de la Gardiole]],
-Du [[waypoints/106822/plein de merde/fdfd|lien bizzare]], gagn
-Du [[books/106822/plein de merde/fdfd|lien bizzare]], gagn
-Du [[routes/106822/plein de merde/fdfd|lien bizzare]], gagn
-Du [[waypoints/106822/plein de merde/fdfd|lien bizzare]], gagn
-
-L# |  |  | Descendre en traversée sur la vire vers le couloir à la base du trou. | 1 ring et 2 pitons
-L# | 4c |  | Montée dans le trou, relais à la sortie (un pas déversant). | 1 spits
-R# |  | 35m | Descente sur la bonne vire en contrebas. Ne pas utiliser un relais quelques mètres au dessus, suspendu et assez inconfortable. Bon relais en place. |
-L# | 5a |  | Traversée descendante sur un rocher très sculpté jusqu'au R1 de [[routes/242955|Clandestino]] puis, après un couloir, traversée ascendante jusqu'à une bonne plateforme située sur le pilier qu'emprunte la voie. Ne pas prendre en ascendance les broches évidentes, mais chercher les spits vers le bas.|
-R# |  | 35m | Tout droit jusqu'à la mer (ou presque) - on peut mousquetonner un brin dans les points de la voie pour ne pas mouiller la corde. |
-
-Autre tableau
-
-L# | 5a | 40m | Rocher superbement sculpté. |
-L#12 | =L12?
-L# | =L13?
-L#~ dans le meme tableau
-L# | 6a | 20m | Départ sur la droite d'une cheminée puis traversée à gauche pour gagner une dalle. |
-L#' | 6a | 25m | Dalle vers la droite (5a) puis petit surplomb (6a) qui demande un peu de lecture . |
-L#_ | 6a | 25m | Dalle vers la droite (5a) puis petit surplomb (6a) qui demande un peu de lecture . |
-L# | 6a | 25m | Dalle vers la droite (5a) puis petit surplomb (6a) qui demande un peu de lecture . |
-
-[img=37027 right /]
-[img=321450 center big]Chaîne du Mont Blanc depuis les Aravis[/img]
-
-        </div>
+<div class="row faq-view" ng-repeat="item in items" ng-class="{'bg-danger': !item.success}">
+    <div class="col-lg-1">
+        {{item.name}}        
+    </div>
+    <div class="col-lg-3">
+        <pre>{{item.code}}</pre>
+    </div>
+    <div class="col-lg-4">
+        <pre>{{item.html}}</pre>
+    </div>
+    <div class="col-lg-4">
+        <pre>{{item.result}}</pre>
     </div>
 </div>
