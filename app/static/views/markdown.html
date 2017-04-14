@@ -1,29 +1,38 @@
 <div class="row faq-view">
+    <div class="col-lg-12">
+        <div ng-click="toggleShowAll()" class="btn btn-primary">
+            <span ng-if="!showAll">Show all</span>
+            <span ng-if="showAll">Show only errors</span>
+        </div>
+    </div>
+</div>
+
+<div class="row faq-view">
     <div class="col-lg-1">
         #Test
     </div>
     <div class="col-lg-3">
         Code
     </div>
-    <div class="col-lg-4">
-        Expected HTML
-    </div>
-    <div class="col-lg-4">
+    <div class="col-lg-8">
+        Expected HTML<br>
         Result
     </div>
 </div>
 
-<div class="row faq-view" ng-repeat="item in items" ng-class="{'bg-danger': !item.success}">
+<div class="row faq-view"
+     ng-repeat="item in items"
+     ng-class="{'bg-danger': !item.success}"
+     ng-if="showAll || !item.success">
+
     <div class="col-lg-1">
-        {{item.name}}        
+        {{item.name}}
     </div>
     <div class="col-lg-3">
-        <pre>{{item.code}}</pre>
+        <pre class="no-padding ">{{item.code}}</pre>
     </div>
-    <div class="col-lg-4">
-        <pre>{{item.html}}</pre>
-    </div>
-    <div class="col-lg-4">
-        <pre>{{item.result}}</pre>
+    <div class="col-lg-8">
+        <pre class="no-padding">{{item.html}}</pre>
+        <pre class="no-padding">{{item.result}}</pre>
     </div>
 </div>

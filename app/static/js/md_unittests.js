@@ -19,6 +19,8 @@ app.config(['$stateProvider', function($stateProvider) {
             })
             
             $scope.items = code_samples
+            $scope.showAll = false
+            $scope.toggleShowAll = function(){ $scope.showAll = !$scope.showAll }
         }]
     })
 }])
