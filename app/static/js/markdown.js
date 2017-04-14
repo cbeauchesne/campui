@@ -17,9 +17,9 @@ app.provider('markdownConverter', function () {
 
     var c2c_folies = function () {
         
-        var toc = {
+        var toc = { //trash
             type: 'lang',
-            regex: /\[toc2( right)?\]/g,
+            regex: /(\[\/?(toc2|p|col)([a-zA-Z\d ]*)?\])/g,
             replace: function () {
                 return '';
             }
@@ -41,17 +41,20 @@ app.provider('markdownConverter', function () {
             }
         };
 
-        function image(imgId, size, position, legend){
-            position = position ? position.trim() : ""
-            size = size ? size.trim() : ""
+        function image(imgId, options, legend){
+            options = options.split(" ")
 
-            css = " "
-            if(position) css+= ' image-' + position
-            if(size) css+= ' image-' + size
+            size = "MI"
+            css = []
 
-            css=" class='" + css + "'"
+            options.forEach(function(option){
+                if(option){
+                    css.push('image-' + option.replace("_","-"))
+                    size = option=="big" ? "BI" : size
+                 }
+            })
 
-            size = size =="big" ? "BI" : "MI"
+            css = css.length ? " class='" + css.join(" ") + "'" : ""
 
             return '<figure' + css + '>' +
                 '<a href="https://www.camptocamp.org/images/' + imgId + '" target="_blank">' +
@@ -63,17 +66,17 @@ app.provider('markdownConverter', function () {
 
         var img = {
             type: 'lang',
-            regex: /\[img=([\d]+)( big)?( right| center| left | inline)?( no_border)?( no_legend)? *\/\]/g,
-            replace: function (match, imgId, size, position, border, legend) {
-                return image(imgId, size, position, legend)
+            regex: /\[img=([\dA-Za-z\._/]+)( [a-zA-Z\-_ ]*)?\/\]/g,
+            replace: function (match, imgId, options) {
+                return image(imgId, options)
             }
         };
 
         var imgLegend = {
             type: 'lang',
-            regex: /\[img=([\d]+)( big)?( right| center| left| inline)?\]([^\[]*)\[\/img\]/g,
-            replace: function (match, imgId, size, position, legend) {
-                return image(imgId, size, position, legend)
+            regex: /\[img=([\dA-Za-z\._/]+)( [a-zA-Z\-_ ]*)?\]([^\[]*)\[\/img\]/g,
+            replace: function (match, imgId, options, legend) {
+                return image(imgId, options, legend)
             }
         };
 
@@ -87,7 +90,7 @@ app.provider('markdownConverter', function () {
 
         var url2 = {
             type: 'lang',
-            regex: /\[url=([^\]]+)\]([^\[]*)\[\/url\]/g,
+            regex: /\[url=([^\]\n]+)\]([^\[]*)\[\/url\]/g,
             replace: function (match, url, text) {
                 return '<a href="' + url + '">' + text + '</a>';
             }
@@ -95,7 +98,7 @@ app.provider('markdownConverter', function () {
 
         var c2cItem = {
             type: 'lang',
-            regex: /\[\[(book|waypoint|route)s\/([\d]+)([^|]*)\|([^\]]*)\]\]/g,
+            regex: /\[\[(book|waypoint|route|outing)s\/([\d]+)([^|]*)\|([^\]]*)\]\]/g,
             replace: function (match, item, id, lang, text) {
                 if(item=="book")
                     return '<a href="https://www.camptocamp.org/' + item + 's/' + id + '">' + text + '</a>';
@@ -159,10 +162,10 @@ app.provider('markdownConverter', function () {
                 while(!cells[cells.length-1])
                     cells.splice(-1,1)
             
-            result.push(elt_in, cell1, elt_out)
+            result.push(elt_in, cell1.trim(), elt_out)
                 
             cells.forEach(function(cell){
-                result.push(elt_in, cell, elt_out)
+                result.push(elt_in, cell.replace("\n", "<br>"), elt_out)
             })
             
             result.push("</tr>")
@@ -170,7 +173,7 @@ app.provider('markdownConverter', function () {
         
         var processCells = function(result, tag, suffix, cells){    
             if(suffix.startsWith("~"))
-                result.push("<tr><td colspan='6'>" + suffix.substring(1) + "</td></tr>")
+                result.push("<tr><td colspan='666'>" + suffix.substring(1).trim() + "</td></tr>")
             else if(suffix.startsWith("="))                        
                 pushLine(result, 'th', suffix.substring(1), cells)
             else{                        
@@ -192,22 +195,11 @@ app.provider('markdownConverter', function () {
                         delete ltag_memory[tag + "_main_start"]
                         delete ltag_memory[tag + "_main_end"]
                     }                            
-                    
-                     
+
                     if(label){ // bis pitch called label                                 
                         if(label!=ltag_memory.current_postfix){ // new bis pitch
                             if(!ltag_memory[tag + "_main_start"]) // there is no local_ref : save start and end of main pitch  
                             {
-                                // ternary operator is a dirty fix (fixed_number == "+" ? 1 : 0) 
-                                // try this :
-                                // L#       ->L1        Ok
-                                // L#bis    ->L1bis     Ok
-                                // L#_      ->L2        Ok
-                                // L#+left  ->L3left    Ok
-                                // L#+tight ->L3right   Ok
-                                // L#_      ->L4        Ok
-                                // L#12bis  ->L12       Fail!
-                                
                                 ltag_memory[tag + "_main_start"] = ltag_memory[tag] + (fixed_number == "+" ? 1 : 0) 
                                 ltag_memory[tag + "_main_end"] = ltag_memory[tag] + (fixed_number == "+" ? 1 : 0) 
                             } 
