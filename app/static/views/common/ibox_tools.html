@@ -1,12 +1,12 @@
 <div class="ibox-tools dropdown" dropdown ng-if="data">
-    <a ng-click="previous()"
+    <a ng-click="qe.previous()"
        uib-tooltip="{{ 'Previous'| translate }}">
         <i class="fa fa-chevron-left"></i>
     </a>
 
-    {{offset+1}}-{{offset+30}} / {{data.total}}
+    {{qe.offset+1}}-{{qe.offset+30}} / {{data.total}}
 
-    <a ng-click="next()"
+    <a ng-click="qe.next()"
        uib-tooltip="{{ 'Next'| translate }}">
         <i class="fa fa-chevron-right"></i>
     </a>
@@ -24,7 +24,7 @@
         <i class="fa fa-gears"></i>
     </a>
 
-    <a ng-class="{active: currentQuery}"
+    <a ng-class="{active: qe.currentQuery}"
        class="dropdown-toggle"
        uib-tooltip="{{ 'Filters'| translate }}"
        data-toggle="dropdown"
@@ -33,15 +33,15 @@
     </a>
 
     <ul class="dropdown-menu dropdown-user">
-        <li ng-click="setQuery()">
+        <li ng-click="qe.setQuery()">
             <a href><i class="fa fa-remove"></i> <span translate>No filter</span></a>
         </li>
 
         <li role="separator" class="divider"></li>
 
         <li ng-repeat="query in user.profile.params.queries"
-            ng-click="setQuery(query)"
-            ng-class="{active:query.name==currentQuery.name}">
+            ng-click="qe.setQuery(query)"
+            ng-class="{active:query.name==qe.currentQuery.name}">
 
             <a ng-if="query.name" href>{{query.name}}</a>
             <a ng-if="!query.name" href><i>* no name *</i></a>

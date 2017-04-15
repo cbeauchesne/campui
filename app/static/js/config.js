@@ -1,5 +1,7 @@
 app = angular.module('campui')
 
+
+
 app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     $urlRouterProvider.otherwise("/");
 
@@ -83,6 +85,14 @@ app.config(['$httpProvider', function($httpProvider){
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
 }]);
+
+// this is cryptic : forum request is loaded but not sent back.
+/*
+app.config(['$httpProvider', function($httpProvider) {
+        console.log($httpProvider.defaults.headers.common["X-Requested-With"])
+        delete $httpProvider.defaults.headers.common["X-Requested-With"]
+    }])
+*/
 
 app.run(['$rootScope', '$state', '$cookies', 'gettextCatalog', 'tmhDynamicLocale', function($rootScope, $state, $cookies, gettextCatalog, tmhDynamicLocale) {
     lang = $cookies.get('lang') || 'fr';

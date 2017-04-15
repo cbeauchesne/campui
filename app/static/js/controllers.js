@@ -1,8 +1,8 @@
 
 function getC2cController(c2c_item){
 
-    return ['$scope','c2c','currentUser','columnDefs','gettextCatalog','locale','urlQuery',
-    function($scope, c2c, currentUser, columnDefs, gettextCatalog, locale, urlQuery){
+    return ['$scope','QueryEditor','currentUser','columnDefs','gettextCatalog','locale','urlQuery',
+    function($scope, QueryEditor, currentUser, columnDefs, gettextCatalog, locale, urlQuery){
 
         $scope.getLocale = function(item){ return locale.get(item)}
 
@@ -13,42 +13,6 @@ function getC2cController(c2c_item){
 
         $scope.user = currentUser
         $scope.columnDefs = columnDefs[c2c_item]
-
-        $scope.offset = 0
-
-        $scope.next = function(){
-            $scope.offset += 30;
-            $scope.setQuery($scope.currentQuery);
-        }
-
-        $scope.previous = function(){
-            if($scope.offset != 0){
-                $scope.offset = Math.max(0, $scope.offset - 30);
-                $scope.setQuery($scope.currentQuery);
-            }
-        }
-
-        $scope.setQuery = function(query){
-            $scope.currentQuery = query
-
-            query = query || {};
-            url_query = query.url || "";
-
-            if($scope.offset != 0)
-                url_query += "&offset=" + $scope.offset;
-
-            if($scope.data)
-                $scope.data.documents = []
-
-            c2c[c2c_item + "s"].get({query:url_query},
-                function(data){
-                    $scope.data = data
-                    delete $scope.error
-                },
-                function(response){
-                    $scope.error = "CampToCamp error"
-                })
-        }
 
         currentUser.$promise.then(function(){
             firstLoad(currentUser.profile.params[c2c_item + "DefaultQuery"])
@@ -68,24 +32,10 @@ function getC2cController(c2c_item){
                     return item.name == defaultQueryName && item.name
                 })
 
-            $scope.setQuery(query)
+            $scope.qe.setQuery(query)
         }
 
-
-        $scope.qe = {}
-
-        $scope.qe.visible = false
-
-        $scope.qe.toggle = function(){
-            $scope.qe.visible = !$scope.qe.visible
-        }
-
-        $scope.qe.save = function(){
-            if(user.getQueryIndex($scope.currentQuery) == -1 && ($scope.currentQuery.url || $scope.currentQuery.name))
-                user.addQuery($scope.currentQuery)
-
-            user.save()
-        }
+        $scope.qe = new QueryEditor($scope, c2c_item)
     }]
 }
 
