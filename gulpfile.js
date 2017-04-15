@@ -100,6 +100,7 @@ function getServer(baseDir){
                 || fileName.indexOf("/me") >= 0
                 || fileName.indexOf("/user") >= 0
                 || fileName.indexOf("/article") >= 0
+                || fileName.indexOf("/search") >= 0
                 || fileName.indexOf("/credit") >= 0
                 || fileName.indexOf("/login") >= 0
                 || fileName.indexOf("/faq") >= 0

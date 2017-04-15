@@ -112,7 +112,7 @@
                     <input type="text" class="form-control" placeholder="{{ 'Search' | translate }}"
                            ng-controller="searchController"
                            ng-model="data.query"
-                           ng-keydown="search()"
+                           ng-keyup="search()"
                     />
                 </div>
             </form>

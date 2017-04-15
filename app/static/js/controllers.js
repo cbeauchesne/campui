@@ -143,10 +143,11 @@ app.controller('languageController', ['$scope','$cookies','gettextCatalog','tmhD
 app.controller('searchController',['$scope','c2c','$state','searchData',function($scope, c2c, $state, searchData){
     $scope.data = searchData
     $scope.search = function(){
-        $state.go('search')
-        c2c.search.get({q:$scope.data.query}, function(data){
-            console.log(data);
-            $scope.data.result=data;
-        })
+        if($scope.data.query.length>=3){
+            $state.go('search')
+            c2c.search.get({q:$scope.data.query}, function(data){
+                $scope.data.result=data;
+            })
+        }
     }
 }]);
