@@ -65,7 +65,7 @@ function getC2cController(c2c_item){
                 query = {url:url}
             else
                 query = currentUser.profile.params.queries.find(function(item){
-                    return item.name == defaultQueryName
+                    return item.name == defaultQueryName && item.name
                 })
 
             $scope.setQuery(query)
