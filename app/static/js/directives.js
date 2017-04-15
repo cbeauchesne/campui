@@ -144,6 +144,7 @@ angular.module('campui')
 
         return {
             restrict: 'EA',
+            replace:true,
             scope: {areas:"="},
             template: '<span ng-repeat="area in areas"><area-link area="area"></area-link>{{$last ? "" : ", "}}</span>',
         };

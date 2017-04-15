@@ -227,7 +227,42 @@ app.factory("urlQuery", ['$location', function($location){
     }
 }])
 
-app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
+app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, locale){
+    var areaSortingAlgorithm = function(a, b, rowA, rowB, direction){
+
+        areaA = rowA.entity.areas[rowA.entity.areas.length-1]
+        areaB = rowB.entity.areas[rowB.entity.areas.length-1]
+
+        titleA = locale.get(areaA).title
+        titleB = locale.get(areaB).title
+        if (titleA == titleB) return 0;
+        if (titleA < titleB) return -1;
+        if (titleA > titleB) return 1;
+    }
+
+
+    var areasSortingAlgorithm = function(a, b, rowA, rowB, direction){
+
+        areasA = rowA.entity.areas
+        areasB = rowB.entity.areas
+
+        for(i=0;i<areasA.length && i<areasB.length;i++){
+            titleA = locale.get(areasA[i]).title
+            titleB = locale.get(areasB[i]).title
+            if (titleA < titleB) return -1;
+            if (titleA > titleB) return 1;
+        }
+
+        if(areasA.length == areasB.length)
+            return 0
+
+        if(areasA.length < areasB.length)
+            return -1
+
+        //if(areasA.length > areasB.length)
+        return 1
+    };
+
     return {
         outing:[{ name:'Date', field: 'date_start' , width: '10%'},
                 {
@@ -241,6 +276,12 @@ app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
                     field: 'activities',
                     width: '10%',
                     cellTemplate:'<div class="ui-grid-cell-contents"><activities activities="row.entity.activities"></activities></div>'
+                },
+                {
+                    name:gettextCatalog.getString('Area'),
+                    sortingAlgorithm : areaSortingAlgorithm,
+                    width: '15%',
+                    cellTemplate:'<area-link class="ui-grid-cell-contents" area="row.entity.areas[row.entity.areas.length-1]"></area-link>',
                 },
                 {
                     name:'C',
@@ -302,8 +343,14 @@ app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
             {
                 name:gettextCatalog.getString('Activities'),
                 field: 'activities',
-                width: '15%',
+                width: '10%',
                 cellTemplate:'<activities activities="row.entity.activities" class="ui-grid-cell-contents"></activities>',
+            },
+            {
+                name:gettextCatalog.getString('Area'),
+                sortingAlgorithm : areaSortingAlgorithm,
+                width: '15%',
+                cellTemplate:'<area-link class="ui-grid-cell-contents" area="row.entity.areas[row.entity.areas.length-1]"></area-link>',
             },
             {
                 name:gettextCatalog.getString('Rating'),
@@ -313,7 +360,7 @@ app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
             },
             {
                 name:gettextCatalog.getString('Orientations'),
-                width: '15%',
+                width: '10%',
                 field: 'orientations',
             },
         ],
@@ -351,7 +398,8 @@ app.factory('columnDefs', ['gettextCatalog', function(gettextCatalog){
             {
                 name:gettextCatalog.getString("Areas"),
                 field:'areas',
-                cellTemplate:'<div areas="row.entity.areas" class="ui-grid-cell-contents"/>',
+                sortingAlgorithm : areasSortingAlgorithm,
+                cellTemplate:'<div class="ui-grid-cell-contents"><areas areas="row.entity.areas" ></areas></div>',
             },
             {
                 name:gettextCatalog.getString("Elevation"),
