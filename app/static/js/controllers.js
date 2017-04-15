@@ -152,6 +152,12 @@ app.controller('searchController',['$scope','c2c','$state','searchData',function
     }
 }]);
 
+/*
 app.controller('forumController',['$scope','c2c',function($scope, c2c){
-    $scope.latest_topics = c2c.forum.latest_topics.get(function (data){console.log(data)})
+
+    $scope.latest_topics = c2c.forum.latest_topics.get(
+        function (data){console.log("s", data)},
+        function (data){console.log("e", data)}
+        )
 }]);
+*/
