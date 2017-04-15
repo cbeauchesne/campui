@@ -31,9 +31,9 @@
                             <div class="pull-left">
                                 <outing-link outing="outing"></outing-link>
                                 <span class="outing-area">{{getLocale(outing.areas[outing.areas.length-1]).title}}</span>
-                                <condition-icon ng-if="outing.condition_rating" condition="outing.condition_rating"></condition-icon>
                             </div>
                             <div class="pull-right">
+                                <condition-icon ng-if="outing.condition_rating" condition="outing.condition_rating"></condition-icon>
                                 <activities activities="outing.activities"></activities>
                             </div>
                             <div style="clear: both;"></div>

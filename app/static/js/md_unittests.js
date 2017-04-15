@@ -86,6 +86,11 @@ app.factory('code_samples', function(){
         html:'<a href="outing/106822">text</a>'
         },
         {
+        name:"Link5",
+        code:"[[articles/482718|article]]",
+        html:'<a href="https://www.camptocamp.org/articles/482718">article</a>'
+        },
+        {
         name:'Table',
         code:'L# |1\nL#bis|1bis \nL#_ |2',
         html:'<table><tbody><tr><td>L1</td><td>1</td></tr><tr><td>L1bis</td><td>1bis</td></tr><tr><td>L2</td><td>2</td></tr></tbody></table>'
@@ -200,5 +205,11 @@ app.factory('code_samples', function(){
         code:'[url=www.google.com]google[/url]',
         html:'<a href="www.google.com">google</a>'
         },
+        {
+        name:'Url3',
+        code:'[url=]www.google.com[/url]',
+        html:'<a href="www.google.com">www.google.com</a>'
+        },
     ]
 })
+
