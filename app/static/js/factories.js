@@ -146,6 +146,20 @@ app.factory('c2c', ['$resource','gettextCatalog', function($resource, gettextCat
                                     get : {method: 'GET'}
                                 })
 
+    forum = {}
+
+    result.forum = forum
+
+    forum.latest_topics = $resource('https://forum.camptocamp.org/latest.json', {},
+                                {
+                                    get : {method: 'GET'}
+                                })
+
+    forum.top_topics = $resource('https://forum.camptocamp.org/top.json', {},
+                                {
+                                    get : {method: 'GET'}
+                                })
+
     return result;
 }]);
 
