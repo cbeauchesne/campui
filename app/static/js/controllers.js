@@ -13,29 +13,28 @@ function getC2cController(c2c_item){
 
         $scope.user = currentUser
         $scope.columnDefs = columnDefs[c2c_item]
+        $scope.qe = new QueryEditor($scope, c2c_item)
 
-        currentUser.$promise.then(function(){
-            firstLoad(currentUser.profile.params[c2c_item + "DefaultQuery"])
-        },
-        function(){ //api failed
-            firstLoad() //api failed, => no queries
-        })
+        url = urlQuery.getCurrent()
 
-        //function that will be called on first load
-        var firstLoad = function(defaultQueryName){
-            url = urlQuery.getCurrent()
+        if(url){ // if query is un url, do not load user
+            $scope.qe.setQuery({url:url})
+        }
+        else{
 
-            if(url)
-                query = {url:url}
-            else
+            currentUser.$promise.then(function(){
+                defaultQueryName = currentUser.profile.params[c2c_item + "DefaultQuery"]
+
                 query = currentUser.profile.params.queries.find(function(item){
                     return item.name == defaultQueryName && item.name
                 })
 
-            $scope.qe.setQuery(query)
+                $scope.qe.setQuery(query)
+            },
+            function(){ //api failed
+                $scope.qe.setQuery() //api failed, => no queries
+            })
         }
-
-        $scope.qe = new QueryEditor($scope, c2c_item)
     }]
 }
 

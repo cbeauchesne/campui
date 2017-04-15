@@ -12,6 +12,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
+#: c2c_items.html:46
 #: components/query_editor.html:7
 #: factories.js:289
 #: factories.js:337
@@ -110,7 +111,7 @@ msgstr ""
 msgid "Default for xreports"
 msgstr ""
 
-#: c2c_items.html:28
+#: c2c_items.html:36
 msgid "Delete"
 msgstr ""
 
@@ -167,6 +168,10 @@ msgstr ""
 
 #: route.html:25
 msgid "Gears"
+msgstr ""
+
+#: c2c_items.html:18
+msgid "Give a name to this filter if you want to save it"
 msgstr ""
 
 #: route.html:57
@@ -291,6 +296,10 @@ msgstr ""
 
 #: factories.js:370
 msgid "Rating"
+msgstr ""
+
+#: c2c_items.html:28
+msgid "Raw CampToCamp URL (left part, after #)"
 msgstr ""
 
 #: route.html:65

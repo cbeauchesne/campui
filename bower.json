@@ -40,6 +40,7 @@
     "angular-animate": "1.5.x",
     "slick-carousel": "^1.6.0",
     "angular-slick-carousel": "^3.1.7",
-    "ng-photoswipe": "^0.2.0"
+    "ng-photoswipe": "^0.2.0",
+    "angular-chosen-localytics": "^1.6.0"
   }
 }

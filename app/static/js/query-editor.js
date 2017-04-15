@@ -1,6 +1,6 @@
 app = angular.module('campui')
 
-app.factory('QueryEditor', ['c2c', 'currentUser', function(c2c, currentUser){
+app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', function(c2c, currentUser, gettextCatalog, urlQuery){
 
     var QueryEditor = function(scope, c2c_item){
         var _this = this
@@ -54,7 +54,56 @@ app.factory('QueryEditor', ['c2c', 'currentUser', function(c2c, currentUser){
                 function(response){
                     _this.scope.error = "CampToCamp error"
                 })
+
+            _this.queryModel = {}
+            if(!query.url)
+                return
+
+            queryObject = urlQuery.toObject(query.url)
+           //
+
+            if(queryObject.act){
+                _this.queryModel.act = queryObject.act.split(",")
+            }
         }
+
+        //will save current html filters into current query, and call setQuery
+        _this.apply = function(){
+            queryObject = {}
+
+            if(_this.queryModel.act && _this.queryModel.act.length)
+                queryObject.act = _this.queryModel.act.join(",")
+
+            _this.currentQuery.url = urlQuery.fromObject(queryObject)
+            _this.setQuery(_this.currentQuery)
+        }
+
+        var findObject = function(objectArray, propName, propValue){
+            result = undefined
+            objectArray.forEach(function(item){
+                if(item[propName]==propValue)
+                    result = item
+            })
+
+            return result
+        }
+
+
+        _this.metadata = {
+            activities : [
+                "snow_ice_mixed",
+                "mountain_climbing",
+                "rock_climbing",
+                "ice_climbing",
+                "hiking",
+                "snowshoeing",
+                "paragliding",
+                "mountain_biking",
+            ]
+        }
+
+        //here is data that will be injected in editor
+        _this.queryModel = {act:[]}
 
     }
 

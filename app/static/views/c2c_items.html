@@ -6,31 +6,69 @@
                     <h3>{{getLabel()}}</h3>
                     <div ng-if="data" ibox-tools></div>
                 </div>
-                <div ng-if="qe.visible" class="ibox-content">
-                    <form class="form-horizontal">
-                        <div class="form-group">
+                PAS EN PROD
+                <div ng-if="!qe.visible" class="ibox-content">
+                    <form>
+                        <div class="row">
                             <div class="col-lg-2">
-                                <input type="text"
-                                       ng-model="qe.currentQuery.name"
-                                       class="form-control input-sm"
-                                       placeholder="Name"/>
+                                <div class="form-group">
+                                    <input type="text"
+                                           ng-model="qe.currentQuery.name"
+                                           class="form-control input-sm"
+                                           uib-tooltip="{{'Give a name to this filter if you want to save it' | translate }}"
+                                           placeholder="Name"/>
+                                </div>
                             </div>
                             <div class="col-lg-7">
-                                <input type="text"
-                                       ng-model="qe.currentQuery.url"
-                                       class="form-control input-sm"
-                                       ng-keypress="qe.setQuery(qe.currentQuery)"
-                                       placeholder="URL"/>
+                                <div class="form-group">
+                                    <input type="text"
+                                           ng-model="qe.currentQuery.url"
+                                           class="form-control input-sm"
+                                           ng-keypress="qe.setQuery(qe.currentQuery)"
+                                           uib-tooltip="{{'Raw CampToCamp URL (left part, after #)' | translate }}"
+                                           placeholder="URL"/>
+                                </div>
                             </div>
                             <div class="col-lg-3">
-                                <div class=" pull-right">
-                                    <a ng-click="user.deleteQuery(qe.currentQuery)"
-                                       uib-tooltip="{{ 'Delete'| translate }}">
-                                        <i class="fa fa-trash btn btn-sm btn-danger"></i>
-                                    </a>
+                                <div class="form-group">
+                                    <div class=" pull-right">
+                                        <a ng-click="user.deleteQuery(qe.currentQuery)"
+                                           uib-tooltip="{{ 'Delete'| translate }}">
+                                            <i class="fa fa-trash btn btn-sm btn-danger"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="form-group"
+                                     uib-tooltip="{{ 'Activities'| translate }}">
+                                    <select chosen multiple id="act"
+                                            class="form-control input-sm"
+                                            placeholder-text-multiple="'Activitées'"
+                                            ng-model="qe.queryModel.act"
+                                            ng-options="act| translate for act in qe.metadata.activities">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-1">
+
+                                <div class="form-group">
+                                    <button class="btn btn-sm btn-primary pull-right"
+                                    ng-click="qe.apply()">
+                                        <strong>Apply</strong>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                                {{qe.queryModel.act}}
+                        </div>
+
                     </form>
                 </div>
 

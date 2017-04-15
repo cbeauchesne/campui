@@ -15,5 +15,6 @@
         'tmh.dynamicLocale',
         'slickCarousel',
         'ngPhotoswipe',
+        'localytics.directives',
     ])
 })();
