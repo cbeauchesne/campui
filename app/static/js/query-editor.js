@@ -37,7 +37,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
 
             _this.currentQuery = query
 
-            query = query || {};
+            query = query || {url:""};
             url_query = query.url || "";
 
             if(_this.offset != 0)
@@ -55,12 +55,8 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
                     _this.scope.error = "CampToCamp error"
                 })
 
-            _this.queryModel = {}
-            if(!query.url)
-                return
 
             queryObject = urlQuery.toObject(query.url)
-           //
 
             if(queryObject.act){
                 _this.queryModel.act = queryObject.act.split(",")

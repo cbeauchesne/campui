@@ -48,7 +48,7 @@
                                             class="form-control input-sm"
                                             placeholder-text-multiple="'Activitées'"
                                             ng-model="qe.queryModel.act"
-                                            ng-options="act| translate for act in qe.metadata.activities">
+                                            ng-options="act for act in qe.metadata.activities">
                                     </select>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
 
                                 <div class="form-group">
                                     <button class="btn btn-sm btn-primary pull-right"
-                                    ng-click="qe.apply()">
+                                            ng-click="qe.apply()">
                                         <strong>Apply</strong>
                                     </button>
 
@@ -65,10 +65,6 @@
 
                             </div>
                         </div>
-                        <div class="row">
-                                {{qe.queryModel.act}}
-                        </div>
-
                     </form>
                 </div>
 
