@@ -122,7 +122,7 @@ app.provider('markdownConverter', function () {
                 suffix_parser = /^(_)?(\+[\d]*|[\d]+)?(\-\+?[\d]+)?([^\d\-+!][^ !]*)?(!)?$/
                 cell_parser = /\|([^|]*)/g
                 
-                result = ['<table>']
+                result = ['\n<table>']
                 
                 do{
                     row_match = row_parser.exec(arguments[0])

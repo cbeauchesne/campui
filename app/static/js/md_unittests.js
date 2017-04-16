@@ -123,7 +123,7 @@ app.factory('code_samples', function(){
         {
         name:'Table7',
         code:'L# | x\n\ny\nL# | xy',
-        html:'<table><tbody><tr><td>L1</td><td>x</td></tr></tbody></table>&#10;<p>y</p><table><tbody><tr><td>L2</td><td>xy</td></tr></tbody></table><p></p>'
+        html:'<table><tbody><tr><td>L1</td><td>x</td></tr></tbody></table>&#10;<p>y</p>&#10;<table><tbody><tr><td>L2</td><td>xy</td></tr></tbody></table>'
         },
         {
         name:'Table8',
@@ -168,7 +168,7 @@ app.factory('code_samples', function(){
         {
         name:'Table16', //short name of your text
         code:'## Voie\nL# | 5b',
-        html:'<h3>Voie</h3><table><tbody><tr><td>L1</td><td>5b</td></tr></tbody></table>'
+        html:'<h3>Voie</h3>&#10;<table><tbody><tr><td>L1</td><td>5b</td></tr></tbody></table>'
         },
         {
         name:'Trash1',
