@@ -208,7 +208,7 @@ app.factory("urlQuery", ['$location', function($location){
     }
 
     var fromObject = function(object){
-        return $.param( object )
+        return $.param( object ).replace(/%2C/g,",")
     }
 
     var toObject = function(query) {
@@ -358,7 +358,7 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
                 name:gettextCatalog.getString('Activities'),
                 field: 'activities',
                 width: '10%',
-                cellTemplate:'<activities activities="row.entity.activities" class="ui-grid-cell-contents"></activities>',
+                cellTemplate:'<div  class="ui-grid-cell-contents"><activities activities="row.entity.activities"></activities></div>',
             },
             {
                 name:gettextCatalog.getString('Area'),
