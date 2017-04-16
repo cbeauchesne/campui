@@ -166,6 +166,11 @@ app.factory('code_samples', function(){
         html:'<table><tbody><tr><td>L1</td></tr><tr><td>L1bis</td></tr><tr><td>L2</td></tr><tr><td>L3left</td></tr><tr><td>L3tight</td></tr><tr><td>L4</td></tr><tr><td>L12bis</td></tr></tbody></table>'
         },
         {
+        name:'Table16', //short name of your text
+        code:'## Voie\nL# | 5b',
+        html:'<h3>Voie</h3><table><tbody><tr><td>L1</td><td>5b</td></tr></tbody></table>'
+        },
+        {
         name:'Trash1',
         code:'[p]',
         html:''

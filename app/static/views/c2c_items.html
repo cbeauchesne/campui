@@ -40,25 +40,25 @@
 
                             <li class="form-group">
                                 <button class="btn btn-sm btn-primary"
+                                        uib-tooltip="{{ 'Apply'| translate }}"
                                         ng-click="qe.apply()">
                                     <i class="fa fa-filter"></i>
-                                    <span translate>Apply</span>
                                 </button>
                             </li>
 
                             <li class="form-group">
                                 <button class="btn btn-sm btn-success"
+                                        uib-tooltip="{{ 'Save'| translate }}"
                                         ng-click="qe.save()">
                                     <i class="fa fa-save"></i>
-                                    <span translate>Save</span>
                                 </button>
                             </li>
 
                             <li class="form-group">
                                 <button class="btn btn-sm btn-success"
+                                        uib-tooltip="{{ 'Clone'| translate }}"
                                         ng-click="qe.clone()">
                                     <i class="fa fa-copy"></i>
-                                    <span translate>Clone</span>
                                 </button>
                             </li>
 
@@ -67,7 +67,6 @@
                                         uib-tooltip="{{ 'Delete'| translate }}"
                                         ng-click="qe.delete()">
                                     <i class="fa fa-trash"></i>
-                                    <span translate>Delete</span>
                                 </button>
                             </li>
                         </ul>
@@ -86,7 +85,7 @@
                     </div>
                 </div>
 
-                <div class="ibox-content">
+                <div class="ibox-footer">
                     <div markdown>
 
 
