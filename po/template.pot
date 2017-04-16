@@ -17,7 +17,7 @@ msgstr ""
 #: factories.js:289
 #: factories.js:337
 #: factories.js:358
-#: factories.js:389
+#: factories.js:394
 msgid "Activities"
 msgstr ""
 
@@ -44,7 +44,7 @@ msgid "Area"
 msgstr ""
 
 #: common/navbar.html:49
-#: factories.js:413
+#: factories.js:418
 #: outing.html:23
 #: route.html:13
 #: waypoint.html:13
@@ -68,7 +68,7 @@ msgstr ""
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories.js:400
+#: factories.js:405
 msgid "Categories"
 msgstr ""
 
@@ -136,7 +136,7 @@ msgstr ""
 msgid "Do not have an account?"
 msgstr ""
 
-#: factories.js:419
+#: factories.js:424
 msgid "Elevation"
 msgstr ""
 
@@ -160,7 +160,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: common/ibox_tools.html:22
+#: common/ibox_tools.html:16
 msgid "Filters"
 msgstr ""
 
@@ -182,6 +182,10 @@ msgstr ""
 
 #: components/rating.html:2
 msgid "Global rating"
+msgstr ""
+
+#: factories.js:376
+msgid "Height diff"
 msgstr ""
 
 #: route.html:28
@@ -238,8 +242,8 @@ msgstr ""
 msgid "My page"
 msgstr ""
 
-#: factories.js:408
-#: factories.js:432
+#: factories.js:413
+#: factories.js:437
 #: me.html:79
 msgid "Name"
 msgstr ""
@@ -248,7 +252,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: common/ibox_tools.html:30
+#: common/ibox_tools.html:24
 msgid "No filter"
 msgstr ""
 
@@ -256,7 +260,7 @@ msgstr ""
 msgid "Orientation :"
 msgstr ""
 
-#: factories.js:376
+#: factories.js:381
 msgid "Orientations"
 msgstr ""
 
@@ -274,7 +278,7 @@ msgstr ""
 msgid "Outings ({{outings.total}})"
 msgstr ""
 
-#: common/ibox_tools.html:46
+#: common/ibox_tools.html:40
 #: common/navbar.html:152
 #: me.html:6
 msgid "Parameters"
@@ -288,7 +292,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: factories.js:395
+#: factories.js:400
 msgid "Quality"
 msgstr ""
 
@@ -345,7 +349,6 @@ msgid "Routes"
 msgstr ""
 
 #: c2c_items.html:52
-#: common/ibox_tools.html:16
 #: me.html:117
 msgid "Save"
 msgstr ""
@@ -381,7 +384,7 @@ msgstr ""
 #: factories.js:283
 #: factories.js:316
 #: factories.js:352
-#: factories.js:384
+#: factories.js:389
 msgid "Title"
 msgstr ""
 
@@ -389,8 +392,8 @@ msgstr ""
 msgid "Topo"
 msgstr ""
 
-#: factories.js:424
-#: factories.js:437
+#: factories.js:429
+#: factories.js:442
 msgid "Type"
 msgstr ""
 

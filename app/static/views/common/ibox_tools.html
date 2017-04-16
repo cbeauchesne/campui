@@ -11,12 +11,6 @@
         <i class="fa fa-chevron-right"></i>
     </a>
 
-    <a ng-if="!user.isAnonymous"
-       ng-click="qe.save()"
-       uib-tooltip="{{ 'Save'| translate }}">
-        <i class="fa fa-save"></i>
-    </a>
-
     <a ng-class="{active: qe.currentQuery}"
        class="dropdown-toggle"
        uib-tooltip="{{ 'Filters'| translate }}"
