@@ -33,7 +33,8 @@
                                         class="form-control input-sm"
                                         placeholder-text-multiple="'Activitées'"
                                         ng-model="qe.queryModel.act"
-                                        ng-options="act for act in qe.metadata.activities">
+                                        ng-options="act | translate for act in qe.metadata.activities">
+                                    <option value=""></option>
                                 </select>
                             </li>
 

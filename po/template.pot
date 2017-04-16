@@ -33,7 +33,7 @@ msgstr ""
 msgid "All waypoints"
 msgstr ""
 
-#: c2c_items.html:44
+#: c2c_items.html:45
 #: components/query_editor.html:16
 msgid "Apply"
 msgstr ""
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: c2c_items.html:60
+#: c2c_items.html:61
 msgid "Clone"
 msgstr ""
 
@@ -116,8 +116,8 @@ msgstr ""
 msgid "Default for xreports"
 msgstr ""
 
-#: c2c_items.html:66
-#: c2c_items.html:69
+#: c2c_items.html:67
+#: c2c_items.html:70
 msgid "Delete"
 msgstr ""
 
@@ -348,7 +348,7 @@ msgstr ""
 msgid "Routes"
 msgstr ""
 
-#: c2c_items.html:52
+#: c2c_items.html:53
 #: me.html:117
 msgid "Save"
 msgstr ""

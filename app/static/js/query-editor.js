@@ -82,6 +82,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
 
         _this.metadata = {
             activities : [
+                "skitouring",
                 "snow_ice_mixed",
                 "mountain_climbing",
                 "rock_climbing",
