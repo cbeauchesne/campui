@@ -105,6 +105,7 @@ color:LightGrey  ;
 color:LightCoral   ;
 }
 
+////////////////////////////////////////////////////////////////////////
 // home specific
 
 .home-view .outing-box .outing-line:hover{
@@ -115,10 +116,6 @@ background:#F8F8F8
 .home-view .outing-box .outing-line .quality-draft,
 .home-view .outing-box .outing-line .quality-empty{
 visibility:none
-}
-
-.home-view .toggle-qe-button{
-display:none;
 }
 
 .home-view .outing-area{

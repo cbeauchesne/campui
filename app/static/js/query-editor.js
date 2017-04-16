@@ -6,13 +6,8 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
         var _this = this
 
         _this.scope = scope
-        _this.visible = false
         _this.offset = 0
         _this.c2c_item = c2c_item
-
-        _this.toggle = function(){
-            _this.visible = !_this.visible
-        }
 
         _this.save = function(){
             if(currentUser.getQueryIndex(_this.currentQuery) == -1 && (_this.currentQuery.url || _this.currentQuery.name))

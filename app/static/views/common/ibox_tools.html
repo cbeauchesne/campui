@@ -11,17 +11,10 @@
         <i class="fa fa-chevron-right"></i>
     </a>
 
-    <a ng-if="!user.isAnonymous && qe.visible"
+    <a ng-if="!user.isAnonymous"
        ng-click="qe.save()"
        uib-tooltip="{{ 'Save'| translate }}">
         <i class="fa fa-save"></i>
-    </a>
-
-    <a class="toggle-qe-button"
-       ng-click="qe.toggle()"
-       ng-class="{active: qe.visible}"
-       uib-tooltip="{{ 'Edit filter'| translate }}">
-        <i class="fa fa-gears"></i>
     </a>
 
     <a ng-class="{active: qe.currentQuery}"

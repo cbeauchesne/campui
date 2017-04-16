@@ -6,65 +6,70 @@
                     <h3>{{getLabel()}}</h3>
                     <div ng-if="data" ibox-tools></div>
                 </div>
-                PAS EN PROD
-                <div ng-if="!qe.visible" class="ibox-content">
+                <div class="ibox-content">
                     <form>
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <input type="text"
-                                           ng-model="qe.currentQuery.name"
-                                           class="form-control input-sm"
-                                           uib-tooltip="{{'Give a name to this filter if you want to save it' | translate }}"
-                                           placeholder="Name"/>
-                                </div>
-                            </div>
-                            <div class="col-lg-7">
-                                <div class="form-group">
-                                    <input type="text"
-                                           ng-model="qe.currentQuery.url"
-                                           class="form-control input-sm"
-                                           ng-keypress="qe.setQuery(qe.currentQuery)"
-                                           uib-tooltip="{{'Raw CampToCamp URL (left part, after #)' | translate }}"
-                                           placeholder="URL"/>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="form-group">
-                                    <div class=" pull-right">
-                                        <a ng-click="user.deleteQuery(qe.currentQuery)"
-                                           uib-tooltip="{{ 'Delete'| translate }}">
-                                            <i class="fa fa-trash btn btn-sm btn-danger"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <div class="form-group"
-                                     uib-tooltip="{{ 'Activities'| translate }}">
-                                    <select chosen multiple id="act"
-                                            class="form-control input-sm"
-                                            placeholder-text-multiple="'Activitées'"
-                                            ng-model="qe.queryModel.act"
-                                            ng-options="act for act in qe.metadata.activities">
-                                    </select>
-                                </div>
-                            </div>
+                        <ul class="list-inline">
+                            <li class="form-group">
+                                <input type="text"
+                                       ng-model="qe.currentQuery.name"
+                                       class="form-control input-sm"
+                                       uib-tooltip="{{'Give a name if you want to save this filter' | translate }}"
+                                       placeholder="Name"/>
+                            </li>
+                            <li class="form-group">
+                                <input type="text"
+                                       ng-model="qe.currentQuery.url"
+                                       class="form-control input-sm"
+                                       ng-keypress="qe.setQuery(qe.currentQuery)"
+                                       uib-tooltip="{{'Raw CampToCamp URL (left part, after #)' | translate }}"
+                                       placeholder="URL"/>
+                            </li>
 
-                            <div class="col-lg-1">
 
-                                <div class="form-group">
-                                    <button class="btn btn-sm btn-primary pull-right"
-                                            ng-click="qe.apply()">
-                                        <strong>Apply</strong>
-                                    </button>
+                            <li class="form-group"
+                                uib-tooltip="{{ 'Activities'| translate }}">
 
-                                </div>
+                                <select chosen multiple id="act"
+                                        class="form-control input-sm"
+                                        placeholder-text-multiple="'Activitées'"
+                                        ng-model="qe.queryModel.act"
+                                        ng-options="act for act in qe.metadata.activities">
+                                </select>
+                            </li>
 
-                            </div>
-                        </div>
+                            <li class="form-group">
+                                <button class="btn btn-sm btn-primary"
+                                        ng-click="qe.apply()">
+                                    <i class="fa fa-filter"></i>
+                                    <span translate>Apply</span>
+                                </button>
+                            </li>
+
+                            <li class="form-group">
+                                <button class="btn btn-sm btn-success"
+                                        ng-click="qe.save()">
+                                    <i class="fa fa-save"></i>
+                                    <span translate>Save</span>
+                                </button>
+                            </li>
+
+                            <li class="form-group">
+                                <button class="btn btn-sm btn-success"
+                                        ng-click="qe.clone()">
+                                    <i class="fa fa-copy"></i>
+                                    <span translate>Clone</span>
+                                </button>
+                            </li>
+
+                            <li class="form-group">
+                                <button class="btn btn-sm btn-danger"
+                                        uib-tooltip="{{ 'Delete'| translate }}"
+                                        ng-click="qe.delete()">
+                                    <i class="fa fa-trash"></i>
+                                    <span translate>Delete</span>
+                                </button>
+                            </li>
+                        </ul>
                     </form>
                 </div>
 
@@ -74,9 +79,10 @@
                     <div class="hr-line-dashed"></div>-->
                     <loading-info></loading-info>
 
-
                     <div ng-if="data" ui-grid="{data:data.documents, columnDefs:columnDefs}"
-                         style="height: 500px;"></div>
+                         style="height: 500px;">
+
+                    </div>
                 </div>
             </div>
         </div>

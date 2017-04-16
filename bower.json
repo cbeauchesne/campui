@@ -42,6 +42,7 @@
     "ng-photoswipe": "^0.2.0",
     "jquery": "2.2.4",
     "angular-chosen-localytics": "^1.6.0",
-    "chosen": "1.5.1"
+    "chosen": "1.5.1",
+    "bootstrap-chosen": "^1.0.1"
   }
 }
