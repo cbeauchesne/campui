@@ -373,6 +373,11 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
                 cellTemplate:'<rating route="row.entity" class="ui-grid-cell-contents"/>',
             },
             {
+                name:gettextCatalog.getString('Height diff'),
+                field:"height_diff_difficulties",
+                width: '10%',
+            },
+            {
                 name:gettextCatalog.getString('Orientations'),
                 width: '10%',
                 field: 'orientations',
