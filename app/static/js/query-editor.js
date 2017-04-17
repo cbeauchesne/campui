@@ -123,6 +123,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
             if(currentModels){
                 currentModels.forEach(function(a_id){
                     var item = c2c.area.get({id:a_id}, function(newObject){
+                        newObject.visible=true
                         smartPush(_this.metadata.areas, newObject, "document_id")
                     })
 
