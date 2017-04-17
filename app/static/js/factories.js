@@ -239,11 +239,15 @@ app.factory("urlQuery", ['$location', function($location){
         if(query_string.act)
             query_string.act = query_string.act.split(",")
 
-        if(query_string.a){
-            query_string.a = query_string.a.split(",").map(function(item) {
-                return parseInt(item, 10);
-            });
-        }
+        items =['a','r','w']
+
+        items.forEach(function(t){
+            if(query_string[t]){
+                query_string[t] = query_string[t].split(",").map(function(item) {
+                    return parseInt(item, 10);
+                });
+            }
+         })
 
 
 

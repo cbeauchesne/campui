@@ -50,7 +50,6 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
             if(doNotResetQueryModel)
                 return
 
-
             _this.queryModel = urlQuery.toObject(query.url)
 
             if(_this.queryModel.a){
