@@ -12,13 +12,17 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: c2c_items.html:30
+#: c2c_items.html:19
 #: components/query_editor.html:7
-#: factories.js:289
-#: factories.js:337
-#: factories.js:358
-#: factories.js:394
+#: factories.js:293
+#: factories.js:341
+#: factories.js:362
+#: factories.js:398
 msgid "Activities"
+msgstr ""
+
+#: c2c_items.html:27
+msgid "Activities..."
 msgstr ""
 
 #: fixed_strings.html:22
@@ -33,18 +37,18 @@ msgstr ""
 msgid "All waypoints"
 msgstr ""
 
-#: c2c_items.html:43
 #: components/query_editor.html:16
 msgid "Apply"
 msgstr ""
 
-#: factories.js:295
-#: factories.js:364
+#: factories.js:299
+#: factories.js:368
 msgid "Area"
 msgstr ""
 
+#: c2c_items.html:37
 #: common/navbar.html:49
-#: factories.js:418
+#: factories.js:422
 #: outing.html:23
 #: route.html:13
 #: waypoint.html:13
@@ -56,7 +60,7 @@ msgstr ""
 msgid "Articles"
 msgstr ""
 
-#: factories.js:307
+#: factories.js:311
 msgid "Author"
 msgstr ""
 
@@ -68,11 +72,11 @@ msgstr ""
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories.js:405
+#: factories.js:409
 msgid "Categories"
 msgstr ""
 
-#: c2c_items.html:59
+#: c2c_items.html:64
 msgid "Clone"
 msgstr ""
 
@@ -96,7 +100,7 @@ msgstr ""
 msgid "Credits :"
 msgstr ""
 
-#: factories.js:322
+#: factories.js:326
 msgid "Date"
 msgstr ""
 
@@ -116,7 +120,7 @@ msgstr ""
 msgid "Default for xreports"
 msgstr ""
 
-#: c2c_items.html:67
+#: c2c_items.html:70
 msgid "Delete"
 msgstr ""
 
@@ -135,7 +139,7 @@ msgstr ""
 msgid "Do not have an account?"
 msgstr ""
 
-#: factories.js:424
+#: factories.js:428
 msgid "Elevation"
 msgstr ""
 
@@ -147,7 +151,7 @@ msgstr ""
 msgid "Equipement rating"
 msgstr ""
 
-#: factories.js:343
+#: factories.js:347
 msgid "Event type"
 msgstr ""
 
@@ -171,8 +175,8 @@ msgstr ""
 msgid "Gears"
 msgstr ""
 
-#: c2c_items.html:16
-msgid "Give a name if you want to save this filter"
+#: c2c_items.html:15
+msgid "Give a name to this filter"
 msgstr ""
 
 #: route.html:57
@@ -183,7 +187,7 @@ msgstr ""
 msgid "Global rating"
 msgstr ""
 
-#: factories.js:376
+#: factories.js:380
 msgid "Height diff"
 msgstr ""
 
@@ -208,7 +212,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: factories.js:327
+#: factories.js:331
 msgid "Impacted people"
 msgstr ""
 
@@ -241,8 +245,8 @@ msgstr ""
 msgid "My page"
 msgstr ""
 
-#: factories.js:413
-#: factories.js:437
+#: factories.js:417
+#: factories.js:441
 #: me.html:79
 msgid "Name"
 msgstr ""
@@ -259,7 +263,7 @@ msgstr ""
 msgid "Orientation :"
 msgstr ""
 
-#: factories.js:381
+#: factories.js:385
 msgid "Orientations"
 msgstr ""
 
@@ -291,7 +295,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: factories.js:400
+#: factories.js:404
 msgid "Quality"
 msgstr ""
 
@@ -299,12 +303,8 @@ msgstr ""
 msgid "Queries"
 msgstr ""
 
-#: factories.js:370
+#: factories.js:374
 msgid "Rating"
-msgstr ""
-
-#: c2c_items.html:24
-msgid "Raw CampToCamp URL (left part, after #)"
 msgstr ""
 
 #: route.html:65
@@ -347,7 +347,7 @@ msgstr ""
 msgid "Routes"
 msgstr ""
 
-#: c2c_items.html:51
+#: c2c_items.html:58
 #: me.html:117
 msgid "Save"
 msgstr ""
@@ -364,7 +364,11 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: factories.js:332
+#: c2c_items.html:44
+msgid "Select areas..."
+msgstr ""
+
+#: factories.js:336
 msgid "Severity"
 msgstr ""
 
@@ -380,10 +384,10 @@ msgstr ""
 msgid "Timing"
 msgstr ""
 
-#: factories.js:283
-#: factories.js:316
-#: factories.js:352
-#: factories.js:389
+#: factories.js:287
+#: factories.js:320
+#: factories.js:356
+#: factories.js:393
 msgid "Title"
 msgstr ""
 
@@ -391,8 +395,8 @@ msgstr ""
 msgid "Topo"
 msgstr ""
 
-#: factories.js:429
-#: factories.js:442
+#: factories.js:433
+#: factories.js:446
 msgid "Type"
 msgstr ""
 
