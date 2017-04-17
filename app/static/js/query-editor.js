@@ -9,11 +9,38 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
         _this.offset = 0
         _this.c2c_item = c2c_item
 
-        _this.save = function(){
-            if(currentUser.getQueryIndex(_this.currentQuery) == -1 && (_this.currentQuery.url || _this.currentQuery.name))
-                currentUser.addQuery(_this.currentQuery)
+        _this.deletable = false
 
-            currentUser.save()
+        _this.setQuery = function(query){
+
+            _this.currentQuery = query
+            _this.deletable = currentUser.getQueryIndex(query) != -1
+            _this.clonable = _this.deletable
+
+            query = query || {url:""};
+            url_query = query.url || "";
+
+            if(_this.offset != 0)
+                url_query += "&offset=" + _this.offset;
+
+            if(this.scope.data)
+                _this.scope.data.documents = []
+
+            console.log("request",  url_query)
+            c2c[_this.c2c_item + "s"].get({query:url_query}, function(data){
+                    _this.scope.data = data
+                    delete _this.scope.error
+            }, function(response){
+                    _this.scope.error = "CampToCamp error"
+            })
+
+            queryObject = urlQuery.toObject(query.url)
+            _this.queryModel = {}
+
+            if(queryObject.act)
+                _this.queryModel.act = queryObject.act.split(",")
+
+
         }
 
         _this.next = function(){
@@ -28,34 +55,13 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
             }
         }
 
-        _this.setQuery = function(query){
+        _this.save = function(){
+            if(currentUser.getQueryIndex(_this.currentQuery) == -1 && (_this.currentQuery.url || _this.currentQuery.name))
+                currentUser.addQuery(_this.currentQuery)
 
-            _this.currentQuery = query
-
-            query = query || {url:""};
-            url_query = query.url || "";
-
-            if(_this.offset != 0)
-                url_query += "&offset=" + _this.offset;
-
-            if(this.scope.data)
-                _this.scope.data.documents = []
-
-            c2c[_this.c2c_item + "s"].get({query:url_query},
-                function(data){
-                    _this.scope.data = data
-                    delete _this.scope.error
-                },
-                function(response){
-                    _this.scope.error = "CampToCamp error"
-                })
-
-
-            queryObject = urlQuery.toObject(query.url)
-
-            if(queryObject.act){
-                _this.queryModel.act = queryObject.act.split(",")
-            }
+            currentUser.save()
+            _this.deletable = true
+            _this.clonable = true
         }
 
         //will save current html filters into current query, and call setQuery
@@ -68,6 +74,11 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
 
             _this.currentQuery.url = urlQuery.fromObject(queryObject)
             _this.setQuery(_this.currentQuery)
+        }
+
+        _this.delete = function(){
+            currentUser.deleteQuery(_this.currentQuery)
+            _this.setQuery()
         }
 
         var findObject = function(objectArray, propName, propValue){
