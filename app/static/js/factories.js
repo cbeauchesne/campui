@@ -235,6 +235,18 @@ app.factory("urlQuery", ['$location', function($location){
                 query_string[pair[0]].push(pair[1]);
             }
         }
+
+        if(query_string.act)
+            query_string.act = query_string.act.split(",")
+
+        if(query_string.a){
+            query_string.a = query_string.a.split(",").map(function(item) {
+                return parseInt(item, 10);
+            });
+        }
+
+
+
         return query_string;
     };
 

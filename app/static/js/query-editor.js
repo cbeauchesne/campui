@@ -50,16 +50,10 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
             if(doNotResetQueryModel)
                 return
 
-            queryObject = urlQuery.toObject(query.url)
-            _this.queryModel = {}
 
-            if(queryObject.act)
-                _this.queryModel.act = queryObject.act.split(",")
+            _this.queryModel = urlQuery.toObject(query.url)
 
-            if(queryObject.a){
-                _this.queryModel.a = queryObject.a.split(",").map(function(item) {
-                    return parseInt(item, 10);
-                });
+            if(_this.queryModel.a){
                 _this.refreshAreas(undefined, _this.queryModel.a)
             }
         }
