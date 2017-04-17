@@ -61,6 +61,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
         //will save current html filters into current query, and call setQuery
         _this.apply = function(){
             queryObject = {}
+            _this.currentQuery = _this.currentQuery || {}
 
             if(_this.queryModel.act && _this.queryModel.act.length)
                 queryObject.act = _this.queryModel.act.join(",")
