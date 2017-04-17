@@ -4,6 +4,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: c2c_items.html:109
+msgid "*Sort buttons on table sorts only loaded data.*"
+msgstr ""
+
 #: waypoint.html:23
 msgid "Access"
 msgstr ""
