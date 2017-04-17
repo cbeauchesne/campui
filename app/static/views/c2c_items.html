@@ -31,13 +31,15 @@
                                 <ui-select multiple
                                            class="form-control"
                                            close-on-select="false"
+                                           on-select="qe.apply()"
+                                           on-remove="qe.apply()"
                                            ng-model="qe.queryModel.act">
                                     <ui-select-match placeholder="{{'Activities' | translate}}">
                                         <img ng-src="/static/img/{{$item}}-16x16.png">
                                     </ui-select-match>
                                     <ui-select-choices
                                             repeat="act in qe.metadata.activities">
-                                        <span value="act">{{act}}</span>
+                                        <span value="act">{{act | translate}}</span>
                                     </ui-select-choices>
                                 </ui-select>
                             </div>
@@ -45,21 +47,18 @@
 
                         <div class="form-group  col-md-2">
                             <button class="btn btn-sm btn-primary"
-                                    uib-tooltip="{{ 'Apply'| translate }}"
-                                    ng-click="qe.apply()">
-                                <i class="fa fa-filter"></i>
-                            </button>
-                            <button class="btn btn-sm btn-success"
                                     uib-tooltip="{{ 'Save'| translate }}"
                                     ng-click="qe.save()">
                                 <i class="fa fa-save"></i>
                             </button>
                             <button class="btn btn-sm btn-success"
+                                    ng-if="qe.clonable"
                                     uib-tooltip="{{ 'Clone'| translate }}"
                                     ng-click="qe.clone()">
                                 <i class="fa fa-copy"></i>
                             </button>
                             <button class="btn btn-sm btn-danger"
+                                    ng-if="qe.deletable"
                                     uib-tooltip="{{ 'Delete'| translate }}"
                                     ng-click="qe.delete()">
                                 <i class="fa fa-trash"></i>
