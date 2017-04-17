@@ -335,9 +335,14 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
                     cellTemplate:'<div class="ui-grid-cell-contents"><condition-icon condition="row.entity.condition_rating"></condition-icon></div>'
                 },
                 {
+                    name:gettextCatalog.getString('Height'),
+                    width: '8%',
+                    field: 'height_diff_up',
+                },
+                {
                     name:gettextCatalog.getString('Author'),
                     field: 'author.name',
-                    width: '20%',
+                    width: '15%',
                     cellTemplate:'<author-link author="row.entity.author" class="ui-grid-cell-contents"></author-link>',
                 }
         ],
