@@ -1,5 +1,18 @@
 app = angular.module('campui')
 
+app.filter('hasProp', function() {
+  return function(items, prop) {
+    var out = [];
+
+      items.forEach(function(item) {
+        if(typeof item[prop] !== 'undefined')
+          out.push(item);
+      });
+
+    return out;
+  };
+});
+
 app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', function(c2c, currentUser, gettextCatalog, urlQuery){
 
     var QueryEditor = function(scope, c2c_item){
@@ -96,7 +109,12 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
 
             if(userRequests){
                 c2c.search.get({q:userRequests}, function(data){
+
+                    _this.metadata.areas.forEach(function(item){
+                        delete item.visible
+                    })
                     data.areas.documents.forEach(function(newObject){
+                        newObject.visible=true
                         smartPush(_this.metadata.areas, newObject, "document_id")
                     })
                 })
