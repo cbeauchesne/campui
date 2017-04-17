@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: c2c_items.html:109
+#: c2c_items.html:111
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: c2c_items.html:81
+#: c2c_items.html:83
 msgid "Clone"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Default for xreports"
 msgstr ""
 
-#: c2c_items.html:87
+#: c2c_items.html:89
 msgid "Delete"
 msgstr ""
 
@@ -348,7 +348,7 @@ msgstr ""
 msgid "Route type :"
 msgstr ""
 
-#: c2c_items.html:69
+#: c2c_items.html:71
 #: common/navbar.html:37
 #: home.html:67
 #: search.html:13
@@ -356,7 +356,7 @@ msgstr ""
 msgid "Routes"
 msgstr ""
 
-#: c2c_items.html:75
+#: c2c_items.html:77
 #: me.html:117
 msgid "Save"
 msgstr ""
@@ -409,7 +409,7 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: c2c_items.html:61
+#: c2c_items.html:62
 #: common/navbar.html:43
 #: route.html:62
 #: search.html:24
