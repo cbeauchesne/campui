@@ -49,12 +49,9 @@ app.factory('anonymousProfile', ["gettextCatalog", function(gettextCatalog){
 }])
 
 app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousProfile){
+
     user = api.currentUser.get(function(){
-        if(user.username === ""){
-            user.isAnonymous = true
-            user.profile = anonymousProfile
-        }
-        else {
+        if(data.username != ""){
             user.isAnonymous = false
 
             user.profile = user.profile || {}
@@ -74,33 +71,35 @@ app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousPr
                     }
                 );
             };
-
-            user.getQueryIndex = function(query){
-                return user.profile.params.queries.indexOf(query)
-            }
-
-            user.addQuery = function(query){
-                query=query || {}
-                user.profile.params.queries.push(query)
-            }
-
-            user.deleteQuery = function(query){
-                index = user.getQueryIndex(query);
-
-                if(index != -1) {
-                    delete query.name
-                    delete query.url
-                    user.profile.params.queries.splice(index, 1);
-                }
-            }
         }
-    },
-    function(){
-        user.isAnonymous = true
-        user.profile = anonymousProfile
     });
 
     user.isAnonymous = true
+    user.profile = anonymousProfile
+
+    user.getQueryIndex = function(query){
+        return user.profile.params.queries.indexOf(query)
+    }
+
+    user.addQuery = function(query){
+        query=query || {}
+        user.profile.params.queries.push(query)
+    }
+
+    user.deleteQuery = function(query){
+        index = user.getQueryIndex(query);
+
+        if(index != -1) {
+            delete query.name
+            delete query.url
+            user.profile.params.queries.splice(index, 1);
+        }
+
+        user.save()
+    }
+
+    user.save = function(){
+    };
 
     return user
 }]);
