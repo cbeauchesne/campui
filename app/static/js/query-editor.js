@@ -83,13 +83,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
             queryObject = {}
             _this.currentQuery = _this.currentQuery || {}
 
-            if(_this.queryModel.act && _this.queryModel.act.length)
-                queryObject.act = _this.queryModel.act.join(",")
-
-            if(_this.queryModel.a && _this.queryModel.a.length)
-                queryObject.a = _this.queryModel.a.join(",")
-
-            _this.currentQuery.url = urlQuery.fromObject(queryObject)
+            _this.currentQuery.url = urlQuery.fromObject(_this.queryModel)
             _this.setQuery(_this.currentQuery, true)
         }
 

@@ -212,7 +212,18 @@ app.factory("urlQuery", ['$location', function($location){
     }
 
     var fromObject = function(object){
-        return $.param( object ).replace(/%2C/g,",")
+        var temp = {}
+        for (var prop in object) {
+            if (object.hasOwnProperty(prop)) {
+                if(Array.isArray(object[prop])){
+                    if(object[prop].length!=0)
+                        temp[prop] = object[prop].join(",")
+                    }
+                 else
+                    temp[prop] = object[prop]
+            }
+        }
+        return $.param( temp ).replace(/%2C/g,",")
     }
 
     var toObject = function(query) {
