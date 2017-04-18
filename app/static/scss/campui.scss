@@ -1,4 +1,28 @@
 
+
+h3{
+margin-top:15px;
+margin-bottom:5px;
+}
+
+h1 {
+  font-size: 30px; }
+
+h2 {
+  font-size: 24px; }
+
+h3 {
+  font-size: 20px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 12px; }
+
+h6 {
+  font-size: 10px; }
+
 ////////////////////////////////////////////////////////////////////
 .top-navigation .wrapper.wrapper-content {
   padding-top: 10px; }
@@ -211,34 +235,27 @@ content : "\2219  ";
 font-style:normal;
 }
 
+
+////////////////////////////////////////////////////////////////////
+// route specific
+
+.route-header{
+margin-bottom:15px
+}
+
 ////////////////////////////////////////////////////////////////////
 
 .summary {
   background: #FAFAFB;
   border: 1px solid #e7eaec;
-  margin: 10X 0 10px 0;
+  margin: 0px 0px 10px 0px;
   padding: 10px;
   padding-bottom: 0px;  // p elt has a margin bottom
   border-radius: 2px;
   border-left: 3px solid #1ab394;
 }
 
-.licensse {
-  background: #FAFAFB;
-  border: 1px solid #e7eaec;
-  margin: 10X 0 10px 0;
-  padding: 10px;
-  border-radius: 2px;
-  border-left: 3px solid #f8ac59;
-}
 
-
-
-
-h3{
-margin-top:15px;
-margin-bottom:5px;
-}
 
 
 ////////////////////////////////////////////////////////////////////
