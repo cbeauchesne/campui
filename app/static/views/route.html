@@ -15,9 +15,13 @@
                 </p>
             </div>
             <div class="col-sm-4">
-                <div class="pull-right">
-                    <div license type="'route'" id="route.document_id"></div>
-                </div>
+                <div license type="'route'" id="route.document_id"></div>
+            </div>
+        </div>
+        <div class="row route-header">
+            <div class="col-md-12">
+                <linked-outings item="route"></linked-outings>
+                <outing-images item="route"></outing-images>
             </div>
         </div>
 
@@ -84,7 +88,6 @@
             <div class="col-sm-12">
                 <h2>
                     <span translate>Recent outings</span>
-                    <linked-outings item="route"></linked-outings>
                 </h2>
                 <outing-list outings="route.associations.recent_outings.documents"></outing-list>
 

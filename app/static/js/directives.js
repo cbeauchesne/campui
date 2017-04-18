@@ -157,8 +157,18 @@ angular.module('campui')
             templateUrl: 'static/views/components/query_editor.html',
         };
     })
-    ;
 
+    .directive('outingImages', function(){
+        result =   {
+            restrict: 'E',
+            replace: true,
+            scope: {
+                item:"=",
+            },
+            template: '<a class="badge badge-success" ui-sref="outingImages({r:item.document_id})" translate>All Images</a>',
+        };
+        return result;
+    })
 
 c2cItems = {
     user:{

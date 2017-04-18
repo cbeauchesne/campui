@@ -72,9 +72,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
         }]
     })
 
-    $stateProvider.state('linkedImages', {
-        url: "/linked-images?r&u&w&a",
-        templateUrl: 'static/views/linkedImages.html',
+    $stateProvider.state('outingImages', {
+        url: "/outing-images?r&u&w&a",
+        templateUrl: 'static/views/outingImages.html',
         controller: ['$scope', 'c2cBeta', '$stateParams', function($scope, c2cBeta, $stateParams){
             $scope.data = c2cBeta.outings.get($stateParams)
         }]

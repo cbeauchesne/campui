@@ -105,6 +105,7 @@ function getServer(baseDir){
                 || fileName.indexOf("/login") >= 0
                 || fileName.indexOf("/faq") >= 0
                 || fileName.indexOf("/markdown") >= 0
+                || fileName.indexOf("/outing-images") >= 0
                 || fileName.indexOf("/xreport") >= 0)
         ) {
             req.url = "/index.html";
