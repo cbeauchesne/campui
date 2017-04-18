@@ -181,6 +181,16 @@ app.factory('code_samples', function(){
         html:'<table><tbody><tr><td>L1</td><td>5b</td><td>text</td></tr></tbody></table>'
         },
         {
+        name:'Table19', //short name of your text
+        code:'L# 5b',
+        html:'<table><tbody><tr><td>L1</td><td>5b</td></tr></tbody></table>'
+        },
+        {
+        name:'Table20', //short name of your text
+        code:'L# 6b | 35m |  a [[http://www.google.com|google]] c',
+        html:'<table><tbody><tr><td>L1</td><td>6b</td><td>35m</td><td>a <a href="www.google.com">google</a> c</td></tr></tbody></table>'
+        },
+        {
         name:'Trash1',
         code:'[p]',
         html:''

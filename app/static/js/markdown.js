@@ -124,6 +124,14 @@ app.provider('markdownConverter', function () {
             }
         };
 
+        var url4 = {
+            type: 'lang',
+            regex: /\[\[([^|\n ]*)\|([^\]]*)\]\]/g,
+            replace: function (match, url, text) {
+                return '<a href="' + url.replace(/https?:\/\//, "") + '">' + text + '</a>'; // give it to markdown
+            }
+        };
+
         // your new best friends :
         // https://regex101.com/
         // http://localhost:3000/markdown
@@ -282,7 +290,7 @@ app.provider('markdownConverter', function () {
             }                    
         }
         
-        return [italic, bold, sup, imp, img, imgLegend, url, url2, c2cItem, toc, ltag];
+        return [italic, bold, sup, imp, img, imgLegend, url, url2, c2cItem, url4, toc, ltag];
     }
 
     showdown.extension('c2c_folies', c2c_folies);
