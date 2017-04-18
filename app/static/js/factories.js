@@ -125,9 +125,26 @@ app.factory('locale', ['gettextCatalog', function(gettextCatalog){
     }
 }])
 
+app.factory('c2cBeta', ['c2c', function(c2c){
+    return {
+        outings : {
+            get : function(paramters){
+                var result = {documents:[]}
+                c2c.outings.get(paramters, function(response){
+                    response.documents.forEach(function(item){
+                        result.documents.push(c2c.outing.get({id:item.document_id}))
+                    })
+                })
+                return result
+            }
+        }
+    }
+
+}]);
+
 app.factory('c2c', ['$resource','gettextCatalog', function($resource, gettextCatalog){
 
-    result = {}
+    var result = {}
 
     $.each(c2cItems, function(item, params) {
         _item = item == 'user' ? 'profile' : item
@@ -142,6 +159,7 @@ app.factory('c2c', ['$resource','gettextCatalog', function($resource, gettextCat
             get : {method: 'GET'}
         })
     })
+
 
     //https://api.camptocamp.org/search?q=tacul&pl=fr&limit=7&t=w,r,c,b
     result.search = $resource('https://api.camptocamp.org/search?limit=15&t=w,r,a&q=:q',
