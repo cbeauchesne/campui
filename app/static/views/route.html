@@ -1,4 +1,4 @@
-<div class="ibox float-e-margins">
+<div class="ibox float-e-margins route-view">
     <div class="ibox-title">
         <h1>
             <i class="fa fa-road"></i>
@@ -8,11 +8,61 @@
 
     <div class="ibox-content" style="display: block;">
         <div class="row">
-            <div class="col-sm-8 b-r">
+            <div class="col-sm-8">
                 <p>
                     <i class="fa fa-chevron-right" uib-tooltip="{{'Areas' | translate }}"></i>
                     <i areas="route.areas"></i>
                 </p>
+            </div>
+            <div class="col-sm-4">
+                <div class="pull-right">
+                    <div license type="'route'" id="route.document_id"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row route-header">
+            <div class="col-sm-4">
+
+                <div>
+                    <activities activities="route.activities"></activities>
+                    <rating route="route"></rating>
+                </div>
+
+                <div ng-if="route.height_diff_difficulties">
+                    <strong translate>Difficulties height :</strong>{{route.height_diff_difficulties}}
+                </div>
+
+                <div ng-if="route.route_types">
+                    <strong translate>Route type :</strong>{{route.route_types}}
+                </div>
+
+            </div>
+
+            <div class="col-sm-4">
+
+                <div>
+                    <strong translate>Configuration :</strong>{{route.configuration.join(', ')}}
+                </div>
+
+                <div>
+                    <strong translate>Orientation :</strong>{{route.orientations.join(', ')}}
+                </div>
+
+                <div>
+                    <strong translate>Glacier gears :</strong> {{route.glacier_gear}}
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-4">
+                <strong translate>Waypoints</strong>
+                <waypoint-list waypoints="route.associations.waypoints"></waypoint-list>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
 
                 <div class="summary" ng-if="currentLocale.summary" markdown="currentLocale.summary"></div>
 
@@ -29,48 +79,18 @@
                 <div markdown="currentLocale.route_history"></div>
 
             </div>
-            <div class="col-sm-4">
-
-                <div>
-                    <activities activities="route.activities"></activities>
-                    <rating route="route"></rating>
-                    <label>&nbsp;</label>
-                </div>
-
-                <div ng-if="route.height_diff_difficulties">
-                    <label translate>Difficulties height :</label>{{route.height_diff_difficulties}}
-                </div>
-
-                <div>
-                    <label translate>Configuration :</label>{{route.configuration.join(', ')}}
-                </div>
-
-                <div ng-if="route.route_types">
-                    <label translate>Route type :</label>{{route.route_types}}
-                </div>
-
-                <div>
-                    <label translate>Orientation :</label>{{route.orientations.join(', ')}}
-                </div>
-
-                <div>
-                    <label translate>Glacier gears :</label> {{route.glacier_gear}}
-                </div>
-
-                <div license type="'route'" id="route.document_id"></div>
-
-                <label translate>Waypoints</label>
-                <waypoint-list waypoints="route.associations.waypoints"></waypoint-list>
-
-                <label translate>Recent outings</label>
-                <linked-outings item="route"></linked-outings>
-                <outing-list outings="route.associations.recent_outings.documents"></outing-list>
-
-            </div>
         </div>
         <div class="row">
-            <div gallery class="col-sm-12" ng-if="route.associations.images.length"
-                 images="route.associations.images"></div>
+            <div class="col-sm-12">
+                <h2>
+                    <span translate>Recent outings</span>
+                    <linked-outings item="route"></linked-outings>
+                </h2>
+                <outing-list outings="route.associations.recent_outings.documents"></outing-list>
+
+                <div gallery class="col-sm-12" ng-if="route.associations.images.length"
+                     images="route.associations.images"></div>
+            </div>
         </div>
     </div>
 </div>
