@@ -26,22 +26,24 @@
 
             </div>
         </div>
+
         <div class="row">
-            <div class="col-sm-6 b-r">
+            <div class="col-sm-6 b-r" ng-if="waypoint.associations.all_routes.documents.length">
 
                 <h2 translate>Routes</h2>
                 <route-list routes="waypoint.associations.all_routes.documents"></route-list>
             </div>
-            <div class="col-sm-6 b-r">
+            <div class="col-sm-6 b-r" ng-if="waypoint.associations.recent_outings.documents.length">
 
                 <h2 translate>Recent outings</h2>
                 <outing-list outings="waypoint.associations.recent_outings.documents"></outing-list>
             </div>
         </div>
-        <div class="row"  ng-if="waypoint.associations.images.length">
-            <h2 translate>Images</h2>
-            <div gallery class="col-sm-12"
-                 images="waypoint.associations.images"></div>
+
+        <div class="row" ng-if="waypoint.associations.images.length">
+            <div class="col-sm-12">
+                <div gallery images="waypoint.associations.images"></div>
+            </div>
         </div>
     </div>
 </div>

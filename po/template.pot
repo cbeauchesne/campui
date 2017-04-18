@@ -228,7 +228,6 @@ msgid "Ice rating"
 msgstr ""
 
 #: home.html:6
-#: waypoint.html:42
 msgid "Images"
 msgstr ""
 
@@ -328,7 +327,7 @@ msgid "Rating"
 msgstr ""
 
 #: route.html:101
-#: waypoint.html:37
+#: waypoint.html:38
 msgid "Recent outings"
 msgstr ""
 
@@ -368,7 +367,7 @@ msgstr ""
 #: common/navbar.html:37
 #: home.html:67
 #: search.html:13
-#: waypoint.html:32
+#: waypoint.html:33
 msgid "Routes"
 msgstr ""
 
