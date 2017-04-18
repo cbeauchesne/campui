@@ -120,7 +120,7 @@ app.provider('markdownConverter', function () {
                 
                 row_parser = /(?:\n\n?)([LR])#([^]*?(?=\n[LR]#|\n\n))/gm
                 suffix_parser = /^(_)?(\+[\d]*|[\d]+)?(\-\+?[\d]+)?([^\d\-+!][^ !]*)?(!)?$/
-                cell_parser = /\|([^|]*)/g
+                cell_parser = /[|:]+([^|:]*)/g
                 
                 result = ['\n<table>']
                 
@@ -128,10 +128,11 @@ app.provider('markdownConverter', function () {
                     row_match = row_parser.exec(arguments[0])
                     
                     if(row_match){
+
                         tag = row_match[1]
-                        cells_str = "|" + row_match[2]                        
+                        cells_str = "| " + row_match[2]
                         suffix =  cell_parser.exec(cells_str)[1].trim()
-                        
+
                         cells = [] 
                         
                         do{
