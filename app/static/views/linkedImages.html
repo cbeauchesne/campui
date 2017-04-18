@@ -1,0 +1,12 @@
+<div class="outing-images-view">
+    <span ng-repeat="outing in data.documents">
+        <span ng-repeat="image in outing.associations.images">
+
+        <img
+            height="200"
+            alt="{{image.locales[0].title}}"
+            title="{{image.locales[0].title}}"
+            ng-src="https://media.camptocamp.org/c2corg_active/{{image.filename.replace('.', 'MI.').replace('.svg', '.jpg')}}"/>
+        </span>
+    </span>
+</div>
