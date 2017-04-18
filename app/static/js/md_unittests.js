@@ -171,6 +171,16 @@ app.factory('code_samples', function(){
         html:'<h3>Voie</h3>&#10;<table><tbody><tr><td>L1</td><td>5b</td></tr></tbody></table>'
         },
         {
+        name:'Table17', //short name of your text
+        code:'L# :: 5b ::text',
+        html:'<table><tbody><tr><td>L1</td><td>5b</td><td>text</td></tr></tbody></table>'
+        },
+        {
+        name:'Table18', //short name of your text
+        code:'L# || 5b ||text',
+        html:'<table><tbody><tr><td>L1</td><td>5b</td><td>text</td></tr></tbody></table>'
+        },
+        {
         name:'Trash1',
         code:'[p]',
         html:''
