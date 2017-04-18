@@ -19,7 +19,7 @@ app.provider('markdownConverter', function () {
         
         var toc = { //trash
             type: 'lang',
-            regex: /(\[\/?(toc2|p|col)([a-zA-Z\d ]*)?\])/g,
+            regex: /(\[\/?(toc2|p|col|toc)([a-zA-Z\d ]*)?\])/g,
             replace: function () {
                 return '';
             }
@@ -27,9 +27,17 @@ app.provider('markdownConverter', function () {
         
         var italic = {
             type: 'lang',
-            regex: /\[i\]([^\]]*)\[\/i\]/g,
+            regex: /\[i\](.*?)\[\/i\]/g,
             replace: function (match, text) {
                 return '<i>'+ text + '</i>';
+            }
+        };
+
+        var sup = {
+            type: 'lang',
+            regex: /\[sup\]([^\]]*)\[\/sup\]/g,
+            replace: function (match, text) {
+                return '<sup>'+ text + '</sup>';
             }
         };
 
@@ -38,6 +46,15 @@ app.provider('markdownConverter', function () {
             regex: /\[b\]([^\]]*)\[\/b\]/g,
             replace: function (match, text) {
                 return '<strong>'+ text + '</strong>';
+            }
+        };
+
+
+        var imp = {
+            type: 'lang',
+            regex: /\[imp\]([^]*?)\[\/imp\]/g,
+            replace: function (match, text) {
+                return '<div class="alert alert-danger">'+ text + '</div>';
             }
         };
 
@@ -82,7 +99,7 @@ app.provider('markdownConverter', function () {
 
         var url = {
             type: 'lang',
-            regex: /\[url\]([^\[]*)\[\/url\]/g,
+            regex: /\[url=?\]([^\[]*)\[\/url\]/g,
             replace: function (match, url) {
                 return '<a href="' + url + '">' + url + '</a>';
             }
@@ -98,9 +115,9 @@ app.provider('markdownConverter', function () {
 
         var c2cItem = {
             type: 'lang',
-            regex: /\[\[(book|waypoint|route|outing)s\/([\d]+)([^|]*)\|([^\]]*)\]\]/g,
+            regex: /\[\[(book|waypoint|route|outing|area|article)s\/([\d]+)([^|]*)\|([^\]]*)\]\]/g,
             replace: function (match, item, id, lang, text) {
-                if(item=="book")
+                if(item=="book" || item=="article")
                     return '<a href="https://www.camptocamp.org/' + item + 's/' + id + '">' + text + '</a>';
                 else
                     return '<a href="' + item + '/' + id + '">' + text + '</a>';
@@ -265,7 +282,7 @@ app.provider('markdownConverter', function () {
             }                    
         }
         
-        return [italic, bold, img, imgLegend, url, url2, c2cItem, toc, ltag];
+        return [italic, bold, sup, imp, img, imgLegend, url, url2, c2cItem, toc, ltag];
     }
 
     showdown.extension('c2c_folies', c2c_folies);
