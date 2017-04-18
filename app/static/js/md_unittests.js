@@ -29,7 +29,7 @@ app.config(['$stateProvider', function($stateProvider) {
 app.factory('code_samples', function(){
 
     // please keep names unique
-    // add keep them in alphabeticla order
+    // add keep them in alphabetical order
     /* pattern :
 
         {
@@ -86,7 +86,7 @@ app.factory('code_samples', function(){
         html:'<a href="outing/106822">text</a>'
         },
         {
-        name:"Link5",
+        name:"Link6",
         code:"[[articles/482718|article]]",
         html:'<a href="https://www.camptocamp.org/articles/482718">article</a>'
         },
@@ -97,7 +97,7 @@ app.factory('code_samples', function(){
         },
         {
         name:'Table2',
-        code:'L# |1\nL#|2',
+        code:'L# |1\nL#| 2',
         html:'<table><tbody><tr><td>L1</td><td>1</td></tr><tr><td>L2</td><td>2</td></tr></tbody></table>'
         },
         {
@@ -211,6 +211,41 @@ app.factory('code_samples', function(){
         html:"<strong>coucou</strong>"
         },
         {
+        name:"Typo3",
+        code:"[sup]coucou[/sup]",
+        html:"<sup>coucou</sup>"
+        },
+        {
+        name:"Typo4",
+        code:"[imp]coucou[/imp]",
+        html:'<div class="alert alert-danger">coucou</div>'
+        },
+        {
+        name:'Typo5',
+        code:'[i][url=www.google.com]google[/url][/i]',
+        html:'<i><a href="www.google.com">google</a></i>'
+        },
+        {
+        name:'Typo6',
+        code:'[i][b]google[/b][/i]',
+        html:'<i><strong>google</strong></i>'
+        },
+        {
+        name:'Typo7',
+        code:'[b][i]google[/i][/b]',
+        html:'<strong><i>google</i></strong>'
+        },
+        {
+        name:'Typo8',
+        code:'[url=www.google.com][b]google[/b][/url]',
+        html:'<a href="www.google.com"><strong>google</strong></a>'
+        },
+        {
+        name:'Typo9',
+        code:'[imp][b]google[/b]\ncoucou[/imp]',
+        html:'<div class="alert alert-danger"><strong>google</strong>&#10;coucou</div>'
+        },
+        {
         name:'Url',
         code:'[url]www.google.com[/url]',
         html:'<a href="www.google.com">www.google.com</a>'
@@ -225,6 +260,13 @@ app.factory('code_samples', function(){
         code:'[url=]www.google.com[/url]',
         html:'<a href="www.google.com">www.google.com</a>'
         },
+        {
+        name:'Url4',
+        code:'[email]registration@camptocamp.org[/email]',
+        html:'<a href="mailto:registration@camptocamp.org">registration@camptocamp.org</a>'
+        },
     ]
 })
+
+
 
