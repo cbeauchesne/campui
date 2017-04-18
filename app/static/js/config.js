@@ -71,6 +71,14 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
             $scope.user = currentUser
         }]
     })
+
+    $stateProvider.state('linkedImages', {
+        url: "/linked-images?r&u&w&a",
+        templateUrl: 'static/views/linkedImages.html',
+        controller: ['$scope', 'c2cBeta', '$stateParams', function($scope, c2cBeta, $stateParams){
+            $scope.data = c2cBeta.outings.get($stateParams)
+        }]
+    })
 }]);
 
 app.config(['tmhDynamicLocaleProvider', function(tmhDynamicLocaleProvider) {
