@@ -25,8 +25,11 @@ function getC2cController(c2c_item){
             currentUser.$promise.then(function(){
                 defaultQueryName = currentUser.profile.params[c2c_item + "DefaultQuery"]
 
-                query = currentUser.profile.params.queries.find(function(item){
-                    return item.name == defaultQueryName && item.name
+                var query
+
+                currentUser.profile.params.queries.forEach(function(item){
+                    if(item.name===defaultQueryName && item.name)
+                        query = item
                 })
 
                 $scope.qe.setQuery(query)

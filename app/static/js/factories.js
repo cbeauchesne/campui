@@ -115,12 +115,15 @@ app.factory('locale', ['gettextCatalog', function(gettextCatalog){
             if(!item || ! item.locales)
                 return {}
 
-            lang = gettextCatalog.getCurrentLanguage()
-            locale = item.locales.find(function(locale){return locale.lang == lang})
-            if(locale)
-                return locale
-            else
-                return item.locales[0]
+            var lang = gettextCatalog.getCurrentLanguage()
+            var locale = item.locales[0]
+
+            item.locales.forEach(function(l){
+                if(l.lang == lang)
+                    locale = l
+            })
+
+            return locale
         }
     }
 }])
