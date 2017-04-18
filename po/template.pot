@@ -29,15 +29,15 @@ msgstr ""
 msgid "Activities..."
 msgstr ""
 
-#: fixed_strings.html:22
+#: fixed_strings.html:29
 msgid "All outings"
 msgstr ""
 
-#: fixed_strings.html:23
+#: fixed_strings.html:30
 msgid "All routes"
 msgstr ""
 
-#: fixed_strings.html:24
+#: fixed_strings.html:31
 msgid "All waypoints"
 msgstr ""
 
@@ -436,6 +436,10 @@ msgstr ""
 msgid "Welcome to CampUI"
 msgstr ""
 
+#: fixed_strings.html:26
+msgid "areas"
+msgstr ""
+
 #: fixed_strings.html:10
 msgid "average"
 msgstr ""
@@ -460,6 +464,10 @@ msgstr ""
 msgid "ice_climbing"
 msgstr ""
 
+#: fixed_strings.html:27
+msgid "images"
+msgstr ""
+
 #: components/loading_info.html:5
 msgid "loading..."
 msgstr ""
@@ -470,6 +478,10 @@ msgstr ""
 
 #: fixed_strings.html:14
 msgid "mountain_climbing"
+msgstr ""
+
+#: fixed_strings.html:23
+msgid "outings"
 msgstr ""
 
 #: fixed_strings.html:19
@@ -484,7 +496,11 @@ msgstr ""
 msgid "rock_climbing"
 msgstr ""
 
-#: fixed_strings.html:11
+#: fixed_strings.html:24
+msgid "routes"
+msgstr ""
+
+#: fixed_strings.html:12
 msgid "skitouring"
 msgstr ""
 
@@ -498,4 +514,8 @@ msgstr ""
 
 #: fixed_strings.html:21
 msgid "via_ferrata"
+msgstr ""
+
+#: fixed_strings.html:25
+msgid "waypoints"
 msgstr ""

@@ -5,6 +5,7 @@ function getC2cController(c2c_item){
     function($scope, QueryEditor, currentUser, columnDefs, gettextCatalog, locale, urlQuery){
 
         $scope.getLocale = function(item){ return locale.get(item)}
+        $scope.c2c_item = c2c_item
 
         $scope.getLabel = function(){
             item = c2c_item.charAt(0).toUpperCase() + c2c_item.slice(1) + "s"

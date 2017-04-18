@@ -286,6 +286,16 @@ margin-bottom:15px
 
 ////////////////////////////////////////////////////////////////////
 
+.outings-view h3:first-letter,
+.routes-view h3:first-letter,
+.waypoints-view h3:first-letter,
+.articles-view h3:first-letter,
+.areas-view h3:first-letter,
+.xreports-view h3:first-letter{
+    text-transform: uppercase;
+}
+////////////////////////////////////////////////////////////////////
+
 .query-editor{
 margin-left:10px;
 margin-right:10px;
