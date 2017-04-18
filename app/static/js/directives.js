@@ -166,7 +166,7 @@ angular.module('campui')
                 item:"=",
                 itemType:"=?",
             },
-            template: '<a class="badge badge-success" ui-sref="outingImages({[item.type || itemType]:item.document_id})" translate>All Images</a>',
+            template: '<a class="badge badge-success" ui-sref="outingImages({[item.type || itemType]:item.document_id})" translate>All images</a>',
         };
         return result;
     })
