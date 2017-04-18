@@ -240,9 +240,20 @@ font-style:normal;
 // route specific
 
 .route-header{
-margin-bottom:15px
+    margin-bottom:15px
 }
 
+////////////////////////////////////////////////////////////////////
+// use specific
+
+.user-view h3{
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+.user-view div[markdown]{
+text-align:justify
+}
 ////////////////////////////////////////////////////////////////////
 
 

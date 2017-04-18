@@ -1,4 +1,4 @@
-<div class="ibox float-e-margins">
+<div class="ibox float-e-margins user-view">
     <div class="ibox-title">
         <h1>
             <i class="fa fa-user"></i>
@@ -9,22 +9,32 @@
 
     <div class="ibox-content" style="display: block;">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
                 <linked-outings item="user" item-type="'u'"></linked-outings>
+                <outing-images item="user" item-type="'u'"></outing-images>
             </div>
         </div>
         <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div ng-repeat="outing in outings.documents" ng-if="outing.locales[0].description">
+                    <h3>
+                        <i class="fa fa-file-image-o"></i>
+                        <outing-link outing="outing"></outing-link>
+                        <small>{{outing.date_start}}</small>
+                        &nbsp;
+                    </h3>
 
-            <div gallery class="col-sm-12" ng-if="user.associations.images.length"
-                 images="user.associations.images"></div>
+                    <div markdown="outing.locales[0].description"></div>
+
+                    <div gallery ng-if="outing.associations.images.length"
+                         images="outing.associations.images"></div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-
-<div class="row">
-    <div class="col-lg-12">
-        <outing-ibox outings="outings"></outing-ibox>
-    </div>
-</div>
 

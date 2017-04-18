@@ -164,8 +164,9 @@ angular.module('campui')
             replace: true,
             scope: {
                 item:"=",
+                itemType:"=?",
             },
-            template: '<a class="badge badge-success" ui-sref="outingImages({r:item.document_id})" translate>All Images</a>',
+            template: '<a class="badge badge-success" ui-sref="outingImages({[item.type || itemType]:item.document_id})" translate>All Images</a>',
         };
         return result;
     })
@@ -173,9 +174,9 @@ angular.module('campui')
 c2cItems = {
     user:{
         label:"name",
-        detailled_controller: ['$scope','$stateParams','api','c2c',function($scope, $stateParams, api, c2c){
+        detailled_controller: ['$scope','$stateParams','c2c', 'c2cBeta',function($scope, $stateParams, c2c, c2cBeta){
             $scope.user = c2c.user.get($stateParams);
-            $scope.outings = c2c.outings.get({query:"u=" + $stateParams.id});
+            $scope.outings = c2cBeta.outings.get({query:"u=" + $stateParams.id});
         }]
     },
     outing:{},

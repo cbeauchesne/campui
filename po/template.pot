@@ -29,6 +29,10 @@ msgstr ""
 msgid "Activities..."
 msgstr ""
 
+#: fixed_strings.html:32
+msgid "All images"
+msgstr ""
+
 #: fixed_strings.html:29
 msgid "All outings"
 msgstr ""
