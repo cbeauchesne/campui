@@ -34,7 +34,7 @@
                 </div>
 
                 <div ng-if="route.height_diff_difficulties">
-                    <strong translate>Difficulties height :</strong>{{route.height_diff_difficulties}}
+                    <strong translate>Difficulties height :</strong>{{route.height_diff_difficulties}}&nbsp;m
                 </div>
 
                 <div ng-if="route.route_types">
@@ -44,8 +44,6 @@
                 <div>
                     <strong translate>Glacier gears :</strong> {{route.glacier_gear}}
                 </div>
-
-
 
             </div>
 
@@ -60,15 +58,15 @@
                 </div>
 
                 <div ng-if="route.height_diff_up || route.height_diff_down">
-                    <strong translate>Height difference :</strong>+{{route.height_diff_up}} / -{{route.height_diff_down}}
+                    <strong translate>Height difference :</strong>+{{route.height_diff_up}}&nbsp;m / -{{route.height_diff_down}}&nbsp;m
                 </div>
 
                 <div ng-if="route.elevation_min || route.elevation_max">
-                    <strong translate>Elevation min/max :</strong>{{route.elevation_min}}/{{route.elevation_max}}
+                    <strong translate>Elevation min/max :</strong>{{route.elevation_min}}&nbsp;m/{{route.elevation_max}}&nbsp;m
                 </div>
 
                 <div ng-if="route.route_length">
-                    <strong translate>Route length :</strong>{{route.route_length}}m
+                    <strong translate>Route length :</strong>{{route.route_length}}&nbsp;m
                 </div>
 
             </div>

@@ -88,7 +88,7 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: route.html:55
+#: route.html:53
 msgid "Configuration :"
 msgstr ""
 
@@ -130,7 +130,7 @@ msgstr ""
 
 #: area.html:18
 #: outing.html:31
-#: route.html:86
+#: route.html:84
 #: waypoint.html:20
 msgid "Description"
 msgstr ""
@@ -147,7 +147,7 @@ msgstr ""
 msgid "Elevation"
 msgstr ""
 
-#: route.html:67
+#: route.html:65
 msgid "Elevation min/max :"
 msgstr ""
 
@@ -179,7 +179,7 @@ msgstr ""
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:92
+#: route.html:90
 msgid "Gears"
 msgstr ""
 
@@ -203,11 +203,11 @@ msgstr ""
 msgid "Height diff"
 msgstr ""
 
-#: route.html:63
+#: route.html:61
 msgid "Height difference :"
 msgstr ""
 
-#: route.html:95
+#: route.html:93
 msgid "History"
 msgstr ""
 
@@ -275,7 +275,7 @@ msgstr ""
 msgid "No filter"
 msgstr ""
 
-#: route.html:59
+#: route.html:57
 msgid "Orientation :"
 msgstr ""
 
@@ -323,12 +323,12 @@ msgstr ""
 msgid "Rating"
 msgstr ""
 
-#: route.html:103
+#: route.html:101
 #: waypoint.html:37
 msgid "Recent outings"
 msgstr ""
 
-#: route.html:89
+#: route.html:87
 msgid "Remarks"
 msgstr ""
 
@@ -352,7 +352,7 @@ msgstr ""
 msgid "Route description"
 msgstr ""
 
-#: route.html:71
+#: route.html:69
 msgid "Route length :"
 msgstr ""
 
@@ -423,7 +423,7 @@ msgstr ""
 
 #: c2c_items.html:62
 #: common/navbar.html:43
-#: route.html:77
+#: route.html:75
 #: search.html:24
 msgid "Waypoints"
 msgstr ""

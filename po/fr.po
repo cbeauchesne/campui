@@ -147,7 +147,7 @@ msgstr "Altitude"
 
 #: route.html:67
 msgid "Elevation min/max :"
-msgstr "Altitude min/max"
+msgstr "Altitude min/max :"
 
 #: components/rating.html:11
 msgid "Engagement rating"

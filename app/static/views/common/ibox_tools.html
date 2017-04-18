@@ -4,7 +4,7 @@
         <i class="fa fa-chevron-left"></i>
     </a>
 
-    {{qe.offset+1}}-{{qe.offset+30}} / {{data.total}}
+    {{qe.offset+1}}-{{qe.offset+qe.limit}} / {{data.total}}
 
     <a ng-click="qe.next()"
        uib-tooltip="{{ 'Next'| translate }}">

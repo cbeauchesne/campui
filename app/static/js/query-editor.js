@@ -20,6 +20,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
 
         _this.scope = scope
         _this.offset = 0
+        _this.limit = 30
         _this.c2c_item = c2c_item
 
         _this.deletable = false
@@ -33,11 +34,13 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
             query = query || {url:""};
             url_query = query.url || "";
 
+            if(this.scope.data)
+                _this.scope.data.documents = []
+
             if(_this.offset != 0)
                 url_query += "&offset=" + _this.offset;
 
-            if(this.scope.data)
-                _this.scope.data.documents = []
+            url_query += "&limit=" + _this.limit;
 
             console.log("setQuery:",  url_query)
             c2c[_this.c2c_item + "s"].get({query:url_query}, function(data){
@@ -58,13 +61,13 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
         }
 
         _this.next = function(){
-            _this.offset += 30;
+            _this.offset += _this.limit;
             _this.setQuery(_this.currentQuery);
         }
 
         _this.previous = function(){
             if(_this.offset != 0){
-                _this.offset = Math.max(0, _this.offset - 30);
+                _this.offset = Math.max(0, _this.offset - _this.limit);
                 _this.setQuery(_this.currentQuery);
             }
         }

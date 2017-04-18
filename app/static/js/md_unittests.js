@@ -188,7 +188,7 @@ app.factory('code_samples', function(){
         {
         name:'Table20', //short name of your text
         code:'L# 6b | 35m |  a [[http://www.google.com|google]] c',
-        html:'<table><tbody><tr><td>L1</td><td>6b</td><td>35m</td><td>a <a href="www.google.com">google</a> c</td></tr></tbody></table>'
+        html:'<table><tbody><tr><td>L1</td><td>6b</td><td>35m</td><td>a <a href="http://www.google.com">google</a> c</td></tr></tbody></table>'
         },
         {
         name:'Trash1',
