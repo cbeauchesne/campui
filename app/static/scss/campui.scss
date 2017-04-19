@@ -231,8 +231,12 @@ font-style:italic;
 }
 
 .home-view .outing-area::before{
-content : "\2219  ";
-font-style:normal;
+    content : "\2219  ";
+    font-style:normal;
+}
+
+.home-view a:visited {
+    color:#1ab394;
 }
 
 
@@ -244,7 +248,7 @@ font-style:normal;
 }
 
 ////////////////////////////////////////////////////////////////////
-// use specific
+// user specific
 
 .user-view h3{
     margin-top:30px;
