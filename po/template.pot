@@ -92,7 +92,7 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: route.html:53
+#: route.html:54
 msgid "Configuration :"
 msgstr ""
 
@@ -134,7 +134,7 @@ msgstr ""
 
 #: area.html:18
 #: outing.html:31
-#: route.html:84
+#: route.html:89
 #: waypoint.html:20
 msgid "Description"
 msgstr ""
@@ -151,7 +151,7 @@ msgstr ""
 msgid "Elevation"
 msgstr ""
 
-#: route.html:65
+#: route.html:69
 msgid "Elevation min/max :"
 msgstr ""
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:90
+#: route.html:95
 msgid "Gears"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgstr ""
 msgid "Give a name to this filter"
 msgstr ""
 
-#: route.html:45
+#: route.html:46
 msgid "Glacier gears :"
 msgstr ""
 
@@ -207,11 +207,11 @@ msgstr ""
 msgid "Height diff"
 msgstr ""
 
-#: route.html:61
+#: route.html:64
 msgid "Height difference :"
 msgstr ""
 
-#: route.html:93
+#: route.html:98
 msgid "History"
 msgstr ""
 
@@ -278,7 +278,7 @@ msgstr ""
 msgid "No filter"
 msgstr ""
 
-#: route.html:57
+#: route.html:59
 msgid "Orientation :"
 msgstr ""
 
@@ -326,12 +326,12 @@ msgstr ""
 msgid "Rating"
 msgstr ""
 
-#: route.html:101
+#: route.html:106
 #: waypoint.html:38
 msgid "Recent outings"
 msgstr ""
 
-#: route.html:87
+#: route.html:92
 msgid "Remarks"
 msgstr ""
 
@@ -355,7 +355,7 @@ msgstr ""
 msgid "Route description"
 msgstr ""
 
-#: route.html:69
+#: route.html:74
 msgid "Route length :"
 msgstr ""
 
@@ -426,7 +426,7 @@ msgstr ""
 
 #: c2c_items.html:62
 #: common/navbar.html:43
-#: route.html:75
+#: route.html:80
 #: search.html:24
 msgid "Waypoints"
 msgstr ""
@@ -451,8 +451,20 @@ msgstr ""
 msgid "awful"
 msgstr ""
 
+#: fixed_strings.html:37
+msgid "edge"
+msgstr ""
+
 #: fixed_strings.html:7
 msgid "excellent"
+msgstr ""
+
+#: fixed_strings.html:38
+msgid "face"
+msgstr ""
+
+#: fixed_strings.html:36
+msgid "glacier_safety_gear"
 msgstr ""
 
 #: fixed_strings.html:8
@@ -475,6 +487,10 @@ msgstr ""
 msgid "loading..."
 msgstr ""
 
+#: fixed_strings.html:34
+msgid "loop"
+msgstr ""
+
 #: fixed_strings.html:20
 msgid "mountain_biking"
 msgstr ""
@@ -495,6 +511,10 @@ msgstr ""
 msgid "poor"
 msgstr ""
 
+#: fixed_strings.html:39
+msgid "quiet"
+msgstr ""
+
 #: fixed_strings.html:15
 msgid "rock_climbing"
 msgstr ""
@@ -513,6 +533,10 @@ msgstr ""
 
 #: fixed_strings.html:18
 msgid "snowshoeing"
+msgstr ""
+
+#: fixed_strings.html:35
+msgid "traverse"
 msgstr ""
 
 #: fixed_strings.html:21

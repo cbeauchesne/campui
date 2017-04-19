@@ -14,13 +14,24 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
 
         params.detailled_controller = params.detailled_controller ?
             params.detailled_controller :
-            ['$scope', '$stateParams', 'c2c', 'locale', function($scope, $stateParams, c2c, locale){
+            ['$scope', '$stateParams', 'c2c', 'locale', 'gettextCatalog', function($scope, $stateParams, c2c, locale, gettextCatalog){
                 c2c[item].get($stateParams, function(data){
                     $scope[item] = data;
                     $scope.currentLocale = $scope.getLocale(data)
                 })
 
                 $scope.getLocale = function(item){ return locale.get(item)}
+
+                $scope.translateArray = function(arr){
+                    if(arr){
+                        var r = []
+                        arr.forEach(function(item){
+                            r.push(gettextCatalog.getString(item))
+                        })
+
+                        return r
+                    }
+                }
             }]
 
         $stateProvider.state(item, {

@@ -93,7 +93,7 @@ msgstr "Dupliquer"
 msgid "Conditions"
 msgstr "Conditions"
 
-#: route.html:53
+#: route.html:54
 msgid "Configuration :"
 msgstr "Configuration :"
 
@@ -133,7 +133,7 @@ msgstr "Par défaut pour les incidents"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: area.html:18 outing.html:31 route.html:84 waypoint.html:20
+#: area.html:18 outing.html:31 route.html:89 waypoint.html:20
 msgid "Description"
 msgstr "Description"
 
@@ -149,7 +149,7 @@ msgstr "Vous n’avez pas encore un compte?"
 msgid "Elevation"
 msgstr "Altitude"
 
-#: route.html:65
+#: route.html:69
 msgid "Elevation min/max :"
 msgstr "Altitude min/max :"
 
@@ -181,7 +181,7 @@ msgstr "Filtres"
 msgid "Frequentation"
 msgstr "Fréquentation"
 
-#: route.html:90
+#: route.html:95
 msgid "Gears"
 msgstr "Matériel"
 
@@ -189,7 +189,7 @@ msgstr "Matériel"
 msgid "Give a name to this filter"
 msgstr "Nommer ce filtre"
 
-#: route.html:45
+#: route.html:46
 msgid "Glacier gears :"
 msgstr "Matériel glacier :"
 
@@ -205,11 +205,11 @@ msgstr "Hauteur"
 msgid "Height diff"
 msgstr "Hauteur"
 
-#: route.html:61
+#: route.html:64
 msgid "Height difference :"
 msgstr "Dénivelé :"
 
-#: route.html:93
+#: route.html:98
 msgid "History"
 msgstr "Historique"
 
@@ -225,7 +225,7 @@ msgstr "ID C2C"
 msgid "Ice rating"
 msgstr "Cotation glace"
 
-#: home.html:6 waypoint.html:42
+#: home.html:6
 msgid "Images"
 msgstr "Images"
 
@@ -273,7 +273,7 @@ msgstr "Suivant"
 msgid "No filter"
 msgstr "Aucun filtre"
 
-#: route.html:57
+#: route.html:59
 msgid "Orientation :"
 msgstr "Orientation :"
 
@@ -317,11 +317,11 @@ msgstr "Requêtes"
 msgid "Rating"
 msgstr "Cotations"
 
-#: route.html:101 waypoint.html:37
+#: route.html:106 waypoint.html:38
 msgid "Recent outings"
 msgstr "Sorties récentes"
 
-#: route.html:87
+#: route.html:92
 msgid "Remarks"
 msgstr "Remarques"
 
@@ -345,7 +345,7 @@ msgstr "Cotation obligatoire"
 msgid "Route description"
 msgstr "Description de l’itinéraire"
 
-#: route.html:69
+#: route.html:74
 msgid "Route length :"
 msgstr "Longueur :"
 
@@ -354,7 +354,7 @@ msgid "Route type :"
 msgstr "Type d’itinéraire :"
 
 #: c2c_items.html:71 common/navbar.html:37 home.html:67 search.html:13
-#: waypoint.html:32
+#: waypoint.html:33
 msgid "Routes"
 msgstr "Itinéraires"
 
@@ -406,7 +406,7 @@ msgstr "Topo"
 msgid "Type"
 msgstr "Type"
 
-#: c2c_items.html:62 common/navbar.html:43 route.html:75 search.html:24
+#: c2c_items.html:62 common/navbar.html:43 route.html:80 search.html:24
 msgid "Waypoints"
 msgstr "Points de passage"
 
@@ -430,9 +430,21 @@ msgstr "moyen"
 msgid "awful"
 msgstr "éxécrable"
 
+#: fixed_strings.html:37
+msgid "edge"
+msgstr "arête"
+
 #: fixed_strings.html:7
 msgid "excellent"
 msgstr "excellent"
+
+#: fixed_strings.html:38
+msgid "face"
+msgstr "face"
+
+#: fixed_strings.html:36
+msgid "glacier_safety_gear"
+msgstr "matériel de sécurité sur glacier"
 
 #: fixed_strings.html:8
 msgid "good"
@@ -454,6 +466,10 @@ msgstr "images"
 msgid "loading..."
 msgstr "chargement..."
 
+#: fixed_strings.html:34
+msgid "loop"
+msgstr "boucle"
+
 #: fixed_strings.html:20
 msgid "mountain_biking"
 msgstr "vélo"
@@ -474,6 +490,10 @@ msgstr "parapente"
 msgid "poor"
 msgstr "mauvais"
 
+#: fixed_strings.html:39
+msgid "quiet"
+msgstr "peu fréquenté"
+
 #: fixed_strings.html:15
 msgid "rock_climbing"
 msgstr "escalade"
@@ -493,6 +513,10 @@ msgstr "neige, glace et mixte"
 #: fixed_strings.html:18
 msgid "snowshoeing"
 msgstr "raquette"
+
+#: fixed_strings.html:35
+msgid "traverse"
+msgstr "traversée"
 
 #: fixed_strings.html:21
 msgid "via_ferrata"
