@@ -52,13 +52,13 @@ app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousPr
 
 
     user = api.currentUser.get(function(data){
-        if(data.username != ""){
         setUser(user)
-            user.isAnonymous = false
+        user.profile = data.profile || {}
+        user.profile.params = user.profile.params || {}
+        user.profile.params.queries = user.profile.params.queries || []
 
-            user.profile = data.profile || {}
-            user.profile.params = user.profile.params || {}
-            user.profile.params.queries = user.profile.params.queries || []
+        if(data.username != ""){
+            user.isAnonymous = false
 
             user.save = function(){
                 user.saving = true;
