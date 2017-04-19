@@ -268,18 +268,18 @@ app.factory('code_samples', function(){
         },
         {
         name:'Typo11',
-        code:'\n##c Titre c2c # precisions',
-        html:'<h2>Titre c2c<small>precisions</small></h2>'
+        code:'\n##c Titre c2c # precisions\n',
+        html:'<h3>Titre c2c <small> precisions</small></h3>'
         },
         {
         name:"Typo12",
         code:"[u]coucou[/u]",
-        html:"<strong>coucou</strong>"
+        html:"<u>coucou</u>"
         },
         {
         name:"Typo13",
         code:"[s]coucou[/s]",
-        html:"<strong>coucou</strong>"
+        html:"<del>coucou</del>"
         },
         {
         name:"Typo14",
@@ -294,12 +294,12 @@ app.factory('code_samples', function(){
         {
         name:"Typo16",
         code:"[sup]coucou[/sup]",
-        html:"<sup>coucou<sup> (checker)"
+        html:"<sup>coucou</sup>"
         },
         {
         name:"Typo17",
         code:"[ind]coucou[/ind]",
-        html:"<sub>coucou<sub> (checker)"
+        html:"<sub>coucou</sub>"
         },
         {
         name:'Typo18',
