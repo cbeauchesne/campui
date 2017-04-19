@@ -16,7 +16,6 @@ app.provider('markdownConverter', function () {
         };
 
     var c2c_folies = function () {
-        
         var toc = { //trash
             type: 'lang',
             regex: /(\[\/?(toc2|p|col|toc)([a-zA-Z\d ]*)?\])/g,
@@ -24,7 +23,59 @@ app.provider('markdownConverter', function () {
                 return '';
             }
         };
-        
+
+        var c2c_title = { //trash
+            type: 'lang',
+            regex: /\n(#+)c?([^\n#]+)#*(.*)\n/g,
+      //      regex: /\n(#+)c?(.*)/g,
+            replace: function (match, hashs, title, appendix) {
+                if(appendix)
+                    appendix = "<small>" + appendix + "</small>"
+
+                return '\n' + hashs + title + appendix + "\n";
+            }
+        };
+
+        var underline = {
+            type: 'lang',
+            regex: /\[u\](.*?)\[\/u\]/g,
+            replace: function (match, text) {
+                return '<u>'+ text + '</u>';
+            }
+        };
+
+        var del = {
+            type: 'lang',
+            regex: /\[s\](.*?)\[\/s\]/g,
+            replace: function (match, text) {
+                return '<del>'+ text + '</del>';
+            }
+        };
+
+        var sup = {
+            type: 'lang',
+            regex: /\[sup\](.*?)\[\/sup\]/g,
+            replace: function (match, text) {
+                return '<sup>'+ text + '</sup>';
+            }
+        };
+
+        var sub = {
+            type: 'lang',
+            regex: /\[ind\](.*?)\[\/ind\]/g,
+            replace: function (match, text) {
+                return '<sub>'+ text + '</sub>';
+            }
+        };
+
+        var monospace = {
+            type: 'lang',
+            regex: /\[c\](.*?)\[\/c\]/g,
+            replace: function (match, text) {
+                return text;
+            }
+        };
+
         var italic = {
             type: 'lang',
             regex: /\[i\](.*?)\[\/i\]/g,
@@ -38,14 +89,6 @@ app.provider('markdownConverter', function () {
             regex: /\[code\]([^]*?)\[\/code\]/g,
             replace: function (match, text) {
                 return '<pre>'+ text.replace(/\n([^ \n])/g,"\n $1") + '</pre>';
-            }
-        };
-
-        var sup = {
-            type: 'lang',
-            regex: /\[sup\]([^\]]*)\[\/sup\]/g,
-            replace: function (match, text) {
-                return '<sup>'+ text + '</sup>';
             }
         };
 
@@ -181,7 +224,6 @@ app.provider('markdownConverter', function () {
                         row_parts = row_sub_parser.exec(row_match[2])
                         suffix = row_parts[1]
                         cells_str = row_parts[3]
-                        console.log(row_parts)
 
                         cells_str = cells_str.trim() + "|"
                         cells = [] 
@@ -316,7 +358,8 @@ app.provider('markdownConverter', function () {
             }                    
         }
         
-        return [code, italic, bold, sup,warning, imp, img, imgLegend, url, url2, c2cItem, url4,url5, toc, ltag];
+        return [code, italic, bold, sup, sub, underline, monospace, del, c2c_title,
+            warning, imp, img, imgLegend, url, url2, c2cItem, url4,url5, toc, ltag];
     }
 
     showdown.extension('c2c_folies', c2c_folies);
