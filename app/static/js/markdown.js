@@ -16,7 +16,6 @@ app.provider('markdownConverter', function () {
         };
 
     var c2c_folies = function () {
-        
         var toc = { //trash
             type: 'lang',
             regex: /(\[\/?(toc2|p|col|toc)([a-zA-Z\d ]*)?\])/g,
@@ -24,7 +23,59 @@ app.provider('markdownConverter', function () {
                 return '';
             }
         };
-        
+
+        var c2c_title = { //trash
+            type: 'lang',
+            regex: /\n(#+)c?([^\n#]+)#*(.*)\n/g,
+      //      regex: /\n(#+)c?(.*)/g,
+            replace: function (match, hashs, title, appendix) {
+                if(appendix)
+                    appendix = "<small>" + appendix + "</small>"
+
+                return '\n' + hashs + title + appendix + "\n";
+            }
+        };
+
+        var underline = {
+            type: 'lang',
+            regex: /\[u\](.*?)\[\/u\]/g,
+            replace: function (match, text) {
+                return '<u>'+ text + '</u>';
+            }
+        };
+
+        var del = {
+            type: 'lang',
+            regex: /\[s\](.*?)\[\/s\]/g,
+            replace: function (match, text) {
+                return '<del>'+ text + '</del>';
+            }
+        };
+
+        var sup = {
+            type: 'lang',
+            regex: /\[sup\](.*?)\[\/sup\]/g,
+            replace: function (match, text) {
+                return '<sup>'+ text + '</sup>';
+            }
+        };
+
+        var sub = {
+            type: 'lang',
+            regex: /\[ind\](.*?)\[\/ind\]/g,
+            replace: function (match, text) {
+                return '<sub>'+ text + '</sub>';
+            }
+        };
+
+        var monospace = {
+            type: 'lang',
+            regex: /\[c\](.*?)\[\/c\]/g,
+            replace: function (match, text) {
+                return text;
+            }
+        };
+
         var italic = {
             type: 'lang',
             regex: /\[i\](.*?)\[\/i\]/g,
@@ -33,11 +84,11 @@ app.provider('markdownConverter', function () {
             }
         };
 
-        var sup = {
+        var code = {
             type: 'lang',
-            regex: /\[sup\]([^\]]*)\[\/sup\]/g,
+            regex: /\[code\]([^]*?)\[\/code\]/g,
             replace: function (match, text) {
-                return '<sup>'+ text + '</sup>';
+                return '<pre>'+ text.replace(/\n([^ \n])/g,"\n $1") + '</pre>';
             }
         };
 
@@ -49,10 +100,17 @@ app.provider('markdownConverter', function () {
             }
         };
 
-
         var imp = {
             type: 'lang',
-            regex: /\[imp\]([^]*?)\[\/imp\]/g,
+            regex: /\[imp(?:ortant)?\]([^]*?)\[\/imp(?:ortant)?\]/g,
+            replace: function (match, text) {
+                return '<div class="alert alert-danger">'+ text + '</div>';
+            }
+        };
+
+        var warning = {
+            type: 'lang',
+            regex: /\[warning?\]([^]*?)\[\/warning?\]/g,
             replace: function (match, text) {
                 return '<div class="alert alert-danger">'+ text + '</div>';
             }
@@ -132,6 +190,14 @@ app.provider('markdownConverter', function () {
             }
         };
 
+        var url5 = {
+            type: 'lang',
+            regex: /\[email\](.*?)\[\/email\]/g,
+            replace: function (match, mail) {
+                return '<a href="mailto:' + mail + '">' + mail + '</a>'; // give it to markdown
+            }
+        };
+
         // your new best friends :
         // https://regex101.com/
         // http://localhost:3000/markdown
@@ -144,8 +210,8 @@ app.provider('markdownConverter', function () {
                 arguments[0] = arguments[0] + "\n\n"
                 
                 row_parser = /(?:\n\n?)([LR])#([^]*?(?=\n[LR]#|\n\n))/gm
-                suffix_parser = /^(_)?(\+[\d]*|[\d]+)?(\-\+?[\d]+)?([^\d\-+!][^ !]*)?(!)?$/
-                cell_parser = /[|:]+([^|:]*)/g
+                row_sub_parser = /(=|~|[^|: =]*) *(\|\||\||::|:)?([^]*)/
+                cell_parser = /([^|:]*)[|:]+/g
                 
                 result = ['\n<table>']
                 
@@ -155,9 +221,11 @@ app.provider('markdownConverter', function () {
                     if(row_match){
 
                         tag = row_match[1]
-                        cells_str = "| " + row_match[2]
-                        suffix =  cell_parser.exec(cells_str)[1].trim()
+                        row_parts = row_sub_parser.exec(row_match[2])
+                        suffix = row_parts[1]
+                        cells_str = row_parts[3]
 
+                        cells_str = cells_str.trim() + "|"
                         cells = [] 
                         
                         do{
@@ -185,7 +253,7 @@ app.provider('markdownConverter', function () {
             
             //remove last empty cells
             if(cells.length) 
-                while(!cells[cells.length-1])
+                while(!cells[cells.length-1] && cells.length>0)
                     cells.splice(-1,1)
             
             result.push(elt_in, cell1.trim(), elt_out)
@@ -199,9 +267,9 @@ app.provider('markdownConverter', function () {
         
         var processCells = function(result, tag, suffix, cells){    
             if(suffix.startsWith("~"))
-                result.push("<tr><td colspan='666'>" + suffix.substring(1).trim() + "</td></tr>")
+                result.push("<tr><td colspan='666'>" + cells[0] + "</td></tr>")
             else if(suffix.startsWith("="))                        
-                pushLine(result, 'th', suffix.substring(1), cells)
+                pushLine(result, 'th', "", cells)
             else{                        
                 
                 suffix_parser = /^(_)?(\+[\d]*|[\d]+)?(\-\+?[\d]+)?([^\d\-+!][^ !]*)?(!)?$/
@@ -290,7 +358,8 @@ app.provider('markdownConverter', function () {
             }                    
         }
         
-        return [italic, bold, sup, imp, img, imgLegend, url, url2, c2cItem, url4, toc, ltag];
+        return [code, italic, bold, sup, sub, underline, monospace, del, c2c_title,
+            warning, imp, img, imgLegend, url, url2, c2cItem, url4,url5, toc, ltag];
     }
 
     showdown.extension('c2c_folies', c2c_folies);

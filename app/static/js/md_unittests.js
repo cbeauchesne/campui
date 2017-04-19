@@ -7,9 +7,10 @@ app.config(['$stateProvider', function($stateProvider) {
         url: "/markdown",
         templateUrl: "static/views/markdown.html",
         controller: ['$scope', 'code_samples', 'markdownConverter', '$sanitize', function($scope, code_samples, markdownConverter, $sanitize){
-            
-            
+
+           // code_samples=[code_samples[26]]
             code_samples.forEach(function(item){
+                console.log(item.name)
                 item.result = $sanitize(markdownConverter(item.code))
                 
                 if(item.result.startsWith("<p>") && item.result.endsWith("</p>"))
@@ -142,13 +143,13 @@ app.factory('code_samples', function(){
         },
         {
         name:'Table11', //short name of your text
-        code:'L#= h | header ', //markdown code
-        html:'<table><tbody><tr><th>h</th><th>header</th></tr></tbody></table>'
+        code:'L#= | header\nL#= header', //markdown code
+        html:'<table><tbody><tr><th></th><th>header</th></tr><tr><th></th><th>header</th></tr></tbody></table>'
         },
         {
         name:'Table12', //short name of your text
-        code:'L# | 1 \nL#~ text\nL# | 2 ', //markdown code
-        html:'<table><tbody><tr><td>L1</td><td>1</td></tr><tr><td colspan="666">text</td></tr><tr><td>L2</td><td>2</td></tr></tbody></table>'
+        code:'L#= | header \nL#~ text\nL# | 1 ', //markdown code
+        html:'<table><tbody><tr><th></th><th>header</th></tr><tr><td colspan="666">text</td></tr><tr><td>L1</td><td>1</td></tr></tbody></table>'
         },
         {
         name:'Table13', //short name of your text
@@ -187,8 +188,8 @@ app.factory('code_samples', function(){
         },
         {
         name:'Table20', //short name of your text
-        code:'L# 6b | 35m |  a [[http://www.google.com|google]] c',
-        html:'<table><tbody><tr><td>L1</td><td>6b</td><td>35m</td><td>a <a href="http://www.google.com">google</a> c</td></tr></tbody></table>'
+        code:'L# | 35m |  a [[http://www.google.com|google]] c',
+        html:'<table><tbody><tr><td>L1</td><td>35m</td><td>a <a href="http://www.google.com">google</a> c</td></tr></tbody></table>'
         },
         {
         name:'Trash1',
@@ -208,6 +209,11 @@ app.factory('code_samples', function(){
         {
         name:'Trash4',
         code:'[toc2]',
+        html:''
+        },
+        {
+        name:'Trash5',
+        code:'[toc 666]',
         html:''
         },
         {
@@ -254,6 +260,56 @@ app.factory('code_samples', function(){
         name:'Typo9',
         code:'[imp][b]google[/b]\ncoucou[/imp]',
         html:'<div class="alert alert-danger"><strong>google</strong>&#10;coucou</div>'
+        },
+        {
+        name:'Typo10',
+        code:'[code]int main()\nreturn 0;[/code]',
+        html:'<pre>int main()&#10; return 0;</pre>'
+        },
+        {
+        name:'Typo11',
+        code:'\n##c Titre c2c # precisions\n',
+        html:'<h3>Titre c2c <small> precisions</small></h3>'
+        },
+        {
+        name:"Typo12",
+        code:"[u]coucou[/u]",
+        html:"<u>coucou</u>"
+        },
+        {
+        name:"Typo13",
+        code:"[s]coucou[/s]",
+        html:"<del>coucou</del>"
+        },
+        {
+        name:"Typo14",
+        code:"[color=#ffffff]coucou[/color]",
+        html:"coucou"
+        },
+        {
+        name:"Typo15",
+        code:"[c]coucou[/c]",
+        html:"coucou"
+        },
+        {
+        name:"Typo16",
+        code:"[sup]coucou[/sup]",
+        html:"<sup>coucou</sup>"
+        },
+        {
+        name:"Typo17",
+        code:"[ind]coucou[/ind]",
+        html:"<sub>coucou</sub>"
+        },
+        {
+        name:'Typo18',
+        code:'[important]coucou[/important]',
+        html:'<div class="alert alert-danger">coucou</div>'
+        },
+        {
+        name:'Typo19',
+        code:'[warning]coucou[/warning]',
+        html:'<div class="alert alert-danger">coucou</div>'
         },
         {
         name:'Url',
