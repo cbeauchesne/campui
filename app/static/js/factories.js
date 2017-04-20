@@ -240,7 +240,7 @@ app.factory("urlQuery", ['$location', function($location){
                     if(object[prop].length!=0)
                         temp[prop] = object[prop].join(",")
                     }
-                 else
+                 else if(typeof object[prop] !== "undefined")
                     temp[prop] = object[prop]
             }
         }
@@ -253,18 +253,14 @@ app.factory("urlQuery", ['$location', function($location){
 
         for (var i=0;i<vars.length;i++) {
             var pair = vars[i].split("=");
-            pair[0] = decodeURIComponent(pair[0]);
-            pair[1] = decodeURIComponent(pair[1]);
-                // If first entry with this name
-            if (typeof query_string[pair[0]] === "undefined") {
-                query_string[pair[0]] = pair[1];
-                // If second entry with this name
-            } else if (typeof query_string[pair[0]] === "string") {
-                var arr = [ query_string[pair[0]], pair[1] ];
-                query_string[pair[0]] = arr;
-                // If third or later entry with this name
-            } else {
-                query_string[pair[0]].push(pair[1]);
+
+            if(pair.length==1){
+                query_string[pair[0]] = undefined
+            }
+            else{
+                pair[0] = decodeURIComponent(pair[0]);
+                pair[1] = decodeURIComponent(pair[1]);
+                query_string[pair[0]] = pair[1]
             }
         }
 
@@ -279,9 +275,7 @@ app.factory("urlQuery", ['$location', function($location){
                     return parseInt(item, 10);
                 });
             }
-         })
-
-
+        })
 
         return query_string;
     };
