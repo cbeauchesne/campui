@@ -424,6 +424,10 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
+#: filterItems/u.html:6
+msgid "Users"
+msgstr ""
+
 #: common/navbar.html:43
 #: filterItems/w.html:6
 #: route.html:80
