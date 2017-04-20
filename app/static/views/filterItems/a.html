@@ -9,7 +9,7 @@
             {{qe.getLocale($item).title}}
         </ui-select-match>
         <ui-select-choices
-                repeat="area.document_id as  area in qe.metadata.areas "
+                repeat="area.document_id as area in qe.metadata.areas | hasProp : 'visible'"
                 refresh="qe.refreshAreas($select.search, qe.queryModel.a)"
                 refresh-delay="300">
             {{qe.getLocale(area).title}}
