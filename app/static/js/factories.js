@@ -248,36 +248,36 @@ app.factory("urlQuery", ['$location', function($location){
     }
 
     var toObject = function(query) {
-        var query_string = {};
+        var queryObject = {};
         var vars = query.split("&");
 
         for (var i=0;i<vars.length;i++) {
             var pair = vars[i].split("=");
 
             if(pair.length==1){
-                query_string[pair[0]] = undefined
+                queryObject[pair[0]] = undefined
             }
             else{
                 pair[0] = decodeURIComponent(pair[0]);
                 pair[1] = decodeURIComponent(pair[1]);
-                query_string[pair[0]] = pair[1]
+                queryObject[pair[0]] = pair[1]
             }
         }
 
-        if(query_string.act)
-            query_string.act = query_string.act.split(",")
+        if(queryObject.act)
+            queryObject.act = queryObject.act.split(",")
 
         items =['a','r','w']
 
         items.forEach(function(t){
-            if(query_string[t]){
-                query_string[t] = query_string[t].split(",").map(function(item) {
+            if(queryObject[t]){
+                queryObject[t] = queryObject[t].split(",").map(function(item) {
                     return parseInt(item, 10);
                 });
             }
         })
 
-        return query_string;
+        return queryObject;
     };
 
     return {
