@@ -218,7 +218,11 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
 app.factory('filterItems', [function(){
     return {
-        a : {label:"Areas"},
+        a : {
+            label:"Areas",
+            isArray:true
+        },
+
         act : {label:"Activities"},
         acat : {label:"XXX"}, // article category
         atyp : {label:"Type"}, // area type
@@ -234,6 +238,7 @@ app.factory('filterItems', [function(){
             label:"Conditions",
             emptyValue:["excellent", "awful"],
             values:['awful', 'poor',' average', 'good', 'excellent'],
+            isArray:true,
             },
 
         odif : {label:"Elevation loss"}, //
@@ -245,7 +250,10 @@ app.factory('filterItems', [function(){
 
         qa : {label:"Completeness"}, //
 
-        r: {label:"Routes"}, //
+        r: {
+            label:"Routes",
+            isArray:true
+        }, //
 
         rmaxa: {label:"XXX"}, //
         rmina: {label:"XXX"}, //
@@ -256,8 +264,17 @@ app.factory('filterItems', [function(){
         swqual : {label:"XXX"}, //
         swquan : {label:"XXX"}, //
         time: {label:"XXX"}, //
-        u: {label:"Users"}, //
-        w: {label:"Waypoints"}, //
+
+        u: {
+            label:"Users",
+            isArray:true
+        },
+
+        w: {
+            label:"Waypoints",
+            isArray:true
+        },
+
         walt: {label:"XXX"}, // Waypoint altitude
         wtyp: {label:"Type"}, // Waypoint type
     }
