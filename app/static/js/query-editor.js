@@ -13,7 +13,7 @@ app.filter('hasProp', function() {
   };
 });
 
-app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', function(c2c, currentUser, gettextCatalog, urlQuery){
+app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'urlQuery', function(c2c, currentUser, gettextCatalog, locale, urlQuery){
 
     var QueryEditor = function(scope, c2c_item){
         var _this = this
@@ -24,6 +24,8 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
         _this.c2c_item = c2c_item
 
         _this.deletable = false
+
+        _this.getLocale = function(item){ return locale.get(item)}
 
         _this.setQuery = function(query, doNotResetQueryModel){
 
@@ -54,6 +56,10 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
                 return
 
             _this.queryModel = urlQuery.toObject(query.url)
+
+            //force activity and area
+            _this.queryModel.act = _this.queryModel.act || undefined
+            _this.queryModel.a = _this.queryModel.a || undefined
 
             if(_this.queryModel.a){
                 _this.refreshAreas(undefined, _this.queryModel.a)
@@ -136,13 +142,50 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'urlQuery', 
 
 
         var findObject = function(objectArray, propName, propValue){
-            result = undefined
+            var result = undefined
             objectArray.forEach(function(item){
                 if(item[propName]==propValue)
                     result = item
             })
 
             return result
+        }
+
+        _this.filterItems = {
+            a : {},
+            act : {},
+            acat : {}, // article category
+            atyp : {}, // area type
+            avdate : {}, //
+            bbox : {}, // map filter
+            date : {}, //
+            ddif: {}, //
+            fac: {}, //
+            hdif: {}, //
+            l: {}, //
+
+            ocond : {},
+            odif : {}, //
+            oparka : {}, //
+            oalt : {}, //
+            owpt : {}, //
+            oglac : {}, //
+            ofreq : {}, //
+
+            qa : {}, //
+
+            rmaxa: {}, //
+            rmina: {}, //
+            rtyp: {}, // route type
+
+            swlu : {}, //
+            swld : {}, //
+            swqual : {}, //
+            swquan : {}, //
+            time: {}, //
+            u: {}, //
+            walt: {}, // Waypoint altitude
+            wtyp: {}, // Waypoint type
         }
 
 
