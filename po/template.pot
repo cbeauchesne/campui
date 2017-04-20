@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: c2c_items.html:111
+#: c2c_items.html:82
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 
@@ -16,17 +16,21 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: c2c_items.html:19
 #: components/query_editor.html:7
-#: factories.js:341
-#: factories.js:394
-#: factories.js:415
-#: factories.js:451
+#: factories.js:335
+#: factories.js:388
+#: factories.js:409
+#: factories.js:445
+#: filterItems/act.html:1
 msgid "Activities"
 msgstr ""
 
-#: c2c_items.html:27
+#: filterItems/act.html:9
 msgid "Activities..."
+msgstr ""
+
+#: c2c_items.html:23
+msgid "Add a item"
 msgstr ""
 
 #: fixed_strings.html:32
@@ -49,14 +53,14 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: factories.js:347
-#: factories.js:421
+#: factories.js:341
+#: factories.js:415
 msgid "Area"
 msgstr ""
 
-#: c2c_items.html:37
 #: common/navbar.html:49
-#: factories.js:475
+#: factories.js:469
+#: filterItems/a.html:1
 #: outing.html:23
 #: route.html:13
 #: waypoint.html:13
@@ -68,7 +72,7 @@ msgstr ""
 msgid "Articles"
 msgstr ""
 
-#: factories.js:364
+#: factories.js:358
 msgid "Author"
 msgstr ""
 
@@ -80,12 +84,8 @@ msgstr ""
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories.js:462
+#: factories.js:456
 msgid "Categories"
-msgstr ""
-
-#: c2c_items.html:83
-msgid "Clone"
 msgstr ""
 
 #: outing.html:37
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Credits :"
 msgstr ""
 
-#: factories.js:379
+#: factories.js:373
 msgid "Date"
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Default for xreports"
 msgstr ""
 
-#: c2c_items.html:89
+#: c2c_items.html:60
 msgid "Delete"
 msgstr ""
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "Do not have an account?"
 msgstr ""
 
-#: factories.js:481
+#: factories.js:475
 msgid "Elevation"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr ""
 msgid "Equipement rating"
 msgstr ""
 
-#: factories.js:400
+#: factories.js:394
 msgid "Event type"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Gears"
 msgstr ""
 
-#: c2c_items.html:15
+#: c2c_items.html:42
 msgid "Give a name to this filter"
 msgstr ""
 
@@ -199,11 +199,11 @@ msgstr ""
 msgid "Global rating"
 msgstr ""
 
-#: factories.js:359
+#: factories.js:353
 msgid "Height"
 msgstr ""
 
-#: factories.js:433
+#: factories.js:427
 msgid "Height diff"
 msgstr ""
 
@@ -231,7 +231,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: factories.js:384
+#: factories.js:378
 msgid "Impacted people"
 msgstr ""
 
@@ -264,8 +264,8 @@ msgstr ""
 msgid "My page"
 msgstr ""
 
-#: factories.js:470
-#: factories.js:494
+#: factories.js:464
+#: factories.js:488
 #: me.html:79
 msgid "Name"
 msgstr ""
@@ -282,7 +282,7 @@ msgstr ""
 msgid "Orientation :"
 msgstr ""
 
-#: factories.js:438
+#: factories.js:432
 msgid "Orientations"
 msgstr ""
 
@@ -314,7 +314,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: factories.js:457
+#: factories.js:451
 msgid "Quality"
 msgstr ""
 
@@ -322,7 +322,7 @@ msgstr ""
 msgid "Queries"
 msgstr ""
 
-#: factories.js:427
+#: factories.js:421
 msgid "Rating"
 msgstr ""
 
@@ -363,15 +363,15 @@ msgstr ""
 msgid "Route type :"
 msgstr ""
 
-#: c2c_items.html:71
 #: common/navbar.html:37
+#: filterItems/r.html:7
 #: home.html:67
 #: search.html:13
 #: waypoint.html:33
 msgid "Routes"
 msgstr ""
 
-#: c2c_items.html:77
+#: c2c_items.html:48
 #: me.html:117
 msgid "Save"
 msgstr ""
@@ -388,11 +388,11 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: c2c_items.html:44
+#: filterItems/a.html:8
 msgid "Select areas..."
 msgstr ""
 
-#: factories.js:389
+#: factories.js:383
 msgid "Severity"
 msgstr ""
 
@@ -408,10 +408,10 @@ msgstr ""
 msgid "Timing"
 msgstr ""
 
-#: factories.js:335
-#: factories.js:373
-#: factories.js:409
-#: factories.js:446
+#: factories.js:329
+#: factories.js:367
+#: factories.js:403
+#: factories.js:440
 msgid "Title"
 msgstr ""
 
@@ -419,15 +419,16 @@ msgstr ""
 msgid "Topo"
 msgstr ""
 
-#: factories.js:486
-#: factories.js:499
+#: factories.js:480
+#: factories.js:493
 msgid "Type"
 msgstr ""
 
-#: c2c_items.html:62
 #: common/navbar.html:43
+#: filterItems/w.html:6
 #: route.html:80
 #: search.html:24
+#: waypoint.html:41
 msgid "Waypoints"
 msgstr ""
 
