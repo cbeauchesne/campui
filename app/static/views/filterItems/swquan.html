@@ -3,6 +3,6 @@
            ng-model="qe.queryModel.swquan"
            ng-change="qe.apply()"
            class="form-control input-sm"
-           uib-tooltip="{{'??' | translate }}"
-           placeholder="??"/>
+           uib-tooltip="{{ filterItem.label | translate }}"
+           placeholder="{{ filterItem.label  | translate }}"/>
 </div>

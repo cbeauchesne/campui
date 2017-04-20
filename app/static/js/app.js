@@ -16,5 +16,6 @@
         'slickCarousel',
         'ngPhotoswipe',
         'ui.select',
+        'rzModule',
     ])
 })();

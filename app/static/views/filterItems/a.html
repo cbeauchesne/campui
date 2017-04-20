@@ -1,11 +1,11 @@
-<div class="form-group  col-md-2" uib-tooltip="{{ 'Areas'| translate }}">
+<div class="form-group  col-md-2" uib-tooltip="{{ filterItem.label | translate }}">
     <ui-select multiple
                class="form-control"
                close-on-select="false"
                on-select="qe.apply()"
                on-remove="qe.apply()"
                ng-model="qe.queryModel.a">
-        <ui-select-match placeholder="{{'Select areas...' | translate}}">
+        <ui-select-match placeholder="{{ filterItem.label | translate}}">
             {{qe.getLocale($item).title}}
         </ui-select-match>
         <ui-select-choices

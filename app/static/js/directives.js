@@ -261,7 +261,7 @@ $.each(c2cItems, function(item, params){
 })
 
 
-app.directive('filterItem', ['$compile', "$templateCache", function ($timeout, $templateCache) {
+app.directive('filterItem', ['filterItems', function (filterItems) {
 
     return {
         restrict: 'E',
@@ -269,6 +269,7 @@ app.directive('filterItem', ['$compile', "$templateCache", function ($timeout, $
         template: '<div ng-if="itemId" ng-include="_templateUrl"></div>',
         link: function(scope, element, attrs) {
             scope._templateUrl = "/static/views/filterItems/" + scope.itemId + ".html"
+            scope.filterItem = filterItems[scope.itemId]
         }
     }
 }])

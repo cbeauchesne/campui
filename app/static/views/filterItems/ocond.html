@@ -1,8 +1,7 @@
 <div class="form-group col-md-2">
-    <input type="text"
-           ng-model="qe.queryModel.ocond"
-           ng-change="qe.apply()"
-           class="form-control input-sm"
-           uib-tooltip="{{'??' | translate }}"
-           placeholder="??"/>
+    <rzslider
+            rz-slider-model="qe.queryModel.ocond[1]"
+            rz-slider-high="qe.queryModel.ocond[0]"
+            rz-slider-options="{stepsArray:filterItem.values, onChange:qe.apply}">
+    </rzslider>
 </div>

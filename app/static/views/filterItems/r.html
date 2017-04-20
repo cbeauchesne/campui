@@ -4,6 +4,6 @@
            ng-model="qe.queryModel.r"
            ng-change="qe.apply()"
            class="form-control input-sm"
-           uib-tooltip="{{'Routes' | translate }}"
-           placeholder="Routes"/>
+           uib-tooltip="{{ filterItem.label  | translate }}"
+           placeholder="{{ filterItem.label  | translate }}"/>
 </div>

@@ -13,7 +13,7 @@ app.filter('hasProp', function() {
   };
 });
 
-app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'urlQuery', function(c2c, currentUser, gettextCatalog, locale, urlQuery){
+app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'urlQuery', 'filterItems', function(c2c, currentUser, gettextCatalog, locale, urlQuery, filterItems){
 
     var QueryEditor = function(scope, c2c_item){
         var _this = this
@@ -61,6 +61,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             this.filterItemsParams.defaults.forEach(function(item){
                 _this.queryModel[item] = _this.queryModel[item] || undefined
             })
+
 
             if(_this.queryModel.a){
                 _this.refreshAreas(undefined, _this.queryModel.a)
@@ -153,7 +154,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         }
 
         _this.showFilterItem = function (item){
-            _this.queryModel[item] = _this.queryModel[item] || undefined
+            _this.queryModel[item] = _this.queryModel[item] || filterItems[item].emptyValue
         }
 
         var filterItemsParams = {
@@ -163,68 +164,32 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             },
             article : {
                 defaults:["act"],
-                availables:[],
+                availables:["act","a"],
             },
             waypoint : {
                 defaults:["wtyp"],
-                availables:[],
+                availables:["wtyp"],
             },
             area : {
                 defaults:["atyp"],
-                availables:[],
+                availables:["atyp"],
             },
             xreport : {
                 defaults:["act","a"],
-                availables:[],
+                availables:["act","a"],
             },
             outing : {
                 defaults:["act","a"],
-                availables:[],
+                availables:["act","a","ocond","date","qa","odif","oalt","oparka","ofreq","u"],
+            },
+            image : {
+                defaults:["act","a"],
+                availables:["act","a","u"],
             },
         }
 
         _this.filterItemsParams = filterItemsParams[c2c_item]
-
-        _this.filterItems = {
-            a : {label:"areas"},
-            act : {label:"activities"},
-            acat : {label:"XXX"}, // article category
-            atyp : {label:"XXX"}, // area type
-            avdate : {label:"XXX"}, //
-            bbox : {label:"XXX"}, // map filter
-            date : {label:"XXX"}, //
-            ddif: {label:"XXX"}, //
-            fac: {label:"XXX"}, //
-            hdif: {label:"XXX"}, //
-            l: {label:"XXX"}, //
-
-            ocond : {label:"XXX"},
-            odif : {label:"XXX"}, //
-            oparka : {label:"XXX"}, //
-            oalt : {label:"XXX"}, //
-            owpt : {label:"XXX"}, //
-            oglac : {label:"XXX"}, //
-            ofreq : {label:"XXX"}, //
-
-            qa : {label:"XXX"}, //
-
-            r: {label:"routes"}, //
-
-            rmaxa: {label:"XXX"}, //
-            rmina: {label:"XXX"}, //
-            rtyp: {label:"XXX"}, // route type
-
-            swlu : {label:"XXX"}, //
-            swld : {label:"XXX"}, //
-            swqual : {label:"XXX"}, //
-            swquan : {label:"XXX"}, //
-            time: {label:"XXX"}, //
-            u: {label:"users"}, //
-            w: {label:"waypoints"}, //
-            walt: {label:"XXX"}, // Waypoint altitude
-            wtyp: {label:"XXX"}, // Waypoint type
-        }
-
+        _this.filterItems=filterItems
 
         _this.metadata = {
             activities : [
@@ -248,4 +213,52 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
     return QueryEditor
 
+}])
+
+
+app.factory('filterItems', [function(){
+    return {
+        a : {label:"Areas"},
+        act : {label:"Activities"},
+        acat : {label:"XXX"}, // article category
+        atyp : {label:"Type"}, // area type
+        avdate : {label:"XXX"}, //
+        bbox : {label:"Map"}, // map filter
+        date : {label:"Date"}, // debut et fin
+        ddif: {label:"XXX"}, //
+        fac: {label:"XXX"}, //
+        hdif: {label:"XXX"}, //
+        l: {label:"XXX"}, //
+
+        ocond : {
+            label:"Conditions",
+            emptyValue:["excellent", "awful"],
+            values:['awful', 'poor',' average', 'good', 'excellent'],
+            },
+
+        odif : {label:"Elevation loss"}, //
+        oparka : {label:"Altitude of access point"}, //
+        oalt : {label:"Max altitude"}, //
+        owpt : {label:"XXX"}, //
+        oglac : {label:"XXX"}, //
+        ofreq : {label:"Crowding"}, //
+
+        qa : {label:"Completeness"}, //
+
+        r: {label:"Routes"}, //
+
+        rmaxa: {label:"XXX"}, //
+        rmina: {label:"XXX"}, //
+        rtyp: {label:"XXX"}, // route type
+
+        swlu : {label:"XXX"}, //
+        swld : {label:"XXX"}, //
+        swqual : {label:"XXX"}, //
+        swquan : {label:"XXX"}, //
+        time: {label:"XXX"}, //
+        u: {label:"Users"}, //
+        w: {label:"Waypoints"}, //
+        walt: {label:"XXX"}, // Waypoint altitude
+        wtyp: {label:"Type"}, // Waypoint type
+    }
 }])

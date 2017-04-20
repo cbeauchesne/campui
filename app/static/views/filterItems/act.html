@@ -1,4 +1,4 @@
-<div class="form-group  col-md-2" uib-tooltip="{{ 'Activities'| translate }}">
+<div class="form-group  col-md-2" uib-tooltip="{{ filterItem.label | translate }}">
     <ui-select multiple
                theme="bootstrap"
                class="form-control"
@@ -6,7 +6,7 @@
                on-select="qe.apply()"
                on-remove="qe.apply()"
                ng-model="qe.queryModel.act">
-        <ui-select-match placeholder="{{'Activities...' | translate}}">
+        <ui-select-match placeholder="{{ filterItem.label | translate}}">
             <img ng-src="/static/img/{{$item}}-16x16.png" width="16px">
         </ui-select-match>
         <ui-select-choices

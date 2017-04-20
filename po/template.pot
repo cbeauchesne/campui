@@ -21,12 +21,7 @@ msgstr ""
 #: factories.js:388
 #: factories.js:409
 #: factories.js:445
-#: filterItems/act.html:1
 msgid "Activities"
-msgstr ""
-
-#: filterItems/act.html:9
-msgid "Activities..."
 msgstr ""
 
 #: c2c_items.html:23
@@ -60,7 +55,6 @@ msgstr ""
 
 #: common/navbar.html:49
 #: factories.js:469
-#: filterItems/a.html:1
 #: outing.html:23
 #: route.html:13
 #: waypoint.html:13
@@ -364,7 +358,6 @@ msgid "Route type :"
 msgstr ""
 
 #: common/navbar.html:37
-#: filterItems/r.html:7
 #: home.html:67
 #: search.html:13
 #: waypoint.html:33
@@ -386,10 +379,6 @@ msgstr ""
 
 #: search.html:5
 msgid "Search results"
-msgstr ""
-
-#: filterItems/a.html:8
-msgid "Select areas..."
 msgstr ""
 
 #: factories.js:383
@@ -424,12 +413,7 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: filterItems/u.html:6
-msgid "Users"
-msgstr ""
-
 #: common/navbar.html:43
-#: filterItems/w.html:6
 #: route.html:80
 #: search.html:24
 #: waypoint.html:41
