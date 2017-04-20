@@ -180,7 +180,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             },
             outing : {
                 defaults:["act","a"],
-                availables:["act","a","ocond","date","qa","odif","oalt","oparka","ofreq","u"],
+                availables:["act", "a", "ocond", "u"] // "date","qa","odif","oalt","oparka","ofreq","u"],
             },
             image : {
                 defaults:["act","a"],
@@ -239,7 +239,7 @@ app.factory('filterItems', [function(){
             emptyValue:["excellent", "awful"],
             values:['awful', 'poor',' average', 'good', 'excellent'],
             isArray:true,
-            },
+        },
 
         odif : {label:"Elevation loss"}, //
         oparka : {label:"Altitude of access point"}, //
