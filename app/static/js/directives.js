@@ -258,5 +258,17 @@ $.each(c2cItems, function(item, params){
 
         return result;
     })
-
 })
+
+
+app.directive('filterItem', ['$compile', "$templateCache", function ($timeout, $templateCache) {
+
+    return {
+        restrict: 'E',
+        scope: {"itemId":"=",qe:"=queryEditor"},
+        template: '<div ng-if="itemId" ng-include="_templateUrl"></div>',
+        link: function(scope, element, attrs) {
+            scope._templateUrl = "/static/views/filterItems/" + scope.itemId + ".html"
+        }
+    }
+}])
