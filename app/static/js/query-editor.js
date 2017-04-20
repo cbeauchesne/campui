@@ -164,7 +164,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             },
             article : {
                 defaults:["act"],
-                availables:["act","a"],
+                availables:["act","atyp"],
             },
             waypoint : {
                 defaults:["wtyp"],
@@ -223,7 +223,11 @@ app.factory('filterItems', [function(){
             isArray:true
         },
 
-        act : {label:"Activities"},
+        act : {
+            label:"Activities",
+            isArray:true,
+        },
+
         acat : {label:"XXX"}, // article category
         atyp : {label:"Type"}, // area type
         avdate : {label:"XXX"}, //
