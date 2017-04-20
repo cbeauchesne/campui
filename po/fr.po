@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: Poedit 2.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: c2c_items.html:111
+#: c2c_items.html:82
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 "*Le tri sur le tableau n’est effectif que sur les données chargées. Le tri "
@@ -27,14 +27,14 @@ msgstr "Accès"
 msgid "Actions"
 msgstr "Actions"
 
-#: c2c_items.html:19 components/query_editor.html:7 factories.js:341
-#: factories.js:394 factories.js:415 factories.js:451
+#: components/query_editor.html:7 factories.js:342 factories.js:395
+#: factories.js:416 factories.js:452
 msgid "Activities"
 msgstr "Activitées"
 
-#: c2c_items.html:27
-msgid "Activities..."
-msgstr "Activitées…"
+#: c2c_items.html:23
+msgid "Add a item"
+msgstr "Ajouter un sous-filtre"
 
 #: fixed_strings.html:32
 msgid "All images"
@@ -56,12 +56,12 @@ msgstr "Tous les points de passage"
 msgid "Apply"
 msgstr "Appliquer"
 
-#: factories.js:347 factories.js:421
+#: factories.js:348 factories.js:422
 msgid "Area"
 msgstr "Région"
 
-#: c2c_items.html:37 common/navbar.html:49 factories.js:475 outing.html:23
-#: route.html:13 waypoint.html:13
+#: common/navbar.html:49 factories.js:476 outing.html:23 route.html:13
+#: waypoint.html:13
 msgid "Areas"
 msgstr "Régions"
 
@@ -69,7 +69,7 @@ msgstr "Régions"
 msgid "Articles"
 msgstr "Articles"
 
-#: factories.js:364
+#: factories.js:365
 msgid "Author"
 msgstr "Auteur"
 
@@ -81,13 +81,9 @@ msgstr "Parce que nous ne sommes pas des génies…"
 msgid "CampToCamp URL"
 msgstr "URL CampToCamp"
 
-#: factories.js:462
+#: factories.js:463
 msgid "Categories"
 msgstr "Catégories"
-
-#: c2c_items.html:83
-msgid "Clone"
-msgstr "Dupliquer"
 
 #: outing.html:37
 msgid "Conditions"
@@ -109,7 +105,7 @@ msgstr "Crédits"
 msgid "Credits :"
 msgstr "Crédits :"
 
-#: factories.js:379
+#: factories.js:380
 msgid "Date"
 msgstr "Date"
 
@@ -129,7 +125,7 @@ msgstr "Par défaut pour les itinéraires"
 msgid "Default for xreports"
 msgstr "Par défaut pour les incidents"
 
-#: c2c_items.html:89
+#: c2c_items.html:60
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -145,7 +141,7 @@ msgstr "Dénivelé des difficultés :"
 msgid "Do not have an account?"
 msgstr "Vous n’avez pas encore un compte?"
 
-#: factories.js:481
+#: factories.js:482
 msgid "Elevation"
 msgstr "Altitude"
 
@@ -161,7 +157,7 @@ msgstr "Engagement"
 msgid "Equipement rating"
 msgstr "Qualité de l’équipement"
 
-#: factories.js:400
+#: factories.js:401
 msgid "Event type"
 msgstr "Type d’incident"
 
@@ -185,7 +181,7 @@ msgstr "Fréquentation"
 msgid "Gears"
 msgstr "Matériel"
 
-#: c2c_items.html:15
+#: c2c_items.html:42
 msgid "Give a name to this filter"
 msgstr "Nommer ce filtre"
 
@@ -197,11 +193,11 @@ msgstr "Matériel glacier :"
 msgid "Global rating"
 msgstr "Cotation globale"
 
-#: factories.js:359
+#: factories.js:360
 msgid "Height"
 msgstr "Hauteur"
 
-#: factories.js:433
+#: factories.js:434
 msgid "Height diff"
 msgstr "Hauteur"
 
@@ -229,7 +225,7 @@ msgstr "Cotation glace"
 msgid "Images"
 msgstr "Images"
 
-#: factories.js:384
+#: factories.js:385
 msgid "Impacted people"
 msgstr "Personnes importées"
 
@@ -261,7 +257,7 @@ msgstr "Cotation mixe"
 msgid "My page"
 msgstr "Ma Page"
 
-#: factories.js:470 factories.js:494 me.html:79
+#: factories.js:471 factories.js:495 me.html:79
 msgid "Name"
 msgstr "Nom"
 
@@ -277,7 +273,7 @@ msgstr "Aucun filtre"
 msgid "Orientation :"
 msgstr "Orientation :"
 
-#: factories.js:438
+#: factories.js:439
 msgid "Orientations"
 msgstr "Orientations"
 
@@ -305,7 +301,7 @@ msgstr "Participants"
 msgid "Previous"
 msgstr "Précédent"
 
-#: factories.js:457
+#: factories.js:458
 msgid "Quality"
 msgstr "Qualité"
 
@@ -313,7 +309,7 @@ msgstr "Qualité"
 msgid "Queries"
 msgstr "Requêtes"
 
-#: factories.js:427
+#: factories.js:428
 msgid "Rating"
 msgstr "Cotations"
 
@@ -353,12 +349,11 @@ msgstr "Longueur :"
 msgid "Route type :"
 msgstr "Type d’itinéraire :"
 
-#: c2c_items.html:71 common/navbar.html:37 home.html:67 search.html:13
-#: waypoint.html:33
+#: common/navbar.html:37 home.html:67 search.html:13 waypoint.html:33
 msgid "Routes"
 msgstr "Itinéraires"
 
-#: c2c_items.html:77 me.html:117
+#: c2c_items.html:48 me.html:117
 msgid "Save"
 msgstr "Sauvegarder"
 
@@ -374,11 +369,7 @@ msgstr "Rechercher"
 msgid "Search results"
 msgstr "Résultats de la recherche"
 
-#: c2c_items.html:44
-msgid "Select areas..."
-msgstr "Régions…"
-
-#: factories.js:389
+#: factories.js:390
 msgid "Severity"
 msgstr "Gravité"
 
@@ -394,7 +385,7 @@ msgstr "Test!"
 msgid "Timing"
 msgstr "Horaires"
 
-#: factories.js:335 factories.js:373 factories.js:409 factories.js:446
+#: factories.js:336 factories.js:374 factories.js:410 factories.js:447
 msgid "Title"
 msgstr "Titre"
 
@@ -402,11 +393,11 @@ msgstr "Titre"
 msgid "Topo"
 msgstr "Topo"
 
-#: factories.js:486 factories.js:499
+#: factories.js:487 factories.js:500
 msgid "Type"
 msgstr "Type"
 
-#: c2c_items.html:62 common/navbar.html:43 route.html:80 search.html:24
+#: common/navbar.html:43 route.html:80 search.html:24 waypoint.html:41
 msgid "Waypoints"
 msgstr "Points de passage"
 
@@ -525,6 +516,15 @@ msgstr "via ferrata"
 #: fixed_strings.html:25
 msgid "waypoints"
 msgstr "points de passage"
+
+#~ msgid "Activities..."
+#~ msgstr "Activitées…"
+
+#~ msgid "Clone"
+#~ msgstr "Dupliquer"
+
+#~ msgid "Select areas..."
+#~ msgstr "Régions…"
 
 #~ msgid "Edit filter"
 #~ msgstr "Modifier le filtre"
