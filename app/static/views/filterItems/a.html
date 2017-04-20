@@ -1,0 +1,18 @@
+<div class="form-group  col-md-3" uib-tooltip="{{ 'Areas'| translate }}">
+    <ui-select multiple
+               class="form-control"
+               close-on-select="false"
+               on-select="qe.apply()"
+               on-remove="qe.apply()"
+               ng-model="qe.queryModel.a">
+        <ui-select-match placeholder="{{'Select areas...' | translate}}">
+            {{qe.getLocale($item).title}}
+        </ui-select-match>
+        <ui-select-choices
+                repeat="area.document_id as  area in qe.metadata.areas "
+                refresh="qe.refreshAreas($select.search, qe.queryModel.a)"
+                refresh-delay="300">
+            {{qe.getLocale(area).title}}
+        </ui-select-choices>
+    </ui-select>
+</div>
