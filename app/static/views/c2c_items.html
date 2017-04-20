@@ -7,6 +7,7 @@
                     <div ng-if="data" ibox-tools></div>
                 </div>
                 <div class="ibox-content query-editor">
+
                     <div class="row">
                         <div class="form-group col-md-2">
                             <input type="text"
@@ -16,43 +17,10 @@
                                    placeholder="Name"/>
                         </div>
 
-                        <div class="form-group  col-md-3" uib-tooltip="{{ 'Activities'| translate }}">
-                            <ui-select multiple
-                                       theme="bootstrap"
-                                       class="form-control"
-                                       close-on-select="false"
-                                       on-select="qe.apply()"
-                                       on-remove="qe.apply()"
-                                       ng-model="qe.queryModel.act">
-                                <ui-select-match placeholder="{{'Activities...' | translate}}">
-                                    <img ng-src="/static/img/{{$item}}-16x16.png">
-                                </ui-select-match>
-                                <ui-select-choices
-                                        repeat="act in qe.metadata.activities">
-                                    <span value="act">{{act | translate}}</span>
-                                </ui-select-choices>
-                            </ui-select>
-                        </div>
-
-                        <div class="form-group  col-md-3" uib-tooltip="{{ 'Areas'| translate }}">
-                            <ui-select multiple
-                                       class="form-control"
-                                       close-on-select="false"
-                                       on-select="qe.apply()"
-                                       on-remove="qe.apply()"
-                                       ng-model="qe.queryModel.a">
-                                <ui-select-match placeholder="{{'Select areas...' | translate}}">
-                                    {{getLocale($item).title}}
-                                </ui-select-match>
-                                <ui-select-choices
-                                        repeat="area.document_id as  area in qe.metadata.areas | hasProp: 'visible'"
-                                        refresh="qe.refreshAreas($select.search, qe.queryModel.a)"
-                                        refresh-delay="300">
-                                    {{getLocale(area).title}}
-                                </ui-select-choices>
-                            </ui-select>
-                        </div>
-
+                        <filter-item ng-repeat="(itemId, itemValue) in qe.queryModel"
+                            query-editor="qe"
+                            item-id="itemId">
+                        </filter-item>
 
                         <div class="form-group col-md-2" ng-if="qe.queryModel.w">
                             <input type="text"
@@ -70,6 +38,13 @@
                                    class="form-control input-sm"
                                    uib-tooltip="{{'Routes' | translate }}"
                                    placeholder="Routes"/>
+                        </div>
+                        <div class="form-group  col-md-1">
+                            <button class="btn btn-sm badge-success"
+                                    uib-tooltip="{{ 'Add a item'| translate }}"
+                            >
+                                <i class="fa fa-plus"></i>
+                            </button>
                         </div>
 
                         <div class="form-group  col-md-2">
