@@ -268,8 +268,8 @@ app.directive('filterItem', ['filterItems', function (filterItems) {
         scope: {"itemId":"=",qe:"=queryEditor"},
         template: '<div ng-if="itemId" ng-include="_templateUrl"></div>',
         link: function(scope, element, attrs) {
-            scope._templateUrl = "/static/views/filterItems/" + scope.itemId + ".html"
             scope.filterItem = filterItems[scope.itemId]
+            scope._templateUrl = '/static/views/filterItems/' + ( scope.filterItem.template || scope.itemId ) + '.html'
         }
     }
 }])
