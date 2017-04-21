@@ -228,21 +228,38 @@ app.service('photoswipe', ["locale", function(locale){
 
 app.factory("urlQuery", ['$location', 'filterItems', function($location, filterItems){
 
+    function arraysEqual(a, b) {
+        if (a === b) return true;
+        if (a == null || b == null) return false;
+        if (a.length != b.length) return false;
+
+        for (var i = 0; i < a.length; ++i) {
+            if (a[i] !== b[i]) return false;
+        }
+        return true;
+    }
+
     var getCurrent = function(){
         return fromObject($location.search())
     }
 
     var fromObject = function(object){
         var temp = {}
+
         console.log(object)
+
         for (var prop in object) {
             if (object.hasOwnProperty(prop)) {
-                if(Array.isArray(object[prop])){
-                    if(object[prop].length!=0)
+
+                filterItem = filterItems[prop] || {}
+
+                if(!Array.isArray(object[prop])){
+                    if(typeof object[prop] !== "undefined")
+                        temp[prop] = object[prop]
+                }
+                else if(object[prop].length!=0 && !arraysEqual(object[prop], filterItem.emptyValue)){
                         temp[prop] = object[prop].join(",")
-                    }
-                 else if(typeof object[prop] !== "undefined")
-                    temp[prop] = object[prop]
+                }
             }
         }
         return $.param( temp ).replace(/%2C/g,",")

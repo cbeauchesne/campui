@@ -17,10 +17,10 @@ msgid "Actions"
 msgstr ""
 
 #: components/query_editor.html:7
-#: factories.js:358
-#: factories.js:411
-#: factories.js:432
-#: factories.js:468
+#: factories.js:362
+#: factories.js:415
+#: factories.js:436
+#: factories.js:472
 msgid "Activities"
 msgstr ""
 
@@ -48,13 +48,13 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: factories.js:364
-#: factories.js:438
+#: factories.js:368
+#: factories.js:442
 msgid "Area"
 msgstr ""
 
 #: common/navbar.html:49
-#: factories.js:492
+#: factories.js:496
 #: outing.html:23
 #: route.html:13
 #: waypoint.html:13
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Articles"
 msgstr ""
 
-#: factories.js:381
+#: factories.js:385
 msgid "Author"
 msgstr ""
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories.js:479
+#: factories.js:483
 msgid "Categories"
 msgstr ""
 
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Credits :"
 msgstr ""
 
-#: factories.js:396
+#: factories.js:400
 msgid "Date"
 msgstr ""
 
@@ -141,7 +141,7 @@ msgstr ""
 msgid "Do not have an account?"
 msgstr ""
 
-#: factories.js:498
+#: factories.js:502
 msgid "Elevation"
 msgstr ""
 
@@ -157,7 +157,7 @@ msgstr ""
 msgid "Equipement rating"
 msgstr ""
 
-#: factories.js:417
+#: factories.js:421
 msgid "Event type"
 msgstr ""
 
@@ -193,11 +193,11 @@ msgstr ""
 msgid "Global rating"
 msgstr ""
 
-#: factories.js:376
+#: factories.js:380
 msgid "Height"
 msgstr ""
 
-#: factories.js:450
+#: factories.js:454
 msgid "Height diff"
 msgstr ""
 
@@ -225,7 +225,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: factories.js:401
+#: factories.js:405
 msgid "Impacted people"
 msgstr ""
 
@@ -258,8 +258,8 @@ msgstr ""
 msgid "My page"
 msgstr ""
 
-#: factories.js:487
-#: factories.js:511
+#: factories.js:491
+#: factories.js:515
 #: me.html:79
 msgid "Name"
 msgstr ""
@@ -276,7 +276,7 @@ msgstr ""
 msgid "Orientation :"
 msgstr ""
 
-#: factories.js:455
+#: factories.js:459
 msgid "Orientations"
 msgstr ""
 
@@ -308,7 +308,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: factories.js:474
+#: factories.js:478
 msgid "Quality"
 msgstr ""
 
@@ -316,7 +316,7 @@ msgstr ""
 msgid "Queries"
 msgstr ""
 
-#: factories.js:444
+#: factories.js:448
 msgid "Rating"
 msgstr ""
 
@@ -381,7 +381,7 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: factories.js:406
+#: factories.js:410
 msgid "Severity"
 msgstr ""
 
@@ -397,10 +397,10 @@ msgstr ""
 msgid "Timing"
 msgstr ""
 
-#: factories.js:352
-#: factories.js:390
-#: factories.js:426
-#: factories.js:463
+#: factories.js:356
+#: factories.js:394
+#: factories.js:430
+#: factories.js:467
 msgid "Title"
 msgstr ""
 
@@ -408,8 +408,8 @@ msgstr ""
 msgid "Topo"
 msgstr ""
 
-#: factories.js:503
-#: factories.js:516
+#: factories.js:507
+#: factories.js:520
 msgid "Type"
 msgstr ""
 
