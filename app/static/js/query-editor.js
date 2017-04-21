@@ -105,8 +105,9 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
         _this.refreshC2cItems = function(itemId, userRequests){
 
-            currentModels = _this.queryModel[itemId]
-            filterItem = filterItems[itemId]
+            var currentModels = _this.queryModel[itemId]
+            var filterItem = filterItems[itemId]
+            var c2c_item =  filterItem.c2c_item
 
             if(userRequests){
                 c2c.search.get({q:userRequests}, function(data){
@@ -114,7 +115,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
                     filterItem.values.forEach(function(item){
                         delete item.visible
                     })
-                    data.areas.documents.forEach(function(newObject){
+                    data[c2c_item + "s"].documents.forEach(function(newObject){
                         newObject.visible=true
                         smartPush(filterItem.values, newObject, "document_id")
                     })
@@ -123,7 +124,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
             if(currentModels){
                 currentModels.forEach(function(a_id){
-                    var item = c2c.area.get({id:a_id}, function(newObject){
+                    var item = c2c[c2c_item].get({id:a_id}, function(newObject){
                         newObject.visible=true
                         smartPush(filterItem.values, newObject, "document_id")
                     })
@@ -238,12 +239,22 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         this.emptyValue = [values[0], values[values.length-1]]
     }
 
+    var c2cSelectFilterItem = function(label, c2c_item){
+        this.label = label
+        this.c2c_item = c2c_item
+        this.values = []
+        this.template = "c2c_select"
+        this.isArray = true
+    }
+
     return {
         a : {
             label:"Areas",
             isArray:true,
             values:[]
         },
+
+        a : new c2cSelectFilterItem("Areas", "area"),
 
         act : new multiSelectFilterItem("Activities", c2c_common.attributes.activities, "select_multi", true),
         acat : new multiSelectFilterItem("Categories", c2c_common.attributes.article_categories , "select_multi"),
