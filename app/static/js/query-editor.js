@@ -103,17 +103,20 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             _this.setQuery()
         }
 
-        _this.refreshAreas = function(userRequests, currentModels){
+        _this.refreshC2cItems = function(itemId, userRequests){
+
+            currentModels = _this.queryModel[itemId]
+            filterItem = filterItems[itemId]
 
             if(userRequests){
                 c2c.search.get({q:userRequests}, function(data){
 
-                    _this.metadata.areas.forEach(function(item){
+                    filterItem.values.forEach(function(item){
                         delete item.visible
                     })
                     data.areas.documents.forEach(function(newObject){
                         newObject.visible=true
-                        smartPush(_this.metadata.areas, newObject, "document_id")
+                        smartPush(filterItem.values, newObject, "document_id")
                     })
                 })
             }
@@ -122,12 +125,12 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
                 currentModels.forEach(function(a_id){
                     var item = c2c.area.get({id:a_id}, function(newObject){
                         newObject.visible=true
-                        smartPush(_this.metadata.areas, newObject, "document_id")
+                        smartPush(filterItem.values, newObject, "document_id")
                     })
 
                     item.document_id = a_id
 
-                    smartPush(_this.metadata.areas, item, "document_id")
+                    smartPush(filterItem.values, item, "document_id")
                 })
             }
         }
@@ -136,7 +139,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             existingObject = findObject(objectArray, propName, newObject.document_id)
 
             if(!existingObject)
-               _this.metadata.areas.push(newObject)
+                objectArray.push(newObject)
             else
                 Object.assign(existingObject, newObject)
 
@@ -160,11 +163,11 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         var filterItemsParams = {
             route : {
                 defaults:["act", "a"],
-                availables:["act","a"],
+                availables:["act","a","rtyp","fac"],
             },
             article : {
                 defaults:["act"],
-                availables:["act","atyp"],
+                availables:["act", "atyp", "acat"],
             },
             waypoint : {
                 defaults:["wtyp"],
@@ -180,7 +183,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             },
             outing : {
                 defaults:["act","a"],
-                availables:["act", "a", "ocond", "u"] // "date","qa","odif","oalt","oparka","ofreq","u"],
+                availables:["act", "a", "ocond", "u", "ofreq", "oglac"]
             },
             image : {
                 defaults:["act","a"],
@@ -207,7 +210,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         }
 
         //here is data that will be injected in editor
-        _this.queryModel = {act:[]}
+        _this.queryModel = {}
 
     }
 
@@ -217,57 +220,69 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
 
 app.factory('filterItems', ["c2c_common", function(c2c_common){
+
+    var multiSelectFilterItem = function(label, values, template, pictos){
+        this.label = label
+        this.values = values
+        this.template = template
+        this.isArray = true
+        this.emptyValue = undefined
+        this.pictos = pictos
+    }
+
+    var rangeFilterItem = function(label, values, template){
+        this.label = label
+        this.values = values
+        this.template = template
+        this.isArray = true
+        this.emptyValue = [values[0], values[values.length-1]]
+    }
+
     return {
         a : {
             label:"Areas",
-            isArray:true
-        },
-
-        act : {
-            label:"Activities",
             isArray:true,
+            values:[]
         },
 
-        acat : {label:"XXX"}, // article category
-        atyp : {label:"Type"}, // area type
-        avdate : {label:"XXX"}, //
+        act : new multiSelectFilterItem("Activities", c2c_common.attributes.activities, "select_multi", true),
+        acat : new multiSelectFilterItem("Categories", c2c_common.attributes.article_categories , "select_multi"),
+        atyp : new multiSelectFilterItem("Types", c2c_common.attributes.article_types, "select_multi"),
+        avdate : new multiSelectFilterItem("Avalanche signs", c2c_common.attributes.avalanche_signs, "select_multi"),
+
         bbox : {label:"Map"}, // map filter
         date : {label:"Date"}, // debut et fin
-        ddif: {label:"XXX"}, //
-        fac: {label:"XXX"}, //
-        hdif: {label:"XXX"}, //
+        ddif: {label:"height_diff_down"}, // int range
+        fac : new multiSelectFilterItem("Orientations", c2c_common.attributes.orientation_types, "select_multi"),
+        hdif: {label:"height_diff_up"}, // int range
         l: {label:"XXX"}, //
 
-        ocond : {
-            label:"Conditions",
-            emptyValue:["excellent", "awful"],
-            values: c2c_common.attributes.condition_ratings.reverse(), //['awful', 'poor', 'average', 'good', 'excellent'],
-            isArray:true,
-            template: "slider"
-        },
+        ocond : new rangeFilterItem("Conditions", c2c_common.attributes.condition_ratings, "slider_inverse"),
 
-        odif : {label:"Elevation loss"}, //
-        oparka : {label:"Altitude of access point"}, //
-        oalt : {label:"Max altitude"}, //
-        owpt : {label:"XXX"}, //
-        oglac : {label:"XXX"}, //
-        ofreq : {label:"Crowding"}, //
+        odif : {label:"Elevation loss"}, // int range
+        oparka : {label:"Altitude of access point"}, // int range
+        oalt : {label:"Max altitude"}, // int range
+        owpt : {label:"public_transport"}, // bool
 
-        qa : {label:"Completeness"}, //
+        oglac : new rangeFilterItem("Glacier rating", c2c_common.attributes.glacier_ratings, "slider"),
+        ofreq : new rangeFilterItem("Crowding", c2c_common.attributes.frequentation_types, "slider"),
+        qa : new rangeFilterItem("Completeness", c2c_common.attributes.quality_types, "slider"),
 
         r: {
             label:"Routes",
             isArray:true
         }, //
 
-        rmaxa: {label:"XXX"}, //
-        rmina: {label:"XXX"}, //
-        rtyp: {label:"XXX"}, // route type
+        rmaxa: {label:"elevation_max"}, // int range
+        rmina: {label:"elevation_min"}, // int range
+        rtyp : new multiSelectFilterItem("Types", c2c_common.attributes.route_types, "select_multi"),
 
-        swlu : {label:"XXX"}, //
-        swld : {label:"XXX"}, //
-        swqual : {label:"XXX"}, //
-        swquan : {label:"XXX"}, //
+        swlu : {label:"elevation_up_snow"}, // int range
+        swld : {label:"elevation_down_snow"}, // int range
+
+        swqual : new rangeFilterItem("Snow quality", c2c_common.attributes.condition_ratings, "slider_inverse"),
+        swquan : new rangeFilterItem("Snow quantity", c2c_common.attributes.condition_ratings, "slider_inverse"),
+
         time: {label:"XXX"}, //
 
         u: {
@@ -280,7 +295,7 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
             isArray:true
         },
 
-        walt: {label:"XXX"}, // Waypoint altitude
-        wtyp: {label:"Type"}, // Waypoint type
+        walt: {label:"Waypoint altitude"}, // int range
+        wtyp : new multiSelectFilterItem("Type", c2c_common.attributes.waypoint_types, "select_multi"),
     }
 }])
