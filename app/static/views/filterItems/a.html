@@ -4,15 +4,15 @@
                close-on-select="false"
                on-select="qe.apply()"
                on-remove="qe.apply()"
-               ng-model="qe.queryModel.a">
+               ng-model="qe.queryModel[itemId]">
         <ui-select-match placeholder="{{ filterItem.label | translate}}">
             {{qe.getLocale($item).title}}
         </ui-select-match>
         <ui-select-choices
-                repeat="area.document_id as area in qe.metadata.areas | hasProp : 'visible'"
-                refresh="qe.refreshAreas($select.search, qe.queryModel.a)"
+                repeat="value.document_id as value in filterItem.values | hasProp : 'visible'"
+                refresh="qe.refreshC2cItems(itemId, $select.search)"
                 refresh-delay="300">
-            {{qe.getLocale(area).title}}
+            {{qe.getLocale(value).title}}
         </ui-select-choices>
     </ui-select>
 </div>
