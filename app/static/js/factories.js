@@ -234,6 +234,7 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
 
     var fromObject = function(object){
         var temp = {}
+        console.log(object)
         for (var prop in object) {
             if (object.hasOwnProperty(prop)) {
                 if(Array.isArray(object[prop])){
@@ -254,21 +255,23 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
         for (var i=0;i<vars.length;i++) {
             var pair = vars[i].split("=");
 
-            filterItem = filterItems[pair[0]] || {}
+            if(pair[0]){
+                filterItem = filterItems[pair[0]] || {}
 
-            if(pair.length==1){
-                queryObject[pair[0]] = filterItem.emptyValue
-            }
-            else{
-                pair[0] = decodeURIComponent(pair[0]);
-                pair[1] = decodeURIComponent(pair[1]);
+                if(pair.length==1){
+                    queryObject[pair[0]] = filterItem.emptyValue
+                }
+                else{
+                    pair[0] = decodeURIComponent(pair[0]);
+                    pair[1] = decodeURIComponent(pair[1]);
 
-                if(!pair[1])
-                    pair[1] = filterItem.emptyValue
-                else if(filterItem.isArray)
-                    pair[1] = pair[1].split(",")
+                    if(!pair[1])
+                        pair[1] = filterItem.emptyValue
+                    else if(filterItem.isArray)
+                        pair[1] = pair[1].split(",")
 
-                queryObject[pair[0]] = pair[1]
+                    queryObject[pair[0]] = pair[1]
+                }
             }
         }
 
