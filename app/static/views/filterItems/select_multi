@@ -1,0 +1,18 @@
+<div class="form-group  col-md-2" uib-tooltip="{{ filterItem.label | translate }}">
+    <ui-select multiple
+               theme="bootstrap"
+               class="form-control"
+               close-on-select="false"
+               on-select="qe.apply()"
+               on-remove="qe.apply()"
+               ng-model="qe.queryModel[itemId]">
+        <ui-select-match placeholder="{{ filterItem.label | translate}}">
+            <img ng-if="filterItem.pictos" ng-src="/static/img/{{$item}}-16x16.png" width="16px">
+            <span ng-if="!filterItem.pictos" translate>{{$item}}</span>
+        </ui-select-match>
+        <ui-select-choices
+                repeat="value in filterItem.values">
+            <span value="value">{{value | translate}}</span>
+        </ui-select-choices>
+    </ui-select>
+</div>
