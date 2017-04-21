@@ -62,6 +62,12 @@ app.factory('code_samples', function(){
         html:'<figure class="image-center image-big"><a href="https://www.camptocamp.org/images/37027" target="_blank"><img src="https://api.camptocamp.org/images/proxy/37027?size=BI"></a></figure>'
         },
         {
+        name:"Image5",
+        code:"[img=142101right][/img]",
+        html:'<figure><a href="https://www.camptocamp.org/images/142101right" target="_blank"><img src="https://api.camptocamp.org/images/proxy/142101right?size=MI"></a></figure>'
+        },
+
+        {
         name:"Link1",
         code:"[[waypoints/106822|text]]",
         html:'<a href="waypoint/106822">text</a>'
