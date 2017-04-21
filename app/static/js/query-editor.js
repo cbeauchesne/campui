@@ -195,21 +195,6 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         _this.filterItemsParams = filterItemsParams[c2c_item]
         _this.filterItems=filterItems
 
-        _this.metadata = {
-            activities : [
-                "skitouring",
-                "snow_ice_mixed",
-                "mountain_climbing",
-                "rock_climbing",
-                "ice_climbing",
-                "hiking",
-                "snowshoeing",
-                "paragliding",
-                "mountain_biking",
-            ],
-            areas : [],
-        }
-
         //here is data that will be injected in editor
         _this.queryModel = {}
 
@@ -248,12 +233,6 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
     }
 
     return {
-        a : {
-            label:"Areas",
-            isArray:true,
-            values:[]
-        },
-
         a : new c2cSelectFilterItem("Areas", "area"),
 
         act : new multiSelectFilterItem("Activities", c2c_common.attributes.activities, "select_multi", true),
