@@ -158,7 +158,15 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         }
 
         _this.showFilterItem = function (item){
-            _this.queryModel[item] = _this.queryModel[item] || filterItems[item].emptyValue.slice()
+            if(!_this.queryModel[item] && filterItems[item].emptyValue)
+            {
+                if(filterItems[item].isArray)
+                    _this.queryModel[item] = filterItems[item].emptyValue.slice()
+                else
+                    _this.queryModel[item] = filterItems[item].emptyValue
+
+            }
+
         }
 
         var filterItemsParams = {
