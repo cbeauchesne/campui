@@ -216,7 +216,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 }])
 
 
-app.factory('filterItems', [function(){
+app.factory('filterItems', ["c2c_common", function(c2c_common){
     return {
         a : {
             label:"Areas",
@@ -241,8 +241,9 @@ app.factory('filterItems', [function(){
         ocond : {
             label:"Conditions",
             emptyValue:["excellent", "awful"],
-            values:['awful', 'poor',' average', 'good', 'excellent'],
+            values: c2c_common.attributes.condition_ratings.reverse(), //['awful', 'poor', 'average', 'good', 'excellent'],
             isArray:true,
+            template: "slider"
         },
 
         odif : {label:"Elevation loss"}, //
