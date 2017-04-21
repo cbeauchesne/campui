@@ -162,33 +162,36 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         }
 
         var filterItemsParams = {
-            route : {
-                defaults:["act", "a"],
-                availables:["act","a","rtyp","fac"],
+            area : {
+                defaults:["atyp"],
+                availables:["atyp", "qa"],
             },
             article : {
                 defaults:["act"],
-                availables:["act", "atyp", "acat"],
-            },
-            waypoint : {
-                defaults:["wtyp"],
-                availables:["wtyp"],
-            },
-            area : {
-                defaults:["atyp"],
-                availables:["atyp"],
-            },
-            xreport : {
-                defaults:["act","a"],
-                availables:["act","a"],
-            },
-            outing : {
-                defaults:["act","a"],
-                availables:["act", "a", "ocond", "u", "ofreq", "oglac"]
+                availables:["act", "acat", "l", "qa"], // not atyp, keyword collision!!
             },
             image : {
                 defaults:["act","a"],
                 availables:["act","a","u"],
+            },
+            outing : {
+                defaults:["act","a"],
+                //todo : "date",
+                availables:["act", "a", "ocond", "u", "w", "ofreq", "oglac", "r", "odif","swquan","swlu","oparka","oalt","avdate","qa","swld","swqual","l"]
+            },
+            route : {
+                //todo : "qa","rlen","l","rock","conf","time","ddif","hexpo","rmina","mbpush","mbtrack","mbdr","mbroad","mbur","wrat","krat","hrat","mrat","irat","rappr","dhei","ralt","prat","erat","orrat","grat","arat","rrat","rexpo","frat","crtyp","srat","lrat","trat","sexpo","rmaxa"
+                defaults:["act", "a"],
+                availables:["act","a","rtyp","fac","hdif","w"],
+            },
+            waypoint : {
+                //todo ?
+                defaults:["wtyp"],
+                availables:["wtyp"],
+            },
+            xreport : {
+                defaults:["act","a"],
+                availables:["act","a"],
             },
         }
 
@@ -218,10 +221,20 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
 
     var rangeFilterItem = function(label, values, template){
         this.label = label
-        this.values = values
+        this.values = values.slice()
         this.template = template
         this.isArray = true
         this.emptyValue = [values[0], values[values.length-1]]
+    }
+
+    var rangeIntegerFilterItem = function(label, floor, ceil, step){
+        this.label = label
+        this.template = "slider"
+        this.isArray = true
+        this.floor = floor
+        this.ceil = ceil
+        this.step = step
+        this.emptyValue = [floor, ceil]
     }
 
     var c2cSelectFilterItem = function(label, c2c_item){
@@ -234,58 +247,41 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
 
     return {
         a : new c2cSelectFilterItem("Areas", "area"),
-
-        act : new multiSelectFilterItem("Activities", c2c_common.attributes.activities, "select_multi", true),
         acat : new multiSelectFilterItem("Categories", c2c_common.attributes.article_categories , "select_multi"),
-        atyp : new multiSelectFilterItem("Types", c2c_common.attributes.article_types, "select_multi"),
+        act : new multiSelectFilterItem("Activities", c2c_common.attributes.activities, "select_multi", true),
+        atyp : new multiSelectFilterItem("Types", c2c_common.attributes.area_types, "select_multi"),
         avdate : new multiSelectFilterItem("Avalanche signs", c2c_common.attributes.avalanche_signs, "select_multi"),
-
-        bbox : {label:"Map"}, // map filter
-        date : {label:"Date"}, // debut et fin
-        ddif: {label:"height_diff_down"}, // int range
+        ddif: new rangeIntegerFilterItem("Elevation gain", 0,10000,100),
         fac : new multiSelectFilterItem("Orientations", c2c_common.attributes.orientation_types, "select_multi"),
-        hdif: {label:"height_diff_up"}, // int range
-        l: {label:"XXX"}, //
-
+        hdif : new rangeIntegerFilterItem("Elevation loss", 0,10000,100),
+        l: new multiSelectFilterItem("Language", c2c_common.attributes.default_langs, "select_multi"),
+        oalt : new rangeIntegerFilterItem("Max altitude", 0,8850,100),
         ocond : new rangeFilterItem("Conditions", c2c_common.attributes.condition_ratings, "slider_inverse"),
-
-        odif : {label:"Elevation loss"}, // int range
-        oparka : {label:"Altitude of access point"}, // int range
-        oalt : {label:"Max altitude"}, // int range
-        owpt : {label:"public_transport"}, // bool
-
-        oglac : new rangeFilterItem("Glacier rating", c2c_common.attributes.glacier_ratings, "slider"),
+        odif : new rangeIntegerFilterItem("Elevation gain", 0,10000,100),
         ofreq : new rangeFilterItem("Crowding", c2c_common.attributes.frequentation_types, "slider"),
+        oglac : new rangeFilterItem("Glacier rating", c2c_common.attributes.glacier_ratings, "slider"),
+        oparka : new rangeIntegerFilterItem("Altitude of access point", 0,5000,100),
         qa : new rangeFilterItem("Completeness", c2c_common.attributes.quality_types, "slider"),
-
-        r: {
-            label:"Routes",
-            isArray:true
-        }, //
-
-        rmaxa: {label:"elevation_max"}, // int range
-        rmina: {label:"elevation_min"}, // int range
+        rmaxa: new rangeIntegerFilterItem("Max altitude", 0,8850,100),
+        rmina: new rangeIntegerFilterItem("Min altitude", 0,6000,100),
+        r: new c2cSelectFilterItem("Routes", "route"),
         rtyp : new multiSelectFilterItem("Types", c2c_common.attributes.route_types, "select_multi"),
-
-        swlu : {label:"elevation_up_snow"}, // int range
-        swld : {label:"elevation_down_snow"}, // int range
-
+        swld : new rangeIntegerFilterItem("Snow elevation (down)", 0,4000,100),
         swqual : new rangeFilterItem("Snow quality", c2c_common.attributes.condition_ratings, "slider_inverse"),
         swquan : new rangeFilterItem("Snow quantity", c2c_common.attributes.condition_ratings, "slider_inverse"),
+        swlu : new rangeIntegerFilterItem("Snow elevation (up)", 0,4000,100),
+        w : new c2cSelectFilterItem("Waypoints", "waypoint"),
+        walt: new rangeIntegerFilterItem("Elevation", 0,8850,100),
+        wtyp : new multiSelectFilterItem("Type", c2c_common.attributes.waypoint_types, "select_multi"),
 
+        owpt : {label:"public_transport"}, // bool
+        bbox : {label:"Map"}, // map filter
+        date : {label:"Date"}, // debut et fin
         time: {label:"XXX"}, //
 
         u: {
             label:"Users",
             isArray:true
         },
-
-        w: {
-            label:"Waypoints",
-            isArray:true
-        },
-
-        walt: {label:"Waypoint altitude"}, // int range
-        wtyp : new multiSelectFilterItem("Type", c2c_common.attributes.waypoint_types, "select_multi"),
     }
 }])
