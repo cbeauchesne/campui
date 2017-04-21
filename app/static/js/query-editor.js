@@ -55,17 +55,14 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             if(doNotResetQueryModel)
                 return
 
-            _this.queryModel = urlQuery.toObject(query.url)
+            _this.queryModel = {}
 
             //force default filter items
             this.filterItemsParams.defaults.forEach(function(item){
-                _this.queryModel[item] = _this.queryModel[item] || filterItems[item].emptyValue
+                _this.queryModel[item] = filterItems[item].emptyValue
             })
 
-
-            if(_this.queryModel.a){
-                _this.refreshAreas(undefined, _this.queryModel.a)
-            }
+            _this.queryModel = Object.assign(_this.queryModel, urlQuery.toObject(query.url))
         }
 
         _this.next = function(){
@@ -158,15 +155,18 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         }
 
         _this.showFilterItem = function (item){
-            if(!_this.queryModel[item] && filterItems[item].emptyValue)
+
+            if(!_this.queryModel[item])
             {
-                if(filterItems[item].isArray)
-                    _this.queryModel[item] = filterItems[item].emptyValue.slice()
-                else
-                    _this.queryModel[item] = filterItems[item].emptyValue
+                filterItem = filterItems[item]
 
+                emptyValue = filterItem.emptyValue
+
+                if(filterItem.isArray)
+                    emptyValue = emptyValue.slice()
+
+                _this.queryModel[item] = emptyValue
             }
-
         }
 
         var filterItemsParams = {
@@ -183,12 +183,12 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
                 availables:["act","a","u"],
             },
             outing : {
-                defaults:["act","a"],
+                defaults:["act","a", "ocond"],
                 //todo : "date",
                 availables:["act", "a", "ocond", "u", "w", "ofreq", "oglac", "r", "odif","swquan","swlu","oparka","oalt","avdate","qa","swld","swqual","l"]
             },
             route : {
-                defaults:["act", "a"],
+                defaults:["act", "a", "grat"],
                 availables:["act","a","rtyp","grat","fac","hdif","ddif","w","l","qa","rmina","rmaxa", "rlen","rock","conf","time","hexpo","mbpush","mbtrack","mbdr","mbroad","mbur","wrat","krat","hrat","mrat","irat","rappr","dhei","ralt","prat","erat","orrat","arat","rrat","rexpo","frat","crtyp","srat","lrat","trat","sexpo"],
             },
             waypoint : {
@@ -223,7 +223,7 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         this.values = values
         this.template = "select_multi"
         this.isArray = true
-        this.emptyValue = undefined
+        this.emptyValue = []
         this.pictos = pictos
     }
 
@@ -251,6 +251,7 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         this.values = []
         this.template = "c2c_select"
         this.isArray = true
+        this.emptyValue = []
     }
 
     return {
@@ -293,7 +294,7 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         rexpo :  new multiSelectFilterItem('exposition_rock_rating', c2c_common.attributes.exposition_rock_ratings),
         time :  new multiSelectFilterItem('durations', c2c_common.attributes.route_duration_types),
         trat :  new sliderFilterItem('ski_rating', c2c_common.attributes.ski_ratings),
-        sexpo :  new multiSelectFilterItem('ski_exposition', c2c_common.attributes.exposition_ratings),
+        sexpo :  new sliderFilterItem('ski_exposition', c2c_common.attributes.exposition_ratings),
         srat :  new sliderFilterItem('labande_ski_rating', c2c_common.attributes.labande_ski_ratings),
         lrat :  new sliderFilterItem('labande_global_rating', c2c_common.attributes.global_ratings),
         grat :  new sliderFilterItem('global_rating', c2c_common.attributes.global_ratings),
@@ -329,7 +330,8 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
 
         u: {
             label:"Users",
-            isArray:true
+            isArray:true,
+            emptyValue:[],
         },
     }
 }])

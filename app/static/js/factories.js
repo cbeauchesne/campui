@@ -244,7 +244,7 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
     }
 
     var fromObject = function(object){
-        var temp = {}
+        var temp = []
 
         console.log(object)
 
@@ -255,14 +255,15 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
 
                 if(!Array.isArray(object[prop])){
                     if(typeof object[prop] !== "undefined")
-                        temp[prop] = object[prop]
+                        temp.push(prop +  "=" + encodeURIComponent(object[prop]))
                 }
                 else if(object[prop].length!=0 && !arraysEqual(object[prop], filterItem.emptyValue)){
-                        temp[prop] = object[prop].join(",")
+                    temp.push(prop +  "=" + object[prop].join(","))
                 }
             }
         }
-        return $.param( temp ).replace(/%2C/g,",")
+
+        return temp.join("&")
     }
 
     var toObject = function(query) {
