@@ -117,17 +117,20 @@ app.provider('markdownConverter', function () {
         };
 
         function image(imgId, options, legend){
-            options = options.split(" ")
-
             size = "MI"
             css = []
 
-            options.forEach(function(option){
-                if(option){
-                    css.push('image-' + option.replace("_","-"))
-                    size = option=="big" ? "BI" : size
-                 }
-            })
+            if(options){
+                options = options.split(" ")
+
+
+                options.forEach(function(option){
+                    if(option){
+                        css.push('image-' + option.replace("_","-"))
+                        size = option=="big" ? "BI" : size
+                     }
+                })
+            }
 
             css = css.length ? " class='" + css.join(" ") + "'" : ""
 
