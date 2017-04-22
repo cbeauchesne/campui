@@ -165,11 +165,17 @@ app.factory('c2c', ['$resource','gettextCatalog', function($resource, gettextCat
 
 
     //https://api.camptocamp.org/search?q=tacul&pl=fr&limit=7&t=w,r,c,b
-    result.search = $resource('https://api.camptocamp.org/search?limit=15&t=w,r,a&q=:q',
-                                {pl:function(){return gettextCatalog.getCurrentLanguage()}},
-                                {
-                                    get : {method: 'GET'}
-                                })
+    result.search = $resource('https://api.camptocamp.org/search?limit=15&t=:t&q=:q',
+        {
+            pl:function(){
+                return gettextCatalog.getCurrentLanguage()
+            },
+            t:"w,r,a",  //u : must be auth on c2c...
+        },
+        {
+            get : {method: 'GET'}
+        }
+    )
 
     forum = {}
 
