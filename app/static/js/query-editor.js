@@ -212,8 +212,15 @@ app.factory('filterItemStorage', function(){
         },
         waypoint : { //plift
             //todo ,"
-            defaults:["wtyp","a"],
-            availables:["wtyp","a", "walt","prom","wrock","ctout","tcsty","period","rqua","anchq","tmedr","wfac","tmedh","tappt","rain","hsta","whtyp","hscap","tpty","psnow","pgrat","pglexp","ftyp","qa"],
+            defaults:["wtyp", "a", "rqua"],
+            storage : [
+                {item:"prom"},
+                {label:"Ratings",subItems:["pgrat","tmedr","anchq","pglexp","psnow"]},
+                {label:"Terrain",subItems:["walt","wrock","wfac","rain","ctout","tcsty","period","tmedh","tappt","hsta"]},
+                {label:"Misc",subItems:["whtyp","tpty","hscap","ftyp"]},
+                {label:"Meta",subItems:["qa","l"]},
+            ]
+
         },
         xreport : {
             //todo ,"date"
