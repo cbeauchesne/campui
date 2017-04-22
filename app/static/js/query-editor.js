@@ -13,7 +13,7 @@ app.filter('hasProp', function() {
   };
 });
 
-app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'urlQuery', 'filterItems', function(c2c, currentUser, gettextCatalog, locale, urlQuery, filterItems){
+app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'urlQuery', 'filterItems', 'filterItemStorage', function(c2c, currentUser, gettextCatalog, locale, urlQuery, filterItems, filterItemStorage){
 
     var QueryEditor = function(scope, c2c_item){
         var _this = this
@@ -57,11 +57,12 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
             _this.queryModel = {}
 
-            //force default filter items
-            this.filterItemsParams.defaults.forEach(function(item){
+            //force default filter items first of all
+            this.filterItemStorage.defaults.forEach(function(item){
                 _this.queryModel[item] = filterItems[item].emptyValue
             })
 
+            //then add extra filters present in query
             _this.queryModel = Object.assign(_this.queryModel, urlQuery.toObject(query.url))
         }
 
@@ -169,41 +170,11 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             }
         }
 
-        var filterItemsParams = {
-            area : {
-                defaults:["atyp"],
-                availables:["atyp", "qa"],
-            },
-            article : {
-                defaults:["act"],
-                availables:["act", "acat", "l", "qa"], // not atyp, keyword collision!!
-            },
-            image : {
-                defaults:["act","a"],
-                availables:["act","a","u"],
-            },
-            outing : {
-                defaults:["act","a", "ocond"],
-                //todo : "date",
-                availables:["act", "a", "ocond", "u", "w", "ofreq", "oglac", "r", "odif","swquan","swlu","oparka","oalt","avdate","qa","swld","swqual","l"]
-            },
-            route : {
-                defaults:["act", "a", "grat"],
-                availables:["act","a","rtyp","grat","fac","hdif","ddif","w","l","qa","rmina","rmaxa", "rlen","rock","conf","time","hexpo","mbpush","mbtrack","mbdr","mbroad","mbur","wrat","krat","hrat","mrat","irat","rappr","dhei","ralt","prat","erat","orrat","arat","rrat","rexpo","frat","crtyp","srat","lrat","trat","sexpo"],
-            },
-            waypoint : { //plift
-                //todo ,"
-                defaults:["wtyp","a"],
-                availables:["wtyp","a", "walt","prom","wrock","ctout","tcsty","period","rqua","anchq","tmedr","wfac","tmedh","tappt","rain","hsta","whtyp","hscap","tpty","psnow","pgrat","pglexp","ftyp","qa"],
-            },
-            xreport : {
-                //todo ,"date"
-                defaults:["act","a"],
-                availables:["act","a","xtyp","xalt","xsev","xpar","ximp", "xavlev", "xavslo","qa","l"],
-            },
+        _this.TEST = function(){
+            console.log(arguments)
         }
 
-        _this.filterItemsParams = filterItemsParams[c2c_item]
+        _this.filterItemStorage = filterItemStorage[c2c_item] //filterItemsParams[c2c_item]
         _this.filterItems=filterItems
 
         //here is data that will be injected in editor
@@ -215,6 +186,50 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
 }])
 
+app.factory('filterItemStorage', function(){
+
+    result = {
+        area : {
+            defaults:["atyp"],
+            availables:["atyp", "qa"],
+        },
+        article : {
+            defaults:["act"],
+            availables:["act", "acat", "l", "qa"], // not atyp, keyword collision!!
+        },
+        image : {
+            defaults:["act","a"],
+            availables:["act","a","u"],
+        },
+        outing : {
+            defaults:["act","a", "ocond"],
+            //todo : "date",
+            availables:["act", "a", "ocond", "u", "w", "ofreq", "oglac", "r", "odif","swquan","swlu","oparka","oalt","avdate","qa","swld","swqual","l"]
+        },
+        route : {
+            defaults:["act", "a", "grat"],
+            availables:["act","a","rtyp","grat","fac","hdif","ddif","w","l","qa","rmina","rmaxa", "rlen","rock","conf","time","hexpo","mbpush","mbtrack","mbdr","mbroad","mbur","wrat","krat","hrat","mrat","irat","rappr","dhei","ralt","prat","erat","orrat","arat","rrat","rexpo","frat","crtyp","srat","lrat","trat","sexpo"],
+        },
+        waypoint : { //plift
+            //todo ,"
+            defaults:["wtyp","a"],
+            availables:["wtyp","a", "walt","prom","wrock","ctout","tcsty","period","rqua","anchq","tmedr","wfac","tmedh","tappt","rain","hsta","whtyp","hscap","tpty","psnow","pgrat","pglexp","ftyp","qa"],
+        },
+        xreport : {
+            //todo ,"date"
+            defaults:["act","a","xtyp"],
+            storage : [
+                {item:"xsev"},
+                {item:"ximp"},
+                {item:"xpar"},
+                {label:"Terrain",subItems:["xalt", "xavlev", "xavslo"]},
+                {label:"Meta",subItems:["qa","l"]},
+            ]
+        },
+    }
+
+    return result
+})
 
 app.factory('filterItems', ["c2c_common", function(c2c_common){
 

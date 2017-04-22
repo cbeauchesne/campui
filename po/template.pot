@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: c2c_items.html:71
+#: c2c_items.html:105
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 
@@ -24,7 +24,8 @@ msgstr ""
 msgid "Activities"
 msgstr ""
 
-#: c2c_items.html:23
+#: c2c_items.html:24
+#: c2c_items.html:42
 msgid "Add a item"
 msgstr ""
 
@@ -177,7 +178,7 @@ msgstr ""
 msgid "Gears"
 msgstr ""
 
-#: c2c_items.html:42
+#: c2c_items.html:76
 msgid "Give a name to this filter"
 msgstr ""
 
@@ -360,7 +361,7 @@ msgstr ""
 msgid "Routes"
 msgstr ""
 
-#: c2c_items.html:48
+#: c2c_items.html:82
 #: me.html:117
 msgid "Save"
 msgstr ""
