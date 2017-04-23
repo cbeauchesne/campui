@@ -15,7 +15,7 @@
                                      item-id="itemId">
                         </filter-item>
 
-                        <div class="form-group col-md-1">
+                        <div class="form-group col-md-3">
 
                             <div class="dropdown" ng-if="qe.filterItemStorage.availables">
                                 <button class="btn btn-sm badge-success dropdown-toggle"
@@ -35,33 +35,15 @@
                             </div>
 
                             <div class="dropdown" ng-if="qe.filterItemStorage.storage">
-                                <button class="btn btn-sm badge-success"
+                                <button class="btn btn-sm btn-rounded badge-success"
                                         type="button"
                                         data-toggle="modal"
                                         data-target="#filterChooser">
 
                                     <!--<span translate>Add a item</span>-->
                                     <i class="fa fa-plus"></i>
+                                    <span translate>Add a filter item</span>
                                 </button>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-2">
-                            <div class="input-group">
-                                <input type="text"
-                                       ng-model="qe.currentQuery.name"
-                                       class="form-control input-sm"
-                                       uib-tooltip="{{'Give a name to this filter' | translate }}"
-                                       placeholder="Name"/>
-
-                                <span class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary"
-                                            type="button"
-                                            uib-tooltip="{{ 'Save'| translate }}"
-                                            ng-click="qe.save()">
-                                        <i class="fa fa-save"></i>
-                                    </button>
-                                </span>
                             </div>
                         </div>
                     </div>

@@ -11,6 +11,13 @@
         <i class="fa fa-chevron-right"></i>
     </a>
 
+    <a class="active button-save-query"
+       uib-tooltip="{{ 'Save this query'| translate }}"
+       ng-click="qe.save()"
+       href="#">
+        <i class="fa fa-save"></i>
+    </a>
+
     <a ng-class="{active: qe.currentQuery}"
        class="dropdown-toggle"
        uib-tooltip="{{ 'Filters'| translate }}"

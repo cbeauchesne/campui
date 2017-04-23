@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: c2c_items.html:83
+#: c2c_items.html:65
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 
@@ -22,6 +22,10 @@ msgstr ""
 #: factories.js:443
 #: factories.js:479
 msgid "Activities"
+msgstr ""
+
+#: c2c_items.html:45
+msgid "Add a filter item"
 msgstr ""
 
 #: c2c_items.html:24
@@ -165,7 +169,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: common/ibox_tools.html:16
+#: common/ibox_tools.html:23
 msgid "Filters"
 msgstr ""
 
@@ -175,10 +179,6 @@ msgstr ""
 
 #: route.html:95
 msgid "Gears"
-msgstr ""
-
-#: c2c_items.html:54
-msgid "Give a name to this filter"
 msgstr ""
 
 #: route.html:46
@@ -264,7 +264,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: common/ibox_tools.html:24
+#: common/ibox_tools.html:31
 msgid "No filter"
 msgstr ""
 
@@ -290,7 +290,7 @@ msgstr ""
 msgid "Outings ({{outings.total}})"
 msgstr ""
 
-#: common/ibox_tools.html:40
+#: common/ibox_tools.html:47
 #: common/navbar.html:152
 #: me.html:6
 msgid "Parameters"
@@ -360,9 +360,12 @@ msgstr ""
 msgid "Routes"
 msgstr ""
 
-#: c2c_items.html:60
 #: me.html:117
 msgid "Save"
+msgstr ""
+
+#: common/ibox_tools.html:15
+msgid "Save this query"
 msgstr ""
 
 #: me.html:118
@@ -377,7 +380,7 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: c2c_items.html:98
+#: c2c_items.html:80
 msgid "Select filters"
 msgstr ""
 
@@ -540,6 +543,6 @@ msgstr ""
 msgid "{{$item}}"
 msgstr ""
 
-#: c2c_items.html:114
+#: c2c_items.html:96
 msgid "{{qe.filterItems[itemId].label}}"
 msgstr ""
