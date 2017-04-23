@@ -635,6 +635,10 @@ msgstr ""
 msgid "height diff access"
 msgstr ""
 
+#: fixed_strings.html:105
+msgid "height diff difficulties"
+msgstr ""
+
 #: fixed_strings.html:108
 msgid "height max"
 msgstr ""
@@ -645,10 +649,6 @@ msgstr ""
 
 #: fixed_strings.html:109
 msgid "height min"
-msgstr ""
-
-#: fixed_strings.html:105
-msgid "height of begining"
 msgstr ""
 
 #: fixed_strings.html:17
@@ -892,8 +892,4 @@ msgstr ""
 
 #: filterItems/select_multi.html:11
 msgid "{{$item}}"
-msgstr ""
-
-#: c2c_items.html:96
-msgid "{{qe.filterItems[itemId].label}}"
 msgstr ""

@@ -208,24 +208,24 @@ app.factory('filterItemStorage', function(){
             //todo : "date",
             bootstrapCol:3,
             storage : [
-                {label:"Frequents",subItems:["act", "a", "ocond", "w","ofreq"]},
+                {label:"Usefull",subItems:["act", "a", "ocond", "w","ofreq"]},
                 {label:"Outing",subItems:["oglac","oparka","odif","oalt",]},
                 {label:"Snow",subItems:["avdate", "swquan","swqual","swld","swlu"]},
-                {label:"Misc",subItems:["u","r","qa","l"]},
+                {label:"Misc.",subItems:["u","r","qa","l"]},
             ]
         },
         route : {
             defaults:["act", "a", "grat"],
             bootstrapCol:3,
             storage : [
-                {label:"Usefull",subItems:["w"]},
+                {label:"Usefull",subItems:["act", "a", "grat", "w"]},
                 {label:"Route",subItems:["time","rtyp","rlen","rappr","ralt","dhei",]},
                 {label:"Ratings1",subItems:["krat","hrat","mrat","irat","prat"]},
                 {label:"Ratings2",subItems:["wrat","rexpo","erat","orrat","arat","rrat"]},
                 {label:"Ratings3",subItems:["frat","srat","lrat","trat","sexpo","hexpo"]},
                 {label:"Terrain1",subItems:["crtyp","fac","hdif","ddif","rmina","rmaxa"]},
                 {label:"Terrain2",subItems:["rock","conf", "prom"]},
-                {label:"Misc",subItems:["mbpush","mbtrack","mbdr","mbroad","mbur","qa","l"]},
+                {label:"Misc.",subItems:["mbpush","mbtrack","mbdr","mbroad","mbur","qa","l"]},
             ]
         },
         waypoint : { //plift
@@ -236,7 +236,7 @@ app.factory('filterItemStorage', function(){
                 {label:"Usefull",subItems:["walt","prom","wfac","period","tappt"]},
                 {label:"Ratings",subItems:["pgrat","tmedr","anchq","pglexp","psnow"]},
                 {label:"Terrain",subItems:["wrock","rain","ctout","tcsty","tmedh","hsta"]},
-                {label:"Misc",subItems:["whtyp","tpty","hscap","ftyp","qa","l"]},
+                {label:"Misc.",subItems:["whtyp","tpty","hscap","ftyp","qa","l"]},
             ]
         },
         xreport : {
@@ -244,9 +244,9 @@ app.factory('filterItemStorage', function(){
             defaults:["act","a","xtyp"],
             bootstrapCol:4,
             storage : [
-                {label:"Frequents",subItems:["xsev","ximp","xpar"]},
+                {label:"Usefull",subItems:["xsev","ximp","xpar"]},
                 {label:"Terrain",subItems:["xalt", "xavlev", "xavslo"]},
-                {label:"Meta",subItems:["qa","l"]},
+                {label:"Misc.",subItems:["qa","l"]},
             ]
         },
     }
@@ -277,9 +277,9 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         filterItem.call(this,label, template || "slider")
 
         this.values = values.slice()
-        this.template =
         this.isArray = true
         this.emptyValue = [values[0], values[values.length-1]]
+
     }
 
     var sliderIntFilterItem = function(label, floor, ceil, step){
@@ -367,8 +367,9 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         mbpush :  new sliderIntFilterItem('MTB portage',0,666),
         rlen :  new sliderIntFilterItem('route length',0,666),
         ralt :  new sliderIntFilterItem('difficulties height',0,666),
+
         rappr :  new sliderIntFilterItem('height diff access',0,666),
-        dhei :  new sliderIntFilterItem('height of begining',0,666),
+        dhei :  new sliderIntFilterItem('height diff difficulties',0,666),
 
         walt : new sliderIntFilterItem('elevation'),
         prom : new sliderIntFilterItem('prominence'),

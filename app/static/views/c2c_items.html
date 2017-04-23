@@ -85,7 +85,7 @@
                     <div class="row">
                         <div class="col-md-{{qe.filterItemStorage.bootstrapCol}}"
                              ng-repeat="folder in qe.filterItemStorage.storage">
-                            <h4>{{folder.label}}</h4>
+                            <h4>{{folder.label | translate}}</h4>
                             <div ng-repeat="itemId in folder.subItems">
                                 <button class="btn btn-default btn-rounded"
                                         type="button"
@@ -93,7 +93,7 @@
                                         ng-click="qe.toggleFilterItem(itemId)">
                                     <i class="fa fa-check"></i>
                                     &nbsp;&nbsp;
-                                    <span translate>{{qe.filterItems[itemId].label}}</span>
+                                    <span>{{qe.filterItems[itemId].label | translate}}</span>
                                 </button>
                             </div>
                         </div>

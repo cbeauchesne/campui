@@ -613,6 +613,10 @@ msgstr "bon"
 msgid "height diff access"
 msgstr "dénivelé de l’approche"
 
+#: fixed_strings.html:105
+msgid "height diff difficulties"
+msgstr "dénivelé des difficultés"
+
 #: fixed_strings.html:108
 msgid "height max"
 msgstr "hauteur maximale"
@@ -624,10 +628,6 @@ msgstr "hauteur moyenne"
 #: fixed_strings.html:109
 msgid "height min"
 msgstr "hauteur minimale"
-
-#: fixed_strings.html:105
-msgid "height of begining"
-msgstr "dénivelé de l’approche"
 
 #: fixed_strings.html:17
 msgid "hiking"
@@ -865,9 +865,8 @@ msgstr "station météo"
 msgid "{{$item}}"
 msgstr ""
 
-#: c2c_items.html:96
-msgid "{{qe.filterItems[itemId].label}}"
-msgstr ""
+#~ msgid "height of begining"
+#~ msgstr "dénivelé de l’approche"
 
 #~ msgid "Delete"
 #~ msgstr "Supprimer"
