@@ -203,6 +203,11 @@ app.factory('code_samples', function(){
         html:'<table><tbody><tr><td>L1</td><td>a : b</td></tr></tbody></table>'
         },
         {
+        name:'Table22', //short name of your text
+        code:'L# : a\n\nL# : b',
+        html:'<table><tbody><tr><td>L1</td><td>a</td></tr><tr><td>L2</td><td>b</td></tr></tbody></table>'
+        },
+        {
         name:'Trash1',
         code:'[p]',
         html:''
