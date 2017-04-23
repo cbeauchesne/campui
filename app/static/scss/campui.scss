@@ -337,13 +337,13 @@ padding-bottom:0px
 // all elements must have same height
 
 .query-editor .form-group {
-padding-top:6px;
-padding-bottom:7px;
-border:1px solid red
+    padding-top:6px;
+    padding-bottom:7px;
+//    border:1px solid red;
 }
 
 .query-editor .btn-rounded {
-margin-bottom:0px
+    margin-bottom:0px
 }
 
 .query-editor .slider-container {
@@ -351,31 +351,30 @@ margin-bottom:0px
     padding-bottom:1px;
 }
 
-
 .rzslider {
     margin-top:35px;
     margin-bottom:3px;
 }
 
 .rzslider .rz-limit {
-  color: #1ab394;
+    color: #1ab394;
 }
 .rzslider .rz-selection {
-  background: #1ab394;
+    background: #1ab394;
 }
 
 .rzslider .rz-pointer {
-  width: 16px;
-  height: 16px;
-  background-color: #23c6c8;
+    width: 16px;
+    height: 16px;
+    background-color: #23c6c8;
 }
 
 .rzslider .rz-pointer:after {
-  display: none;
+    display: none;
 }
 
 .rzslider .rz-bar-wrapper {
-  padding-top: 9px;
+  padding-top: 8px;
 }
 
 
