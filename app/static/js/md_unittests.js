@@ -169,8 +169,8 @@ app.factory('code_samples', function(){
         },
         {
         name:'Table15', //short name of your text
-        code:'L#\nL#bis\nL#_\nL#+left\nL#+tight\nL#_\nL#12bis',
-        html:'<table><tbody><tr><td>L1</td></tr><tr><td>L1bis</td></tr><tr><td>L2</td></tr><tr><td>L3left</td></tr><tr><td>L3tight</td></tr><tr><td>L4</td></tr><tr><td>L12bis</td></tr></tbody></table>'
+        code:'L# : L1 \nL#bis : L1bis\nL#_ : L2\nL#+left : L3left\nL#+right : L3right\nL#_ : L4\nL#12bis : L12bis',
+        html:'<table><tbody><tr><td>L1</td><td>L1</td></tr><tr><td>L1bis</td><td>L1bis</td></tr><tr><td>L2</td><td>L2</td></tr><tr><td>L3left</td><td>L3left</td></tr><tr><td>L3right</td><td>L3right</td></tr><tr><td>L4</td><td>L4</td></tr><tr><td>L12bis</td><td>L12bis</td></tr></tbody></table>'
         },
         {
         name:'Table16', //short name of your text
