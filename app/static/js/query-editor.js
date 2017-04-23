@@ -171,10 +171,6 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
                 delete _this.queryModel[itemId]
         }
 
-        _this.TEST = function(){
-            console.log(arguments)
-        }
-
         _this.filterItemStorage = filterItemStorage[c2c_item] //filterItemsParams[c2c_item]
         _this.filterItems=filterItems
 

@@ -13,9 +13,9 @@
 
     <a class="active button-save-query"
        uib-tooltip="{{ 'Save this query'| translate }}"
-       ng-click="qe.save()"
-       href="#">
-        <i class="fa fa-save"></i>
+       ng-click="qe.save()">
+        <i class="fa fa-save" ng-if="!qe.currentUser.saving"></i>
+        <i class="fa fa-hourglass" ng-if="qe.currentUser.saving"></i>
     </a>
 
     <a ng-class="{active: qe.currentQuery}"
