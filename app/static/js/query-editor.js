@@ -256,26 +256,32 @@ app.factory('filterItemStorage', function(){
 
 app.factory('filterItems', ["c2c_common", function(c2c_common){
 
-    var multiSelectFilterItem = function(label, values, pictos){
+    var filterItem = function(label, template){
         this.label = label
+        this.template = template
+    }
+
+    var multiSelectFilterItem = function(label, values, pictos){
+        filterItem.call(this,label, "select_multi")
+
         this.values = values
-        this.template = "select_multi"
         this.isArray = true
         this.emptyValue = []
         this.pictos = pictos
     }
 
     var sliderFilterItem = function(label, values, template){
-        this.label = label
+        filterItem.call(this,label, template || "slider")
+
         this.values = values.slice()
-        this.template = template || "slider"
+        this.template =
         this.isArray = true
         this.emptyValue = [values[0], values[values.length-1]]
     }
 
     var sliderIntFilterItem = function(label, floor, ceil, step){
-        this.label = label
-        this.template = "slider"
+        filterItem.call(this,label, "slider")
+
         this.isArray = true
         this.floor = floor || 0
         this.ceil = ceil || 666
@@ -284,10 +290,10 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
     }
 
     var c2cSelectFilterItem = function(label, c2c_item){
-        this.label = label
+        filterItem.call(this,label, "c2c_select")
+
         this.c2c_item = c2c_item
         this.values = []
-        this.template = "c2c_select"
         this.isArray = true
         this.emptyValue = []
     }
