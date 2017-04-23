@@ -195,7 +195,7 @@ app.factory('filterItemStorage', function(){
             defaults:["act","a", "u"],
         },
         outing : {
-            defaults:["act","a", "ocond","date"],
+            defaults:["act","a", "ocond"],
             //todo : "date",
             bootstrapCol:3,
             storage : [
@@ -394,7 +394,6 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
 
 
         date : {label:"Date", emptyValue:[undefined, undefined], isArray:true}, // debut et fin
-
         glac : {label:"glacier gear", emptyValue:""}, // bool
         owpt : {label:"public transport", emptyValue:""}, // bool
         bbox : {label:"Map", emptyValue:""}, // map filter

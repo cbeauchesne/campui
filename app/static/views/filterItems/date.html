@@ -1,14 +1,10 @@
 <div class="form-group col-md-3">
     <div class="input-daterange input-group">
-        <input type="text" class="input-sm form-control"
-               name="start"
-               date-time  view="date" min-view="date" auto-close="true" format="DD MMM YY"
+        <input type="date" class="input-sm form-control"
                ng-change="qe.apply()"
                ng-model="qe.queryModel.date[0]">
         <span class="input-group-addon" translate>to</span>
-        <input type="text" class="input-sm form-control"
-               name="end"
-               date-time view="date" min-view="date" auto-close="true" format="DD MMM YY"
+        <input type="date" class="input-sm form-control"
                ng-change="qe.apply()"
                ng-model="qe.queryModel.date[1]">
     </div>
