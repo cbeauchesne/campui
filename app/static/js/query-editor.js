@@ -208,10 +208,10 @@ app.factory('filterItemStorage', function(){
             //todo : "date",
             bootstrapCol:3,
             storage : [
-                {label:"Frequents",subItems:["act", "a", "w"]},
-                {label:"XXX",subItems:["ocond", "u", "w", "ofreq", "oglac", "r"]},
-                {label:"XXX",subItems:["odif","swquan","swlu","oparka","oalt"]},
-                {label:"XXX",subItems:["avdate","qa","swld","swqual","l"]},
+                {label:"Frequents",subItems:["act", "a", "ocond", "w","ofreq"]},
+                {label:"Outing",subItems:["oglac","oparka","odif","oalt",]},
+                {label:"Snow",subItems:["avdate", "swquan","swqual","swld","swlu"]},
+                {label:"Misc",subItems:["u","r","qa","l"]},
             ]
         },
         route : {
@@ -231,13 +231,12 @@ app.factory('filterItemStorage', function(){
         waypoint : { //plift
             //todo ,"
             defaults:["wtyp", "a", "rqua"],
-            bootstrapCol:2,
+            bootstrapCol:3,
             storage : [
-                {label:"Usefull",subItems:["prom"]},
+                {label:"Usefull",subItems:["walt","prom","wfac","period","tappt"]},
                 {label:"Ratings",subItems:["pgrat","tmedr","anchq","pglexp","psnow"]},
-                {label:"Terrain",subItems:["walt","wrock","wfac","rain","ctout","tcsty","period","tmedh","tappt","hsta"]},
-                {label:"Misc",subItems:["whtyp","tpty","hscap","ftyp"]},
-                {label:"Meta",subItems:["qa","l"]},
+                {label:"Terrain",subItems:["wrock","rain","ctout","tcsty","tmedh","hsta"]},
+                {label:"Misc",subItems:["whtyp","tpty","hscap","ftyp","qa","l"]},
             ]
         },
         xreport : {
@@ -388,10 +387,10 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         ctin : new multiSelectFilterItem('climbing_indoor_types', c2c_common.attributes.climbing_indoor_types),
         pgrat : new sliderFilterItem('paragliding_rating', c2c_common.attributes.paragliding_ratings),
         pglexp : new sliderFilterItem('exposition_rating', c2c_common.attributes.exposition_ratings),
-        whtyp : new multiSelectFilterItem('weather_station_types', c2c_common.attributes.weather_station_types),
+        whtyp : new multiSelectFilterItem('weather station', c2c_common.attributes.weather_station_types),
         anchq : new sliderFilterItem('equipment_ratings', c2c_common.attributes.equipment_ratings),
-        tpty : new multiSelectFilterItem('public_transportation_types', c2c_common.attributes.public_transportation_types),
-        tp : new multiSelectFilterItem('public_transportation_rating', c2c_common.attributes.public_transportation_rating),
+        tpty : new multiSelectFilterItem('public transportation types', c2c_common.attributes.public_transportation_types),
+        tp : new multiSelectFilterItem('public transportation rating', c2c_common.attributes.public_transportation_rating),
         psnow : new sliderFilterItem('snow_clearance_rating', c2c_common.attributes.snow_clearance_ratings),
         ftyp : new multiSelectFilterItem('product_types', c2c_common.attributes.product_types),
 
