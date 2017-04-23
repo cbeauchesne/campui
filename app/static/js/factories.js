@@ -448,7 +448,7 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
         route:[
             {
                 name:gettextCatalog.getString('Title'),
-                field: 'locales[0].title',
+                field: 'locales[0].title_prefix',
                 width: '*',
                 cellTemplate:'<route-link route="row.entity" class="ui-grid-cell-contents"/>',
             },
