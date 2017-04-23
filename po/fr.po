@@ -731,7 +731,7 @@ msgstr "type de produits"
 
 #: fixed_strings.html:107
 msgid "prominence"
-msgstr "prominenec"
+msgstr "prominence"
 
 #: fixed_strings.html:134
 msgid "public transportation rating"
