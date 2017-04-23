@@ -56,7 +56,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
             //force default filter items first of all
             this.filterItemStorage.defaults.forEach(function(item){
-                _this.queryModel[item] = filterItems[item].emptyValue
+                _this.queryModel[item] = filterItems[item].getEmptyValue()
             })
 
             //then add extra filters present in query
@@ -159,13 +159,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             if(typeof _this.queryModel[itemId] ==='undefined')
             {
                 filterItem = filterItems[itemId]
-
-                emptyValue = filterItem.emptyValue
-
-                if(filterItem.isArray)
-                    emptyValue = emptyValue.slice()
-
-                _this.queryModel[itemId] = emptyValue
+                _this.queryModel[itemId] = filterItem.getEmptyValue()
             }
             else
                 delete _this.queryModel[itemId]
@@ -250,6 +244,9 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
     var filterItem = function(label, template){
         this.label = label
         this.template = template
+        this.getEmptyValue =function(){
+            return []
+        }
     }
 
     var multiSelectFilterItem = function(label, values, pictos){
@@ -257,7 +254,6 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
 
         this.values = values
         this.isArray = true
-        this.emptyValue = []
         this.pictos = pictos
     }
 
@@ -266,8 +262,9 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
 
         this.values = values.slice()
         this.isArray = true
-        this.emptyValue = [values[0], values[values.length-1]]
-
+        this.getEmptyValue =function(){
+            return [values[0], values[values.length-1]]
+        }
     }
 
     var sliderIntFilterItem = function(label, floor, ceil, step){
@@ -277,7 +274,9 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         this.floor = floor || 0
         this.ceil = ceil || 666
         this.step = step || 1
-        this.emptyValue = [this.floor, this.ceil]
+        this.getEmptyValue =function(){
+            return [floor, ceil]
+        }
     }
 
     var c2cSelectFilterItem = function(label, c2c_item){
@@ -286,7 +285,6 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         this.c2c_item = c2c_item
         this.values = []
         this.isArray = true
-        this.emptyValue = []
     }
 
     result = {
@@ -392,13 +390,13 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         psnow : new sliderFilterItem('snow clearance rating', c2c_common.attributes.snow_clearance_ratings),
         ftyp : new multiSelectFilterItem('product types', c2c_common.attributes.product_types),
 
-
+/*
         date : {label:"Date", emptyValue:[undefined, undefined], isArray:true}, // debut et fin
         glac : {label:"glacier gear", emptyValue:""}, // bool
         owpt : {label:"public transport", emptyValue:""}, // bool
         bbox : {label:"Map", emptyValue:""}, // map filter
         plift : {label: 'lift access', emptyValue:""},
-
+*/
         u: {
             label:"Users",
             isArray:true,

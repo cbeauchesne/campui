@@ -89,11 +89,12 @@
                             <div ng-repeat="itemId in folder.subItems">
                                 <button class="btn btn-default btn-rounded"
                                         type="button"
+                                        uib-tooltip="{{itemId}}"
                                         ng-class="{'active':qe.filterItemIsSelected(itemId)}"
                                         ng-click="qe.toggleFilterItem(itemId)">
                                     <i class="fa fa-check"></i>
                                     &nbsp;&nbsp;
-                                    <span>{{itemId}} {{qe.filterItems[itemId].label | translate}}</span>
+                                    <span>{{qe.filterItems[itemId].label | translate}}</span>
                                 </button>
                             </div>
                         </div>

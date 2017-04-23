@@ -333,14 +333,23 @@ padding-bottom:0px
     margin-bottom:2px;
 }
 
-///////////////////:
+///////////////////
+// all elements must have same height
 
-.query-editor .form-group{
+.query-editor .form-group {
+padding-top:6px;
+padding-bottom:7px;
 //border:1px solid red
 }
 
-.slider-container {
+.query-editor .slider-container {
+padding-top:0px;
+padding-bottom:1px;
     margin-bottom:0px
+}
+
+.query-editor .btn-rounded {
+margin-bottom:0px
 }
 
 .rzslider {
@@ -367,9 +376,6 @@ padding-bottom:0px
 .rzslider .rz-limit {
   color: #1ab394;
 }
-
-
-
 
 .rzslider .rz-bar-wrapper {
   padding-top: 8px;

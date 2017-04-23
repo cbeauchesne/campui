@@ -259,13 +259,13 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
         for (var prop in object) {
             if (object.hasOwnProperty(prop)) {
 
-                filterItem = filterItems[prop] || {emptyValue:""}
+                filterItem = filterItems[prop]
 
                 if(!Array.isArray(object[prop])){
                     if(typeof object[prop] !== "undefined")
                         temp.push(prop +  "=" + encodeURIComponent(object[prop]))
                 }
-                else if(object[prop].length!=0 && !arraysEqual(object[prop], filterItem.emptyValue)){
+                else if(object[prop].length!=0 && !arraysEqual(object[prop], filterItem.getEmptyValue())){
                     temp.push(prop +  "=" + object[prop].join(","))
                 }
             }
@@ -285,14 +285,14 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
                 filterItem = filterItems[pair[0]] || {}
 
                 if(pair.length==1){
-                    queryObject[pair[0]] = filterItem.emptyValue
+                    queryObject[pair[0]] = filterItem.getEmptyValue()
                 }
                 else{
                     pair[0] = decodeURIComponent(pair[0]);
                     pair[1] = decodeURIComponent(pair[1]);
 
                     if(!pair[1])
-                        pair[1] = filterItem.emptyValue
+                        pair[1] = filterItem.getEmptyValue()
                     else if(filterItem.isArray)
                         pair[1] = pair[1].split(",")
 
