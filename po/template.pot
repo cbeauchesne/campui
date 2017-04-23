@@ -242,6 +242,26 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
+#: fixed_strings.html:95
+msgid "MTB down rating"
+msgstr ""
+
+#: fixed_strings.html:99
+msgid "MTB length asphalt"
+msgstr ""
+
+#: fixed_strings.html:100
+msgid "MTB length trail"
+msgstr ""
+
+#: fixed_strings.html:101
+msgid "MTB portage"
+msgstr ""
+
+#: fixed_strings.html:94
+msgid "MTB up rating"
+msgstr ""
+
 #: common/navbar.html:61
 msgid "Misc"
 msgstr ""
@@ -431,8 +451,37 @@ msgstr ""
 msgid "Welcome to CampUI"
 msgstr ""
 
+#: fixed_strings.html:121
+msgid "access time"
+msgstr ""
+
+#: fixed_strings.html:43
+msgid "activities"
+msgstr ""
+
+#: fixed_strings.html:89
+msgid "aid rating"
+msgstr ""
+
+#: fixed_strings.html:55
+msgid "altitude of access point"
+msgstr ""
+
 #: fixed_strings.html:26
+#: fixed_strings.html:41
 msgid "areas"
+msgstr ""
+
+#: fixed_strings.html:69
+msgid "avalanche level"
+msgstr ""
+
+#: fixed_strings.html:45
+msgid "avalanche signs"
+msgstr ""
+
+#: fixed_strings.html:70
+msgid "avalanche slope"
 msgstr ""
 
 #: fixed_strings.html:10
@@ -443,28 +492,179 @@ msgstr ""
 msgid "awful"
 msgstr ""
 
+#: fixed_strings.html:118
+msgid "best periods"
+msgstr ""
+
+#: fixed_strings.html:113
+msgid "capacity"
+msgstr ""
+
+#: fixed_strings.html:114
+msgid "capacity staffed"
+msgstr ""
+
+#: fixed_strings.html:42
+msgid "categories"
+msgstr ""
+
+#: fixed_strings.html:125
+msgid "children proof"
+msgstr ""
+
+#: fixed_strings.html:128
+msgid "climbing indoor types"
+msgstr ""
+
+#: fixed_strings.html:97
+msgid "climbing outdoor type"
+msgstr ""
+
+#: fixed_strings.html:127
+msgid "climbing outdoor types"
+msgstr ""
+
+#: fixed_strings.html:122
+msgid "climbing rating max"
+msgstr ""
+
+#: fixed_strings.html:124
+msgid "climbing rating median"
+msgstr ""
+
+#: fixed_strings.html:123
+msgid "climbing rating min"
+msgstr ""
+
+#: fixed_strings.html:120
+msgid "climbing styles"
+msgstr ""
+
+#: fixed_strings.html:56
+msgid "completeness"
+msgstr ""
+
+#: fixed_strings.html:51
+msgid "conditions"
+msgstr ""
+
+#: fixed_strings.html:98
+msgid "configuration"
+msgstr ""
+
+#: fixed_strings.html:53
+msgid "crowding"
+msgstr ""
+
+#: fixed_strings.html:119
+msgid "custodianship"
+msgstr ""
+
+#: fixed_strings.html:103
+msgid "difficulties height"
+msgstr ""
+
+#: fixed_strings.html:76
+msgid "durations"
+msgstr ""
+
 #: fixed_strings.html:37
 msgid "edge"
+msgstr ""
+
+#: fixed_strings.html:106
+#: fixed_strings.html:66
+#: fixed_strings.html:68
+msgid "elevation"
+msgstr ""
+
+#: fixed_strings.html:46
+#: fixed_strings.html:52
+msgid "elevation gain"
+msgstr ""
+
+#: fixed_strings.html:48
+msgid "elevation loss"
+msgstr ""
+
+#: fixed_strings.html:82
+msgid "engagement rating"
+msgstr ""
+
+#: fixed_strings.html:84
+msgid "equipment rating"
+msgstr ""
+
+#: fixed_strings.html:132
+msgid "equipment ratings"
 msgstr ""
 
 #: fixed_strings.html:7
 msgid "excellent"
 msgstr ""
 
+#: fixed_strings.html:130
+msgid "exposition rating"
+msgstr ""
+
+#: fixed_strings.html:75
+msgid "exposition rock"
+msgstr ""
+
 #: fixed_strings.html:38
 msgid "face"
+msgstr ""
+
+#: fixed_strings.html:54
+msgid "glacier rating"
 msgstr ""
 
 #: fixed_strings.html:36
 msgid "glacier_safety_gear"
 msgstr ""
 
+#: fixed_strings.html:81
+msgid "global rating"
+msgstr ""
+
 #: fixed_strings.html:8
 msgid "good"
 msgstr ""
 
+#: fixed_strings.html:104
+msgid "height diff access"
+msgstr ""
+
+#: fixed_strings.html:108
+msgid "height max"
+msgstr ""
+
+#: fixed_strings.html:110
+msgid "height median"
+msgstr ""
+
+#: fixed_strings.html:109
+msgid "height min"
+msgstr ""
+
+#: fixed_strings.html:105
+msgid "height of begining"
+msgstr ""
+
 #: fixed_strings.html:17
 msgid "hiking"
+msgstr ""
+
+#: fixed_strings.html:92
+msgid "hiking MTB exposition"
+msgstr ""
+
+#: fixed_strings.html:91
+msgid "hiking rating"
+msgstr ""
+
+#: fixed_strings.html:85
+msgid "ice rating"
 msgstr ""
 
 #: fixed_strings.html:16
@@ -475,12 +675,45 @@ msgstr ""
 msgid "images"
 msgstr ""
 
+#: fixed_strings.html:71
+msgid "impacted count"
+msgstr ""
+
+#: fixed_strings.html:80
+msgid "labande global rating"
+msgstr ""
+
+#: fixed_strings.html:79
+msgid "labande ski rating"
+msgstr ""
+
+#: fixed_strings.html:49
+msgid "language"
+msgstr ""
+
+#: fixed_strings.html:112
+msgid "length"
+msgstr ""
+
 #: components/loading_info.html:5
 msgid "loading..."
 msgstr ""
 
 #: fixed_strings.html:34
 msgid "loop"
+msgstr ""
+
+#: fixed_strings.html:50
+#: fixed_strings.html:57
+msgid "max altitude"
+msgstr ""
+
+#: fixed_strings.html:58
+msgid "min altitude"
+msgstr ""
+
+#: fixed_strings.html:86
+msgid "mixed rating"
 msgstr ""
 
 #: fixed_strings.html:20
@@ -491,6 +724,11 @@ msgstr ""
 msgid "mountain_climbing"
 msgstr ""
 
+#: fixed_strings.html:117
+#: fixed_strings.html:47
+msgid "orientations"
+msgstr ""
+
 #: fixed_strings.html:23
 msgid "outings"
 msgstr ""
@@ -499,28 +737,118 @@ msgstr ""
 msgid "paragliding"
 msgstr ""
 
+#: fixed_strings.html:129
+msgid "paragliding rating"
+msgstr ""
+
+#: fixed_strings.html:72
+msgid "participants count"
+msgstr ""
+
 #: fixed_strings.html:6
 msgid "poor"
+msgstr ""
+
+#: fixed_strings.html:136
+msgid "product types"
+msgstr ""
+
+#: fixed_strings.html:107
+msgid "prominence"
+msgstr ""
+
+#: fixed_strings.html:134
+msgid "public transportation rating"
+msgstr ""
+
+#: fixed_strings.html:133
+msgid "public transportation types"
 msgstr ""
 
 #: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
+#: fixed_strings.html:126
+msgid "rain proof"
+msgstr ""
+
+#: fixed_strings.html:83
+msgid "risk rating"
+msgstr ""
+
+#: fixed_strings.html:87
+msgid "rock free rating"
+msgstr ""
+
+#: fixed_strings.html:88
+msgid "rock required rating"
+msgstr ""
+
+#: fixed_strings.html:116
+#: fixed_strings.html:96
+msgid "rock types"
+msgstr ""
+
 #: fixed_strings.html:15
 msgid "rock_climbing"
 msgstr ""
 
+#: fixed_strings.html:102
+msgid "route length"
+msgstr ""
+
 #: fixed_strings.html:24
+#: fixed_strings.html:59
 msgid "routes"
+msgstr ""
+
+#: fixed_strings.html:111
+msgid "routes quantity"
+msgstr ""
+
+#: fixed_strings.html:73
+msgid "severity"
+msgstr ""
+
+#: fixed_strings.html:78
+msgid "ski exposition"
+msgstr ""
+
+#: fixed_strings.html:77
+msgid "ski rating"
 msgstr ""
 
 #: fixed_strings.html:12
 msgid "skitouring"
 msgstr ""
 
+#: fixed_strings.html:135
+msgid "snow clearance rating"
+msgstr ""
+
+#: fixed_strings.html:61
+msgid "snow elevation (down)"
+msgstr ""
+
+#: fixed_strings.html:64
+msgid "snow elevation (up)"
+msgstr ""
+
+#: fixed_strings.html:62
+msgid "snow quality"
+msgstr ""
+
+#: fixed_strings.html:63
+msgid "snow quantity"
+msgstr ""
+
 #: fixed_strings.html:13
 msgid "snow_ice_mixed"
+msgstr ""
+
+#: fixed_strings.html:93
+msgid "snowshoe rating"
 msgstr ""
 
 #: fixed_strings.html:18
@@ -531,12 +859,35 @@ msgstr ""
 msgid "traverse"
 msgstr ""
 
+#: fixed_strings.html:67
+#: fixed_strings.html:74
+msgid "type"
+msgstr ""
+
+#: fixed_strings.html:44
+#: fixed_strings.html:60
+msgid "types"
+msgstr ""
+
+#: fixed_strings.html:90
+msgid "via ferrata rating"
+msgstr ""
+
 #: fixed_strings.html:21
 msgid "via_ferrata"
 msgstr ""
 
+#: fixed_strings.html:115
+msgid "waypoint type"
+msgstr ""
+
 #: fixed_strings.html:25
+#: fixed_strings.html:65
 msgid "waypoints"
+msgstr ""
+
+#: fixed_strings.html:131
+msgid "weather station"
 msgstr ""
 
 #: filterItems/select_multi.html:11

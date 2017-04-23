@@ -256,9 +256,12 @@ app.factory('filterItemStorage', function(){
 
 app.factory('filterItems', ["c2c_common", function(c2c_common){
 
+    dd = []
     var filterItem = function(label, template){
         this.label = label
         this.template = template
+
+        dd.push("<span translate>" + label + "</span>")
     }
 
     var multiSelectFilterItem = function(label, values, pictos){
@@ -298,7 +301,7 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         this.emptyValue = []
     }
 
-    return {
+    result = {
         a : new c2cSelectFilterItem("areas", "area"),
         acat : new multiSelectFilterItem("categories", c2c_common.attributes.article_categories),
         act : new multiSelectFilterItem("activities", c2c_common.attributes.activities, true),
@@ -413,5 +416,9 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
             emptyValue:[],
         },
     }
+
+    console.log(dd.join("\n"))
+
+    return result
 }])
 
