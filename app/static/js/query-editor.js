@@ -243,7 +243,7 @@ app.factory('filterItemStorage', function(){
     return result
 })
 
-app.factory('filterItems', ["c2c_common", function(c2c_common){
+app.factory('filterItems', ["c2c_common","gettextCatalog", function(c2c_common, gettextCatalog){
 
    // dd = {}
     var filterItem = function(label, template){
@@ -272,6 +272,9 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         this.isArray = true
         this.getEmptyValue =function(){
             return [values[0], values[values.length-1]]
+        }
+        this.translate = function(value){
+            return gettextCatalog.getString(value)
         }
     }
 
