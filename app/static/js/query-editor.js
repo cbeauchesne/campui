@@ -22,6 +22,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         _this.offset = 0
         _this.limit = 30
         _this.c2c_item = c2c_item
+        _this.currentUser = currentUser
 
         _this.getLocale = function(item){ return locale.get(item)}
 

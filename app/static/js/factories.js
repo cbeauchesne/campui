@@ -57,23 +57,7 @@ app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousPr
         user.profile.params = user.profile.params || {}
         user.profile.params.queries = user.profile.params.queries || []
 
-        if(data.username != ""){
-            user.isAnonymous = false
-
-            user.save = function(){
-                user.saving = true;
-                api.currentUser.save({profile:user.profile},
-                    function(){
-                        delete user.saving;
-                        delete user.errors;
-                    },
-                    function(response){
-                        delete user.saving;
-                        user.errors = response;
-                    }
-                );
-            };
-        }
+        user.isAnonymous = data.username != ""
     });
 
     user.isAnonymous = true
@@ -81,30 +65,44 @@ app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousPr
 
     function setUser(user){
 
-    user.getQueryIndex = function(query){
-        return user.profile.params.queries.indexOf(query)
-    }
-
-    user.addQuery = function(query){
-        query=query || {}
-        user.profile.params.queries.push(query)
-    }
-
-    user.deleteQuery = function(query){
-        index = user.getQueryIndex(query);
-
-        if(index != -1) {
-            delete query.name
-            delete query.url
-            user.profile.params.queries.splice(index, 1);
+        user.getQueryIndex = function(query){
+            return user.profile.params.queries.indexOf(query)
         }
 
-        user.save()
-    }
+        user.addQuery = function(query){
+            query=query || {}
+            user.profile.params.queries.push(query)
+        }
 
-    user.save = function(){
-    };
-}
+        user.deleteQuery = function(query){
+            index = user.getQueryIndex(query);
+
+            if(index != -1) {
+                delete query.name
+                delete query.url
+                user.profile.params.queries.splice(index, 1);
+            }
+
+            user.save()
+        }
+
+        user.save = function(){
+            if(user.isAnonymous)
+                return
+
+            user.saving = true;
+            api.currentUser.save({profile:user.profile},
+                function(){
+                    delete user.saving;
+                    delete user.errors;
+                },
+                function(response){
+                    delete user.saving;
+                    user.errors = response;
+                }
+            );
+        };
+    }
     setUser(user)
     return user
 }]);
