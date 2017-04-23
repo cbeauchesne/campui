@@ -80,12 +80,12 @@ app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousPr
             if(i==-1)
                 user.addQuery(query)
             else
-                user.profile.params.queries[i].url = query
+                user.profile.params.queries[i].url = query.url
 
         }
 
         user.addQuery = function(query){
-            query=query || {}
+            query=query || {url:"", name:""}
             user.profile.params.queries.push(query)
 
             return query
@@ -99,15 +99,13 @@ app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousPr
                 delete query.url
                 user.profile.params.queries.splice(index, 1);
             }
-
-            user.save()
         }
 
         user.save = function(){
             if(user.isAnonymous)
                 return
 
-            console.log("saving user")
+            console.log("saving user", user)
             user.saving = true;
             api.currentUser.save({profile:user.profile},
                 function(){

@@ -17,10 +17,10 @@ msgid "Actions"
 msgstr ""
 
 #: components/query_editor.html:7
-#: factories.js:387
-#: factories.js:440
-#: factories.js:461
-#: factories.js:497
+#: factories.js:385
+#: factories.js:438
+#: factories.js:459
+#: factories.js:495
 msgid "Activities"
 msgstr ""
 
@@ -52,13 +52,13 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: factories.js:393
-#: factories.js:467
+#: factories.js:391
+#: factories.js:465
 msgid "Area"
 msgstr ""
 
 #: common/navbar.html:49
-#: factories.js:521
+#: factories.js:519
 #: outing.html:23
 #: route.html:13
 #: waypoint.html:13
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Articles"
 msgstr ""
 
-#: factories.js:410
+#: factories.js:408
 msgid "Author"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories.js:508
+#: factories.js:506
 msgid "Categories"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Credits :"
 msgstr ""
 
-#: factories.js:425
+#: factories.js:423
 msgid "Date"
 msgstr ""
 
@@ -141,7 +141,7 @@ msgstr ""
 msgid "Do not have an account?"
 msgstr ""
 
-#: factories.js:527
+#: factories.js:525
 msgid "Elevation"
 msgstr ""
 
@@ -157,7 +157,7 @@ msgstr ""
 msgid "Equipement rating"
 msgstr ""
 
-#: factories.js:446
+#: factories.js:444
 msgid "Event type"
 msgstr ""
 
@@ -169,7 +169,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: common/ibox_tools.html:23
+#: common/ibox_tools.html:24
 msgid "Filters"
 msgstr ""
 
@@ -189,11 +189,11 @@ msgstr ""
 msgid "Global rating"
 msgstr ""
 
-#: factories.js:405
+#: factories.js:403
 msgid "Height"
 msgstr ""
 
-#: factories.js:479
+#: factories.js:477
 msgid "Height diff"
 msgstr ""
 
@@ -221,7 +221,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: factories.js:430
+#: factories.js:428
 msgid "Impacted people"
 msgstr ""
 
@@ -278,17 +278,17 @@ msgstr ""
 msgid "My page"
 msgstr ""
 
-#: factories.js:516
-#: factories.js:540
+#: factories.js:514
+#: factories.js:538
 #: me.html:79
 msgid "Name"
 msgstr ""
 
-#: common/ibox_tools.html:10
+#: common/ibox_tools.html:11
 msgid "Next"
 msgstr ""
 
-#: common/ibox_tools.html:31
+#: common/ibox_tools.html:32
 msgid "No filter"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgstr ""
 msgid "Orientation :"
 msgstr ""
 
-#: factories.js:484
+#: factories.js:482
 msgid "Orientations"
 msgstr ""
 
@@ -318,7 +318,7 @@ msgstr ""
 msgid "Outings ({{outings.total}})"
 msgstr ""
 
-#: common/ibox_tools.html:47
+#: common/ibox_tools.html:48
 #: common/navbar.html:152
 #: me.html:6
 msgid "Parameters"
@@ -328,11 +328,11 @@ msgstr ""
 msgid "Participants"
 msgstr ""
 
-#: common/ibox_tools.html:3
+#: common/ibox_tools.html:4
 msgid "Previous"
 msgstr ""
 
-#: factories.js:503
+#: factories.js:501
 msgid "Quality"
 msgstr ""
 
@@ -340,7 +340,7 @@ msgstr ""
 msgid "Queries"
 msgstr ""
 
-#: factories.js:473
+#: factories.js:471
 msgid "Rating"
 msgstr ""
 
@@ -400,7 +400,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: common/ibox_tools.html:15
+#: common/ibox_tools.html:16
 msgid "Save this query"
 msgstr ""
 
@@ -420,7 +420,7 @@ msgstr ""
 msgid "Select filters"
 msgstr ""
 
-#: factories.js:435
+#: factories.js:433
 msgid "Severity"
 msgstr ""
 
@@ -449,10 +449,10 @@ msgstr ""
 msgid "Timing"
 msgstr ""
 
-#: factories.js:381
-#: factories.js:419
-#: factories.js:455
-#: factories.js:492
+#: factories.js:379
+#: factories.js:417
+#: factories.js:453
+#: factories.js:490
 msgid "Title"
 msgstr ""
 
@@ -460,8 +460,8 @@ msgstr ""
 msgid "Topo"
 msgstr ""
 
-#: factories.js:532
-#: factories.js:545
+#: factories.js:530
+#: factories.js:543
 msgid "Type"
 msgstr ""
 

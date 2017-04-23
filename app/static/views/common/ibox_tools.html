@@ -1,4 +1,5 @@
 <div class="ibox-tools dropdown" dropdown ng-if="data">
+
     <a ng-click="qe.previous()"
        uib-tooltip="{{ 'Previous'| translate }}">
         <i class="fa fa-chevron-left"></i>
@@ -18,8 +19,8 @@
         <i class="fa fa-hourglass" ng-if="qe.currentUser.saving"></i>
     </a>
 
-    <a ng-class="{active: qe.currentQuery}"
-       class="dropdown-toggle"
+    <a class="dropdown-toggle"
+       ng-class="{'active':qe.isSavedQuery()}"
        uib-tooltip="{{ 'Filters'| translate }}"
        data-toggle="dropdown"
        href="#">
@@ -35,7 +36,7 @@
 
         <li ng-repeat="query in user.profile.params.queries"
             ng-click="qe.setQuery(query)"
-            ng-class="{active:query.name==qe.currentQuery.name}">
+            ng-class="{active:query.name===qe.currentQuery.name}">
 
             <a ng-if="query.name" href>{{query.name}}</a>
             <a ng-if="!query.name" href><i>* no name *</i></a>

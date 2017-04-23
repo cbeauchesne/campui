@@ -24,7 +24,13 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         _this.c2c_item = c2c_item
         _this.currentUser = currentUser
 
-        _this.getLocale = function(item){ return locale.get(item)}
+        _this.getLocale = function(item){
+            return locale.get(item)
+        }
+
+        _this.isSavedQuery = function(){
+            return typeof _this.currentQuery.name !=='undefined'
+        }
 
         _this.setQuery = function(query, doNotResetQueryModel){
 
@@ -77,10 +83,10 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
         _this.save = function(){
             var query = {
-                name : _this.currentQuery.name,
+                name : _this.currentQuery.name || "",
                 url : urlQuery.fromObject(_this.queryModel)
             }
-            console.log(query)
+
             currentUser.updateQuery(query)
             currentUser.save()
         }
@@ -184,7 +190,7 @@ app.factory('filterItemStorage', function(){
             defaults:["act", "acat", "l", "qa"],
         },
         image : {
-            defaults:["act","a", "u"],
+            defaults:["act","a"],
         },
         outing : {
             defaults:["act","a", "ocond"],
