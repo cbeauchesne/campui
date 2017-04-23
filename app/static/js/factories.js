@@ -314,8 +314,6 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
             }
         }
 
-        console.log(queryObject)
-
         items =['a','r','w']
 
         items.forEach(function(t){

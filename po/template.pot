@@ -8,6 +8,62 @@ msgstr ""
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 
+#: fixed_strings.html:244
+msgid "10+"
+msgstr ""
+
+#: fixed_strings.html:294
+msgid "10min"
+msgstr ""
+
+#: fixed_strings.html:295
+msgid "15min"
+msgstr ""
+
+#: fixed_strings.html:299
+msgid "1h"
+msgstr ""
+
+#: fixed_strings.html:300
+msgid "1h30"
+msgstr ""
+
+#: fixed_strings.html:292
+msgid "1min"
+msgstr ""
+
+#: fixed_strings.html:296
+msgid "20min"
+msgstr ""
+
+#: fixed_strings.html:301
+msgid "2h"
+msgstr ""
+
+#: fixed_strings.html:302
+msgid "2h30"
+msgstr ""
+
+#: fixed_strings.html:297
+msgid "30min"
+msgstr ""
+
+#: fixed_strings.html:303
+msgid "3h"
+msgstr ""
+
+#: fixed_strings.html:304
+msgid "3h+"
+msgstr ""
+
+#: fixed_strings.html:298
+msgid "45min"
+msgstr ""
+
+#: fixed_strings.html:293
+msgid "5min"
+msgstr ""
+
 #: waypoint.html:23
 msgid "Access"
 msgstr ""
@@ -17,10 +73,10 @@ msgid "Actions"
 msgstr ""
 
 #: components/query_editor.html:7
-#: factories.js:385
-#: factories.js:438
-#: factories.js:459
-#: factories.js:495
+#: factories.js:382
+#: factories.js:435
+#: factories.js:456
+#: factories.js:492
 msgid "Activities"
 msgstr ""
 
@@ -52,13 +108,13 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: factories.js:391
-#: factories.js:465
+#: factories.js:388
+#: factories.js:462
 msgid "Area"
 msgstr ""
 
 #: common/navbar.html:49
-#: factories.js:519
+#: factories.js:516
 #: outing.html:23
 #: route.html:13
 #: waypoint.html:13
@@ -70,7 +126,7 @@ msgstr ""
 msgid "Articles"
 msgstr ""
 
-#: factories.js:408
+#: factories.js:405
 msgid "Author"
 msgstr ""
 
@@ -82,7 +138,7 @@ msgstr ""
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories.js:506
+#: factories.js:503
 msgid "Categories"
 msgstr ""
 
@@ -106,7 +162,7 @@ msgstr ""
 msgid "Credits :"
 msgstr ""
 
-#: factories.js:423
+#: factories.js:420
 msgid "Date"
 msgstr ""
 
@@ -141,7 +197,11 @@ msgstr ""
 msgid "Do not have an account?"
 msgstr ""
 
-#: factories.js:525
+#: fixed_strings.html:180
+msgid "E"
+msgstr ""
+
+#: factories.js:522
 msgid "Elevation"
 msgstr ""
 
@@ -157,7 +217,7 @@ msgstr ""
 msgid "Equipement rating"
 msgstr ""
 
-#: factories.js:444
+#: factories.js:441
 msgid "Event type"
 msgstr ""
 
@@ -189,11 +249,11 @@ msgstr ""
 msgid "Global rating"
 msgstr ""
 
-#: factories.js:403
+#: factories.js:400
 msgid "Height"
 msgstr ""
 
-#: factories.js:477
+#: factories.js:474
 msgid "Height diff"
 msgstr ""
 
@@ -221,7 +281,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: factories.js:428
+#: factories.js:425
 msgid "Impacted people"
 msgstr ""
 
@@ -278,8 +338,20 @@ msgstr ""
 msgid "My page"
 msgstr ""
 
-#: factories.js:514
-#: factories.js:538
+#: fixed_strings.html:178
+msgid "N"
+msgstr ""
+
+#: fixed_strings.html:179
+msgid "NE"
+msgstr ""
+
+#: fixed_strings.html:185
+msgid "NW"
+msgstr ""
+
+#: factories.js:511
+#: factories.js:535
 #: me.html:79
 msgid "Name"
 msgstr ""
@@ -296,7 +368,7 @@ msgstr ""
 msgid "Orientation :"
 msgstr ""
 
-#: factories.js:482
+#: factories.js:479
 msgid "Orientations"
 msgstr ""
 
@@ -332,7 +404,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: factories.js:501
+#: factories.js:498
 msgid "Quality"
 msgstr ""
 
@@ -340,7 +412,7 @@ msgstr ""
 msgid "Queries"
 msgstr ""
 
-#: factories.js:471
+#: factories.js:468
 msgid "Rating"
 msgstr ""
 
@@ -396,6 +468,18 @@ msgstr ""
 msgid "Routes"
 msgstr ""
 
+#: fixed_strings.html:182
+msgid "S"
+msgstr ""
+
+#: fixed_strings.html:181
+msgid "SE"
+msgstr ""
+
+#: fixed_strings.html:183
+msgid "SW"
+msgstr ""
+
 #: me.html:117
 msgid "Save"
 msgstr ""
@@ -420,7 +504,7 @@ msgstr ""
 msgid "Select filters"
 msgstr ""
 
-#: factories.js:433
+#: factories.js:430
 msgid "Severity"
 msgstr ""
 
@@ -449,10 +533,10 @@ msgstr ""
 msgid "Timing"
 msgstr ""
 
-#: factories.js:379
-#: factories.js:417
-#: factories.js:453
-#: factories.js:490
+#: factories.js:376
+#: factories.js:414
+#: factories.js:450
+#: factories.js:487
 msgid "Title"
 msgstr ""
 
@@ -460,13 +544,17 @@ msgstr ""
 msgid "Topo"
 msgstr ""
 
-#: factories.js:530
-#: factories.js:543
+#: factories.js:527
+#: factories.js:540
 msgid "Type"
 msgstr ""
 
 #: fixed_strings.html:142
 msgid "Usefull"
+msgstr ""
+
+#: fixed_strings.html:184
+msgid "W"
 msgstr ""
 
 #: common/navbar.html:43
@@ -484,12 +572,28 @@ msgstr ""
 msgid "Welcome to CampUI"
 msgstr ""
 
+#: fixed_strings.html:206
+msgid "access"
+msgstr ""
+
 #: fixed_strings.html:121
 msgid "access time"
 msgstr ""
 
+#: fixed_strings.html:282
+msgid "accessible_when_wardened"
+msgstr ""
+
+#: fixed_strings.html:177
+msgid "accidental_avalanche"
+msgstr ""
+
 #: fixed_strings.html:43
 msgid "activities"
+msgstr ""
+
+#: fixed_strings.html:171
+msgid "admin_limits"
 msgstr ""
 
 #: fixed_strings.html:89
@@ -500,9 +604,33 @@ msgstr ""
 msgid "altitude of access point"
 msgstr ""
 
+#: fixed_strings.html:283
+msgid "always_accessible"
+msgstr ""
+
+#: fixed_strings.html:273
+msgid "apr"
+msgstr ""
+
 #: fixed_strings.html:26
 #: fixed_strings.html:41
 msgid "areas"
+msgstr ""
+
+#: fixed_strings.html:259
+msgid "artificial"
+msgstr ""
+
+#: fixed_strings.html:159
+msgid "association"
+msgstr ""
+
+#: fixed_strings.html:277
+msgid "aug"
+msgstr ""
+
+#: fixed_strings.html:235
+msgid "avalanche"
 msgstr ""
 
 #: fixed_strings.html:69
@@ -525,8 +653,64 @@ msgstr ""
 msgid "awful"
 msgstr ""
 
+#: fixed_strings.html:327
+msgid "bar"
+msgstr ""
+
+#: fixed_strings.html:245
+msgid "basalte"
+msgstr ""
+
+#: fixed_strings.html:214
+msgid "base_camp"
+msgstr ""
+
 #: fixed_strings.html:118
 msgid "best periods"
+msgstr ""
+
+#: fixed_strings.html:204
+msgid "bisse"
+msgstr ""
+
+#: fixed_strings.html:212
+msgid "bivouac"
+msgstr ""
+
+#: fixed_strings.html:262
+msgid "bloc"
+msgstr ""
+
+#: fixed_strings.html:322
+msgid "boat"
+msgstr ""
+
+#: fixed_strings.html:320
+msgid "bus"
+msgstr ""
+
+#: fixed_strings.html:156
+msgid "c2c_meetings"
+msgstr ""
+
+#: fixed_strings.html:191
+msgid "ca"
+msgstr ""
+
+#: fixed_strings.html:323
+msgid "cable_car"
+msgstr ""
+
+#: fixed_strings.html:246
+msgid "calcaire"
+msgstr ""
+
+#: fixed_strings.html:213
+msgid "camp_site"
+msgstr ""
+
+#: fixed_strings.html:205
+msgid "canyon"
 msgstr ""
 
 #: fixed_strings.html:113
@@ -539,6 +723,10 @@ msgstr ""
 
 #: fixed_strings.html:42
 msgid "categories"
+msgstr ""
+
+#: fixed_strings.html:218
+msgid "cave"
 msgstr ""
 
 #: fixed_strings.html:125
@@ -573,6 +761,14 @@ msgstr ""
 msgid "climbing styles"
 msgstr ""
 
+#: fixed_strings.html:208
+msgid "climbing_indoor"
+msgstr ""
+
+#: fixed_strings.html:207
+msgid "climbing_outdoor"
+msgstr ""
+
 #: fixed_strings.html:56
 msgid "completeness"
 msgstr ""
@@ -585,12 +781,48 @@ msgstr ""
 msgid "configuration"
 msgstr ""
 
+#: fixed_strings.html:247
+msgid "conglomerat"
+msgstr ""
+
+#: fixed_strings.html:267
+msgid "corridor"
+msgstr ""
+
+#: fixed_strings.html:172
+msgid "country"
+msgstr ""
+
+#: fixed_strings.html:291
+msgid "crack_dihedral"
+msgstr ""
+
+#: fixed_strings.html:248
+msgid "craie"
+msgstr ""
+
+#: fixed_strings.html:239
+msgid "crevasse_fall"
+msgstr ""
+
 #: fixed_strings.html:53
 msgid "crowding"
 msgstr ""
 
 #: fixed_strings.html:119
 msgid "custodianship"
+msgstr ""
+
+#: fixed_strings.html:174
+msgid "danger_sign"
+msgstr ""
+
+#: fixed_strings.html:188
+msgid "de"
+msgstr ""
+
+#: fixed_strings.html:281
+msgid "dec"
 msgstr ""
 
 #: fixed_strings.html:103
@@ -601,6 +833,7 @@ msgstr ""
 msgid "durations"
 msgstr ""
 
+#: fixed_strings.html:264
 #: fixed_strings.html:37
 msgid "edge"
 msgstr ""
@@ -620,6 +853,10 @@ msgstr ""
 msgid "elevation loss"
 msgstr ""
 
+#: fixed_strings.html:189
+msgid "en"
+msgstr ""
+
 #: fixed_strings.html:82
 msgid "engagement rating"
 msgstr ""
@@ -632,8 +869,28 @@ msgstr ""
 msgid "equipment ratings"
 msgstr ""
 
+#: fixed_strings.html:190
+msgid "es"
+msgstr ""
+
+#: fixed_strings.html:192
+msgid "eu"
+msgstr ""
+
 #: fixed_strings.html:7
 msgid "excellent"
+msgstr ""
+
+#: fixed_strings.html:198
+msgid "expedition"
+msgstr ""
+
+#: fixed_strings.html:154
+msgid "expeditions"
+msgstr ""
+
+#: fixed_strings.html:305
+msgid "exposed"
 msgstr ""
 
 #: fixed_strings.html:130
@@ -644,8 +901,37 @@ msgstr ""
 msgid "exposition rock"
 msgstr ""
 
+#: fixed_strings.html:266
 #: fixed_strings.html:38
 msgid "face"
+msgstr ""
+
+#: fixed_strings.html:237
+msgid "falling_ice"
+msgstr ""
+
+#: fixed_strings.html:324
+msgid "farm_sale"
+msgstr ""
+
+#: fixed_strings.html:271
+msgid "feb"
+msgstr ""
+
+#: fixed_strings.html:186
+msgid "fr"
+msgstr ""
+
+#: fixed_strings.html:150
+msgid "gear"
+msgstr ""
+
+#: fixed_strings.html:210
+msgid "gite"
+msgstr ""
+
+#: fixed_strings.html:269
+msgid "glacier"
 msgstr ""
 
 #: fixed_strings.html:54
@@ -660,8 +946,28 @@ msgstr ""
 msgid "global rating"
 msgstr ""
 
+#: fixed_strings.html:249
+msgid "gneiss"
+msgstr ""
+
 #: fixed_strings.html:8
 msgid "good"
+msgstr ""
+
+#: fixed_strings.html:268
+msgid "goulotte"
+msgstr ""
+
+#: fixed_strings.html:251
+msgid "granit"
+msgstr ""
+
+#: fixed_strings.html:250
+msgid "gres"
+msgstr ""
+
+#: fixed_strings.html:326
+msgid "grocery"
 msgstr ""
 
 #: fixed_strings.html:104
@@ -684,6 +990,7 @@ msgstr ""
 msgid "height min"
 msgstr ""
 
+#: fixed_strings.html:165
 #: fixed_strings.html:17
 msgid "hiking"
 msgstr ""
@@ -696,11 +1003,20 @@ msgstr ""
 msgid "hiking rating"
 msgstr ""
 
+#: fixed_strings.html:313
+msgid "humidity"
+msgstr ""
+
+#: fixed_strings.html:209
+msgid "hut"
+msgstr ""
+
 #: fixed_strings.html:85
 msgid "ice rating"
 msgstr ""
 
 #: fixed_strings.html:16
+#: fixed_strings.html:164
 msgid "ice_climbing"
 msgstr ""
 
@@ -712,12 +1028,44 @@ msgstr ""
 msgid "impacted count"
 msgstr ""
 
+#: fixed_strings.html:308
+msgid "inside"
+msgstr ""
+
+#: fixed_strings.html:318
+msgid "insolation"
+msgstr ""
+
+#: fixed_strings.html:187
+msgid "it"
+msgstr ""
+
+#: fixed_strings.html:270
+msgid "jan"
+msgstr ""
+
+#: fixed_strings.html:276
+msgid "jul"
+msgstr ""
+
+#: fixed_strings.html:275
+msgid "jun"
+msgstr ""
+
+#: fixed_strings.html:284
+msgid "key_needed"
+msgstr ""
+
 #: fixed_strings.html:80
 msgid "labande global rating"
 msgstr ""
 
 #: fixed_strings.html:79
 msgid "labande ski rating"
+msgstr ""
+
+#: fixed_strings.html:201
+msgid "lake"
 msgstr ""
 
 #: fixed_strings.html:49
@@ -728,12 +1076,57 @@ msgstr ""
 msgid "length"
 msgstr ""
 
+#: fixed_strings.html:224
+msgid "level_1"
+msgstr ""
+
+#: fixed_strings.html:225
+msgid "level_2"
+msgstr ""
+
+#: fixed_strings.html:226
+msgid "level_3"
+msgstr ""
+
+#: fixed_strings.html:227
+msgid "level_4"
+msgstr ""
+
+#: fixed_strings.html:228
+msgid "level_5"
+msgstr ""
+
+#: fixed_strings.html:229
+msgid "level_na"
+msgstr ""
+
+#: fixed_strings.html:242
+msgid "lightning"
+msgstr ""
+
 #: components/loading_info.html:5
 msgid "loading..."
 msgstr ""
 
+#: fixed_strings.html:215
+msgid "local_product"
+msgstr ""
+
+#: fixed_strings.html:203
+msgid "locality"
+msgstr ""
+
+#: fixed_strings.html:194
 #: fixed_strings.html:34
 msgid "loop"
+msgstr ""
+
+#: fixed_strings.html:195
+msgid "loop_hut"
+msgstr ""
+
+#: fixed_strings.html:272
+msgid "mar"
 msgstr ""
 
 #: fixed_strings.html:50
@@ -741,20 +1134,66 @@ msgstr ""
 msgid "max altitude"
 msgstr ""
 
+#: fixed_strings.html:274
+msgid "may"
+msgstr ""
+
+#: fixed_strings.html:252
+msgid "migmatite"
+msgstr ""
+
 #: fixed_strings.html:58
 msgid "min altitude"
+msgstr ""
+
+#: fixed_strings.html:223
+msgid "misc"
 msgstr ""
 
 #: fixed_strings.html:86
 msgid "mixed rating"
 msgstr ""
 
+#: fixed_strings.html:253
+msgid "mollasse_calcaire"
+msgstr ""
+
+#: fixed_strings.html:168
 #: fixed_strings.html:20
 msgid "mountain_biking"
 msgstr ""
 
 #: fixed_strings.html:14
+#: fixed_strings.html:162
 msgid "mountain_climbing"
+msgstr ""
+
+#: fixed_strings.html:149
+msgid "mountain_environment"
+msgstr ""
+
+#: fixed_strings.html:261
+msgid "multi"
+msgstr ""
+
+#: fixed_strings.html:176
+msgid "natural_avalanche"
+msgstr ""
+
+#: fixed_strings.html:173
+msgid "no"
+msgstr ""
+
+#: fixed_strings.html:285
+msgid "no_warden"
+msgstr ""
+
+#: fixed_strings.html:280
+msgid "nov"
+msgstr ""
+
+#: fixed_strings.html:279
+msgid "oct"
 msgstr ""
 
 #: fixed_strings.html:117
@@ -762,10 +1201,19 @@ msgstr ""
 msgid "orientations"
 msgstr ""
 
+#: fixed_strings.html:243
+msgid "other"
+msgstr ""
+
 #: fixed_strings.html:23
 msgid "outings"
 msgstr ""
 
+#: fixed_strings.html:288
+msgid "overhang"
+msgstr ""
+
+#: fixed_strings.html:167
 #: fixed_strings.html:19
 msgid "paragliding"
 msgstr ""
@@ -774,12 +1222,60 @@ msgstr ""
 msgid "paragliding rating"
 msgstr ""
 
+#: fixed_strings.html:217
+msgid "paragliding_landing"
+msgstr ""
+
+#: fixed_strings.html:216
+msgid "paragliding_takeoff"
+msgstr ""
+
 #: fixed_strings.html:72
 msgid "participants count"
 msgstr ""
 
+#: fixed_strings.html:306
+msgid "partly_protected"
+msgstr ""
+
+#: fixed_strings.html:200
+msgid "pass"
+msgstr ""
+
+#: fixed_strings.html:238
+msgid "person_fall"
+msgstr ""
+
+#: fixed_strings.html:241
+msgid "physical_failure"
+msgstr ""
+
+#: fixed_strings.html:265
+msgid "pillar"
+msgstr ""
+
+#: fixed_strings.html:309
+msgid "pitch"
+msgstr ""
+
 #: fixed_strings.html:6
 msgid "poor"
+msgstr ""
+
+#: fixed_strings.html:254
+msgid "pouding"
+msgstr ""
+
+#: fixed_strings.html:315
+msgid "precipitation"
+msgstr ""
+
+#: fixed_strings.html:316
+msgid "precipitation_heater"
+msgstr ""
+
+#: fixed_strings.html:314
+msgid "pressure"
 msgstr ""
 
 #: fixed_strings.html:136
@@ -790,6 +1286,14 @@ msgstr ""
 msgid "prominence"
 msgstr ""
 
+#: fixed_strings.html:307
+msgid "protected"
+msgstr ""
+
+#: fixed_strings.html:263
+msgid "psicobloc"
+msgstr ""
+
 #: fixed_strings.html:134
 msgid "public transportation rating"
 msgstr ""
@@ -798,12 +1302,40 @@ msgstr ""
 msgid "public transportation types"
 msgstr ""
 
+#: fixed_strings.html:255
+msgid "quartzite"
+msgstr ""
+
 #: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
+#: fixed_strings.html:197
+msgid "raid"
+msgstr ""
+
 #: fixed_strings.html:126
 msgid "rain proof"
+msgstr ""
+
+#: fixed_strings.html:170
+msgid "range"
+msgstr ""
+
+#: fixed_strings.html:175
+msgid "recent_avalanche"
+msgstr ""
+
+#: fixed_strings.html:325
+msgid "restaurant"
+msgstr ""
+
+#: fixed_strings.html:193
+msgid "return_same_way"
+msgstr ""
+
+#: fixed_strings.html:256
+msgid "rhyolite"
 msgstr ""
 
 #: fixed_strings.html:83
@@ -824,7 +1356,16 @@ msgid "rock types"
 msgstr ""
 
 #: fixed_strings.html:15
+#: fixed_strings.html:163
 msgid "rock_climbing"
+msgstr ""
+
+#: fixed_strings.html:289
+msgid "roof"
+msgstr ""
+
+#: fixed_strings.html:240
+msgid "roped_fall"
 msgstr ""
 
 #: fixed_strings.html:102
@@ -840,8 +1381,32 @@ msgstr ""
 msgid "routes quantity"
 msgstr ""
 
+#: fixed_strings.html:257
+msgid "schiste"
+msgstr ""
+
+#: fixed_strings.html:278
+msgid "sep"
+msgstr ""
+
+#: fixed_strings.html:321
+msgid "service_on_demand"
+msgstr ""
+
 #: fixed_strings.html:73
 msgid "severity"
+msgstr ""
+
+#: fixed_strings.html:211
+msgid "shelter"
+msgstr ""
+
+#: fixed_strings.html:260
+msgid "single"
+msgstr ""
+
+#: fixed_strings.html:158
+msgid "site_info"
 msgstr ""
 
 #: fixed_strings.html:78
@@ -853,7 +1418,36 @@ msgid "ski rating"
 msgstr ""
 
 #: fixed_strings.html:12
+#: fixed_strings.html:160
 msgid "skitouring"
+msgstr ""
+
+#: fixed_strings.html:286
+msgid "slab"
+msgstr ""
+
+#: fixed_strings.html:231
+msgid "slope_30_35"
+msgstr ""
+
+#: fixed_strings.html:232
+msgid "slope_35_40"
+msgstr ""
+
+#: fixed_strings.html:233
+msgid "slope_40_45"
+msgstr ""
+
+#: fixed_strings.html:234
+msgid "slope_gt_45"
+msgstr ""
+
+#: fixed_strings.html:230
+msgid "slope_lt_30"
+msgstr ""
+
+#: fixed_strings.html:290
+msgid "small_pillar"
 msgstr ""
 
 #: fixed_strings.html:135
@@ -876,7 +1470,12 @@ msgstr ""
 msgid "snow quantity"
 msgstr ""
 
+#: fixed_strings.html:317
+msgid "snow_height"
+msgstr ""
+
 #: fixed_strings.html:13
+#: fixed_strings.html:161
 msgid "snow_ice_mixed"
 msgstr ""
 
@@ -884,14 +1483,60 @@ msgstr ""
 msgid "snowshoe rating"
 msgstr ""
 
+#: fixed_strings.html:166
 #: fixed_strings.html:18
 msgid "snowshoeing"
+msgstr ""
+
+#: fixed_strings.html:153
+msgid "soft_mobility"
+msgstr ""
+
+#: fixed_strings.html:328
+msgid "sport_shop"
+msgstr ""
+
+#: fixed_strings.html:236
+msgid "stone_fall"
+msgstr ""
+
+#: fixed_strings.html:155
+msgid "stories"
+msgstr ""
+
+#: fixed_strings.html:199
+msgid "summit"
+msgstr ""
+
+#: fixed_strings.html:157
+msgid "tags"
+msgstr ""
+
+#: fixed_strings.html:151
+msgid "technical"
+msgstr ""
+
+#: fixed_strings.html:310
+msgid "temperature"
 msgstr ""
 
 #: filterItems/date.html:6
 msgid "to"
 msgstr ""
 
+#: fixed_strings.html:152
+msgid "topoguide_supplements"
+msgstr ""
+
+#: fixed_strings.html:258
+msgid "trachyte"
+msgstr ""
+
+#: fixed_strings.html:319
+msgid "train"
+msgstr ""
+
+#: fixed_strings.html:196
 #: fixed_strings.html:35
 msgid "traverse"
 msgstr ""
@@ -906,12 +1551,29 @@ msgstr ""
 msgid "types"
 msgstr ""
 
+#: fixed_strings.html:287
+msgid "vertical"
+msgstr ""
+
 #: fixed_strings.html:90
 msgid "via ferrata rating"
 msgstr ""
 
+#: fixed_strings.html:169
 #: fixed_strings.html:21
 msgid "via_ferrata"
+msgstr ""
+
+#: fixed_strings.html:222
+msgid "virtual"
+msgstr ""
+
+#: fixed_strings.html:202
+msgid "waterfall"
+msgstr ""
+
+#: fixed_strings.html:219
+msgid "waterpoint"
 msgstr ""
 
 #: fixed_strings.html:115
@@ -925,6 +1587,22 @@ msgstr ""
 
 #: fixed_strings.html:131
 msgid "weather station"
+msgstr ""
+
+#: fixed_strings.html:220
+msgid "weather_station"
+msgstr ""
+
+#: fixed_strings.html:221
+msgid "webcam"
+msgstr ""
+
+#: fixed_strings.html:312
+msgid "wind_direction"
+msgstr ""
+
+#: fixed_strings.html:311
+msgid "wind_speed"
 msgstr ""
 
 #: filterItems/select_multi.html:11

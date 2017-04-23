@@ -245,6 +245,7 @@ app.factory('filterItemStorage', function(){
 
 app.factory('filterItems', ["c2c_common", function(c2c_common){
 
+   // dd = {}
     var filterItem = function(label, template){
         this.label = label
         this.template = template
@@ -259,6 +260,9 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         this.values = values
         this.isArray = true
         this.pictos = pictos
+
+        //if(values)
+        //    values.forEach((item)=>dd[item]=0)
     }
 
     var sliderFilterItem = function(label, values, template){
@@ -403,10 +407,14 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
 */
         u: {
             label:"Users",
-            isArray:true,
-            emptyValue:[],
+            isArray:false,
+            getEmptyValue:function(){
+                return ""
+            }
         },
     }
+
+   // console.log(Object.keys(dd).join("\n"))
 
     return result
 }])
