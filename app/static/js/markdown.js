@@ -259,7 +259,10 @@ app.provider('markdownConverter', function () {
             if(cells.length) 
                 while(!cells[cells.length-1] && cells.length>0)
                     cells.splice(-1,1)
-            
+
+            while(cells.length < ltag_memory.cellCount)
+                cells.push("")
+
             result.push(elt_in, cell1.trim(), elt_out)
                 
             cells.forEach(function(cell){
@@ -269,7 +272,10 @@ app.provider('markdownConverter', function () {
             result.push("</tr>")
         }
         
-        var processCells = function(result, tag, suffix, cells){    
+        var processCells = function(result, tag, suffix, cells){
+            if(!ltag_memory.cellCount)
+                ltag_memory.cellCount = cells.length
+
             if(suffix.startsWith("~"))
                 result.push("<tr><td colspan='666'>" + cells[0] + "</td></tr>")
             else if(suffix.startsWith("="))                        
@@ -375,6 +381,7 @@ app.provider('markdownConverter', function () {
                 ltag_memory.current_postfix = ""
                 ltag_memory.R = 0
                 ltag_memory.L = 0
+                delete ltag_memory.cellCount
                 delete ltag_memory["R" + "_main_start"]
                 delete ltag_memory["R" + "_main_end"]
                 delete ltag_memory["L" + "_main_start"]
