@@ -8,7 +8,7 @@
                ng-model="qe.queryModel[itemId]">
         <ui-select-match placeholder="{{ filterItem.label | translate}}">
             <img ng-if="filterItem.pictos" ng-src="/static/img/{{$item}}-16x16.png" width="16px">
-            <span ng-if="!filterItem.pictos" translate>{{$item}}</span>
+            <span ng-if="!filterItem.pictos">{{$item | translate}}</span>
         </ui-select-match>
         <ui-select-choices
                 repeat="value in filterItem.values">
