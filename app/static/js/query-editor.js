@@ -23,15 +23,11 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         _this.limit = 30
         _this.c2c_item = c2c_item
 
-        _this.deletable = false
-
         _this.getLocale = function(item){ return locale.get(item)}
 
         _this.setQuery = function(query, doNotResetQueryModel){
 
             _this.currentQuery = query
-            _this.deletable = currentUser.getQueryIndex(query) != -1
-            _this.clonable = _this.deletable
 
             query = query || {url:""};
             url_query = query.url || "";
@@ -83,8 +79,6 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
                 currentUser.addQuery(_this.currentQuery)
 
             currentUser.save()
-            _this.deletable = true
-            _this.clonable = true
         }
 
         //will save current html filters into current query, and call setQuery
