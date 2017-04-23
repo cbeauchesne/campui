@@ -195,7 +195,7 @@ app.factory('filterItemStorage', function(){
             defaults:["act","a", "u"],
         },
         outing : {
-            defaults:["act","a", "ocond"],
+            defaults:["act","a", "ocond","date"],
             //todo : "date",
             bootstrapCol:3,
             storage : [
@@ -247,12 +247,9 @@ app.factory('filterItemStorage', function(){
 
 app.factory('filterItems', ["c2c_common", function(c2c_common){
 
-    dd = []
     var filterItem = function(label, template){
         this.label = label
         this.template = template
-
-        dd.push("<span translate>" + label + "</span>")
     }
 
     var multiSelectFilterItem = function(label, values, pictos){
@@ -396,10 +393,11 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         ftyp : new multiSelectFilterItem('product types', c2c_common.attributes.product_types),
 
 
+        date : {label:"Date", emptyValue:[undefined, undefined], isArray:true}, // debut et fin
+
         glac : {label:"glacier gear", emptyValue:""}, // bool
         owpt : {label:"public transport", emptyValue:""}, // bool
         bbox : {label:"Map", emptyValue:""}, // map filter
-        date : {label:"Date", emptyValue:""}, // debut et fin
         plift : {label: 'lift access', emptyValue:""},
 
         u: {
@@ -408,8 +406,6 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
             emptyValue:[],
         },
     }
-
-    console.log(dd.join("\n"))
 
     return result
 }])

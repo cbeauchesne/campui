@@ -1,8 +1,16 @@
-<div class="form-group col-md-2">
-    <input type="text"
-           ng-model="qe.queryModel.date"
-           ng-change="qe.apply()"
-           class="form-control input-sm"
-           uib-tooltip="{{ filterItem.label | translate }}"
-           placeholder="{{ filterItem.label  | translate }}"/>
+<div class="form-group col-md-3">
+    <div class="input-daterange input-group">
+        <input type="text" class="input-sm form-control"
+               name="start"
+               date-time  view="date" min-view="date" auto-close="true" format="DD MMM YY"
+               ng-change="qe.apply()"
+               ng-model="qe.queryModel.date[0]">
+        <span class="input-group-addon" translate>to</span>
+        <input type="text" class="input-sm form-control"
+               name="end"
+               date-time view="date" min-view="date" auto-close="true" format="DD MMM YY"
+               ng-change="qe.apply()"
+               ng-model="qe.queryModel.date[1]">
+    </div>
+    {{qe.queryModel.date}}
 </div>

@@ -17,5 +17,6 @@
         'ngPhotoswipe',
         'ui.select',
         'rzModule',
+        'datePicker',
     ])
 })();

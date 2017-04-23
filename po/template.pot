@@ -888,6 +888,10 @@ msgstr ""
 msgid "snowshoeing"
 msgstr ""
 
+#: filterItems/date.html:8
+msgid "to"
+msgstr ""
+
 #: fixed_strings.html:35
 msgid "traverse"
 msgstr ""
