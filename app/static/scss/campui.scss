@@ -339,48 +339,43 @@ padding-bottom:0px
 .query-editor .form-group {
 padding-top:6px;
 padding-bottom:7px;
-//border:1px solid red
-}
-
-.query-editor .slider-container {
-padding-top:0px;
-padding-bottom:1px;
-    margin-bottom:0px
+border:1px solid red
 }
 
 .query-editor .btn-rounded {
 margin-bottom:0px
 }
 
-.rzslider {
-    margin-top:23px
+.query-editor .slider-container {
+    padding-top:0px;
+    padding-bottom:1px;
 }
 
+
+.rzslider {
+    margin-top:35px;
+    margin-bottom:3px;
+}
+
+.rzslider .rz-limit {
+  color: #1ab394;
+}
 .rzslider .rz-selection {
-  font-weight: bold;
   background: #1ab394;
 }
 
 .rzslider .rz-pointer {
   width: 16px;
   height: 16px;
-  top: -10px ;
   background-color: #23c6c8;
 }
 
 .rzslider .rz-pointer:after {
-    display: none;
-}
-
-
-.rzslider .rz-limit {
-  color: #1ab394;
+  display: none;
 }
 
 .rzslider .rz-bar-wrapper {
-  padding-top: 8px;
-  margin-top: -12px;
-  height:20px;
+  padding-top: 9px;
 }
 
 
