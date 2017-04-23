@@ -189,7 +189,7 @@ app.provider('markdownConverter', function () {
             type: 'lang',
             regex: /\[\[([^|\n ]*)\|([^\]]*)\]\]/g,
             replace: function (match, url, text) {
-                return '<a href="' + url.replace(/https?:\/\//, "") + '">' + text + '</a>'; // give it to markdown
+                return '<a href="' + url + '">' + text + '</a>'; // give it to markdown
             }
         };
 
@@ -214,7 +214,8 @@ app.provider('markdownConverter', function () {
                 
                 row_parser = /(?:\n\n?)([LR])#([^]*?(?=\n[LR]#|\n\n))/gm
                 row_sub_parser = /(=|~|[^|: =]*) *(\|\||\||::|:)?([^]*)/
-                cell_parser = /([^|:]*)[|:]+/g
+             //   cell_parser = /([^|:]*)[|:]+/g
+                cell_parser = /([^]*?)(?:\|+|::+)/g
                 
                 result = ['\n<table>']
                 

@@ -198,6 +198,11 @@ app.factory('code_samples', function(){
         html:'<table><tbody><tr><td>L1</td><td>35m</td><td>a <a href="http://www.google.com">google</a> c</td></tr></tbody></table>'
         },
         {
+        name:'Table21', //short name of your text
+        code:'L# : a : b',
+        html:'<table><tbody><tr><td>L1</td><td>a : b</td></tr></tbody></table>'
+        },
+        {
         name:'Trash1',
         code:'[p]',
         html:''
