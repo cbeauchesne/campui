@@ -155,19 +155,25 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             return result
         }
 
-        _this.showFilterItem = function (item){
+        _this.filterItemIsSelected = function(itemId){
+            return _this.queryModel && typeof _this.queryModel[itemId] !=='undefined'
+        }
 
-            if(!_this.queryModel[item])
+        _this.toggleFilterItem = function (itemId){
+
+            if(typeof _this.queryModel[itemId] ==='undefined')
             {
-                filterItem = filterItems[item]
+                filterItem = filterItems[itemId]
 
                 emptyValue = filterItem.emptyValue
 
                 if(filterItem.isArray)
                     emptyValue = emptyValue.slice()
 
-                _this.queryModel[item] = emptyValue
+                _this.queryModel[itemId] = emptyValue
             }
+            else
+                delete _this.queryModel[itemId]
         }
 
         _this.TEST = function(){
@@ -179,7 +185,6 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
         //here is data that will be injected in editor
         _this.queryModel = {}
-
     }
 
     return QueryEditor
@@ -190,45 +195,57 @@ app.factory('filterItemStorage', function(){
 
     result = {
         area : {
-            defaults:["atyp"],
-            availables:["atyp", "qa"],
+            defaults:["atyp", "qa"],
         },
         article : {
-            defaults:["act"],
-            availables:["act", "acat", "l", "qa"], // not atyp, keyword collision!!
+            defaults:["act", "acat", "l", "qa"],
         },
         image : {
-            defaults:["act","a"],
-            availables:["act","a","u"],
+            defaults:["act","a", "u"],
         },
         outing : {
             defaults:["act","a", "ocond"],
             //todo : "date",
-            availables:["act", "a", "ocond", "u", "w", "ofreq", "oglac", "r", "odif","swquan","swlu","oparka","oalt","avdate","qa","swld","swqual","l"]
+            bootstrapCol:3,
+            storage : [
+                {label:"Frequents",subItems:["act", "a", "w"]},
+                {label:"XXX",subItems:["ocond", "u", "w", "ofreq", "oglac", "r"]},
+                {label:"XXX",subItems:["odif","swquan","swlu","oparka","oalt"]},
+                {label:"XXX",subItems:["avdate","qa","swld","swqual","l"]},
+            ]
         },
         route : {
             defaults:["act", "a", "grat"],
-            availables:["act","a","rtyp","grat","fac","hdif","ddif","w","l","qa","rmina","rmaxa", "rlen","rock","conf","time","hexpo","mbpush","mbtrack","mbdr","mbroad","mbur","wrat","krat","hrat","mrat","irat","rappr","dhei","ralt","prat","erat","orrat","arat","rrat","rexpo","frat","crtyp","srat","lrat","trat","sexpo"],
+            bootstrapCol:3,
+            storage : [
+                {label:"Usefull",subItems:["w"]},
+                {label:"Route",subItems:["time","rtyp","rlen","rappr","ralt","dhei",]},
+                {label:"Ratings1",subItems:["krat","hrat","mrat","irat","prat"]},
+                {label:"Ratings2",subItems:["wrat","rexpo","erat","orrat","arat","rrat"]},
+                {label:"Ratings3",subItems:["frat","srat","lrat","trat","sexpo","hexpo"]},
+                {label:"Terrain1",subItems:["crtyp","fac","hdif","ddif","rmina","rmaxa"]},
+                {label:"Terrain2",subItems:["rock","conf", "prom"]},
+                {label:"Misc",subItems:["mbpush","mbtrack","mbdr","mbroad","mbur","qa","l"]},
+            ]
         },
         waypoint : { //plift
             //todo ,"
             defaults:["wtyp", "a", "rqua"],
+            bootstrapCol:2,
             storage : [
-                {item:"prom"},
+                {label:"Usefull",subItems:["prom"]},
                 {label:"Ratings",subItems:["pgrat","tmedr","anchq","pglexp","psnow"]},
                 {label:"Terrain",subItems:["walt","wrock","wfac","rain","ctout","tcsty","period","tmedh","tappt","hsta"]},
                 {label:"Misc",subItems:["whtyp","tpty","hscap","ftyp"]},
                 {label:"Meta",subItems:["qa","l"]},
             ]
-
         },
         xreport : {
             //todo ,"date"
             defaults:["act","a","xtyp"],
+            bootstrapCol:4,
             storage : [
-                {item:"xsev"},
-                {item:"ximp"},
-                {item:"xpar"},
+                {label:"Frequents",subItems:["xsev","ximp","xpar"]},
                 {label:"Terrain",subItems:["xalt", "xavlev", "xavslo"]},
                 {label:"Meta",subItems:["qa","l"]},
             ]
@@ -379,11 +396,11 @@ app.factory('filterItems', ["c2c_common", function(c2c_common){
         ftyp : new multiSelectFilterItem('product_types', c2c_common.attributes.product_types),
 
 
-        glac : {label:"glacier_gear"}, // bool
-        owpt : {label:"public_transport"}, // bool
-        bbox : {label:"Map"}, // map filter
-        date : {label:"Date"}, // debut et fin
-        plift : {label: 'lift_access'},
+        glac : {label:"glacier_gear", emptyValue:""}, // bool
+        owpt : {label:"public_transport", emptyValue:""}, // bool
+        bbox : {label:"Map", emptyValue:""}, // map filter
+        date : {label:"Date", emptyValue:""}, // debut et fin
+        plift : {label: 'lift_access', emptyValue:""},
 
         u: {
             label:"Users",

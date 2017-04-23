@@ -257,7 +257,7 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
         for (var prop in object) {
             if (object.hasOwnProperty(prop)) {
 
-                filterItem = filterItems[prop] || {}
+                filterItem = filterItems[prop] || {emptyValue:""}
 
                 if(!Array.isArray(object[prop])){
                     if(typeof object[prop] !== "undefined")

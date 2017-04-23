@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: c2c_items.html:105
+#: c2c_items.html:83
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 
@@ -25,7 +25,6 @@ msgid "Activities"
 msgstr ""
 
 #: c2c_items.html:24
-#: c2c_items.html:42
 msgid "Add a item"
 msgstr ""
 
@@ -178,7 +177,7 @@ msgstr ""
 msgid "Gears"
 msgstr ""
 
-#: c2c_items.html:76
+#: c2c_items.html:54
 msgid "Give a name to this filter"
 msgstr ""
 
@@ -361,7 +360,7 @@ msgstr ""
 msgid "Routes"
 msgstr ""
 
-#: c2c_items.html:82
+#: c2c_items.html:60
 #: me.html:117
 msgid "Save"
 msgstr ""
@@ -376,6 +375,10 @@ msgstr ""
 
 #: search.html:5
 msgid "Search results"
+msgstr ""
+
+#: c2c_items.html:98
+msgid "Select filters"
 msgstr ""
 
 #: factories.js:417
@@ -535,4 +538,8 @@ msgstr ""
 
 #: filterItems/select_multi.html:11
 msgid "{{$item}}"
+msgstr ""
+
+#: c2c_items.html:114
+msgid "{{qe.filterItems[itemId].label}}"
 msgstr ""
