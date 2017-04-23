@@ -265,6 +265,10 @@ msgstr "Cotation VTT montée"
 msgid "Misc"
 msgstr "Divers"
 
+#: fixed_strings.html:143
+msgid "Misc."
+msgstr "Divers"
+
 #: components/rating.html:28
 msgid "Mixed rating"
 msgstr "Cotation mixe"
@@ -296,6 +300,10 @@ msgstr "Orientations"
 #: components/license.html:5 components/ng-photoswipe.html:35
 msgid "Original page"
 msgstr "Page originale"
+
+#: fixed_strings.html:146
+msgid "Other ratings"
+msgstr "Autre cotations"
 
 #: common/navbar.html:31 home.html:21
 msgid "Outings"
@@ -329,6 +337,10 @@ msgstr "Requêtes"
 msgid "Rating"
 msgstr "Cotations"
 
+#: fixed_strings.html:139
+msgid "Ratings"
+msgstr "Cotations"
+
 #: route.html:106 waypoint.html:38
 msgid "Recent outings"
 msgstr "Sorties récentes"
@@ -348,6 +360,10 @@ msgstr "Risques objectifs"
 #: components/rating.html:5
 msgid "Rock free rating"
 msgstr "Cotation escalade"
+
+#: fixed_strings.html:144
+msgid "Rock ratings"
+msgstr "Cotations rochers"
 
 #: components/rating.html:8
 msgid "Rock required rating"
@@ -401,6 +417,18 @@ msgstr "Gravité"
 msgid "Ski rating"
 msgstr "Cotation ski"
 
+#: fixed_strings.html:140
+msgid "Snow"
+msgstr "Neige"
+
+#: fixed_strings.html:145
+msgid "Snow/ice ratings"
+msgstr "Cotations neige/glace"
+
+#: fixed_strings.html:141 fixed_strings.html:147
+msgid "Terrain"
+msgstr "Terrain"
+
 #: me.html:22
 msgid "Test!"
 msgstr "Test!"
@@ -420,6 +448,10 @@ msgstr "Topo"
 #: factories.js:514 factories.js:527
 msgid "Type"
 msgstr "Type"
+
+#: fixed_strings.html:142
+msgid "Usefull"
+msgstr "Filtres fréquents"
 
 #: common/navbar.html:43 route.html:80 search.html:24 waypoint.html:41
 msgid "Waypoints"

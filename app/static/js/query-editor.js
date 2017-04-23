@@ -219,13 +219,13 @@ app.factory('filterItemStorage', function(){
             bootstrapCol:3,
             storage : [
                 {label:"Usefull",subItems:["act", "a", "grat", "w"]},
+                {label:"Rock ratings",subItems:["frat","rrat","erat","prat","rexpo","arat"]},
+                {label:"Snow/ice ratings",subItems:["orrat", "srat","lrat","irat","mrat","trat","sexpo"]},
+                {label:"Other ratings",subItems:["wrat","krat","hrat","mbdr","mbur","hexpo",""]},
                 {label:"Route",subItems:["time","rtyp","rlen","rappr","ralt","dhei",]},
-                {label:"Ratings1",subItems:["krat","hrat","mrat","irat","prat"]},
-                {label:"Ratings2",subItems:["wrat","rexpo","erat","orrat","arat","rrat"]},
-                {label:"Ratings3",subItems:["frat","srat","lrat","trat","sexpo","hexpo"]},
-                {label:"Terrain1",subItems:["crtyp","fac","hdif","ddif","rmina","rmaxa"]},
-                {label:"Terrain2",subItems:["rock","conf", "prom"]},
-                {label:"Misc.",subItems:["mbpush","mbtrack","mbdr","mbroad","mbur","qa","l"]},
+                {label:"Terrain",subItems:["crtyp","hdif","ddif","rmina","rmaxa"]},
+                {label:"Terrain",subItems:["fac", "rock","conf", "prom"]},
+                {label:"Misc.",subItems:["mbpush","mbtrack","mbroad","qa","l"]},
             ]
         },
         waypoint : { //plift

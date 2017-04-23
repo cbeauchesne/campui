@@ -266,6 +266,10 @@ msgstr ""
 msgid "Misc"
 msgstr ""
 
+#: fixed_strings.html:143
+msgid "Misc."
+msgstr ""
+
 #: components/rating.html:28
 msgid "Mixed rating"
 msgstr ""
@@ -299,6 +303,10 @@ msgstr ""
 #: components/license.html:5
 #: components/ng-photoswipe.html:35
 msgid "Original page"
+msgstr ""
+
+#: fixed_strings.html:146
+msgid "Other ratings"
 msgstr ""
 
 #: common/navbar.html:31
@@ -336,6 +344,10 @@ msgstr ""
 msgid "Rating"
 msgstr ""
 
+#: fixed_strings.html:139
+msgid "Ratings"
+msgstr ""
+
 #: route.html:106
 #: waypoint.html:38
 msgid "Recent outings"
@@ -355,6 +367,10 @@ msgstr ""
 
 #: components/rating.html:5
 msgid "Rock free rating"
+msgstr ""
+
+#: fixed_strings.html:144
+msgid "Rock ratings"
 msgstr ""
 
 #: components/rating.html:8
@@ -412,6 +428,19 @@ msgstr ""
 msgid "Ski rating"
 msgstr ""
 
+#: fixed_strings.html:140
+msgid "Snow"
+msgstr ""
+
+#: fixed_strings.html:145
+msgid "Snow/ice ratings"
+msgstr ""
+
+#: fixed_strings.html:141
+#: fixed_strings.html:147
+msgid "Terrain"
+msgstr ""
+
 #: me.html:22
 msgid "Test!"
 msgstr ""
@@ -434,6 +463,10 @@ msgstr ""
 #: factories.js:514
 #: factories.js:527
 msgid "Type"
+msgstr ""
+
+#: fixed_strings.html:142
+msgid "Usefull"
 msgstr ""
 
 #: common/navbar.html:43
