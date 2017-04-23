@@ -475,7 +475,7 @@ msgstr "éxécrable"
 
 #: fixed_strings.html:118
 msgid "best periods"
-msgstr "Meilleure période"
+msgstr "meilleure période"
 
 #: fixed_strings.html:113
 msgid "capacity"
@@ -654,32 +654,24 @@ msgid "images"
 msgstr "images"
 
 #: fixed_strings.html:71
-#, fuzzy
-#| msgid "Impacted people"
 msgid "impacted count"
-msgstr "Personnes importées"
+msgstr "personnes importées"
 
 #: fixed_strings.html:80
-#, fuzzy
-#| msgid "Global rating"
 msgid "labande global rating"
-msgstr "Cotation globale"
+msgstr "cotation globale Labande"
 
 #: fixed_strings.html:79
-#, fuzzy
-#| msgid "Global rating"
 msgid "labande ski rating"
-msgstr "Cotation globale"
+msgstr "cotation ski labande"
 
 #: fixed_strings.html:49
 msgid "language"
 msgstr "langue"
 
 #: fixed_strings.html:112
-#, fuzzy
-#| msgid "Route length :"
 msgid "length"
-msgstr "Longueur :"
+msgstr "longueur"
 
 #: components/loading_info.html:5
 msgid "loading..."
@@ -698,10 +690,8 @@ msgid "min altitude"
 msgstr "hauteur minimale"
 
 #: fixed_strings.html:86
-#, fuzzy
-#| msgid "Mixed rating"
 msgid "mixed rating"
-msgstr "Cotation mixe"
+msgstr "cotation mixe"
 
 #: fixed_strings.html:20
 msgid "mountain_biking"
@@ -712,10 +702,8 @@ msgid "mountain_climbing"
 msgstr "rocher haute montagne"
 
 #: fixed_strings.html:117 fixed_strings.html:47
-#, fuzzy
-#| msgid "Orientations"
 msgid "orientations"
-msgstr "Orientations"
+msgstr "orientations"
 
 #: fixed_strings.html:23
 msgid "outings"
@@ -726,26 +714,20 @@ msgid "paragliding"
 msgstr "parapente"
 
 #: fixed_strings.html:129
-#, fuzzy
-#| msgid "paragliding"
 msgid "paragliding rating"
-msgstr "parapente"
+msgstr "cotation parapente"
 
 #: fixed_strings.html:72
-#, fuzzy
-#| msgid "Participants"
 msgid "participants count"
-msgstr "Participants"
+msgstr "nombre de participants"
 
 #: fixed_strings.html:6
 msgid "poor"
 msgstr "mauvais"
 
 #: fixed_strings.html:136
-#, fuzzy
-#| msgid "Route type :"
 msgid "product types"
-msgstr "Type d’itinéraire :"
+msgstr "type de produits"
 
 #: fixed_strings.html:107
 msgid "prominence"
@@ -768,22 +750,16 @@ msgid "rain proof"
 msgstr "pluie"
 
 #: fixed_strings.html:83
-#, fuzzy
-#| msgid "Risk rating"
 msgid "risk rating"
-msgstr "Risques objectifs"
+msgstr "risques objectifs"
 
 #: fixed_strings.html:87
-#, fuzzy
-#| msgid "Rock free rating"
 msgid "rock free rating"
-msgstr "Cotation escalade"
+msgstr "cotation libre"
 
 #: fixed_strings.html:88
-#, fuzzy
-#| msgid "Rock required rating"
 msgid "rock required rating"
-msgstr "Cotation obligatoire"
+msgstr "cotation obligatoire"
 
 #: fixed_strings.html:116 fixed_strings.html:96
 msgid "rock types"
@@ -794,10 +770,8 @@ msgid "rock_climbing"
 msgstr "escalade"
 
 #: fixed_strings.html:102
-#, fuzzy
-#| msgid "Route length :"
 msgid "route length"
-msgstr "Longueur :"
+msgstr "longueur de l’itinéraire"
 
 #: fixed_strings.html:24 fixed_strings.html:59
 msgid "routes"
@@ -808,20 +782,16 @@ msgid "routes quantity"
 msgstr "nombre de routes"
 
 #: fixed_strings.html:73
-#, fuzzy
-#| msgid "Severity"
 msgid "severity"
-msgstr "Gravité"
+msgstr "gravité"
 
 #: fixed_strings.html:78
 msgid "ski exposition"
 msgstr "exposition ski"
 
 #: fixed_strings.html:77
-#, fuzzy
-#| msgid "Ski rating"
 msgid "ski rating"
-msgstr "Cotation ski"
+msgstr "cotation ski"
 
 #: fixed_strings.html:12
 msgid "skitouring"
@@ -840,10 +810,8 @@ msgid "snow elevation (up)"
 msgstr ""
 
 #: fixed_strings.html:62
-#, fuzzy
-#| msgid "Quality"
 msgid "snow quality"
-msgstr "Qualité"
+msgstr "qualité de la neige"
 
 #: fixed_strings.html:63
 msgid "snow quantity"
@@ -854,10 +822,8 @@ msgid "snow_ice_mixed"
 msgstr "neige, glace et mixte"
 
 #: fixed_strings.html:93
-#, fuzzy
-#| msgid "snowshoeing"
 msgid "snowshoe rating"
-msgstr "raquette"
+msgstr "cotation raquette"
 
 #: fixed_strings.html:18
 msgid "snowshoeing"
@@ -876,20 +842,16 @@ msgid "types"
 msgstr "types"
 
 #: fixed_strings.html:90
-#, fuzzy
-#| msgid "via_ferrata"
 msgid "via ferrata rating"
-msgstr "via ferrata"
+msgstr "cotation via ferrata"
 
 #: fixed_strings.html:21
 msgid "via_ferrata"
 msgstr "via ferrata"
 
 #: fixed_strings.html:115
-#, fuzzy
-#| msgid "waypoints"
 msgid "waypoint type"
-msgstr "points de passage"
+msgstr "type de points de passage"
 
 #: fixed_strings.html:25 fixed_strings.html:65
 msgid "waypoints"
