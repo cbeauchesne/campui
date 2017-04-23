@@ -81,7 +81,6 @@ app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousPr
                 user.addQuery(query)
             else
                 user.profile.params.queries[i].url = query.url
-
         }
 
         user.addQuery = function(query){
