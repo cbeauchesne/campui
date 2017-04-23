@@ -67,12 +67,28 @@ app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousPr
     function setUser(user){
 
         user.getQueryIndex = function(query){
-            return user.profile.params.queries.indexOf(query)
+            for(i=0;i<user.profile.params.queries.length;i++)
+                if(user.profile.params.queries[i].name===query.name)
+                    return i
+
+            return -1
+        }
+
+        user.updateQuery = function(query){
+            i = user.getQueryIndex(query)
+
+            if(i==-1)
+                user.addQuery(query)
+            else
+                user.profile.params.queries[i].url = query
+
         }
 
         user.addQuery = function(query){
             query=query || {}
             user.profile.params.queries.push(query)
+
+            return query
         }
 
         user.deleteQuery = function(query){

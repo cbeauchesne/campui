@@ -28,7 +28,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
         _this.setQuery = function(query, doNotResetQueryModel){
 
-            _this.currentQuery = query
+            _this.currentQuery = query || {}
 
             query = query || {url:""};
             url_query = query.url || "";
@@ -76,24 +76,22 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         }
 
         _this.save = function(){
-            if(currentUser.getQueryIndex(_this.currentQuery) == -1 && (_this.currentQuery.url || _this.currentQuery.name))
-                currentUser.addQuery(_this.currentQuery)
-
+            var query = {
+                name : _this.currentQuery.name,
+                url : urlQuery.fromObject(_this.queryModel)
+            }
+            console.log(query)
+            currentUser.updateQuery(query)
             currentUser.save()
         }
 
-        //will save current html filters into current query, and call setQuery
         _this.apply = function(){
-            queryObject = {}
-            _this.currentQuery = _this.currentQuery || {}
+            var query = {
+                name:_this.currentQuery.name,
+                url:urlQuery.fromObject(_this.queryModel)
+            }
 
-            _this.currentQuery.url = urlQuery.fromObject(_this.queryModel)
-            _this.setQuery(_this.currentQuery, true)
-        }
-
-        _this.delete = function(){
-            currentUser.deleteQuery(_this.currentQuery)
-            _this.setQuery()
+            _this.setQuery(query, true)
         }
 
         _this.refreshC2cItems = function(itemId, userRequests){
