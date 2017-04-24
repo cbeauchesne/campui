@@ -55,7 +55,9 @@
                     <div class="hr-line-dashed"></div>-->
                     <loading-info></loading-info>
 
-                    <div ng-if="data" ui-grid="{data:data.documents, columnDefs:columnDefs}"
+                    <div ng-if="data"
+                         ui-grid="{data:data.documents, columnDefs:columnDefs, infiniteScrollDown: true, onRegisterApi:onRegisterApi,infiniteScrollRowsFromEnd:5}"
+                         ui-grid-infinite-scroll
                          style="height: 500px;">
 
                     </div>
