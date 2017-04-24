@@ -276,7 +276,7 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
 
                 if(!Array.isArray(object[prop])){
                     if(typeof object[prop] !== "undefined")
-                        temp.push(prop +  "=" + encodeURIComponent(object[prop]))
+                        temp.push(prop +  "=" + object[prop])
                 }
                 else if(object[prop].length!=0 && !arraysEqual(object[prop], filterItem.getEmptyValue())){
                     temp.push(prop +  "=" + object[prop].join(","))
