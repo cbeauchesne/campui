@@ -305,7 +305,7 @@ app.factory('code_samples', function(){
         {
         name:'Typo11bis',
         code:'##T1\n###T2# prec',
-        html:'<h3>Titre<small> precisions</small></h3>'
+        html:'<h3>T1</h3>&#10;<h4>T2<small> prec</small></h4>'
         },
         {
         name:"Typo12",
