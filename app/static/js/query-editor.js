@@ -32,6 +32,43 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             return typeof _this.currentQuery.name !=='undefined'
         }
 
+
+        _this._loadItems = function(url_query, onSuccess, onFailure){
+
+            console.log("setQuery:",  url_query)
+            c2c[_this.c2c_item + "s"].get({query:url_query},
+                function(data){
+                    delete _this.scope.error
+                    if(onSuccess)
+                        onSuccess(data)
+            }, function(response){
+                    _this.scope.error = "CampToCamp error"
+                    if(onFailure)
+                        onFailure(response)
+            })
+        }
+
+        _this.loadNextItems = function(onSuccess, onFailure){
+            var query = _this.currentQuery
+
+            query = query || {url:""};
+            url_query = query.url || "";
+
+            url_query += "&offset=" + _this.scope.data.documents.length;
+            url_query += "&limit=" + _this.limit;
+
+            _this._loadItems(url_query,
+                function(data){
+                    data.documents.forEach(function(item){
+                        _this.scope.data.documents.push(item)
+                    })
+
+                    onSuccess(data)
+                },
+                onFailure
+            )
+        }
+
         _this.setQuery = function(query, doNotResetQueryModel){
 
             _this.currentQuery = query || {}
@@ -47,13 +84,11 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
             url_query += "&limit=" + _this.limit;
 
-            console.log("setQuery:",  url_query)
-            c2c[_this.c2c_item + "s"].get({query:url_query}, function(data){
+            _this._loadItems(url_query,
+                function(data){
                     _this.scope.data = data
-                    delete _this.scope.error
-            }, function(response){
-                    _this.scope.error = "CampToCamp error"
-            })
+                }
+            )
 
             if(doNotResetQueryModel)
                 return
