@@ -163,12 +163,26 @@ color:#1ab394;
     max-width: 100%!important;
 }
 
+[markdown] table{
+    border:1px solid lightgrey ;
+}
+
+[markdown] table th,
 [markdown] table td{
-    border:1px solid lightgrey;
+    border:1px dashed white ;
     vertical-align: text-top;
     padding:2px 4px 2px 4px;
     font-size:90%;
 }
+
+[markdown] table tr td:first-child{
+font-weight:bold;
+}
+
+[markdown] table tr:nth-child(even) {background: #EEE}
+[markdown] table tr:nth-child(odd) {background: #FFF}
+[markdown] table th{background: #DDD}
+
 
 ////////////////////////////////////////////////////////////////////
 
