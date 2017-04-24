@@ -105,6 +105,20 @@ app.config(['$httpProvider', function($httpProvider){
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
 }]);
 
+//fix resource encode folies :
+//if you have a "+"  in url (like TD+), C2C fails, you have to encode it as %2B AND ALSO commas as %2C
+//if you change it to %2B in std function, resource re-encode % => %252B
+//this dirty fix handle this...
+app.config(["$provide", function($provide) {
+    $provide.decorator('$httpBackend', ["$delegate", function($delegate) {
+        return function(method, url, post, callback, headers, timeout, withCredentials, responseType) {
+            url = url.replace(',', '%2C');
+            url = url.replace('+', '%2B');
+            $delegate(method, url, post, callback, headers, timeout, withCredentials, responseType);
+        };
+    }])
+}]);
+
 // this is cryptic : forum request is loaded but not sent back.
 /*
 app.config(['$httpProvider', function($httpProvider) {
