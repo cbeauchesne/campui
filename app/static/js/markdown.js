@@ -26,13 +26,12 @@ app.provider('markdownConverter', function () {
 
         var c2c_title = { //trash
             type: 'lang',
-            regex: /\n(#+)c?([^\n#]+)#*(.*)\n/g,
-      //      regex: /\n(#+)c?(.*)/g,
+            regex: /\n(#+)c?([^\n#]+)#*(.*)/g,
             replace: function (match, hashs, title, appendix) {
                 if(appendix)
                     appendix = "<small>" + appendix + "</small>"
 
-                return '\n' + hashs + title + appendix + "\n";
+                return '\n' + hashs + title + appendix ;
             }
         };
 
