@@ -303,6 +303,11 @@ app.factory('code_samples', function(){
         html:'<h3>Titre c2c <small> precisions</small></h3>'
         },
         {
+        name:'Typo11bis',
+        code:'##T1\n###T2# prec',
+        html:'<h3>Titre<small> precisions</small></h3>'
+        },
+        {
         name:"Typo12",
         code:"[u]coucou[/u]",
         html:"<u>coucou</u>"
