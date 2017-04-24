@@ -16,6 +16,14 @@ function getC2cController(c2c_item){
         $scope.columnDefs = columnDefs[c2c_item]
         $scope.qe = new QueryEditor($scope, c2c_item)
 
+        $scope.onRegisterApi = function(gridApi) {
+            gridApi.infiniteScroll.on.needLoadMoreData($scope, function() {
+                onEndCallback = gridApi.infiniteScroll.dataLoaded
+                $scope.qe.loadNextItems(onEndCallback, onEndCallback)
+
+            });
+        }
+        
         url = urlQuery.getCurrent()
 
         if(url){ // if query is un url, do not load user
