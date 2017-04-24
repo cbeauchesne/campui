@@ -208,6 +208,21 @@ app.factory('code_samples', function(){
         html:'<table><tbody><tr><td>L1</td><td>a</td></tr><tr><td>L2</td><td>b</td></tr></tbody></table>'
         },
         {
+        name:'Table23', //short name of your text
+        code:'L#bis : L1bis\nL#2 : L2',
+        html:'<table><tbody><tr><td>L1bis</td><td>a</td></tr><tr><td>L2</td><td>b</td></tr></tbody></table>'
+        },
+        {
+        name:'Table24', //short name of your text
+        code:'L# : L1\nL#bis : L1bis\n\nxx\nL#1 : L1',
+        html:'<table><tbody><tr><td>L1</td><td>L1</td></tr><tr><td>L1bis</td><td>L1bis</td></tr></tbody></table>&#10;<p>xx</p>&#10;<table><tbody><tr><td>L1</td><td>L1</td></tr></tbody></table>'
+        },
+        {
+        name:'Table25', //short name of your text
+        code:"L# | L1\nL#' | L1'\nL#10 | L10\nL#' | L10'\n",
+        html:"<table><tbody><tr><td>L1</td><td>L1</td></tr><tr><td>L1'</td><td>L1'</td></tr><tr><td>L10</td><td>L10</td></tr><tr><td>L10'</td><td>L10'</td></tr></tbody></table>"
+        },
+        {
         name:'Trash1',
         code:'[p]',
         html:''
@@ -349,6 +364,7 @@ app.factory('code_samples', function(){
         },
     ]
 })
+
 
 
 
