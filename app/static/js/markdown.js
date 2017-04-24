@@ -323,6 +323,12 @@ app.provider('markdownConverter', function () {
                             ltag_memory[tag]+= parseInt(fixed_number)
                         else   //  number : set to it
                             ltag_memory[tag] = parseInt(fixed_number)
+
+                        if(!label){
+                            ltag_memory.current_postfix  = ""
+                            delete ltag_memory[tag + "_main_start"]
+                            delete ltag_memory[tag + "_main_end"]
+                        }
                     }
                     else // no specified number : add 1
                         ltag_memory[tag]++
