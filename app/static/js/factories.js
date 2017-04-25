@@ -133,7 +133,7 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
                 if(item.url){
                     item.url = item.url.replace(/https:\/\/www.camptocamp\.org\/[a-z]*#/g,"")
                     item.url = item.url.replace(/%252C/g,",")
-                    item.url = item.url.replace(/%252B/g,"+")
+                    item.url = item.url.replace(/%252B  /g,"+")
                 }
             })
 
@@ -308,7 +308,7 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
                 filterItem = filterItems[prop]
 
                 if(!Array.isArray(object[prop])){
-                    if(typeof object[prop] !== "undefined")
+                    if(typeof object[prop] !== "undefined" && object[prop] !== "")
                         temp.push(prop +  "=" + object[prop])
                 }
                 else if(object[prop].length!=0 && !arraysEqual(object[prop], filterItem.getEmptyValue())){
