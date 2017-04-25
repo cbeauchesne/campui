@@ -39,7 +39,8 @@ app.directive('license', function(){
         restrict: 'EA',
         scope: {
             type:"=",
-            id:"="
+            id:"=",
+            cc:"="
         },
         templateUrl: 'static/views/components/license.html',
 
