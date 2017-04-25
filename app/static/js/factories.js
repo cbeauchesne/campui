@@ -510,7 +510,7 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
             {
                 name:gettextCatalog.getString('Title'),
                 field: 'locales[0].title',
-                cellTemplate:'<article-link-c2c article="row.entity" class="ui-grid-cell-contents"></article-link-c2c>',
+                cellTemplate:'<article-link article="row.entity" class="ui-grid-cell-contents"></article-link>',
             },
             {
                 name:gettextCatalog.getString('Activities'),
