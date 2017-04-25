@@ -450,6 +450,13 @@ app.factory('filterItems', ["c2c_common","gettextCatalog", function(c2c_common, 
                 return ""
             }
         },
+        bbox: {
+            label:"map",
+            isArray:false,
+            getEmptyValue:function(){
+                return ""
+            }
+        },
     }
 
    // console.log(Object.keys(dd).join("\n"))
