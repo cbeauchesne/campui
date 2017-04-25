@@ -248,6 +248,11 @@ app.factory('code_samples', function(){
         html:''
         },
         {
+        name:'Trash6',
+        code:'[picto cou_cou /]',
+        html:''
+        },
+        {
         name:"Typo1",
         code:"[i]coucou[/i]",
         html:"<i>coucou</i>"

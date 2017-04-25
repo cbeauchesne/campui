@@ -18,7 +18,7 @@ app.provider('markdownConverter', function () {
     var c2c_folies = function () {
         var toc = { //trash
             type: 'lang',
-            regex: /(\[\/?(toc2|p|col|toc)([a-zA-Z\d ]*)?\])/g,
+            regex: /(\[\/?(toc2|p|col|toc|picto)([a-zA-Z_\d ]*)?\/?\])/g,
             replace: function () {
                 return '';
             }
