@@ -127,6 +127,16 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
             if(user.isAnonymous)
                 return
 
+            console.log("cleaning user", user)
+
+            user.profile.params.queries.forEach(function(item){
+                if(item.url){
+                    item.url = item.url.replace(/https:\/\/www.camptocamp\.org\/[a-z]*#/g,"")
+                    item.url = item.url.replace(/%252C/g,",")
+                    item.url = item.url.replace(/%252B/g,"+")
+                }
+            })
+
             console.log("saving user", user)
             user.saving = true;
             api.currentUser.save({profile:user.profile},
