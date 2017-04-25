@@ -101,17 +101,17 @@ app.provider('markdownConverter', function () {
 
         var imp = {
             type: 'lang',
-            regex: /\[imp(?:ortant)?\]([^]*?)\[\/imp(?:ortant)?\]/g,
+            regex: /\[imp(?:ortant)?\]\n*([^]*?)\n*\[\/imp(?:ortant)?\]/g,
             replace: function (match, text) {
-                return '<div class="alert alert-danger">'+ text + '</div>';
+                return '<div class="alert alert-danger">'+ text.replace(/\n/g,"<br>") + '</div>';
             }
         };
 
         var warning = {
             type: 'lang',
-            regex: /\[warning?\]([^]*?)\[\/warning?\]/g,
+            regex: /\[warning?\]\n*([^]*?)\n*\[\/warning?\]/g,
             replace: function (match, text) {
-                return '<div class="alert alert-danger">'+ text + '</div>';
+                return '<div class="alert alert-danger">'+ text.replace(/\n/g,"<br>") + '</div>';
             }
         };
 
