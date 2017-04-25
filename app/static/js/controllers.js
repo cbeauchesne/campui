@@ -60,35 +60,8 @@ app.controller("xreportsController", getC2cController('xreport'));
 app.controller("routesController", getC2cController('route'));
 app.controller("waypointsController", getC2cController('waypoint'));
 
-app.controller('authController', ['$scope','$state','api','currentUser','$http', function($scope, $state, api, currentUser, $http) {
-
+app.controller('authController', ['$scope','currentUser', function($scope, currentUser) {
     $scope.currentUser = currentUser;
-
-    $scope.getCredentials = function(){
-        return {username: $scope.username, password: $scope.password};
-    };
-
-    $scope.login = function(){
-        creds = $scope.getCredentials();
-        api.auth.login(creds).$promise.
-                then(function(data){
-                    currentUser.username = data.username
-                    currentUser.profile = data.profile
-                    currentUser.isAnonymous = false
-                    $state.go('home')
-                }).
-                catch(function(data){
-                    console.log(data);
-                });
-    };
-
-    $scope.logout = function(){
-        api.auth.logout(function(){
-            currentUser.username = undefined
-            currentUser.profile = {params:{}}
-            currentUser.isAnonymous = true
-        });
-    };
 }])
 
 app.controller('languageController', ['$scope','$cookies','gettextCatalog','tmhDynamicLocale', function($scope, $cookies, gettextCatalog, tmhDynamicLocale){
