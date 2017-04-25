@@ -290,7 +290,7 @@ app.factory('code_samples', function(){
         {
         name:'Typo9',
         code:'[imp][b]google[/b]\ncoucou[/imp]',
-        html:'<div class="alert alert-danger"><strong>google</strong>&#10;coucou</div>'
+        html:'<div class="alert alert-danger"><strong>google</strong><br>coucou</div>'
         },
         {
         name:'Typo10',
@@ -339,8 +339,8 @@ app.factory('code_samples', function(){
         },
         {
         name:'Typo18',
-        code:'[important]coucou[/important]',
-        html:'<div class="alert alert-danger">coucou</div>'
+        code:'[important]\na\nb[/important]',
+        html:'<div class="alert alert-danger">a<br>b</div>'
         },
         {
         name:'Typo19',
