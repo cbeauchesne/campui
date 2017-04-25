@@ -1,13 +1,15 @@
 <div class="ibox-tools dropdown" dropdown ng-if="data">
 
-    <a ng-click="qe.previous()"
+    <a class="previous-arrow"
+       ng-click="qe.previous()"
        uib-tooltip="{{ 'Previous'| translate }}">
         <i class="fa fa-chevron-left"></i>
     </a>
-    
+
     {{qe.offset+1}}-{{qe.offset+data.documents.length}} / {{data.total}}
 
-    <a ng-click="qe.next()"
+    <a class="next-arrow"
+       ng-click="qe.next()"
        uib-tooltip="{{ 'Next'| translate }}">
         <i class="fa fa-chevron-right"></i>
     </a>

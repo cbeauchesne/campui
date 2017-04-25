@@ -57,6 +57,8 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
     function setUser(user, data){
 
         data = data || {}
+
+        user.username = data.username
         user.profile = data.profile || anonymousProfile
         user.profile.params = user.profile.params || {}
         user.profile.params.queries = user.profile.params.queries || []
@@ -75,14 +77,14 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
                 })
                 . catch(function(data){
                     console.log("login error", data)
-                    user.loginError = data.statusText
+                    user.loginError = data.data.detail || data.statusText
                     delete user.loging
                     setUser(user, undefined)
                 });
         };
 
         user.logout = function(){
-            console.log("logout", username)
+            console.log("logout", user.username)
             setUser(user, undefined)
             api.auth.logout();
         }
@@ -289,8 +291,6 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
 
     var fromObject = function(object){
         var temp = []
-
-        console.log(object)
 
         for (var prop in object) {
             if (object.hasOwnProperty(prop)) {

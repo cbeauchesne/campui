@@ -257,6 +257,17 @@ font-style:italic;
 display:none;
 }
 
+.previous-arrow,
+.next-arrow{
+    display:none;
+}
+
+
+.home-view .previous-arrow,
+.home-view .next-arrow{
+    display:inline;
+}
+
 
 ////////////////////////////////////////////////////////////////////
 // route specific
