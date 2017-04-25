@@ -515,17 +515,22 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
             {
                 name:gettextCatalog.getString('Activities'),
                 field: 'activities',
-                width: '20%',
+                width: '15%',
                 cellTemplate:'<activities activities="row.entity.activities"></activities>',
             },
             {
                 name:gettextCatalog.getString('Quality'),
                 field: 'quality',
-                width: '15%',
+                width: '10%',
             },
             {
                 name:gettextCatalog.getString('Categories'),
                 field: 'categories',
+                width: '15%',
+            },
+            {
+                name:gettextCatalog.getString('Type'),
+                field: 'article_type',
                 width: '15%',
             },
         ],

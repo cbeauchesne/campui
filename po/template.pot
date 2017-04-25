@@ -118,7 +118,7 @@ msgid "Area"
 msgstr ""
 
 #: common/navbar.html:49
-#: factories.js:540
+#: factories.js:545
 #: outing.html:23
 #: route.html:13
 #: waypoint.html:13
@@ -205,7 +205,7 @@ msgstr ""
 msgid "E"
 msgstr ""
 
-#: factories.js:546
+#: factories.js:551
 msgid "Elevation"
 msgstr ""
 
@@ -358,8 +358,8 @@ msgstr ""
 msgid "NW"
 msgstr ""
 
-#: factories.js:535
-#: factories.js:559
+#: factories.js:540
+#: factories.js:564
 #: me.html:79
 msgid "Name"
 msgstr ""
@@ -552,8 +552,9 @@ msgstr ""
 msgid "Topo"
 msgstr ""
 
-#: factories.js:551
-#: factories.js:564
+#: factories.js:532
+#: factories.js:556
+#: factories.js:569
 msgid "Type"
 msgstr ""
 
