@@ -312,6 +312,7 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
 
     var toObject = function(query) {
         var queryObject = {};
+        query = query || ""
         var vars = query.split("&");
 
         for (var i=0;i<vars.length;i++) {
