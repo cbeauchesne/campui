@@ -48,23 +48,44 @@ app.factory('anonymousProfile', ["gettextCatalog", function(gettextCatalog){
 
 }])
 
-app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousProfile){
+app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, anonymousProfile, $state){
 
+    var user = api.currentUser.get(function(data){
+        setUser(user, data)
+    });
 
-    user = api.currentUser.get(function(data){
-        setUser(user)
+    function setUser(user, data){
 
-        user.profile = data.profile || {}
+        data = data || {}
+        user.profile = data.profile || anonymousProfile
         user.profile.params = user.profile.params || {}
         user.profile.params.queries = user.profile.params.queries || []
 
-        user.isAnonymous = data.username == ""
-    });
+        user.isAnonymous = !data.username
 
-    user.isAnonymous = true
-    user.profile = anonymousProfile
+        user.login = function(username, password){
+            console.log("login", username)
+            user.loging = true
+            api.auth.login({username: username, password: password}).$promise
+                .then(function(data){
+                    setUser(user, data)
+                    delete user.loginError
+                    delete user.loging
+                    $state.go('home')
+                })
+                . catch(function(data){
+                    console.log("login error", data)
+                    user.loginError = data.statusText
+                    delete user.loging
+                    setUser(user, undefined)
+                });
+        };
 
-    function setUser(user){
+        user.logout = function(){
+            console.log("logout", username)
+            setUser(user, undefined)
+            api.auth.logout();
+        }
 
         user.getQueryIndex = function(query){
             for(i=0;i<user.profile.params.queries.length;i++)
@@ -113,14 +134,16 @@ app.factory('currentUser', ["api", "anonymousProfile", function(api, anonymousPr
                     delete user.errors;
                 },
                 function(response){
-                    console.log("user not saved")
+                    console.log("user not saved", response)
                     delete user.saving;
                     user.errors = response;
                 }
             );
         };
     }
-    setUser(user)
+
+    setUser(user, undefined)
+
     return user
 }]);
 
