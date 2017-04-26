@@ -18,5 +18,6 @@
         'ngPhotoswipe',
         'ui.select',
         'rzModule',
+        'infinite-scroll',
     ])
 })();
