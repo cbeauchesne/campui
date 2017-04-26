@@ -181,18 +181,46 @@ app.factory('locale', ['gettextCatalog', function(gettextCatalog){
 app.factory('c2cBeta', ['c2c', function(c2c){
     return {
         outings : {
-            get : function(paramters){
-                var result = {documents:[]}
-                c2c.outings.get(paramters, function(response){
-                    response.documents.forEach(function(item){
-                        result.documents.push(c2c.outing.get({id:item.document_id}))
+            get : function(parameters, onSuccess, onFailure){
+
+                var result = {documents:[], query:parameters}
+
+                var load = function(query, onSuccess, onFailure){
+
+                    console.log("Load", query)
+                    result.loading = true
+                    c2c.outings.get(query, function(response){
+                        delete result.loading
+                        result.total = response.total
+                        response.documents.forEach(function(item){
+                            result.documents.push(c2c.outing.get({id:item.document_id}))
+                        })
+
+                        if(onSuccess)
+                            onSuccess(result)
+                    }, function(){
+                        delete result.loading
+
+                        if(onFailure)
+                            onSuccess(result)
                     })
-                })
+                }
+
+                result.loadMore = function(onSuccess){
+                console.log(result.total,result.documents.length)
+                    if(result.loading || result.total<=result.documents.length)
+                        return
+
+                    var query = Object.assign({offset:result.documents.length}, result.query)
+                    load(query, onSuccess, onFailure)
+                }
+
+                load(parameters, onSuccess, onFailure)
+
                 return result
             }
         }
     }
-
 }]);
 
 app.factory('c2c', ['$resource','gettextCatalog', function($resource, gettextCatalog){
