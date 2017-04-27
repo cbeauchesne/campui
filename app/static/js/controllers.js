@@ -23,6 +23,29 @@ function getC2cController(c2c_item){
 
             });
         }
+
+        $scope.center = "41,-87"
+        $scope.getCenter = function(){
+
+            if(!$scope.data)
+                return "40,40"
+
+                console.log($scope.data.documents[0].geometry)
+            return JSON.parse($scope.data.documents[0].geometry.geom)
+
+            var SE = [72.99329,-166.59975] //init with SE point
+            var NO = [-51.68022,161.05650] //init with NO point
+
+            $scope.data.documents.forEach(function(doc){
+
+                var version = doc.geometry.version
+                var geom = GeoJSON.parse(JSON.parse(doc.geometry.geom))
+
+                console.log(geom)
+            })
+
+            console.log(NO,SE)
+        }
         
         url = urlQuery.getCurrent()
 
@@ -86,7 +109,7 @@ app.controller('searchController',['$scope','c2c','$state','searchData',function
     }
 }]);
 
-/*
+
 app.controller('forumController',['$scope','c2c',function($scope, c2c){
 
     $scope.latest_topics = c2c.forum.latest_topics.get(
@@ -94,4 +117,4 @@ app.controller('forumController',['$scope','c2c',function($scope, c2c){
         function (data){console.log("e", data)}
         )
 }]);
-*/
+

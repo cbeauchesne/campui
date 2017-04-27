@@ -12,7 +12,7 @@
         'angular.filter',
         'ngSanitize',
         'gettext',
-      //  'ngMap',
+        'ngMap',
         'tmh.dynamicLocale',
         'slickCarousel',
         'ngPhotoswipe',

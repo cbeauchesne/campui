@@ -61,6 +61,12 @@
                          style="height: 500px;">
 
                     </div>
+                    {{getCenter()}}
+                    <div map-lazy-load="http://maps.google.com/maps/api/js?key=AIzaSyAYiZ3lDd0WNJIOEWLO_y2tJHTmWmZG6oY">
+                        <ng-map center="43,5" zoom="9" street-view-control="false" map-type-id="terrain">
+                            <map-data add="getCenter()"></map-data>
+                        </ng-map>
+                    </div>
                 </div>
 
                 <div class="ibox-footer">

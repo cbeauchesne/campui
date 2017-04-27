@@ -91,6 +91,7 @@ function getServer(baseDir){
         fileName = fileName.href.split(fileName.search).join("");
         if (fileName.indexOf("static/") < 0
             && fileName.indexOf("bower_components") < 0
+            && fileName.indexOf("node_modules") < 0
             && fileName.indexOf("browser-sync-client") < 0
             && (
                 fileName.indexOf("/outing") >= 0
