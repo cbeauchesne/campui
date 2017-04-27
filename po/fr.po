@@ -86,7 +86,7 @@ msgstr "Actions"
 #: components/query_editor.html:7 factories.js:382 factories.js:435
 #: factories.js:456 factories.js:492
 msgid "Activities"
-msgstr "Activitées"
+msgstr "Activités"
 
 #: c2c_items.html:45
 msgid "Add a filter item"
@@ -571,7 +571,7 @@ msgstr ""
 
 #: fixed_strings.html:43
 msgid "activities"
-msgstr "activitées"
+msgstr "activités"
 
 #: fixed_strings.html:171
 msgid "admin_limits"
