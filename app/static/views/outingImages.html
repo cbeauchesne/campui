@@ -2,20 +2,18 @@
     <span ng-repeat="outing in data.documents">
         <span ng-repeat="image in outing.associations.images">
             <figure>
-                        <center>
                 <img height="200"
                      uib-tooltip="{{outing.date_start}} &#013; {{outing.associations.routes[0].locales[0].title_prefix}} : {{outing.associations.routes[0].locales[0].title}}"
                      alt="{{image.locales[0].title}}"
                      title="{{image.locales[0].title}}"
                      ng-src="https://media.camptocamp.org/c2corg_active/{{image.filename.replace('.', 'MI.').replace('.svg', '.jpg')}}"/>
                 <figcaption>
-                    <a href="outing/{{outing.document_id}}">
                         <condition-icon ng-if="outing.condition_rating"
                                         condition="outing.condition_rating"></condition-icon>
-                        {{image.locales[0].title}}
+                    <a href="outing/{{outing.document_id}}">
+                        <span>{{image.locales[0].title}}</span>
                         </a>
                 </figcaption>
-                    </center>
             </figure>
         </span>
     </span>
