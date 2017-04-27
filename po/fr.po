@@ -87,8 +87,8 @@ msgstr "Accès"
 msgid "Actions"
 msgstr "Actions"
 
-#: components/query_editor.html:7 factories.js:444 factories.js:497
-#: factories.js:518 factories.js:554
+#: components/query_editor.html:7 factories.js:455 factories.js:508
+#: factories.js:529 factories.js:565
 msgid "Activities"
 msgstr "Activités"
 
@@ -120,11 +120,11 @@ msgstr "Tous les points de passage"
 msgid "Apply"
 msgstr "Appliquer"
 
-#: factories.js:450 factories.js:524
+#: factories.js:461 factories.js:535
 msgid "Area"
 msgstr "Région"
 
-#: common/navbar.html:49 factories.js:583 outing.html:23 route.html:13
+#: common/navbar.html:49 factories.js:594 outing.html:23 route.html:13
 #: waypoint.html:13
 msgid "Areas"
 msgstr "Régions"
@@ -133,7 +133,7 @@ msgstr "Régions"
 msgid "Articles"
 msgstr "Articles"
 
-#: factories.js:467
+#: factories.js:478
 msgid "Author"
 msgstr "Auteur"
 
@@ -145,7 +145,7 @@ msgstr "Parce que nous ne sommes pas des génies…"
 msgid "CampToCamp URL"
 msgstr "URL CampToCamp"
 
-#: factories.js:565
+#: factories.js:576
 msgid "Categories"
 msgstr "Catégories"
 
@@ -169,7 +169,7 @@ msgstr "Crédits"
 msgid "Credits :"
 msgstr "Crédits :"
 
-#: factories.js:482
+#: factories.js:493
 msgid "Date"
 msgstr "Date"
 
@@ -205,7 +205,7 @@ msgstr "Vous n’avez pas encore un compte?"
 msgid "E"
 msgstr "E"
 
-#: factories.js:589
+#: factories.js:600
 msgid "Elevation"
 msgstr "Altitude"
 
@@ -221,7 +221,7 @@ msgstr "Engagement"
 msgid "Equipement rating"
 msgstr "Qualité de l’équipement"
 
-#: factories.js:503
+#: factories.js:514
 msgid "Event type"
 msgstr "Type d’incident"
 
@@ -253,11 +253,11 @@ msgstr "Matériel glacier :"
 msgid "Global rating"
 msgstr "Cotation globale"
 
-#: factories.js:462
+#: factories.js:473
 msgid "Height"
 msgstr "Hauteur"
 
-#: factories.js:536
+#: factories.js:547
 msgid "Height diff"
 msgstr "Hauteur"
 
@@ -285,7 +285,7 @@ msgstr "Cotation glace"
 msgid "Images"
 msgstr "Images"
 
-#: factories.js:487
+#: factories.js:498
 msgid "Impacted people"
 msgstr "Personnes importées"
 
@@ -357,7 +357,7 @@ msgstr "NE"
 msgid "NW"
 msgstr "NW"
 
-#: factories.js:578 factories.js:602 me.html:79
+#: factories.js:589 factories.js:613 me.html:79
 msgid "Name"
 msgstr "Nom"
 
@@ -373,7 +373,7 @@ msgstr "Aucun filtre"
 msgid "Orientation :"
 msgstr "Orientation :"
 
-#: factories.js:541
+#: factories.js:552
 msgid "Orientations"
 msgstr "Orientations"
 
@@ -405,7 +405,7 @@ msgstr "Participants"
 msgid "Previous"
 msgstr "Précédent"
 
-#: factories.js:560
+#: factories.js:571
 msgid "Quality"
 msgstr "Qualité"
 
@@ -413,7 +413,7 @@ msgstr "Qualité"
 msgid "Queries"
 msgstr "Requêtes"
 
-#: factories.js:530
+#: factories.js:541
 msgid "Rating"
 msgstr "Cotations"
 
@@ -501,7 +501,7 @@ msgstr "Résultats de la recherche"
 msgid "Select filters"
 msgstr "Choisissez des filtres"
 
-#: factories.js:492
+#: factories.js:503
 msgid "Severity"
 msgstr "Gravité"
 
@@ -529,11 +529,15 @@ msgstr "Test!"
 msgid "There is not yet an outing in this route"
 msgstr "Il n’y a pas encore de sortie associée à cet itinéraire"
 
+#: outingImages.html:2
+msgid "There is not yet images on outings linked to this route"
+msgstr "Il n’y a pas encore d’image de sorties associées à cet itinéraire"
+
 #: outing.html:51
 msgid "Timing"
 msgstr "Horaires"
 
-#: factories.js:438 factories.js:476 factories.js:512 factories.js:549
+#: factories.js:449 factories.js:487 factories.js:523 factories.js:560
 msgid "Title"
 msgstr "Titre"
 
@@ -541,7 +545,7 @@ msgstr "Titre"
 msgid "Topo"
 msgstr "Topo"
 
-#: factories.js:570 factories.js:594 factories.js:607
+#: factories.js:581 factories.js:605 factories.js:618
 msgid "Type"
 msgstr "Type"
 

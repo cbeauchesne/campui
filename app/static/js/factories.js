@@ -190,14 +190,25 @@ app.factory('c2cBeta', ['c2c', function(c2c){
                     console.log("Load", query)
                     result.loading = true
                     c2c.outings.get(query, function(response){
-                        delete result.loading
+                        result.loading = response.documents.length
                         result.total = response.total
                         response.documents.forEach(function(item){
-                            result.documents.push(c2c.outing.get({id:item.document_id}))
+                            result.documents.push(c2c.outing.get({id:item.document_id}, function(){
+                                result.loading--
+                                if(result.loading===0){
+                                    delete result.loading
+                                    if(onSuccess)
+                                        onSuccess(result)
+                                }
+                            }, function(){
+                                result.loading--
+                                if(result.loading===0){
+                                    delete result.loading
+                                    if(onSuccess)
+                                        onSuccess(result)
+                                }
+                            }))
                         })
-
-                        if(onSuccess)
-                            onSuccess(result)
                     }, function(){
                         delete result.loading
 

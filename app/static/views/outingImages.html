@@ -1,4 +1,9 @@
-<div class="outing-images-view" infinite-scroll="data.loadMore()">
+<div class="outing-images-view" infinite-scroll="loadMore()">
+    <div class="alert alert-info"
+         ng-if="images.length==0 && data.documents.length==data.total && !data.loading"
+         translate>
+        There is not yet images on outings linked to this route
+    </div>
     <span ng-repeat="outing in data.documents">
         <span ng-repeat="image in outing.associations.images">
             <figure>
