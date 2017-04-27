@@ -20,8 +20,13 @@
         </div>
         <div class="row route-header">
             <div class="col-md-12">
-                <linked-outings item="route"></linked-outings>
-                <outing-images item="route"></outing-images>
+                <div ng-if="route.associations.recent_outings.documents.length!=0">
+                    <linked-outings item="route"></linked-outings>
+                    <outing-images item="route"></outing-images>
+                </div>
+                <div ng-if="route.associations.recent_outings.documents.length==0">
+                    <i translate>There is not yet an outing in this route</i>
+                </div>
             </div>
         </div>
 
@@ -102,11 +107,12 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <h2>
-                    <span translate>Recent outings</span>
-                </h2>
-                <outing-list outings="route.associations.recent_outings.documents"></outing-list>
-
+                <div ng-if="route.associations.recent_outings.documents.length!=0">
+                    <h2>
+                        <span translate>Recent outings</span>
+                    </h2>
+                    <outing-list outings="route.associations.recent_outings.documents"></outing-list>
+                </div>
                 <div gallery class="col-sm-12" ng-if="route.associations.images.length"
                      images="route.associations.images"></div>
             </div>

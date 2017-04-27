@@ -309,7 +309,7 @@ text-align:justify
 
 // images need to be display:inline-block; else they will not interact as "text"
 // (in justify text last line is not affected you need to add one to make it works)
-.outing-images-view img{
+.outing-images-view figure{
     display:inline-block;
  }
 

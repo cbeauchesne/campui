@@ -21,6 +21,7 @@ urlpatterns += [url(r'^$', **angular_view),
                 url(r'^login$', **angular_view),
                 url(r'^search', **angular_view),
                 url(r'^markdown$', **angular_view),
+                url(r'^outing-images', **angular_view),
                 ]
 
 for item in ["user", "outing", "route", "area", "waypoint", "article", "xreport"]:
