@@ -1,8 +1,8 @@
 
 function getC2cController(c2c_item){
 
-    return ['$scope','QueryEditor','currentUser','columnDefs','gettextCatalog','locale','urlQuery',
-    function($scope, QueryEditor, currentUser, columnDefs, gettextCatalog, locale, urlQuery){
+    return ['$scope','QueryEditor','currentUser','columnDefs','gettextCatalog','locale','urlQuery', 'NgMap',
+    function($scope, QueryEditor, currentUser, columnDefs, gettextCatalog, locale, urlQuery, NgMap){
 
         $scope.getLocale = function(item){ return locale.get(item)}
         $scope.c2c_item = c2c_item
@@ -24,29 +24,31 @@ function getC2cController(c2c_item){
             });
         }
 
-        $scope.center = "41,-87"
-        $scope.getCenter = function(){
+        $scope.xxx = function(){
+            var toto
+            NgMap.getMap().then(function(xx){
 
-            if(!$scope.data)
-                return "40,40"
+                var dest = new proj4.Proj('EPSG:4326');    //source coordinates will be in Longitude/Latitude, WGS84
+                var source = new proj4.Proj('EPSG:3785');     //destination coordinates in meters, global spherical mercators projection, see http://spatialreference.org/ref/epsg/3785/
 
-                console.log($scope.data.documents[0].geometry)
-            return JSON.parse($scope.data.documents[0].geometry.geom)
+                $scope.data.documents.forEach(function(doc){
+                    var geoJson = JSON.parse(doc.geometry.geom)
+                    var point = geoJson.coordinates
+                    var p2 = proj4.transform(source, dest, point)
 
-            var SE = [72.99329,-166.59975] //init with SE point
-            var NO = [-51.68022,161.05650] //init with NO point
-
-            $scope.data.documents.forEach(function(doc){
-
-                var version = doc.geometry.version
-                var geom = GeoJSON.parse(JSON.parse(doc.geometry.geom))
-
-                console.log(geom)
+                    new google.maps.Marker({
+                        position:  new google.maps.LatLng(p2.y, p2.x),
+                        map: xx,
+                        title:"Hello World!"
+                    })
+                })
             })
-
-            console.log(NO,SE)
         }
-        
+
+        $scope.map = {}
+        $scope.map.latitude = 43
+        $scope.map.longitude = 5
+
         url = urlQuery.getCurrent()
 
         if(url){ // if query is un url, do not load user
