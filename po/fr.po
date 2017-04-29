@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: Poedit 2.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: c2c_items.html:67
+#: c2c_items.html:85
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 "*Le tri sur le tableau n’est effectif que sur les données chargées. Le tri "
@@ -92,11 +92,11 @@ msgstr "Actions"
 msgid "Activities"
 msgstr "Activités"
 
-#: c2c_items.html:45
+#: c2c_items.html:55
 msgid "Add a filter item"
 msgstr "Ajouter un sous-filtre"
 
-#: c2c_items.html:24
+#: c2c_items.html:34
 msgid "Add a item"
 msgstr "Ajouter un sous-filtre"
 
@@ -205,7 +205,7 @@ msgstr "Vous n’avez pas encore un compte?"
 msgid "E"
 msgstr "E"
 
-#: factories.js:600
+#: factories.js:600 outing.html:65
 msgid "Elevation"
 msgstr "Altitude"
 
@@ -237,7 +237,7 @@ msgstr "FAQ"
 msgid "Filters"
 msgstr "Filtres"
 
-#: outing.html:61
+#: outing.html:60
 msgid "Frequentation"
 msgstr "Fréquentation"
 
@@ -260,6 +260,10 @@ msgstr "Hauteur"
 #: factories.js:547
 msgid "Height diff"
 msgstr "Hauteur"
+
+#: outing.html:70
+msgid "Height difference"
+msgstr "Dénivelé"
 
 #: route.html:69
 msgid "Height difference :"
@@ -397,7 +401,7 @@ msgstr "Sorties ({{outings.total}})"
 msgid "Parameters"
 msgstr "Paramètres"
 
-#: outing.html:43
+#: outing.html:47
 msgid "Participants"
 msgstr "Participants"
 
@@ -497,7 +501,7 @@ msgstr "Rechercher"
 msgid "Search results"
 msgstr "Résultats de la recherche"
 
-#: c2c_items.html:82
+#: c2c_items.html:100
 msgid "Select filters"
 msgstr "Choisissez des filtres"
 
@@ -533,7 +537,7 @@ msgstr "Il n’y a pas encore de sortie associée à cet itinéraire"
 msgid "There is not yet images on outings linked to this route"
 msgstr "Il n’y a pas encore d’image de sorties associées à cet itinéraire"
 
-#: outing.html:51
+#: outing.html:40
 msgid "Timing"
 msgstr "Horaires"
 
@@ -544,6 +548,10 @@ msgstr "Titre"
 #: common/navbar.html:24
 msgid "Topo"
 msgstr "Topo"
+
+#: outing.html:75
+msgid "Total length"
+msgstr "Longueur totale"
 
 #: factories.js:581 factories.js:605 factories.js:618
 msgid "Type"
@@ -561,7 +569,7 @@ msgstr "W"
 msgid "Waypoints"
 msgstr "Points de passage"
 
-#: outing.html:56
+#: outing.html:55
 msgid "Weather"
 msgstr "Météo"
 
@@ -695,7 +703,7 @@ msgstr ""
 
 #: fixed_strings.html:323
 msgid "cable_car"
-msgstr ""
+msgstr "remontée mécanique"
 
 #: fixed_strings.html:246
 msgid "calcaire"
@@ -1113,6 +1121,10 @@ msgstr "boucle"
 msgid "loop_hut"
 msgstr "boucle (refuge)"
 
+#: c2c_items.html:8
+msgid "map"
+msgstr "carte"
+
 #: fixed_strings.html:272
 msgid "mar"
 msgstr "mar"
@@ -1471,11 +1483,11 @@ msgstr "mobilité douce"
 
 #: fixed_strings.html:328
 msgid "sport_shop"
-msgstr ""
+msgstr "magasin sportif"
 
 #: fixed_strings.html:236
 msgid "stone_fall"
-msgstr ""
+msgstr "chute de caillou"
 
 #: fixed_strings.html:155
 msgid "stories"
@@ -1491,7 +1503,7 @@ msgstr "tags"
 
 #: fixed_strings.html:151
 msgid "technical"
-msgstr ""
+msgstr "technique"
 
 #: fixed_strings.html:310
 msgid "temperature"

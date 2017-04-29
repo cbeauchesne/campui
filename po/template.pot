@@ -206,6 +206,7 @@ msgid "E"
 msgstr ""
 
 #: factories.js:600
+#: outing.html:65
 msgid "Elevation"
 msgstr ""
 
@@ -237,7 +238,7 @@ msgstr ""
 msgid "Filters"
 msgstr ""
 
-#: outing.html:61
+#: outing.html:60
 msgid "Frequentation"
 msgstr ""
 
@@ -259,6 +260,10 @@ msgstr ""
 
 #: factories.js:547
 msgid "Height diff"
+msgstr ""
+
+#: outing.html:70
+msgid "Height difference"
 msgstr ""
 
 #: route.html:69
@@ -404,7 +409,7 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
-#: outing.html:43
+#: outing.html:47
 msgid "Participants"
 msgstr ""
 
@@ -545,7 +550,7 @@ msgstr ""
 msgid "There is not yet images on outings linked to this route"
 msgstr ""
 
-#: outing.html:51
+#: outing.html:40
 msgid "Timing"
 msgstr ""
 
@@ -558,6 +563,10 @@ msgstr ""
 
 #: common/navbar.html:24
 msgid "Topo"
+msgstr ""
+
+#: outing.html:75
+msgid "Total length"
 msgstr ""
 
 #: factories.js:581
@@ -581,7 +590,7 @@ msgstr ""
 msgid "Waypoints"
 msgstr ""
 
-#: outing.html:56
+#: outing.html:55
 msgid "Weather"
 msgstr ""
 

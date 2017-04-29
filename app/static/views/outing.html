@@ -36,6 +36,10 @@
 
                 <h2 ng-if="outing.locales[0].conditions" translate>Conditions</h2>
                 <div markdown="outing.locales[0].conditions"></div>
+
+                <h2 ng-if="outing.locales[0].timing" translate>Timing</h2>
+                <div markdown="outing.locales[0].timing"></div>
+
             </div>
 
             <div class="col-sm-3 b-l">
@@ -47,11 +51,6 @@
                     {{outing.locales[0].participants}}
                 </div>
 
-                <div ng-if="outing.locales[0].timing">
-                    <i class="fa fa-clock-o" uib-tooltip="{{'Timing' | translate }}"></i>
-                    <div markdown="outing.locales[0].timing"></div>
-                </div>
-
                 <div ng-if="outing.locales[0].weather">
                     <i class="fa fa-cloud" uib-tooltip="{{'Weather' | translate }}"></i>
                     {{outing.locales[0].weather}}
@@ -61,6 +60,22 @@
                     <i class="fa fa-users" uib-tooltip="{{'Frequentation' | translate }}"></i>
                     {{outing.frequentation | translate }}
                 </div>
+
+                <div ng-if="outing.elevation_min || outing.elevation_max">
+                    <label translate>Elevation</label>:
+                    {{outing.elevation_min}}&nbsp;m&nbsp;/&nbsp;{{outing.elevation_max}}&nbsp;m
+                </div>
+
+                <div ng-if="outing.height_diff_down || outing.height_diff_up">
+                    <label translate>Height difference</label>:
+                    -{{outing.height_diff_down}}&nbsp;m&nbsp;/&nbsp;{{outing.height_diff_up}}&nbsp;m
+                </div>
+
+                <div ng-if="outing.length_total">
+                    <label translate>Total length</label>:
+                    {{outing.length_total}} m
+                </div>
+
 
                 <div license type="'outing'" id="outing.document_id" cc="'by-nc-nd'"></div>
             </div>
