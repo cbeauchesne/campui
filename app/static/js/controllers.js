@@ -1,8 +1,8 @@
 
 function getC2cController(c2c_item){
 
-    return ['$scope','QueryEditor','currentUser','columnDefs','gettextCatalog','locale','urlQuery', 'NgMap',
-    function($scope, QueryEditor, currentUser, columnDefs, gettextCatalog, locale, urlQuery, NgMap){
+    return ['$scope','QueryEditor','currentUser','columnDefs','gettextCatalog','locale','urlQuery', 'mapData',
+    function($scope, QueryEditor, currentUser, columnDefs, gettextCatalog, locale, urlQuery, mapData){
 
         $scope.getLocale = function(item){ return locale.get(item)}
         $scope.c2c_item = c2c_item
@@ -14,7 +14,6 @@ function getC2cController(c2c_item){
 
         $scope.user = currentUser
         $scope.columnDefs = columnDefs[c2c_item]
-        $scope.qe = new QueryEditor($scope, c2c_item)
 
         $scope.onRegisterApi = function(gridApi) {
             gridApi.infiniteScroll.on.needLoadMoreData($scope, function() {
@@ -25,61 +24,14 @@ function getC2cController(c2c_item){
         }
 
         $scope.toggleMapView = function(){
-            var gmap = $scope.gmap
-
-            if(gmap.visible){
-                gmap.setMarkers($scope.data)
+            if($scope.mapData.visible){
+                $scope.mapData.setMarkers($scope.data)
             }
         }
 
-        var Map = function(){
+        $scope.mapData = mapData
 
-            var ESPG_4326 = new proj4.Proj('EPSG:4326');
-            var ESPG_3785 = new proj4.Proj('EPSG:3785');
-
-            _this = this
-            this.visible=false
-            this.center = {x:5, y:43}
-            this.zoom = 9
-            this.markers = []
-
-            this.removeMarkers = function(){
-                for (var i = 0; i < this.markers.length; i++ ) {
-                    this.markers[i].setMap(null);
-                }
-                this.markers.length = 0;
-            }
-
-            this.appendMarkers = function(data){
-                NgMap.getMap().then(function(map){
-
-                    var bounds = new google.maps.LatLngBounds();
-
-                    data.documents.forEach(function(doc){
-                        var point = JSON.parse(doc.geometry.geom).coordinates
-                        point = proj4.transform(ESPG_3785, ESPG_4326, point)
-                        var latLng = new google.maps.LatLng(point.y, point.x)
-
-                        bounds.extend(latLng)
-
-                        _this.markers.push(new google.maps.Marker({
-                            position:  latLng,
-                            map: map,
-                        }))
-                    })
-
-                    map.fitBounds(bounds)
-
-                })
-            }
-
-            this.setMarkers = function(data){
-                this.removeMarkers()
-                this.appendMarkers(data)
-            }
-        }
-
-        $scope.gmap = new Map()
+        $scope.qe = new QueryEditor($scope, c2c_item, $scope.mapData.onDataLoad)
 
         url = urlQuery.getCurrent()
 

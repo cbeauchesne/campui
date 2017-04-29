@@ -6,9 +6,9 @@
                     <h3>{{c2c_item + 's' | translate}}</h3>
 
                     <div class="onoffswitch" uib-tooltip="{{ 'map' | translate }}">
-                        <input type="checkbox" ng-model="gmap.visible" ng-change="toggleMapView()"
-                               class="onoffswitch-checkbox" id="example1">
-                        <label class="onoffswitch-label" for="example1">
+                        <input type="checkbox" ng-model="mapData.visible" ng-change="toggleMapView()"
+                               class="onoffswitch-checkbox" id="mapToggler">
+                        <label class="onoffswitch-label" for="mapToggler">
                             <span class="onoffswitch-inner"></span>
                             <span class="onoffswitch-switch"></span>
                         </label>
@@ -65,14 +65,14 @@
                     <div class="hr-line-dashed"></div>-->
                     <loading-info></loading-info>
 
-                    <div ng-if="data && !gmap.visible"
+                    <div ng-if="data && !mapData.visible"
                          ui-grid="{data:data.documents, columnDefs:columnDefs, infiniteScrollDown: true, onRegisterApi:onRegisterApi,infiniteScrollRowsFromEnd:5}"
                          ui-grid-infinite-scroll
                          style="height: 500px;">
 
                     </div>
 
-                    <div ng-if="data && gmap.visible"
+                    <div ng-if="data && mapData.visible"
                          map-lazy-load="http://maps.google.com/maps/api/js?key=AIzaSyAYiZ3lDd0WNJIOEWLO_y2tJHTmWmZG6oY">
                         <ng-map street-view-control="false"
                                 style="height: 500px;"

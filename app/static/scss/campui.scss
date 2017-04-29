@@ -428,6 +428,13 @@ padding-bottom:0px
 
 
 ///////////////////
+
+.xreports-view .onoffswitch,
+.areas-view .onoffswitch,
+.articles-view .onoffswitch{
+    display:none
+}
+
 .onoffswitch{
 margin-left:30px;
 width:54px;

@@ -15,7 +15,7 @@ app.filter('hasProp', function() {
 
 app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'urlQuery', 'filterItems', 'filterItemStorage', function(c2c, currentUser, gettextCatalog, locale, urlQuery, filterItems, filterItemStorage){
 
-    var QueryEditor = function(scope, c2c_item){
+    var QueryEditor = function(scope, c2c_item, onDataLoad){
         var _this = this
 
         _this.scope = scope
@@ -39,8 +39,13 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             c2c[_this.c2c_item + "s"].get({query:url_query},
                 function(data){
                     delete _this.scope.error
+
                     if(onSuccess)
                         onSuccess(data)
+
+                    if(onDataLoad)
+                        onDataLoad(data)
+
             }, function(response){
                     _this.scope.error = "CampToCamp error"
                     if(onFailure)

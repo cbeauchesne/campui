@@ -624,3 +624,105 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
     }
 }])
 
+app.factory("mapData", ["NgMap", function(NgMap){
+    var ESPG_4326 = new proj4.Proj('EPSG:4326');
+    var ESPG_3785 = new proj4.Proj('EPSG:3785');
+
+    var letterToC2cItem = {
+        o:"outing",
+        r:"route",
+        w:"waypoint",
+        a:"area",
+        x:"xreport",
+    }
+    var _this = {}
+
+    _this.visible=false
+    _this.markers = []
+
+    _this.boundToMarkers = function(){
+        NgMap.getMap().then(function(map){
+            map.fitBounds(_this.bounds)
+        })
+    }
+
+    _this.removeMarkers = function(){
+        for (var i = 0; i < _this.markers.length; i++ ) {
+            _this.markers[i].setMap(null);
+        }
+        _this.markers.length = 0;
+
+        if(_this.currentInfoWindow)
+            _this.currentInfoWindow.close()
+
+    }
+
+    _this.appendMarkers = function(data){
+
+        NgMap.getMap().then(function(map){
+            if(!google.maps.InfoWindow.prototype.isOpen)
+                google.maps.InfoWindow.prototype.isOpen = function(){
+                        var map = this.getMap();
+                    return (map !== null && typeof map !== "undefined");
+                }
+
+            _this.bounds = new google.maps.LatLngBounds();
+
+            data.documents.forEach(function(doc){
+                var point = JSON.parse(doc.geometry.geom).coordinates
+
+                var infowindow = new google.maps.InfoWindow({
+                    content:
+                        "<div class='map-info'>" +
+                        "<a href='" + letterToC2cItem[doc.type] + "/" + doc.document_id + "'>" +
+                        doc.locales[0].title +
+                        "</a>" +
+                        "" +
+                        "</div>"
+                });
+
+                point = proj4.transform(ESPG_3785, ESPG_4326, point)
+                var latLng = new google.maps.LatLng(point.y, point.x)
+                var marker = new google.maps.Marker({
+                    position:  latLng,
+                    map: map,
+                    title: 'Hello World!'
+                })
+
+                marker.addListener('click', function() {
+                    if (infowindow.isOpen())
+                        infowindow.close()
+                    else {
+                        if(_this.currentInfoWindow)
+                            _this.currentInfoWindow.close()
+
+                        infowindow.open(map, marker);
+                        _this.currentInfoWindow = infowindow
+                    }
+                });
+
+                _this.bounds.extend(latLng)
+                _this.markers.push(marker)
+            })
+        })
+    }
+
+    _this.setMarkers = function(data){
+        _this.removeMarkers()
+        _this.appendMarkers(data)
+        _this.boundToMarkers()
+    }
+
+    _this.onDataLoad = function(data){
+        if(!_this.visible)
+            return
+
+        _this.removeMarkers()
+        _this.appendMarkers(data)
+        _this.boundToMarkers()
+    }
+
+    return _this
+
+}])
+
