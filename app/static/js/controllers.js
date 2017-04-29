@@ -24,30 +24,62 @@ function getC2cController(c2c_item){
             });
         }
 
-        $scope.xxx = function(){
-            var toto
-            NgMap.getMap().then(function(xx){
+        $scope.toggleMapView = function(){
+            var gmap = $scope.gmap
 
-                var dest = new proj4.Proj('EPSG:4326');    //source coordinates will be in Longitude/Latitude, WGS84
-                var source = new proj4.Proj('EPSG:3785');     //destination coordinates in meters, global spherical mercators projection, see http://spatialreference.org/ref/epsg/3785/
-
-                $scope.data.documents.forEach(function(doc){
-                    var geoJson = JSON.parse(doc.geometry.geom)
-                    var point = geoJson.coordinates
-                    var p2 = proj4.transform(source, dest, point)
-
-                    new google.maps.Marker({
-                        position:  new google.maps.LatLng(p2.y, p2.x),
-                        map: xx,
-                        title:"Hello World!"
-                    })
-                })
-            })
+            if(gmap.visible){
+                gmap.setMarkers($scope.data)
+            }
         }
 
-        $scope.map = {}
-        $scope.map.latitude = 43
-        $scope.map.longitude = 5
+        var Map = function(){
+
+            var ESPG_4326 = new proj4.Proj('EPSG:4326');
+            var ESPG_3785 = new proj4.Proj('EPSG:3785');
+
+            _this = this
+            this.visible=false
+            this.center = {x:5, y:43}
+            this.zoom = 9
+            this.markers = []
+
+            this.removeMarkers = function(){
+                for (var i = 0; i < this.markers.length; i++ ) {
+                    this.markers[i].setMap(null);
+                }
+                this.markers.length = 0;
+            }
+
+            this.appendMarkers = function(data){
+                NgMap.getMap().then(function(map){
+
+                    var bounds = new google.maps.LatLngBounds();
+
+                    data.documents.forEach(function(doc){
+                        var point = JSON.parse(doc.geometry.geom).coordinates
+                        point = proj4.transform(ESPG_3785, ESPG_4326, point)
+                        var latLng = new google.maps.LatLng(point.y, point.x)
+
+                        bounds.extend(latLng)
+
+                        _this.markers.push(new google.maps.Marker({
+                            position:  latLng,
+                            map: map,
+                        }))
+                    })
+
+                    map.fitBounds(bounds)
+
+                })
+            }
+
+            this.setMarkers = function(data){
+                this.removeMarkers()
+                this.appendMarkers(data)
+            }
+        }
+
+        $scope.gmap = new Map()
 
         url = urlQuery.getCurrent()
 

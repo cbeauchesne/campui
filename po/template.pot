@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: c2c_items.html:73
+#: c2c_items.html:85
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 
@@ -84,11 +84,11 @@ msgstr ""
 msgid "Activities"
 msgstr ""
 
-#: c2c_items.html:45
+#: c2c_items.html:55
 msgid "Add a filter item"
 msgstr ""
 
-#: c2c_items.html:24
+#: c2c_items.html:34
 msgid "Add a item"
 msgstr ""
 
@@ -508,7 +508,7 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: c2c_items.html:88
+#: c2c_items.html:100
 msgid "Select filters"
 msgstr ""
 
@@ -1140,6 +1140,10 @@ msgstr ""
 
 #: fixed_strings.html:195
 msgid "loop_hut"
+msgstr ""
+
+#: c2c_items.html:8
+msgid "map"
 msgstr ""
 
 #: fixed_strings.html:272
