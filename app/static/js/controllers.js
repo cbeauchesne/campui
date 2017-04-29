@@ -23,12 +23,6 @@ function getC2cController(c2c_item){
             });
         }
 
-        $scope.toggleMapView = function(){
-            if($scope.mapData.visible){
-                $scope.mapData.setMarkers($scope.data)
-            }
-        }
-
         $scope.mapData = mapData
 
         $scope.qe = new QueryEditor($scope, c2c_item, $scope.mapData.onDataLoad)
