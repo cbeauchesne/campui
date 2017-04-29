@@ -55,7 +55,8 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             url_query = query.url || "";
 
             url_query += "&offset=" + _this.scope.data.documents.length;
-            url_query += "&limit=" + _this.limit;
+            if(_this.limit!=30)
+                url_query += "&limit=" + _this.limit;
 
             _this._loadItems(url_query,
                 function(data){
@@ -82,7 +83,8 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             if(_this.offset != 0)
                 url_query += "&offset=" + _this.offset;
 
-            url_query += "&limit=" + _this.limit;
+            if(_this.limit!=30)
+                url_query += "&limit=" + _this.limit;
 
             _this._loadItems(url_query,
                 function(data){
@@ -105,13 +107,13 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         }
 
         _this.next = function(){
-            _this.offset += _this.limit;
+            _this.offset += _this.scope.data.documents.length;
             _this.setQuery(_this.currentQuery);
         }
 
         _this.previous = function(){
             if(_this.offset != 0){
-                _this.offset = Math.max(0, _this.offset - _this.limit);
+                _this.offset = Math.max(0, _this.offset - _this.scope.data.documents.length);
                 _this.setQuery(_this.currentQuery);
             }
         }
