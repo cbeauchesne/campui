@@ -640,9 +640,9 @@ app.factory("mapData", ["NgMap", function(NgMap){
     _this.visible=false
     _this.markers = []
 
-    _this.toggleMapView = function(){
+    _this.toggleMapView = function(data){
         if(_this.visible){
-            _this.setMarkers($scope.data)
+            _this.setMarkers(data)
         }
     }
 
