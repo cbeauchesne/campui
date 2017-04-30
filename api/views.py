@@ -28,7 +28,7 @@ class CurrentUserView(APIView):
 
 class UserView(APIView):
     def get(self, request, *args, **kwargs):
-        user = User.objects.get(username=self.kwargs['username'])
+        user = User.objects.get(username=self.kwargs['username'].lower())
         data = serializers.UserSerializer(user).data
         if user.is_anonymous():
             data["profile"]["params"] = {}
@@ -39,6 +39,7 @@ class UserView(APIView):
 class AuthView(APIView):
     def post(self, request, *args, **kwargs):
         userid, password = request.data['username'], request.data['password']
+        userid = userid.lower()
 
         auth = BasicAuthentication()
         user, _ = auth.authenticate_credentials(userid, password)

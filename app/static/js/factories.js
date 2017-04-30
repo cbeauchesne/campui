@@ -60,8 +60,8 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
 
         user.username = data.username
         user.profile = data.profile || anonymousProfile
-        user.profile.params = user.profile.params || {}
-        user.profile.params.queries = user.profile.params.queries || []
+        user.profile.params = user.profile.params || anonymousProfile.params
+        user.profile.params.queries = user.profile.params.queries || anonymousProfile.params.queries
 
         user.isAnonymous = !data.username
 
