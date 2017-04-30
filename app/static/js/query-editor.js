@@ -21,6 +21,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         _this.scope = scope
         _this.offset = 0
         _this.limit = 30
+
         _this.c2c_item = c2c_item
         _this.currentUser = currentUser
 
@@ -404,7 +405,7 @@ app.factory('filterItems', ["c2c_common","gettextCatalog", function(c2c_common, 
         mbroad :  new sliderIntFilterItem('MTB length asphalt',0,666),
         mbtrack :  new sliderIntFilterItem('MTB length trail',0,666),
         mbpush :  new sliderIntFilterItem('MTB portage',0,666),
-        rlen :  new sliderIntFilterItem('route length',0,666),
+        rlen :  new sliderIntFilterItem('route length',0,10000),
         ralt :  new sliderIntFilterItem('difficulties height',0,666),
 
         rappr :  new sliderIntFilterItem('height diff access',0,666),
