@@ -45,6 +45,7 @@
     "angularjs-slider": "^6.1.1",
     "angular-datepicker": "^2.0.3",
     "ngInfiniteScroll": "^1.3.4",
-    "proj4": "^2.4.3"
+    "proj4": "^2.4.3",
+    "ng-showdown": "^1.1.0"
   }
 }

@@ -372,6 +372,11 @@ app.factory('code_samples', function(){
         code:'[email]registration@camptocamp.org[/email]',
         html:'<a href="mailto:registration@camptocamp.org">registration@camptocamp.org</a>'
         },
+        {
+        name:'video1',
+        code:'[video]https://vimeo.com/80477501[/video]',
+        html:'<iframe src="https://player.vimeo.com/video/80477501" width="640" height="360"></iframe>'
+        },
     ]
 })
 

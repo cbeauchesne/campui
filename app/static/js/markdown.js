@@ -372,8 +372,22 @@ app.provider('markdownConverter', function () {
                 pushLine(result, 'td', cell1, cells)                       
             }                    
         }
-        
-        return [code, italic, bold, sup, sub, underline, monospace, del, c2c_title,
+
+        var video = {
+            type: 'lang',
+            regex: /\[video\](.*?)\[\/video\]/g,
+            replace: function (match, url) {
+                console.log(match)
+                if(url.includes("vimeo.com")){
+                    url = url.replace("vimeo.com","player.vimeo.com/video")
+                    return '<iframe src="' + url + '" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                }
+
+                return match
+            }
+        };
+
+        return [code, italic, bold, sup, sub, underline, monospace, del, c2c_title, video,
             warning, imp, img, imgLegend, url, url2, c2cItem, url4,url5, toc, ltag];
     }
 
@@ -403,8 +417,21 @@ app.directive('markdown', ['$sanitize', 'markdownConverter', function ($sanitize
         link: function (scope, element, attrs) {
             if (attrs.markdown) {
                 scope.$watch(attrs.markdown, function (newVal) {
-                    var html = newVal ? $sanitize(markdownConverter(newVal)) : '';
+                    var html = ''
+                    if(newVal){
+
+                        newVal = newVal.replace("<iframe ", "___IFRAME_IN__")
+                        newVal = newVal.replace("></iframe>", "___IFRAME_OUT__")
+
+                        html = $sanitize(markdownConverter(newVal));
+
+                        html = html.replace("___IFRAME_IN__", "<iframe ")
+                        html = html.replace("___IFRAME_OUT__", "></iframe>")
+
+                    }
+
                     element.html(html);
+
                 });
             } else {
                 var html = $sanitize(markdownConverter(element.text()));
