@@ -4,25 +4,25 @@
          translate>
         There is not yet images on outings linked to this route
     </div>
-    <span ng-repeat="outing in data.documents">
-        <span ng-repeat="image in outing.associations.images">
-            <figure>
-                <a href="https://www.camptocamp.org/images/{{image.document_id}}">
-                <img height="200"
-                     uib-tooltip="{{outing.date_start}} &#013; {{outing.associations.routes[0].locales[0].title_prefix}} : {{outing.associations.routes[0].locales[0].title}}"
-                     alt="{{image.locales[0].title}}"
-                     title="{{image.locales[0].title}}"
-                     ng-src="https://media.camptocamp.org/c2corg_active/{{image.filename.replace('.', 'MI.').replace('.svg', '.jpg')}}"/>
-                </a>
-                <figcaption>
-                    <a href="outing/{{outing.document_id}}">
+    <div class="all-images">
+        <span ng-repeat="outing in data.documents">
+            <span class="figure-container" ng-repeat="image in outing.associations.images">
+                <figure>
+                    <img height="200"
+                         uib-tooltip="{{outing.date_start}} &#013; {{outing.associations.routes[0].locales[0].title_prefix}} : {{outing.associations.routes[0].locales[0].title}}"
+                         alt="{{image.locales[0].title}}"
+                         title="{{image.locales[0].title}}"
+                         ng-src="https://media.camptocamp.org/c2corg_active/{{image.filename.replace('.', 'MI.').replace('.svg', '.jpg')}}"/>
 
-                        <condition-icon ng-if="outing.condition_rating"
-                                        condition="outing.condition_rating"></condition-icon>
-                        <span>{{image.locales[0].title}}</span>
+                    <figcaption class="figcaption">
+                        <a ui-sref="outing({id:outing.document_id})">
+                            <condition-icon ng-if="outing.condition_rating"
+                                            condition="outing.condition_rating"></condition-icon>
+                            <span>{{image.locales[0].title}}</span>
                         </a>
-                </figcaption>
-            </figure>
+                    </figcaption>
+                </figure>
+            </span>
         </span>
-    </span>
+    </p>
 </div>

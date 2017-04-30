@@ -290,38 +290,41 @@ text-align:justify
 ////////////////////////////////////////////////////////////////////
 
 
-.outing-images-view figure{
-    border: 1px solid #eee;
-    border-radius: 3px;
-    padding: 3px;
-    background-color: rgba(234,234,234,.37);
-    box-shadow: 0 3px 6px rgba(0,0,0,.25);
-    margin:5px;
-    text-align:center
- }
-
-
-//http://stackoverflow.com/questions/1464934/text-align-justify-and-images
-
-//a container with text-align:justify
-.outing-images-view{
+.outing-images-view .all-images{
     text-align: justify;
- }
+}
 
-// images need to be display:inline-block; else they will not interact as "text"
-// (in justify text last line is not affected you need to add one to make it works)
-.outing-images-view figure{
-    display:inline-block;
- }
-
-//need a line of "text" under your images for justifying apply
-.outing-images-view:after{
+.outing-images-view .all-images:after{
     content:"";
     display: inline-block;
     width: 100%;
     height: 0;
 }
 
+.outing-images-view .figure-container{
+    display:inline-block;
+    text-align:center;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 3px;
+    background-color: rgba(234,234,234,.37);
+    box-shadow: 0 3px 6px rgba(0,0,0,.25);
+    margin:5px;
+    vertical-align:top;
+}
+
+.outing-images-view figure{
+    display: table;
+ }
+
+.outing-images-view figure img{
+    display: block;
+}
+
+.outing-images-view figcaption{
+    display: table-caption;
+    caption-side: bottom;
+}
 
 ////////////////////////////////////////////////////////////////////
 
