@@ -158,6 +158,10 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#: login.html:28
+msgid "Create an account"
+msgstr ""
+
 #: common/navbar.html:95
 msgid "Credits"
 msgstr ""
@@ -413,6 +417,10 @@ msgstr ""
 msgid "Participants"
 msgstr ""
 
+#: register.html:23
+msgid "Password"
+msgstr ""
+
 #: common/ibox_tools.html:5
 msgid "Previous"
 msgstr ""
@@ -438,8 +446,16 @@ msgstr ""
 msgid "Recent outings"
 msgstr ""
 
+#: register.html:33
+msgid "Register"
+msgstr ""
+
 #: route.html:97
 msgid "Remarks"
+msgstr ""
+
+#: register.html:30
+msgid "Repeat password"
 msgstr ""
 
 #: common/navbar.html:90
@@ -577,6 +593,10 @@ msgstr ""
 
 #: fixed_strings.html:142
 msgid "Usefull"
+msgstr ""
+
+#: register.html:16
+msgid "User name"
 msgstr ""
 
 #: fixed_strings.html:184

@@ -63,8 +63,51 @@ app.controller("xreportsController", getC2cController('xreport'));
 app.controller("routesController", getC2cController('route'));
 app.controller("waypointsController", getC2cController('waypoint'));
 
-app.controller('authController', ['$scope','currentUser', function($scope, currentUser) {
+app.controller('authController', ['$scope','currentUser', 'api', function($scope, currentUser, api) {
     $scope.currentUser = currentUser;
+
+    var Form = function(){
+        var _this = this
+        this.username = ""
+        this.password1= ""
+        this.password2= ""
+
+        this.errors = {
+            username:true,
+            password1:true,
+            password2:true,
+            }
+        this.hasError = true
+
+        this.check = function(){
+
+            this.errors.password2 = this.password1 != this.password2
+            this.errors.password1 = !this.password1 || this.password1.length < 8
+            this.errors.username = !(/^[a-zA-Z0-9\.\-\_]+$/.test(this.username))
+            this.errors.username = !this.username || this.errors.username
+
+            this.hasError = this.errors.password2 || this.errors.password1 || this.errors.username
+
+            return !this.hasError
+        }
+
+        this.createUser = function(){
+            if(!this.check())
+                return
+
+            this.loading = true
+
+            api.users.create({username:this.username, password:this.password}, function(){
+                delete _this.loading
+            },
+            function(response){ //server error
+                _this.errors.global = response
+                delete _this.loading
+            })
+        }
+    }
+
+    $scope.form = new Form()
 }])
 
 app.controller('languageController', ['$scope','$cookies','gettextCatalog','tmhDynamicLocale', function($scope, $cookies, gettextCatalog, tmhDynamicLocale){
