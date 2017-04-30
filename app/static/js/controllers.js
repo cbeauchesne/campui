@@ -81,9 +81,9 @@ app.controller('authController', ['$scope','currentUser', 'api', function($scope
 
         this.check = function(){
 
-            this.errors.password2 = this.password1 != this.password2
+            this.errors.password2 = !this.password2 || this.password1 != this.password2
             this.errors.password1 = !this.password1 || this.password1.length < 8
-            this.errors.username = !(/^[a-zA-Z0-9\.\-\_]+$/.test(this.username))
+            this.errors.username = !(/^[a-zA-Z0-9\-\_]+$/.test(this.username))
             this.errors.username = !this.username || this.errors.username
 
             this.hasError = this.errors.password2 || this.errors.password1 || this.errors.username
@@ -95,15 +95,7 @@ app.controller('authController', ['$scope','currentUser', 'api', function($scope
             if(!this.check())
                 return
 
-            this.loading = true
-
-            api.users.create({username:this.username, password:this.password}, function(){
-                delete _this.loading
-            },
-            function(response){ //server error
-                _this.errors.global = response
-                delete _this.loading
-            })
+            currentUser.create(this.username, this.password1)
         }
     }
 

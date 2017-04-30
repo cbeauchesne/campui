@@ -65,6 +65,20 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
 
         user.isAnonymous = !data.username
 
+        user.create = function(username, password1){
+            user.user = true
+            api.users.create({username:username, password:password1}, function(data){
+                delete user.creating
+                delete user.creatingError
+                setUser(user, data)
+                $state.go('home')
+            },
+            function(response){ //server error
+                user.creatingError = response.data || response.statusText
+                delete user.creating
+            })
+        }
+
         user.login = function(username, password){
             console.log("login", username)
             user.loging = true
@@ -75,7 +89,7 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
                     delete user.loging
                     $state.go('home')
                 })
-                . catch(function(data){
+                .catch(function(data){
                     console.log("login error", data)
                     user.loginError = data.data.detail || data.statusText
                     delete user.loging

@@ -1,10 +1,11 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from django.http.response import HttpResponseBadRequest
+from django.forms import ValidationError as ValidationError
+from django.db.utils import IntegrityError
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authentication import BasicAuthentication
-
 
 from . import serializers
 
@@ -36,7 +37,6 @@ class UserView(APIView):
 
 
 class AuthView(APIView):
-
     def post(self, request, *args, **kwargs):
         userid, password = request.data['username'], request.data['password']
 
@@ -52,3 +52,25 @@ class AuthView(APIView):
     def delete(self, request, *args, **kwargs):
         logout(request)
         return Response()
+
+
+class CreateUserView(APIView):
+    def post(self, request, *args, **kwargs):
+        try:
+            username, password = request.data['username'], request.data['password']
+            username = username.lower()
+        except:
+            return HttpResponseBadRequest("")
+
+        try:
+            User.objects.create_user(username, password=password)
+        except IntegrityError:
+            return HttpResponseBadRequest("User still exists")
+        except:
+            return HttpResponseBadRequest("")
+
+        auth = BasicAuthentication()
+        user, _ = auth.authenticate_credentials(username, password)
+
+        login(request, user)
+        return Response(serializers.UserSerializer(user).data)

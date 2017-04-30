@@ -77,10 +77,10 @@ msgid "Actions"
 msgstr ""
 
 #: components/query_editor.html:7
-#: factories.js:455
-#: factories.js:508
-#: factories.js:529
-#: factories.js:565
+#: factories.js:469
+#: factories.js:522
+#: factories.js:543
+#: factories.js:579
 msgid "Activities"
 msgstr ""
 
@@ -112,13 +112,13 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: factories.js:461
-#: factories.js:535
+#: factories.js:475
+#: factories.js:549
 msgid "Area"
 msgstr ""
 
 #: common/navbar.html:49
-#: factories.js:594
+#: factories.js:608
 #: outing.html:23
 #: route.html:13
 #: waypoint.html:13
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Articles"
 msgstr ""
 
-#: factories.js:478
+#: factories.js:492
 msgid "Author"
 msgstr ""
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories.js:576
+#: factories.js:590
 msgid "Categories"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Credits :"
 msgstr ""
 
-#: factories.js:493
+#: factories.js:507
 msgid "Date"
 msgstr ""
 
@@ -209,7 +209,7 @@ msgstr ""
 msgid "E"
 msgstr ""
 
-#: factories.js:600
+#: factories.js:614
 #: outing.html:65
 msgid "Elevation"
 msgstr ""
@@ -226,7 +226,7 @@ msgstr ""
 msgid "Equipement rating"
 msgstr ""
 
-#: factories.js:514
+#: factories.js:528
 msgid "Event type"
 msgstr ""
 
@@ -258,11 +258,11 @@ msgstr ""
 msgid "Global rating"
 msgstr ""
 
-#: factories.js:473
+#: factories.js:487
 msgid "Height"
 msgstr ""
 
-#: factories.js:547
+#: factories.js:561
 msgid "Height diff"
 msgstr ""
 
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: factories.js:498
+#: factories.js:512
 msgid "Impacted people"
 msgstr ""
 
@@ -339,6 +339,10 @@ msgstr ""
 msgid "MTB up rating"
 msgstr ""
 
+#: register.html:23
+msgid "Minimum length : 8 characters"
+msgstr ""
+
 #: common/navbar.html:61
 msgid "Misc"
 msgstr ""
@@ -367,8 +371,8 @@ msgstr ""
 msgid "NW"
 msgstr ""
 
-#: factories.js:589
-#: factories.js:613
+#: factories.js:603
+#: factories.js:627
 #: me.html:79
 msgid "Name"
 msgstr ""
@@ -381,11 +385,15 @@ msgstr ""
 msgid "No filter"
 msgstr ""
 
+#: register.html:15
+msgid "Only a-z, 0-9 and _ are allowed"
+msgstr ""
+
 #: route.html:64
 msgid "Orientation :"
 msgstr ""
 
-#: factories.js:552
+#: factories.js:566
 msgid "Orientations"
 msgstr ""
 
@@ -417,7 +425,7 @@ msgstr ""
 msgid "Participants"
 msgstr ""
 
-#: register.html:23
+#: register.html:25
 msgid "Password"
 msgstr ""
 
@@ -425,7 +433,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: factories.js:571
+#: factories.js:585
 msgid "Quality"
 msgstr ""
 
@@ -433,7 +441,7 @@ msgstr ""
 msgid "Queries"
 msgstr ""
 
-#: factories.js:541
+#: factories.js:555
 msgid "Rating"
 msgstr ""
 
@@ -446,15 +454,18 @@ msgstr ""
 msgid "Recent outings"
 msgstr ""
 
-#: register.html:33
-msgid "Register"
+#: register.html:35
+msgid ""
+"Register\r\n"
+"\r\n"
+"                <img ng-if=\"currentUser.creating\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\">"
 msgstr ""
 
 #: route.html:97
 msgid "Remarks"
 msgstr ""
 
-#: register.html:30
+#: register.html:32
 msgid "Repeat password"
 msgstr ""
 
@@ -533,7 +544,7 @@ msgstr ""
 msgid "Select filters"
 msgstr ""
 
-#: factories.js:503
+#: factories.js:517
 msgid "Severity"
 msgstr ""
 
@@ -570,10 +581,10 @@ msgstr ""
 msgid "Timing"
 msgstr ""
 
-#: factories.js:449
-#: factories.js:487
-#: factories.js:523
-#: factories.js:560
+#: factories.js:463
+#: factories.js:501
+#: factories.js:537
+#: factories.js:574
 msgid "Title"
 msgstr ""
 
@@ -585,9 +596,9 @@ msgstr ""
 msgid "Total length"
 msgstr ""
 
-#: factories.js:581
-#: factories.js:605
-#: factories.js:618
+#: factories.js:595
+#: factories.js:619
+#: factories.js:632
 msgid "Type"
 msgstr ""
 
@@ -595,7 +606,7 @@ msgstr ""
 msgid "Usefull"
 msgstr ""
 
-#: register.html:16
+#: register.html:17
 msgid "User name"
 msgstr ""
 
