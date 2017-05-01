@@ -2,12 +2,7 @@
     <span ng-if="route.global_rating" uib-tooltip="{{'Global rating' | translate }}">
         {{route.global_rating}}
     </span>
-    <span ng-if="route.rock_free_rating" uib-tooltip="{{'Rock free rating' | translate }}">
-        {{route.rock_free_rating}}
-    </span>
-    <span ng-if="route.rock_required_rating" uib-tooltip="{{'Rock required rating' | translate }}">
-        >{{route.rock_required_rating}}
-    </span>
+    <span ng-if="route.rock_free_rating" uib-tooltip="{{'Rock free rating' | translate }}">{{route.rock_free_rating}}</span><span ng-if="route.rock_required_rating" uib-tooltip="{{'Rock required rating' | translate }}">>{{route.rock_required_rating}}</span>
     <span ng-if="route.engagement_rating" uib-tooltip="{{'Engagement rating' | translate }}">
         {{route.engagement_rating}}
     </span>
