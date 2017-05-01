@@ -122,7 +122,6 @@ app.provider('markdownConverter', function () {
             if(options){
                 options = options.split(" ")
 
-
                 options.forEach(function(option){
                     if(option){
                         css.push('image-' + option.replace("_","-"))
@@ -133,17 +132,18 @@ app.provider('markdownConverter', function () {
 
             css = css.length ? " class='" + css.join(" ") + "'" : ""
 
-            return '<figure' + css + '>' +
-                '<a href="https://www.camptocamp.org/images/' + imgId + '" target="_blank">' +
-                '<img src="https://api.camptocamp.org/images/proxy/' + imgId + '?size=' + size + '" />' +
-                '</a>' +
-                '</figure>'
+            var result =  '<figure' + css + '>' +
+                '<img src="https://api.camptocamp.org/images/proxy/' + imgId + '?size=' + size + '" ' +
+                'href="photoswipe.showGallery(' + imgId + ')"' +
+                '/></figure>'
 
+                console.log(result)
+                return result
         }
 
         var img = {
             type: 'lang',
-            regex: /\[img=([\dA-Za-z\._/]+)( [a-zA-Z\-_ ]*)?\/\]/g,
+            regex: /\[img=([\d]+|[A-Za-z][\dA-Za-z\._/]+)([a-zA-Z\-_ ]*)?\/\]/g,
             replace: function (match, imgId, options) {
                 return image(imgId, options)
             }
@@ -151,7 +151,7 @@ app.provider('markdownConverter', function () {
 
         var imgLegend = {
             type: 'lang',
-            regex: /\[img=([\dA-Za-z\._/]+)( [a-zA-Z\-_ ]*)?\]([^\[]*)\[\/img\]/g,
+            regex: /\[img=([\d]+|[A-Za-z][\dA-Za-z\._/]+)([a-zA-Z\-_ ]*)?\]([^\[]*)\[\/img\]/g,
             replace: function (match, imgId, options, legend) {
                 return image(imgId, options, legend)
             }
@@ -405,38 +405,41 @@ app.provider('markdownConverter', function () {
                 delete ltag_memory["R" + "_main_end"]
                 delete ltag_memory["L" + "_main_start"]
                 delete ltag_memory["L" + "_main_end"]
+
                 return (new showdown.Converter(opts)).makeHtml(code);
             }
         }
     };
 })
 
-app.directive('markdown', ['$sanitize', 'markdownConverter', function ($sanitize, markdownConverter) {
+app.directive('markdown', ['$sanitize', 'markdownConverter', '$compile', function ($sanitize, markdownConverter, $compile) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
-            if (attrs.markdown) {
-                scope.$watch(attrs.markdown, function (newVal) {
-                    var html = ''
-                    if(newVal){
 
-                        newVal = newVal.replace("<iframe ", "___IFRAME_IN__")
-                        newVal = newVal.replace("></iframe>", "___IFRAME_OUT__")
+            var convert = function(newVal){
+                var html = ''
 
-                        html = $sanitize(markdownConverter(newVal));
+                if(newVal){
 
-                        html = html.replace("___IFRAME_IN__", "<iframe ")
-                        html = html.replace("___IFRAME_OUT__", "></iframe>")
+                    html = markdownConverter(newVal)
 
-                    }
+                    html = html.replace("<iframe ", "___IFRAME_IN__")
+                    html = html.replace("></iframe>", "___IFRAME_OUT__")
 
-                    element.html(html);
+                    html = $sanitize(html);
 
-                });
-            } else {
-                var html = $sanitize(markdownConverter(element.text()));
-                element.html(html);
+                    html = html.replace("___IFRAME_IN__", "<iframe ")
+                    html = html.replace("___IFRAME_OUT__", "></iframe>")
+                    html = html.replace(/href=.photoswipe/g, 'ng-click="photoswipe')
+                }
+                return html
             }
-        }
+
+            scope.$watch(attrs.markdown, function (newVal) {
+                  element.append(convert(newVal));
+                  $compile(element.contents())(scope);
+            });
+        },
     };
 }])
