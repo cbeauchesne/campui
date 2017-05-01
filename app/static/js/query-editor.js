@@ -45,7 +45,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
                         onSuccess(data)
 
                     if(onDataLoad)
-                        onDataLoad(data)
+                        onDataLoad(_this.scope.data)
 
             }, function(response){
                     _this.scope.error = "CampToCamp error"
@@ -70,7 +70,8 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
                         _this.scope.data.documents.push(item)
                     })
 
-                    onSuccess(data)
+                    if(onSuccess)
+                        onSuccess(data)
                 },
                 onFailure
             )
