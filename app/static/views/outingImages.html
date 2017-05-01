@@ -9,7 +9,7 @@
             <div class="figure-container">
                 <figure>
                     <img height="200"
-                         ng-click="photoswipe.showGallery($index)"
+                         ng-click="photoswipe.showGallery(item.image.document_id)"
                          uib-tooltip="{{item.outing.date_start}} &#013; {{item.outing.associations.routes[0].locales[0].title_prefix}} : {{item.outing.associations.routes[0].locales[0].title}}"
                          alt="{{item.image.locales[0].title}}"
                          title="{{item.image.locales[0].title}}"
