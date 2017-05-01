@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: c2c_items.html:85
+#: c2c_items.html:94
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 
@@ -68,7 +68,7 @@ msgstr ""
 msgid "5min"
 msgstr ""
 
-#: waypoint.html:23
+#: waypoint.html:99
 msgid "Access"
 msgstr ""
 
@@ -77,10 +77,10 @@ msgid "Actions"
 msgstr ""
 
 #: components/query_editor.html:7
-#: factories.js:469
-#: factories.js:522
-#: factories.js:543
-#: factories.js:579
+#: factories.js:477
+#: factories.js:530
+#: factories.js:551
+#: factories.js:588
 msgid "Activities"
 msgstr ""
 
@@ -112,16 +112,16 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: factories.js:475
-#: factories.js:549
+#: factories.js:483
+#: factories.js:557
 msgid "Area"
 msgstr ""
 
 #: common/navbar.html:49
-#: factories.js:608
+#: factories.js:617
 #: outing.html:23
-#: route.html:13
-#: waypoint.html:13
+#: route.html:17
+#: waypoint.html:15
 msgid "Areas"
 msgstr ""
 
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Articles"
 msgstr ""
 
-#: factories.js:492
+#: factories.js:500
 msgid "Author"
 msgstr ""
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories.js:590
+#: factories.js:599
 msgid "Categories"
 msgstr ""
 
@@ -150,8 +150,8 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: route.html:59
-msgid "Configuration :"
+#: route.html:55
+msgid "Configuration"
 msgstr ""
 
 #: common/navbar.html:85
@@ -163,14 +163,12 @@ msgid "Create an account"
 msgstr ""
 
 #: common/navbar.html:95
+#: route.html:22
+#: waypoint.html:19
 msgid "Credits"
 msgstr ""
 
-#: components/license.html:2
-msgid "Credits :"
-msgstr ""
-
-#: factories.js:507
+#: factories.js:515
 msgid "Date"
 msgstr ""
 
@@ -192,13 +190,13 @@ msgstr ""
 
 #: area.html:18
 #: outing.html:31
-#: route.html:94
-#: waypoint.html:20
+#: route.html:90
+#: waypoint.html:96
 msgid "Description"
 msgstr ""
 
-#: route.html:42
-msgid "Difficulties height :"
+#: route.html:37
+msgid "Difficulties height"
 msgstr ""
 
 #: login.html:25
@@ -209,28 +207,28 @@ msgstr ""
 msgid "E"
 msgstr ""
 
-#: factories.js:614
+#: factories.js:623
 #: outing.html:65
 msgid "Elevation"
 msgstr ""
 
-#: route.html:74
-msgid "Elevation min/max :"
+#: route.html:70
+msgid "Elevation min/max"
 msgstr ""
 
-#: components/rating.html:11
+#: components/rating.html:6
 msgid "Engagement rating"
 msgstr ""
 
-#: components/rating.html:19
+#: components/rating.html:14
 msgid "Equipement rating"
 msgstr ""
 
-#: factories.js:528
+#: factories.js:536
 msgid "Event type"
 msgstr ""
 
-#: components/rating.html:22
+#: components/rating.html:17
 msgid "Exposition rating"
 msgstr ""
 
@@ -238,7 +236,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: common/ibox_tools.html:26
+#: common/ibox_tools.html:32
 msgid "Filters"
 msgstr ""
 
@@ -246,35 +244,32 @@ msgstr ""
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:100
+#: route.html:96
 msgid "Gears"
 msgstr ""
 
-#: route.html:51
-msgid "Glacier gears :"
+#: route.html:47
+msgid "Glacier gears"
 msgstr ""
 
 #: components/rating.html:2
 msgid "Global rating"
 msgstr ""
 
-#: factories.js:487
+#: factories.js:495
 msgid "Height"
 msgstr ""
 
-#: factories.js:561
+#: factories.js:569
 msgid "Height diff"
 msgstr ""
 
 #: outing.html:70
+#: route.html:65
 msgid "Height difference"
 msgstr ""
 
-#: route.html:69
-msgid "Height difference :"
-msgstr ""
-
-#: route.html:103
+#: route.html:99
 msgid "History"
 msgstr ""
 
@@ -286,7 +281,7 @@ msgstr ""
 msgid "ID C2C"
 msgstr ""
 
-#: components/rating.html:25
+#: components/rating.html:20
 msgid "Ice rating"
 msgstr ""
 
@@ -294,7 +289,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: factories.js:512
+#: factories.js:520
 msgid "Impacted people"
 msgstr ""
 
@@ -306,8 +301,12 @@ msgstr ""
 msgid "Invalid username/password."
 msgstr ""
 
-#: components/license.html:11
+#: components/license.html:10
 msgid "List of authors"
+msgstr ""
+
+#: common/ibox_tools.html:11
+msgid "Load more items"
 msgstr ""
 
 #: common/navbar.html:161
@@ -351,7 +350,7 @@ msgstr ""
 msgid "Misc."
 msgstr ""
 
-#: components/rating.html:28
+#: components/rating.html:23
 msgid "Mixed rating"
 msgstr ""
 
@@ -371,17 +370,17 @@ msgstr ""
 msgid "NW"
 msgstr ""
 
-#: factories.js:603
-#: factories.js:627
+#: factories.js:612
+#: factories.js:636
 #: me.html:79
 msgid "Name"
 msgstr ""
 
-#: common/ibox_tools.html:13
+#: common/ibox_tools.html:19
 msgid "Next"
 msgstr ""
 
-#: common/ibox_tools.html:34
+#: common/ibox_tools.html:40
 msgid "No filter"
 msgstr ""
 
@@ -389,15 +388,15 @@ msgstr ""
 msgid "Only a-z, 0-9 and _ are allowed"
 msgstr ""
 
-#: route.html:64
-msgid "Orientation :"
+#: route.html:60
+msgid "Orientation"
 msgstr ""
 
-#: factories.js:566
+#: factories.js:574
 msgid "Orientations"
 msgstr ""
 
-#: components/license.html:5
+#: components/license.html:4
 #: components/ng-photoswipe.html:35
 msgid "Original page"
 msgstr ""
@@ -415,7 +414,7 @@ msgstr ""
 msgid "Outings ({{outings.total}})"
 msgstr ""
 
-#: common/ibox_tools.html:50
+#: common/ibox_tools.html:56
 #: common/navbar.html:152
 #: me.html:6
 msgid "Parameters"
@@ -433,7 +432,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: factories.js:585
+#: factories.js:594
 msgid "Quality"
 msgstr ""
 
@@ -441,7 +440,7 @@ msgstr ""
 msgid "Queries"
 msgstr ""
 
-#: factories.js:555
+#: factories.js:563
 msgid "Rating"
 msgstr ""
 
@@ -449,8 +448,8 @@ msgstr ""
 msgid "Ratings"
 msgstr ""
 
-#: route.html:112
-#: waypoint.html:38
+#: route.html:108
+#: waypoint.html:115
 msgid "Recent outings"
 msgstr ""
 
@@ -461,7 +460,7 @@ msgid ""
 "                <img ng-if=\"currentUser.creating\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\">"
 msgstr ""
 
-#: route.html:97
+#: route.html:93
 msgid "Remarks"
 msgstr ""
 
@@ -473,7 +472,7 @@ msgstr ""
 msgid "Report a bug"
 msgstr ""
 
-#: components/rating.html:15
+#: components/rating.html:10
 msgid "Risk rating"
 msgstr ""
 
@@ -485,7 +484,7 @@ msgstr ""
 msgid "Rock ratings"
 msgstr ""
 
-#: components/rating.html:8
+#: components/rating.html:5
 msgid "Rock required rating"
 msgstr ""
 
@@ -493,18 +492,18 @@ msgstr ""
 msgid "Route description"
 msgstr ""
 
-#: route.html:79
-msgid "Route length :"
+#: route.html:75
+msgid "Route length"
 msgstr ""
 
-#: route.html:46
-msgid "Route type :"
+#: route.html:42
+msgid "Route type"
 msgstr ""
 
 #: common/navbar.html:37
 #: home.html:66
 #: search.html:13
-#: waypoint.html:33
+#: waypoint.html:109
 msgid "Routes"
 msgstr ""
 
@@ -524,7 +523,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: common/ibox_tools.html:18
+#: common/ibox_tools.html:24
 msgid "Save this query"
 msgstr ""
 
@@ -540,15 +539,15 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: c2c_items.html:100
+#: c2c_items.html:109
 msgid "Select filters"
 msgstr ""
 
-#: factories.js:517
+#: factories.js:525
 msgid "Severity"
 msgstr ""
 
-#: components/rating.html:31
+#: components/rating.html:26
 msgid "Ski rating"
 msgstr ""
 
@@ -569,10 +568,6 @@ msgstr ""
 msgid "Test!"
 msgstr ""
 
-#: route.html:28
-msgid "There is not yet an outing in this route"
-msgstr ""
-
 #: outingImages.html:2
 msgid "There is not yet images on outings linked to this route"
 msgstr ""
@@ -581,10 +576,10 @@ msgstr ""
 msgid "Timing"
 msgstr ""
 
-#: factories.js:463
-#: factories.js:501
-#: factories.js:537
-#: factories.js:574
+#: factories.js:471
+#: factories.js:509
+#: factories.js:545
+#: factories.js:583
 msgid "Title"
 msgstr ""
 
@@ -596,10 +591,14 @@ msgstr ""
 msgid "Total length"
 msgstr ""
 
-#: factories.js:595
-#: factories.js:619
-#: factories.js:632
+#: factories.js:604
+#: factories.js:628
+#: factories.js:641
 msgid "Type"
+msgstr ""
+
+#: c2c_items.html:86
+msgid "Use as a filter"
 msgstr ""
 
 #: fixed_strings.html:142
@@ -615,9 +614,9 @@ msgid "W"
 msgstr ""
 
 #: common/navbar.html:43
-#: route.html:85
+#: route.html:81
 #: search.html:24
-#: waypoint.html:41
+#: waypoint.html:119
 msgid "Waypoints"
 msgstr ""
 
@@ -637,6 +636,10 @@ msgstr ""
 msgid "access time"
 msgstr ""
 
+#: waypoint.html:76
+msgid "access_time"
+msgstr ""
+
 #: fixed_strings.html:282
 msgid "accessible_when_wardened"
 msgstr ""
@@ -646,6 +649,7 @@ msgid "accidental_avalanche"
 msgstr ""
 
 #: fixed_strings.html:43
+#: route.html:31
 msgid "activities"
 msgstr ""
 
@@ -726,6 +730,10 @@ msgstr ""
 msgid "best periods"
 msgstr ""
 
+#: waypoint.html:68
+msgid "best_periods"
+msgstr ""
+
 #: fixed_strings.html:204
 msgid "bisse"
 msgstr ""
@@ -790,6 +798,10 @@ msgstr ""
 msgid "children proof"
 msgstr ""
 
+#: waypoint.html:88
+msgid "children_proof"
+msgstr ""
+
 #: fixed_strings.html:128
 msgid "climbing indoor types"
 msgstr ""
@@ -824,6 +836,22 @@ msgstr ""
 
 #: fixed_strings.html:207
 msgid "climbing_outdoor"
+msgstr ""
+
+#: waypoint.html:45
+msgid "climbing_outdoor_types"
+msgstr ""
+
+#: waypoint.html:53
+msgid "climbing_rating"
+msgstr ""
+
+#: waypoint.html:57
+msgid "climbing_rating_median"
+msgstr ""
+
+#: waypoint.html:49
+msgid "climbing_styles"
 msgstr ""
 
 #: fixed_strings.html:56
@@ -898,6 +926,7 @@ msgstr ""
 #: fixed_strings.html:106
 #: fixed_strings.html:66
 #: fixed_strings.html:68
+#: waypoint.html:33
 msgid "elevation"
 msgstr ""
 
@@ -924,6 +953,10 @@ msgstr ""
 
 #: fixed_strings.html:132
 msgid "equipment ratings"
+msgstr ""
+
+#: waypoint.html:83
+msgid "equipment_ratings"
 msgstr ""
 
 #: fixed_strings.html:190
@@ -1027,6 +1060,10 @@ msgstr ""
 msgid "grocery"
 msgstr ""
 
+#: waypoint.html:37
+msgid "height"
+msgstr ""
+
 #: fixed_strings.html:104
 msgid "height diff access"
 msgstr ""
@@ -1045,6 +1082,10 @@ msgstr ""
 
 #: fixed_strings.html:109
 msgid "height min"
+msgstr ""
+
+#: waypoint.html:41
+msgid "height_median"
 msgstr ""
 
 #: fixed_strings.html:165
@@ -1259,6 +1300,7 @@ msgstr ""
 
 #: fixed_strings.html:117
 #: fixed_strings.html:47
+#: waypoint.html:64
 msgid "orientations"
 msgstr ""
 
@@ -1348,6 +1390,7 @@ msgid "prominence"
 msgstr ""
 
 #: fixed_strings.html:307
+#: waypoint.html:82
 msgid "protected"
 msgstr ""
 
@@ -1377,6 +1420,10 @@ msgstr ""
 
 #: fixed_strings.html:126
 msgid "rain proof"
+msgstr ""
+
+#: waypoint.html:87
+msgid "rain_proof"
 msgstr ""
 
 #: fixed_strings.html:170
@@ -1421,6 +1468,10 @@ msgstr ""
 msgid "rock_climbing"
 msgstr ""
 
+#: waypoint.html:86
+msgid "rock_types"
+msgstr ""
+
 #: fixed_strings.html:289
 msgid "roof"
 msgstr ""
@@ -1440,6 +1491,10 @@ msgstr ""
 
 #: fixed_strings.html:111
 msgid "routes quantity"
+msgstr ""
+
+#: waypoint.html:72
+msgid "routes_quantity"
 msgstr ""
 
 #: fixed_strings.html:257
@@ -1639,6 +1694,10 @@ msgstr ""
 
 #: fixed_strings.html:115
 msgid "waypoint type"
+msgstr ""
+
+#: waypoint.html:28
+msgid "waypoint_type"
 msgstr ""
 
 #: fixed_strings.html:25

@@ -4,6 +4,10 @@
             <i class="fa fa-road"></i>
             <route-link-c2c route="route"></route-link-c2c>
         </h1>
+        <span ng-if="route.associations.recent_outings.documents.length!=0">
+            <linked-outings item="route"></linked-outings>
+            <outing-images item="route"></outing-images>
+        </span>
     </div>
 
     <div class="ibox-content" style="display: block;">
@@ -15,68 +19,60 @@
                 </p>
             </div>
             <div class="col-sm-4">
-                <div license type="'route'" id="route.document_id" cc="'by-sa'"></div>
-            </div>
-        </div>
-        <div class="row route-header">
-            <div class="col-md-12">
-                <div ng-if="route.associations.recent_outings.documents.length!=0">
-                    <linked-outings item="route"></linked-outings>
-                    <outing-images item="route"></outing-images>
-                </div>
-                <div ng-if="route.associations.recent_outings.documents.length==0">
-                    <i translate>There is not yet an outing in this route</i>
-                </div>
+                <label translate>Credits</label>
+                <span license type="'route'" id="route.document_id" cc="'by-sa'"></span>
             </div>
         </div>
 
-        <div class="row route-header">
+        <div class="row item-header">
             <div class="col-sm-4">
 
                 <div>
+                    <label translate>activities</label>
                     <activities activities="route.activities"></activities>
                     <rating route="route"></rating>
                 </div>
 
                 <div ng-if="route.height_diff_difficulties">
-                    <strong translate>Difficulties height :</strong>{{route.height_diff_difficulties}}&nbsp;m
+                    <label translate>Difficulties height</label>
+                    {{route.height_diff_difficulties}}&nbsp;m
                 </div>
 
                 <div ng-if="route.route_types">
-                    <strong translate>Route type :</strong>
+                    <label translate>Route type</label>
                     {{translateArray(route.route_types).join(', ')}}
                 </div>
 
                 <div>
-                    <strong translate>Glacier gears :</strong> {{route.glacier_gear | translate}}
+                    <label translate>Glacier gears</label> {{route.glacier_gear | translate}}
                 </div>
 
             </div>
 
             <div class="col-sm-4">
 
-                <div>
-                    <strong translate>Configuration :</strong>
+                <div ng-if="route.configuration">
+                    <label translate>Configuration</label>
                     {{translateArray(route.configuration).join(', ')}}
                 </div>
 
-                <div>
-                    <strong translate>Orientation :</strong>
+                <div ng-if="route.orientations">
+                    <label translate>Orientation</label>
                     {{translateArray(route.orientations).join(', ')}}
                 </div>
 
                 <div ng-if="route.height_diff_up || route.height_diff_down">
-                    <strong translate>Height difference :</strong>
+                    <label translate>Height difference</label>
                     +{{route.height_diff_up}}&nbsp;m&nbsp;/&nbsp;-{{route.height_diff_down}}&nbsp;m
                 </div>
 
                 <div ng-if="route.elevation_min || route.elevation_max">
-                    <strong translate>Elevation min/max :</strong>
+                    <label translate>Elevation min/max</label>
                     {{route.elevation_min}}&nbsp;m&nbsp;/&nbsp;{{route.elevation_max}}&nbsp;m
                 </div>
 
                 <div ng-if="route.route_length">
-                    <strong translate>Route length :</strong>{{route.route_length}}&nbsp;m
+                    <label translate>Route length</label>{{route.route_length}}&nbsp;m
                 </div>
 
             </div>

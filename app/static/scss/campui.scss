@@ -271,10 +271,28 @@ display:none;
 
 
 ////////////////////////////////////////////////////////////////////
-// route specific
+// waypoint, route,  specific
 
-.route-header{
-    margin-bottom:15px
+.item-header{
+  //  margin-bottom:15px
+}
+
+.item-header label:after{
+content:" :"
+}
+
+.item-header label:first-letter {
+    text-transform: uppercase;
+}
+
+.route-view .ibox-title h1,
+.waypoint-view .ibox-title h1{
+    display:inline
+}
+
+.route-view .badge,
+.waypoint-view .badge{
+    margin-bottom:10px
 }
 
 ////////////////////////////////////////////////////////////////////
