@@ -64,11 +64,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
         controller : "authController"
     })
 
-    $stateProvider.state('register', {
-        url: "/register",
-        templateUrl: "static/views/register.html",
-        controller : "authController"
-    })
+//    $stateProvider.state('register', {
+//        url: "/register",
+//        templateUrl: "static/views/register.html",
+//        controller : "authController"
+//    })
 
     $stateProvider.state('search',{
         url: "/search",

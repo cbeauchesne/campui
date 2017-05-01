@@ -158,10 +158,6 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: login.html:28
-msgid "Create an account"
-msgstr ""
-
 #: common/navbar.html:95
 #: route.html:20
 #: waypoint.html:19
@@ -197,10 +193,6 @@ msgstr ""
 
 #: route.html:35
 msgid "Difficulties height"
-msgstr ""
-
-#: login.html:25
-msgid "Do not have an account?"
 msgstr ""
 
 #: fixed_strings.html:180
