@@ -149,8 +149,8 @@ app.config(['$httpProvider', function($httpProvider){
 app.config(["$provide", function($provide) {
     $provide.decorator('$httpBackend', ["$delegate", function($delegate) {
         return function(method, url, post, callback, headers, timeout, withCredentials, responseType) {
-            url = url.replace(',', '%2C');
-            url = url.replace('+', '%2B');
+            url = url.replace(/,/g, '%2C');
+            url = url.replace(/\+/g, '%2B');
             $delegate(method, url, post, callback, headers, timeout, withCredentials, responseType);
         };
     }])
