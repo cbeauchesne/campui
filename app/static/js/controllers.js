@@ -27,10 +27,13 @@ function getC2cController(c2c_item){
         $scope.qe = new QueryEditor($scope, c2c_item, $scope.mapData.onDataLoad)
 
         $scope.mapData.onMapMove = function(coords){
-            if($scope.mapData.filterMode){
+            if($scope.mapData.filterMode)
                 $scope.qe.queryModel.bbox = coords.join(",")
-                $scope.qe.apply()
-            }
+            else
+                delete $scope.qe.queryModel.bbox
+
+            $scope.qe.apply()
+
         }
 
         url = urlQuery.getCurrent()
