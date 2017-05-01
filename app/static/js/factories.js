@@ -665,58 +665,20 @@ app.factory("mapData", ["NgMap", function(NgMap){
         _this.visible=false
         _this.markers = []
 
+        _this.toggleFilterMode = function(){
+            console.log("_this.filterMode", _this.filterMode)
+             if(_this.filterMode)
+                _this.sendBoundsToQuery();
+             else
+                _this.onMapMove()
+        }
+
         _this.toggleMapView = function(data){
             if(_this.visible){
                 _this.setMarkers(data)
 
                 if(!_this._bounded){
                     _this._bounded = true
-
-    //todo : css
-    function getFilterControl(map) {
-
-        var controlUI =document.createElement('div');
-
-        // Set CSS for the control border.
-        controlUI.style.backgroundColor = '#fff';
-        controlUI.style.border = '2px solid #fff';
-        controlUI.style.borderRadius = '3px';
-        controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
-        controlUI.style.cursor = 'pointer';
-        controlUI.style.margin = '10px';
-        controlUI.style.textAlign = 'center';
-        controlUI.title = 'Show only items visible on this portion';
-
-        // Set CSS for the control interior.
-        var controlCheckbox = document.createElement('input');
-        controlCheckbox.type= "checkbox"
-        controlCheckbox.style.color = 'rgb(25,25,25)';
-        controlCheckbox.style.fontFamily = 'Roboto,Arial,sans-serif';
-        controlCheckbox.id = "mapFilterCheckbox"
-        controlCheckbox.style.marginLeft = '5px';
-        controlUI.appendChild(controlCheckbox);
-
-        var controlLabel = document.createElement('label');
-        controlLabel.innerHTML = "Use as a filter"
-        controlLabel.htmlFor = controlCheckbox.id
-        controlLabel.style.marginBottom = '5px';
-        controlLabel.style.margin = '5px';
-        controlLabel.style.marginTop = '0px';
-        controlLabel.style.verticalAlign = 'middle';
-        controlLabel.style.color = 'rgb(25,25,25)';
-        controlUI.appendChild(controlLabel);
-
-        controlCheckbox.addEventListener('change', function(){
-            _this.filterMode = !_this.filterMode
-
-             if(_this.filterMode)
-                _this.sendBoundsToQuery();
-             else
-                _this.onMapMove()
-        })
-
-        return controlUI
-    }
 
                     NgMap.getMap().then(function(map){
 
@@ -726,13 +688,6 @@ app.factory("mapData", ["NgMap", function(NgMap){
                             if(_this.filterMode)
                                 window.setTimeout(_this.sendBoundsToQuery, 0);
                         });
-
-                      var centerControlDiv = getFilterControl(centerControlDiv, map);
-
-                      centerControlDiv.index = 0;
-
-                      map.controls[google.maps.ControlPosition.RIGHT_TOP].insertAt(0,centerControlDiv);
-
                     })
                 }
             }
