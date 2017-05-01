@@ -69,14 +69,23 @@
                          ui-grid="{data:data.documents, columnDefs:columnDefs, infiniteScrollDown: true, onRegisterApi:onRegisterApi,infiniteScrollRowsFromEnd:5}"
                          ui-grid-infinite-scroll
                          style="height: 500px;">
-
                     </div>
 
                     <div ng-if="data && mapData.visible"
                          map-lazy-load="http://maps.google.com/maps/api/js?key=AIzaSyAYiZ3lDd0WNJIOEWLO_y2tJHTmWmZG6oY">
+
                         <ng-map street-view-control="false"
                                 style="height: 500px;"
                                 map-type-id="terrain">
+
+                            <custom-control position="TOP_RIGHT">
+                                <div class="mapFilterToggler" title="Show only items visible on this portion">
+                                    <input type="checkbox" id="mapFilterCheckbox"
+                                           ng-model="mapData.filterMode"
+                                           ng-change="mapData.toggleFilterMode()">
+                                    <label for="mapFilterCheckbox" translate>Use as a filter</label>
+                                </div>
+                            </custom-control>
                         </ng-map>
                     </div>
                 </div>
