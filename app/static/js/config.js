@@ -92,24 +92,34 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
     $stateProvider.state('outingImages', {
         url: "/outing-images?r&u&w&a",
         templateUrl: 'static/views/outingImages.html',
-        controller: ['$scope', 'c2cBeta', '$stateParams', function($scope, c2cBeta, $stateParams){
+        controller: ['$scope', 'c2cBeta', '$stateParams', 'photoswipe', function($scope, c2cBeta, $stateParams, photoswipe){
             var appendImages = function(data){
 
                 data.documents.forEach(function(outing){
                     outing.associations.images.forEach(function(image){
-                        $scope.images.push(image)
+                        $scope.items.push({image:image, outing:outing})
                     })
                 })
 
                 console.log($scope.images)
             }
 
-            $scope.images = []
+            $scope.items = []
             $scope.loadMore = function(){
                 $scope.data.loadMore(appendImages)
             }
 
             $scope.data = c2cBeta.outings.get($stateParams, appendImages)
+
+            $scope.photoswipe = photoswipe
+            $scope.photoswipe.getImages = function() {
+                var images = []
+                $scope.items.forEach(function(item){
+                    images.push(item.image)
+                })
+
+                return images
+            }
         }]
     })
 }]);
