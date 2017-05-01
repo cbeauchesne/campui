@@ -316,17 +316,25 @@ app.service('photoswipe', ["locale", function(locale){
 
     _this.getImages = undefined
 
-    _this.showGallery = function (i) {
-        _this.opts.index = i;
+    _this.showGallery = function (document_id) {
+        _this.opts.index = 0;
         _this.slides = []
-        _this.getImages().forEach(function (image) {
+
+        var images = _this.getImages()
+        for(i=0;i<images.length;i++){
+            var image = images[i]
+
             _this.slides.push({
                 src:"https://media.camptocamp.org/c2corg_active/" + image.filename.replace('.', 'BI.').replace('.svg', '.jpg'),
                 w:0,h:0,
                 title:locale.get(image).title,
                 document_id:image.document_id,
             })
-        })
+
+            if(document_id==image.document_id)
+                _this.opts.index = i
+        }
+
         _this.open = true;
     }
 
