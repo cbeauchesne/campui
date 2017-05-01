@@ -453,11 +453,8 @@ msgstr ""
 msgid "Recent outings"
 msgstr ""
 
-#: register.html:35
-msgid ""
-"Register\r\n"
-"\r\n"
-"                <img ng-if=\"currentUser.creating\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\">"
+#: register.html:37
+msgid "Register"
 msgstr ""
 
 #: route.html:93
@@ -1338,6 +1335,7 @@ msgid "participants count"
 msgstr ""
 
 #: fixed_strings.html:306
+#: fixed_strings.html:334
 msgid "partly_protected"
 msgstr ""
 
@@ -1495,6 +1493,10 @@ msgstr ""
 
 #: waypoint.html:72
 msgid "routes_quantity"
+msgstr ""
+
+#: fixed_strings.html:332
+msgid "safe"
 msgstr ""
 
 #: fixed_strings.html:257
@@ -1669,6 +1671,10 @@ msgstr ""
 
 #: fixed_strings.html:287
 msgid "vertical"
+msgstr ""
+
+#: fixed_strings.html:333
+msgid "very_safe"
 msgstr ""
 
 #: fixed_strings.html:90
