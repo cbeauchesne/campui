@@ -14,7 +14,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
 
         params.detailled_controller = params.detailled_controller ?
             params.detailled_controller :
-            ['$scope', '$stateParams', 'c2c', 'locale', 'gettextCatalog', function($scope, $stateParams, c2c, locale, gettextCatalog){
+            ['$scope', '$stateParams', 'c2c', 'locale', 'gettextCatalog', 'photoswipe', function($scope, $stateParams, c2c, locale, gettextCatalog, photoswipe){
                 c2c[item].get($stateParams, function(data){
                     $scope[item] = data;
                     $scope.currentLocale = $scope.getLocale(data)
@@ -31,6 +31,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
 
                         return r
                     }
+                }
+
+                $scope.photoswipe = photoswipe
+                $scope.photoswipe.getImages = function() {
+                    return $scope[item].associations.images
                 }
             }]
 
