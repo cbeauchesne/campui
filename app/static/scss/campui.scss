@@ -445,3 +445,29 @@ display:inline-table;
 .onoffswitch-switch{
 height:20px
 }
+
+/////////////////////////
+
+.mapFilterToggler{
+    background-color : #fff;
+    border : 2px solid #fff;
+    border-radius : 3px;
+    box-shadow : 0 2px 6px rgba(0,0,0,.3);
+    cursor : pointer;
+    margin : 10px;
+    text-align : center;
+}
+
+.mapFilterToggler input{
+    color : rgb(25,25,25);
+    font-family : Roboto,Arial,sans-serif;
+    margin:5px;
+}
+
+.mapFilterToggler label{
+    margin : 5px;
+    margin-top : 0px;
+    margin-left : 0px;
+    vertical-align : middle;
+    color : rgb(25,25,25);
+}
