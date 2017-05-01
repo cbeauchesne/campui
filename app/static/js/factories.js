@@ -684,16 +684,17 @@ app.factory("mapData", ["NgMap", function(NgMap){
 
                         _this._map = map
 
-                        map.addListener('dragend', function() {
-                            if(_this.filterMode)
-                                window.setTimeout(_this.sendBoundsToQuery, 0);
-                        });
+                        map.addListener('dragend', _this.sendBoundsToQuery);
+                        map.addListener('zoom_changed', _this.sendBoundsToQuery);
                     })
                 }
             }
         }
 
         _this.sendBoundsToQuery = function(){
+            if(!_this.filterMode)
+                return
+
             var bounds = _this._map.getBounds().toJSON()
             var NO = proj4.transform(ESPG_4326, ESPG_3785, [bounds.east,bounds.north])
             var SW = proj4.transform(ESPG_4326, ESPG_3785, [bounds.west,bounds.south])

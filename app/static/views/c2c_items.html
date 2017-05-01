@@ -5,7 +5,7 @@
                 <div class="ibox-title">
                     <h3>{{c2c_item + 's' | translate}}</h3>
 
-                    <div class="onoffswitch" uib-tooltip="{{ 'map' | translate }}">
+                    <div ng-if="data" class="onoffswitch" uib-tooltip="{{ 'map' | translate }}">
                         <input type="checkbox" ng-model="mapData.visible" ng-change="mapData.toggleMapView(data)"
                                class="onoffswitch-checkbox" id="mapToggler">
                         <label class="onoffswitch-label" for="mapToggler">
