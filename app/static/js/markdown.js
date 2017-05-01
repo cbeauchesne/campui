@@ -431,15 +431,21 @@ app.directive('markdown', ['$sanitize', 'markdownConverter', '$compile', functio
 
                     html = html.replace("___IFRAME_IN__", "<iframe ")
                     html = html.replace("___IFRAME_OUT__", "></iframe>")
+                    
                     html = html.replace(/href=.photoswipe/g, 'ng-click="photoswipe')
                 }
                 return html
             }
 
-            scope.$watch(attrs.markdown, function (newVal) {
-                  element.append(convert(newVal));
-                  $compile(element.contents())(scope);
-            });
+            if(attrs.markdown)
+                scope.$watch(attrs.markdown, function (newVal) {
+                      element.append(convert(newVal));
+                      $compile(element.contents())(scope);
+                });
+            else{
+                var html = convert(element.text());
+                element.html(html)
+            }
         },
     };
 }])
