@@ -8,7 +8,7 @@
         <linked-outings item="waypoint"></linked-outings>
     </div>
 
-    <div class="ibox-content" style="display: block;">
+    <div class="ibox-content item-metadata">
 
         <div class="row item-header">
             <div class="col-sm-8">
@@ -79,18 +79,31 @@
 
             </div>
             <div class="col-sm-4">
-                <div ng-if="waypoint.protected"><label translate>protected</label>{{waypoint.protected}}</div>
-                <div ng-if="waypoint.equipment_ratings"><label translate>equipment_ratings</label>{{waypoint.equipment_ratings}}
+                <div ng-if="waypoint.protected">
+                    <label translate>protected</label>
+                    {{waypoint.protected}}
                 </div>
 
-                <div ng-if="waypoint.rock_types"><label translate>rock_types</label>{{waypoint.rock_types}}</div>
-                <div ng-if="waypoint.rain_proof"><label translate>rain_proof</label>{{waypoint.rain_proof}}</div>
-                <div ng-if="waypoint.children_proof"><label translate>children_proof</label>{{waypoint.children_proof}}
+                <div ng-if="waypoint.equipment_ratings">
+                    <label translate>equipment_ratings</label>
+                    {{waypoint.equipment_ratings}}
+                </div>
+
+                <div ng-if="waypoint.rock_types">
+                    <label translate>rock_types</label>
+                    {{waypoint.rock_types}}</div>
+                <div ng-if="waypoint.rain_proof">
+                    <label translate>rain_proof</label>
+                    {{waypoint.rain_proof}}</div>
+                <div ng-if="waypoint.children_proof">
+                    <label translate>children_proof</label>
+                    {{waypoint.children_proof}}
                 </div>
 
             </div>
         </div>
-
+    </div>
+    <div class="ibox-content">
         <div class="row">
             <div class="col-sm-12">
                 <h2 ng-if="currentLocale.description" translate>Description</h2>
