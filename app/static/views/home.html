@@ -32,13 +32,15 @@
                                 <activities activities="outing.activities"></activities>
                                 <outing-link outing="outing"></outing-link>
                                 <span class="outing-area">{{getLocale(outing.areas[outing.areas.length-1]).title}}</span>
+                                <i class="fa fa-star followed-icon"
+                                   ng-if="user.isFollowed(getItemDetails(outing.document_id))"></i>
                             </div>
                             <div class="pull-right">
                                 <i class="fa fa-camera icon-picture-presence"
                                    uib-tooltip="{{ getImageCount(outing.document_id) + ' images'}}"
                                    ng-if="getImageCount(outing.document_id)!=0"></i>
                                 <i class="fa fa-circle-thin"
-                                ng-if="!outing.condition_rating"></i>
+                                   ng-if="!outing.condition_rating"></i>
                                 <condition-icon ng-if="outing.condition_rating"
                                                 condition="outing.condition_rating"></condition-icon>
                             </div>
@@ -50,6 +52,23 @@
         </div>
 
         <div class="col-lg-5 no-padding">
+
+            <div ng-if="false" ng-controller="forumController" class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h3 translate>Forum</h3>
+                </div>
+                <div class="ibox-content">
+                    <div ng-repeat="topic in latest_topics.topic_list.topics | limitTo:15">
+                        <a href="{{'https://forum.camptocamp.org/t/' + topic.slug + '/' + topic.id + '/' + topic.highest_post_number}}">
+                            {{topic.title}}
+                        </a>
+                        <img class="pull-right"
+                             uib-tooltip="{{topic.last_poster_username}}"
+                             ng-src="https://forum.camptocamp.org{{getForumUser(topic.last_poster_username).avatar_template.replace('{size}','16')}}">
+                    </div>
+                </div>
+            </div>
+
             <div ng-controller="articlesController" ng-init="qe.limit=5" class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h3 translate>Articles</h3>
@@ -82,11 +101,6 @@
                     </div>
                 </div>
             </div>
-            <!--
-                        <div ng-controller="forumController">
-                            {{latest_topics}}
-                        </div>
-                        -->
         </div>
     </div>
 </div>
