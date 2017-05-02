@@ -34,6 +34,11 @@
                                 <span class="outing-area">{{getLocale(outing.areas[outing.areas.length-1]).title}}</span>
                             </div>
                             <div class="pull-right">
+                                <i class="fa fa-camera icon-picture-presence"
+                                   uib-tooltip="{{ getImageCount(outing.document_id) + ' images'}}"
+                                   ng-if="getImageCount(outing.document_id)!=0"></i>
+                                <i class="fa fa-circle-thin"
+                                ng-if="!outing.condition_rating"></i>
                                 <condition-icon ng-if="outing.condition_rating"
                                                 condition="outing.condition_rating"></condition-icon>
                             </div>
@@ -61,7 +66,7 @@
                 </div>
             </div>
 
-            <div ng-controller="routesController"  ng-init="qe.limit=25" class="ibox float-e-margins">
+            <div ng-controller="routesController" ng-init="qe.limit=25" class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h3 translate>Routes</h3>
                     <div ibox-tools></div>
@@ -77,11 +82,11 @@
                     </div>
                 </div>
             </div>
-<!--
-            <div ng-controller="forumController">
-                {{latest_topics}}
-            </div>
-            -->
+            <!--
+                        <div ng-controller="forumController">
+                            {{latest_topics}}
+                        </div>
+                        -->
         </div>
     </div>
 </div>
