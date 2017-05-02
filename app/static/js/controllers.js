@@ -157,5 +157,17 @@ app.controller('forumController',['$scope','c2c',function($scope, c2c){
         function (data){console.log("s", data)},
         function (data){console.log("e", data)}
         )
+
+    $scope.getForumUser = function(username){
+        var result = undefined
+
+        $scope.latest_topics.users.forEach(function(user){
+            if(user.username==username)
+                result = user
+        })
+
+        return result
+    }
+
 }]);
 
