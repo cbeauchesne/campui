@@ -301,6 +301,16 @@ content:" :"
     display:inline
 }
 
+.followed-icon{
+    color:gold;
+}
+
+.route-view .ibox-title .follow-button,
+.user-view .ibox-title .follow-button{
+    font-size:20px;
+    cursor:pointer;
+}
+
 .area-view .badge,
 .route-view .badge,
 .waypoint-view .badge{
