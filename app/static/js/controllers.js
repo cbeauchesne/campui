@@ -1,8 +1,8 @@
 
 function getC2cController(c2c_item){
 
-    return ['$scope','QueryEditor','currentUser','columnDefs','gettextCatalog','locale','urlQuery', 'mapData',
-    function($scope, QueryEditor, currentUser, columnDefs, gettextCatalog, locale, urlQuery, mapData){
+    return ['$scope','QueryEditor','currentUser','columnDefs','gettextCatalog','locale','urlQuery', 'mapData','c2c',
+    function($scope, QueryEditor, currentUser, columnDefs, gettextCatalog, locale, urlQuery, mapData, c2c){
 
         $scope.getLocale = function(item){ return locale.get(item)}
         $scope.c2c_item = c2c_item
@@ -14,6 +14,23 @@ function getC2cController(c2c_item){
 
         $scope.user = currentUser
         $scope.columnDefs = columnDefs[c2c_item]
+
+        $scope._itemCache = {}
+        $scope.getItemDetails = function(id){
+            if(!$scope._itemCache[id])
+                $scope._itemCache[id] = c2c[c2c_item].get({id:id})
+
+            return $scope._itemCache[id]
+        }
+
+        $scope.getImageCount = function(id){
+            var details = $scope.getItemDetails(id)
+
+            if(!details || !details.$resolved)
+                return 0
+
+            return details.associations.images.length
+        }
 
         $scope.onRegisterApi = function(gridApi) {
             gridApi.infiniteScroll.on.needLoadMoreData($scope, function() {
