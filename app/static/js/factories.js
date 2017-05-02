@@ -22,7 +22,11 @@ app.factory('api', ['$resource', function($resource){
 app.factory('anonymousProfile', ["gettextCatalog", function(gettextCatalog){
     profile = {
         params:{
-            queries:[]
+            queries:[],
+            follow:{
+                users:[],
+                routes:[]
+            }
         }
     }
 
@@ -62,8 +66,57 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
         user.profile = data.profile || anonymousProfile
         user.profile.params = user.profile.params || anonymousProfile.params
         user.profile.params.queries = user.profile.params.queries || anonymousProfile.params.queries
+        user.profile.params.follow = user.profile.params.follow || anonymousProfile.params.follow
+        user.profile.params.follow.users = user.profile.params.follow.users || anonymousProfile.params.follow.users
+        user.profile.params.follow.routes = user.profile.params.follow.routes || anonymousProfile.params.follow.routes
 
         user.isAnonymous = !data.username
+
+        var getFollowList = function(document){
+            if(document.type == "r")
+                return user.profile.params.follow.routes
+            else if(document.type == "u")
+                return user.profile.params.follow.users
+
+            throw "Unsupported document type"
+        }
+
+        user.toggleFollow = function(document){
+            list = getFollowList(document)
+            position = list.indexOf(document.document_id)
+
+            if(position==-1)
+                list.push(document.document_id)
+            else
+                list.splice(position, 1)
+
+            user.save()
+        }
+
+        user.isFollowed = function(document){
+            if(!document || (!document.$resolved && typeof document.$resolved !== "undefined"))
+                return false
+
+            if(document.type == "o"){
+                var result = false
+
+                routes = user.profile.params.follow.routes
+                users = user.profile.params.follow.users
+
+                document.associations.routes.forEach(function(route){
+                    result = result || routes.indexOf(route.document_id) != -1
+                })
+
+                document.associations.users.forEach(function(user){
+                    result = result || users.indexOf(user.document_id) != -1
+                })
+
+                return result
+            }
+
+            list = getFollowList(document)
+            return list.indexOf(document.document_id) != -1
+        }
 
         user.create = function(username, password1){
             user.user = true
@@ -138,8 +191,6 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
         }
 
         user.save = function(){
-            if(user.isAnonymous)
-                return
 
             console.log("cleaning user", user)
 
@@ -150,6 +201,10 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
                     item.url = item.url.replace(/%252B  /g,"+")
                 }
             })
+
+
+            if(user.isAnonymous)
+                return
 
             console.log("saving user", user)
             user.saving = true;
@@ -791,4 +846,3 @@ app.factory("mapData", ["NgMap", function(NgMap){
     return result
 
 }])
-
