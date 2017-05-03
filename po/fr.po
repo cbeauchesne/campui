@@ -1080,7 +1080,7 @@ msgstr "humidité"
 
 #: fixed_strings.html:209
 msgid "hut"
-msgstr "Refuge/cabane"
+msgstr "refuge/cabane"
 
 #: fixed_strings.html:85
 msgid "ice rating"
@@ -1656,11 +1656,11 @@ msgstr "points d’eau"
 
 #: fixed_strings.html:115
 msgid "waypoint type"
-msgstr "type de points de passage"
+msgstr "type de point de passage"
 
 #: waypoint.html:28
 msgid "waypoint_type"
-msgstr "type de points de passage"
+msgstr "type de point de passage"
 
 #: fixed_strings.html:25 fixed_strings.html:65
 msgid "waypoints"
