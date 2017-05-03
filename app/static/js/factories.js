@@ -629,7 +629,7 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
                 name:gettextCatalog.getString('Orientations'),
                 width: '10%',
                 field: 'orientations',
-                cellTemplate:'<div class="ui-grid-cell-contents"><span ng-repeat="o in row.entity.orientations">{{o}}</span></div',
+                cellTemplate:'<div class="ui-grid-cell-contents">{{row.entity.orientations.join(", ")}}</div>',
             },
         ],
 
