@@ -175,9 +175,10 @@ angular.module('campui')
 c2cItems = {
     user:{
         label:"name",
-        detailled_controller: ['$scope','$stateParams','c2c', 'c2cBeta',function($scope, $stateParams, c2c, c2cBeta){
+        detailled_controller: ['$scope','$stateParams','c2c', 'c2cBeta', 'currentUser', function($scope, $stateParams, c2c, c2cBeta, currentUser){
             $scope.user = c2c.user.get($stateParams);
             $scope.outings = c2cBeta.outings.get({query:"u=" + $stateParams.id});
+            $scope.currentUser = currentUser
         }]
     },
     outing:{},
