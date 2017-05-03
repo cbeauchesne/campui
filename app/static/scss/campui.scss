@@ -1,4 +1,6 @@
-
+body{
+    background-color:#E9EAE9 ! important
+}
 
 h3{
 margin-top:15px;
@@ -229,6 +231,15 @@ color:#8B0000;
 
 ////////////////////////////////////////////////////////////////////////
 // home specific
+
+
+
+.home-view .ibox{
+    -moz-box-shadow: 3px 3px 6px 0px #ccc;
+    -webkit-box-shadow: 3px 3px 6px 0px #ccc;
+    -o-box-shadow: 3px 3px 6px 0px #ccc;
+    box-shadow: 3px 3px 6px 0px #ccc;
+}
 
 .home-view .outing-box .outing-line:hover{
 background:#F8F8F8
