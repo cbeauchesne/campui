@@ -8,8 +8,8 @@
             <linked-outings item="route"></linked-outings>
             <outing-images item="route"></outing-images>
         </span>
-        <span class="pull-right follow-button" ng-click="user.toggleFollow(route)">
-            <i class="fa fa-star" ng-class="{'followed-icon':user.isFollowed(route)}" uib-tooltip="{{'Follow' | translate }}"></i>
+        <span class="pull-right follow-button" ng-click="currentUser.toggleFollow(route)">
+            <i class="fa fa-star" ng-class="{'followed-icon':currentUser.isFollowed(route)}" uib-tooltip="{{'Follow' | translate }}"></i>
         </span>
     </div>
 
