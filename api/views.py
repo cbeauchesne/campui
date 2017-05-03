@@ -1,13 +1,19 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from django.http.response import HttpResponseBadRequest
-from django.forms import ValidationError as ValidationError
 from django.db.utils import IntegrityError
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authentication import BasicAuthentication
 
 from . import serializers
+from .forum import forum
+
+
+class ForumView(APIView):
+    def get(self, request, *args, **kwargs):
+        data = forum.latest
+        return Response(data)
 
 
 class CurrentUserView(APIView):

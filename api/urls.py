@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^user/(?P<username>[a-zA-Z0-9-]+)$', views.UserView.as_view()),
     url(r'^current_user$', views.CurrentUserView.as_view()),
     url(r'^users', views.CreateUserView.as_view()),
+    url(r'^forum$', views.ForumView.as_view()),
 ]

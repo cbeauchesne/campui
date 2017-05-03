@@ -1,6 +1,6 @@
 from threading import Thread, Lock
 from time import sleep
-import urllib2
+from urllib.request import urlopen
 
 
 class Forum(Thread):
@@ -13,11 +13,11 @@ class Forum(Thread):
     def run(self):
         while True:
             try:
-                top = urllib2.urlopen("https://forum.camptocamp.org/top.json").read()
-                latest = urllib2.urlopen("https://forum.camptocamp.org/latest.json").read()
+                # top = urlopen("https://forum.camptocamp.org/top.json").read()
+                latest = urlopen("https://forum.camptocamp.org/latest.json").read()
 
                 self.lock.acquire()
-                self._top = top
+                # self._top = top
                 self._latest = latest
 
             finally:
