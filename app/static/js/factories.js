@@ -730,19 +730,26 @@ app.factory("mapData", ["NgMap", function(NgMap){
 
         _this.toggleMapView = function(data){
             if(_this.visible){
-                _this.setMarkers(data)
 
-                if(!_this._bounded){
-                    _this._bounded = true
+                NgMap.getMap().then(function(map){
 
-                    NgMap.getMap().then(function(map){
+                    if(!google.maps.InfoWindow.prototype.isOpen)
+                        google.maps.InfoWindow.prototype.isOpen = function(){
+                            var map = this.getMap();
+                            return (map !== null && typeof map !== "undefined");
+                        }
 
-                        _this._map = map
+                    _this._map = map
 
-                        map.addListener('dragend', _this.sendBoundsToQuery);
-                        map.addListener('zoom_changed', _this.sendBoundsToQuery);
-                    })
-                }
+                    if(map._dragend) map._dragend.remove()
+                    if(map._zoom_changed) map._zoom_changed.remove()
+
+                    map._dragend = map.addListener('dragend', _this.sendBoundsToQuery);
+                    map._zoom_changed = map.addListener('zoom_changed', _this.sendBoundsToQuery);
+
+                    _this.setMarkers(data)
+                },
+                console.log)
             }
         }
 
@@ -759,10 +766,8 @@ app.factory("mapData", ["NgMap", function(NgMap){
         }
 
         _this.boundToMarkers = function(){
-            NgMap.getMap().then(function(map){
-                console.log(_this.bounds)
-                map.fitBounds(_this.bounds)
-            })
+            console.log(_this.bounds.toJSON())
+            _this._map.fitBounds(_this.bounds)
         }
 
         _this.removeMarkers = function(){
@@ -778,50 +783,42 @@ app.factory("mapData", ["NgMap", function(NgMap){
 
         _this.appendMarkers = function(data){
 
-            NgMap.getMap().then(function(map){
-                if(!google.maps.InfoWindow.prototype.isOpen)
-                    google.maps.InfoWindow.prototype.isOpen = function(){
-                            var map = this.getMap();
-                        return (map !== null && typeof map !== "undefined");
-                    }
+            _this.bounds = new google.maps.LatLngBounds();
 
-                _this.bounds = new google.maps.LatLngBounds();
+            data.documents.forEach(function(doc){
+                var point = JSON.parse(doc.geometry.geom).coordinates
 
-                data.documents.forEach(function(doc){
-                    var point = JSON.parse(doc.geometry.geom).coordinates
+                var infowindow = new google.maps.InfoWindow({
+                    content:
+                        "<div class='map-info'>" +
+                        "<a href='" + letterToC2cItem[doc.type] + "/" + doc.document_id + "'>" +
+                        doc.locales[0].title +
+                        "</a>" +
+                        "" +
+                        "</div>"
+                });
 
-                    var infowindow = new google.maps.InfoWindow({
-                        content:
-                            "<div class='map-info'>" +
-                            "<a href='" + letterToC2cItem[doc.type] + "/" + doc.document_id + "'>" +
-                            doc.locales[0].title +
-                            "</a>" +
-                            "" +
-                            "</div>"
-                    });
-
-                    point = proj4.transform(ESPG_3785, ESPG_4326, point)
-                    var latLng = new google.maps.LatLng(point.y, point.x)
-                    var marker = new google.maps.Marker({
-                        position:  latLng,
-                        map: map,
-                    })
-
-                    marker.addListener('click', function() {
-                        if (infowindow.isOpen())
-                            infowindow.close()
-                        else {
-                            if(_this.currentInfoWindow)
-                                _this.currentInfoWindow.close()
-
-                            infowindow.open(map, marker);
-                            _this.currentInfoWindow = infowindow
-                        }
-                    });
-
-                    _this.bounds.extend(latLng)
-                    _this.markers.push(marker)
+                point = proj4.transform(ESPG_3785, ESPG_4326, point)
+                var latLng = new google.maps.LatLng(point.y, point.x)
+                var marker = new google.maps.Marker({
+                    position:  latLng,
+                    map: _this._map,
                 })
+
+                marker.addListener('click', function() {
+                    if (infowindow.isOpen())
+                        infowindow.close()
+                    else {
+                        if(_this.currentInfoWindow)
+                            _this.currentInfoWindow.close()
+
+                        infowindow.open(_this._map, marker);
+                        _this.currentInfoWindow = infowindow
+                    }
+                });
+
+                _this.bounds.extend(latLng)
+                _this.markers.push(marker)
             })
         }
 
