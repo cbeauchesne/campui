@@ -13,7 +13,7 @@ from .forum import forum
 class ForumView(APIView):
     def get(self, request, *args, **kwargs):
         data = forum.latest
-        return Response(data)
+        return Response({"result":data})
 
 
 class CurrentUserView(APIView):

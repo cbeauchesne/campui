@@ -77,10 +77,10 @@ msgid "Actions"
 msgstr ""
 
 #: components/query_editor.html:7
-#: factories.js:532
-#: factories.js:585
-#: factories.js:606
-#: factories.js:643
+#: factories.js:538
+#: factories.js:591
+#: factories.js:612
+#: factories.js:649
 msgid "Activities"
 msgstr ""
 
@@ -112,13 +112,13 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: factories.js:538
-#: factories.js:612
+#: factories.js:544
+#: factories.js:618
 msgid "Area"
 msgstr ""
 
 #: common/navbar.html:49
-#: factories.js:672
+#: factories.js:678
 #: outing.html:23
 #: route.html:19
 #: waypoint.html:15
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Articles"
 msgstr ""
 
-#: factories.js:555
+#: factories.js:561
 msgid "Author"
 msgstr ""
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories.js:654
+#: factories.js:660
 msgid "Categories"
 msgstr ""
 
@@ -168,7 +168,7 @@ msgstr ""
 msgid "Credits"
 msgstr ""
 
-#: factories.js:570
+#: factories.js:576
 msgid "Date"
 msgstr ""
 
@@ -207,7 +207,7 @@ msgstr ""
 msgid "E"
 msgstr ""
 
-#: factories.js:678
+#: factories.js:684
 #: outing.html:65
 msgid "Elevation"
 msgstr ""
@@ -224,7 +224,7 @@ msgstr ""
 msgid "Equipement rating"
 msgstr ""
 
-#: factories.js:591
+#: factories.js:597
 msgid "Event type"
 msgstr ""
 
@@ -265,11 +265,11 @@ msgstr ""
 msgid "Global rating"
 msgstr ""
 
-#: factories.js:550
+#: factories.js:556
 msgid "Height"
 msgstr ""
 
-#: factories.js:624
+#: factories.js:630
 msgid "Height diff"
 msgstr ""
 
@@ -298,7 +298,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: factories.js:575
+#: factories.js:581
 msgid "Impacted people"
 msgstr ""
 
@@ -379,8 +379,8 @@ msgstr ""
 msgid "NW"
 msgstr ""
 
-#: factories.js:667
-#: factories.js:691
+#: factories.js:673
+#: factories.js:697
 #: me.html:79
 msgid "Name"
 msgstr ""
@@ -401,7 +401,7 @@ msgstr ""
 msgid "Orientation"
 msgstr ""
 
-#: factories.js:629
+#: factories.js:635
 msgid "Orientations"
 msgstr ""
 
@@ -441,7 +441,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: factories.js:649
+#: factories.js:655
 msgid "Quality"
 msgstr ""
 
@@ -449,7 +449,7 @@ msgstr ""
 msgid "Queries"
 msgstr ""
 
-#: factories.js:618
+#: factories.js:624
 msgid "Rating"
 msgstr ""
 
@@ -549,7 +549,7 @@ msgstr ""
 msgid "Select filters"
 msgstr ""
 
-#: factories.js:580
+#: factories.js:586
 msgid "Severity"
 msgstr ""
 
@@ -582,10 +582,10 @@ msgstr ""
 msgid "Timing"
 msgstr ""
 
-#: factories.js:526
-#: factories.js:564
-#: factories.js:600
-#: factories.js:638
+#: factories.js:532
+#: factories.js:570
+#: factories.js:606
+#: factories.js:644
 msgid "Title"
 msgstr ""
 
@@ -597,9 +597,9 @@ msgstr ""
 msgid "Total length"
 msgstr ""
 
-#: factories.js:659
-#: factories.js:683
-#: factories.js:696
+#: factories.js:665
+#: factories.js:689
+#: factories.js:702
 msgid "Type"
 msgstr ""
 

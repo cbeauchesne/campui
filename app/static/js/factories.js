@@ -344,6 +344,12 @@ app.factory('c2c', ['$resource','gettextCatalog', function($resource, gettextCat
                                     get : {method: 'GET'}
                                 })
 
+
+    forum.latest_topics = $resource('/api/forum', {},
+                                {
+                                    get : {method: 'GET'}
+                                })
+
     forum.top_topics = $resource('https://forum.camptocamp.org/top.json', {},
                                 {
                                     get : {method: 'GET'}
