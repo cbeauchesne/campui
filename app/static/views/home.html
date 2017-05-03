@@ -69,6 +69,24 @@
                 </div>
             </div>
 
+            <div ng-controller="routesController" ng-init="qe.limit=10" class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h3 translate>Routes</h3>
+                    <div ibox-tools></div>
+                </div>
+
+                <div class="ibox-content" style="display: block;">
+                    <loading-info></loading-info>
+                    <div ng-repeat="route in data.documents">
+                        <span>
+                            <activities activities="route.activities"></activities>
+                            <route-link route="route"></route-link>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
             <div ng-controller="articlesController" ng-init="qe.limit=5" class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h3 translate>Articles</h3>
@@ -85,22 +103,6 @@
                 </div>
             </div>
 
-            <div ng-controller="routesController" ng-init="qe.limit=25" class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h3 translate>Routes</h3>
-                    <div ibox-tools></div>
-                </div>
-
-                <div class="ibox-content" style="display: block;">
-                    <loading-info></loading-info>
-                    <div ng-repeat="route in data.documents">
-                        <span>
-                            <activities activities="route.activities"></activities>
-                            <route-link route="route"></route-link>
-                        </span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

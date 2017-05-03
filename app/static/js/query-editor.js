@@ -301,6 +301,7 @@ app.factory('filterItems', ["c2c_common","gettextCatalog", function(c2c_common, 
     var multiSelectFilterItem = function(label, values, pictos){
         filterItem.call(this,label, "select_multi")
 
+
         this.values = values
         this.isArray = true
         this.pictos = pictos
@@ -369,7 +370,6 @@ app.factory('filterItems', ["c2c_common","gettextCatalog", function(c2c_common, 
         swlu : new sliderIntFilterItem("snow elevation (up)", 0,4000,100),
         w : new c2cSelectFilterItem("waypoints", "waypoint"),
         walt: new sliderIntFilterItem("elevation", 0,8850,100),
-        wtyp : new multiSelectFilterItem("type", c2c_common.attributes.waypoint_types),
         xalt : new sliderIntFilterItem("elevation", 0,8850,100),
         xavlev : new multiSelectFilterItem("avalanche level", c2c_common.attributes.avalanche_levels),
         xavslo : new multiSelectFilterItem("avalanche slope", c2c_common.attributes.avalanche_slopes),
@@ -422,7 +422,7 @@ app.factory('filterItems', ["c2c_common","gettextCatalog", function(c2c_common, 
         hucap : new sliderIntFilterItem('capacity'),
         hscap : new sliderIntFilterItem('capacity staffed'),
 
-        wtyp : new multiSelectFilterItem('waypoint type', c2c_common.attributes.waypoint_type),
+        wtyp : new multiSelectFilterItem('waypoint type', c2c_common.attributes.waypoint_types),
         wrock : new multiSelectFilterItem('rock types', c2c_common.attributes.rock_types),
         wfac : new multiSelectFilterItem('orientations', c2c_common.attributes.orientation_types),
         period : new multiSelectFilterItem('best periods', c2c_common.attributes.months),
@@ -467,8 +467,6 @@ app.factory('filterItems', ["c2c_common","gettextCatalog", function(c2c_common, 
             }
         },
     }
-
-   // console.log(Object.keys(dd).join("\n"))
 
     return result
 }])

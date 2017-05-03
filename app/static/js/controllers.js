@@ -158,6 +158,10 @@ app.controller('forumController',['$scope','c2c',function($scope, c2c){
 
          $scope.latest_topics = JSON.parse(data.result)
 
+         $scope.latest_topics.topic_list.topics = $scope.latest_topics.topic_list.topics.filter(function(topic){
+            return topic.category_id != 29 //comments on outings
+         })
+
      })
 
     $scope.getForumUser = function(username){
