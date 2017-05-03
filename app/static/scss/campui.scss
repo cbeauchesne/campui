@@ -297,6 +297,7 @@ content:" :"
 
 .area-view .ibox-title h1,
 .route-view .ibox-title h1,
+.user-view .ibox-title h1,
 .waypoint-view .ibox-title h1{
     display:inline
 }
@@ -311,6 +312,7 @@ content:" :"
     cursor:pointer;
 }
 
+.user-view .badge,
 .area-view .badge,
 .route-view .badge,
 .waypoint-view .badge{
