@@ -23,17 +23,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
                 $scope.getLocale = function(item){ return locale.get(item)}
 
                 $scope.translateArray = function(arr){
-                    if(arr){
-                        var r = []
-                        arr.forEach(function(item){
-                            r.push(gettextCatalog.getString(item))
-                        })
-
-                        return r
-                    }
+                    function getString(item){ return gettextCatalog.getString(item) }
+                    if(arr)
+                        return arr.map(getString)
                 }
 
-                $scope.user = currentUser
+                $scope.currentUser = currentUser
 
                 $scope.photoswipe = photoswipe
                 $scope.photoswipe.getImages = function() {
