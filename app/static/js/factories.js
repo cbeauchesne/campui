@@ -75,10 +75,10 @@ app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, an
         var getFollowList = function(document){
             if(document.type == "r")
                 return user.profile.params.follow.routes
-            else if(document.type == "u")
+            else if(document.type == "u" || typeof document.type === "undefined")
                 return user.profile.params.follow.users
 
-            throw "Unsupported document type"
+            throw "Unsupported document type : " + document.type
         }
 
         user.toggleFollow = function(document){
