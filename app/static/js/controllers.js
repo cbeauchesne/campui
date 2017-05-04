@@ -6,12 +6,6 @@ function getC2cController(c2c_item){
 
         $scope.getLocale = function(item){ return locale.get(item)}
         $scope.c2c_item = c2c_item
-
-        $scope.getLabel = function(){
-            item = c2c_item.charAt(0).toUpperCase() + c2c_item.slice(1) + "s"
-            return gettextCatalog.getString(item)
-        }
-
         $scope.user = currentUser
         $scope.columnDefs = columnDefs[c2c_item]
 
@@ -176,4 +170,45 @@ app.controller('forumController',['$scope','c2c',function($scope, c2c){
     }
 
 }]);
+
+app.controller("linkedOutingsController", ['$scope', 'c2cBeta', 'c2c', '$stateParams', 'photoswipe',
+    function($scope, c2cBeta, c2c, $stateParams, photoswipe){
+        var appendImages = function(data){
+
+            data.documents.forEach(function(outing){
+                outing.associations.images.forEach(function(image){
+                    $scope.items.push({image:image, outing:outing})
+                })
+            })
+        }
+
+        $scope.items = []
+        $scope.loadMore = function(){
+            $scope.data.loadMore(appendImages)
+        }
+
+        if($stateParams['r'])
+            $scope.c2cItem = c2c.route.get({id:$stateParams['r']})
+        else if($stateParams['a'])
+            $scope.c2cItem = c2c.area.get({id:$stateParams['a']})
+        else if($stateParams['w'])
+            $scope.c2cItem = c2c.waypoint.get({id:$stateParams['w']})
+        else if($stateParams['u'])
+            $scope.c2cItem = c2c.user.get({id:$stateParams['u']})
+        else
+            throw "dafuck" + $stateParams
+
+        $scope.data = c2cBeta.outings.get($stateParams, appendImages)
+
+        $scope.photoswipe = photoswipe
+        $scope.photoswipe.getImages = function() {
+            var images = []
+            $scope.items.forEach(function(item){
+                images.push(item.image)
+            })
+
+            return images
+        }
+    }
+])
 
