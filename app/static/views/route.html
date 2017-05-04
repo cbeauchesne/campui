@@ -7,9 +7,19 @@
         <span ng-if="route.associations.recent_outings.documents.length!=0">
             <linked-outings item="route"></linked-outings>
             <outing-images item="route"></outing-images>
+            <stories item="route"></stories>
         </span>
-        <span class="pull-right follow-button" ng-click="currentUser.toggleFollow(route)">
-            <i class="fa fa-star" ng-class="{'followed-icon':currentUser.isFollowed(route)}" uib-tooltip="{{'Follow' | translate }}"></i>
+        <span class="pull-right">
+            <a href="https://www.camptocamp.org/outings/add#r={{route.document_id}}"
+               uib-tooltip="{{'Add your outing' | translate }}"
+               target="_blank"
+               class="add-outing-button">
+                <i class="fa fa-plus"></i>
+            </a>
+            <i class="fa fa-star follow-button"
+               ng-click="currentUser.toggleFollow(route)"
+               ng-class="{'followed-icon':currentUser.isFollowed(route)}"
+               uib-tooltip="{{'Follow' | translate }}"></i>
         </span>
     </div>
 
@@ -117,4 +127,12 @@
             </div>
         </div>
     </div>
+
+    <div ng-photoswipe
+         slides="photoswipe.slides"
+         open="photoswipe.open"
+         template='static/views/components/ng-photoswipe.html'
+         on-close="photoswipe.closeGallery()"
+         options="photoswipe.opts"></div>
+
 </div>
