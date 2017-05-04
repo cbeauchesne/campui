@@ -307,6 +307,7 @@ content:" :"
     text-transform: uppercase;
 }
 
+.stories-view .ibox-title h1,
 .area-view .ibox-title h1,
 .route-view .ibox-title h1,
 .user-view .ibox-title h1,
@@ -318,13 +319,13 @@ content:" :"
     color:gold;
 }
 
-.route-view .ibox-title .add-outing-button,
-.route-view .ibox-title .follow-button,
-.user-view .ibox-title .follow-button{
+.ibox-title .add-outing-button,
+.ibox-title .follow-button{
     font-size:20px;
     cursor:pointer;
 }
 
+.stories-view .badge,
 .user-view .badge,
 .area-view .badge,
 .route-view .badge,
@@ -333,6 +334,7 @@ content:" :"
 }
 
 
+.stories-view .ibox-title .badge:first-letter,
 .outing-view .ibox-title .badge:first-letter,
 .route-view .ibox-title .badge:first-letter,
 .waypoint-view .ibox-title .badge:first-letter,

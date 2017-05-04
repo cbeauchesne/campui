@@ -245,7 +245,7 @@ msgid "Filters"
 msgstr ""
 
 #: route.html:22
-#: stories.html:14
+#: stories.html:19
 #: user.html:10
 msgid "Follow"
 msgstr ""
