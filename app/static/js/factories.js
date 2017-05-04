@@ -287,7 +287,6 @@ app.factory('c2cBeta', ['c2c', function(c2c){
                 }
 
                 result.loadMore = function(onSuccess){
-                console.log(result.total,result.documents.length)
                     if(result.loading || result.total<=result.documents.length)
                         return
 
