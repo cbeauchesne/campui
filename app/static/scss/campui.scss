@@ -332,6 +332,16 @@ content:" :"
     margin-bottom:10px
 }
 
+
+.outing-view .ibox-title .badge:first-letter,
+.route-view .ibox-title .badge:first-letter,
+.waypoint-view .ibox-title .badge:first-letter,
+.article-view .ibox-title .badge:first-letter,
+.area-view .ibox-title .badge:first-letter,
+.xreport-view .ibox-title .badge:first-letter{
+    text-transform: uppercase;
+}
+
 ////////////////////////////////////////////////////////////////////
 // user specific
 

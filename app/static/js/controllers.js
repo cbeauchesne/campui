@@ -20,7 +20,7 @@ function getC2cController(c2c_item){
         $scope.getImageCount = function(id){
             var details = $scope.getItemDetails(id)
 
-            if(!details || !details.$resolved)
+            if(!details || !details.$resolved || !details.associations)
                 return 0
 
             return details.associations.images.length
@@ -148,13 +148,14 @@ app.controller('searchController',['$scope','c2c','$state','searchData',function
 app.controller('forumController',['$scope','c2c',function($scope, c2c){
 
      c2c.forum.latest_topics.get(function (data){
-         console.log("s", data)
 
          $scope.latest_topics = JSON.parse(data.result)
 
          $scope.latest_topics.topic_list.topics = $scope.latest_topics.topic_list.topics.filter(function(topic){
             return topic.category_id != 29 //comments on outings
          })
+
+         console.log($scope.latest_topics.topic_list.topics)
 
      })
 

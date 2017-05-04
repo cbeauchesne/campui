@@ -167,7 +167,7 @@ angular.module('campui')
                 item:"=",
                 itemType:"=?",
             },
-            template: '<a class="badge badge-success" ui-sref="outingImages({[item.type || itemType]:item.document_id})" translate>Images</a>',
+            template: '<a class="badge badge-success" ui-sref="outingImages({[item.type || itemType]:item.document_id})" translate>images</a>',
         };
         return result;
     })
@@ -180,7 +180,7 @@ angular.module('campui')
                 item:"=",
                 itemType:"=?",
             },
-            template: '<a class="badge badge-success" ui-sref="stories({[item.type || itemType]:item.document_id})" translate>Stories</a>',
+            template: '<a class="badge badge-success" ui-sref="stories({[item.type || itemType]:item.document_id})" translate>stories</a>',
         };
         return result;
     })
