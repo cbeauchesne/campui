@@ -102,7 +102,7 @@ msgstr "Ajouter un sous-filtre"
 
 #: route.html:14
 msgid "Add your outing"
-msgstr "Ajouter votre sorties"
+msgstr "Ajoutez votre sortie"
 
 #: fixed_strings.html:32
 msgid "All images"
