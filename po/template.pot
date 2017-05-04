@@ -92,6 +92,10 @@ msgstr ""
 msgid "Add a item"
 msgstr ""
 
+#: route.html:14
+msgid "Add your outing"
+msgstr ""
+
 #: fixed_strings.html:32
 msgid "All images"
 msgstr ""
@@ -120,7 +124,7 @@ msgstr ""
 #: common/navbar.html:49
 #: factories.js:678
 #: outing.html:23
-#: route.html:19
+#: route.html:29
 #: waypoint.html:15
 msgid "Areas"
 msgstr ""
@@ -150,11 +154,11 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: route.html:56
+#: route.html:66
 msgid "Configuration"
 msgstr ""
 
-#: common/navbar.html:85
+#: common/navbar.html:84
 msgid "Contact"
 msgstr ""
 
@@ -162,8 +166,8 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: common/navbar.html:95
-#: route.html:23
+#: common/navbar.html:94
+#: route.html:33
 #: waypoint.html:19
 msgid "Credits"
 msgstr ""
@@ -190,12 +194,12 @@ msgstr ""
 
 #: area.html:19
 #: outing.html:31
-#: route.html:93
+#: route.html:103
 #: waypoint.html:109
 msgid "Description"
 msgstr ""
 
-#: route.html:38
+#: route.html:48
 msgid "Difficulties height"
 msgstr ""
 
@@ -212,7 +216,7 @@ msgstr ""
 msgid "Elevation"
 msgstr ""
 
-#: route.html:71
+#: route.html:81
 msgid "Elevation min/max"
 msgstr ""
 
@@ -232,7 +236,7 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
-#: common/navbar.html:102
+#: common/navbar.html:101
 msgid "FAQ"
 msgstr ""
 
@@ -240,7 +244,8 @@ msgstr ""
 msgid "Filters"
 msgstr ""
 
-#: route.html:12
+#: route.html:22
+#: stories.html:14
 #: user.html:10
 msgid "Follow"
 msgstr ""
@@ -253,11 +258,11 @@ msgstr ""
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:99
+#: route.html:109
 msgid "Gears"
 msgstr ""
 
-#: route.html:48
+#: route.html:58
 msgid "Glacier gears"
 msgstr ""
 
@@ -274,11 +279,11 @@ msgid "Height diff"
 msgstr ""
 
 #: outing.html:70
-#: route.html:66
+#: route.html:76
 msgid "Height difference"
 msgstr ""
 
-#: route.html:102
+#: route.html:112
 msgid "History"
 msgstr ""
 
@@ -318,11 +323,11 @@ msgstr ""
 msgid "Load more items"
 msgstr ""
 
-#: common/navbar.html:161
+#: common/navbar.html:159
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:125
+#: common/navbar.html:124
 #: login.html:19
 msgid "Login"
 msgstr ""
@@ -363,7 +368,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:144
+#: common/navbar.html:143
 msgid "My page"
 msgstr ""
 
@@ -397,7 +402,7 @@ msgstr ""
 msgid "Only a-z, 0-9 and _ are allowed"
 msgstr ""
 
-#: route.html:61
+#: route.html:71
 msgid "Orientation"
 msgstr ""
 
@@ -424,7 +429,7 @@ msgid "Outings ({{outings.total}})"
 msgstr ""
 
 #: common/ibox_tools.html:56
-#: common/navbar.html:152
+#: common/navbar.html:150
 #: me.html:6
 msgid "Parameters"
 msgstr ""
@@ -457,7 +462,7 @@ msgstr ""
 msgid "Ratings"
 msgstr ""
 
-#: route.html:111
+#: route.html:121
 #: waypoint.html:128
 msgid "Recent outings"
 msgstr ""
@@ -466,7 +471,7 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: route.html:96
+#: route.html:106
 msgid "Remarks"
 msgstr ""
 
@@ -474,7 +479,7 @@ msgstr ""
 msgid "Repeat password"
 msgstr ""
 
-#: common/navbar.html:90
+#: common/navbar.html:89
 msgid "Report a bug"
 msgstr ""
 
@@ -498,11 +503,11 @@ msgstr ""
 msgid "Route description"
 msgstr ""
 
-#: route.html:76
+#: route.html:86
 msgid "Route length"
 msgstr ""
 
-#: route.html:43
+#: route.html:53
 msgid "Route type"
 msgstr ""
 
@@ -537,7 +542,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:112
+#: common/navbar.html:111
 msgid "Search"
 msgstr ""
 
@@ -620,7 +625,7 @@ msgid "W"
 msgstr ""
 
 #: common/navbar.html:43
-#: route.html:82
+#: route.html:92
 #: search.html:24
 #: waypoint.html:132
 msgid "Waypoints"
@@ -655,7 +660,7 @@ msgid "accidental_avalanche"
 msgstr ""
 
 #: fixed_strings.html:43
-#: route.html:32
+#: route.html:42
 msgid "activities"
 msgstr ""
 

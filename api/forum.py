@@ -15,12 +15,12 @@ class Forum(Thread):
             try:
                 # top = urlopen("https://forum.camptocamp.org/top.json").read()
                 latest = urlopen("https://forum.camptocamp.org/latest.json").read()
+            except:
+                pass
 
+            else:
                 self.lock.acquire()
-                # self._top = top
                 self._latest = latest
-
-            finally:
                 self.lock.release()
 
             sleep(30)
