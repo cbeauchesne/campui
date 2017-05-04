@@ -139,17 +139,19 @@ app.config(['$httpProvider', function($httpProvider) {
     }])
 */
 
-app.run(['$rootScope', '$state', '$cookies', 'gettextCatalog', 'tmhDynamicLocale', function($rootScope, $state, $cookies, gettextCatalog, tmhDynamicLocale) {
-    lang = $cookies.get('lang') || 'fr';
-    gettextCatalog.setCurrentLanguage(lang);
-    tmhDynamicLocale.set(lang);
-    gettextCatalog.loadRemote("/static/translations/" + lang + ".json");
+app.run(['$rootScope', '$state', '$cookies', 'gettextCatalog', 'tmhDynamicLocale', 'photoswipe',
+    function($rootScope, $state, $cookies, gettextCatalog, tmhDynamicLocale, photoswipe) {
+        lang = $cookies.get('lang') || 'fr';
+        gettextCatalog.setCurrentLanguage(lang);
+        tmhDynamicLocale.set(lang);
+        gettextCatalog.loadRemote("/static/translations/" + lang + ".json");
 
-    $rootScope.$state = $state;
+        $rootScope.$state = $state;
 
-    //scroll top when state change
-    $rootScope.$on('$stateChangeSuccess', function() {
-       document.body.scrollTop = document.documentElement.scrollTop = 0;
-    });
-
-}]);
+        //scroll top when state change
+        $rootScope.$on('$stateChangeSuccess', function() {
+           document.body.scrollTop = document.documentElement.scrollTop = 0;
+           photoswipe.getters = []
+        });
+    }
+]);
