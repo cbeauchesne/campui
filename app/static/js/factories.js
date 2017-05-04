@@ -561,7 +561,7 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
                     name:gettextCatalog.getString('Author'),
                     field: 'author.name',
                     width: '15%',
-                    cellTemplate:'<author-link author="row.entity.author" class="ui-grid-cell-contents"></author-link>',
+                    cellTemplate:'<user-link user="row.entity.author" class="ui-grid-cell-contents"></author-link>',
                 }
         ],
 
