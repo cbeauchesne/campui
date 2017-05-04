@@ -117,7 +117,7 @@ angular.module('campui')
         return {
             restrict: 'E',
             scope: {author:"="},
-            template: '<a ui-sref="user({id:author.user_id})">{{author.name}}</a>',
+            template: '<a ui-sref="stories({"u":author.user_id})">{{author.name}}</a>',
         };
     })
 
@@ -167,19 +167,30 @@ angular.module('campui')
                 item:"=",
                 itemType:"=?",
             },
-            template: '<a class="badge badge-success" ui-sref="outingImages({[item.type || itemType]:item.document_id})" translate>All images</a>',
+            template: '<a class="badge badge-success" ui-sref="outingImages({[item.type || itemType]:item.document_id})" translate>Images</a>',
         };
         return result;
     })
 
+    .directive('stories', function(){
+        result =   {
+            restrict: 'E',
+            replace: true,
+            scope: {
+                item:"=",
+                itemType:"=?",
+            },
+            template: '<a class="badge badge-success" ui-sref="stories({[item.type || itemType]:item.document_id})" translate>Stories</a>',
+        };
+        return result;
+    })
+
+
 c2cItems = {
     user:{
         label:"name",
-        detailled_controller: ['$scope','$stateParams','c2c', 'c2cBeta', 'currentUser', function($scope, $stateParams, c2c, c2cBeta, currentUser){
-            $scope.user = c2c.user.get($stateParams);
-            $scope.outings = c2cBeta.outings.get({query:"u=" + $stateParams.id});
-            $scope.currentUser = currentUser
-        }]
+        detailled_controller: "linkedOutingsController",
+        itemLinkTemplate: '<a ui-sref="stories({u:user.user_id})">{{user.name}}</a>'
     },
     outing:{},
     route:{
@@ -201,6 +212,10 @@ $.each(c2cItems, function(item, params){
     params.label = params.label ? item + '.' + params.label : 'getLocale(' + item + ').title'
 
     var label = '{{' + params.label + '}}';
+
+    params.itemLinkTemplate = params.itemLinkTemplate ?
+                                params.itemLinkTemplate :
+                                '<a ui-sref="' + item + '({id:' + item + '.document_id})">' + label + '</a>'
 
     if(params.label_prefix){
         prefixModel = 'getLocale(' + item + ').' + params.label_prefix
@@ -225,7 +240,7 @@ $.each(c2cItems, function(item, params){
         result =  {
             restrict: 'E',
             scope: {},
-            template: '<a ui-sref="' + item + '({id:' + item + '.document_id})">' + label + '</a>',
+            template: params.itemLinkTemplate,
             controller: controller
         };
 
@@ -243,7 +258,7 @@ $.each(c2cItems, function(item, params){
                 item:"=",
                 itemType:"=?",
             },
-            template: '<a class="badge badge-success" ui-sref="' + item + 's({[item.type || itemType]:item.document_id})" translate>All ' + item + 's</a>',
+            template: '<a class="badge badge-success" ui-sref="' + item + 's({[item.type || itemType]:item.document_id})" translate>' + item + 's</a>',
         };
         return result;
     })
