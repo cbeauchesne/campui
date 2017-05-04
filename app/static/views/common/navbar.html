@@ -77,7 +77,6 @@
                             </a>
                         </li>
 
-
                         <li role="separator" class="divider"></li>
 
                         <li>
@@ -139,12 +138,11 @@
 
                         <li ui-sref-active="active">
                             <a ng-if="currentUser.profile.params.c2c_id"
-                               ui-sref="user({id : currentUser.profile.params.c2c_id})">
+                               ui-sref="stories({u : currentUser.profile.params.c2c_id})">
                                 <i class="fa fa-user"></i>
                                 <span translate>My page</span>
                             </a>
                         </li>
-
 
                         <li ui-sref-active="active">
                             <a ui-sref="me">
