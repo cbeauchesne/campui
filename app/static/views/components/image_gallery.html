@@ -4,19 +4,12 @@
            slides-to-scroll="2"
            variable-width="true"
            infinite="false">
-    <span ng-repeat="image in images">
-    <img
-            ng-click="photoswipe.showGallery(image.document_id)"
-            alt="{{image.locales[0].title}}"
-            title="{{image.locales[0].title}}"
-            ng-src="https://media.camptocamp.org/c2corg_active/{{image.filename.replace('.', 'MI.').replace('.svg', '.jpg')}}"/>
-</span>
+        <span ng-repeat="image in images">
+            <img
+                ng-click="photoswipe.showGallery(image.document_id)"
+                alt="{{image.locales[0].title}}"
+                title="{{image.locales[0].title}}"
+                ng-src="https://media.camptocamp.org/c2corg_active/{{image.filename.replace('.', 'MI.').replace('.svg', '.jpg')}}"/>
+        </span>
     </slick>
-
-    <div ng-photoswipe
-         slides="photoswipe.slides"
-         open="photoswipe.open"
-         template='static/views/components/ng-photoswipe.html'
-         on-close="photoswipe.closeGallery()"
-         options="photoswipe.opts"></div>
 </div>

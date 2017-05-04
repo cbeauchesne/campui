@@ -1,12 +1,13 @@
 
 function getC2cController(c2c_item){
 
-    return ['$scope','QueryEditor','currentUser','columnDefs','gettextCatalog','locale','urlQuery', 'mapData','c2c',
-    function($scope, QueryEditor, currentUser, columnDefs, gettextCatalog, locale, urlQuery, mapData, c2c){
+    return ['$scope','QueryEditor','currentUser','columnDefs','gettextCatalog','locale','urlQuery', 'mapData','c2c', 'photoswipe',
+    function($scope, QueryEditor, currentUser, columnDefs, gettextCatalog, locale, urlQuery, mapData, c2c, photoswipe){
 
         $scope.getLocale = function(item){ return locale.get(item)}
         $scope.c2c_item = c2c_item
         $scope.user = currentUser
+        $scope.photoswipe = photoswipe
         $scope.columnDefs = columnDefs[c2c_item]
 
         $scope._itemCache = {}
@@ -172,8 +173,8 @@ app.controller('forumController',['$scope','c2c',function($scope, c2c){
 
 }]);
 
-app.controller("linkedOutingsController", ['$scope', 'c2cBeta', 'c2c', '$stateParams', 'photoswipe',
-    function($scope, c2cBeta, c2c, $stateParams, photoswipe){
+app.controller("linkedOutingsController", ['$scope', 'c2cBeta', 'c2c', '$stateParams', 'photoswipe', 'currentUser',
+    function($scope, c2cBeta, c2c, $stateParams, photoswipe, currentUser){
         var appendImages = function(data){
 
             data.documents.forEach(function(outing){
@@ -183,6 +184,7 @@ app.controller("linkedOutingsController", ['$scope', 'c2cBeta', 'c2c', '$statePa
             })
         }
 
+        $scope.currentUser = currentUser
         $scope.items = []
         $scope.loadMore = function(){
             $scope.data.loadMore(appendImages)
@@ -202,14 +204,14 @@ app.controller("linkedOutingsController", ['$scope', 'c2cBeta', 'c2c', '$statePa
         $scope.data = c2cBeta.outings.get($stateParams, appendImages)
 
         $scope.photoswipe = photoswipe
-        $scope.photoswipe.getImages = function() {
+        $scope.photoswipe.getters.push(function() {
             var images = []
             $scope.items.forEach(function(item){
                 images.push(item.image)
             })
 
             return images
-        }
+        })
     }
 ])
 

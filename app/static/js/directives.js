@@ -97,7 +97,9 @@ angular.module('campui')
                 // https://github.com/dimsemenov/PhotoSwipe/issues/580
                 // history is important, see comment of mutac
                 $scope.photoswipe = photoswipe
-                $scope.photoswipe.getImages = function() {return $scope.images}
+                photoswipe.getters.push(function(){
+                    return $scope.images
+                })
             }]
         };
     })

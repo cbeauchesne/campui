@@ -31,9 +31,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
                 $scope.currentUser = currentUser
 
                 $scope.photoswipe = photoswipe
-                $scope.photoswipe.getImages = function() {
+                $scope.photoswipe.getters.push(function() {
                     return $scope[item].associations.images
-                }
+                })
             }]
 
         $stateProvider.state(item, {
