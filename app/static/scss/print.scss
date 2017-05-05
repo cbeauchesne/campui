@@ -1,0 +1,14 @@
+.top-navigation .wrapper.wrapper-content{
+padding:0px
+}
+
+a[href]:after {
+    content: "";
+}
+
+.ibox-title .badge,
+.add-outing-button,
+.item-metadata,
+.follow-button{
+    display:none
+}
