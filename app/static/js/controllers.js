@@ -148,28 +148,27 @@ app.controller('searchController',['$scope','c2c','$state','searchData',function
 
 app.controller('forumController',['$scope','c2c',function($scope, c2c){
 
-     c2c.forum.latest_topics.get(function (data){
+    c2c.forum.latest_topics.get(function (data){
 
-         $scope.latest_topics = JSON.parse(data.result)
+        $scope.latest_topics = JSON.parse(data.result)
 
-         $scope.latest_topics.topic_list.topics = $scope.latest_topics.topic_list.topics.filter(function(topic){
+        $scope.latest_topics.topic_list.topics = $scope.latest_topics.topic_list.topics.filter(function(topic){
             return topic.category_id != 29 //comments on outings
-         })
-
-         console.log($scope.latest_topics.topic_list.topics)
-
-     })
-
-    $scope.getForumUser = function(username){
-        var result = undefined
-
-        $scope.latest_topics.users.forEach(function(user){
-            if(user.username==username)
-                result = user
         })
 
-        return result
-    }
+        var users = {}
+
+        $scope.latest_topics.users.forEach(function(user){
+            users[user.username] = user
+        })
+
+        $scope.latest_topics.topic_list.topics.map(function(topic){
+            topic.last_poster_user = users[topic.last_poster_username]
+            console.log(topic.title, topic.tags.join(", "))
+        })
+
+        console.log($scope.latest_topics)
+    })
 
 }]);
 

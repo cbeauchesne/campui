@@ -69,10 +69,13 @@
                         <a href="{{'https://forum.camptocamp.org/t/' + topic.slug + '/' + topic.id + '/' + topic.highest_post_number}}">
                             {{topic.title}}
                         </a>
+
                         <img class="pull-right"
-                             height="16"
+                             height="16" width="16"
                              uib-tooltip="{{topic.last_poster_username}}"
-                             ng-src="https://forum.camptocamp.org{{getForumUser(topic.last_poster_username).avatar_template.replace('{size}','16')}}">
+                             ng-src="https://forum.camptocamp.org{{topic.last_poster_user.avatar_template.replace('{size}','16')}}">
+
+
                     </div>
                 </div>
             </div>
