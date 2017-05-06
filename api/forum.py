@@ -16,6 +16,7 @@ class Forum(Thread):
                 # top = urlopen("https://forum.camptocamp.org/top.json").read()
                 latest = urlopen("https://forum.camptocamp.org/latest.json").read()
             except:
+                print("CampToCamp forum error")
                 pass
 
             else:

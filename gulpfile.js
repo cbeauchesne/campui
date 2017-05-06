@@ -19,9 +19,9 @@ var zip = require('gulp-zip');
 var browserSync = require('browser-sync').create();
 
 gulp.task('sass', function(){
-  return gulp.src('app/static/scss/**/*.scss')
+  return gulp.src('app/static/campui/scss/**/*.scss')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(gulp.dest('app/static/css'))
+    .pipe(gulp.dest('app/static/campui/css'))
 
     .pipe(browserSync.reload({
       stream: true
@@ -29,55 +29,55 @@ gulp.task('sass', function(){
 });
 
 gulp.task('images', function(){
-  return gulp.src('app/static/img/**/*.+(png|jpg|gif|svg)')
+  return gulp.src('app/static/campui/img/**/*.+(png|jpg|gif|svg)')
   .pipe(cache(imagemin()))
-  .pipe(gulp.dest('static/img'))
+  .pipe(gulp.dest('static/campui/img'))
 });
 
 gulp.task('font-awesome', function() {
   return gulp.src(['bower_components/components-font-awesome/fonts/fontawesome-webfont.*'])
-  .pipe(gulp.dest('static/fonts'));
+  .pipe(gulp.dest('static/campui/fonts'));
 });
 
 gulp.task('font-bootstrap', function() {
   return gulp.src(['bower_components/bootstrap/fonts/glyphicons-halflings-regular.*'])
-  .pipe(gulp.dest('static/fonts'));
+  .pipe(gulp.dest('static/campui/fonts'));
 });
 
 gulp.task('font-ui-grid', function() {
   return gulp.src(['bower_components/angular-ui-grid/ui-grid.{ttf,eot,svg,woff}'])
-  .pipe(gulp.dest('static/css'));
+  .pipe(gulp.dest('static/campui/css'));
 });
 
 gulp.task('font-slick', function() {
   return gulp.src(['bower_components/slick-carousel/slick/fonts/slick.{ttf,eot,svg,woff}'])
-  .pipe(gulp.dest('static/css/fonts'));
+  .pipe(gulp.dest('static/campui/css/fonts'));
 });
 
 gulp.task('slick', function() {
   return gulp.src(['bower_components/slick-carousel/slick/ajax-loader.gif'])
-  .pipe(gulp.dest('static/css'));
+  .pipe(gulp.dest('static/campui/css'));
 });
 
 gulp.task('fonts', ['font-awesome', 'font-bootstrap', 'font-ui-grid', 'font-slick'], function() {
-  return gulp.src('app/static/fonts/**/*.*')
-  .pipe(gulp.dest('static/fonts'))
+  return gulp.src('app/static/campui/fonts/**/*.*')
+  .pipe(gulp.dest('static/campui/fonts'))
 })
 
 gulp.task('html', function() {
-  return gulp.src('app/static/views/**/*')
-  .pipe(gulp.dest('static/views'))
+  return gulp.src('app/static/campui/views/**/*')
+  .pipe(gulp.dest('static/campui/views'))
 })
 
 gulp.task('angular-i18n', function() {
   return gulp.src('bower_components/angular-i18n/*.js')
-  .pipe(gulp.dest('app/static/angular-i18n'))
-  .pipe(gulp.dest('static/angular-i18n'))
+  .pipe(gulp.dest('app/static/campui/angular-i18n'))
+  .pipe(gulp.dest('static/campui/angular-i18n'))
 })
 
 gulp.task('photoswipe', function() {
   return gulp.src('bower_components/photoswipe/dist/default-skin/*.*')
-  .pipe(gulp.dest('static/css'))
+  .pipe(gulp.dest('static/campui/css'))
 })
 
 function getServer(baseDir){
@@ -143,7 +143,7 @@ gulp.task('useref', function(){
 });
 
 gulp.task('pot', function(){
-  return gulp.src(['app/static/views/**/*.html', 'app/static/js/**/*.js'])
+  return gulp.src(['app/static/campui/views/**/*.html', 'app/static/campui/js/**/*.js'])
     .pipe(gettext.extract('template.pot', {}))
     .pipe(gulp.dest('po/'))
 });
@@ -151,8 +151,8 @@ gulp.task('pot', function(){
 gulp.task('po', function () {
   return gulp.src('po/**/*.po')
     .pipe(gettext.compile({format: 'json'}))
-    .pipe(gulp.dest('static/translations/'))
-    .pipe(gulp.dest('app/static/translations/'))
+    .pipe(gulp.dest('static/campui/translations/'))
+    .pipe(gulp.dest('app/static/campui/translations/'))
 });
 
 gulp.task('clean:build', function() {
@@ -160,12 +160,12 @@ gulp.task('clean:build', function() {
 })
 
 gulp.task('watch', ['browserSync', 'sass', 'pot','po'], function(){
-  gulp.watch('app/static/scss/**/*.scss', ['sass']);
+  gulp.watch('app/static/**/*.scss', ['sass']);
 
-  gulp.watch(['app/static/**/*.html','app/static/js/**/*.js'], ["pot"]);
+  gulp.watch(['app/static/**/*.html','app/static/**/*.js'], ["pot"]);
   gulp.watch('po/**/*.po', ['po']);
 
-  gulp.watch(['app/static/**/*.html','app/static/js/**/*.js'], browserSync.reload);
+  gulp.watch(['app/static/**/*.html','app/static/**/*.js'], browserSync.reload);
   gulp.watch('app/index.html', browserSync.reload);
 
 })

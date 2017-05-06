@@ -36,4 +36,4 @@ js = json.dumps(result, indent=4)
 
 dump = "angular.module('campui').factory('c2c_common', function(){{\n return {};\n}})".format(js)
 
-io.open("static/js/c2c_common.js", "w").write(dump)
+io.open("static/campui/js/c2c_common.js", "w").write(dump)

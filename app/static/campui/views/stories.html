@@ -1,0 +1,55 @@
+<div class="ibox float-e-margins stories-view">
+    <div class="ibox-title">
+        <div ng-if="c2cItem.type=='r'">
+            <h1>
+                <i class="fa fa-road"></i>
+                <route-link route="c2cItem"></route-link>
+            </h1>
+            <outing-images item="c2cItem"></outing-images>
+        </div>
+        <div ng-if="!c2cItem.type || c2cItem.type=='u'">
+            <h1>
+                <i class="fa fa-user"></i>
+                <user-link-c2c user="c2cItem"></user-link-c2c>
+            </h1>
+            <linked-outings item="c2cItem"></linked-outings>
+            <outing-images item="c2cItem"></outing-images>
+            <span class="pull-right follow-button" ng-click="currentUser.toggleFollow(c2cItem)">
+                <i class="fa fa-star" ng-class="{'followed-icon':currentUser.isFollowed(c2cItem)}"
+               uib-tooltip="{{'Follow' | translate }}"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="ibox-content" style="display: block;">
+        <div class="row" infinite-scroll="loadMore()">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div ng-repeat="outing in data.documents" ng-if="outing.locales[0].description">
+                    <h3>
+                        <i class="fa fa-file-image-o"></i>
+                        <outing-link outing="outing"></outing-link>
+                        <small>{{outing.date_start}}</small>
+                        &nbsp;
+                    </h3>
+
+                    <div markdown="outing.locales[0].description"></div>
+
+                    <div gallery ng-if="outing.associations.images.length"
+                         images="outing.associations.images"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-photoswipe
+         slides="photoswipe.slides"
+         open="photoswipe.open"
+         template='static/campui/views/components/ng-photoswipe.html'
+         on-close="photoswipe.closeGallery()"
+         options="photoswipe.opts"></div>
+
+</div>
+
+
