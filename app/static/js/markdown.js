@@ -24,6 +24,15 @@ app.provider('markdownConverter', function () {
             }
         };
 
+
+        var color = { //trash
+            type: 'lang',
+            regex: /(\[\/?(color)(=#?[a-zA-Z_\d]*)?\/?\])/g,
+            replace: function () {
+                return '';
+            }
+        };
+
         var c2c_title = { //trash
             type: 'lang',
             regex: /\n(#+)c?([^\n#]+)#*(.*)/g,
@@ -154,6 +163,14 @@ app.provider('markdownConverter', function () {
             regex: /\[img=([\d]+|[A-Za-z][\dA-Za-z\._/]+)([a-zA-Z\-_ ]*)?\]([^\[]*)\[\/img\]/g,
             replace: function (match, imgId, options, legend) {
                 return image(imgId, options, legend)
+            }
+        };
+
+        var acr = {
+            type: 'lang',
+            regex: /\[acr(?:onym)?=([^\[]*?)\](.*?)\[\/acr(?:onym)?\]/g,
+            replace: function (match, title, text) {
+                return '<acronym title="' + title + '">' + text + '</acronym>';
             }
         };
 
@@ -387,8 +404,8 @@ app.provider('markdownConverter', function () {
             }
         };
 
-        return [code, italic, bold, sup, sub, underline, monospace, del, c2c_title, video,
-            warning, imp, img, imgLegend, url, url2, c2cItem, url4,url5, toc, ltag];
+        return [code, color, italic, bold, sup, sub, underline, monospace, del, c2c_title, video,
+            warning, imp, img, imgLegend, acr, url, url2, c2cItem, url4,url5, toc, ltag];
     }
 
     showdown.extension('c2c_folies', c2c_folies);

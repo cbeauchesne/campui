@@ -42,9 +42,14 @@ app.factory('code_samples', function(){
 
     return [
         {
+        name:'Acr1',
+        code:'[acr=a b]c[/acr]',
+        html:'<acronym title="a b">c</acronym>'
+        },
+        {
         name:'Image1',
         code:'[img=234624 big center no_border no-legend/]',
-        html:'<figure class="image-big image-center image-no-border image-no-legend"><a href="https://www.camptocamp.org/images/234624" target="_blank"><img src="https://api.camptocamp.org/images/proxy/234624?size=BI"></a></figure>'
+        html:'<figure class="image-big image-center image-no-border image-no-legend"><img src="https://api.camptocamp.org/images/proxy/234624?size=BI" href="photoswipe.showGallery(234624)"></figure>'
         },
         {
         name:'Image2',
@@ -54,17 +59,17 @@ app.factory('code_samples', function(){
         {
         name:"Image3",
         code:"[img=37027 right /]",
-        html:'<figure class="image-right"><a href="https://www.camptocamp.org/images/37027" target="_blank"><img src="https://api.camptocamp.org/images/proxy/37027?size=MI"></a></figure>'
+        html:'<figure class="image-right"><img src="https://api.camptocamp.org/images/proxy/37027?size=MI" href="photoswipe.showGallery(37027)"></figure>'
         },
         {
         name:"Image4",
         code:"[img=37027 center big]text[/img]",
-        html:'<figure class="image-center image-big"><a href="https://www.camptocamp.org/images/37027" target="_blank"><img src="https://api.camptocamp.org/images/proxy/37027?size=BI"></a></figure>'
+        html:'<figure class="image-center image-big"><img src="https://api.camptocamp.org/images/proxy/37027?size=BI" href="photoswipe.showGallery(37027)"></figure>'
         },
         {
         name:"Image5",
         code:"[img=142101right][/img]",
-        html:'<figure><a href="https://www.camptocamp.org/images/142101right" target="_blank"><img src="https://api.camptocamp.org/images/proxy/142101right?size=MI"></a></figure>'
+        html:'<figure class="image-right"><img src="https://api.camptocamp.org/images/proxy/142101?size=MI" href="photoswipe.showGallery(142101)"></figure>'
         },
 
         {
