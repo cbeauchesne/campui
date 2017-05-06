@@ -124,7 +124,7 @@ msgstr ""
 #: common/navbar.html:49
 #: factories.js:680
 #: outing.html:23
-#: route.html:29
+#: route.html:30
 #: waypoint.html:15
 msgid "Areas"
 msgstr ""
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: route.html:66
+#: route.html:67
 msgid "Configuration"
 msgstr ""
 
@@ -167,7 +167,7 @@ msgid "Create an account"
 msgstr ""
 
 #: common/navbar.html:94
-#: route.html:33
+#: route.html:34
 #: waypoint.html:19
 msgid "Credits"
 msgstr ""
@@ -194,12 +194,12 @@ msgstr ""
 
 #: area.html:19
 #: outing.html:31
-#: route.html:103
+#: route.html:104
 #: waypoint.html:109
 msgid "Description"
 msgstr ""
 
-#: route.html:48
+#: route.html:49
 msgid "Difficulties height"
 msgstr ""
 
@@ -216,7 +216,7 @@ msgstr ""
 msgid "Elevation"
 msgstr ""
 
-#: route.html:81
+#: route.html:82
 msgid "Elevation min/max"
 msgstr ""
 
@@ -258,11 +258,11 @@ msgstr ""
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:109
+#: route.html:110
 msgid "Gears"
 msgstr ""
 
-#: route.html:58
+#: route.html:59
 msgid "Glacier gears"
 msgstr ""
 
@@ -279,11 +279,11 @@ msgid "Height diff"
 msgstr ""
 
 #: outing.html:70
-#: route.html:76
+#: route.html:77
 msgid "Height difference"
 msgstr ""
 
-#: route.html:113
+#: route.html:114
 msgid "History"
 msgstr ""
 
@@ -402,7 +402,7 @@ msgstr ""
 msgid "Only a-z, 0-9 and _ are allowed"
 msgstr ""
 
-#: route.html:71
+#: route.html:72
 msgid "Orientation"
 msgstr ""
 
@@ -462,7 +462,7 @@ msgstr ""
 msgid "Ratings"
 msgstr ""
 
-#: route.html:119
+#: route.html:120
 #: waypoint.html:128
 msgid "Recent outings"
 msgstr ""
@@ -471,7 +471,7 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: route.html:106
+#: route.html:107
 msgid "Remarks"
 msgstr ""
 
@@ -503,11 +503,11 @@ msgstr ""
 msgid "Route description"
 msgstr ""
 
-#: route.html:86
+#: route.html:87
 msgid "Route length"
 msgstr ""
 
-#: route.html:53
+#: route.html:54
 msgid "Route type"
 msgstr ""
 
@@ -625,7 +625,7 @@ msgid "W"
 msgstr ""
 
 #: common/navbar.html:43
-#: route.html:92
+#: route.html:93
 #: search.html:24
 #: waypoint.html:132
 msgid "Waypoints"
@@ -660,7 +660,7 @@ msgid "accidental_avalanche"
 msgstr ""
 
 #: fixed_strings.html:43
-#: route.html:42
+#: route.html:43
 msgid "activities"
 msgstr ""
 

@@ -21,10 +21,11 @@
                ng-class="{'followed-icon':currentUser.isFollowed(route)}"
                uib-tooltip="{{'Follow' | translate }}"></i>
         </span>
+        <div style="clear:both"></div>
     </div>
 
     <div class="ibox-content item-metadata hidden-print">
-        <div class="row">
+        <div class="row item-header">
             <div class="col-sm-8">
                 <i class="fa fa-chevron-right" uib-tooltip="{{'Areas' | translate }}"></i>
                 <i areas="route.areas"></i>
