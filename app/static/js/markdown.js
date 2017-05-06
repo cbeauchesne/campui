@@ -230,7 +230,6 @@ app.provider('markdownConverter', function () {
                 
                 row_parser = /(?:\n\n?)([LR])#([^]*?(?=\n[LR]#|\n\n))/gm
                 row_sub_parser = /(=|~|[^|: =]*) *(\|\||\||::|:)?([^]*)/
-             //   cell_parser = /([^|:]*)[|:]+/g
                 cell_parser = /([^]*?)(?:\|+|::+)/g
                 
                 result = ['\n<table>']
@@ -287,7 +286,8 @@ app.provider('markdownConverter', function () {
             
             result.push("</tr>")
         }
-        
+
+
         var processCells = function(result, tag, suffix, cells){
             if(!ltag_memory.cellCount)
                 ltag_memory.cellCount = cells.length
@@ -385,7 +385,29 @@ app.provider('markdownConverter', function () {
                 else{
                     cell1 = tag + "#" + suffix
                 }
-                
+
+/* d'abord global table
+                var parseCell = function(cell){
+                    var re = /([LR])#([+-])?([\d]*)/g
+
+                    return  cell.replace(re, function(match, reftag, way, number){
+
+                        if(way=="+")
+                            number = ltag_memory[tag] + number
+                        else if(way=="-")
+                            number = ltag_memory[tag] - number
+                        else
+                            number = ltag_memory[tag]
+
+                        console.log(tag + number, arguments)
+
+                        return reftag + number
+                    })
+                }
+
+                cells = cells.map(parseCell)
+*/
+
                 pushLine(result, 'td', cell1, cells)                       
             }                    
         }

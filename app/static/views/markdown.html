@@ -28,10 +28,11 @@
 
 <div class="row faq-view"
      ng-repeat="item in items"
-     ng-class="{'bg-danger': !item.success}"
      ng-if="showAll || !item.success">
 
-    <div class="col-lg-1">
+    <div class="col-lg-1"
+
+         ng-class="{'bg-danger': !item.success}">
         #{{$index+1}} {{item.name}}
     </div>
     <div class="col-lg-3">
