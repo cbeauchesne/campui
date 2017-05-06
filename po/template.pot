@@ -130,7 +130,7 @@ msgid "Areas"
 msgstr ""
 
 #: common/navbar.html:69
-#: home.html:99
+#: home.html:100
 msgid "Articles"
 msgstr ""
 
@@ -283,7 +283,7 @@ msgstr ""
 msgid "Height difference"
 msgstr ""
 
-#: route.html:112
+#: route.html:113
 msgid "History"
 msgstr ""
 
@@ -462,7 +462,7 @@ msgstr ""
 msgid "Ratings"
 msgstr ""
 
-#: route.html:121
+#: route.html:119
 #: waypoint.html:128
 msgid "Recent outings"
 msgstr ""

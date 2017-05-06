@@ -4,12 +4,12 @@
             <i class="fa fa-road"></i>
             <route-link-c2c route="route"></route-link-c2c>
         </h1>
-        <span ng-if="route.associations.recent_outings.documents.length!=0">
+        <span class="hidden-print" ng-if="route.associations.recent_outings.documents.length!=0">
             <linked-outings item="route"></linked-outings>
             <outing-images item="route"></outing-images>
             <stories item="route"></stories>
         </span>
-        <span class="pull-right">
+        <span class="pull-right hidden-print">
             <a href="https://www.camptocamp.org/outings/add#r={{route.document_id}}"
                uib-tooltip="{{'Add your outing' | translate }}"
                target="_blank"
@@ -23,7 +23,7 @@
         </span>
     </div>
 
-    <div class="ibox-content item-metadata">
+    <div class="ibox-content item-metadata hidden-print">
         <div class="row">
             <div class="col-sm-8">
                 <i class="fa fa-chevron-right" uib-tooltip="{{'Areas' | translate }}"></i>
@@ -98,7 +98,7 @@
         <div class="row">
             <div class="col-sm-12">
 
-                <div class="summary" ng-if="currentLocale.summary" markdown="currentLocale.summary"></div>
+                <div class="summary hidden-print" ng-if="currentLocale.summary" markdown="currentLocale.summary"></div>
 
                 <h2 ng-if="currentLocale.description" translate>Description</h2>
                 <div markdown="currentLocale.description"></div>
@@ -109,19 +109,18 @@
                 <h2 ng-if="currentLocale.gear" translate>Gears</h2>
                 <div markdown="currentLocale.gear"></div>
 
-                <h2 ng-if="currentLocale.route_history" translate>History</h2>
-                <div markdown="currentLocale.route_history"></div>
+                <div class="hidden-print">
+                    <h2 ng-if="currentLocale.route_history" translate>History</h2>
+                    <div markdown="currentLocale.route_history"></div>
+                </div>
 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div ng-if="route.associations.recent_outings.documents.length!=0">
+                <div class="hidden-print" ng-if="route.associations.recent_outings.documents.length!=0">
                     <h2>
                         <span translate>Recent outings</span>
                     </h2>
                     <outing-list outings="route.associations.recent_outings.documents"></outing-list>
                 </div>
+
                 <div gallery class="col-sm-12" ng-if="route.associations.images.length"
                      images="route.associations.images"></div>
             </div>

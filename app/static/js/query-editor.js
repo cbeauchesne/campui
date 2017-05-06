@@ -410,7 +410,7 @@ app.factory('filterItems', ["c2c_common","gettextCatalog", function(c2c_common, 
         ralt :  new sliderIntFilterItem('difficulties height',0,666),
 
         rappr :  new sliderIntFilterItem('height diff access',0,666),
-        dhei :  new sliderIntFilterItem('height diff difficulties',0,666),
+        dhei :  new sliderIntFilterItem('height diff difficulties',0,3000),
 
         walt : new sliderIntFilterItem('elevation'),
         prom : new sliderIntFilterItem('prominence'),
