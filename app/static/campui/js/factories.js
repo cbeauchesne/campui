@@ -782,7 +782,7 @@ app.factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
             }
         }
 
-        _this._waypointsChooser = true
+        _this._waypointsChooser = false
         _this.hideWaypointsChooser = function(){
             _this._waypointsChooser = false // marche pas
         }
