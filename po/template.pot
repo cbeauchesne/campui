@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: c2c_items.html:94
+#: c2c_items.html:96
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 
@@ -550,7 +550,7 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: c2c_items.html:109
+#: c2c_items.html:111
 msgid "Select filters"
 msgstr ""
 
@@ -608,7 +608,7 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: c2c_items.html:86
+#: c2c_items.html:88
 msgid "Use as a filter"
 msgstr ""
 
