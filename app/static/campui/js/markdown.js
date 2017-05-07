@@ -1,13 +1,15 @@
 
 app = angular.module('campui')
 
-ltag_memory = {L : 0, R:0}
         
 // your new best friends :
 // https://regex101.com/
 // http://localhost:3000/markdown
         
 app.provider('markdownConverter', function () {
+
+    var ltag_memory = {L : 0, R:0}
+
     var opts = {
         simpleLineBreaks : true,
         headerLevelStart : 2,
@@ -16,6 +18,26 @@ app.provider('markdownConverter', function () {
         };
 
     var c2c_folies = function () {
+
+        function typo_tag(tag, html){
+            return {
+                type: 'lang',
+                regex: new RegExp('\\[' + tag + '\\](.*?)\\[\\/' + tag + '\\]', 'g'),
+                replace: function (match, text) {
+                    return '<' + html + '>'+ text + '</' + html + '>';
+                }
+            };
+        }
+
+        var underline = typo_tag('u', 'u')
+        var del = typo_tag('s', 'del')
+        var sup = typo_tag('sup', 'sup')
+        var sub = typo_tag('ind', 'sub')
+        var italic = typo_tag('i', 'i')
+        var bold = typo_tag('b', 'strong')
+        var monospace = typo_tag('c', 'span') //not yet style...
+
+
         var toc = { //trash
             type: 'lang',
             regex: /(\[\/?(toc2|p|col|toc|picto)([a-zA-Z_\d ]*)?\/?\])/g,
@@ -23,7 +45,6 @@ app.provider('markdownConverter', function () {
                 return '';
             }
         };
-
 
         var color = { //trash
             type: 'lang',
@@ -44,67 +65,11 @@ app.provider('markdownConverter', function () {
             }
         };
 
-        var underline = {
-            type: 'lang',
-            regex: /\[u\](.*?)\[\/u\]/g,
-            replace: function (match, text) {
-                return '<u>'+ text + '</u>';
-            }
-        };
-
-        var del = {
-            type: 'lang',
-            regex: /\[s\](.*?)\[\/s\]/g,
-            replace: function (match, text) {
-                return '<del>'+ text + '</del>';
-            }
-        };
-
-        var sup = {
-            type: 'lang',
-            regex: /\[sup\](.*?)\[\/sup\]/g,
-            replace: function (match, text) {
-                return '<sup>'+ text + '</sup>';
-            }
-        };
-
-        var sub = {
-            type: 'lang',
-            regex: /\[ind\](.*?)\[\/ind\]/g,
-            replace: function (match, text) {
-                return '<sub>'+ text + '</sub>';
-            }
-        };
-
-        var monospace = {
-            type: 'lang',
-            regex: /\[c\](.*?)\[\/c\]/g,
-            replace: function (match, text) {
-                return text;
-            }
-        };
-
-        var italic = {
-            type: 'lang',
-            regex: /\[i\](.*?)\[\/i\]/g,
-            replace: function (match, text) {
-                return '<i>'+ text + '</i>';
-            }
-        };
-
         var code = {
             type: 'lang',
             regex: /\[code\]([^]*?)\[\/code\]/g,
             replace: function (match, text) {
                 return '<pre>'+ text.replace(/\n([^ \n])/g,"\n $1") + '</pre>';
-            }
-        };
-
-        var bold = {
-            type: 'lang',
-            regex: /\[b\]([^\]]*)\[\/b\]/g,
-            replace: function (match, text) {
-                return '<strong>'+ text + '</strong>';
             }
         };
 
@@ -470,7 +435,7 @@ app.directive('markdown', ['$sanitize', 'markdownConverter', '$compile', functio
 
                     html = html.replace("___IFRAME_IN__", "<iframe ")
                     html = html.replace("___IFRAME_OUT__", "></iframe>")
-                    
+
                     html = html.replace(/href=.photoswipe/g, 'ng-click="photoswipe')
                 }
                 return html

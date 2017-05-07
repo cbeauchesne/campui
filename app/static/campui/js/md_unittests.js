@@ -340,7 +340,7 @@ app.factory('code_samples', function(){
         {
         name:"Typo15",
         code:"[c]coucou[/c]",
-        html:"coucou"
+        html:"<span>coucou</span>"
         },
         {
         name:"Typo16",
@@ -361,6 +361,16 @@ app.factory('code_samples', function(){
         name:'Typo19',
         code:'[warning]coucou[/warning]',
         html:'<div class="alert alert-danger">coucou</div>'
+        },
+        {
+        name:'Typo20',
+        code:'[b][u]xx[/u][/b]',
+        html:'<strong><u>xx</u></strong>'
+        },
+        {
+        name:'Typo21',
+        code:'[i][u]xx[/u][/i]',
+        html:'<i><u>xx</u></i>'
         },
         {
         name:'Url',
