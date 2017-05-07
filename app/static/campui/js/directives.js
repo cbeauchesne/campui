@@ -1,4 +1,5 @@
 
+
 app = angular.module('campui')
 
 app.directive('pageTitle', ['$rootScope','$timeout',function ($rootScope, $timeout) {
@@ -175,7 +176,7 @@ app.directive('stories', function(){
 })
 
 
-c2cItems = {
+var c2cItems = {
     user:{
         label:"name",
         detailled_controller: "linkedOutingsController",
@@ -207,13 +208,13 @@ $.each(c2cItems, function(item, params){
                                 '<a ui-sref="' + item + '({id:' + item + '.document_id})">' + label + '</a>'
 
     if(params.label_prefix){
-        prefixModel = 'getLocale(' + item + ').' + params.label_prefix
+        var prefixModel = 'getLocale(' + item + ').' + params.label_prefix
         label = '<span ng-if="' + prefixModel + '">{{' + prefixModel + '}} : </span>' + label
     }
 
     app.directive(item + 'LinkC2c', function(){
 
-        result = {
+        var result = {
             restrict: 'E',
             scope: {},
             template: '<a target="_blank" href="https://www.camptocamp.org/' + item + 's/{{' + item + '.document_id}}">' + label + '</a>',
@@ -226,7 +227,7 @@ $.each(c2cItems, function(item, params){
     })
 
     app.directive(item + 'Link', function(){
-        result =  {
+        var result =  {
             restrict: 'E',
             scope: {},
             template: params.itemLinkTemplate,
@@ -241,7 +242,7 @@ $.each(c2cItems, function(item, params){
     var Item = item.charAt(0).toUpperCase() + item.slice(1) //capitalize first letter
 
     app.directive('linked' + Item + 's', function(){
-        result =   {
+        var result =   {
             restrict: 'E',
             replace: true,
             scope: {
@@ -254,7 +255,7 @@ $.each(c2cItems, function(item, params){
     })
 
     app.directive(item + 'List', function(){
-        result =   {
+        var result =   {
             restrict: 'E',
             replace: true,
             scope: {},
