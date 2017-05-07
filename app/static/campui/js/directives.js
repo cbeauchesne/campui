@@ -211,7 +211,7 @@ $.each(c2cItems, function(item, params){
         label = '<span ng-if="' + prefixModel + '">{{' + prefixModel + '}} : </span>' + label
     }
 
-    angular.module('campui').directive(item + 'LinkC2c', function(){
+    app.directive(item + 'LinkC2c', function(){
 
         result = {
             restrict: 'E',
@@ -225,7 +225,7 @@ $.each(c2cItems, function(item, params){
         return result;
     })
 
-    angular.module('campui').directive(item + 'Link', function(){
+    app.directive(item + 'Link', function(){
         result =  {
             restrict: 'E',
             scope: {},
@@ -238,8 +238,9 @@ $.each(c2cItems, function(item, params){
         return result;
     })
 
-    Item = item.charAt(0).toUpperCase() + item.slice(1) //capitalize first letter
-    angular.module('campui').directive('linked' + Item + 's', function(){
+    var Item = item.charAt(0).toUpperCase() + item.slice(1) //capitalize first letter
+
+    app.directive('linked' + Item + 's', function(){
         result =   {
             restrict: 'E',
             replace: true,
@@ -252,7 +253,7 @@ $.each(c2cItems, function(item, params){
         return result;
     })
 
-    angular.module('campui').directive(item + 'List', function(){
+    app.directive(item + 'List', function(){
         result =   {
             restrict: 'E',
             replace: true,
