@@ -624,15 +624,12 @@ msgstr ""
 msgid "W"
 msgstr ""
 
+#: c2c_items.html:91
 #: common/navbar.html:43
 #: route.html:93
 #: search.html:24
 #: waypoint.html:132
 msgid "Waypoints"
-msgstr ""
-
-#: c2c_items.html:91
-msgid "Waypoints {{mapData._waypointsChooser}}"
 msgstr ""
 
 #: outing.html:55

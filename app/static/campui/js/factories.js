@@ -772,7 +772,6 @@ app.factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
 
                     if(map._dragend) map._dragend.remove()
                     if(map._zoom_changed) map._zoom_changed.remove()
-                    if(map._hideWaypointsChooser) map._hideWaypointsChooser.remove()
 
                     map._dragend = map.addListener('dragend', _this.sendBoundsToQuery);
                     map._zoom_changed = map.addListener('zoom_changed', _this.sendBoundsToQuery);
