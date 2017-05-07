@@ -711,7 +711,7 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
     }
 }])
 
-app.factory("mapData", ["NgMap", function(NgMap){
+app.factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
     var ESPG_4326 = new proj4.Proj('EPSG:4326');
     var ESPG_3785 = new proj4.Proj('GOOGLE');
 
@@ -728,6 +728,26 @@ app.factory("mapData", ["NgMap", function(NgMap){
 
         _this.visible=false
         _this.markers = []
+        _this.waypoint_markers = []
+
+        _this.waypoint_types = [[
+            "summit",
+            "pass",
+            "lake",
+            "waterfall",
+            "canyon",
+            "access",
+            "hut",
+            "gite",],
+            ["shelter",
+            "bivouac",
+            "camp_site",
+            "base_camp",
+            "paragliding_takeoff",
+            "paragliding_landing",
+            "cave",
+            "waterpoint",
+        ]]
 
         _this.toggleFilterMode = function(){
             console.log("_this.filterMode", _this.filterMode)
@@ -752,6 +772,7 @@ app.factory("mapData", ["NgMap", function(NgMap){
 
                     if(map._dragend) map._dragend.remove()
                     if(map._zoom_changed) map._zoom_changed.remove()
+                    if(map._hideWaypointsChooser) map._hideWaypointsChooser.remove()
 
                     map._dragend = map.addListener('dragend', _this.sendBoundsToQuery);
                     map._zoom_changed = map.addListener('zoom_changed', _this.sendBoundsToQuery);
@@ -762,20 +783,28 @@ app.factory("mapData", ["NgMap", function(NgMap){
             }
         }
 
-        _this.sendBoundsToQuery = function(){
-            if(!_this.filterMode)
-                return
+        _this._waypointsChooser = true
+        _this.hideWaypointsChooser = function(){
+            _this._waypointsChooser = false // marche pas
+        }
 
+        _this.getBoundsC2c = function(){
             var bounds = _this._map.getBounds().toJSON()
             var NO = proj4.transform(ESPG_4326, ESPG_3785, [bounds.east,bounds.north])
             var SW = proj4.transform(ESPG_4326, ESPG_3785, [bounds.west,bounds.south])
 
-            var c2c_coords =  [SW.x, SW.y, NO.x, NO.y]
-            _this.onMapMove(c2c_coords)
+            return [SW.x, SW.y, NO.x, NO.y]
+
+        }
+
+        _this.sendBoundsToQuery = function(){
+            if(!_this.filterMode)
+                return
+
+            _this.onMapMove(_this.getBoundsC2c())
         }
 
         _this.boundToMarkers = function(){
-            console.log(_this.bounds.toJSON())
             _this._map.fitBounds(_this.bounds)
         }
 
@@ -783,11 +812,74 @@ app.factory("mapData", ["NgMap", function(NgMap){
             for (var i = 0; i < _this.markers.length; i++ ) {
                 _this.markers[i].setMap(null);
             }
+
             _this.markers.length = 0;
 
             if(_this.currentInfoWindow)
                 _this.currentInfoWindow.close()
+        }
 
+        _this.visibleWaypoints = {}
+
+        _this.updateWaypoints = function(){
+            var wps = []
+            $.each(_this.visibleWaypoints, function(key, value){
+                if(value)
+                    wps.push(key)
+            })
+
+            for (var i = 0; i < _this.waypoint_markers.length; i++ ) {
+                _this.waypoint_markers[i].setMap(null);
+            }
+
+            _this.waypoint_markers.length = 0;
+
+            if(wps.length==0)
+                return
+
+            var bbox = _this.getBoundsC2c().join(",")
+            c2c.waypoints.get({query:"bbox=" + bbox + "&wtyp=" + wps.join(",")}, function(data){
+
+                data.documents.forEach(function(waypoint){
+                    var marker = _this.createMarker(waypoint)
+                    _this.waypoint_markers.push(marker)
+                })
+            })
+        }
+
+        _this.createMarker = function(doc){
+            var point = JSON.parse(doc.geometry.geom).coordinates
+
+            var infowindow = new google.maps.InfoWindow({
+                content:
+                    "<div class='map-info'>" +
+                    "<a href='" + letterToC2cItem[doc.type] + "/" + doc.document_id + "'>" +
+                    doc.locales[0].title +
+                    "</a>" +
+                    "" +
+                    "</div>"
+            });
+
+            point = proj4.transform(ESPG_3785, ESPG_4326, point)
+            var latLng = new google.maps.LatLng(point.y, point.x)
+            var marker = new google.maps.Marker({
+                position:  latLng,
+                map: _this._map,
+            })
+
+            marker.addListener('click', function() {
+                if (infowindow.isOpen())
+                    infowindow.close()
+                else {
+                    if(_this.currentInfoWindow)
+                        _this.currentInfoWindow.close()
+
+                    infowindow.open(_this._map, marker);
+                    _this.currentInfoWindow = infowindow
+                }
+            });
+
+            return marker
         }
 
         _this.appendMarkers = function(data){
@@ -795,39 +887,9 @@ app.factory("mapData", ["NgMap", function(NgMap){
             _this.bounds = new google.maps.LatLngBounds();
 
             data.documents.forEach(function(doc){
-                var point = JSON.parse(doc.geometry.geom).coordinates
-
-                var infowindow = new google.maps.InfoWindow({
-                    content:
-                        "<div class='map-info'>" +
-                        "<a href='" + letterToC2cItem[doc.type] + "/" + doc.document_id + "'>" +
-                        doc.locales[0].title +
-                        "</a>" +
-                        "" +
-                        "</div>"
-                });
-
-                point = proj4.transform(ESPG_3785, ESPG_4326, point)
-                var latLng = new google.maps.LatLng(point.y, point.x)
-                var marker = new google.maps.Marker({
-                    position:  latLng,
-                    map: _this._map,
-                })
-
-                marker.addListener('click', function() {
-                    if (infowindow.isOpen())
-                        infowindow.close()
-                    else {
-                        if(_this.currentInfoWindow)
-                            _this.currentInfoWindow.close()
-
-                        infowindow.open(_this._map, marker);
-                        _this.currentInfoWindow = infowindow
-                    }
-                });
-
-                _this.bounds.extend(latLng)
+                var marker = _this.createMarker(doc)
                 _this.markers.push(marker)
+                _this.bounds.extend(marker.position)
             })
         }
 
@@ -835,6 +897,7 @@ app.factory("mapData", ["NgMap", function(NgMap){
             _this.removeMarkers()
             _this.appendMarkers(data)
             _this.boundToMarkers()
+            _this.updateWaypoints()
         }
 
         _this.onDataLoad = function(data){
@@ -846,6 +909,8 @@ app.factory("mapData", ["NgMap", function(NgMap){
 
             if(!_this.filterMode)
                 _this.boundToMarkers()
+
+            _this.updateWaypoints()
         }
     }
 

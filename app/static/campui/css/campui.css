@@ -372,6 +372,8 @@ a[href^="https://forum.camptocamp.org"]:hover {
 .onoffswitch-switch {
   height: 20px; }
 
+.mapWaypointsChoices,
+.mapWaypointsToggler,
 .mapFilterToggler {
   background-color: #fff;
   border: 2px solid #fff;
@@ -386,12 +388,34 @@ a[href^="https://forum.camptocamp.org"]:hover {
   font-family: Roboto,Arial,sans-serif;
   margin: 5px; }
 
+.mapWaypointsToggler {
+  margin-right: 0px;
+  padding: 5px;
+  float: right; }
+
 .mapFilterToggler label {
   margin: 5px;
   margin-top: 0px;
   margin-left: 0px;
   vertical-align: middle;
   color: #191919; }
+
+.mapWaypointsChoices {
+  text-align: left;
+  clear: both;
+  margin-right: 0px;
+  cursor: normal; }
+
+.mapWaypointsChoices input {
+  margin: 5px;
+  margin-right: 2px; }
+
+.mapWaypointsChoices label {
+  margin-right: 5px;
+  cursor: pointer; }
+
+.mapWaypointsChoices label:first-letter {
+  text-transform: uppercase; }
 
 @media print {
   body {
