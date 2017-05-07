@@ -1,7 +1,5 @@
 app = angular.module('campui')
 
-
-
 app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     $urlRouterProvider.otherwise("/");
 

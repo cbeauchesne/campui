@@ -1,11 +1,4 @@
 
-
-
-/**
- *
- * Pass all functions into module
- */
-
 app = angular.module('campui')
 
 app.directive('pageTitle', ['$rootScope','$timeout',function ($rootScope, $timeout) {
@@ -47,145 +40,139 @@ app.directive('license', function(){
     }
 })
 
-angular.module('campui')
 
 
-    .directive('activities', function(){
-        return {
-            restrict: 'E',
-            replace: true,
-            scope: {
-                activities: '=',
-            },
-            template: '<img ng-repeat="activity in activities" alt="{{activity}}" ng-src="static/campui/img/{{activity}}-16x16.png"></img>',
-        };
-    })
+app.directive('activities', function(){
+    return {
+        restrict: 'E',
+        replace: true,
+        scope: {
+            activities: '=',
+        },
+        template: '<img ng-repeat="activity in activities" alt="{{activity}}" ng-src="static/campui/img/{{activity}}-16x16.png"></img>',
+    };
+})
 
-    .directive('rating', function(){
-        return {
-            restrict: 'E',
-            scope: {
-                route: '=',
-            },
-            templateUrl: '/static/campui/views/components/rating.html',
-        };
-    })
+app.directive('rating', function(){
+    return {
+        restrict: 'E',
+        scope: {
+            route: '=',
+        },
+        templateUrl: '/static/campui/views/components/rating.html',
+    };
+})
 
-
-/////////////////////////////////////////////////////////////////////
-
-
-    .directive('loadingInfo', function(){
-        return {
-            restrict: 'E',
-            replace: true,
-            scope: true,
-            templateUrl: '/static/campui/views/components/loading_info.html',
-        };
-    })
+app.directive('loadingInfo', function(){
+    return {
+        restrict: 'E',
+        replace: true,
+        scope: true,
+        templateUrl: '/static/campui/views/components/loading_info.html',
+    };
+})
 
 
-    .directive('gallery', function(){
-        return {
-            restrict: 'EA',
-            replace: false,
-            scope: {
-                images: '=',
-            },
-            templateUrl: '/static/campui/views/components/image_gallery.html',
-            controller:["$scope","locale","photoswipe", function($scope, locale, photoswipe){
-                // https://github.com/dimsemenov/PhotoSwipe/issues/580
-                // history is important, see comment of mutac
-                $scope.photoswipe = photoswipe
-                photoswipe.getters.push(function(){
-                    return $scope.images
-                })
-            }]
-        };
-    })
+app.directive('gallery', function(){
+    return {
+        restrict: 'EA',
+        replace: false,
+        scope: {
+            images: '=',
+        },
+        templateUrl: '/static/campui/views/components/image_gallery.html',
+        controller:["$scope","locale","photoswipe", function($scope, locale, photoswipe){
+            // https://github.com/dimsemenov/PhotoSwipe/issues/580
+            // history is important, see comment of mutac
+            $scope.photoswipe = photoswipe
+            photoswipe.getters.push(function(){
+                return $scope.images
+            })
+        }]
+    };
+})
 
-    .directive('outingIbox', function(){
-        return {
-            restrict: 'E',
-            replace: true,
-            scope: {
-                outings: '=',
-            },
-            templateUrl: '/static/campui/views/components/outing_ibox.html',
-        };
-    })
+app.directive('outingIbox', function(){
+    return {
+        restrict: 'E',
+        replace: true,
+        scope: {
+            outings: '=',
+        },
+        templateUrl: '/static/campui/views/components/outing_ibox.html',
+    };
+})
 
-    .directive('authorLink', function(){
-        return {
-            restrict: 'E',
-            scope: {author:"="},
-            template: '<a ui-sref="stories({"u":author.user_id})">{{author.name}}</a>',
-        };
-    })
+app.directive('authorLink', function(){
+    return {
+        restrict: 'E',
+        scope: {author:"="},
+        template: '<a ui-sref="stories({"u":author.user_id})">{{author.name}}</a>',
+    };
+})
 
-    .directive('qualityIcon', function(){
-        return {
-            restrict: 'E',
-            scope: {quality:"="},
-            replace: true,
-            template: '<i class="fa fa-star quality-{{quality}}"></i>',
-        };
-    })
+app.directive('qualityIcon', function(){
+    return {
+        restrict: 'E',
+        scope: {quality:"="},
+        replace: true,
+        template: '<i class="fa fa-star quality-{{quality}}"></i>',
+    };
+})
 
-    .directive('conditionIcon', function(){
-        tooltip = "{{'Conditions : ' | translate }}{{condition | translate}}"
+app.directive('conditionIcon', function(){
+    tooltip = "{{'Conditions : ' | translate }}{{condition | translate}}"
 
-        return {
-            restrict: 'E',
-            scope: {condition:"="},
-            replace: true,
-            template: '<span class="condition-{{condition}}" uib-tooltip="' + tooltip + '"><i ng-show="condition" class="fa fa-circle"></i></span>',
-        };
-    })
+    return {
+        restrict: 'E',
+        scope: {condition:"="},
+        replace: true,
+        template: '<span class="condition-{{condition}}" uib-tooltip="' + tooltip + '"><i ng-show="condition" class="fa fa-circle"></i></span>',
+    };
+})
 
-    .directive('areas', function(){
+app.directive('areas', function(){
+    return {
+        restrict: 'EA',
+        replace:true,
+        scope: {areas:"="},
+        template: '<span ng-repeat="area in areas"><area-link area="area"></area-link>{{$last ? "" : ", "}}</span>',
+    };
+})
 
-        return {
-            restrict: 'EA',
-            replace:true,
-            scope: {areas:"="},
-            template: '<span ng-repeat="area in areas"><area-link area="area"></area-link>{{$last ? "" : ", "}}</span>',
-        };
-    })
+app.directive('queryEditor', function(){
+    return {
+        restrict: 'E',
+        scope: true,
+        templateUrl: 'static/campui/views/components/query_editor.html',
+    };
+})
 
-    .directive('queryEditor', function(){
-        return {
-            restrict: 'E',
-            scope: true,
-            templateUrl: 'static/campui/views/components/query_editor.html',
-        };
-    })
+app.directive('outingImages', function(){
+    result =   {
+        restrict: 'E',
+        replace: true,
+        scope: {
+            item:"=",
+            itemType:"=?",
+        },
+        template: '<a class="badge badge-success" ui-sref="outingImages({[item.type || itemType]:item.document_id})" translate>images</a>',
+    };
+    return result;
+})
 
-    .directive('outingImages', function(){
-        result =   {
-            restrict: 'E',
-            replace: true,
-            scope: {
-                item:"=",
-                itemType:"=?",
-            },
-            template: '<a class="badge badge-success" ui-sref="outingImages({[item.type || itemType]:item.document_id})" translate>images</a>',
-        };
-        return result;
-    })
-
-    .directive('stories', function(){
-        result =   {
-            restrict: 'E',
-            replace: true,
-            scope: {
-                item:"=",
-                itemType:"=?",
-            },
-            template: '<a class="badge badge-success" ui-sref="stories({[item.type || itemType]:item.document_id})" translate>stories</a>',
-        };
-        return result;
-    })
+app.directive('stories', function(){
+    result =   {
+        restrict: 'E',
+        replace: true,
+        scope: {
+            item:"=",
+            itemType:"=?",
+        },
+        template: '<a class="badge badge-success" ui-sref="stories({[item.type || itemType]:item.document_id})" translate>stories</a>',
+    };
+    return result;
+})
 
 
 c2cItems = {

@@ -156,7 +156,7 @@ gulp.task('po', function () {
 });
 
 gulp.task('clean:build', function() {
-  return del.sync(['static', 'build.zip', 'index.html']);
+  return del.sync(['static/campui', 'build.zip', 'index.html']);
 })
 
 gulp.task('watch', ['browserSync', 'sass', 'pot','po'], function(){
