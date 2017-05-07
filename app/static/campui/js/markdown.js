@@ -29,6 +29,7 @@ app.provider('markdownConverter', function () {
             };
         }
 
+        var quote = typo_tag('q', 'q')
         var underline = typo_tag('u', 'u')
         var del = typo_tag('s', 'del')
         var sup = typo_tag('sup', 'sup')
@@ -37,6 +38,7 @@ app.provider('markdownConverter', function () {
         var bold = typo_tag('b', 'strong')
         var monospace = typo_tag('c', 'span') //not yet style...
 
+        var typos = [quote, underline, del, sup, sub, italic, bold, monospace]
 
         var toc = { //trash
             type: 'lang',
@@ -391,8 +393,8 @@ app.provider('markdownConverter', function () {
             }
         };
 
-        return [code, color, italic, bold, sup, sub, underline, monospace, del, c2c_title, video,
-            warning, imp, img, imgLegend, acr, url, url2, c2cItem, url4,url5, toc, ltag];
+        return [].concat(typos, [code, color, c2c_title, video,
+            warning, imp, img, imgLegend, acr, url, url2, c2cItem, url4, url5, toc, ltag]);
     }
 
     showdown.extension('c2c_folies', c2c_folies);
