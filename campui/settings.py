@@ -56,6 +56,15 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+# parameters for collectstatic
+# STATIC_ROOT = 'static/'
+#
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "app/static"),
+# ]
+#
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
