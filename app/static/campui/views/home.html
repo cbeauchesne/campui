@@ -40,7 +40,7 @@
                                 <outing-link outing="outing"></outing-link>
                                 <span class="outing-area">{{getLocale(outing.areas[outing.areas.length-1]).title}}</span>
                                 <i class="fa fa-star followed-icon"
-                                   ng-if="user.isFollowed(getItemDetails(outing.document_id))"></i>
+                                   ng-if="currentUser.isFollowed(getItemDetails(outing.document_id))"></i>
                             </div>
                             <div class="pull-right">
                                 <i class="fa fa-camera icon-picture-presence"

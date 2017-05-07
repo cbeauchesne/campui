@@ -42,7 +42,7 @@
 
         <li role="separator" class="divider"></li>
 
-        <li ng-repeat="query in user.profile.params.queries"
+        <li ng-repeat="query in currentUser.profile.params.queries"
             ng-click="qe.setQuery(query)"
             ng-class="{active:query.name===qe.currentQuery.name}">
 
@@ -50,9 +50,9 @@
             <a ng-if="!query.name" href><i>* no name *</i></a>
         </li>
 
-        <li ng-if="!user.isAnonymous" role="separator" class="divider"></li>
+        <li ng-if="!currentUser.isAnonymous" role="separator" class="divider"></li>
 
-        <li ng-if="!user.isAnonymous">
+        <li ng-if="!currentUser.isAnonymous">
             <a ui-sref="me"><i class="fa fa-gear"></i> <span translate>Parameters</span></a>
         </li>
     </ul>

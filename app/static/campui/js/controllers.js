@@ -6,7 +6,7 @@ function getC2cController(c2c_item){
 
         $scope.getLocale = function(item){ return locale.get(item)}
         $scope.c2c_item = c2c_item
-        $scope.user = currentUser
+        $scope.currentUser = currentUser
         $scope.photoswipe = photoswipe
         $scope.columnDefs = columnDefs[c2c_item]
 
