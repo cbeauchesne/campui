@@ -1,5 +1,4 @@
 
-
 app = angular.module('campui')
 
 app.directive('pageTitle', ['$rootScope','$timeout',function ($rootScope, $timeout) {

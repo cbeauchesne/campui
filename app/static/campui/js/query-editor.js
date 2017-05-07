@@ -1,3 +1,4 @@
+
 app = angular.module('campui')
 
 app.filter('hasProp', function() {
@@ -82,7 +83,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
             _this.currentQuery = query || {}
 
             query = query || {url:""};
-            url_query = query.url || "";
+            var url_query = query.url || "";
 
             if(this.scope.data)
                 _this.scope.data.documents = []
@@ -226,7 +227,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
 
 app.factory('filterItemStorage', function(){
 
-    result = {
+    var result = {
         area : {
             defaults:["atyp", "qa"],
         },
@@ -343,7 +344,7 @@ app.factory('filterItems', ["c2c_common","gettextCatalog", function(c2c_common, 
         this.isArray = true
     }
 
-    result = {
+    var result = {
         a : new c2cSelectFilterItem("areas", "area"),
         acat : new multiSelectFilterItem("categories", c2c_common.attributes.article_categories),
         act : new multiSelectFilterItem("activities", c2c_common.attributes.activities, true),

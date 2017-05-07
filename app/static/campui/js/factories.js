@@ -1,3 +1,4 @@
+
 app = angular.module('campui')
 
 app.factory('api', ['$resource', function($resource){
@@ -20,7 +21,7 @@ app.factory('api', ['$resource', function($resource){
 }]);
 
 app.factory('anonymousProfile', ["gettextCatalog", function(gettextCatalog){
-    profile = {
+    var profile = {
         params:{
             queries:[],
             follow:{
@@ -30,7 +31,7 @@ app.factory('anonymousProfile', ["gettextCatalog", function(gettextCatalog){
         }
     }
 
-    activities = ["skitouring",
+    var activities = ["skitouring",
         "snow_ice_mixed",
         "mountain_climbing",
         "rock_climbing",
@@ -307,7 +308,7 @@ app.factory('c2c', ['$resource','gettextCatalog', function($resource, gettextCat
     var result = {}
 
     $.each(c2cItems, function(item, params) {
-        _item = item == 'user' ? 'profile' : item
+        var _item = item == 'user' ? 'profile' : item
 
         result[item] = $resource('https://api.camptocamp.org/' + _item + 's/:id',
                                 {pl:function(){return gettextCatalog.getCurrentLanguage()}},
@@ -334,7 +335,7 @@ app.factory('c2c', ['$resource','gettextCatalog', function($resource, gettextCat
         }
     )
 
-    forum = {}
+    var forum = {}
 
     result.forum = forum
 
@@ -365,7 +366,7 @@ app.factory('searchData', function(){
 });
 
 app.service('photoswipe', ["locale", function(locale){
-    _this = this
+    var _this = this
 
     // https://github.com/dimsemenov/PhotoSwipe/issues/580
     // history is important, see comment of mutac

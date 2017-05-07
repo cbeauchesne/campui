@@ -1,4 +1,5 @@
-app = angular.module('campui')
+
+var app = angular.module('campui')
 
 app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     $urlRouterProvider.otherwise("/");
@@ -139,7 +140,7 @@ app.config(['$httpProvider', function($httpProvider) {
 
 app.run(['$rootScope', '$state', '$cookies', 'gettextCatalog', 'tmhDynamicLocale', 'photoswipe',
     function($rootScope, $state, $cookies, gettextCatalog, tmhDynamicLocale, photoswipe) {
-        lang = $cookies.get('lang') || 'fr';
+        var lang = $cookies.get('lang') || 'fr';
         gettextCatalog.setCurrentLanguage(lang);
         tmhDynamicLocale.set(lang);
         gettextCatalog.loadRemote("/static/campui/translations/" + lang + ".json");
