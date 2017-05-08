@@ -723,12 +723,96 @@ app.factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
         x:"xreport",
     }
 
+    var Markers = function(map){
+        var _this = this
+        _this.map = map
+
+        _this.docs = []
+        _this.waypoints = []
+        _this.currentInfoWindow = undefined
+
+        _this.removeWaypoints = function(){
+            for (var i = 0; i < _this.waypoints.length; i++ ) {
+                _this.waypoints[i].setMap(null);
+            }
+
+            _this.waypoints.length = 0;
+
+            if(_this.currentInfoWindow)
+                _this.currentInfoWindow.close()
+        }
+
+        _this.removeDocs = function(){
+            for (var i = 0; i < _this.docs.length; i++ ) {
+                _this.docs[i].setMap(null);
+            }
+
+            _this.docs.length = 0;
+
+            if(_this.currentInfoWindow)
+                _this.currentInfoWindow.close()
+        }
+
+        _this.addDoc = function(doc){
+            var marker = _this._add(doc)
+            _this.docs.push(marker)
+            return marker
+        }
+
+        _this.addWaypoint = function(waypoint){
+            var marker = _this._add(waypoint)
+            _this.waypoints.push(marker)
+            return marker
+        }
+
+        _this._add = function(doc){
+            var point = JSON.parse(doc.geometry.geom).coordinates
+
+            var infowindow = new google.maps.InfoWindow({
+                content:
+                    "<div class='map-info'>" +
+                    "<a href='" + letterToC2cItem[doc.type] + "/" + doc.document_id + "'>" +
+                    doc.locales[0].title +
+                    "</a>" +
+                    "" +
+                    "</div>"
+            });
+
+            point = proj4.transform(ESPG_3785, ESPG_4326, point)
+            var latLng = new google.maps.LatLng(point.y, point.x)
+
+            var getIcon = function(doc){
+                if(doc.type=="w")
+                    return "/static/campui/img/spotlights/spotlight_summit.png"
+            }
+
+            var marker = new google.maps.Marker({
+                position:  latLng,
+                map: _this.map,
+                icon: getIcon(doc)
+            })
+
+            marker.addListener('click', function() {
+                if (infowindow.isOpen())
+                    infowindow.close()
+                else {
+                    if(_this.currentInfoWindow)
+                        _this.currentInfoWindow.close()
+
+                    infowindow.open(_this.map, marker);
+                    _this.currentInfoWindow = infowindow
+                }
+            });
+
+            return marker
+        }
+    }
+
     var result = function(){
         var _this = this
 
         _this.visible=false
-        _this.markers = []
-        _this.waypoint_markers = []
+        _this._waypointsChooser = false
 
         _this.waypoint_types = [[
             "summit",
@@ -750,7 +834,7 @@ app.factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
         ]]
 
         _this.toggleFilterMode = function(){
-            console.log("_this.filterMode", _this.filterMode)
+
              if(_this.filterMode)
                 _this.sendBoundsToQuery();
              else
@@ -770,32 +854,27 @@ app.factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
 
                     _this._map = map
 
+                    if(!map._markers)
+                        map._markers = new Markers(map)
+
                     if(map._dragend) map._dragend.remove()
                     if(map._zoom_changed) map._zoom_changed.remove()
 
                     map._dragend = map.addListener('dragend', _this.sendBoundsToQuery);
                     map._zoom_changed = map.addListener('zoom_changed', _this.sendBoundsToQuery);
 
-                    _this.setMarkers(data)
+                    _this.displayMarkers(data)
                 },
                 console.log)
             }
         }
 
-        _this._waypointsChooser = false
+        //event callback
         _this.hideWaypointsChooser = function(){
-            _this._waypointsChooser = false // marche pas
+            _this._waypointsChooser = false
         }
 
-        _this.getBoundsC2c = function(){
-            var bounds = _this._map.getBounds().toJSON()
-            var NO = proj4.transform(ESPG_4326, ESPG_3785, [bounds.east,bounds.north])
-            var SW = proj4.transform(ESPG_4326, ESPG_3785, [bounds.west,bounds.south])
-
-            return [SW.x, SW.y, NO.x, NO.y]
-
-        }
-
+        //event callback
         _this.sendBoundsToQuery = function(){
             if(!_this.filterMode)
                 return
@@ -803,111 +882,51 @@ app.factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
             _this.onMapMove(_this.getBoundsC2c())
         }
 
-        _this.boundToMarkers = function(){
-            _this._map.fitBounds(_this.bounds)
-        }
-
-        _this.removeMarkers = function(){
-            for (var i = 0; i < _this.markers.length; i++ ) {
-                _this.markers[i].setMap(null);
-            }
-
-            _this.markers.length = 0;
-
-            if(_this.currentInfoWindow)
-                _this.currentInfoWindow.close()
-        }
-
-        _this.visibleWaypoints = {}
-
+        //called from HTML
         _this.updateWaypoints = function(){
             var wps = []
+
             $.each(_this.visibleWaypoints, function(key, value){
                 if(value)
                     wps.push(key)
             })
 
-            for (var i = 0; i < _this.waypoint_markers.length; i++ ) {
-                _this.waypoint_markers[i].setMap(null);
-            }
-
-            _this.waypoint_markers.length = 0;
+            _this._map._markers.removeWaypoints()
 
             if(wps.length==0)
                 return
 
             var bbox = _this.getBoundsC2c().join(",")
             c2c.waypoints.get({query:"bbox=" + bbox + "&wtyp=" + wps.join(",")}, function(data){
-
-                data.documents.forEach(function(waypoint){
-                    var marker = _this.createMarker(waypoint)
-                    _this.waypoint_markers.push(marker)
-                })
+                data.documents.forEach(_this._map._markers.addWaypoint)
             })
         }
 
-        _this.createMarker = function(doc){
-            var point = JSON.parse(doc.geometry.geom).coordinates
+        //helper
+        _this.getBoundsC2c = function(){
+            var bounds = _this._map.getBounds().toJSON()
+            var NO = proj4.transform(ESPG_4326, ESPG_3785, [bounds.east,bounds.north])
+            var SW = proj4.transform(ESPG_4326, ESPG_3785, [bounds.west,bounds.south])
 
-            var infowindow = new google.maps.InfoWindow({
-                content:
-                    "<div class='map-info'>" +
-                    "<a href='" + letterToC2cItem[doc.type] + "/" + doc.document_id + "'>" +
-                    doc.locales[0].title +
-                    "</a>" +
-                    "" +
-                    "</div>"
-            });
-
-            point = proj4.transform(ESPG_3785, ESPG_4326, point)
-            var latLng = new google.maps.LatLng(point.y, point.x)
-            var marker = new google.maps.Marker({
-                position:  latLng,
-                map: _this._map,
-            })
-
-            marker.addListener('click', function() {
-                if (infowindow.isOpen())
-                    infowindow.close()
-                else {
-                    if(_this.currentInfoWindow)
-                        _this.currentInfoWindow.close()
-
-                    infowindow.open(_this._map, marker);
-                    _this.currentInfoWindow = infowindow
-                }
-            });
-
-            return marker
+            return [SW.x, SW.y, NO.x, NO.y]
         }
 
-        _this.appendMarkers = function(data){
 
-            _this.bounds = new google.maps.LatLngBounds();
-
-            data.documents.forEach(function(doc){
-                var marker = _this.createMarker(doc)
-                _this.markers.push(marker)
-                _this.bounds.extend(marker.position)
-            })
-        }
-
-        _this.setMarkers = function(data){
-            _this.removeMarkers()
-            _this.appendMarkers(data)
-            _this.boundToMarkers()
-            _this.updateWaypoints()
-        }
-
-        _this.onDataLoad = function(data){
+        //called from outside
+        _this.displayMarkers = function(data){
             if(!_this.visible)
                 return
 
-            _this.removeMarkers()
-            _this.appendMarkers(data)
+            _this._map._markers.removeDocs()
+            var bounds = new google.maps.LatLngBounds();
+
+            data.documents.forEach(function(doc){
+                var marker = _this._map._markers.addDoc(doc)
+                bounds.extend(marker.position)
+            })
 
             if(!_this.filterMode)
-                _this.boundToMarkers()
+                _this._map.fitBounds(bounds)
 
             _this.updateWaypoints()
         }
