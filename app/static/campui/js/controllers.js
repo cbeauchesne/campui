@@ -36,7 +36,7 @@ function getC2cController(c2c_item){
         }
 
         $scope.mapData = new mapData()
-        $scope.qe = new QueryEditor($scope, c2c_item, $scope.mapData.onDataLoad)
+        $scope.qe = new QueryEditor($scope, c2c_item, $scope.mapData.displayMarkers)
 
         $scope.mapData.onMapMove = function(coords){
             if($scope.mapData.filterMode)
