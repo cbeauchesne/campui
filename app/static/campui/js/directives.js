@@ -184,14 +184,14 @@ $.each(c2cItems, function(item, params){
 
     var label = '{{' + params.label + '}}';
 
-    params.itemLinkTemplate = params.itemLinkTemplate ?
-                                params.itemLinkTemplate :
-                                '<a ui-sref="' + item + '({id:' + item + '.document_id})">' + label + '</a>'
-
     if(params.label_prefix){
         var prefixModel = 'getLocale(' + item + ').' + params.label_prefix
         label = '<span ng-if="' + prefixModel + '">{{' + prefixModel + '}} : </span>' + label
     }
+
+    params.itemLinkTemplate = params.itemLinkTemplate ?
+                                params.itemLinkTemplate :
+                                '<a ui-sref="' + item + '({id:' + item + '.document_id})">' + label + '</a>'
 
     app.directive(item + 'LinkC2c', function(){
 
