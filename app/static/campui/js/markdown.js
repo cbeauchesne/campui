@@ -6,7 +6,7 @@ app = angular.module('campui')
 // https://regex101.com/
 // http://localhost:3000/markdown
         
-app.provider('markdownConverter', function () {
+app.provider('markdownConverter', [function () {
 
     var ltag_memory = {L : 0, R:0}
 
@@ -409,7 +409,7 @@ app.provider('markdownConverter', function () {
     return {
         $get: function () {
 
-            return function(code){
+            return function(code, $sanitize){
                 ltag_memory.current_postfix = ""
                 ltag_memory.R = 0
                 ltag_memory.L = 0
@@ -419,44 +419,44 @@ app.provider('markdownConverter', function () {
                 delete ltag_memory["L" + "_main_start"]
                 delete ltag_memory["L" + "_main_end"]
 
-                return (new showdown.Converter(opts)).makeHtml(code);
+                var html = ""
+
+                if(code){
+                    html = (new showdown.Converter(opts)).makeHtml(code.replace("iframe", ""))
+
+                    var IFRAME_IN = '<img alt="iframe" '
+                    var IFRAME_OUT = '>___IFRAME_OUT__'
+
+                    html = html.replace("<iframe ", IFRAME_IN)
+                    html = html.replace("></iframe>", IFRAME_OUT)
+
+                    html = $sanitize(html);
+
+                    html = html.replace(IFRAME_IN, "<iframe ")
+                    html = html.replace(IFRAME_OUT, "></iframe>")
+
+                    html = html.replace(/href=.photoswipe/g, 'ng-click="photoswipe')
+
+                }
+
+                return html;
             }
         }
     };
-})
+}])
 
 app.directive('markdown', ['$sanitize', 'markdownConverter', '$compile', function ($sanitize, markdownConverter, $compile) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
 
-            var convert = function(newVal){
-                var html = ''
-
-                if(newVal){
-
-                    html = markdownConverter(newVal)
-
-                    html = html.replace("<iframe ", "___IFRAME_IN__")
-                    html = html.replace("></iframe>", "___IFRAME_OUT__")
-
-                    html = $sanitize(html);
-
-                    html = html.replace("___IFRAME_IN__", "<iframe ")
-                    html = html.replace("___IFRAME_OUT__", "></iframe>")
-
-                    html = html.replace(/href=.photoswipe/g, 'ng-click="photoswipe')
-                }
-                return html
-            }
-
             if(attrs.markdown)
                 scope.$watch(attrs.markdown, function (newVal) {
-                      element.append(convert(newVal));
+                      element.append(markdownConverter(newVal, $sanitize));
                       $compile(element.contents())(scope);
                 });
             else{
-                var html = convert(element.text());
+                var html = markdownConverter(element.text(), $sanitize);
                 element.html(html)
             }
         },
