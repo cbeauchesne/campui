@@ -108,13 +108,14 @@ app.provider('markdownConverter', function () {
 
             css = css.length ? " class='" + css.join(" ") + "'" : ""
 
-            var result =  '<figure' + css + '>' +
-                '<img src="https://api.camptocamp.org/images/proxy/' + imgId + '?size=' + size + '" ' +
-                'href="photoswipe.showGallery(' + imgId + ')"' +
-                '/></figure>'
+            if(imgId.startsWith("picto/"))
+                return '<img src="/static/campui/img/' + imgId + '"/>'
+            else
+                return '<figure' + css + '>' +
+                    '<img src="https://api.camptocamp.org/images/proxy/' + imgId + '?size=' + size + '" ' +
+                    'href="photoswipe.showGallery(' + imgId + ')"' +
+                    '/></figure>'
 
-                console.log(result)
-                return result
         }
 
         var img = {
@@ -233,24 +234,30 @@ app.provider('markdownConverter', function () {
         
         var pushLine = function(result, elt, cell1, cells){                                    
             result.push("<tr>")    
-            
-            elt_in = "<" + elt + ">"
-            elt_out = "</" + elt + ">"
-            
-            //remove last empty cells
-            if(cells.length) 
-                while(!cells[cells.length-1] && cells.length>0)
-                    cells.splice(-1,1)
 
-            while(cells.length < ltag_memory.cellCount)
-                cells.push("")
+            if(cells){
 
-            result.push(elt_in, cell1.trim(), elt_out)
-                
-            cells.forEach(function(cell){
-                result.push(elt_in, cell.replace("\n", "<br>"), elt_out)
-            })
-            
+                var elt_in = "<" + elt + ">"
+                var elt_out = "</" + elt + ">"
+
+                //remove last empty cells
+                if(cells.length)
+                    while(!cells[cells.length-1] && cells.length>0)
+                        cells.splice(-1,1)
+
+                while(cells.length < ltag_memory.cellCount)
+                    cells.push("")
+
+                result.push(elt_in, cell1.trim(), elt_out)
+
+                cells.forEach(function(cell){
+                    result.push(elt_in, cell.replace("\n", "<br>"), elt_out)
+                })
+            }
+            else{
+                result.push("<td colspan='666'>" + cell1 + "</td>")
+            }
+
             result.push("</tr>")
         }
 
@@ -260,7 +267,7 @@ app.provider('markdownConverter', function () {
                 ltag_memory.cellCount = cells.length
 
             if(suffix.startsWith("~"))
-                result.push("<tr><td colspan='666'>" + cells[0] + "</td></tr>")
+                pushLine(result, 'td', cells[0])
             else if(suffix.startsWith("="))                        
                 pushLine(result, 'th', "", cells)
             else{                        
