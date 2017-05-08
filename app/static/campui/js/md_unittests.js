@@ -8,10 +8,10 @@ app.config(['$stateProvider', function($stateProvider) {
         templateUrl: "static/campui/views/markdown.html",
         controller: ['$scope', 'code_samples', 'markdownConverter', '$sanitize', function($scope, code_samples, markdownConverter, $sanitize){
 
-           // code_samples=[code_samples[26]]
+          //  code_samples=[code_samples[70]]
             code_samples.forEach(function(item){
                 console.log(item.name)
-                item.result = $sanitize(markdownConverter(item.code))
+                item.result = markdownConverter(item.code, $sanitize)
                 
                 if(item.result.startsWith("<p>") && item.result.endsWith("</p>"))
                     item.result = item.result.substring(3,item.result.length-4)
@@ -49,27 +49,27 @@ app.factory('code_samples', function(){
         {
         name:'Image1',
         code:'[img=234624 big center no_border no-legend/]',
-        html:'<figure class="image-big image-center image-no-border image-no-legend"><img src="https://api.camptocamp.org/images/proxy/234624?size=BI" href="photoswipe.showGallery(234624)"></figure>'
+        html:'<figure class="image-big image-center image-no-border image-no-legend"><img src="https://api.camptocamp.org/images/proxy/234624?size=BI" ng-click="photoswipe.showGallery(234624)"></figure>'
         },
         {
         name:'Image2',
-        code:'[img=picto/rockclimb_ingm_ini.png /]',
-        html:'???'
+        code:'[img=picto/rock_climbing_mini.png /]',
+        html:'<img src="/static/campui/img/picto/rock_climbing_mini.png">'
         },
         {
         name:"Image3",
         code:"[img=37027 right /]",
-        html:'<figure class="image-right"><img src="https://api.camptocamp.org/images/proxy/37027?size=MI" href="photoswipe.showGallery(37027)"></figure>'
+        html:'<figure class="image-right"><img src="https://api.camptocamp.org/images/proxy/37027?size=MI" ng-click="photoswipe.showGallery(37027)"></figure>'
         },
         {
         name:"Image4",
         code:"[img=37027 center big]text[/img]",
-        html:'<figure class="image-center image-big"><img src="https://api.camptocamp.org/images/proxy/37027?size=BI" href="photoswipe.showGallery(37027)"></figure>'
+        html:'<figure class="image-center image-big"><img src="https://api.camptocamp.org/images/proxy/37027?size=BI" ng-click="photoswipe.showGallery(37027)"></figure>'
         },
         {
         name:"Image5",
         code:"[img=142101right][/img]",
-        html:'<figure class="image-right"><img src="https://api.camptocamp.org/images/proxy/142101?size=MI" href="photoswipe.showGallery(142101)"></figure>'
+        html:'<figure class="image-right"><img src="https://api.camptocamp.org/images/proxy/142101?size=MI" ng-click="photoswipe.showGallery(142101)"></figure>'
         },
 
         {
