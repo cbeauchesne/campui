@@ -3,7 +3,8 @@ from django.contrib import admin
 from api.urls import urlpatterns as api_urls
 from .settings import BASE_DIR
 from django.views import static
-import admin_custom
+from campui import admin_custom
+
 
 admin.autodiscover()
 
