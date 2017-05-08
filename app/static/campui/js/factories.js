@@ -782,8 +782,9 @@ app.factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
             var latLng = new google.maps.LatLng(point.y, point.x)
 
             var getIcon = function(doc){
-                if(doc.type=="w")
-                    return "/static/campui/img/spotlights/spotlight_summit.png"
+                if(doc.type=="w"){
+                    return "/static/campui/img/spotlights/spotlight_" + doc.waypoint_type + ".svg"
+                }
             }
 
             var marker = new google.maps.Marker({
