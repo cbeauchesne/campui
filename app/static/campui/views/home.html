@@ -23,7 +23,7 @@
 
     <div class="row">
         <div class="col-lg-7 no-padding outing-box">
-            <div id="outings" ng-controller="outingsController" class="ibox float-e-margins">
+            <div id="outings" ng-controller="outingsController" ng-init="loadDetails=true" class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h3 translate>Outings</h3>
                     <div ibox-tools></div>
@@ -40,12 +40,12 @@
                                 <outing-link outing="outing"></outing-link>
                                 <span class="outing-area">{{getLocale(outing.areas[outing.areas.length-1]).title}}</span>
                                 <i class="fa fa-star followed-icon"
-                                   ng-if="currentUser.isFollowed(getItemDetails(outing.document_id))"></i>
+                                   ng-if="currentUser.isFollowed(details[outing.document_id])"></i>
                             </div>
                             <div class="pull-right">
                                 <i class="fa fa-camera icon-picture-presence"
-                                   uib-tooltip="{{ getImageCount(outing.document_id) + ' images'}}"
-                                   ng-if="getImageCount(outing.document_id)!=0"></i>
+                                   uib-tooltip="{{ details[outing.document_id].associations.images.length + ' images'}}"
+                                   ng-if="!!details[outing.document_id].associations.images.length!=0"></i>
                                 <i class="fa fa-circle-thin"
                                    ng-if="!outing.condition_rating"></i>
                                 <condition-icon ng-if="outing.condition_rating"
