@@ -10,22 +10,18 @@ function getC2cController(c2c_item){
         $scope.photoswipe = photoswipe
         $scope.columnDefs = columnDefs[c2c_item]
 
-        $scope._itemCache = {}
-        $scope.getItemDetails = function(id){
-            if(!$scope._itemCache[id])
-                $scope._itemCache[id] = c2c[c2c_item].get({id:id})
+        $scope.details = {}
 
-            return $scope._itemCache[id]
-        }
-
-        $scope.getImageCount = function(id){
-            var details = $scope.getItemDetails(id)
-
-            if(!details || !details.$resolved || !details.associations)
-                return 0
-
-            return details.associations.images.length
-        }
+        $scope.$watch("data", function(){
+            if($scope.loadDetails && $scope.data){
+                $scope.data.$promise.then(function(){
+                    $scope.data.documents.forEach(function(doc){
+                        if(!$scope.details[doc.document_id])
+                            $scope.details[doc.document_id] = c2c[c2c_item].get({id:doc.document_id})
+                    })
+                })
+            }
+        })
 
         $scope.onRegisterApi = function(gridApi) {
             gridApi.infiniteScroll.on.needLoadMoreData($scope, function() {
