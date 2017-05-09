@@ -89,13 +89,8 @@
 </head>
 <body class="top-navigation gray-bg">
 
-    <div id="wrapper">
+    <div ng-include="'static/campui/views/common/navbar.html'"></div>
+    <div class="container-fluid" ui-view></div>
 
-        <div ng-include="'static/campui/views/common/navbar.html'"></div>
-
-        <div class="wrapper wrapper-content">
-            <div class="container" ui-view></div>
-        </div>
-    </div> <!-- End wrapper-->
 </body>
 </html>
