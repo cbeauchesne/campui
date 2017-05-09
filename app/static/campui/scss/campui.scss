@@ -2,10 +2,16 @@ body{
    // background-color:#e9ebee ! important
 }
 
-h3{
-    margin-top:15px;
-    margin-bottom:5px;
+
+////////////////////////////////////////////////////////////////////
+.container-fluid {
+    padding: 10px 60px 10px 60px;
+  //  height:calc(100% - 50px); //50 is the height of the nav bar
+  //  min-height:280px;
 }
+
+////////////////////////////////////////////////////////////////////
+
 
 h1 {
   font-size: 26px; }
@@ -14,26 +20,20 @@ h2 {
   font-size: 23px; }
 
 h3 {
-  font-size: 20px; }
-
-h4 {
-  font-size: 16px; }
-
-h5 {
-  font-size: 12px; }
-
-h6 {
-  font-size: 10px; }
-
-////////////////////////////////////////////////////////////////////
-.top-navigation .wrapper.wrapper-content {
-  padding-top: 10px; }
-
-
-.wrapper .middle-box {
-    margin-top: 0px;
+  font-size: 20px;
 }
 
+h4 {
+  font-size: 16px; 
+}
+
+h5 {
+  font-size: 12px; 
+}
+
+h6 {
+  font-size: 10px; 
+}
 
 ////////////////////////////////////////////////////////////////////
 
@@ -54,11 +54,11 @@ gallery{
 }
 
 ////////////////////////////////////////////////////////////////////
+// fix all ibox
 
-.ibox {
-  padding: 0px;
-  margin: 7px;
-  }
+.ibox{
+    margin-top:10px
+}
 
 .ibox-tools .dropdown-menu > li > a {
     padding: 0px 10px;
@@ -72,15 +72,6 @@ gallery{
     font-size: 16px;
 }
 
-
-
-.ibox-content h6 {
-  font-size: 12px;
-  font-weight:bold;
-  margin: 0 0 7px;
-  padding: 0;
-}
-
 .ibox-title h3 , .ibox-title h4{
   display: inline-block;
   margin: 0 0 7px;
@@ -90,22 +81,23 @@ gallery{
 }
 
 
+
 ////////////////////////////////////////////////////////////////////
 
 .ui-grid-cell-contents {
-display:block
+    display:block
 }
 
 ////////////////////////////////////////////////////////////////////
 // by default, link are in normal color
 a {
-color:#676a6c;
+    color:#676a6c;
 }
 
 // by default, link hover is green underlyed
 a:hover {
-color:#1ab394;
-text-decoration: underline;
+    color:#1ab394;
+    text-decoration: underline;
 }
 
 //and orange for c2c
@@ -117,7 +109,7 @@ a[href^="https://forum.camptocamp.org"]:hover {
 ////////////////////////////////////////////////////////////////////
 //but in markdown, we must show what is a link
 [markdown] a{
-color:#1ab394;
+    color:#1ab394;
 }
 
 //and what is a c2c link
@@ -190,42 +182,42 @@ font-weight:bold;
 
 
 .quality-great{
-color:yellow;
+    color:yellow;
 }
 
 .quality-fine{
-color:LightGreen ;
+    color:LightGreen ;
 }
 
 .quality-medium{
-color:LightGrey  ;
+    color:LightGrey  ;
 }
 
 .quality-draft{
-color:LightCoral   ;
+    color:LightCoral   ;
 }
 
 
 ////////////////////////////////////////////////////////////////////
 
 .condition-excellent{
-color:green;
+    color:green;
 }
 
 .condition-good{
-color:#9ACD32;
+    color:#9ACD32;
 }
 
 .condition-average{
-color:yellow;
+    color:yellow;
 }
 
 .condition-poor{
-color:red;
+    color:red;
 }
 
 .condition-awful{
-color:#8B0000;
+    color:#8B0000;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -242,18 +234,23 @@ color:#8B0000;
 ////////////////////////////////////////////////////////////////////////
 // home specific
 
+.home-view .ibox {
+    padding: 0px;
+    margin: 7px;
+}
+
 .home-view .outing-box .outing-line:hover{
-background:#F8F8F8
+    background:#F8F8F8
 }
 
 .home-view .outing-box .outing-line .quality-medium,
 .home-view .outing-box .outing-line .quality-draft,
 .home-view .outing-box .outing-line .quality-empty{
-visibility:none
+    visibility:none
 }
 
 .home-view .outing-area{
-font-style:italic;
+    font-style:italic;
 }
 
 .home-view .outing-area::before{
@@ -267,7 +264,7 @@ font-style:italic;
 
 .home-view .button-save-query,
 .home-view .button-load-more{
-display:none;
+    display:none;
 }
 
 .previous-arrow,
@@ -296,11 +293,11 @@ display:none;
 }
 
 .item-header label{
-margin-bottom:2px;
+    margin-bottom:2px;
 }
 
 .item-header label:after{
-content:" :"
+    content:" :"
 }
 
 .item-header label:first-letter {
@@ -396,13 +393,13 @@ text-align:justify
 ////////////////////////////////////////////////////////////////////
 
 .summary {
-  background: #FAFAFB;
-  border: 1px solid #e7eaec;
-  margin: 0px 0px 10px 0px;
-  padding: 10px;
-  padding-bottom: 0px;  // p elt has a margin bottom
-  border-radius: 2px;
-  border-left: 3px solid #1ab394;
+    background: #FAFAFB;
+    border: 1px solid #e7eaec;
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+    padding-bottom: 0px;  // p elt has a margin bottom
+    border-radius: 2px;
+    border-left: 3px solid #1ab394;
 }
 
 
@@ -413,31 +410,28 @@ text-align:justify
 .pswp__button--authors, .pswp__button--authors:before ,
 .pswp__button--original-page, .pswp__button--original-page:before ,
 .pswp__button--license, .pswp__button--license:before {
-  padding:10px;
-  font-size:18px;
-  color:white;
-  background-size: 20px 20px;
-  width: 44px;
-  height: 44px;
+    padding:10px;
+    font-size:18px;
+    color:white;
+    background-size: 20px 20px;
+    width: 44px;
+    height: 44px;
 }
 
 
 ////////////////////////////////////////////////////////////////////
+// c2c-items-view
 
-.outings-view h3:first-letter,
-.routes-view h3:first-letter,
-.waypoints-view h3:first-letter,
-.articles-view h3:first-letter,
-.areas-view h3:first-letter,
-.xreports-view h3:first-letter{
+.c2c-items-view h3:first-letter{
     text-transform: uppercase;
 }
+
 ////////////////////////////////////////////////////////////////////
 
 .query-editor{
-margin-left:10px;
-margin-right:10px;
-padding-bottom:0px
+    margin-left:10px;
+    margin-right:10px;
+    padding-bottom:0px
 }
 
 .query-editor .form-group{
@@ -506,12 +500,12 @@ padding-bottom:0px
 }
 
 .onoffswitch{
-margin-left:30px;
-width:54px;
-display:inline-table;
+    margin-left:30px;
+    width:54px;
+    display:inline-table;
 }
 .onoffswitch-switch{
-height:20px
+    height:20px
 }
 
 /////////////////////////
@@ -534,14 +528,14 @@ height:20px
     margin:5px;
 }
 
+.waypoints-view .mapWaypointsToggler{
+    display:none
+}
+
 .mapWaypointsToggler{
     margin-right:0px;
     padding : 5px;
     float:right;
-}
-
-.waypoints-view .mapWaypointsToggler{
-    display:none
 }
 
 .mapFilterToggler label{
@@ -579,12 +573,9 @@ height:20px
     body{
         font-size:12px
     }
-    .container {
-        width:100%
-    }
-
-    .top-navigation .wrapper.wrapper-content{
-        padding:0px
+    .container-fluid {
+        width:100%;
+        padding:0px 20px;
     }
 
     a[href]:after {
