@@ -4,7 +4,7 @@ Cette règle défini la notion de contributeur, ainsi que les droits et restrict
 
 * Un contributeur est une personne physique possédant un compte
 * Il a les droits en lecture et écriture sur la totalité du site, à l'exception des documents privés (CC-BY-NC-ND)<sup>1</sup>.
-* Il a le droit de paroles dans tout débats 
+* Il a le droit de parole dans tout débats 
 * Il a le droit de vote dans toute décision, à condition d'avoir ouvert son compte avant le début des débats<sup>2</sup>
 
 ### Interdiction
