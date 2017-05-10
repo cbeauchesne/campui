@@ -615,7 +615,7 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
                 name:gettextCatalog.getString('Activities'),
                 field: 'activities',
                 width: '10%',
-                cellTemplate:'<div  class="ui-grid-cell-contents"><activities activities="row.entity.activities"></activities></div>',
+                cellTemplate:'<div class="ui-grid-cell-contents"><activities activities="row.entity.activities"></activities></div>',
             },
             {
                 name:gettextCatalog.getString('Area'),

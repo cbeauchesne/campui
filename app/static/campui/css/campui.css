@@ -1,6 +1,5 @@
-h3 {
-  margin-top: 15px;
-  margin-bottom: 5px; }
+.container-fluid {
+  padding: 10px 60px 10px 60px; }
 
 h1 {
   font-size: 26px; }
@@ -20,12 +19,6 @@ h5 {
 h6 {
   font-size: 10px; }
 
-.top-navigation .wrapper.wrapper-content {
-  padding-top: 10px; }
-
-.wrapper .middle-box {
-  margin-top: 0px; }
-
 .gallery {
   margin-bottom: 10px;
   margin-left: 30px;
@@ -40,8 +33,7 @@ gallery {
   padding: 3px; }
 
 .ibox {
-  padding: 0px;
-  margin: 7px; }
+  margin-top: 10px; }
 
 .ibox-tools .dropdown-menu > li > a {
   padding: 0px 10px; }
@@ -51,12 +43,6 @@ gallery {
 
 .ibox-tools > a > i.fa {
   font-size: 16px; }
-
-.ibox-content h6 {
-  font-size: 12px;
-  font-weight: bold;
-  margin: 0 0 7px;
-  padding: 0; }
 
 .ibox-title h3, .ibox-title h4 {
   display: inline-block;
@@ -173,6 +159,10 @@ a[href^="https://forum.camptocamp.org"]:hover {
   -webkit-box-shadow: 3px 3px 6px 0px #ccc;
   -o-box-shadow: 3px 3px 6px 0px #ccc;
   box-shadow: 3px 3px 6px 0px #ccc; }
+
+.home-view .ibox {
+  padding: 0px;
+  margin: 7px; }
 
 .home-view .outing-box .outing-line:hover {
   background: #F8F8F8; }
@@ -304,12 +294,7 @@ a[href^="https://forum.camptocamp.org"]:hover {
   width: 44px;
   height: 44px; }
 
-.outings-view h3:first-letter,
-.routes-view h3:first-letter,
-.waypoints-view h3:first-letter,
-.articles-view h3:first-letter,
-.areas-view h3:first-letter,
-.xreports-view h3:first-letter {
+.c2c-items-view h3:first-letter {
   text-transform: uppercase; }
 
 .query-editor {
@@ -388,13 +373,13 @@ a[href^="https://forum.camptocamp.org"]:hover {
   font-family: Roboto,Arial,sans-serif;
   margin: 5px; }
 
+.waypoints-view .mapWaypointsToggler {
+  display: none; }
+
 .mapWaypointsToggler {
   margin-right: 0px;
   padding: 5px;
   float: right; }
-
-.waypoints-view .mapWaypointsToggler {
-  display: none; }
 
 .mapFilterToggler label {
   margin: 5px;
@@ -423,10 +408,9 @@ a[href^="https://forum.camptocamp.org"]:hover {
 @media print {
   body {
     font-size: 12px; }
-  .container {
-    width: 100%; }
-  .top-navigation .wrapper.wrapper-content {
-    padding: 0px; }
+  .container-fluid {
+    width: 100%;
+    padding: 0px 20px; }
   a[href]:after {
     content: none !important; }
   .ibox-title {
