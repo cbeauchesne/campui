@@ -12,7 +12,7 @@ Les informations sont publiées sous licences CC-BY-SA ou CC-BY-NC-ND
 ### 4. TBD.org est un projet collaboratif qui suit des règles de savoir vivre
 Tous les contributeurs<sup>2</sup> ont le même poids dans les choix du site. Vous êtes tenu de respecter les autres contributeurs, même lorsqu’il y a désaccord. Recherchez le consensus. Ne vous livrez pas à des agressions contre des personnes, ni à des généralisations insultantes. Agissez de bonne foi et partez du principe que vos interlocuteurs font de même, sauf preuve flagrante du contraire.
 
-### 5. TBD.org n'a pas d'autres fègles fixes
+### 5. TBD.org n'a pas d'autres règles fixes
 Soyez audacieux!
 
 * *Note 1* : Ces principes concerne le site TBD.org. Ils doivent être compatibles, ainsi que toutes les règles qui en découlent, avec ceux régissant www.camptocamp.org.
