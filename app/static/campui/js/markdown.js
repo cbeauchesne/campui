@@ -190,6 +190,7 @@ app.provider('markdownConverter', [function () {
         // your new best friends :
         // https://regex101.com/
         // http://localhost:3000/markdown
+        // http://localhost:3000/article/305462
         // http://localhost:3000/route/57964 thank you Mister Piola for this never ending multi pitch!
 
         var LtagResult = function(){
