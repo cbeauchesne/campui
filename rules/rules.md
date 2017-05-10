@@ -10,7 +10,7 @@
 
 * Une recommendation est un texte qui fait consensus au sein de la communauté.
 * Elle est issue, **si nécessaire**, d'un débat et d'un vote
-* Elle peut etre remsie en cause à tout moment
+* Elle peut etre remise en cause à tout moment
 * Si pour diverses raisons, elle n'est pas adpatée, elle peut ne pas être suivie. Dans ce cas, il préférable de le justifier. 
 
 ### Du bon usage des règles et recommendations
