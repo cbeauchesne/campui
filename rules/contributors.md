@@ -18,4 +18,4 @@ Cette règle défini la notion de contributeur, ainsi que les droits et restrict
 ### Notes
 
 * *Note 1* : D'autres exceptions ponctuelles peuvent être décidées, notamment sur les pages qui ont un gros impact sur le rendu global du site.
-* *Note 2* : Ceci afin de limiter les effets de pontentiels *appels au vote*
+* *Note 2* : Ceci afin de limiter les effets de potentiels *appels au vote*
