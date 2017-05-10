@@ -1,4 +1,5 @@
 
+
 app = angular.module('campui')
 
         
@@ -7,6 +8,7 @@ app = angular.module('campui')
 // http://localhost:3000/markdown
         
 app.provider('markdownConverter', [function () {
+    "use strict";
 
     var ltag_memory = {L : 0, R:0}
 
@@ -92,8 +94,8 @@ app.provider('markdownConverter', [function () {
         };
 
         function image(imgId, options, legend){
-            size = "MI"
-            css = []
+            var size = "MI"
+            var css = []
 
             if(options){
                 options = options.split(" ")
@@ -189,34 +191,91 @@ app.provider('markdownConverter', [function () {
         // https://regex101.com/
         // http://localhost:3000/markdown
         // http://localhost:3000/route/57964 thank you Mister Piola for this never ending multi pitch!
-        
+
+        var LtagResult = function(){
+            var _this = this
+
+            this.rows = []
+            this.cellCount = 1
+
+            this.compute = function(separator){
+                var items = ['\n<table>']
+
+                this.rows.forEach(function(row){
+
+                    items.push("<tr>")
+
+                    if(row.cells){
+                        while(row.cells.length < _this.cellCount-1)
+                            row.cells.push("")
+
+                        var elt_in = "<" + row.elt + ">"
+                        var elt_out = "</" + row.elt + ">"
+
+                        items.push(elt_in, row.cell1.trim(), elt_out)
+
+                        row.cells.forEach(function(cell){
+                            items.push(elt_in, cell.replace("\n", "<br>"), elt_out)
+                        })
+                    }
+                    else{
+                        items.push("<td colspan='" + _this.cellCount + "'>" + row.cell1 + "</td>")
+                    }
+
+                    items.push("</tr>")
+
+                })
+
+                items.push('</table>')
+                return items.join("")
+            }
+
+            this.pushLine = function(elt, cell1, cells){
+
+                //remove last empty cells
+                if(cells && cells.length){
+
+                    while(!cells[cells.length-1] && cells.length>0)
+                        cells.splice(-1,1)
+
+                    this.cellCount = Math.max(this.cellCount, cells.length + 1)
+                }
+
+                _this.rows.push({
+                    elt:elt,
+                    cell1:cell1,
+                    cells:cells
+                })
+            }
+        }
+
         var ltag = {
             type: 'lang',
             regex: /(?:(?:\n\n?)[LR]#[^]*?(?=\n[LR]#|\n\n))+/gm,
             replace: function () {
                 arguments[0] = arguments[0] + "\n\n"
                 
-                row_parser = /(?:\n\n?)([LR])#([^]*?(?=\n[LR]#|\n\n))/gm
-                row_sub_parser = /(=|~|[^|: =]*) *(\|\||\||::|:)?([^]*)/
-                cell_parser = /([^]*?)(?:\|+|::+)/g
-                
-                result = ['\n<table>']
+                var row_parser = /(?:\n\n?)([LR])#([^]*?(?=\n[LR]#|\n\n))/gm
+                var row_sub_parser = /(=|~|[^|: =]*) *(\|\||\||::|:)?([^]*)/
+                var cell_parser = /([^]*?)(?:\|+|::+)/g
+
+                var result = new LtagResult()
                 
                 do{
-                    row_match = row_parser.exec(arguments[0])
+                    var row_match = row_parser.exec(arguments[0])
                     
                     if(row_match){
 
-                        tag = row_match[1]
-                        row_parts = row_sub_parser.exec(row_match[2])
-                        suffix = row_parts[1]
-                        cells_str = row_parts[3]
+                        var tag = row_match[1]
+                        var row_parts = row_sub_parser.exec(row_match[2])
+                        var suffix = row_parts[1]
+                        var cells_str = row_parts[3]
 
                         cells_str = cells_str.trim() + "|"
-                        cells = [] 
+                        var cells = []
                         
                         do{
-                            cell_match = cell_parser.exec(cells_str)
+                            var cell_match = cell_parser.exec(cells_str)
                             if(cell_match)
                                 cells.push(cell_match[1].trim())
                             
@@ -225,61 +284,28 @@ app.provider('markdownConverter', [function () {
                         processCells(result, tag, suffix, cells)
                     }                        
                 } while(row_match)
-                
-                result.push('</table>')
-                
-                return result.join("")
+
+                return result.compute()
             }
         }
-        
-        var pushLine = function(result, elt, cell1, cells){                                    
-            result.push("<tr>")    
-
-            if(cells){
-
-                var elt_in = "<" + elt + ">"
-                var elt_out = "</" + elt + ">"
-
-                //remove last empty cells
-                if(cells.length)
-                    while(!cells[cells.length-1] && cells.length>0)
-                        cells.splice(-1,1)
-
-                while(cells.length < ltag_memory.cellCount)
-                    cells.push("")
-
-                result.push(elt_in, cell1.trim(), elt_out)
-
-                cells.forEach(function(cell){
-                    result.push(elt_in, cell.replace("\n", "<br>"), elt_out)
-                })
-            }
-            else{
-                result.push("<td colspan='666'>" + cell1 + "</td>")
-            }
-
-            result.push("</tr>")
-        }
-
 
         var processCells = function(result, tag, suffix, cells){
-            if(!ltag_memory.cellCount)
-                ltag_memory.cellCount = cells.length
 
             if(suffix.startsWith("~"))
-                pushLine(result, 'td', cells[0])
+                result.pushLine('td', cells[0])
             else if(suffix.startsWith("="))                        
-                pushLine(result, 'th', "", cells)
+                result.pushLine('th', "", cells)
             else{                        
                 
-                suffix_parser = /^(_)?(\+[\d]*|[\d]+)?(\-\+?[\d]+)?([^\d\-+!][^ !]*)?(!)?$/
-                suffix_data = suffix_parser.exec(suffix)
+                var suffix_parser = /^(_)?(\+[\d]*|[\d]+)?(\-\+?[\d]+)?([^\d\-+!][^ !]*)?(!)?$/
+                var suffix_data = suffix_parser.exec(suffix)
+
                 if(suffix_data){
-                    modifier = suffix_data[1]       // _ or =
-                    fixed_number = suffix_data[2]   // <number> or +<number>
-                    group_number = suffix_data[3]   // -<+>?<number>
-                    label = suffix_data[4]          // whatever without spaces, and not starting with number nor  _-+!
-                    local_ref = suffix_data[5]      // ! 
+                    var modifier = suffix_data[1]       // _ or =
+                    var fixed_number = suffix_data[2]   // <number> or +<number>
+                    var group_number = suffix_data[3]   // -<+>?<number>
+                    var label = suffix_data[4]          // whatever without spaces, and not starting with number nor  _-+!
+                    var local_ref = suffix_data[5]      // !
                      
                     // _ means kill any bis pitch and restart from main_end that contains last main pitch
                     // delete useless main_start and main_end
@@ -329,20 +355,20 @@ app.provider('markdownConverter', [function () {
                     }
                     //
                     /////////////////////////////////////////////////////////////////////////////////////////////
-                    
+
+                    var group_postfix = ""
+
                     if(group_number){    // several pitchs on one row
                         group_number = group_number.substring(1)                         
                          if (group_number.startsWith("+"))
                             group_postfix = "-" + (ltag_memory[tag] + parseInt(group_number))
                         else 
                             group_postfix = "-" + parseInt(group_number)
-                        
                     }
-                    else
-                        group_postfix = ""
+
                 
                     //build final label
-                    cell1 = tag + ltag_memory[tag] + group_postfix + ltag_memory.current_postfix  
+                    var cell1 = tag + ltag_memory[tag] + group_postfix + ltag_memory.current_postfix
                     
                     if(group_number){ // if there is grup_number, we must add it to current ltag_memory
                          if (group_number.startsWith("+"))
@@ -382,7 +408,7 @@ app.provider('markdownConverter', [function () {
                 cells = cells.map(parseCell)
 */
 
-                pushLine(result, 'td', cell1, cells)                       
+                result.pushLine('td', cell1, cells)
             }                    
         }
 
@@ -413,7 +439,6 @@ app.provider('markdownConverter', [function () {
                 ltag_memory.current_postfix = ""
                 ltag_memory.R = 0
                 ltag_memory.L = 0
-                delete ltag_memory.cellCount
                 delete ltag_memory["R" + "_main_start"]
                 delete ltag_memory["R" + "_main_end"]
                 delete ltag_memory["L" + "_main_start"]
