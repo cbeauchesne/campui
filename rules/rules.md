@@ -15,7 +15,7 @@
 
 ### Du bon usage des règles et recommendations
 
-Celles-ci ont pour but la bonne marche du site. A ce tire, il faudra toujours garder en tête plusieurs point
+Celles-ci ont pour but la bonne marche du site. A ce titre, il faudra toujours garder en tête plusieurs point
 
 * Elles sont faites pour etre interprétées. L'application stricte d'une règle est le début de la perversion. Usez de votre bon sens!
 * Elles sont faites pour être modifiées. Discutez et recherchez le consensus
