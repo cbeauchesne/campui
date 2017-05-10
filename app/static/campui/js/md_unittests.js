@@ -160,7 +160,7 @@ app.factory('code_samples', function(){
         {
         name:'Table12', //short name of your text
         code:'L#= | header \nL#~ text\nL# | 1 ', //markdown code
-        html:'<table><tbody><tr><th></th><th>header</th></tr><tr><td colspan="666">text</td></tr><tr><td>L1</td><td>1</td></tr></tbody></table>'
+        html:'<table><tbody><tr><th></th><th>header</th></tr><tr><td colspan="2">text</td></tr><tr><td>L1</td><td>1</td></tr></tbody></table>'
         },
         {
         name:'Table13', //short name of your text
@@ -231,6 +231,11 @@ app.factory('code_samples', function(){
         name:'Table26', //short name of your text
         code:"L# | R# R1.\nL#bis | L#+1_ L2. R# R?.\nL#~ | Avec L#-2_-+2.\nL#_ | L#-1 / L#-+2 / R#-2 / L#-3-+1 / R#-3–1",
         html:"<table><tbody><tr><td>L1</td><td>L1</td><td>L1</td></tr><tr><td>L2</td><td>L3</td><td>L3</td></tr><tr><td>L3</td><td>L1</td><td>L1</td></tr></tbody></table>"
+        },
+        {
+        name:'Table27', //short name of your text
+        code:"L# | 1 \nL# | 1 | 2\nL# | 1 | 2 | 3",
+        html:"<table><tbody><tr><td>L1</td><td>1</td><td></td><td></td></tr><tr><td>L2</td><td>1</td><td>2</td><td></td></tr><tr><td>L3</td><td>1</td><td>2</td><td>3</td></tr></tbody></table>"
         },
         {
         name:'Trash1',
