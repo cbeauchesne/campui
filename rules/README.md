@@ -7,8 +7,8 @@ Il doit contenir le minimum vital de règles, ni plus, ni moins pour que la mise
 
 Le reste des règles doit être défini au niveau de la communauté de contributeurs, sur la base de ce coeur. Ce coeur pourra également être modifié au niveau de la communauté de contributeurs.
 
-**Note importante** : du fait de la barrière de langage, il est indispensable pour que les débats puissent se faire, que chaque groupe linguistique possède sa version, avec ses propres règles et son propre site. Sans cela, le site est condammé à resté local à la langue princinpale. 
+**Note importante** : du fait de la barrière de langage, il est indispensable pour que les débats puissent se faire, que chaque groupe linguistique possède sa version, avec ses propres règles et son propre site. Sans cela, le site est condammé à rester local à la langue princinpale. 
 
-Dans la pratique, cela menera à une gouvernance globale pour les décisions techniques. Et en conséquence, le site devra etre designé de manière à réduire ces décisions techniques à leur minimum vital.
+Dans la pratique, cela menera à une gouvernance globale pour les décisions techniques. Et en conséquence, le site devra être réalisé de manière à réduire ces décisions techniques à leur minimum vital.
 
 En clair, il faut que le maximum puisse être fait au niveau du site, y compris sur l'apparence et l'interface utilisateur, sans intervention sur le moteur.
