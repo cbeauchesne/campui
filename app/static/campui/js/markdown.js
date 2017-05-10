@@ -265,7 +265,6 @@ app.provider('markdownConverter', [function () {
                     var row_match = row_parser.exec(arguments[0])
                     
                     if(row_match){
-
                         var tag = row_match[1]
                         var row_parts = row_sub_parser.exec(row_match[2])
                         var suffix = row_parts[1]
@@ -297,118 +296,86 @@ app.provider('markdownConverter', [function () {
                 result.pushLine('th', "", cells)
             else{                        
                 
-                var suffix_parser = /^(_)?(\+[\d]*|[\d]+)?(\-\+?[\d]+)?([^\d\-+!][^ !]*)?(!)?$/
+                var suffix_parser = /^(\+[\d]*|[\d]+)?(\-\+?[\d]+)?([^\d\-+!][^ !]*)?(!)?$/
                 var suffix_data = suffix_parser.exec(suffix)
 
                 if(suffix_data){
-                    var modifier = suffix_data[1]       // _ or =
-                    var fixed_number = suffix_data[2]   // <number> or +<number>
-                    var group_number = suffix_data[3]   // -<+>?<number>
-                    var label = suffix_data[4]          // whatever without spaces, and not starting with number nor  _-+!
-                    var local_ref = suffix_data[5]      // !
-                     
-                    // _ means kill any bis pitch and restart from main_end that contains last main pitch
-                    // delete useless main_start and main_end
-                    if(modifier=="_"){                     
-                        ltag_memory[tag] = ltag_memory[tag + "_main_end"]            
-                        ltag_memory.current_postfix  = ""
-                        delete ltag_memory[tag + "_main_start"]
-                        delete ltag_memory[tag + "_main_end"]
-                    }                            
+                    var fixed_number = suffix_data[1]   // <number> or +<number>
+                    var group_number = suffix_data[2]   // -<+>?<number>
+                    var label = suffix_data[3]          // whatever without spaces, and not starting with number nor  _-+!
+                    var localRef = suffix_data[4]      // !
 
-                    if(label){ // bis pitch called label                                 
-                        if(label!=ltag_memory.current_postfix){ // new bis pitch
-                            if(!ltag_memory[tag + "_main_start"]) // there is no local_ref : save start and end of main pitch  
-                            {
-                                ltag_memory[tag + "_main_start"] = ltag_memory[tag] + (fixed_number == "+" ? 1 : 0) 
-                                ltag_memory[tag + "_main_end"] = ltag_memory[tag] + (fixed_number == "+" ? 1 : 0) 
-                            } 
-                            
-                            ltag_memory[tag] = ltag_memory[tag + "_main_start"] - 1  // use start of main pitch
+                    if(label){
+
+                        if(label=="_")
+                            delete ltag_memory.localRef
+
+                        if(label != ltag_memory.current_postfix && label!="_"){
+
+                            if(fixed_number=="+")
+                                ltag_memory[tag]["_"]+=1
+
+                            if(ltag_memory.localRef)
+                                ltag_memory[tag][label] = ltag_memory.localRef -1
+                            else
+                                ltag_memory[tag][label] = (ltag_memory[tag]["_"]) - 1
                         }
-                        
+
                         ltag_memory.current_postfix = label //save bis pitch's label
-                    }               
-                    
+                    }
+                    else
+                        label = ltag_memory.current_postfix
+
+                    var number = ltag_memory[tag][label]
+
                     /////////////////////////////////////////////////////////////////////////////////////////////
                     // <number> or +<number>
-                    if(fixed_number){
-                        if (fixed_number=="+") //only one '+' : add 1
-                            ltag_memory[tag] += 1
-                        else if (fixed_number.startsWith("+")) //only +N  : add N
-                            ltag_memory[tag]+= parseInt(fixed_number)
-                        else   //  number : set to it
-                            ltag_memory[tag] = parseInt(fixed_number)
+                    // nothing, + or +1 means the same
+                    if (!fixed_number || fixed_number == "+" || fixed_number =="+1") //+1
+                        number += 1
+                    else if (fixed_number.startsWith("+")) //only +N  : add N
+                        number += parseInt(fixed_number)
+                    else   //  number : set to it
+                        number = parseInt(fixed_number)
 
-                        if(!label){
-                            ltag_memory.current_postfix  = ""
-                            delete ltag_memory[tag + "_main_start"]
-                            delete ltag_memory[tag + "_main_end"]
-                        }
-                    }
-                    else // no specified number : add 1
-                        ltag_memory[tag]++
-                                                
-                    if(local_ref){  // set local ref for multi bis pitch : save start and end of main pitch                              
-                        ltag_memory[tag + "_main_start"] = ltag_memory[tag]
-                        ltag_memory[tag + "_main_end"] = ltag_memory[tag]
-                    }
-                    //
-                    /////////////////////////////////////////////////////////////////////////////////////////////
-
-                    var group_postfix = ""
+                    var number2 = number
 
                     if(group_number){    // several pitchs on one row
                         group_number = group_number.substring(1)                         
                          if (group_number.startsWith("+"))
-                            group_postfix = "-" + (ltag_memory[tag] + parseInt(group_number))
+                            number2 = number + parseInt(group_number)
                         else 
-                            group_postfix = "-" + parseInt(group_number)
+                            number2 = parseInt(group_number)
                     }
 
-                
+
                     //build final label
-                    var cell1 = tag + ltag_memory[tag] + group_postfix + ltag_memory.current_postfix
-                    
-                    if(group_number){ // if there is grup_number, we must add it to current ltag_memory
-                         if (group_number.startsWith("+"))
-                            ltag_memory[tag]+= parseInt(group_number) -1
-                        else 
-                            ltag_memory[tag] = parseInt(group_number)
-                    }
-                    
-                    if(!ltag_memory.current_postfix) // means we are on main pitch                                
-                        if(ltag_memory[tag + "_main_end"]) //and a local ref has been set, you must save end
-                            ltag_memory[tag + "_main_end"] = ltag_memory[tag]
-                            
-                }
-                else{
-                    cell1 = tag + "#" + suffix
-                }
+                    var cell1 = tag + number + (number2 != number ? "-" + number2 : "") + (label != "_" ? label : "")
 
-/* d'abord global table
-                var parseCell = function(cell){
-                    var re = /([LR])#([+-])?([\d]*)/g
+                    result.pushLine('td', cell1, cells)
 
-                    return  cell.replace(re, function(match, reftag, way, number){
+                    ltag_memory[tag][label] = number2
 
-                        if(way=="+")
-                            number = ltag_memory[tag] + number
-                        else if(way=="-")
-                            number = ltag_memory[tag] - number
-                        else
-                            number = ltag_memory[tag]
+                    if(localRef)
+                        ltag_memory.localRef = number2
+                                       /*
+                    cells = cells.map(function(cell){
+                        return cell.replace(/([LR])#(_)?(\+[\d]*|[\d]+)?(\-\+?[\d]+)?(!)?/g,
+                            function(match, tag, restartMainNumbering, fixedNumber, groupNumber,  localRef){
 
-                        console.log(tag + number, arguments)
-
-                        return reftag + number
+                                //tag                  ([LR])
+                                //restartMainNumbering (_)?
+                                //fixedNumber          (\+[\d]*|[\d]+)?
+                                //groupNumber          (\-\+?[\d]+)?
+                                //localRef             (!)?
+                                console.log([match, tag, restartMainNumbering, fixedNumber, groupNumber, label, localRef])
+                                return "{" + match + "}"
+                            }
+                        )
                     })
+                    */
+
                 }
-
-                cells = cells.map(parseCell)
-*/
-
-                result.pushLine('td', cell1, cells)
             }                    
         }
 
@@ -436,13 +403,11 @@ app.provider('markdownConverter', [function () {
         $get: function () {
 
             return function(code, $sanitize){
-                ltag_memory.current_postfix = ""
-                ltag_memory.R = 0
-                ltag_memory.L = 0
-                delete ltag_memory["R" + "_main_start"]
-                delete ltag_memory["R" + "_main_end"]
-                delete ltag_memory["L" + "_main_start"]
-                delete ltag_memory["L" + "_main_end"]
+                ltag_memory.current_postfix = "_"
+                ltag_memory.localRef = undefined
+
+                ltag_memory.R = {"_":0}
+                ltag_memory.L = {"_":0}
 
                 var html = ""
 
