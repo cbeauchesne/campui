@@ -8,7 +8,7 @@ app.config(['$stateProvider', function($stateProvider) {
         templateUrl: "static/campui/views/markdown.html",
         controller: ['$scope', 'code_samples', 'markdownConverter', '$sanitize', function($scope, code_samples, markdownConverter, $sanitize){
 
-          //  code_samples=[code_samples[70]]
+//            code_samples=[code_samples[23]]
             code_samples.forEach(function(item){
                 console.log(item.name)
                 item.result = markdownConverter(item.code, $sanitize)
@@ -103,11 +103,6 @@ app.factory('code_samples', function(){
         html:'<a href="https://www.camptocamp.org/articles/482718">article</a>'
         },
         {
-        name:'Table',
-        code:'L# |1\nL#bis|1bis \nL#_ |2',
-        html:'<table><tbody><tr><td>L1</td><td>1</td></tr><tr><td>L1bis</td><td>1bis</td></tr><tr><td>L2</td><td>2</td></tr></tbody></table>'
-        },
-        {
         name:'Table2',
         code:'L# |1\nL#| 2',
         html:'<table><tbody><tr><td>L1</td><td>1</td></tr><tr><td>L2</td><td>2</td></tr></tbody></table>'
@@ -164,7 +159,7 @@ app.factory('code_samples', function(){
         },
         {
         name:'Table13', //short name of your text
-        code:'L# | 1\nL#+left | 2left\nL#+right | 2right', //markdown code
+        code:'L# | 1\nL#+left | 2left\nL#right | 2right', //markdown code
         html:'<table><tbody><tr><td>L1</td><td>1</td></tr><tr><td>L2left</td><td>2left</td></tr><tr><td>L2right</td><td>2right</td></tr></tbody></table>'
         },
         {
@@ -174,7 +169,7 @@ app.factory('code_samples', function(){
         },
         {
         name:'Table15', //short name of your text
-        code:'L# : L1 \nL#bis : L1bis\nL#_ : L2\nL#+left : L3left\nL#+right : L3right\nL#_ : L4\nL#12bis : L12bis',
+        code:'L# : L1 \nL#bis : L1bis\nL#_ : L2\nL#+left : L3left\nL#right : L3right\nL#_ : L4\nL#12bis : L12bis',
         html:'<table><tbody><tr><td>L1</td><td>L1</td></tr><tr><td>L1bis</td><td>L1bis</td></tr><tr><td>L2</td><td>L2</td></tr><tr><td>L3left</td><td>L3left</td></tr><tr><td>L3right</td><td>L3right</td></tr><tr><td>L4</td><td>L4</td></tr><tr><td>L12bis</td><td>L12bis</td></tr></tbody></table>'
         },
         {
@@ -219,12 +214,12 @@ app.factory('code_samples', function(){
         },
         {
         name:'Table24', //short name of your text
-        code:'L# : L1\nL#bis : L1bis\n\nxx\nL#1 : L1',
+        code:'L# : L1\nL#bis : L1bis\n\nxx\nL#1_ : L1',
         html:'<table><tbody><tr><td>L1</td><td>L1</td></tr><tr><td>L1bis</td><td>L1bis</td></tr></tbody></table>&#10;<p>xx</p>&#10;<table><tbody><tr><td>L1</td><td>L1</td></tr></tbody></table>'
         },
         {
         name:'Table25', //short name of your text
-        code:"L# | L1\nL#' | L1'\nL#10 | L10\nL#' | L10'\n",
+        code:"L# | L1\nL#' | L1'\nL#10_ | L10\nL#' | L10'\n",
         html:"<table><tbody><tr><td>L1</td><td>L1</td></tr><tr><td>L1'</td><td>L1'</td></tr><tr><td>L10</td><td>L10</td></tr><tr><td>L10'</td><td>L10'</td></tr></tbody></table>"
         },
         {
@@ -236,6 +231,11 @@ app.factory('code_samples', function(){
         name:'Table27', //short name of your text
         code:"L# | 1 \nL# | 1 | 2\nL# | 1 | 2 | 3",
         html:"<table><tbody><tr><td>L1</td><td>1</td><td></td><td></td></tr><tr><td>L2</td><td>1</td><td>2</td><td></td></tr><tr><td>L3</td><td>1</td><td>2</td><td>3</td></tr></tbody></table>"
+        },
+        {
+        name:'Table27', //short name of your text
+        code:"L# | 1 \nL#+3 | L4",
+        html:"<table><tbody><tr><td>L1</td><td>1</td></tr><tr><td>L4</td><td>L4</td></tr></tbody></table>"
         },
         {
         name:'Trash1',
