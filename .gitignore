@@ -7,9 +7,9 @@
 /.idea/
 
 # build with gulp
-/app/static/css/
-/app/static/translations/
-/app/static/angular-i18n/
+/app/static/campui/css/
+/app/static/campui/translations/
+/app/static/campui/angular-i18n/
 
 # this dir exists only if fully build with gulp
 /static/
