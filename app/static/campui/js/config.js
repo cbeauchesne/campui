@@ -151,6 +151,7 @@ app.run(['$rootScope', '$state', '$cookies', 'gettextCatalog', 'tmhDynamicLocale
         $rootScope.$on('$stateChangeSuccess', function() {
            document.body.scrollTop = document.documentElement.scrollTop = 0;
            photoswipe.getters = []
+           photoswipe.open = false
         });
     }
 ]);

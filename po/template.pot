@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: c2c_items.html:128
+#: c2c_items.html:126
 msgid "*Sort buttons on table sorts only loaded data.*"
 msgstr ""
 
@@ -84,11 +84,11 @@ msgstr ""
 msgid "Activities"
 msgstr ""
 
-#: c2c_items.html:55
+#: c2c_items.html:52
 msgid "Add a filter item"
 msgstr ""
 
-#: c2c_items.html:34
+#: c2c_items.html:31
 msgid "Add a item"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Area"
 msgstr ""
 
-#: common/navbar.html:49
+#: common/navbar.html:48
 #: factories.js:681
 #: outing.html:23
 #: route.html:30
@@ -129,7 +129,7 @@ msgstr ""
 msgid "Areas"
 msgstr ""
 
-#: common/navbar.html:69
+#: common/navbar.html:68
 #: home.html:103
 msgid "Articles"
 msgstr ""
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Configuration"
 msgstr ""
 
-#: common/navbar.html:84
+#: common/navbar.html:83
 msgid "Contact"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: common/navbar.html:94
+#: common/navbar.html:93
 #: route.html:34
 #: waypoint.html:19
 msgid "Credits"
@@ -236,7 +236,7 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
-#: common/navbar.html:101
+#: common/navbar.html:100
 msgid "FAQ"
 msgstr ""
 
@@ -287,7 +287,7 @@ msgstr ""
 msgid "History"
 msgstr ""
 
-#: common/navbar.html:15
+#: common/navbar.html:14
 msgid "Home"
 msgstr ""
 
@@ -307,7 +307,7 @@ msgstr ""
 msgid "Impacted people"
 msgstr ""
 
-#: common/navbar.html:76
+#: common/navbar.html:75
 msgid "Incidents"
 msgstr ""
 
@@ -323,11 +323,11 @@ msgstr ""
 msgid "Load more items"
 msgstr ""
 
-#: common/navbar.html:159
+#: common/navbar.html:158
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:124
+#: common/navbar.html:123
 #: login.html:19
 msgid "Login"
 msgstr ""
@@ -356,7 +356,7 @@ msgstr ""
 msgid "Minimum length : 8 characters"
 msgstr ""
 
-#: common/navbar.html:61
+#: common/navbar.html:60
 msgid "Misc"
 msgstr ""
 
@@ -368,7 +368,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:143
+#: common/navbar.html:142
 msgid "My page"
 msgstr ""
 
@@ -419,7 +419,11 @@ msgstr ""
 msgid "Other ratings"
 msgstr ""
 
-#: common/navbar.html:31
+#: components/ng-photoswipe.html:47
+msgid "Outing"
+msgstr ""
+
+#: common/navbar.html:30
 #: home.html:28
 msgid "Outings"
 msgstr ""
@@ -429,12 +433,13 @@ msgid "Outings ({{outings.total}})"
 msgstr ""
 
 #: common/ibox_tools.html:56
-#: common/navbar.html:150
+#: common/navbar.html:149
 #: me.html:6
 msgid "Parameters"
 msgstr ""
 
 #: outing.html:47
+#: stories.html:37
 msgid "Participants"
 msgstr ""
 
@@ -479,7 +484,7 @@ msgstr ""
 msgid "Repeat password"
 msgstr ""
 
-#: common/navbar.html:89
+#: common/navbar.html:88
 msgid "Report a bug"
 msgstr ""
 
@@ -511,7 +516,7 @@ msgstr ""
 msgid "Route type"
 msgstr ""
 
-#: common/navbar.html:37
+#: common/navbar.html:36
 #: home.html:84
 #: search.html:13
 #: waypoint.html:122
@@ -542,7 +547,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:111
+#: common/navbar.html:110
 msgid "Search"
 msgstr ""
 
@@ -550,7 +555,7 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: c2c_items.html:143
+#: c2c_items.html:139
 msgid "Select filters"
 msgstr ""
 
@@ -594,7 +599,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: common/navbar.html:24
+#: common/navbar.html:23
 msgid "Topo"
 msgstr ""
 
@@ -608,7 +613,7 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: c2c_items.html:86
+#: c2c_items.html:84
 msgid "Use as a filter"
 msgstr ""
 
@@ -624,8 +629,8 @@ msgstr ""
 msgid "W"
 msgstr ""
 
-#: c2c_items.html:91
-#: common/navbar.html:43
+#: c2c_items.html:89
+#: common/navbar.html:42
 #: route.html:93
 #: search.html:24
 #: waypoint.html:132
@@ -1235,7 +1240,7 @@ msgstr ""
 msgid "loop_hut"
 msgstr ""
 
-#: c2c_items.html:8
+#: c2c_items.html:5
 msgid "map"
 msgstr ""
 
