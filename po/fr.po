@@ -775,7 +775,7 @@ msgstr "catégories"
 
 #: fixed_strings.html:218
 msgid "cave"
-msgstr ""
+msgstr "grotte"
 
 #: fixed_strings.html:125
 msgid "children proof"
