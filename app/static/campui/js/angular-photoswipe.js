@@ -14,9 +14,9 @@
 
     return angular
       .module('ngPhotoswipe', [])
-      .directive('ngPhotoswipe', ["$compile", "$http", "$templateCache", ngPhotoswipeDirective]);
+      .directive('ngPhotoswipe', ["$compile", "$http", "$templateCache", "c2c", ngPhotoswipeDirective]);
 
-    function ngPhotoswipeDirective($compile, $http, $templateCache) {
+    function ngPhotoswipeDirective($compile, $http, $templateCache, c2c) {
       return {
         restrict: 'AE',
         replace: true,
@@ -67,7 +67,15 @@
           scope.gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default || false, scope.slides, scope.options);
 
           // Image loaded
+          scope.details = {}
           scope.gallery.listen('gettingData', function(index, item) {
+
+              if(!scope.details[item.document_id])
+                  c2c.image.get({id:item.document_id}, function(details){
+                    scope.details[item.document_id] = details
+                    console.log(details)
+                  })
+
               if (item.w < 1 || item.h < 1) { // unknown size
                   var img = new Image();
                   img.onload = function() { // will get size after load
