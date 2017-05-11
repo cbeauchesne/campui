@@ -61,8 +61,9 @@
         <loading-info></loading-info>
 
         <div ng-if="data && !mapData.visible"
-             ui-grid="{data:data.documents, columnDefs:columnDefs, infiniteScrollDown: true, onRegisterApi:onRegisterApi,infiniteScrollRowsFromEnd:5}"
+             ui-grid="{data:data.documents, columnDefs:columnDefs, infiniteScrollDown: true, onRegisterApi:onRegisterApi,infiniteScrollRowsFromEnd:5, enableGridMenu:true, exporterMenuVisibleData:false, exporterMenuPdf:false}"
              ui-grid-infinite-scroll
+             ui-grid-exporter
              style="height: 500px;">
         </div>
         <div ng-if="data && mapData.visible"
