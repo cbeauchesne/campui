@@ -35,12 +35,17 @@
                        title="{{'Original page' | translate }}">
                         <i class="fa fa-external-link"></i>
                     </a>
-
                     <a class="pswp__button pswp__button--license"
                        href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.fr"
                        target="_blank"
                        title="CreativeCommons">
                         <i class="fa fa-creative-commons"></i>
+                    </a>
+                    <a class="pswp__button pswp__button--license"
+                       ng-if="!!details[item.document_id].associations.outings.length!=0"
+                       ui-sref="outing({id:details[item.document_id].associations.outings[0].document_id})"
+                       title="{{'Outing' | translate }}">
+                        <i class="fa fa-file-image-o"></i>
                     </a>
 
                     <div class="pswp__preloader">
