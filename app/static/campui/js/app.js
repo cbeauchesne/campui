@@ -7,6 +7,7 @@
         'ui.grid',                      // ui-grid
         'ui.grid.autoResize',
         'ui.grid.infiniteScroll',
+        'ui.grid.exporter',
         'ngCookies',
         'ngResource',
         'angular.filter',
