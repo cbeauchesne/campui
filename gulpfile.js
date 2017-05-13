@@ -16,10 +16,18 @@ var gettext = require('gulp-angular-gettext');
 var gulpUtil = require('gulp-util');
 var zip = require('gulp-zip');
 var imageResize = require('gulp-image-resize');
+var svg2png = require('gulp-svg2png');
 
 var browserSync = require('browser-sync').create();
 
-gulp.task('spotlights', function () {
+
+gulp.task('spotlights_svg', function () {
+  return gulp.src('app/static/campui/img_src/spotlights/*.svg')
+    .pipe(svg2png())
+    .pipe(gulp.dest('app/static/campui/img/spotlights/'));
+});
+
+gulp.task('spotlights_png', function () {
   return gulp.src('app/static/campui/img_src/spotlights/*.png')
     .pipe(imageResize({
       width : 22,
@@ -28,7 +36,7 @@ gulp.task('spotlights', function () {
       upscale : false,
       imageMagick : true
     }))
-    .pipe(gulp.dest('app/static/campui/img_src/spotlights2/'));
+    .pipe(gulp.dest('app/static/campui/img/spotlights/'));
 });
 
 gulp.task('sass', function(){
