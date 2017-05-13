@@ -1,3 +1,5 @@
+*Cette régle n'a pas été validée. Elle est néanmoins valable car faisant partie des trois règles de bases indispensables*
+
 Ce texte décrit le processus de décision 
 
 1. Question
