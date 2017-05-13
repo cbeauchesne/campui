@@ -1,3 +1,4 @@
+*Cette régle n'a pas été validée. Elle est néanmoins valable car faisant partie des trois règles de bases indispensables au bon fonctionnement initial du site*
 
 ### Règles
 
