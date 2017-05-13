@@ -68,7 +68,7 @@ msgstr ""
 msgid "5min"
 msgstr ""
 
-#: waypoint.html:114
+#: waypoint.html:116
 msgid "Access"
 msgstr ""
 
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: route.html:67
+#: route.html:68
 msgid "Configuration"
 msgstr ""
 
@@ -194,8 +194,8 @@ msgstr ""
 
 #: area.html:19
 #: outing.html:31
-#: route.html:109
-#: waypoint.html:111
+#: route.html:112
+#: waypoint.html:113
 msgid "Description"
 msgstr ""
 
@@ -254,7 +254,7 @@ msgstr ""
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:115
+#: route.html:118
 msgid "Gears"
 msgstr ""
 
@@ -275,11 +275,11 @@ msgid "Height diff"
 msgstr ""
 
 #: outing.html:70
-#: route.html:77
+#: route.html:78
 msgid "Height difference"
 msgstr ""
 
-#: route.html:119
+#: route.html:122
 msgid "History"
 msgstr ""
 
@@ -398,7 +398,7 @@ msgstr ""
 msgid "Only a-z, 0-9 and _ are allowed"
 msgstr ""
 
-#: route.html:72
+#: route.html:73
 msgid "Orientation"
 msgstr ""
 
@@ -463,8 +463,8 @@ msgstr ""
 msgid "Ratings"
 msgstr ""
 
-#: route.html:125
-#: waypoint.html:130
+#: route.html:128
+#: waypoint.html:132
 msgid "Recent outings"
 msgstr ""
 
@@ -472,7 +472,7 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: route.html:112
+#: route.html:115
 msgid "Remarks"
 msgstr ""
 
@@ -504,7 +504,7 @@ msgstr ""
 msgid "Route description"
 msgstr ""
 
-#: route.html:92
+#: route.html:95
 msgid "Route length"
 msgstr ""
 
@@ -515,7 +515,7 @@ msgstr ""
 #: common/navbar.html:36
 #: home.html:77
 #: search.html:13
-#: waypoint.html:124
+#: waypoint.html:126
 msgid "Routes"
 msgstr ""
 
@@ -627,9 +627,9 @@ msgstr ""
 
 #: c2c_items.html:89
 #: common/navbar.html:42
-#: route.html:98
+#: route.html:101
 #: search.html:24
-#: waypoint.html:134
+#: waypoint.html:136
 msgid "Waypoints"
 msgstr ""
 
@@ -649,7 +649,7 @@ msgstr ""
 msgid "access time"
 msgstr ""
 
-#: waypoint.html:78
+#: waypoint.html:80
 msgid "access_time"
 msgstr ""
 
@@ -743,7 +743,7 @@ msgstr ""
 msgid "best periods"
 msgstr ""
 
-#: waypoint.html:70
+#: waypoint.html:72
 msgid "best_periods"
 msgstr ""
 
@@ -811,7 +811,7 @@ msgstr ""
 msgid "children proof"
 msgstr ""
 
-#: waypoint.html:101
+#: waypoint.html:103
 msgid "children_proof"
 msgstr ""
 
@@ -859,7 +859,7 @@ msgstr ""
 msgid "climbing_rating"
 msgstr ""
 
-#: waypoint.html:59
+#: waypoint.html:61
 msgid "climbing_rating_median"
 msgstr ""
 
@@ -943,7 +943,7 @@ msgstr ""
 #: fixed_strings.html:106
 #: fixed_strings.html:66
 #: fixed_strings.html:68
-#: route.html:85
+#: route.html:86
 #: waypoint.html:33
 msgid "elevation"
 msgstr ""
@@ -973,7 +973,7 @@ msgstr ""
 msgid "equipment ratings"
 msgstr ""
 
-#: waypoint.html:90
+#: waypoint.html:92
 msgid "equipment_ratings"
 msgstr ""
 
@@ -1318,7 +1318,7 @@ msgstr ""
 
 #: fixed_strings.html:117
 #: fixed_strings.html:47
-#: waypoint.html:66
+#: waypoint.html:68
 msgid "orientations"
 msgstr ""
 
@@ -1409,7 +1409,7 @@ msgid "prominence"
 msgstr ""
 
 #: fixed_strings.html:307
-#: waypoint.html:85
+#: waypoint.html:87
 msgid "protected"
 msgstr ""
 
@@ -1441,7 +1441,7 @@ msgstr ""
 msgid "rain proof"
 msgstr ""
 
-#: waypoint.html:98
+#: waypoint.html:100
 msgid "rain_proof"
 msgstr ""
 
@@ -1487,7 +1487,7 @@ msgstr ""
 msgid "rock_climbing"
 msgstr ""
 
-#: waypoint.html:95
+#: waypoint.html:97
 msgid "rock_types"
 msgstr ""
 
@@ -1512,7 +1512,7 @@ msgstr ""
 msgid "routes quantity"
 msgstr ""
 
-#: waypoint.html:74
+#: waypoint.html:76
 msgid "routes_quantity"
 msgstr ""
 

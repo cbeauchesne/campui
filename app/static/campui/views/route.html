@@ -56,7 +56,8 @@
                 </div>
 
                 <div>
-                    <label translate>Glacier gears</label> {{route.glacier_gear | translate}}
+                    <label translate>Glacier gears</label>
+                    {{route.glacier_gear | translate}}
                 </div>
 
             </div>
@@ -85,7 +86,9 @@
                         <span translate>elevation</span>
                         <span ng-if="route.elevation_min">min</span><span ng-if="route.elevation_min && route.elevation_max">/</span><span ng-if="route.elevation_max">max</span>
                     </label>
-                    {{route.elevation_min}}&nbsp;m&nbsp;/&nbsp;{{route.elevation_max}}&nbsp;m
+                    <span ng-if="route.elevation_min">{{route.elevation_min}}&nbsp;m</span>
+                    <span ng-if="route.elevation_min && route.elevation_max">/</span>
+                    <span ng-if="route.elevation_max">{{route.elevation_max}}&nbsp;m</span>
                 </div>
 
                 <div ng-if="route.route_length">
