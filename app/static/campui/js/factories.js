@@ -365,49 +365,6 @@ app.factory('searchData', function(){
     }
 });
 
-app.service('photoswipe', ["locale", function(locale){
-    var _this = this
-
-    // https://github.com/dimsemenov/PhotoSwipe/issues/580
-    // history is important, see comment of mutac
-    _this.opts={
-        index:0,
-        history:false
-    }
-
-    _this.getters = []
-    _this.slides = []
-
-    _this.showGallery = function(document_id) {
-        _this.opts.index = 0;
-        _this.slides.length = 0
-        var i = 0
-
-        _this.getters.forEach(function(getter){
-            getter().forEach(function(image){
-
-                _this.slides.push({
-                    src:"https://media.camptocamp.org/c2corg_active/" + image.filename.replace('.', 'BI.').replace('.svg', '.jpg'),
-                    w:0,h:0,
-                    title:locale.get(image).title,
-                    document_id:image.document_id,
-                })
-
-                if(document_id==image.document_id)
-                    _this.opts.index = i
-
-                i++
-            })
-        })
-
-        _this.open = true;
-    }
-
-    _this.closeGallery = function () {
-        _this.open = false;
-    };
-}]);
-
 app.factory("urlQuery", ['$location', 'filterItems', function($location, filterItems){
 
     function arraysEqual(a, b) {
