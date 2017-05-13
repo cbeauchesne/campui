@@ -783,7 +783,7 @@ app.factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
 
             var getIcon = function(doc){
                 if(doc.type=="w"){
-                    return "/static/campui/img/spotlights/spotlight_" + doc.waypoint_type + ".svg"
+                    return "/static/campui/img/spotlights/spotlight_" + doc.waypoint_type + ".png"
                 }
             }
 
