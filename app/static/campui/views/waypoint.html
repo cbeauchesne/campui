@@ -43,11 +43,11 @@
                 </div>
                 <div ng-if="waypoint.climbing_outdoor_types">
                     <label translate>climbing_outdoor_types</label>
-                    {{waypoint.climbing_outdoor_types.join(', ')}}
+                    {{translateArray(waypoint.climbing_outdoor_types).join(', ')}}
                 </div>
                 <div ng-if="waypoint.climbing_styles">
                     <label translate>climbing_styles</label>
-                    {{waypoint.climbing_styles.join(', ')}}
+                    {{translateArray(waypoint.climbing_styles).join(', ')}}
                 </div>
                 <div ng-if="waypoint.climbing_rating_min || waypoint.climbing_rating_max">
                     <label translate>climbing_rating</label>

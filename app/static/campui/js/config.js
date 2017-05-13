@@ -23,6 +23,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
 
                 $scope.translateArray = function(arr){
                     function getString(item){ return gettextCatalog.getString(item) }
+
                     if(arr)
                         return arr.map(getString)
                 }

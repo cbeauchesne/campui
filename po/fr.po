@@ -883,7 +883,7 @@ msgstr "gardiennage"
 
 #: fixed_strings.html:174
 msgid "danger_sign"
-msgstr ""
+msgstr "signe de danger"
 
 #: fixed_strings.html:188
 msgid "de"
@@ -980,7 +980,7 @@ msgstr ""
 
 #: fixed_strings.html:324
 msgid "farm_sale"
-msgstr ""
+msgstr "vente à la ferme"
 
 #: fixed_strings.html:271
 msgid "feb"
@@ -1508,7 +1508,7 @@ msgstr "ski"
 
 #: fixed_strings.html:286
 msgid "slab"
-msgstr ""
+msgstr "dalle"
 
 #: fixed_strings.html:231
 msgid "slope_30_35"
