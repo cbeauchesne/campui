@@ -1286,7 +1286,7 @@ msgstr ""
 
 #: fixed_strings.html:288
 msgid "overhang"
-msgstr ""
+msgstr "dévers-surplomb"
 
 #: fixed_strings.html:167 fixed_strings.html:19
 msgid "paragliding"

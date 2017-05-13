@@ -53,9 +53,9 @@
                 </div>
                 <div ng-if="waypoint.climbing_rating_min || waypoint.climbing_rating_max">
                     <label translate>climbing_rating</label>
-                    <span ng-if="waypoint.climbing_rating_min">{{waypoint.climbing_rating_min}}&nbsp;m</span>
+                    <span ng-if="waypoint.climbing_rating_min">{{waypoint.climbing_rating_min}}</span>
                     <span ng-if="waypoint.climbing_rating_min && waypoint.climbing_rating_max">/</span>
-                    <span ng-if="waypoint.climbing_rating_max">{{waypoint.climbing_rating_max}}&nbsp;m</span>
+                    <span ng-if="waypoint.climbing_rating_max">{{waypoint.climbing_rating_max}}</span>
                 </div>
                 <div ng-if="waypoint.climbing_rating_median">
                     <label translate>climbing_rating_median</label>
@@ -88,9 +88,9 @@
                     {{waypoint.protected}}
                 </div>
 
-                <div ng-if="waypoint.equipment_ratings">
+                <div ng-if="waypoint.equipment_ratings && waypoint.equipment_ratings.length!=0">
                     <label translate>equipment_ratings</label>
-                    {{waypoint.equipment_ratings}}
+                    {{waypoint.equipment_ratings.join(", ")}}
                 </div>
 
                 <div ng-if="waypoint.rock_types">
