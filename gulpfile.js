@@ -19,6 +19,18 @@ var imageResize = require('gulp-image-resize');
 
 var browserSync = require('browser-sync').create();
 
+gulp.task('spotlights', function () {
+  return gulp.src('app/static/campui/img_src/spotlights/*.png')
+    .pipe(imageResize({
+      width : 22,
+      height : 40,
+      crop : true,
+      upscale : false,
+      imageMagick : true
+    }))
+    .pipe(gulp.dest('app/static/campui/img_src/spotlights2/'));
+});
+
 gulp.task('sass', function(){
   return gulp.src('app/static/campui/scss/**/*.scss')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
