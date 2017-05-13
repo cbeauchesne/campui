@@ -15,6 +15,7 @@ var fs = require("fs");
 var gettext = require('gulp-angular-gettext');
 var gulpUtil = require('gulp-util');
 var zip = require('gulp-zip');
+var imageResize = require('gulp-image-resize');
 
 var browserSync = require('browser-sync').create();
 
