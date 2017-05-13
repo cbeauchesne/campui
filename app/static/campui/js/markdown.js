@@ -44,7 +44,7 @@ app.provider('markdownConverter', [function () {
 
         var toc = { //trash
             type: 'lang',
-            regex: /(\[\/?(toc2|p|col|toc|picto)([a-zA-Z_\d ]*)?\/?\])/g,
+            regex: /(\[\/?(toc2|p|col|toc|picto|abs|abstract)([a-zA-Z_\d ]*)?\/?\])/g,
             replace: function () {
                 return '';
             }
