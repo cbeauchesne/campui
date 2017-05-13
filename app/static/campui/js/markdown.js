@@ -413,7 +413,13 @@ app.provider('markdownConverter', [function () {
                 var html = ""
 
                 if(code){
-                    html = (new showdown.Converter(opts)).makeHtml(code.replace("iframe", ""))
+
+                    try{
+                        html = (new showdown.Converter(opts)).makeHtml(code.replace("iframe", ""))
+                    }
+                    catch (e){
+                        html = "<div class='alert alert-danger'>Oups, something went wrong in markdown parser. Please send a message to CharlesB with the adress of this page</div>"
+                    }
 
                     var IFRAME_IN = '<img alt="iframe" '
                     var IFRAME_OUT = '>___IFRAME_OUT__'
