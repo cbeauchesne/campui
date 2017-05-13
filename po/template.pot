@@ -154,10 +154,6 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: route.html:68
-msgid "Configuration"
-msgstr ""
-
 #: common/navbar.html:83
 msgid "Contact"
 msgstr ""
@@ -199,10 +195,6 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: route.html:49
-msgid "Difficulties height"
-msgstr ""
-
 #: login.html:25
 msgid "Do not have an account?"
 msgstr ""
@@ -212,7 +204,6 @@ msgid "E"
 msgstr ""
 
 #: factories/factories.js:645
-#: outing.html:65
 msgid "Elevation"
 msgstr ""
 
@@ -258,10 +249,6 @@ msgstr ""
 msgid "Gears"
 msgstr ""
 
-#: route.html:59
-msgid "Glacier gears"
-msgstr ""
-
 #: components/rating.html:2
 msgid "Global rating"
 msgstr ""
@@ -272,11 +259,6 @@ msgstr ""
 
 #: factories/factories.js:591
 msgid "Height diff"
-msgstr ""
-
-#: outing.html:70
-#: route.html:78
-msgid "Height difference"
 msgstr ""
 
 #: route.html:122
@@ -398,10 +380,6 @@ msgstr ""
 msgid "Only a-z, 0-9 and _ are allowed"
 msgstr ""
 
-#: route.html:73
-msgid "Orientation"
-msgstr ""
-
 #: factories/factories.js:596
 msgid "Orientations"
 msgstr ""
@@ -508,10 +486,6 @@ msgstr ""
 msgid "Route length"
 msgstr ""
 
-#: route.html:54
-msgid "Route type"
-msgstr ""
-
 #: common/navbar.html:36
 #: home.html:77
 #: search.html:13
@@ -597,10 +571,6 @@ msgstr ""
 
 #: common/navbar.html:23
 msgid "Topo"
-msgstr ""
-
-#: outing.html:75
-msgid "Total length"
 msgstr ""
 
 #: factories/factories.js:626
@@ -876,6 +846,7 @@ msgid "conditions"
 msgstr ""
 
 #: fixed_strings.html:98
+#: route.html:68
 msgid "configuration"
 msgstr ""
 
@@ -928,6 +899,7 @@ msgid "dec"
 msgstr ""
 
 #: fixed_strings.html:103
+#: route.html:49
 msgid "difficulties height"
 msgstr ""
 
@@ -943,6 +915,7 @@ msgstr ""
 #: fixed_strings.html:106
 #: fixed_strings.html:66
 #: fixed_strings.html:68
+#: outing.html:66
 #: route.html:86
 #: waypoint.html:33
 msgid "elevation"
@@ -1042,6 +1015,10 @@ msgstr ""
 msgid "glacier"
 msgstr ""
 
+#: route.html:59
+msgid "glacier gears"
+msgstr ""
+
 #: fixed_strings.html:54
 msgid "glacier rating"
 msgstr ""
@@ -1088,6 +1065,11 @@ msgstr ""
 
 #: fixed_strings.html:105
 msgid "height diff difficulties"
+msgstr ""
+
+#: outing.html:74
+#: route.html:78
+msgid "height difference"
 msgstr ""
 
 #: fixed_strings.html:108
@@ -1316,6 +1298,10 @@ msgstr ""
 msgid "oct"
 msgstr ""
 
+#: route.html:73
+msgid "orientation"
+msgstr ""
+
 #: fixed_strings.html:117
 #: fixed_strings.html:47
 #: waypoint.html:68
@@ -1503,6 +1489,10 @@ msgstr ""
 msgid "route length"
 msgstr ""
 
+#: route.html:54
+msgid "route type"
+msgstr ""
+
 #: fixed_strings.html:24
 #: fixed_strings.html:59
 msgid "routes"
@@ -1665,6 +1655,10 @@ msgstr ""
 
 #: fixed_strings.html:152
 msgid "topoguide_supplements"
+msgstr ""
+
+#: outing.html:81
+msgid "total length"
 msgstr ""
 
 #: fixed_strings.html:258

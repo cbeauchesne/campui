@@ -79,7 +79,7 @@ msgstr "45min"
 msgid "5min"
 msgstr "5min"
 
-#: waypoint.html:114
+#: waypoint.html:116
 msgid "Access"
 msgstr "Accès"
 
@@ -158,10 +158,6 @@ msgstr "Catégories"
 msgid "Conditions"
 msgstr "Conditions"
 
-#: route.html:67
-msgid "Configuration"
-msgstr "Configuration"
-
 #: common/navbar.html:83
 msgid "Contact"
 msgstr "Contact"
@@ -194,13 +190,9 @@ msgstr "Par défaut pour les itinéraires"
 msgid "Default for xreports"
 msgstr "Par défaut pour les incidents"
 
-#: area.html:19 outing.html:31 route.html:109 waypoint.html:111
+#: area.html:19 outing.html:31 route.html:112 waypoint.html:113
 msgid "Description"
 msgstr "Description"
-
-#: route.html:49
-msgid "Difficulties height"
-msgstr "Dénivelé des difficultés"
 
 #: login.html:25
 msgid "Do not have an account?"
@@ -210,7 +202,7 @@ msgstr "Vous n’avez pas encore un compte?"
 msgid "E"
 msgstr "E"
 
-#: factories/factories.js:645 outing.html:65
+#: factories/factories.js:645
 msgid "Elevation"
 msgstr "Altitude"
 
@@ -250,13 +242,9 @@ msgstr "Forum"
 msgid "Frequentation"
 msgstr "Fréquentation"
 
-#: route.html:115
+#: route.html:118
 msgid "Gears"
 msgstr "Matériel"
-
-#: route.html:59
-msgid "Glacier gears"
-msgstr "Matériel glacier"
 
 #: components/rating.html:2
 msgid "Global rating"
@@ -270,11 +258,7 @@ msgstr "Hauteur"
 msgid "Height diff"
 msgstr "Hauteur"
 
-#: outing.html:70 route.html:77
-msgid "Height difference"
-msgstr "Dénivelé"
-
-#: route.html:119
+#: route.html:122
 msgid "History"
 msgstr "Historique"
 
@@ -390,10 +374,6 @@ msgstr "Aucun filtre"
 msgid "Only a-z, 0-9 and _ are allowed"
 msgstr "Caractères autorisés : a-z, _ et 0-9"
 
-#: route.html:72
-msgid "Orientation"
-msgstr "Orientation"
-
 #: factories/factories.js:596
 msgid "Orientations"
 msgstr "Orientations"
@@ -450,7 +430,7 @@ msgstr "Cotations"
 msgid "Ratings"
 msgstr "Cotations"
 
-#: route.html:125 waypoint.html:130
+#: route.html:128 waypoint.html:132
 msgid "Recent outings"
 msgstr "Sorties récentes"
 
@@ -458,7 +438,7 @@ msgstr "Sorties récentes"
 msgid "Register"
 msgstr "Créer un compte"
 
-#: route.html:112
+#: route.html:115
 msgid "Remarks"
 msgstr "Remarques"
 
@@ -490,15 +470,11 @@ msgstr "Cotation obligatoire"
 msgid "Route description"
 msgstr "Description de l’itinéraire"
 
-#: route.html:92
+#: route.html:95
 msgid "Route length"
 msgstr "Longueur"
 
-#: route.html:54
-msgid "Route type"
-msgstr "Type d’itinéraire"
-
-#: common/navbar.html:36 home.html:77 search.html:13 waypoint.html:124
+#: common/navbar.html:36 home.html:77 search.html:13 waypoint.html:126
 msgid "Routes"
 msgstr "Itinéraires"
 
@@ -579,10 +555,6 @@ msgstr "Titre"
 msgid "Topo"
 msgstr "Topo"
 
-#: outing.html:75
-msgid "Total length"
-msgstr "Longueur totale"
-
 #: factories/factories.js:626 factories/factories.js:650
 #: factories/factories.js:663
 msgid "Type"
@@ -604,8 +576,8 @@ msgstr "Nom d’utilisateur"
 msgid "W"
 msgstr "W"
 
-#: c2c_items.html:89 common/navbar.html:42 route.html:98 search.html:24
-#: waypoint.html:134
+#: c2c_items.html:89 common/navbar.html:42 route.html:101 search.html:24
+#: waypoint.html:136
 msgid "Waypoints"
 msgstr "Points de passage"
 
@@ -625,7 +597,7 @@ msgstr "accès"
 msgid "access time"
 msgstr "temps d’accès"
 
-#: waypoint.html:78
+#: waypoint.html:80
 msgid "access_time"
 msgstr "temps d’accès"
 
@@ -717,7 +689,7 @@ msgstr "camp de base"
 msgid "best periods"
 msgstr "meilleure période"
 
-#: waypoint.html:70
+#: waypoint.html:72
 msgid "best_periods"
 msgstr "meilleure période"
 
@@ -785,7 +757,7 @@ msgstr "grotte"
 msgid "children proof"
 msgstr "enfants"
 
-#: waypoint.html:101
+#: waypoint.html:103
 msgid "children_proof"
 msgstr "enfants"
 
@@ -833,7 +805,7 @@ msgstr "type de site d’escalade"
 msgid "climbing_rating"
 msgstr "cotations"
 
-#: waypoint.html:59
+#: waypoint.html:61
 msgid "climbing_rating_median"
 msgstr "cotation médiane"
 
@@ -849,7 +821,7 @@ msgstr "complétude"
 msgid "conditions"
 msgstr "conditions"
 
-#: fixed_strings.html:98
+#: fixed_strings.html:98 route.html:68
 msgid "configuration"
 msgstr "configuration"
 
@@ -901,7 +873,7 @@ msgstr "de"
 msgid "dec"
 msgstr "décembre"
 
-#: fixed_strings.html:103
+#: fixed_strings.html:103 route.html:49
 msgid "difficulties height"
 msgstr "hauteur des difficultés"
 
@@ -914,7 +886,7 @@ msgid "edge"
 msgstr "arête"
 
 #: fixed_strings.html:106 fixed_strings.html:66 fixed_strings.html:68
-#: route.html:85 waypoint.html:33
+#: outing.html:65 route.html:86 waypoint.html:33
 msgid "elevation"
 msgstr "altitude"
 
@@ -942,7 +914,7 @@ msgstr "qualité de l’équipement"
 msgid "equipment ratings"
 msgstr "qualité de l’équipement"
 
-#: waypoint.html:90
+#: waypoint.html:92
 msgid "equipment_ratings"
 msgstr "qualité de l’équipement"
 
@@ -1010,6 +982,10 @@ msgstr "gite"
 msgid "glacier"
 msgstr "glacier"
 
+#: route.html:59
+msgid "glacier gears"
+msgstr "matériel glacier"
+
 #: fixed_strings.html:54
 msgid "glacier rating"
 msgstr "état du glacier"
@@ -1057,6 +1033,10 @@ msgstr "dénivelé de l’approche"
 #: fixed_strings.html:105
 msgid "height diff difficulties"
 msgstr "dénivelé des difficultés"
+
+#: outing.html:70 route.html:78
+msgid "height difference"
+msgstr "dénivelé"
 
 #: fixed_strings.html:108
 msgid "height max"
@@ -1278,7 +1258,11 @@ msgstr "novembre"
 msgid "oct"
 msgstr "oct"
 
-#: fixed_strings.html:117 fixed_strings.html:47 waypoint.html:66
+#: route.html:73
+msgid "orientation"
+msgstr "orientation"
+
+#: fixed_strings.html:117 fixed_strings.html:47 waypoint.html:68
 msgid "orientations"
 msgstr "orientations"
 
@@ -1366,7 +1350,7 @@ msgstr "type de produits"
 msgid "prominence"
 msgstr "prominence"
 
-#: fixed_strings.html:307 waypoint.html:85
+#: fixed_strings.html:307 waypoint.html:87
 msgid "protected"
 msgstr ""
 
@@ -1398,7 +1382,7 @@ msgstr "raid"
 msgid "rain proof"
 msgstr "pluie"
 
-#: waypoint.html:98
+#: waypoint.html:100
 msgid "rain_proof"
 msgstr "pluie"
 
@@ -1442,7 +1426,7 @@ msgstr "type de roche"
 msgid "rock_climbing"
 msgstr "escalade"
 
-#: waypoint.html:95
+#: waypoint.html:97
 msgid "rock_types"
 msgstr "type de rocher"
 
@@ -1458,6 +1442,10 @@ msgstr ""
 msgid "route length"
 msgstr "longueur de l’itinéraire"
 
+#: route.html:54
+msgid "route type"
+msgstr "type d’itinéraire"
+
 #: fixed_strings.html:24 fixed_strings.html:59
 msgid "routes"
 msgstr "itinéraires"
@@ -1466,7 +1454,7 @@ msgstr "itinéraires"
 msgid "routes quantity"
 msgstr "nombre de routes"
 
-#: waypoint.html:74
+#: waypoint.html:76
 msgid "routes_quantity"
 msgstr "nombre de routes"
 
@@ -1618,6 +1606,10 @@ msgstr "à"
 msgid "topoguide_supplements"
 msgstr ""
 
+#: outing.html:75
+msgid "total length"
+msgstr "tongueur totale"
+
 #: fixed_strings.html:258
 msgid "trachyte"
 msgstr ""
@@ -1701,6 +1693,15 @@ msgstr "direction du vent"
 #: fixed_strings.html:311
 msgid "wind_speed"
 msgstr "vitesse du vent"
+
+#~ msgid "Configuration"
+#~ msgstr "Configuration"
+
+#~ msgid "Difficulties height"
+#~ msgstr "Dénivelé des difficultés"
+
+#~ msgid "Orientation"
+#~ msgstr "Orientation"
 
 #~ msgid "Elevation min/max"
 #~ msgstr "Altitude min/max"

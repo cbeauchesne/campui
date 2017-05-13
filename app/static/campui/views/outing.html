@@ -42,7 +42,7 @@
 
             </div>
 
-            <div class="col-sm-3 b-l">
+            <div class="col-sm-3 b-l item-header">
                 <div>
                     <i class="fa fa-user" uib-tooltip="{{'Participants' | translate }}"></i>
                     <span ng-repeat="user in outing.associations.users">
@@ -62,17 +62,23 @@
                 </div>
 
                 <div ng-if="outing.elevation_min || outing.elevation_max">
-                    <label translate>Elevation</label>:
-                    {{outing.elevation_min}}&nbsp;m&nbsp;/&nbsp;{{outing.elevation_max}}&nbsp;m
+                    <label>
+                        <span translate>elevation</span>
+                    </label>
+                    <span ng-if="outing.elevation_min">{{outing.elevation_min}}&nbsp;m</span>
+                    <span ng-if="outing.elevation_min && outing.elevation_max">/</span>
+                    <span ng-if="outing.elevation_max">{{outing.elevation_max}}&nbsp;m</span>
                 </div>
 
                 <div ng-if="outing.height_diff_down || outing.height_diff_up">
-                    <label translate>Height difference</label>:
-                    -{{outing.height_diff_down}}&nbsp;m&nbsp;/&nbsp;{{outing.height_diff_up}}&nbsp;m
+                    <label translate>height difference</label>
+                    <span ng-if="outing.height_diff_up">+{{outing.height_diff_up}}&nbsp;m</span>
+                    <span ng-if="outing.height_diff_up && outing.height_diff_down">/</span>
+                    <span ng-if="outing.height_diff_down">-{{outing.height_diff_down}}&nbsp;m</span>
                 </div>
 
                 <div ng-if="outing.length_total">
-                    <label translate>Total length</label>:
+                    <label translate>total length</label>
                     {{outing.length_total}} m
                 </div>
 

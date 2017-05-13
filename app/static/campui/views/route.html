@@ -46,17 +46,17 @@
                 </div>
 
                 <div ng-if="route.height_diff_difficulties">
-                    <label translate>Difficulties height</label>
+                    <label translate>difficulties height</label>
                     {{route.height_diff_difficulties}}&nbsp;m
                 </div>
 
                 <div ng-if="route.route_types">
-                    <label translate>Route type</label>
+                    <label translate>route type</label>
                     {{translateArray(route.route_types).join(', ')}}
                 </div>
 
                 <div>
-                    <label translate>Glacier gears</label>
+                    <label translate>glacier gears</label>
                     {{route.glacier_gear | translate}}
                 </div>
 
@@ -65,17 +65,17 @@
             <div class="col-sm-4">
 
                 <div ng-if="route.configuration">
-                    <label translate>Configuration</label>
+                    <label translate>configuration</label>
                     {{translateArray(route.configuration).join(', ')}}
                 </div>
 
                 <div ng-if="route.orientations">
-                    <label translate>Orientation</label>
+                    <label translate>orientation</label>
                     {{translateArray(route.orientations).join(', ')}}
                 </div>
 
                 <div ng-if="route.height_diff_up || route.height_diff_down">
-                    <label translate>Height difference</label>
+                    <label translate>height difference</label>
                     <span ng-if="route.height_diff_up">+{{route.height_diff_up}}&nbsp;m</span>
                     <span ng-if="route.height_diff_up && route.height_diff_down">/</span>
                     <span ng-if="route.height_diff_down">-{{route.height_diff_down}}&nbsp;m</span>
