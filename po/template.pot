@@ -68,7 +68,7 @@ msgstr ""
 msgid "5min"
 msgstr ""
 
-#: waypoint.html:112
+#: waypoint.html:114
 msgid "Access"
 msgstr ""
 
@@ -194,8 +194,8 @@ msgstr ""
 
 #: area.html:19
 #: outing.html:31
-#: route.html:104
-#: waypoint.html:109
+#: route.html:109
+#: waypoint.html:111
 msgid "Description"
 msgstr ""
 
@@ -214,10 +214,6 @@ msgstr ""
 #: factories/factories.js:645
 #: outing.html:65
 msgid "Elevation"
-msgstr ""
-
-#: route.html:82
-msgid "Elevation min/max"
 msgstr ""
 
 #: components/rating.html:6
@@ -258,7 +254,7 @@ msgstr ""
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:110
+#: route.html:115
 msgid "Gears"
 msgstr ""
 
@@ -283,7 +279,7 @@ msgstr ""
 msgid "Height difference"
 msgstr ""
 
-#: route.html:114
+#: route.html:119
 msgid "History"
 msgstr ""
 
@@ -467,8 +463,8 @@ msgstr ""
 msgid "Ratings"
 msgstr ""
 
-#: route.html:120
-#: waypoint.html:128
+#: route.html:125
+#: waypoint.html:130
 msgid "Recent outings"
 msgstr ""
 
@@ -476,7 +472,7 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: route.html:107
+#: route.html:112
 msgid "Remarks"
 msgstr ""
 
@@ -508,7 +504,7 @@ msgstr ""
 msgid "Route description"
 msgstr ""
 
-#: route.html:87
+#: route.html:92
 msgid "Route length"
 msgstr ""
 
@@ -519,7 +515,7 @@ msgstr ""
 #: common/navbar.html:36
 #: home.html:77
 #: search.html:13
-#: waypoint.html:122
+#: waypoint.html:124
 msgid "Routes"
 msgstr ""
 
@@ -631,9 +627,9 @@ msgstr ""
 
 #: c2c_items.html:89
 #: common/navbar.html:42
-#: route.html:93
+#: route.html:98
 #: search.html:24
-#: waypoint.html:132
+#: waypoint.html:134
 msgid "Waypoints"
 msgstr ""
 
@@ -653,7 +649,7 @@ msgstr ""
 msgid "access time"
 msgstr ""
 
-#: waypoint.html:76
+#: waypoint.html:78
 msgid "access_time"
 msgstr ""
 
@@ -747,7 +743,7 @@ msgstr ""
 msgid "best periods"
 msgstr ""
 
-#: waypoint.html:68
+#: waypoint.html:70
 msgid "best_periods"
 msgstr ""
 
@@ -815,7 +811,7 @@ msgstr ""
 msgid "children proof"
 msgstr ""
 
-#: waypoint.html:99
+#: waypoint.html:101
 msgid "children_proof"
 msgstr ""
 
@@ -855,19 +851,19 @@ msgstr ""
 msgid "climbing_outdoor"
 msgstr ""
 
-#: waypoint.html:45
+#: waypoint.html:47
 msgid "climbing_outdoor_types"
 msgstr ""
 
-#: waypoint.html:53
+#: waypoint.html:55
 msgid "climbing_rating"
 msgstr ""
 
-#: waypoint.html:57
+#: waypoint.html:59
 msgid "climbing_rating_median"
 msgstr ""
 
-#: waypoint.html:49
+#: waypoint.html:51
 msgid "climbing_styles"
 msgstr ""
 
@@ -919,6 +915,10 @@ msgstr ""
 msgid "danger_sign"
 msgstr ""
 
+#: fixed_strings.html:334
+msgid "dangerous"
+msgstr ""
+
 #: fixed_strings.html:188
 msgid "de"
 msgstr ""
@@ -943,6 +943,7 @@ msgstr ""
 #: fixed_strings.html:106
 #: fixed_strings.html:66
 #: fixed_strings.html:68
+#: route.html:85
 #: waypoint.html:33
 msgid "elevation"
 msgstr ""
@@ -972,7 +973,7 @@ msgstr ""
 msgid "equipment ratings"
 msgstr ""
 
-#: waypoint.html:88
+#: waypoint.html:90
 msgid "equipment_ratings"
 msgstr ""
 
@@ -1101,7 +1102,7 @@ msgstr ""
 msgid "height min"
 msgstr ""
 
-#: waypoint.html:41
+#: waypoint.html:43
 msgid "height_median"
 msgstr ""
 
@@ -1317,7 +1318,7 @@ msgstr ""
 
 #: fixed_strings.html:117
 #: fixed_strings.html:47
-#: waypoint.html:64
+#: waypoint.html:66
 msgid "orientations"
 msgstr ""
 
@@ -1355,7 +1356,7 @@ msgid "participants count"
 msgstr ""
 
 #: fixed_strings.html:306
-#: fixed_strings.html:334
+#: fixed_strings.html:336
 msgid "partly_protected"
 msgstr ""
 
@@ -1408,7 +1409,7 @@ msgid "prominence"
 msgstr ""
 
 #: fixed_strings.html:307
-#: waypoint.html:83
+#: waypoint.html:85
 msgid "protected"
 msgstr ""
 
@@ -1440,7 +1441,7 @@ msgstr ""
 msgid "rain proof"
 msgstr ""
 
-#: waypoint.html:96
+#: waypoint.html:98
 msgid "rain_proof"
 msgstr ""
 
@@ -1486,7 +1487,7 @@ msgstr ""
 msgid "rock_climbing"
 msgstr ""
 
-#: waypoint.html:93
+#: waypoint.html:95
 msgid "rock_types"
 msgstr ""
 
@@ -1511,7 +1512,7 @@ msgstr ""
 msgid "routes quantity"
 msgstr ""
 
-#: waypoint.html:72
+#: waypoint.html:74
 msgid "routes_quantity"
 msgstr ""
 
@@ -1691,6 +1692,10 @@ msgstr ""
 
 #: fixed_strings.html:287
 msgid "vertical"
+msgstr ""
+
+#: fixed_strings.html:335
+msgid "very_dangerous"
 msgstr ""
 
 #: fixed_strings.html:333

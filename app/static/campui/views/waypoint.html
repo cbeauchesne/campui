@@ -35,7 +35,9 @@
                 </div>
                 <div ng-if="waypoint.height_max || waypoint.height_min">
                     <label translate>height</label>
-                    {{waypoint.height_min}}m / {{waypoint.height_max}}m
+                    <span ng-if="waypoint.height_min">{{waypoint.height_min}}&nbsp;m</span>
+                    <span ng-if="waypoint.height_min && waypoint.height_max">/</span>
+                    <span ng-if="waypoint.height_max">{{waypoint.height_max}}&nbsp;m</span>
                 </div>
                 <div ng-if="waypoint.height_median">
                     <label translate>height_median</label>
