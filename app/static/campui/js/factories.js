@@ -376,10 +376,11 @@ app.service('photoswipe', ["locale", function(locale){
     }
 
     _this.getters = []
+    _this.slides = []
 
     _this.showGallery = function(document_id) {
         _this.opts.index = 0;
-        _this.slides = []
+        _this.slides.length = 0
         var i = 0
 
         _this.getters.forEach(function(getter){

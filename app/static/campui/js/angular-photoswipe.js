@@ -14,25 +14,23 @@
 
     return angular
       .module('ngPhotoswipe', [])
-      .directive('ngPhotoswipe', ["$compile", "$http", "$templateCache", "c2c", ngPhotoswipeDirective]);
+      .directive('ngPhotoswipe', ["$compile", "$http", "$templateCache", "c2c", "photoswipe", ngPhotoswipeDirective]);
 
-    function ngPhotoswipeDirective($compile, $http, $templateCache, c2c) {
+    function ngPhotoswipeDirective($compile, $http, $templateCache, c2c, photoswipe) {
       return {
         restrict: 'AE',
         replace: true,
         scope: {
-          open: '=',
-          options: '=',
-          slides: '=',
           slideSelector: '@',
-          template: '@',
-          onClose: '&'
         },
         link: linkFn
       };
 
       function linkFn(scope, iElement, iAttrs) {
-        scope.template = scope.template || 'static/campui/views/components/ng-photoswipe.html';
+        scope.template = 'static/campui/views/components/ng-photoswipe.html';
+        scope.photoswipe = photoswipe
+        scope.options = photoswipe.opts
+        scope.slides = photoswipe.slides
 
         $http
           .get(scope.template, { cache: $templateCache })
@@ -48,7 +46,7 @@
 
         var startGallery = function () {
           var pswpElement = document.querySelectorAll('.pswp')[0];
-
+/*
           if (angular.isUndefined(scope.options.getThumbBoundsFn) &&
               angular.isDefined(scope.slideSelector)) {
 
@@ -63,7 +61,7 @@
 
             }, scope.options);
           }
-
+*/
           scope.gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default || false, scope.slides, scope.options);
 
           // Image loaded
@@ -93,7 +91,7 @@
 
           scope.gallery.listen('destroy', function () {
             scope.safeApply(function () {
-              (scope.onClose || angular.noop)();
+                scope.photoswipe.open = false
             });
           });
 
@@ -104,14 +102,15 @@
           });
         };
 
-        scope.$watch('open', function (nVal, oVal) {
+        scope.$watch('photoswipe.open', function (nVal, oVal) {
           if (nVal != oVal) {
             if (nVal) {
               startGallery();
             }
-          } else if (!nVal && scope.gallery) {
+           else if (!nVal && scope.gallery) {
             scope.gallery.close();
             scope.gallery = null;
+          }
           }
         });
 
