@@ -874,6 +874,11 @@ msgstr ""
 msgid "crevasse_fall"
 msgstr ""
 
+#: fixed_strings.html:340
+msgctxt "frequentation"
+msgid "crowded"
+msgstr ""
+
 #: fixed_strings.html:53
 msgid "crowding"
 msgstr ""
@@ -1316,6 +1321,11 @@ msgstr ""
 msgid "outings"
 msgstr ""
 
+#: fixed_strings.html:341
+msgctxt "frequentation"
+msgid "overcrowded"
+msgstr ""
+
 #: fixed_strings.html:288
 msgid "overhang"
 msgstr ""
@@ -1416,6 +1426,11 @@ msgid "quartzite"
 msgstr ""
 
 #: fixed_strings.html:39
+msgid "quiet"
+msgstr ""
+
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
@@ -1619,6 +1634,11 @@ msgstr ""
 
 #: fixed_strings.html:153
 msgid "soft_mobility"
+msgstr ""
+
+#: fixed_strings.html:339
+msgctxt "frequentation"
+msgid "some"
 msgstr ""
 
 #: fixed_strings.html:328
