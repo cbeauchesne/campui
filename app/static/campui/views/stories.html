@@ -12,8 +12,8 @@
                 <i class="fa fa-user"></i>
                 <user-link-c2c user="c2cItem"></user-link-c2c>
             </h1>
-            <linked-outings item="c2cItem"></linked-outings>
-            <outing-images item="c2cItem"></outing-images>
+            <linked-outings item="c2cItem" item-type="'u'"></linked-outings>
+            <outing-images item="c2cItem" item-type="'u'"></outing-images>
             <span class="pull-right follow-button" ng-click="currentUser.toggleFollow(c2cItem)">
                 <i class="fa fa-star" ng-class="{'followed-icon':currentUser.isFollowed(c2cItem)}"
                    uib-tooltip="{{'Follow' | translate }}"></i>
