@@ -1282,7 +1282,7 @@ msgstr "sorties"
 #: fixed_strings.html:342
 msgctxt "frequentation"
 msgid "overcrowded"
-msgstr ""
+msgstr "très fréquenté"
 
 #: fixed_strings.html:288
 msgid "overhang"
