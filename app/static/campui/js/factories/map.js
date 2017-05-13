@@ -1,5 +1,7 @@
 
 app = angular.module('campui').factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
+    "use strict";
+
     var ESPG_4326 = new proj4.Proj('EPSG:4326');
     var ESPG_3785 = new proj4.Proj('GOOGLE');
 
