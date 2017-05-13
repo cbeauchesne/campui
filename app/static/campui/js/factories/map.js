@@ -1,17 +1,9 @@
 
-app = angular.module('campui').factory("mapData", ["NgMap", "c2c", function(NgMap, c2c){
+app = angular.module('campui').factory("mapData", ["NgMap", "c2c", "letterToC2cItem", function(NgMap, c2c, letterToC2cItem){
     "use strict";
 
     var ESPG_4326 = new proj4.Proj('EPSG:4326');
     var ESPG_3785 = new proj4.Proj('GOOGLE');
-
-    var letterToC2cItem = {
-        o:"outing",
-        r:"route",
-        w:"waypoint",
-        a:"area",
-        x:"xreport",
-    }
 
     var Markers = function(map){
         var _this = this

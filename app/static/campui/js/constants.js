@@ -17,3 +17,11 @@ var c2cItems = {
     area:{},
 }
 
+angular.module("campui").constant("letterToC2cItem", {
+        o:"outing",
+        r:"route",
+        w:"waypoint",
+        a:"area",
+        x:"xreport",
+    }
+)
