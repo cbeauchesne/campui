@@ -2,14 +2,13 @@
 
 Ce texte décrit le processus de décision 
 
-1. Question
-2. Débats
-    * Si certitude absolue d'un consensus général, allez au point 5 (sauf pour l'établissement d'une règle).
-3. Etablissement d'un vote. Il s'agit d’établir ici les différentes options possibles (et non d'en défendre une), ou la rédaction d'une règle/recommandation
+1. Question / Débats
+    * Si certitude absolue d'un consensus général, allez au point 4 (sauf pour l'établissement d'une règle).
+2. Etablissement d'un vote. Il s'agit d’établir ici les différentes options possibles (et non d'en défendre une), ou la rédaction d'une règle/recommandation, ainsi que le rationnel de chaque option.
     * Cette phase doit durer au minimum 1 semaine, et la publicité doit obligatoirement en être faite.
-4. Vote
+3. Vote
     * Cette phase doit durer au minimum 1 semaine, et la publicité doit obligatoirement en être faite.
-5. Application
+4. Application
     * Rien
     * Ou bien la publication officielle d'une règle/recommandation
     * Ou bien la mise en œuvre d'une décision
