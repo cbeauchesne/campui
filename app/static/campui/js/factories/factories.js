@@ -597,6 +597,68 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
                 width: '10%',
                 field: 'orientations',
                 cellTemplate:'<div class="ui-grid-cell-contents">{{row.entity.orientations.join(", ")}}</div>',
+            }
+            ,
+            {
+                field : "aid_rating",
+                name: gettextCatalog.getString('aid_rating'),
+                width: '10%',
+                visible:false
+            },{
+                field : "elevation_max",
+                name: gettextCatalog.getString('elevation_max'),
+                width: '10%',
+                visible:false
+            },{
+                field : "engagement_rating",
+                name: gettextCatalog.getString('engagement_rating'),
+                width: '10%',
+                visible:false
+            },{
+                field : "equipment_rating",
+                name: gettextCatalog.getString('equipment_rating'),
+                width: '10%',
+                visible:false
+            },{
+                field : "exposition_rock_rating",
+                name: gettextCatalog.getString('exposition_rock_rating'),
+                width: '10%',
+                visible:false
+            },{
+                field : "global_rating",
+                name: gettextCatalog.getString('global_rating'),
+                width: '10%',
+                visible:false
+            },{
+                field : "height_diff_up",
+                name: gettextCatalog.getString('height_diff_up'),
+                width: '10%',
+                visible:false
+            },{
+                field : "protected",
+                name: gettextCatalog.getString('protected'),
+                width: '10%',
+                visible:false
+            },{
+                field : "quality",
+                name: gettextCatalog.getString('quality'),
+                width: '10%',
+                visible:false
+            },{
+                field : "risk_rating",
+                name: gettextCatalog.getString('risk_rating'),
+                width: '10%',
+                visible:false
+            },{
+                field : "rock_free_rating",
+                name: gettextCatalog.getString('rock_free_rating'),
+                width: '10%',
+                visible:false
+            },{
+                field : "rock_required_rating",
+                name: gettextCatalog.getString('rock_required_rating'),
+                width: '10%',
+                visible:false
             },
         ],
 

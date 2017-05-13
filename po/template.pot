@@ -80,7 +80,7 @@ msgstr ""
 #: factories/factories.js:499
 #: factories/factories.js:552
 #: factories/factories.js:573
-#: factories/factories.js:610
+#: factories/factories.js:672
 msgid "Activities"
 msgstr ""
 
@@ -122,7 +122,7 @@ msgid "Area"
 msgstr ""
 
 #: common/navbar.html:48
-#: factories/factories.js:639
+#: factories/factories.js:701
 #: outing.html:23
 #: route.html:30
 #: waypoint.html:15
@@ -146,7 +146,7 @@ msgstr ""
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories/factories.js:621
+#: factories/factories.js:683
 msgid "Categories"
 msgstr ""
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "E"
 msgstr ""
 
-#: factories/factories.js:645
+#: factories/factories.js:707
 msgid "Elevation"
 msgstr ""
 
@@ -362,8 +362,8 @@ msgstr ""
 msgid "NW"
 msgstr ""
 
-#: factories/factories.js:634
-#: factories/factories.js:658
+#: factories/factories.js:696
+#: factories/factories.js:720
 #: me.html:79
 msgid "Name"
 msgstr ""
@@ -425,7 +425,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: factories/factories.js:616
+#: factories/factories.js:678
 msgid "Quality"
 msgstr ""
 
@@ -565,7 +565,7 @@ msgstr ""
 #: factories/factories.js:493
 #: factories/factories.js:531
 #: factories/factories.js:567
-#: factories/factories.js:605
+#: factories/factories.js:667
 msgid "Title"
 msgstr ""
 
@@ -573,9 +573,9 @@ msgstr ""
 msgid "Topo"
 msgstr ""
 
-#: factories/factories.js:626
-#: factories/factories.js:650
-#: factories/factories.js:663
+#: factories/factories.js:688
+#: factories/factories.js:712
+#: factories/factories.js:725
 msgid "Type"
 msgstr ""
 
@@ -642,6 +642,10 @@ msgstr ""
 
 #: fixed_strings.html:89
 msgid "aid rating"
+msgstr ""
+
+#: factories/factories.js:604
+msgid "aid_rating"
 msgstr ""
 
 #: fixed_strings.html:55
@@ -935,6 +939,10 @@ msgstr ""
 msgid "elevation loss"
 msgstr ""
 
+#: factories/factories.js:609
+msgid "elevation_max"
+msgstr ""
+
 #: fixed_strings.html:189
 msgid "en"
 msgstr ""
@@ -943,12 +951,20 @@ msgstr ""
 msgid "engagement rating"
 msgstr ""
 
+#: factories/factories.js:614
+msgid "engagement_rating"
+msgstr ""
+
 #: fixed_strings.html:84
 msgid "equipment rating"
 msgstr ""
 
 #: fixed_strings.html:132
 msgid "equipment ratings"
+msgstr ""
+
+#: factories/factories.js:619
+msgid "equipment_rating"
 msgstr ""
 
 #: waypoint.html:92
@@ -985,6 +1001,10 @@ msgstr ""
 
 #: fixed_strings.html:75
 msgid "exposition rock"
+msgstr ""
+
+#: factories/factories.js:624
+msgid "exposition_rock_rating"
 msgstr ""
 
 #: fixed_strings.html:266
@@ -1034,6 +1054,10 @@ msgstr ""
 
 #: fixed_strings.html:81
 msgid "global rating"
+msgstr ""
+
+#: factories/factories.js:629
+msgid "global_rating"
 msgstr ""
 
 #: fixed_strings.html:249
@@ -1087,6 +1111,10 @@ msgstr ""
 
 #: fixed_strings.html:109
 msgid "height min"
+msgstr ""
+
+#: factories/factories.js:634
+msgid "height_diff_up"
 msgstr ""
 
 #: waypoint.html:43
@@ -1404,6 +1432,7 @@ msgstr ""
 msgid "prominence"
 msgstr ""
 
+#: factories/factories.js:639
 #: fixed_strings.html:307
 #: waypoint.html:87
 msgid "protected"
@@ -1421,16 +1450,20 @@ msgstr ""
 msgid "public transportation types"
 msgstr ""
 
+#: factories/factories.js:644
+msgid "quality"
+msgstr ""
+
 #: fixed_strings.html:255
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
@@ -1470,6 +1503,10 @@ msgstr ""
 msgid "risk rating"
 msgstr ""
 
+#: factories/factories.js:649
+msgid "risk_rating"
+msgstr ""
+
 #: fixed_strings.html:87
 msgid "rock free rating"
 msgstr ""
@@ -1486,6 +1523,14 @@ msgstr ""
 #: fixed_strings.html:15
 #: fixed_strings.html:163
 msgid "rock_climbing"
+msgstr ""
+
+#: factories/factories.js:654
+msgid "rock_free_rating"
+msgstr ""
+
+#: factories/factories.js:659
+msgid "rock_required_rating"
 msgstr ""
 
 #: waypoint.html:97
