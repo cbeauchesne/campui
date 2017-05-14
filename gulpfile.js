@@ -181,12 +181,12 @@ gulp.task('clean:build', function() {
 })
 
 gulp.task('watch', ['browserSync', 'sass', 'pot','po'], function(){
-  gulp.watch('app/static/**/*.scss', ['sass']);
+  gulp.watch('app/static/campui/scss/**/*.scss', ['sass']);
 
-  gulp.watch(['app/static/**/*.html','app/static/**/*.js'], ["pot"]);
+  gulp.watch(['app/static/campui/views/**/*.html','app/static/campui/js/**/*.js'], ["pot"]);
   gulp.watch('po/**/*.po', ['po']);
 
-  gulp.watch(['app/static/**/*.html','app/static/**/*.js'], browserSync.reload);
+  gulp.watch(['app/static/campui/views/**/*.html','app/static/campui/js/**/*.js'], browserSync.reload);
   gulp.watch('app/index.html', browserSync.reload);
 
 })

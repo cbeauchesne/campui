@@ -130,7 +130,7 @@ msgid "Areas"
 msgstr ""
 
 #: common/navbar.html:68
-#: home.html:96
+#: home.html:97
 msgid "Articles"
 msgstr ""
 
@@ -237,7 +237,7 @@ msgstr ""
 msgid "Follow"
 msgstr ""
 
-#: home.html:58
+#: home.html:59
 msgid "Forum"
 msgstr ""
 
@@ -277,7 +277,7 @@ msgstr ""
 msgid "Ice rating"
 msgstr ""
 
-#: home.html:6
+#: home.html:7
 msgid "Images"
 msgstr ""
 
@@ -398,7 +398,7 @@ msgid "Outing"
 msgstr ""
 
 #: common/navbar.html:30
-#: home.html:21
+#: home.html:22
 msgid "Outings"
 msgstr ""
 
@@ -487,7 +487,7 @@ msgid "Route length"
 msgstr ""
 
 #: common/navbar.html:36
-#: home.html:77
+#: home.html:78
 #: search.html:13
 #: waypoint.html:126
 msgid "Routes"
