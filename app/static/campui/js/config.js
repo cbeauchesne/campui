@@ -64,7 +64,6 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
             var defer = $q.defer();
             var t =  c2c.article.get({id:portal.document_id}).$promise.then(function(response){
-                console.log(response)
                 defer.resolve(response.locales[0].description)
             })
 
