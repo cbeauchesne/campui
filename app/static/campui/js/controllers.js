@@ -86,8 +86,6 @@ app.controller('customizationController', ['customization', function(customizati
     $.each(customization, function(k, v){
         vm[k] = v
     })
-
-    console.log(this, customization)
 }])
 
 app.controller('authController', ['$scope','currentUser', 'api', function($scope, currentUser, api) {

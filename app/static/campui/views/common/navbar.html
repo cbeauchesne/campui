@@ -62,8 +62,8 @@
 
                 <ul class="dropdown-menu">
 
-                    <li ui-sref-active="active" ng-repeat="(id, portal) in cst.portals">
-                        <a ui-sref="portal({id:id})">
+                    <li ui-sref-active="active" ng-repeat="portal in cst.portals">
+                        <a ui-sref="portal({name:portal.name})">
                             <i class="fa fa-file-text-o"></i>
                             <span class="nav-label">{{portal.name}}</span>
                         </a>

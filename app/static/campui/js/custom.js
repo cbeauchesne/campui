@@ -9,11 +9,11 @@
 
 function campuiCustomization(){
     return {
-        portals : {
-            test : {
+        portals : [
+            {
                 name : "test",
-                document_id : 1234
+                document_id : 884062
             }
-        }
+        ]
     }
 }

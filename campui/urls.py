@@ -17,7 +17,6 @@ angular_view = {"view": static.serve,
                 "kwargs": {'path': 'index.html', 'document_root': BASE_DIR}}
 
 urlpatterns += [url(r'^$', **angular_view),
-                url(r'^credits$', **angular_view),
                 url(r'^faq$', **angular_view),
                 url(r'^me$', **angular_view),
                 url(r'^stories', **angular_view),
@@ -26,6 +25,7 @@ urlpatterns += [url(r'^$', **angular_view),
                 url(r'^search', **angular_view),
                 url(r'^markdown$', **angular_view),
                 url(r'^outing-images', **angular_view),
+                url(r'^portal', **angular_view),
                 ]
 
 for item in ["user", "outing", "route", "area", "waypoint", "article", "xreport"]:

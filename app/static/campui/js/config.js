@@ -57,7 +57,19 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     })
 
     $stateProvider.state("portal", {
-        url: "/portal/{id}",
+        url: "/portal/{name}",
+        templateProvider: ["customization", "$stateParams", "c2c", "$q", function(customization, $stateParams, c2c,  $q){
+
+            var portal = customization.portals.filter(function(p){return p.name==$stateParams.name})[0]
+
+            var defer = $q.defer();
+            var t =  c2c.article.get({id:portal.document_id}).$promise.then(function(response){
+                console.log(response)
+                defer.resolve(response.locales[0].description)
+            })
+
+            return defer.promise
+        }]
     })
 
     $stateProvider.state('login', {

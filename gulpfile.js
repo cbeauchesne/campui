@@ -118,12 +118,12 @@ function getServer(baseDir){
                 fileName.indexOf("/outing") >= 0
                 || fileName.indexOf("/route") >= 0
                 || fileName.indexOf("/area") >= 0
+                || fileName.indexOf("/portal") >= 0
                 || fileName.indexOf("/waypoint") >= 0
                 || fileName.indexOf("/me") >= 0
                 || fileName.indexOf("/user") >= 0
                 || fileName.indexOf("/article") >= 0
                 || fileName.indexOf("/search") >= 0
-                || fileName.indexOf("/credit") >= 0
                 || fileName.indexOf("/register") >= 0
                 || fileName.indexOf("/login") >= 0
                 || fileName.indexOf("/stories") >= 0
