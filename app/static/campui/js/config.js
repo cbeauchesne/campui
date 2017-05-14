@@ -1,7 +1,8 @@
 
 var app = angular.module('campui')
 
-app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
+function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     $urlRouterProvider.otherwise("/");
 
     $ocLazyLoadProvider.config({
@@ -55,6 +56,10 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
         templateUrl: "static/campui/views/home.html",
     })
 
+    $stateProvider.state("portal", {
+        url: "/portal/{id}",
+    })
+
     $stateProvider.state('login', {
         url: "/login",
         templateUrl: "static/campui/views/login.html",
@@ -71,11 +76,6 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', funct
         url: "/search",
         templateUrl: "static/campui/views/search.html",
         controller : "searchController"
-    })
-
-    $stateProvider.state('credits', {
-        url: "/credits",
-        templateUrl: "static/campui/views/credits.html",
     })
 
     $stateProvider.state('faq', {
@@ -131,13 +131,7 @@ app.config(["$provide", function($provide) {
     }])
 }]);
 
-// this is cryptic : forum request is loaded but not sent back.
-/*
-app.config(['$httpProvider', function($httpProvider) {
-        console.log($httpProvider.defaults.headers.common["X-Requested-With"])
-        delete $httpProvider.defaults.headers.common["X-Requested-With"]
-    }])
-*/
+
 
 app.run(['$rootScope', '$state', '$cookies', 'gettextCatalog', 'tmhDynamicLocale', 'photoswipe',
     function($rootScope, $state, $cookies, gettextCatalog, tmhDynamicLocale, photoswipe) {

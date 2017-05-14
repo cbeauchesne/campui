@@ -52,6 +52,25 @@
                 </ul>
             </li>
 
+            <li class="dropdown" ng-controller="customizationController as cst" ng-hide="!cst.portals">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    <i class="fa fa-star"></i>
+                    <span translate>Portals</span>
+                    <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li ui-sref-active="active" ng-repeat="(id, portal) in cst.portals">
+                        <a ui-sref="portal({id:id})">
+                            <i class="fa fa-file-text-o"></i>
+                            <span class="nav-label">{{portal.name}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
             <li class="dropdown">
 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -89,16 +108,11 @@
                         </a>
                     </li>
                     <li ui-sref-active="active">
-                        <a ui-sref="credits">
-                            <i class="fa fa-copyright"></i> <span class="nav-label" translate>Credits</span>
+                        <a ui-sref="faq">
+                            <i class="fa fa-question"></i> <span class="nav-label" translate>FAQ</span>
                         </a>
                     </li>
                 </ul>
-            </li>
-            <li ui-sref-active="active">
-                <a ui-sref="faq">
-                    <i class="fa fa-question"></i> <span class="nav-label" translate>FAQ</span>
-                </a>
             </li>
         </ul>
 

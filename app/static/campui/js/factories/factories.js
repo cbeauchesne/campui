@@ -451,6 +451,13 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
     }
 }])
 
+app.factory('customization', function(){
+    if(window.campuiCustomization)
+        return window.campuiCustomization()
+    else
+        return {}
+})
+
 app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, locale){
     var areaSortingAlgorithm = function(a, b, rowA, rowB, direction){
 

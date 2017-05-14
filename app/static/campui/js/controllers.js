@@ -80,6 +80,16 @@ app.controller("xreportsController", getC2cController('xreport'));
 app.controller("routesController", getC2cController('route'));
 app.controller("waypointsController", getC2cController('waypoint'));
 
+app.controller('customizationController', ['customization', function(customization){
+    var vm = this
+
+    $.each(customization, function(k, v){
+        vm[k] = v
+    })
+
+    console.log(this, customization)
+}])
+
 app.controller('authController', ['$scope','currentUser', 'api', function($scope, currentUser, api) {
     $scope.currentUser = currentUser;
 

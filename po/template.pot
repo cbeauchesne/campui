@@ -77,10 +77,10 @@ msgid "Actions"
 msgstr ""
 
 #: components/query_editor.html:7
-#: factories/factories.js:499
-#: factories/factories.js:552
-#: factories/factories.js:573
-#: factories/factories.js:672
+#: factories/factories.js:506
+#: factories/factories.js:559
+#: factories/factories.js:580
+#: factories/factories.js:679
 msgid "Activities"
 msgstr ""
 
@@ -116,37 +116,33 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: factories/factories.js:505
-#: factories/factories.js:579
+#: factories/factories.js:512
+#: factories/factories.js:586
 msgid "Area"
 msgstr ""
 
 #: common/navbar.html:48
-#: factories/factories.js:701
+#: factories/factories.js:708
 #: outing.html:23
 #: route.html:30
 #: waypoint.html:15
 msgid "Areas"
 msgstr ""
 
-#: common/navbar.html:68
+#: common/navbar.html:87
 #: home.html:97
 msgid "Articles"
 msgstr ""
 
-#: factories/factories.js:522
+#: factories/factories.js:529
 msgid "Author"
-msgstr ""
-
-#: credits.html:6
-msgid "Because we are not genius..."
 msgstr ""
 
 #: me.html:85
 msgid "CampToCamp URL"
 msgstr ""
 
-#: factories/factories.js:683
+#: factories/factories.js:690
 msgid "Categories"
 msgstr ""
 
@@ -154,7 +150,7 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: common/navbar.html:83
+#: common/navbar.html:102
 msgid "Contact"
 msgstr ""
 
@@ -162,13 +158,12 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: common/navbar.html:93
 #: route.html:34
 #: waypoint.html:19
 msgid "Credits"
 msgstr ""
 
-#: factories/factories.js:537
+#: factories/factories.js:544
 msgid "Date"
 msgstr ""
 
@@ -203,7 +198,7 @@ msgstr ""
 msgid "E"
 msgstr ""
 
-#: factories/factories.js:707
+#: factories/factories.js:714
 msgid "Elevation"
 msgstr ""
 
@@ -215,7 +210,7 @@ msgstr ""
 msgid "Equipement rating"
 msgstr ""
 
-#: factories/factories.js:558
+#: factories/factories.js:565
 msgid "Event type"
 msgstr ""
 
@@ -223,7 +218,7 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
-#: common/navbar.html:100
+#: common/navbar.html:112
 msgid "FAQ"
 msgstr ""
 
@@ -253,11 +248,11 @@ msgstr ""
 msgid "Global rating"
 msgstr ""
 
-#: factories/factories.js:517
+#: factories/factories.js:524
 msgid "Height"
 msgstr ""
 
-#: factories/factories.js:591
+#: factories/factories.js:598
 msgid "Height diff"
 msgstr ""
 
@@ -281,11 +276,11 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: factories/factories.js:542
+#: factories/factories.js:549
 msgid "Impacted people"
 msgstr ""
 
-#: common/navbar.html:75
+#: common/navbar.html:94
 msgid "Incidents"
 msgstr ""
 
@@ -301,11 +296,11 @@ msgstr ""
 msgid "Load more items"
 msgstr ""
 
-#: common/navbar.html:158
+#: common/navbar.html:172
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:123
+#: common/navbar.html:137
 #: login.html:19
 msgid "Login"
 msgstr ""
@@ -334,7 +329,7 @@ msgstr ""
 msgid "Minimum length : 8 characters"
 msgstr ""
 
-#: common/navbar.html:60
+#: common/navbar.html:79
 msgid "Misc"
 msgstr ""
 
@@ -346,7 +341,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:142
+#: common/navbar.html:156
 msgid "My page"
 msgstr ""
 
@@ -362,8 +357,8 @@ msgstr ""
 msgid "NW"
 msgstr ""
 
-#: factories/factories.js:696
-#: factories/factories.js:720
+#: factories/factories.js:703
+#: factories/factories.js:727
 #: me.html:79
 msgid "Name"
 msgstr ""
@@ -380,7 +375,7 @@ msgstr ""
 msgid "Only a-z, 0-9 and _ are allowed"
 msgstr ""
 
-#: factories/factories.js:596
+#: factories/factories.js:603
 msgid "Orientations"
 msgstr ""
 
@@ -407,7 +402,7 @@ msgid "Outings ({{outings.total}})"
 msgstr ""
 
 #: common/ibox_tools.html:56
-#: common/navbar.html:149
+#: common/navbar.html:163
 #: me.html:6
 msgid "Parameters"
 msgstr ""
@@ -421,11 +416,15 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
+#: common/navbar.html:59
+msgid "Portals"
+msgstr ""
+
 #: common/ibox_tools.html:5
 msgid "Previous"
 msgstr ""
 
-#: factories/factories.js:678
+#: factories/factories.js:685
 msgid "Quality"
 msgstr ""
 
@@ -433,7 +432,7 @@ msgstr ""
 msgid "Queries"
 msgstr ""
 
-#: factories/factories.js:585
+#: factories/factories.js:592
 msgid "Rating"
 msgstr ""
 
@@ -458,7 +457,7 @@ msgstr ""
 msgid "Repeat password"
 msgstr ""
 
-#: common/navbar.html:88
+#: common/navbar.html:107
 msgid "Report a bug"
 msgstr ""
 
@@ -517,7 +516,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:110
+#: common/navbar.html:124
 msgid "Search"
 msgstr ""
 
@@ -529,7 +528,7 @@ msgstr ""
 msgid "Select filters"
 msgstr ""
 
-#: factories/factories.js:547
+#: factories/factories.js:554
 msgid "Severity"
 msgstr ""
 
@@ -562,10 +561,10 @@ msgstr ""
 msgid "Timing"
 msgstr ""
 
-#: factories/factories.js:493
-#: factories/factories.js:531
-#: factories/factories.js:567
-#: factories/factories.js:667
+#: factories/factories.js:500
+#: factories/factories.js:538
+#: factories/factories.js:574
+#: factories/factories.js:674
 msgid "Title"
 msgstr ""
 
@@ -573,9 +572,9 @@ msgstr ""
 msgid "Topo"
 msgstr ""
 
-#: factories/factories.js:688
-#: factories/factories.js:712
-#: factories/factories.js:725
+#: factories/factories.js:695
+#: factories/factories.js:719
+#: factories/factories.js:732
 msgid "Type"
 msgstr ""
 
@@ -644,7 +643,7 @@ msgstr ""
 msgid "aid rating"
 msgstr ""
 
-#: factories/factories.js:604
+#: factories/factories.js:611
 msgid "aid_rating"
 msgstr ""
 
@@ -939,7 +938,7 @@ msgstr ""
 msgid "elevation loss"
 msgstr ""
 
-#: factories/factories.js:609
+#: factories/factories.js:616
 msgid "elevation_max"
 msgstr ""
 
@@ -951,7 +950,7 @@ msgstr ""
 msgid "engagement rating"
 msgstr ""
 
-#: factories/factories.js:614
+#: factories/factories.js:621
 msgid "engagement_rating"
 msgstr ""
 
@@ -963,7 +962,7 @@ msgstr ""
 msgid "equipment ratings"
 msgstr ""
 
-#: factories/factories.js:619
+#: factories/factories.js:626
 msgid "equipment_rating"
 msgstr ""
 
@@ -1003,7 +1002,7 @@ msgstr ""
 msgid "exposition rock"
 msgstr ""
 
-#: factories/factories.js:624
+#: factories/factories.js:631
 msgid "exposition_rock_rating"
 msgstr ""
 
@@ -1056,7 +1055,7 @@ msgstr ""
 msgid "global rating"
 msgstr ""
 
-#: factories/factories.js:629
+#: factories/factories.js:636
 msgid "global_rating"
 msgstr ""
 
@@ -1113,7 +1112,7 @@ msgstr ""
 msgid "height min"
 msgstr ""
 
-#: factories/factories.js:634
+#: factories/factories.js:641
 msgid "height_diff_up"
 msgstr ""
 
@@ -1432,7 +1431,7 @@ msgstr ""
 msgid "prominence"
 msgstr ""
 
-#: factories/factories.js:639
+#: factories/factories.js:646
 #: fixed_strings.html:307
 #: waypoint.html:87
 msgid "protected"
@@ -1450,7 +1449,7 @@ msgstr ""
 msgid "public transportation types"
 msgstr ""
 
-#: factories/factories.js:644
+#: factories/factories.js:651
 msgid "quality"
 msgstr ""
 
@@ -1458,12 +1457,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
@@ -1503,7 +1502,7 @@ msgstr ""
 msgid "risk rating"
 msgstr ""
 
-#: factories/factories.js:649
+#: factories/factories.js:656
 msgid "risk_rating"
 msgstr ""
 
@@ -1525,11 +1524,11 @@ msgstr ""
 msgid "rock_climbing"
 msgstr ""
 
-#: factories/factories.js:654
+#: factories/factories.js:661
 msgid "rock_free_rating"
 msgstr ""
 
-#: factories/factories.js:659
+#: factories/factories.js:666
 msgid "rock_required_rating"
 msgstr ""
 
