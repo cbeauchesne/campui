@@ -10,7 +10,26 @@ Ceci est un div qui contient une directive CampUI nommée `campui-directive`. Ce
 
 Voici la liste des directives supportées :
 
-* `<recent-outings></recent-outings>` : liste des sorties récentes
-  * `filter="'filter'"` : propriété optionelle, par exemple 'activities=rock_climbing'
-* `<div markdown> Du *contenu* écrit en **markdown** </div>` : Utilisez la syntaxe markdown pour rédiger un texte, c'est bien plus pratique!
+<table>
+<tr><th>Nom</th><th>Fonction</th><th>Paramètres</th></tr>
+
+<tr>
+<td>`recent-outings`</td>
+<td>Liste des sorties récentes</td>
+<td>`filter="'filter'"` : propriété optionelle, par exemple 'activities=rock_climbing'</td>
+</tr>
+
+<tr>
+<td>`markdown`</td>
+<td>Interprète son contenu en markdown</td>
+<td>Aucun</td>
+</tr>
+
+<tr>
+<td>`article`</td>
+<td>Insère le contenu d'un article de camptocamp</td>
+<td>'id'="article_id"</td>
+</tr>
+
+</table>
 
