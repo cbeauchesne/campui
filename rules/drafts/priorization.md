@@ -12,7 +12,7 @@ Pour chaque point, les contributeurs donneront un parmi ces trois avis :
 * Ne pas faire
 
 ## Interprétation
-Le point *Ne pas faire* ne veut pas dire que le contributeur est contre le point, mais qu'il estime qu'il ne doit ps être fait tant que d'autre ne sont pas fait. Ce choix doit obligatoirement est justifié par une rapide explication, sans quoi il ne sera pas pris en compte.
+Le point *Ne pas faire* ne veut pas dire que le contributeur est contre le point, mais qu'il estime qu'il ne doit pas être fait tant que d'autre ne sont pas fait. Ce choix doit obligatoirement est justifié par une rapide explication, sans quoi il ne sera pas pris en compte.
 
 A l'issue du vote, les résultat sont compilés et présentés. Les développeurs étant bénévoles, ces résultats ne sont pas contraignants, à l'exception de la règle suivante : si un point recueille une majorité (50%) de voix *Ne pas faire*, alors le développement ne sera pas mis en production avant que les autres points ne soient livrés.
 
