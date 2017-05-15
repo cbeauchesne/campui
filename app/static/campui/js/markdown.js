@@ -444,17 +444,18 @@ app.provider('markdownConverter', [function () {
 
 app.directive('markdown', ['$sanitize', 'markdownConverter', '$compile', function ($sanitize, markdownConverter, $compile) {
     return {
-        restrict: 'A',
+        restrict: 'E',
         link: function (scope, element, attrs) {
 
-            if(attrs.markdown)
-                scope.$watch(attrs.markdown, function (newVal) {
+            if(attrs.content)
+                scope.$watch(attrs.content, function (newVal) {
                       element.append(markdownConverter(newVal, $sanitize));
                       $compile(element.contents())(scope);
                 });
-            else{
+            else if (element.text()){
                 var html = markdownConverter(element.text(), $sanitize);
                 element.html(html)
+                $compile(element.contents())(scope);
             }
         },
     };
