@@ -1,5 +1,6 @@
 *Cette régle n'a pas été validée. Elle est néanmoins valable car faisant partie des trois règles de bases indispensables au bon fonctionnement initial du site. N'hésitez pas à en discuter en vue d'une validation formelle.*
 
+## Règle
 Ce texte décrit le processus de décision 
 
 1. Question / Débats
@@ -12,3 +13,7 @@ Ce texte décrit le processus de décision
     * Rien
     * Ou bien la publication officielle d'une règle/recommandation
     * Ou bien la mise en œuvre d'une décision
+
+## Dictateur bienvéillant
+
+Pour la durée du test (1 an), et afin d'éviter tout effet de bord imprévu et incontrolable, Charles s'auto-nomme dictateur bienvellant et s'autorise à prendre unilatéralement toute décision qui lui semblera nécessaire à la bonne marche du site. Néanmoins, ces décisions devront être justifiées sur demande et devront être l'exception. La cible à moyen terme est du supprimer ce status.
