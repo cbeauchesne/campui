@@ -110,12 +110,12 @@
     <div class="ibox-content">
         <div class="row">
             <div class="col-sm-12">
+
                 <h2 ng-if="currentLocale.description" translate>Description</h2>
-                <div markdown="currentLocale.description"></div>
+                <markdown content="currentLocale.description"></markdown>
 
                 <h2 ng-if="currentLocale.access" translate>Access</h2>
-                <div markdown="currentLocale.access"></div>
-
+                <markdown content="currentLocale.access"></markdown>
 
             </div>
         </div>

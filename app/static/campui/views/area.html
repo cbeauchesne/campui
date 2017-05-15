@@ -14,10 +14,12 @@
         <div class="row">
             <div class="col-sm-12">
 
-                <div class="summary" ng-if="currentLocale.summary" markdown="currentLocale.summary"></div>
+                <div class="summary" ng-if="currentLocale.summary">
+                    <markdown content="currentLocale.summary"></markdown>
+                </div>
 
                 <h2 ng-if="currentLocale.description" translate>Description</h2>
-                <div markdown="currentLocale.description"></div>
+                <markdown content="currentLocale.description"></markdown>
             </div>
         </div>
 

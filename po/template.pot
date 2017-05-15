@@ -64,7 +64,7 @@ msgstr ""
 msgid "5min"
 msgstr ""
 
-#: waypoint.html:116
+#: waypoint.html:117
 msgid "Access"
 msgstr ""
 
@@ -179,10 +179,10 @@ msgstr ""
 msgid "Default for xreports"
 msgstr ""
 
-#: area.html:19
+#: area.html:21
 #: outing.html:31
 #: route.html:114
-#: waypoint.html:113
+#: waypoint.html:114
 msgid "Description"
 msgstr ""
 
