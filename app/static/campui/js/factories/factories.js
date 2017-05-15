@@ -593,20 +593,16 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
                 field:"global_rating",
                 width: '15%',
                 cellTemplate:'<rating route="row.entity" class="ui-grid-cell-contents"/>',
-            },
-            {
+            },{
                 name:gettextCatalog.getString('Height diff'),
                 field:"height_diff_difficulties",
                 width: '10%',
-            },
-            {
+            },{
                 name:gettextCatalog.getString('Orientations'),
                 width: '10%',
                 field: 'orientations',
                 cellTemplate:'<div class="ui-grid-cell-contents">{{row.entity.orientations.join(", ")}}</div>',
-            }
-            ,
-            {
+            },{
                 field : "aid_rating",
                 name: gettextCatalog.getString('aid_rating'),
                 width: '10%',
@@ -664,6 +660,11 @@ app.factory('columnDefs', ['gettextCatalog', 'locale',function(gettextCatalog, l
             },{
                 field : "rock_required_rating",
                 name: gettextCatalog.getString('rock_required_rating'),
+                width: '10%',
+                visible:false
+            },{
+                field : "document_id",
+                name: 'id',
                 width: '10%',
                 visible:false
             },
