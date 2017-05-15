@@ -4,34 +4,7 @@ Cette aide vous aidera à mettre à jour les portails présents sur CampUI.
 
 Un portail sur campui est une page qui utilise le contenu d'un article de www.camptocamp.org. Ce contenu sera affiché dans le navigateur directement, après un passage dans un interpréteur pour enrichir certaines balises. En théorie, il n'y a aucune limite à ce rendu. En pratique, veuillez suivre ce petit guide pour garantir la cohérence du rendu, ainsi que la maintenance future.
 
-### HTML
-
-HTML est le langage de rendu web. Il est basé sur la syntaxe XML décrite ici :
-
-```
-    <elementA>
-        <elementB>
-        </elementB>
-        <elementC>    
-            <elementD>
-                Ceci est du contenu
-            </elementD>
-        </elementC>
-    <elementA>
-```
-    
-Ceci s'interpete de la manière suivante : 
-
-* l'élement A contient deux éléments : B et C. 
-* L'élément C contient un élément D. 
-* L'élément D contient le texte : **Ceci est du contenu**
-
-De plus, on peut rajouter des propriétés aux éléments :
-  
-    <elementA property="value">
-    </elementA>
-    
-Les retours à la ligne et les espace sont ignorés. L'indentation que vous voyez ci dessus est une bonne pratique pour garder le code lisible, mais n'a pas d'impact sur le résultat.
+* Aide sur la [syntaxe HTML](/HTML_syntax.md)
 
 
 ### Eléments HTML
