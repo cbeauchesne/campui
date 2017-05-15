@@ -8,3 +8,29 @@ Voici les aides pour éditer les portails
 2. Aide sur les [élements HTML](/rules/helps/HTML_elements.md) (temps de lecture : 5mn)
 2. Aide sur les [directives CampUI](/rules/helps/CampUI_directives.md) (temps de lecture : 5mn)
 
+Pour exemple, voici le code de la page d'acceuil : 
+
+```html
+<!-- First line, a row with recent images box -->
+<div class="row">
+  <div class="col-md-12">
+    <recent-images-box/>
+  </div>
+</div>
+
+<!-- second line, a row -->
+<div class="row">
+  
+  <!-- with recent outings -->
+  <div class="col-md-7">
+    <recent-outings-box/>
+  </div>
+  
+  <!-- and recent formum message, then routes and articles -->
+  <div class="col-md-5">
+    <recent-forum-box limit="15"/>
+    <recent-routes-box limit="10"/>
+    <recent-articles-box limit="5"/>
+  </div>
+</div>
+```
