@@ -50,7 +50,14 @@ Les votes *pas d'avis* sont omis.
   * C : Urgent
 
 ### Résultat 
-![image](https://cloud.githubusercontent.com/assets/11915659/26049869/e0576304-395c-11e7-8acb-ac7a2ad53d25.png)
+
+<table>
+<tr><th></th><th>Urgent</th><th>Pas urgent</th><th>Attendre</th></tr>
+<tr><th>A</th><td>67%</td><td></td><td></td></tr>
+<tr><th>B</th><td>17%</td><td>33%</td><td>50%</td></tr>
+<tr><th>C</th><td>33%</td><td>17%</td><td></td></tr>
+</table>
+
 
 * Le point A est prioritaire
 * Le point C vient après (mais si un dev veut faire le point C avant, libre à lui)
