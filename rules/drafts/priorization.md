@@ -2,6 +2,7 @@
 
 ## Liste des développements
 A intervalle régulier, les développeurs proposent une liste de point à prioriser. Ces points auront été validés par ailleurs par la communauté. Pour chaque point, les tenants et aboutissants fonctionnels et techniques, ainsi qu'une estimation du temps seront donnés.
+Un vote public est alors organisé.
 
 ## Vote
 Pour chaque point, les contributeurs donneront un parmi ces trois avis :
