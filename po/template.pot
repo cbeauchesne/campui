@@ -4,10 +4,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: c2c_items.html:126
-msgid "*Sort buttons on table sorts only loaded data.*"
-msgstr ""
-
 #: login.html:20
 msgid "..."
 msgstr ""
@@ -121,7 +117,7 @@ msgstr ""
 msgid "Area"
 msgstr ""
 
-#: common/navbar.html:48
+#: common/navbar.html:65
 #: factories/factories.js:708
 #: outing.html:23
 #: route.html:30
@@ -129,7 +125,7 @@ msgstr ""
 msgid "Areas"
 msgstr ""
 
-#: common/navbar.html:87
+#: common/navbar.html:85
 #: home.html:97
 msgid "Articles"
 msgstr ""
@@ -150,7 +146,7 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: common/navbar.html:102
+#: common/navbar.html:100
 msgid "Contact"
 msgstr ""
 
@@ -185,7 +181,7 @@ msgstr ""
 
 #: area.html:19
 #: outing.html:31
-#: route.html:112
+#: route.html:114
 #: waypoint.html:113
 msgid "Description"
 msgstr ""
@@ -218,7 +214,7 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
-#: common/navbar.html:112
+#: common/navbar.html:110
 msgid "FAQ"
 msgstr ""
 
@@ -240,7 +236,7 @@ msgstr ""
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:118
+#: route.html:120
 msgid "Gears"
 msgstr ""
 
@@ -256,12 +252,8 @@ msgstr ""
 msgid "Height diff"
 msgstr ""
 
-#: route.html:122
+#: route.html:124
 msgid "History"
-msgstr ""
-
-#: common/navbar.html:14
-msgid "Home"
 msgstr ""
 
 #: me.html:16
@@ -280,7 +272,7 @@ msgstr ""
 msgid "Impacted people"
 msgstr ""
 
-#: common/navbar.html:94
+#: common/navbar.html:92
 msgid "Incidents"
 msgstr ""
 
@@ -296,11 +288,11 @@ msgstr ""
 msgid "Load more items"
 msgstr ""
 
-#: common/navbar.html:172
+#: common/navbar.html:170
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:137
+#: common/navbar.html:135
 #: login.html:19
 msgid "Login"
 msgstr ""
@@ -329,7 +321,7 @@ msgstr ""
 msgid "Minimum length : 8 characters"
 msgstr ""
 
-#: common/navbar.html:79
+#: common/navbar.html:77
 msgid "Misc"
 msgstr ""
 
@@ -341,7 +333,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:156
+#: common/navbar.html:154
 msgid "My page"
 msgstr ""
 
@@ -392,7 +384,7 @@ msgstr ""
 msgid "Outing"
 msgstr ""
 
-#: common/navbar.html:30
+#: common/navbar.html:47
 #: home.html:22
 msgid "Outings"
 msgstr ""
@@ -402,7 +394,7 @@ msgid "Outings ({{outings.total}})"
 msgstr ""
 
 #: common/ibox_tools.html:56
-#: common/navbar.html:163
+#: common/navbar.html:161
 #: me.html:6
 msgid "Parameters"
 msgstr ""
@@ -416,7 +408,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: common/navbar.html:59
+#: common/navbar.html:20
 msgid "Portals"
 msgstr ""
 
@@ -440,7 +432,7 @@ msgstr ""
 msgid "Ratings"
 msgstr ""
 
-#: route.html:128
+#: route.html:130
 #: waypoint.html:132
 msgid "Recent outings"
 msgstr ""
@@ -449,7 +441,7 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: route.html:115
+#: route.html:117
 msgid "Remarks"
 msgstr ""
 
@@ -457,7 +449,7 @@ msgstr ""
 msgid "Repeat password"
 msgstr ""
 
-#: common/navbar.html:107
+#: common/navbar.html:105
 msgid "Report a bug"
 msgstr ""
 
@@ -485,7 +477,7 @@ msgstr ""
 msgid "Route length"
 msgstr ""
 
-#: common/navbar.html:36
+#: common/navbar.html:53
 #: home.html:78
 #: search.html:13
 #: waypoint.html:126
@@ -516,7 +508,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:124
+#: common/navbar.html:122
 msgid "Search"
 msgstr ""
 
@@ -524,7 +516,7 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: c2c_items.html:139
+#: c2c_items.html:134
 msgid "Select filters"
 msgstr ""
 
@@ -568,7 +560,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: common/navbar.html:23
+#: common/navbar.html:40
 msgid "Topo"
 msgstr ""
 
@@ -595,7 +587,7 @@ msgid "W"
 msgstr ""
 
 #: c2c_items.html:89
-#: common/navbar.html:42
+#: common/navbar.html:59
 #: route.html:101
 #: search.html:24
 #: waypoint.html:136
@@ -1457,12 +1449,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 

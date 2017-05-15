@@ -22,6 +22,6 @@ Cette règle défini la notion de contributeur, ainsi que les droits et restrict
 * *Note 1* : D'autres exceptions ponctuelles peuvent être décidées, notamment sur les pages qui ont un gros impact sur le rendu global du site.
 * *Note 2* : Ceci afin de limiter les effets de potentiels *appels au vote*
 
-### Dictateur bienvéillant
+### Dictateur bienveillant
 
-Pour la durée du test (1 an), et afin d'éviter tout effet de bord imprévu et incontrolable, Charles s'auto-nomme dictateur bienvéillant et s'autorise à prendre unilatéralement toute décision qui lui semblera nécessaire à la bonne marche du site. Néanmoins, ces décisions devront être justifiées sur demande et devront être l'exception. La cible à moyen terme est du supprimer ce status.
+Pour la durée du test (1 an), et afin d'éviter tout effet de bord imprévu et incontrolable, Charles s'auto-nomme dictateur bienveillant et s'autorise à prendre unilatéralement toute décision qui lui semblera nécessaire à la bonne marche du site. Néanmoins, ces décisions devront être justifiées sur demande et devront être l'exception. La cible à moyen terme est du supprimer ce status.
