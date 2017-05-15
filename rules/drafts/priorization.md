@@ -5,11 +5,11 @@ A intervalle régulier, les développeurs proposent une liste de point à priori
 Un vote public est alors organisé.
 
 ## Vote
-Pour chaque point, les contributeurs donneront un parmi ces trois avis :
+Pour chaque point, les contributeurs donneront un parmi ces quatre avis :
 
 * Prioritaire
 * Pas urgent
-* Pas d'avis
+* Pas d'avis (*dans ce cas, ne rien mettre*)
 * Attendre
 
 ## Interprétation
