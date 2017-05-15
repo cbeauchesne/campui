@@ -108,20 +108,20 @@ a[href^="https://forum.camptocamp.org"]:hover {
 
 ////////////////////////////////////////////////////////////////////
 //but in markdown, we must show what is a link
-[markdown] a{
+markdown a{
     color:#1ab394;
 }
 
 //and what is a c2c link
-[markdown] a[href^="https://www.camptocamp.org"],
-[markdown] a[href^="https://forum.camptocamp.org"],{
+markdown a[href^="https://www.camptocamp.org"],
+markdown a[href^="https://forum.camptocamp.org"],{
     color: #FFAA45;
 }
 
 
-[markdown] figure.image-left,
-[markdown] figure.image-center,
-[markdown] figure.image-right{
+markdown figure.image-left,
+markdown figure.image-center,
+markdown figure.image-right{
     border: 1px solid #eee;
     border-radius: 3px;
     padding: 5px;
@@ -131,51 +131,51 @@ a[href^="https://forum.camptocamp.org"]:hover {
     margin-bottom:20px;
  }
 
-[markdown] figure.image-left img,
-[markdown] figure.image-right img{
+markdown figure.image-left img,
+markdown figure.image-right img{
     width:300px;
  }
 
-[markdown] figure.image-right{
+markdown figure.image-right{
     float: right;
     clear: right;
     margin-left:10px;
 }
 
-[markdown] figure.image-left{
+markdown figure.image-left{
     float: left;
     clear: left;
     margin-right:25px;
 }
 
 
-[markdown] figure.image-center{
+markdown figure.image-center{
     display:table-cell
 }
 
-[markdown] figure.image-big img{
+markdown figure.image-big img{
     max-width: 100%!important;
 }
 
-[markdown] table{
+markdown table{
     border:1px solid lightgrey ;
 }
 
-[markdown] table th,
-[markdown] table td{
+markdown table th,
+markdown table td{
     border:1px dashed white ;
     vertical-align: text-top;
     padding:2px 4px 2px 4px;
     font-size:90%;
 }
 
-[markdown] table tr td:first-child{
+markdown table tr td:first-child{
 font-weight:bold;
 }
 
-[markdown] table tr:nth-child(even) {background: #EEE}
-[markdown] table tr:nth-child(odd) {background: #FFF}
-[markdown] table th{background: #DDD}
+markdown table tr:nth-child(even) {background: #EEE}
+markdown table tr:nth-child(odd) {background: #FFF}
+markdown table th{background: #DDD}
 
 
 ////////////////////////////////////////////////////////////////////
@@ -349,7 +349,7 @@ font-weight:bold;
     margin-bottom:10px;
 }
 
-.user-view div[markdown]{
+.user-view divmarkdown{
 text-align:justify
 }
 ////////////////////////////////////////////////////////////////////
@@ -590,26 +590,26 @@ text-align:justify
         padding:0px
     }
 
-    [markdown] table{
+    markdown table{
         border:1px solid lightgrey  ! important;
     }
 
-    [markdown] table th,
-    [markdown] table td{
+    markdown table th,
+    markdown table td{
         border:1px solid lightgrey  ! important;
         vertical-align: text-top  ! important;
         padding:2px 4px 2px 4px  ! important;
     }
 
-    [markdown] table tr:nth-child(even) {
+    markdown table tr:nth-child(even) {
         background: #EEE ! important
     }
 
-    [markdown] table th{
+    markdown table th{
         background: #DDD ! important
     }
 
-    [markdown] table tr td:first-child{
+    markdown table tr td:first-child{
         font-weight:bold;
     }
 }
