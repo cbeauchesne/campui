@@ -16,31 +16,31 @@ function campuiCustomization(){
             },
             {
                 name : "Grandes courses",
-                document_id : 812616
+                document_id : 884440
             },
             {
                 name : "Terrain d'aventure",
-                document_id : 812612
+                document_id : 884441
             },
             {
                 name : "Raids et expéditions",
-                document_id : 289804
+                document_id : 884442
             },
             {
                 name : "Cascade de glace",
-                document_id : 812600
+                document_id : 884443
             },
             {
                 name : "Changer d'approche",
-                document_id : 219827
+                document_id : 884444
             },
             {
                 name : "Pyrénées",
-                document_id : 812611
+                document_id : 884445
             },
             {
                 name : "Vosges",
-                document_id : 339832
+                document_id : 884446
             }
         ]
     }
