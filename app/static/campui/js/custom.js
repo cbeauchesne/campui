@@ -11,8 +11,36 @@ function campuiCustomization(){
     return {
         portals : [
             {
-                name : "test",
+                name : "Actualités",
                 document_id : 884062
+            },
+            {
+                name : "Grandes courses",
+                document_id : 812616
+            },
+            {
+                name : "Terrain d'aventure",
+                document_id : 812612
+            },
+            {
+                name : "Raids et expéditions",
+                document_id : 289804
+            },
+            {
+                name : "Cascade de glace",
+                document_id : 812600
+            },
+            {
+                name : "Changer d'approche",
+                document_id : 219827
+            },
+            {
+                name : "Pyrénées",
+                document_id : 812611
+            },
+            {
+                name : "Vosges",
+                document_id : 339832
             }
         ]
     }
