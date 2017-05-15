@@ -14,19 +14,19 @@ Voici la liste des directives supportées :
 <tr><th>Nom</th><th>Fonction</th><th>Paramètres</th></tr>
 
 <tr>
-<td>`recent-outings`</td>
+<td>recent-outings</td>
 <td>Liste des sorties récentes</td>
 <td>`filter="'filter'"` : propriété optionelle, par exemple 'activities=rock_climbing'</td>
 </tr>
 
 <tr>
-<td>`markdown`</td>
+<td>markdown</td>
 <td>Interprète son contenu en markdown</td>
 <td>Aucun</td>
 </tr>
 
 <tr>
-<td>`article`</td>
+<td>article</td>
 <td>Insère le contenu d'un article de camptocamp</td>
 <td>'id'="article_id"</td>
 </tr>
