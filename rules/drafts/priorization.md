@@ -10,12 +10,12 @@ Pour chaque point, les contributeurs donneront un parmi ces trois avis :
 * Prioritaire
 * Pas urgent
 * Ne se prononce pas
-* Ne pas faire
+* Attendre
 
 ## Interprétation
-Le point *Ne pas faire* ne veut pas dire que le contributeur est contre le point, mais qu'il estime qu'il ne doit pas être fait tant que d'autre ne sont pas fait. Ce choix doit obligatoirement est justifié par une rapide explication, sans quoi il ne sera pas pris en compte.
+Le point *Attendre* ne veut pas dire que le contributeur est contre le point, mais qu'il estime qu'il ne doit pas être fait tant que d'autre ne sont pas fait. Ce choix doit obligatoirement est justifié par une rapide explication, sans quoi il ne sera pas pris en compte.
 
-A l'issue du vote, les résultat sont compilés et présentés. Les développeurs étant bénévoles, ces résultats ne sont pas contraignants, à l'exception de la règle suivante : si un point recueille une majorité (50%) de voix *Ne pas faire*, alors le développement ne sera pas mis en production avant que les autres points ne soient livrés.
+A l'issue du vote, les résultat sont compilés et présentés. Les développeurs étant bénévoles, ces résultats ne sont pas contraignants, à l'exception de la règle suivante : si un point recueille une majorité (50%) de voix *Attendre*, alors le développement ne sera pas mis en production avant que les autres points ne soient livrés.
 
 ## Exemple
 
@@ -30,13 +30,13 @@ A l'issue du vote, les résultat sont compilés et présentés. Les développeur
 Les votes *pas d'avis* sont omis.
 
 * Albert
-  * B : Ne pas faire => *Le point C est vraiment urgent*
+  * B : Attendre => *Le point C est vraiment urgent*
   * C : Urgent
 * Bertrand
   * B : Pas urgent
 * Camille
   * A : Urgent
-  * B : Ne pas faire => *Je suis contre cette fonctionnalité, et le point A doit vraiment être fait*
+  * B : Attendre => *Je suis contre cette fonctionnalité, et le point A doit vraiment être fait*
 * David
   * A : Urgent
   * B : Urgent
@@ -46,7 +46,7 @@ Les votes *pas d'avis* sont omis.
   * C : Pas urgent
 * Fanny
   * A : Urgent
-  * B : Ne pas faire => *Vraiment pas prioritaire par rapport aux point A et C*
+  * B : Attendre => *Vraiment pas prioritaire par rapport aux point A et C*
   * C : Urgent
 
 ### Résultat 
