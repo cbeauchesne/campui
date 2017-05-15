@@ -1,7 +1,7 @@
 *Cette règle est un brouillon*
 
-## Liste des developpements
-A intervalle régulier, les développeurs proposent une liste de point à prioriser. Ces points auront été validé apr ailleurs par la communauté. Pour chaque point, les tenants et aboutissants fonctionnel et techniques, ainsi qu'une estimation du temps seront donnés.
+## Liste des développements
+A intervalle régulier, les développeurs proposent une liste de point à prioriser. Ces points auront été validés par ailleurs par la communauté. Pour chaque point, les tenants et aboutissants fonctionnels et techniques, ainsi qu'une estimation du temps seront donnés.
 
 ## Vote
 Pour chaque point, les contributeurs donneront un parmi ces trois avis :
@@ -14,7 +14,7 @@ Pour chaque point, les contributeurs donneront un parmi ces trois avis :
 ## Interprétation
 Le point *Ne pas faire* ne veut pas dire que le contributeur est contre le point, mais qu'il estime qu'il ne doit ps être fait tant que d'autre ne sont pas fait. Ce choix doit obligatoirement est justifié par une rapide explication, sans quoi il ne sera pas pris en compte.
 
-A l'issue du vote, les résultat sont compilés et présentés. Point important, les developpeurs étant bénévoles, ces résultats ne sont pas contraignants, à l'exception de la règle suivante : si un point receuille une majorité (50%) de voix *Ne pas faire*, alors le developpement ne sera pas mis en production avant que les autre points ne soient livrés.
+A l'issue du vote, les résultat sont compilés et présentés. Les développeurs étant bénévoles, ces résultats ne sont pas contraignants, à l'exception de la règle suivante : si un point recueille une majorité (50%) de voix *Ne pas faire*, alors le développement ne sera pas mis en production avant que les autres points ne soient livrés.
 
 ## Exemple
 
@@ -22,7 +22,7 @@ A l'issue du vote, les résultat sont compilés et présentés. Point important,
 
 * A : super fonctionnalité, facile à faire
 * B : autre super fonctionnalité, dur à faire
-* C : chagement de comportement, facile à faire
+* C : changement de comportement, facile à faire
 
 ### Vote
 
@@ -35,7 +35,7 @@ Les votes *pas d'avis* sont omis.
   * B : Pas urgent
 * Camille
   * A : Urgent
-  * B : Ne pas faire => *Je suis contre cette fonctionnalité, et le point A doit vraiment etre fait*
+  * B : Ne pas faire => *Je suis contre cette fonctionnalité, et le point A doit vraiment être fait*
 * David
   * A : Urgent
   * B : Urgent
