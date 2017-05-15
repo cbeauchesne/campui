@@ -4,15 +4,32 @@
                 class="navbar-toggle collapsed" type="button">
             <i class="fa fa-reorder"></i>
         </button>
-        <a ui-sref="home" class="navbar-brand">CampUI</a>
+        <a ui-sref="home" class="navbar-brand">
+            <i class="fa fa-home"></i>
+            CampUI
+        </a>
     </div>
 
     <div class="navbar-collapse collapse" id="navbar">
         <ul class="nav navbar-nav">
-            <li ui-sref-active="active">
-                <a ui-sref="home"><i class="fa fa-home"></i>
-                    <span class="nav-label" translate>Home</span>
+
+            <li class="dropdown" ng-controller="customizationController as cst" ng-hide="!cst.portals">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    <i class="fa fa-star"></i>
+                    <span translate>Portals</span>
+                    <span class="caret"></span>
                 </a>
+
+                <ul class="dropdown-menu">
+
+                    <li ui-sref-active="active" ng-repeat="portal in cst.portals">
+                        <a ui-sref="portal({name:portal.name})">
+                            <i class="fa fa-file-text-o"></i>
+                            <span class="nav-label">{{portal.name}}</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             <li class="dropdown">
@@ -49,25 +66,6 @@
                         </a>
                     </li>
 
-                </ul>
-            </li>
-
-            <li class="dropdown" ng-controller="customizationController as cst" ng-hide="!cst.portals">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                   aria-expanded="false">
-                    <i class="fa fa-star"></i>
-                    <span translate>Portals</span>
-                    <span class="caret"></span>
-                </a>
-
-                <ul class="dropdown-menu">
-
-                    <li ui-sref-active="active" ng-repeat="portal in cst.portals">
-                        <a ui-sref="portal({name:portal.name})">
-                            <i class="fa fa-file-text-o"></i>
-                            <span class="nav-label">{{portal.name}}</span>
-                        </a>
-                    </li>
                 </ul>
             </li>
 
