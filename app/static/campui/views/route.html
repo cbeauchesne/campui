@@ -99,7 +99,9 @@
 
             <div class="col-sm-4">
                 <strong translate>Waypoints</strong>
-                <waypoint-list waypoints="route.associations.waypoints"></waypoint-list>
+                <div ng-repeat="waypoint in route.associations.waypoints">
+                    <waypoint-link waypoint="waypoint"/>
+                </div>
             </div>
         </div>
     </div>

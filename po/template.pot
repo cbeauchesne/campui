@@ -181,7 +181,7 @@ msgstr ""
 
 #: area.html:21
 #: outing.html:35
-#: route.html:114
+#: route.html:116
 #: waypoint.html:116
 msgid "Description"
 msgstr ""
@@ -236,7 +236,7 @@ msgstr ""
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:120
+#: route.html:122
 msgid "Gears"
 msgstr ""
 
@@ -252,7 +252,7 @@ msgstr ""
 msgid "Height diff"
 msgstr ""
 
-#: route.html:124
+#: route.html:126
 msgid "History"
 msgstr ""
 
@@ -428,7 +428,7 @@ msgstr ""
 msgid "Ratings"
 msgstr ""
 
-#: route.html:130
+#: route.html:132
 #: waypoint.html:138
 msgid "Recent outings"
 msgstr ""
@@ -437,7 +437,7 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: route.html:117
+#: route.html:119
 msgid "Remarks"
 msgstr ""
 
