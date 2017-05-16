@@ -24,7 +24,7 @@ app.provider('markdownConverter', [function () {
         function typo_tag(tag, html){
             return {
                 type: 'lang',
-                regex: new RegExp('\\[' + tag + '\\](.*?)\\[\\/' + tag + '\\]', 'g'),
+                regex: new RegExp('\\[' + tag + '\\]([^]*?)\\[\\/' + tag + '\\]', 'g'),
                 replace: function (match, text) {
                     return '<' + html + '>'+ text + '</' + html + '>';
                 }
