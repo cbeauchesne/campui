@@ -95,10 +95,12 @@
 
                 <div ng-if="waypoint.rock_types">
                     <label translate>rock_types</label>
-                    {{waypoint.rock_types.join(", ")}}</div>
+                    {{waypoint.rock_types.join(", ")}}
+                </div>
                 <div ng-if="waypoint.rain_proof">
                     <label translate>rain_proof</label>
-                    {{waypoint.rain_proof | translate}}</div>
+                    {{waypoint.rain_proof | translate}}
+                </div>
                 <div ng-if="waypoint.children_proof">
                     <label translate>children_proof</label>
                     {{waypoint.children_proof | translate}}
@@ -130,7 +132,7 @@
 
                 <div ng-if="waypoint.associations.recent_outings.documents.length">
                     <h2 translate>Recent outings</h2>
-                    <outing-list outings="waypoint.associations.recent_outings.documents"></outing-list>
+                    <outings data="waypoint.associations.recent_outings" display="'compact'"/>
                 </div>
                 <div ng-if="waypoint.associations.waypoint_children.length">
                     <h2 translate>Waypoints</h2>
