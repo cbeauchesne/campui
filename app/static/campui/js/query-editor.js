@@ -31,7 +31,7 @@ app.factory('QueryEditor', ['c2c', 'currentUser', 'gettextCatalog', 'locale', 'u
         }
 
         _this.isSavedQuery = function(){
-            return typeof _this.currentQuery.name !=='undefined'
+            return _this.currentQuery && typeof _this.currentQuery.name !=='undefined'
         }
 
 
