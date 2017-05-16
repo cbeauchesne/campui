@@ -25,7 +25,11 @@
                 </p>
 
                 <p>
-                    <route-list routes="outing.associations.routes"></route-list>
+                    <div ng-repeat="route in outing.associations.routes">
+                        <activities activities="route.activities"></activities>
+                        <route-link route="route"></route-link>
+                        <rating route="route"></rating>
+                    </div>
                 </p>
 
                 <h2 ng-if="outing.locales[0].description" translate>Description</h2>
