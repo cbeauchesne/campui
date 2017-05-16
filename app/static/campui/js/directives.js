@@ -19,14 +19,6 @@ app.directive('pageTitle', ['$rootScope','$timeout',function ($rootScope, $timeo
 }])
 
 
-app.directive('iboxTools', ['$timeout', function ($timeout) {
-    return {
-        restrict: 'EA',
-        scope: false,
-        templateUrl: 'static/campui/views/common/ibox_tools.html',
-    };
-}])
-
 app.directive('license', function(){
     return {
         restrict: 'EA',
