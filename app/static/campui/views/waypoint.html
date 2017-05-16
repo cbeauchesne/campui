@@ -126,7 +126,11 @@
             <div class="col-sm-6 b-r" ng-if="waypoint.associations.all_routes.documents.length">
 
                 <h2 translate>Routes</h2>
-                <route-list routes="waypoint.associations.all_routes.documents"></route-list>
+                <div ng-repeat="route in waypoint.associations.all_routes.documents">
+                    <activities activities="route.activities"></activities>
+                    <route-link route="route"></route-link>
+                    <rating route="route"></rating>
+                </div>
             </div>
             <div class="col-sm-6 b-r">
 
@@ -140,7 +144,6 @@
                         <waypoint-link waypoint="waypoint"/>
                     </div>
                 </div>
-
             </div>
         </div>
 
