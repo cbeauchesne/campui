@@ -92,17 +92,6 @@ app.directive('gallery', function(){
     };
 })
 
-app.directive('outingIbox', function(){
-    return {
-        restrict: 'E',
-        replace: true,
-        scope: {
-            outings: '=',
-        },
-        templateUrl: '/static/campui/views/components/outing_ibox.html',
-    };
-})
-
 app.directive('authorLink', function(){
     return {
         restrict: 'E',
