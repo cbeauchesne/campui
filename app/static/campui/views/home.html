@@ -22,32 +22,8 @@
                     <h3 translate>Outings</h3>
                     <div ibox-tools></div>
                 </div>
-
-                <div class="ibox-content" style="display: block;">
-                    <loading-info></loading-info>
-
-                    <div ng-repeat="(date, values) in data.documents | groupBy: 'date_start'">
-                        <h4>{{ date | date }}</h4>
-                        <div ng-repeat="outing in values" class="outing-line">
-                            <div class="pull-left">
-                                <activities activities="outing.activities"></activities>
-                                <outing-link outing="outing"></outing-link>
-                                <span class="outing-area">{{getLocale(outing.areas[outing.areas.length-1]).title}}</span>
-                                <i class="fa fa-star followed-icon"
-                                   ng-if="currentUser.isFollowed(details[outing.document_id])"></i>
-                            </div>
-                            <div class="pull-right">
-                                <i class="fa fa-camera icon-picture-presence"
-                                   uib-tooltip="{{ details[outing.document_id].associations.images.length + ' images'}}"
-                                   ng-if="!!details[outing.document_id].associations.images.length!=0"></i>
-                                <i class="fa fa-circle-thin"
-                                   ng-if="!outing.condition_rating"></i>
-                                <condition-icon ng-if="outing.condition_rating"
-                                                condition="outing.condition_rating"></condition-icon>
-                            </div>
-                            <div style="clear: both;"></div>
-                        </div>
-                    </div>
+                <div class="ibox-content">
+                    <outings data="data"/>
                 </div>
             </div>
         </div>
