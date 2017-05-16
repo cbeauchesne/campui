@@ -223,19 +223,6 @@ $.each(c2cItems, function(item, params){
         };
         return result;
     })
-
-    app.directive(item + 'List', function(){
-        var result =   {
-            restrict: 'E',
-            replace: true,
-            scope: {},
-            templateUrl: '/static/campui/views/components/' + item + '_list.html',
-        };
-
-        result.scope[item + "s"] = "=";
-
-        return result;
-    })
 })
 
 
