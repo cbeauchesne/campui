@@ -23,10 +23,17 @@
 
                 <ul class="dropdown-menu">
 
-                    <li ui-sref-active="active" ng-repeat="portal in cst.portals">
+                    <li ng-if="false" ui-sref-active="active" ng-repeat="portal in cst.portals">
                         <a ui-sref="portal({name:portal.name})">
                             <i class="fa fa-file-text-o"></i>
                             <span class="nav-label">{{portal.name}}</span>
+                        </a>
+                    </li>
+
+                    <li ui-sref-active="active">
+                        <a href="#">
+                            <i class="fa fa-warning"></i>
+                            <i class="nav-label">En travaux</i>
                         </a>
                     </li>
                 </ul>

@@ -64,7 +64,7 @@ msgstr ""
 msgid "5min"
 msgstr ""
 
-#: waypoint.html:117
+#: waypoint.html:119
 msgid "Access"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Area"
 msgstr ""
 
-#: common/navbar.html:65
+#: common/navbar.html:72
 #: factories/factories.js:709
 #: outing.html:23
 #: route.html:30
@@ -125,8 +125,8 @@ msgstr ""
 msgid "Areas"
 msgstr ""
 
-#: common/navbar.html:85
-#: home.html:97
+#: common/navbar.html:92
+#: home.html:73
 msgid "Articles"
 msgstr ""
 
@@ -142,11 +142,11 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: outing.html:37
+#: outing.html:41
 msgid "Conditions"
 msgstr ""
 
-#: common/navbar.html:100
+#: common/navbar.html:107
 msgid "Contact"
 msgstr ""
 
@@ -180,9 +180,9 @@ msgid "Default for xreports"
 msgstr ""
 
 #: area.html:21
-#: outing.html:31
+#: outing.html:35
 #: route.html:114
-#: waypoint.html:114
+#: waypoint.html:116
 msgid "Description"
 msgstr ""
 
@@ -214,7 +214,7 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
-#: common/navbar.html:110
+#: common/navbar.html:117
 msgid "FAQ"
 msgstr ""
 
@@ -228,11 +228,11 @@ msgstr ""
 msgid "Follow"
 msgstr ""
 
-#: home.html:59
+#: home.html:35
 msgid "Forum"
 msgstr ""
 
-#: outing.html:60
+#: outing.html:64
 msgid "Frequentation"
 msgstr ""
 
@@ -272,7 +272,7 @@ msgstr ""
 msgid "Impacted people"
 msgstr ""
 
-#: common/navbar.html:92
+#: common/navbar.html:99
 msgid "Incidents"
 msgstr ""
 
@@ -288,11 +288,11 @@ msgstr ""
 msgid "Load more items"
 msgstr ""
 
-#: common/navbar.html:170
+#: common/navbar.html:177
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:135
+#: common/navbar.html:142
 #: login.html:19
 msgid "Login"
 msgstr ""
@@ -321,7 +321,7 @@ msgstr ""
 msgid "Minimum length : 8 characters"
 msgstr ""
 
-#: common/navbar.html:77
+#: common/navbar.html:84
 msgid "Misc"
 msgstr ""
 
@@ -333,7 +333,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:154
+#: common/navbar.html:161
 msgid "My page"
 msgstr ""
 
@@ -384,22 +384,18 @@ msgstr ""
 msgid "Outing"
 msgstr ""
 
-#: common/navbar.html:47
+#: common/navbar.html:54
 #: home.html:22
 msgid "Outings"
 msgstr ""
 
-#: components/outing_ibox.html:4
-msgid "Outings ({{outings.total}})"
-msgstr ""
-
 #: common/ibox_tools.html:56
-#: common/navbar.html:161
+#: common/navbar.html:168
 #: me.html:6
 msgid "Parameters"
 msgstr ""
 
-#: outing.html:47
+#: outing.html:51
 #: stories.html:37
 msgid "Participants"
 msgstr ""
@@ -433,7 +429,7 @@ msgid "Ratings"
 msgstr ""
 
 #: route.html:130
-#: waypoint.html:132
+#: waypoint.html:138
 msgid "Recent outings"
 msgstr ""
 
@@ -449,7 +445,7 @@ msgstr ""
 msgid "Repeat password"
 msgstr ""
 
-#: common/navbar.html:105
+#: common/navbar.html:112
 msgid "Report a bug"
 msgstr ""
 
@@ -469,7 +465,7 @@ msgstr ""
 msgid "Rock required rating"
 msgstr ""
 
-#: outing.html:34
+#: outing.html:38
 msgid "Route description"
 msgstr ""
 
@@ -477,10 +473,10 @@ msgstr ""
 msgid "Route length"
 msgstr ""
 
-#: common/navbar.html:53
-#: home.html:78
+#: common/navbar.html:60
+#: home.html:54
 #: search.html:13
-#: waypoint.html:126
+#: waypoint.html:128
 msgid "Routes"
 msgstr ""
 
@@ -508,7 +504,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:122
+#: common/navbar.html:129
 msgid "Search"
 msgstr ""
 
@@ -549,7 +545,7 @@ msgstr ""
 msgid "There is not yet images on outings linked to this route"
 msgstr ""
 
-#: outing.html:40
+#: outing.html:44
 msgid "Timing"
 msgstr ""
 
@@ -560,7 +556,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: common/navbar.html:40
+#: common/navbar.html:47
 msgid "Topo"
 msgstr ""
 
@@ -587,14 +583,14 @@ msgid "W"
 msgstr ""
 
 #: c2c_items.html:89
-#: common/navbar.html:59
+#: common/navbar.html:66
 #: route.html:101
 #: search.html:24
-#: waypoint.html:136
+#: waypoint.html:142
 msgid "Waypoints"
 msgstr ""
 
-#: outing.html:55
+#: outing.html:59
 msgid "Weather"
 msgstr ""
 
@@ -776,7 +772,7 @@ msgstr ""
 msgid "children proof"
 msgstr ""
 
-#: waypoint.html:103
+#: waypoint.html:105
 msgid "children_proof"
 msgstr ""
 
@@ -915,7 +911,7 @@ msgstr ""
 #: fixed_strings.html:106
 #: fixed_strings.html:66
 #: fixed_strings.html:68
-#: outing.html:66
+#: outing.html:70
 #: route.html:86
 #: waypoint.html:33
 msgid "elevation"
@@ -1087,7 +1083,7 @@ msgstr ""
 msgid "height diff difficulties"
 msgstr ""
 
-#: outing.html:74
+#: outing.html:78
 #: route.html:78
 msgid "height difference"
 msgstr ""
@@ -1449,12 +1445,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
@@ -1466,7 +1462,7 @@ msgstr ""
 msgid "rain proof"
 msgstr ""
 
-#: waypoint.html:100
+#: waypoint.html:101
 msgid "rain_proof"
 msgstr ""
 
@@ -1713,7 +1709,7 @@ msgstr ""
 msgid "topoguide_supplements"
 msgstr ""
 
-#: outing.html:81
+#: outing.html:85
 msgid "total length"
 msgstr ""
 

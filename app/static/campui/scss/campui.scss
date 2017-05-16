@@ -57,8 +57,10 @@ gallery{
 // fix all ibox
 
 .ibox{
-    margin-top:10px
+    padding: 0px;
+    margin: 7px;
 }
+
 
 .ibox-tools .dropdown-menu > li > a {
     padding: 0px 10px;
@@ -80,6 +82,16 @@ gallery{
   float: left;
 }
 
+.ibox .ibox-title,
+.ibox .ibox-content,
+.ibox .ibox-footer{
+    -moz-box-shadow: 3px 3px 6px 0px #ccc;
+    -webkit-box-shadow: 3px 3px 6px 0px #ccc;
+    -o-box-shadow: 3px 3px 6px 0px #ccc;
+    box-shadow: 3px 3px 6px 0px #ccc;
+}
+
+////////////////////////////////////////////////////////////////////////
 
 
 ////////////////////////////////////////////////////////////////////
@@ -222,22 +234,8 @@ markdown table th{background: #DDD}
 
 ////////////////////////////////////////////////////////////////////////
 
-.ibox .ibox-title,
-.ibox .ibox-content,
-.ibox .ibox-footer{
-    -moz-box-shadow: 3px 3px 6px 0px #ccc;
-    -webkit-box-shadow: 3px 3px 6px 0px #ccc;
-    -o-box-shadow: 3px 3px 6px 0px #ccc;
-    box-shadow: 3px 3px 6px 0px #ccc;
-}
-
-////////////////////////////////////////////////////////////////////////
 // home specific
 
-.home-view .ibox {
-    padding: 0px;
-    margin: 7px;
-}
 
 .home-view .outing-box .outing-line:hover{
     background:#F8F8F8
