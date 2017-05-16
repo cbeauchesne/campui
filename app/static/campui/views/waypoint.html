@@ -136,7 +136,9 @@
                 </div>
                 <div ng-if="waypoint.associations.waypoint_children.length">
                     <h2 translate>Waypoints</h2>
-                    <waypoint-list waypoints="waypoint.associations.waypoint_children"></waypoint-list>
+                    <div ng-repeat="waypoint in waypoint.associations.waypoint_children">
+                        <waypoint-link waypoint="waypoint"/>
+                    </div>
                 </div>
 
             </div>
