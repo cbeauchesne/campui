@@ -104,8 +104,12 @@ gulp.task('photoswipe', function() {
 function getServer(baseDir){
     return function() {
 
-      var proxyOptions = url.parse('http://localhost:8000/api');
-      proxyOptions.route = '/api';
+      var proxyApi = url.parse('http://localhost:8000/api');
+      proxyApi.route = '/api';
+
+      var proxyAnalytics = url.parse('http://localhost:8000/analytics');
+      proxyAnalytics.route = '/analytics';
+
 
       var middleware = function (req, res, next) {
         var fileName = url.parse(req.url);
@@ -140,7 +144,7 @@ function getServer(baseDir){
 
       var server = {
         baseDir: [baseDir, "."],
-        middleware: [proxy(proxyOptions), middleware]
+        middleware: [proxy(proxyApi), proxy(proxyAnalytics), middleware]
       }
 
       browserSync.init({

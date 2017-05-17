@@ -12,6 +12,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'api',
+    'analytics',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,8 +63,6 @@ STATICFILES_DIRS = [
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "app/static"),
 # ]
-#
-
 
 TEMPLATES = [
     {

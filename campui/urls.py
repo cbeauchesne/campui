@@ -4,6 +4,7 @@ from api.urls import urlpatterns as api_urls
 from .settings import BASE_DIR
 from django.views import static
 from campui import admin_custom
+from analytics.views import AnalyticView
 
 
 admin.autodiscover()
@@ -11,6 +12,8 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(api_urls)),
+    url(r'^analytics$', AnalyticView.as_view()),
+
 ]
 
 angular_view = {"view": static.serve,
