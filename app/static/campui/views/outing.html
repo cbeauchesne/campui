@@ -32,6 +32,9 @@
                     </div>
                 </p>
 
+                <h2 ng-if="outing.locales[0].access_comment" translate>Acces comment</h2>
+                <markdown content="outing.locales[0].access_comment"></markdown>
+
                 <h2 ng-if="outing.locales[0].description" translate>Description</h2>
                 <markdown content="outing.locales[0].description"></markdown>
 
@@ -40,6 +43,12 @@
 
                 <h2 ng-if="outing.locales[0].conditions" translate>Conditions</h2>
                 <markdown content="outing.locales[0].conditions"></markdown>
+
+                <h2 ng-if="outing.locales[0].avalanches" translate>Observations relative to avalanches</h2>
+                <markdown content="outing.locales[0].avalanches"></markdown>
+
+                <h2 ng-if="outing.locales[0].hut_comment" translate>Hut comment</h2>
+                <markdown content="outing.locales[0].hut_comment"></markdown>
 
                 <h2 ng-if="outing.locales[0].timing" translate>Timing</h2>
                 <markdown content="outing.locales[0].timing"></markdown>
@@ -86,7 +95,23 @@
                     {{outing.length_total}} m
                 </div>
 
+                <div ng-if="outing.hut_status">
+                    <label translate>hut status</label>
+                    {{outing.hut_status | translate:'hut_status' }}
+                </div>
+
+                <div ng-if="outing.snow_quality">
+                    <label translate>snow quality</label>
+                    {{outing.snow_quality | translate:'snow_quality' }}
+                </div>
+
+                <div ng-if="outing.snow_quantity">
+                    <label translate>snow quantity</label>
+                    {{outing.snow_quantity | translate:'snow_quantity' }}
+                </div>
+
                 <div license type="'outing'" id="outing.document_id" cc="'by-nc-nd'"></div>
+
             </div>
         </div>
     </div>
