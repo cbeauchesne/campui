@@ -144,7 +144,7 @@ app.config(["$provide", function($provide) {
 
 
 
-app.run(['$rootScope', '$state', '$cookies', 'gettextCatalog', 'tmhDynamicLocale', 'photoswipe',
+app.run(['$rootScope', '$state', '$cookies', 'gettextCatalog', 'tmhDynamicLocale', 'photoswipe', 'analytics', 
     function($rootScope, $state, $cookies, gettextCatalog, tmhDynamicLocale, photoswipe) {
         var lang = $cookies.get('lang') || 'fr';
         gettextCatalog.setCurrentLanguage(lang);
@@ -158,6 +158,7 @@ app.run(['$rootScope', '$state', '$cookies', 'gettextCatalog', 'tmhDynamicLocale
            document.body.scrollTop = document.documentElement.scrollTop = 0;
            photoswipe.getters = []
            photoswipe.open = false
+           analytics.ping.send()
         });
     }
 ]);
