@@ -335,6 +335,11 @@
         "html": "<i><u>xx</u></i>"
     },
     {
+        "id": "Typo22",
+        "code": "**\nX: **Y",
+        "html": "<strong>X:</strong> Y"
+    },
+    {
         "id": "Url",
         "code": "[url]www.google.com[/url]",
         "html": "<a href=\"www.google.com\">www.google.com</a>"
