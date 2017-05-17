@@ -40,7 +40,16 @@ app.provider('markdownConverter', [function () {
         var bold = typo_tag('b', 'strong')
         var monospace = typo_tag('c', 'span') //not yet style...
 
-        var typos = [quote, underline, del, sup, sub, italic, bold, monospace]
+        var md_fix = { //"**coucou **" becomes "**coucou** "
+            type: 'lang',
+            regex: /\*\*\n?([^]+?)( *)\*\*/g,
+            replace: function (match, text, spaces) {
+                return '**' + text + '**' + spaces;
+            }
+        };
+
+        var typos = [quote, underline, del, sup, sub, italic, bold, monospace, md_fix]
+
 
         var toc = { //trash
             type: 'lang',
