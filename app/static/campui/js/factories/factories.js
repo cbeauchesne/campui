@@ -20,6 +20,14 @@ app.factory('api', ['$resource', function($resource){
     };
 }]);
 
+app.factory('analytics', ['$resource', function($resource){
+    return {
+        ping: $resource('/analytics', {}, {
+            send: {method: 'POST'},
+        }),
+    };
+}]);
+
 app.factory('anonymousProfile', ["gettextCatalog", function(gettextCatalog){
     var profile = {
         params:{
