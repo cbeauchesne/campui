@@ -24,11 +24,9 @@
                    ng-if="!outing.condition_rating"></i>
                 <condition-icon ng-if="outing.condition_rating"
                                 condition="outing.condition_rating"></condition-icon>
-                <a ui-sref="outing({id:outing.document_id})">
-                    {{ date | date }}
-                </a>
+                {{ date | date }}
                 :
-                <user-link user="outing.author"/>
+                <outing-link outing="outing"/>
                 <i class="fa fa-camera icon-picture-presence"
                    uib-tooltip="{{ details[outing.document_id].associations.images.length + ' images'}}"
                    ng-if="!!details[outing.document_id].associations.images.length!=0"></i>
