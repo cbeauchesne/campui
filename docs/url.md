@@ -30,5 +30,6 @@
   * /outing-images :white_check_mark:
   * /images :x:
   * /books :x:
+  * /stats : :x:
   * /{cutom_portal} :white_check_mark:
   
