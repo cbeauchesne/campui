@@ -47,7 +47,7 @@ Here is need for data
     "fr": 123,
     "en": 122 
     },
-  "elevation":4805
+  "elevation":4805,
   "associations":{
     "user":[123456,789798],
     "route":[123456,45]
