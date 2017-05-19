@@ -32,6 +32,7 @@ Here is need for data
 * Standalone api
 * can't live without a doc
 * Id (document.data_id)
+* lang/id property 
 * [property]
   * where property is a couple name/object
   * where name is a string
@@ -42,11 +43,11 @@ Here is need for data
 {
   "id":46487,
   "namespace":"doc",
-  "name":{
-    "fr":"coucou",
-    "en": "hello"
+  "locale_ids":{
+    "fr": 123
+    "en": 122 
     },
-  "elevation":123
+  "elevation":4805
 }
 ```
     
