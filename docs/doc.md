@@ -4,7 +4,7 @@ Here is need for document
 * Versionning by lang
 * name by lang (not case sensitive)
 * content (text by lang)
-* data_id (optionnal)
+* data_id 
 
 ### exemple
 ```json
@@ -30,6 +30,7 @@ Here is need for document
 Here is need for data
 * Global (not lang related)
 * Standalone api
+* can't leave without a doc
 * Id (document.data_id)
 * [property]
   * where property is a couple name/object
