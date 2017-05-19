@@ -76,9 +76,9 @@
 
                 <div ng-if="route.height_diff_up || route.height_diff_down">
                     <label translate>height difference</label>
-                    <span ng-if="route.height_diff_up">+{{route.height_diff_up}}&nbsp;m</span>
+                    <span ng-if="route.height_diff_up">+{{route.height_diff_up}}&#8239;m</span>
                     <span ng-if="route.height_diff_up && route.height_diff_down">/</span>
-                    <span ng-if="route.height_diff_down">-{{route.height_diff_down}}&nbsp;m</span>
+                    <span ng-if="route.height_diff_down">-{{route.height_diff_down}}&#8239;m</span>
                 </div>
 
                 <div ng-if="route.elevation_min || route.elevation_max">
@@ -86,13 +86,13 @@
                         <span translate>elevation</span>
                         <span ng-if="route.elevation_min">min</span><span ng-if="route.elevation_min && route.elevation_max">/</span><span ng-if="route.elevation_max">max</span>
                     </label>
-                    <span ng-if="route.elevation_min">{{route.elevation_min}}&nbsp;m</span>
+                    <span ng-if="route.elevation_min">{{route.elevation_min}}&#8239;m</span>
                     <span ng-if="route.elevation_min && route.elevation_max">/</span>
-                    <span ng-if="route.elevation_max">{{route.elevation_max}}&nbsp;m</span>
+                    <span ng-if="route.elevation_max">{{route.elevation_max}}&#8239;m</span>
                 </div>
 
                 <div ng-if="route.route_length">
-                    <label translate>Route length</label>{{route.route_length}}&nbsp;m
+                    <label translate>Route length</label>{{route.route_length}}&#8239;m
                 </div>
 
             </div>
