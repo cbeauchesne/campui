@@ -40,6 +40,7 @@ Here is need for data
 ```json
 {
   "id":46487,
+  "namespace":"doc"
   "name":{
     "fr":"coucou",
     "en": "hello"
