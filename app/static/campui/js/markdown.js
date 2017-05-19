@@ -171,7 +171,7 @@ app.provider('markdownConverter', [function () {
 
         var c2cItem = {
             type: 'lang',
-            regex: /\[\[(book|waypoint|route|outing|area|article)s\/([\d]+)([^|]*)\|([^\]]*)\]\]/g,
+            regex: /\[\[\/?(book|waypoint|route|outing|area|article)s\/([\d]+)([^|]*)\|([^\]]*)\]\]/g,
             replace: function (match, item, id, lang, text) {
                 if(item=="book" || item=="article")
                     return '<a href="https://www.camptocamp.org/' + item + 's/' + id + '">' + text + '</a>';
