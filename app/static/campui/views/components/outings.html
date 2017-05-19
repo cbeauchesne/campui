@@ -24,7 +24,7 @@
                    ng-if="!outing.condition_rating"></i>
                 <condition-icon ng-if="outing.condition_rating"
                                 condition="outing.condition_rating"></condition-icon>
-                {{ date | date }}
+                {{ date | date:'dd/MM/yyyy' }}
                 :
                 <outing-link outing="outing"/>
                 <user-link user="outing.author"/>
