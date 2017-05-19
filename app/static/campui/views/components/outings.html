@@ -1,4 +1,4 @@
-<div>
+<div class="outings-directive outings-directive-{{display}}">
     <loading-info></loading-info>
     <div ng-repeat="(date, values) in data.documents | groupBy: 'date_start'">
         <h4 ng-if="display!=='compact'">{{ date | date }}</h4>
@@ -27,9 +27,12 @@
                 {{ date | date }}
                 :
                 <outing-link outing="outing"/>
-                <i class="fa fa-camera icon-picture-presence"
-                   uib-tooltip="{{ details[outing.document_id].associations.images.length + ' images'}}"
-                   ng-if="!!details[outing.document_id].associations.images.length!=0"></i>
+                <user-link user="outing.author"/>
+                <span class="icon-picture-presence"
+                      ng-if="!!details[outing.document_id].associations.images.length!=0">
+                <i class="fa fa-camera"
+                   uib-tooltip="{{ details[outing.document_id].associations.images.length + ' images'}}"></i>
+                </span>
             </div>
             <div style="clear: both;"></div>
         </div>
