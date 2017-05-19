@@ -56,21 +56,6 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         templateUrl: "static/campui/views/home.html",
     })
 
-    $stateProvider.state("portal", {
-        url: "/portal/{name}",
-        templateProvider: ["customization", "$stateParams", "c2c", "$q", "locale", function(customization, $stateParams, c2c,  $q, locale){
-
-            var portal = customization.portals.filter(function(p){return p.name==$stateParams.name})[0]
-
-            var defer = $q.defer();
-            var t =  c2c.article.get({id:portal.document_id}).$promise.then(function(response){
-                defer.resolve(locale.get(response).description)
-            })
-
-            return defer.promise
-        }]
-    })
-
     $stateProvider.state('login', {
         url: "/login",
         templateUrl: "static/campui/views/login.html",
@@ -113,6 +98,27 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         templateUrl: 'static/campui/views/outingImages.html',
         controller: "linkedOutingsController"
     })
+
+    $stateProvider.state("portal", {
+        url: "/{name}",
+        templateProvider: ["customization", "$stateParams", "c2c", "$q", "locale", "$templateFactory", function(customization, $stateParams, c2c,  $q, locale,  $templateFactory){
+
+            var portal = customization.portals.filter(function(p){return p.name==$stateParams.name})[0]
+
+            if(portal.template_article){
+                var defer = $q.defer();
+                var t =  c2c.article.get({id:portal.document_id}).$promise.then(function(response){
+                    defer.resolve(locale.get(response).description)
+                })
+
+                return defer.promise
+            }
+            else if(portal.template_url){
+                return  $templateFactory.fromUrl(portal.template_url)
+            }
+        }]
+    })
+
 }]);
 
 app.config(['tmhDynamicLocaleProvider', function(tmhDynamicLocaleProvider) {
