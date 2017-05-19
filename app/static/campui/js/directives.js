@@ -74,7 +74,7 @@ app.directive('loadingInfo', function(){
 
 app.directive('gallery', function(){
     return {
-        restrict: 'EA',
+        restrict: 'E',
         replace: false,
         scope: {
             images: '=',
@@ -239,6 +239,8 @@ app.directive('filterItem', ['filterItems', function (filterItems) {
 }])
 
 
+// supported directives
+
 app.directive('article', ['c2c', function (c2c) {
     return {
         restrict: 'E',
@@ -286,6 +288,20 @@ app.directive('outings', ['c2c', 'currentUser', "locale", function (c2c, current
                         loadDetails()
                 }
             })
+        }
+    }
+}])
+
+app.directive('images', ['c2c',  "locale", function (c2c,  locale) {
+    return {
+        restrict: 'E',
+        scope: {"query":"=?", "data":"=?", "display": "="},
+        template: '<gallery images="data.documents"></gallery>',
+        link: function(scope, element, attrs) {
+            if(!attrs.data)
+                scope.$watch(attrs.query, function(query){
+                    scope.data = c2c.images.get({query:query})
+                });
         }
     }
 }])
