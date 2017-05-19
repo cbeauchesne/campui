@@ -11,37 +11,37 @@ function campuiCustomization(){
     return {
         portals : [
             {
+                name : "Cascade de glace",
+                template_url : "/static/campui/views/portals/ice_climbing.html"
+            },/*
+            {
                 name : "Actualités",
-                document_id : 884062
+                template_article : 884062
             },
             {
                 name : "Grandes courses",
-                document_id : 884440
+                template_article : 884440
             },
             {
                 name : "Terrain d'aventure",
-                document_id : 884441
+                template_article : 884441
             },
             {
                 name : "Raids et expéditions",
-                document_id : 884442
-            },
-            {
-                name : "Cascade de glace",
-                document_id : 884443
+                template_article : 884442
             },
             {
                 name : "Changer d'approche",
-                document_id : 884444
+                template_article : 884444
             },
             {
                 name : "Pyrénées",
-                document_id : 884445
+                template_article : 884445
             },
             {
                 name : "Vosges",
-                document_id : 884446
-            }
+                template_article : 884446
+            }*/
         ]
     }
 }
