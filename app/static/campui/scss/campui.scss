@@ -91,8 +91,37 @@ gallery{
     box-shadow: 3px 3px 6px 0px #ccc;
 }
 
-////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////
+// outings-directive
+
+.outings-directive-compact user-link a{
+    font-style: italic;
+    color:#AAA;
+}
+
+.outings-directive-compact outing-link:after{
+    content : "  \2219";
+    font-style:normal;
+}
+
+.outings-directive-compact .icon-picture-presence:before{
+    content : "\2219  ";
+    font-style:normal;
+}
+
+.outings-directive .outing-line:hover{
+    background:#F8F8F8
+}
+
+.outings-directive .outing-area{
+    font-style:italic;
+}
+
+.outings-directive .outing-area:before{
+    content : "\2219  ";
+    font-style:normal;
+}
 
 ////////////////////////////////////////////////////////////////////
 
@@ -143,9 +172,15 @@ markdown figure.image-right{
     margin-bottom:20px;
  }
 
+markdown figure.image-left,
+markdown figure.image-right{
+    width:33%;
+    max-width:300px;
+ }
+
 markdown figure.image-left img,
 markdown figure.image-right img{
-    width:300px;
+    width:100%;
  }
 
 markdown figure.image-right{
@@ -237,25 +272,6 @@ markdown table th{background: #DDD}
 // home specific
 
 
-.home-view .outing-box .outing-line:hover{
-    background:#F8F8F8
-}
-
-.home-view .outing-box .outing-line .quality-medium,
-.home-view .outing-box .outing-line .quality-draft,
-.home-view .outing-box .outing-line .quality-empty{
-    visibility:none
-}
-
-.home-view .outing-area{
-    font-style:italic;
-}
-
-.home-view .outing-area::before{
-    content : "\2219  ";
-    font-style:normal;
-}
-
 .home-view .ibox-content a:visited {
     color:#1ab394;
 }
@@ -269,7 +285,6 @@ markdown table th{background: #DDD}
 .next-arrow{
     display:none;
 }
-
 
 .home-view .previous-arrow,
 .home-view .next-arrow{
@@ -564,6 +579,7 @@ text-align:justify
 .mapWaypointsChoices label:first-letter {
     text-transform: uppercase;
 }
+
 
 ////////////////////////////////////////////////////
 
