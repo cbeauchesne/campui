@@ -23,17 +23,20 @@
 
                 <ul class="dropdown-menu">
 
-                    <li ng-if="false" ui-sref-active="active" ng-repeat="portal in cst.portals">
+                    <li ui-sref-active="active" ng-repeat="portal in cst.portals">
                         <a ui-sref="portal({name:portal.name})">
                             <i class="fa fa-file-text-o"></i>
                             <span class="nav-label">{{portal.name}}</span>
                         </a>
                     </li>
 
+                    <li role="separator" class="divider"></li>
+
                     <li ui-sref-active="active">
-                        <a href="#">
-                            <i class="fa fa-warning"></i>
-                            <i class="nav-label">En travaux</i>
+                        <a href="https://forum.camptocamp.org/t/v6-faites-evoluer-la-maquette-avec-nous/183795/10000"
+                           target="_blank">
+                            <i class="fa fa-heart"></i>
+                            <i class="nav-label" translate>Ask a new portal</i>
                         </a>
                     </li>
                 </ul>
