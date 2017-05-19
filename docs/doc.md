@@ -44,7 +44,7 @@ Here is need for data
   "id":46487,
   "namespace":"doc",
   "locale_ids":{
-    "fr": 123
+    "fr": 123,
     "en": 122 
     },
   "elevation":4805
