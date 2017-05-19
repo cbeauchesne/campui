@@ -30,7 +30,7 @@ Here is need for document
 Here is need for data
 * Global (not lang related)
 * Standalone api
-* can't leave without a doc
+* can't live without a doc
 * Id (document.data_id)
 * [property]
   * where property is a couple name/object
