@@ -35,3 +35,4 @@ def build_statistic(date):
                                      count=count))
 
     Statistic.objects.filter(date=date).delete()
+    Statistic.objects.bulk_create(statistics)
