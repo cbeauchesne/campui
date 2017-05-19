@@ -5,6 +5,7 @@
   * /static :white_check_mark:
   * /login :white_check_mark:
   * /register :x:
+  * /me
 * /{namespace}/{document_id}[/sub_page]
   * /route/id :white_check_mark:
   * /waypoint/id :white_check_mark:
