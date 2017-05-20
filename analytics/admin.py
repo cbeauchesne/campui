@@ -15,7 +15,7 @@ class DomainAdmin(admin.ModelAdmin):
 
 
 class StatisticAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['page_state', 'domain', 'date', 'count']
 
 
 admin.site.register(Statistic, StatisticAdmin)

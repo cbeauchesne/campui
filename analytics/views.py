@@ -20,23 +20,39 @@ class AnalyticView(View):
 
 
 class StatisticView(View):
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
+
         date = datetime.date.today()
 
-        states = PageState.objects.get()
-        domains = Domain.objects.get()
+        result = []
+
+        for i in range(10):
+            self._compute(date)
+            result += Statistic.objects.filter(date=date)
+
+            date = date + datetime.timedelta(days=-1)
+
+        return HttpResponse()
+
+    def post(self, request, *args, **kwargs):
+        date = datetime.date.today()
+
+    def _compute(self, date):
+        states = PageState.objects.all()
+        domains = Domain.objects.all()
 
         statistics = []
         for state in states:
             for domain in domains:
-                count = Statistic.objects.filter(domain=domain,
-                                                 page_state=state,
-                                                 date__contains=date).count()
+                count = Analytic.objects.filter(domain=domain,
+                                                page_state=state,
+                                                timestamp__contains=date).count()
 
-                statistics.append(Statistic(date=date,
-                                            page_state=state,
-                                            domain=domain,
-                                            count=count))
+                if count != 0:
+                    statistics.append(Statistic(date=date,
+                                                page_state=state,
+                                                domain=domain,
+                                                count=count))
 
         Statistic.objects.filter(date=date).delete()
         Statistic.objects.bulk_create(statistics)
