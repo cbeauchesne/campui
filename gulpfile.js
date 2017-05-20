@@ -111,6 +111,9 @@ function getServer(baseDir){
       proxyAnalytics.route = '/analytics';
 
 
+      var proxyAdmin = url.parse('http://localhost:8000/admin');
+      proxyAdmin.route = '/admin';
+
       var middleware = function (req, res, next) {
         var fileName = url.parse(req.url);
         fileName = fileName.href.split(fileName.search).join("");
@@ -118,23 +121,6 @@ function getServer(baseDir){
             && fileName.indexOf("bower_components") < 0
             && fileName.indexOf("node_modules") < 0
             && fileName.indexOf("browser-sync-client") < 0
-            && (
-                fileName.indexOf("/outing") >= 0
-                || fileName.indexOf("/route") >= 0
-                || fileName.indexOf("/area") >= 0
-                || fileName.indexOf("/portal") >= 0
-                || fileName.indexOf("/waypoint") >= 0
-                || fileName.indexOf("/me") >= 0
-                || fileName.indexOf("/user") >= 0
-                || fileName.indexOf("/article") >= 0
-                || fileName.indexOf("/search") >= 0
-                || fileName.indexOf("/register") >= 0
-                || fileName.indexOf("/login") >= 0
-                || fileName.indexOf("/stories") >= 0
-                || fileName.indexOf("/faq") >= 0
-                || fileName.indexOf("/markdown") >= 0
-                || fileName.indexOf("/outing-images") >= 0
-                || fileName.indexOf("/xreport") >= 0)
         ) {
             req.url = "/index.html";
         }
@@ -144,7 +130,7 @@ function getServer(baseDir){
 
       var server = {
         baseDir: [baseDir, "."],
-        middleware: [proxy(proxyApi), proxy(proxyAnalytics), middleware]
+        middleware: [proxy(proxyApi), proxy(proxyAnalytics),proxy(proxyAdmin), middleware]
       }
 
       browserSync.init({

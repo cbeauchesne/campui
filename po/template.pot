@@ -121,7 +121,7 @@ msgstr ""
 msgid "Area"
 msgstr ""
 
-#: common/navbar.html:72
+#: common/navbar.html:75
 #: factories/factories.js:717
 #: outing.html:23
 #: route.html:30
@@ -129,9 +129,13 @@ msgstr ""
 msgid "Areas"
 msgstr ""
 
-#: common/navbar.html:92
+#: common/navbar.html:95
 #: home.html:73
 msgid "Articles"
+msgstr ""
+
+#: common/navbar.html:39
+msgid "Ask a new portal"
 msgstr ""
 
 #: factories/factories.js:537
@@ -150,7 +154,7 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: common/navbar.html:107
+#: common/navbar.html:110
 msgid "Contact"
 msgstr ""
 
@@ -198,6 +202,10 @@ msgstr ""
 msgid "E"
 msgstr ""
 
+#: portals/ice_climbing.html:24
+msgid "Edit"
+msgstr ""
+
 #: factories/factories.js:723
 msgid "Elevation"
 msgstr ""
@@ -218,7 +226,7 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
-#: common/navbar.html:117
+#: common/navbar.html:120
 msgid "FAQ"
 msgstr ""
 
@@ -280,8 +288,12 @@ msgstr ""
 msgid "Impacted people"
 msgstr ""
 
-#: common/navbar.html:99
+#: common/navbar.html:102
 msgid "Incidents"
+msgstr ""
+
+#: portals/ice_climbing.html:22
+msgid "Informations"
 msgstr ""
 
 #: fixed_strings.html:330
@@ -296,11 +308,11 @@ msgstr ""
 msgid "Load more items"
 msgstr ""
 
-#: common/navbar.html:177
+#: common/navbar.html:180
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:142
+#: common/navbar.html:145
 #: login.html:19
 msgid "Login"
 msgstr ""
@@ -329,7 +341,7 @@ msgstr ""
 msgid "Minimum length : 8 characters"
 msgstr ""
 
-#: common/navbar.html:84
+#: common/navbar.html:87
 msgid "Misc"
 msgstr ""
 
@@ -341,7 +353,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:161
+#: common/navbar.html:164
 msgid "My page"
 msgstr ""
 
@@ -361,6 +373,10 @@ msgstr ""
 #: factories/factories.js:736
 #: me.html:79
 msgid "Name"
+msgstr ""
+
+#: portals/ice_climbing.html:39
+msgid "News"
 msgstr ""
 
 #: common/ibox_tools.html:19
@@ -396,13 +412,14 @@ msgstr ""
 msgid "Outing"
 msgstr ""
 
-#: common/navbar.html:54
+#: common/navbar.html:57
 #: home.html:22
+#: portals/ice_climbing.html:48
 msgid "Outings"
 msgstr ""
 
 #: common/ibox_tools.html:56
-#: common/navbar.html:168
+#: common/navbar.html:171
 #: me.html:6
 msgid "Parameters"
 msgstr ""
@@ -457,7 +474,7 @@ msgstr ""
 msgid "Repeat password"
 msgstr ""
 
-#: common/navbar.html:112
+#: common/navbar.html:115
 msgid "Report a bug"
 msgstr ""
 
@@ -485,7 +502,7 @@ msgstr ""
 msgid "Route length"
 msgstr ""
 
-#: common/navbar.html:60
+#: common/navbar.html:63
 #: home.html:54
 #: search.html:13
 #: waypoint.html:128
@@ -516,7 +533,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:129
+#: common/navbar.html:132
 msgid "Search"
 msgstr ""
 
@@ -568,7 +585,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: common/navbar.html:47
+#: common/navbar.html:50
 msgid "Topo"
 msgstr ""
 
@@ -576,6 +593,10 @@ msgstr ""
 #: factories/factories.js:728
 #: factories/factories.js:741
 msgid "Type"
+msgstr ""
+
+#: portals/ice_climbing.html:25
+msgid "Update these informations"
 msgstr ""
 
 #: c2c_items.html:84
@@ -595,7 +616,7 @@ msgid "W"
 msgstr ""
 
 #: c2c_items.html:89
-#: common/navbar.html:66
+#: common/navbar.html:69
 #: route.html:101
 #: search.html:24
 #: waypoint.html:142
@@ -1461,12 +1482,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
