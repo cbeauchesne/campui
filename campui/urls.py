@@ -4,7 +4,7 @@ from api.urls import urlpatterns as api_urls
 from .settings import BASE_DIR
 from django.views import static
 from campui import admin_custom
-from analytics.views import AnalyticView
+from analytics.urls import urlpatterns as analytics_urls
 
 
 admin.autodiscover()
@@ -12,7 +12,7 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(api_urls)),
-    url(r'^analytics$', AnalyticView.as_view()),
+    url(r'^analytics/', include(analytics_urls)),
 
 ]
 

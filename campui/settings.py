@@ -30,6 +30,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'campui.urls'
 WSGI_APPLICATION = 'campui.wsgi.application'
 TIME_ZONE = 'UTC'
+APPEND_SLASH = False
 
 SECRET_KEY = os.environ.get("CAMPUI_SECRET_KEY", "dev_not_for_prod")
 DEBUG = "CAMPUI_DEBUG" in os.environ

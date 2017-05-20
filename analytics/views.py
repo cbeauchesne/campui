@@ -1,6 +1,7 @@
 from django.views.generic import View
 from django.http import HttpResponse
 from analytics.models import Statistic, Analytic, PageState, Domain
+import datetime
 
 
 class AnalyticView(View):
@@ -17,22 +18,25 @@ class AnalyticView(View):
 
         return HttpResponse("")
 
-    
-def build_statistic(date):
-    states = PageState.objects.get()
-    domains = Domain.objects.get()
 
-    statistics = []
-    for state in states:
-        for domain in domains:
-            count = Statistic.objects.filter(domain=domain,
-                                             page_state=state,
-                                             date__contains=date).count()
+class StatisticView(View):
+    def get(self, request, *args, **kwargs):
+        date = datetime.date.today()
 
-            statistics.append(Statistic(date=date,
-                                     page_state=state,
-                                     domain=domain,
-                                     count=count))
+        states = PageState.objects.get()
+        domains = Domain.objects.get()
 
-    Statistic.objects.filter(date=date).delete()
-    Statistic.objects.bulk_create(statistics)
+        statistics = []
+        for state in states:
+            for domain in domains:
+                count = Statistic.objects.filter(domain=domain,
+                                                 page_state=state,
+                                                 date__contains=date).count()
+
+                statistics.append(Statistic(date=date,
+                                            page_state=state,
+                                            domain=domain,
+                                            count=count))
+
+        Statistic.objects.filter(date=date).delete()
+        Statistic.objects.bulk_create(statistics)

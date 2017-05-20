@@ -22,7 +22,7 @@ app.factory('api', ['$resource', function($resource){
 
 app.factory('analytics', ['$resource', function($resource){
     return {
-        ping: $resource('/analytics', {}, {
+        ping: $resource('/analytics/ping', {}, {
             send: {method: 'POST'},
         }),
     };
