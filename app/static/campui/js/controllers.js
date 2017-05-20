@@ -156,6 +156,9 @@ app.controller('forumController',['$scope','c2c',function($scope, c2c){
 
         $scope.latest_topics = JSON.parse(data.result)
 
+        if(!$scope.latest_topics.topic_list)
+            return
+
         $scope.latest_topics.topic_list.topics = $scope.latest_topics.topic_list.topics.filter(function(topic){
             return topic.category_id != 29 //comments on outings
         })
@@ -169,8 +172,6 @@ app.controller('forumController',['$scope','c2c',function($scope, c2c){
         $scope.latest_topics.topic_list.topics.map(function(topic){
             topic.last_poster_user = users[topic.last_poster_username]
         })
-
-        console.log($scope.latest_topics)
     })
 
 }]);
