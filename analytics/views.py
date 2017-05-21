@@ -28,7 +28,7 @@ class StatisticView(View):
 
         for i in range(10):
             self._compute(date)
-            result += Statistic.objects.filter(date=date) #marche pas..
+            result += Statistic.objects.filter(date=date)  # marche pas..
 
             date = date + datetime.timedelta(days=-1)
 
