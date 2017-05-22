@@ -22,23 +22,10 @@ class AnalyticView(APIView):
 
 
 class StatisticView(APIView):
-    def post(self, request):
-
-        date = datetime.date.today()
-
-        result = []
-
-        for i in range(10):
-            date = date + datetime.timedelta(days=-1)
-            self._compute(date)
-            result += Statistic.objects.filter(date=date)  # marche pas..
-
-        return Response(str(result))
-
     def get(self, request, *args, **kwargs):
         from_date = datetime.date.today() - datetime.timedelta(days=20)
 
-        statistics = [StatisticSerializer(s).data for s in Statistic.objects.filter(date__gte=from_date)]
+        statistics = [StatisticSerializer(s).data for s in Statistic.objects.filter(date__gte=from_date).order_by('date')]
         page_states = [PageStateSerializer(p).data for p in PageState.objects.all()]
         domains = [DomainSerializer(d).data for d in Domain.objects.all()]
 
@@ -46,22 +33,3 @@ class StatisticView(APIView):
                          "page_states": page_states,
                          "domains": domains})
 
-    def _compute(self, date):
-        states = PageState.objects.all()
-        domains = Domain.objects.all()
-
-        statistics = []
-        for state in states:
-            for domain in domains:
-                count = Analytic.objects.filter(domain=domain,
-                                                page_state=state,
-                                                timestamp__contains=date).count()
-
-                if count != 0:
-                    statistics.append(Statistic(date=date,
-                                                page_state=state,
-                                                domain=domain,
-                                                count=count))
-
-        Statistic.objects.filter(date=date).delete()
-        Statistic.objects.bulk_create(statistics)
