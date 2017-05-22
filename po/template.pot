@@ -222,7 +222,7 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
-#: common/navbar.html:120
+#: common/navbar.html:125
 msgid "FAQ"
 msgstr ""
 
@@ -304,11 +304,11 @@ msgstr ""
 msgid "Load more items"
 msgstr ""
 
-#: common/navbar.html:180
+#: common/navbar.html:185
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:145
+#: common/navbar.html:150
 #: login.html:19
 msgid "Login"
 msgstr ""
@@ -349,7 +349,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:164
+#: common/navbar.html:169
 msgid "My page"
 msgstr ""
 
@@ -415,7 +415,7 @@ msgid "Outings"
 msgstr ""
 
 #: common/ibox_tools.html:56
-#: common/navbar.html:171
+#: common/navbar.html:176
 #: me.html:6
 msgid "Parameters"
 msgstr ""
@@ -529,7 +529,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:132
+#: common/navbar.html:137
 msgid "Search"
 msgstr ""
 
@@ -555,6 +555,10 @@ msgstr ""
 
 #: fixed_strings.html:145
 msgid "Snow/ice ratings"
+msgstr ""
+
+#: common/navbar.html:120
+msgid "Statistics"
 msgstr ""
 
 #: fixed_strings.html:141
@@ -1478,12 +1482,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 

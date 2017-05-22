@@ -84,9 +84,9 @@ msgstr "Accès"
 msgid "Actions"
 msgstr "Actions"
 
-#: components/query_editor.html:7 factories/factories.js:514
-#: factories/factories.js:567 factories/factories.js:588
-#: factories/factories.js:688
+#: components/query_editor.html:7 factories/factories.js:518
+#: factories/factories.js:571 factories/factories.js:592
+#: factories/factories.js:692
 msgid "Activities"
 msgstr "Activités"
 
@@ -118,11 +118,11 @@ msgstr "Tous les points de passage"
 msgid "Apply"
 msgstr "Appliquer"
 
-#: factories/factories.js:520 factories/factories.js:594
+#: factories/factories.js:524 factories/factories.js:598
 msgid "Area"
 msgstr "Région"
 
-#: common/navbar.html:75 factories/factories.js:717 outing.html:23
+#: common/navbar.html:75 factories/factories.js:721 outing.html:23
 #: route.html:30 waypoint.html:15
 msgid "Areas"
 msgstr "Régions"
@@ -135,7 +135,7 @@ msgstr "Articles"
 msgid "Ask a new portal"
 msgstr "Demandez un portail"
 
-#: factories/factories.js:537
+#: factories/factories.js:541
 msgid "Author"
 msgstr "Auteur"
 
@@ -143,7 +143,7 @@ msgstr "Auteur"
 msgid "CampToCamp URL"
 msgstr "URL CampToCamp"
 
-#: factories/factories.js:699
+#: factories/factories.js:703
 msgid "Categories"
 msgstr "Catégories"
 
@@ -163,7 +163,7 @@ msgstr "Créer un compte"
 msgid "Credits"
 msgstr "Crédits"
 
-#: factories/factories.js:552
+#: factories/factories.js:556
 msgid "Date"
 msgstr "Date"
 
@@ -199,7 +199,7 @@ msgstr "E"
 msgid "Edit"
 msgstr "Modifier"
 
-#: factories/factories.js:723
+#: factories/factories.js:727
 msgid "Elevation"
 msgstr "Altitude"
 
@@ -211,7 +211,7 @@ msgstr "Engagement"
 msgid "Equipement rating"
 msgstr "Qualité de l’équipement"
 
-#: factories/factories.js:573
+#: factories/factories.js:577
 msgid "Event type"
 msgstr "Type d’incident"
 
@@ -219,7 +219,7 @@ msgstr "Type d’incident"
 msgid "Exposition rating"
 msgstr "Exposition"
 
-#: common/navbar.html:120
+#: common/navbar.html:125
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -247,11 +247,11 @@ msgstr "Matériel"
 msgid "Global rating"
 msgstr "Cotation globale"
 
-#: factories/factories.js:532
+#: factories/factories.js:536
 msgid "Height"
 msgstr "Hauteur"
 
-#: factories/factories.js:605
+#: factories/factories.js:609
 msgid "Height diff"
 msgstr "Hauteur"
 
@@ -275,7 +275,7 @@ msgstr "Cotation glace"
 msgid "Images"
 msgstr "Images"
 
-#: factories/factories.js:557
+#: factories/factories.js:561
 msgid "Impacted people"
 msgstr "Personnes importées"
 
@@ -299,11 +299,11 @@ msgstr "Liste des auteurs"
 msgid "Load more items"
 msgstr "Charger plus d’éléments"
 
-#: common/navbar.html:180
+#: common/navbar.html:185
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: common/navbar.html:145 login.html:19
+#: common/navbar.html:150 login.html:19
 msgid "Login"
 msgstr "Se connecter"
 
@@ -343,7 +343,7 @@ msgstr "Divers."
 msgid "Mixed rating"
 msgstr "Cotation mixe"
 
-#: common/navbar.html:164
+#: common/navbar.html:169
 msgid "My page"
 msgstr "Ma Page"
 
@@ -359,7 +359,7 @@ msgstr "NE"
 msgid "NW"
 msgstr "NW"
 
-#: factories/factories.js:712 factories/factories.js:736 me.html:79
+#: factories/factories.js:716 factories/factories.js:740 me.html:79
 msgid "Name"
 msgstr "Nom"
 
@@ -383,7 +383,7 @@ msgstr "Observations relatives aux avalanches"
 msgid "Only a-z, 0-9 and _ are allowed"
 msgstr "Caractères autorisés : a-z, _ et 0-9"
 
-#: factories/factories.js:609
+#: factories/factories.js:613
 msgid "Orientations"
 msgstr "Orientations"
 
@@ -403,7 +403,7 @@ msgstr "Sortie"
 msgid "Outings"
 msgstr "Sorties"
 
-#: common/ibox_tools.html:56 common/navbar.html:171 me.html:6
+#: common/ibox_tools.html:56 common/navbar.html:176 me.html:6
 msgid "Parameters"
 msgstr "Paramètres"
 
@@ -423,7 +423,7 @@ msgstr "Portails"
 msgid "Previous"
 msgstr "Précédent"
 
-#: factories/factories.js:694
+#: factories/factories.js:698
 msgid "Quality"
 msgstr "Qualité"
 
@@ -431,7 +431,7 @@ msgstr "Qualité"
 msgid "Queries"
 msgstr "Requêtes"
 
-#: factories/factories.js:600
+#: factories/factories.js:604
 msgid "Rating"
 msgstr "Cotations"
 
@@ -511,7 +511,7 @@ msgstr "Sauvegarder ce filtre"
 msgid "Saving..."
 msgstr "Sauvegarde en cours…"
 
-#: common/navbar.html:132
+#: common/navbar.html:137
 msgid "Search"
 msgstr "Rechercher"
 
@@ -523,7 +523,7 @@ msgstr "Résultats de la recherche"
 msgid "Select filters"
 msgstr "Choisissez des filtres"
 
-#: factories/factories.js:562
+#: factories/factories.js:566
 msgid "Severity"
 msgstr "Gravité"
 
@@ -538,6 +538,10 @@ msgstr "Neige"
 #: fixed_strings.html:145
 msgid "Snow/ice ratings"
 msgstr "Cotations neige/glace"
+
+#: common/navbar.html:120
+msgid "Statistics"
+msgstr "Statistiques"
 
 #: fixed_strings.html:141 fixed_strings.html:147
 msgid "Terrain"
@@ -555,8 +559,8 @@ msgstr "Il n’y a pas encore d’image de sorties associées à cet itinéraire
 msgid "Timing"
 msgstr "Horaires"
 
-#: factories/factories.js:508 factories/factories.js:546
-#: factories/factories.js:582 factories/factories.js:683
+#: factories/factories.js:512 factories/factories.js:550
+#: factories/factories.js:586 factories/factories.js:687
 msgid "Title"
 msgstr "Titre"
 
@@ -564,8 +568,8 @@ msgstr "Titre"
 msgid "Topo"
 msgstr "Topo"
 
-#: factories/factories.js:704 factories/factories.js:728
-#: factories/factories.js:741
+#: factories/factories.js:708 factories/factories.js:732
+#: factories/factories.js:745
 msgid "Type"
 msgstr "Type"
 
@@ -634,7 +638,7 @@ msgstr "limites adminisatrative"
 msgid "aid rating"
 msgstr "cotation artificielle"
 
-#: factories/factories.js:615
+#: factories/factories.js:619
 msgid "aid_rating"
 msgstr "cotation artificielle"
 
@@ -920,7 +924,7 @@ msgstr "gain d’altitude"
 msgid "elevation loss"
 msgstr "perte d’altitude"
 
-#: factories/factories.js:620
+#: factories/factories.js:624
 msgid "elevation_max"
 msgstr "altitude max"
 
@@ -932,7 +936,7 @@ msgstr "en"
 msgid "engagement rating"
 msgstr "engagement"
 
-#: factories/factories.js:625
+#: factories/factories.js:629
 msgid "engagement_rating"
 msgstr "engagement"
 
@@ -944,7 +948,7 @@ msgstr "qualité de l’équipement"
 msgid "equipment ratings"
 msgstr "qualité de l’équipement"
 
-#: factories/factories.js:630
+#: factories/factories.js:634
 msgid "equipment_rating"
 msgstr "qualité de l’équipement"
 
@@ -984,7 +988,7 @@ msgstr "exposition"
 msgid "exposition rock"
 msgstr "exposition rocher"
 
-#: factories/factories.js:635
+#: factories/factories.js:639
 msgid "exposition_rock_rating"
 msgstr "exposition"
 
@@ -1036,7 +1040,7 @@ msgstr "matériel de sécurité sur glacier"
 msgid "global rating"
 msgstr "cotation globale"
 
-#: factories/factories.js:640
+#: factories/factories.js:644
 msgid "global_rating"
 msgstr "cotation globale"
 
@@ -1092,7 +1096,7 @@ msgstr "hauteur moyenne"
 msgid "height min"
 msgstr "hauteur minimale"
 
-#: factories/factories.js:645
+#: factories/factories.js:649
 msgid "height_diff_up"
 msgstr "hauteur"
 
@@ -1405,7 +1409,7 @@ msgstr "type de produits"
 msgid "prominence"
 msgstr "prominence"
 
-#: factories/factories.js:650 fixed_strings.html:307 waypoint.html:87
+#: factories/factories.js:654 fixed_strings.html:307 waypoint.html:87
 msgid "protected"
 msgstr ""
 
@@ -1421,7 +1425,7 @@ msgstr "accessibilité"
 msgid "public transportation types"
 msgstr "type de transport"
 
-#: factories/factories.js:655
+#: factories/factories.js:659
 msgid "quality"
 msgstr "qualité"
 
@@ -1474,7 +1478,7 @@ msgstr "rhyolite"
 msgid "risk rating"
 msgstr "risques objectifs"
 
-#: factories/factories.js:660
+#: factories/factories.js:664
 msgid "risk_rating"
 msgstr "risques objectifs"
 
@@ -1494,11 +1498,11 @@ msgstr "type de roche"
 msgid "rock_climbing"
 msgstr "escalade"
 
-#: factories/factories.js:665
+#: factories/factories.js:669
 msgid "rock_free_rating"
 msgstr "cotation libre"
 
-#: factories/factories.js:670
+#: factories/factories.js:674
 msgid "rock_required_rating"
 msgstr "cotation obligatoire"
 
@@ -1689,7 +1693,7 @@ msgstr ""
 
 #: outing.html:94
 msgid "total length"
-msgstr "tongueur totale"
+msgstr "longueur totale"
 
 #: fixed_strings.html:258
 msgid "trachyte"
