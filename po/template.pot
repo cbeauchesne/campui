@@ -84,12 +84,8 @@ msgstr ""
 msgid "Activities"
 msgstr ""
 
-#: c2c_items.html:52
+#: c2c_items.html:34
 msgid "Add a filter item"
-msgstr ""
-
-#: c2c_items.html:31
-msgid "Add a item"
 msgstr ""
 
 #: route.html:14
@@ -541,7 +537,7 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: c2c_items.html:134
+#: c2c_items.html:116
 msgid "Select filters"
 msgstr ""
 
@@ -599,7 +595,7 @@ msgstr ""
 msgid "Update these informations"
 msgstr ""
 
-#: c2c_items.html:84
+#: c2c_items.html:66
 msgid "Use as a filter"
 msgstr ""
 
@@ -615,7 +611,7 @@ msgstr ""
 msgid "W"
 msgstr ""
 
-#: c2c_items.html:89
+#: c2c_items.html:71
 #: common/navbar.html:69
 #: route.html:101
 #: search.html:24
@@ -1482,12 +1478,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 

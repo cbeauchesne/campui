@@ -23,24 +23,6 @@
             </filter-item>
 
             <div class="form-group col-md-3">
-
-                <div class="dropdown" ng-if="qe.filterItemStorage.availables">
-                    <button class="btn btn-sm badge-success dropdown-toggle"
-                            type="button"
-                            data-toggle="dropdown"
-                            uib-tooltip="{{ 'Add a item'| translate }}">
-                        <i class="fa fa-plus"></i>
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li ng-repeat="item in qe.filterItemStorage.availables">
-                            <a href="#" ng-click="qe.showFilterItem(item)">
-                                {{qe.filterItems[item].label | translate }}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
                 <div class="dropdown" ng-if="qe.filterItemStorage.storage">
                     <button class="btn btn-sm btn-rounded badge-success"
                             type="button"

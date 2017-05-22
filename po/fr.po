@@ -90,12 +90,8 @@ msgstr "Actions"
 msgid "Activities"
 msgstr "Activités"
 
-#: c2c_items.html:52
+#: c2c_items.html:34
 msgid "Add a filter item"
-msgstr "Ajouter un sous-filtre"
-
-#: c2c_items.html:31
-msgid "Add a item"
 msgstr "Ajouter un sous-filtre"
 
 #: route.html:14
@@ -126,14 +122,18 @@ msgstr "Appliquer"
 msgid "Area"
 msgstr "Région"
 
-#: common/navbar.html:72 factories/factories.js:717 outing.html:23
+#: common/navbar.html:75 factories/factories.js:717 outing.html:23
 #: route.html:30 waypoint.html:15
 msgid "Areas"
 msgstr "Régions"
 
-#: common/navbar.html:92 home.html:73
+#: common/navbar.html:95 home.html:73
 msgid "Articles"
 msgstr "Articles"
+
+#: common/navbar.html:39
+msgid "Ask a new portal"
+msgstr "Demandez un portail"
 
 #: factories/factories.js:537
 msgid "Author"
@@ -151,7 +151,7 @@ msgstr "Catégories"
 msgid "Conditions"
 msgstr "Conditions"
 
-#: common/navbar.html:107
+#: common/navbar.html:110
 msgid "Contact"
 msgstr "Contact"
 
@@ -195,6 +195,10 @@ msgstr "Vous n’avez pas encore un compte?"
 msgid "E"
 msgstr "E"
 
+#: portals/ice_climbing.html:24
+msgid "Edit"
+msgstr "Modifier"
+
 #: factories/factories.js:723
 msgid "Elevation"
 msgstr "Altitude"
@@ -215,7 +219,7 @@ msgstr "Type d’incident"
 msgid "Exposition rating"
 msgstr "Exposition"
 
-#: common/navbar.html:117
+#: common/navbar.html:120
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -275,9 +279,13 @@ msgstr "Images"
 msgid "Impacted people"
 msgstr "Personnes importées"
 
-#: common/navbar.html:99
+#: common/navbar.html:102
 msgid "Incidents"
 msgstr "Incidents"
+
+#: portals/ice_climbing.html:22
+msgid "Informations"
+msgstr "Informations"
 
 #: fixed_strings.html:330
 msgid "Invalid username/password."
@@ -291,11 +299,11 @@ msgstr "Liste des auteurs"
 msgid "Load more items"
 msgstr "Charger plus d’éléments"
 
-#: common/navbar.html:177
+#: common/navbar.html:180
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: common/navbar.html:142 login.html:19
+#: common/navbar.html:145 login.html:19
 msgid "Login"
 msgstr "Se connecter"
 
@@ -323,7 +331,7 @@ msgstr "Cotation VTT montée"
 msgid "Minimum length : 8 characters"
 msgstr "Minimum 8 caractères"
 
-#: common/navbar.html:84
+#: common/navbar.html:87
 msgid "Misc"
 msgstr "Divers"
 
@@ -335,7 +343,7 @@ msgstr "Divers."
 msgid "Mixed rating"
 msgstr "Cotation mixe"
 
-#: common/navbar.html:161
+#: common/navbar.html:164
 msgid "My page"
 msgstr "Ma Page"
 
@@ -354,6 +362,10 @@ msgstr "NW"
 #: factories/factories.js:712 factories/factories.js:736 me.html:79
 msgid "Name"
 msgstr "Nom"
+
+#: portals/ice_climbing.html:39
+msgid "News"
+msgstr "Actualités"
 
 #: common/ibox_tools.html:19
 msgid "Next"
@@ -387,11 +399,11 @@ msgstr "Autre cotations"
 msgid "Outing"
 msgstr "Sortie"
 
-#: common/navbar.html:54 home.html:22
+#: common/navbar.html:57 home.html:22 portals/ice_climbing.html:48
 msgid "Outings"
 msgstr "Sorties"
 
-#: common/ibox_tools.html:56 common/navbar.html:168 me.html:6
+#: common/ibox_tools.html:56 common/navbar.html:171 me.html:6
 msgid "Parameters"
 msgstr "Paramètres"
 
@@ -443,7 +455,7 @@ msgstr "Remarques"
 msgid "Repeat password"
 msgstr "Répéter le mot de passe"
 
-#: common/navbar.html:112
+#: common/navbar.html:115
 msgid "Report a bug"
 msgstr "Signaler un bug"
 
@@ -471,7 +483,7 @@ msgstr "Description de l’itinéraire"
 msgid "Route length"
 msgstr "Longueur"
 
-#: common/navbar.html:60 home.html:54 search.html:13 waypoint.html:128
+#: common/navbar.html:63 home.html:54 search.html:13 waypoint.html:128
 msgid "Routes"
 msgstr "Itinéraires"
 
@@ -499,7 +511,7 @@ msgstr "Sauvegarder ce filtre"
 msgid "Saving..."
 msgstr "Sauvegarde en cours…"
 
-#: common/navbar.html:129
+#: common/navbar.html:132
 msgid "Search"
 msgstr "Rechercher"
 
@@ -507,7 +519,7 @@ msgstr "Rechercher"
 msgid "Search results"
 msgstr "Résultats de la recherche"
 
-#: c2c_items.html:134
+#: c2c_items.html:116
 msgid "Select filters"
 msgstr "Choisissez des filtres"
 
@@ -548,7 +560,7 @@ msgstr "Horaires"
 msgid "Title"
 msgstr "Titre"
 
-#: common/navbar.html:47
+#: common/navbar.html:50
 msgid "Topo"
 msgstr "Topo"
 
@@ -557,7 +569,11 @@ msgstr "Topo"
 msgid "Type"
 msgstr "Type"
 
-#: c2c_items.html:84
+#: portals/ice_climbing.html:25
+msgid "Update these informations"
+msgstr "Mettez à jour ces informations"
+
+#: c2c_items.html:66
 msgid "Use as a filter"
 msgstr "Filtre sur la carte"
 
@@ -573,7 +589,7 @@ msgstr "Nom d’utilisateur"
 msgid "W"
 msgstr "W"
 
-#: c2c_items.html:89 common/navbar.html:66 route.html:101 search.html:24
+#: c2c_items.html:71 common/navbar.html:69 route.html:101 search.html:24
 #: waypoint.html:142
 msgid "Waypoints"
 msgstr "Points de passage"
@@ -1758,6 +1774,9 @@ msgstr "direction du vent"
 #: fixed_strings.html:311
 msgid "wind_speed"
 msgstr "vitesse du vent"
+
+#~ msgid "Add a item"
+#~ msgstr "Ajouter un sous-filtre"
 
 #~ msgid "*Sort buttons on table sorts only loaded data.*"
 #~ msgstr "*Le tri sur le tableau n’est effectif que sur les données chargées. Le tri global n’est pas (encore?) disponible sur [CampToCamp](https://www.camptocamp.org)*"
