@@ -16,7 +16,7 @@ app.controller("statisticsController", ["$ocLazyLoad", "analytics",function($ocL
 
             var dataset = function(label, backgroundColor){
                 return {
-                    label : label || "(home)",
+                    label : decodeURIComponent(label) || "(home)",
                     data : new Array(20).fill(0),
                     backgroundColor : backgroundColor
                 }
