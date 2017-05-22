@@ -25,6 +25,10 @@ app.factory('analytics', ['$resource', function($resource){
         ping: $resource('/analytics/ping', {}, {
             send: {method: 'POST'},
         }),
+
+        statistics: $resource('/analytics/statistics', {}, {
+            get: {method: 'GET'},
+        }),
     };
 }]);
 

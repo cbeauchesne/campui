@@ -29,3 +29,25 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+
+"""
+class Document(object):
+    name = models.CharField(max_length=256, unique=True)
+    metadata = JSONField(default=dict)
+    content = models.CharField()
+"""
+
+"""
+/special/login
+/special/register
+
+/nom de site : nom de voie => page nds : ndv, rendu route
+/le portail de la patate => page le portail de la patate, rendu portal
+
+/user/coucou  => page user/coucou, espace de nom user
+/area/xxx     => page area/xxx esapace de nom area
+/
+
+
+"""

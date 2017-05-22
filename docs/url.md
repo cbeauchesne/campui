@@ -3,6 +3,8 @@
 * /{Technical}
   * /api :white_check_mark:
   * /static :white_check_mark:
+  * /analytics :white_check_mark:
+* /special/{action}
   * /login :white_check_mark:
   * /register :x:
   * /me
@@ -30,6 +32,6 @@
   * /outing-images :white_check_mark:
   * /images :x:
   * /books :x:
-  * /stats : :x:
+  * /stats :x:
   * /{cutom_portal} :white_check_mark:
   

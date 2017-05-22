@@ -1,10 +1,12 @@
-from django.views.generic import View
-from django.http import HttpResponse
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from analytics.models import Statistic, Analytic, PageState, Domain
+from analytics.serializers import PageStateSerializer, DomainSerializer, StatisticSerializer
+
 import datetime
 
 
-class AnalyticView(View):
+class AnalyticView(APIView):
     def post(self, request, *args, **kwargs):
         referer = request.META.get('HTTP_REFERER').split("/")
 
@@ -16,26 +18,33 @@ class AnalyticView(View):
 
         Analytic.objects.create(page_state=ps_object, domain=domain_object)
 
-        return HttpResponse("")
+        return Response("Ok")
 
 
-class StatisticView(View):
-    def get(self, request):
+class StatisticView(APIView):
+    def post(self, request):
 
         date = datetime.date.today()
 
         result = []
 
         for i in range(10):
+            date = date + datetime.timedelta(days=-1)
             self._compute(date)
             result += Statistic.objects.filter(date=date)  # marche pas..
 
-            date = date + datetime.timedelta(days=-1)
+        return Response(str(result))
 
-        return HttpResponse(str(result))
+    def get(self, request, *args, **kwargs):
+        from_date = datetime.date.today() - datetime.timedelta(days=20)
 
-    def post(self, request, *args, **kwargs):
-        date = datetime.date.today()
+        statistics = [StatisticSerializer(s).data for s in Statistic.objects.filter(date__gte=from_date)]
+        page_states = [PageStateSerializer(p).data for p in PageState.objects.all()]
+        domains = [DomainSerializer(d).data for d in Domain.objects.all()]
+
+        return Response({"statistics": statistics,
+                         "page_states": page_states,
+                         "domains": domains})
 
     def _compute(self, date):
         states = PageState.objects.all()
