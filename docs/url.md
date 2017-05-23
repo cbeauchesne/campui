@@ -4,22 +4,13 @@
   * /api :white_check_mark:
   * /static :white_check_mark:
   * /analytics :white_check_mark:
+
 * /special/{action}
   * /login :white_check_mark:
   * /register :x:
-  * /me
-* /{namespace}/{document_id}[/sub_page]
-  * /route/id :white_check_mark:
-  * /waypoint/id :white_check_mark:
-  * /user/id :x:
-  * /area/id :white_check_mark:
-  * /article/id :white_check_mark:
-  * /outing/id :white_check_mark:
-  * /xreport/id :x:
-  * /image/id :x:
-  * /book/id :x:
-  * /doc/id  :x:
-* /{portal_name}
+  * /me :white_check_mark:
+
+* /{portal_name}  *direct rendering of a template*
   * /routes :white_check_mark:
   * /waypoints :white_check_mark:
   * /users :white_check_mark:
@@ -34,4 +25,17 @@
   * /books :x:
   * /stats :x:
   * /{cutom_portal} :white_check_mark:
+
+* /{namespace}/{document_id}[/sub_page] *page in DB*
+  * /route/id :white_check_mark:
+  * /waypoint/id :white_check_mark:
+  * /user/id :x:
+  * /area/id :white_check_mark:
+  * /article/id :white_check_mark:
+  * /outing/id :white_check_mark:
+  * /xreport/id :x:
+  * /image/id :x:
+  * /book/id :x:
+  * /doc/id  :x:
+  * /discussion/{namespace}/{id_or_name}
   
