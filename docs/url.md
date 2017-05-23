@@ -24,7 +24,7 @@
   * /images :x:
   * /books :x:
   * /stats :x:
-  * /{cutom_portal} :white_check_mark:
+  * /{cutom_portal} shortchut to /portal/name :white_check_mark:
 
 * /{namespace}/{document_id}[/sub_page] *page in DB*
   * /route/id :white_check_mark:
@@ -36,6 +36,12 @@
   * /xreport/id :x:
   * /image/id :x:
   * /book/id :x:
-  * /doc/id  :x:
-  * /discussion/{namespace}/{id_or_name}
+  * /portal/name  :x:
+  * /{namespace}/{id_or_name}?discussions
   
+* api
+  * /api/document?name={namespace/name}[&mode={raw}][&version={id}]
+    * GET
+    * POST
+    * PUT
+    * DELETE
