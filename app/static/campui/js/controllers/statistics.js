@@ -28,7 +28,13 @@ app.controller("statisticsController", ["$ocLazyLoad", "analytics",function($ocL
                 "outing" : dataset("outing","green"),
                 "waypoint" : dataset("waypoint","gold"),
                 "outings" : dataset("outings","purple"),
+                "search" : dataset("search","maroon"),
+                "stories" : dataset("stories","aqua"),
+                "routes" : dataset("routes","chartreuse"),
+                "outing-images" : dataset("outing-images","coral"),
+                "statistics" : dataset("statistics","deeppink"),
             }
+
             var dates = {}
             var pageStates = {}
 

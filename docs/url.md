@@ -4,8 +4,10 @@
   * /api :white_check_mark:
   * /static :white_check_mark:
   * /analytics :white_check_mark:
+  * /static :white_check_mark:
+  * /media :x:
 
-* /special/{action}
+* /{special}
   * /login :white_check_mark:
   * /register :x:
   * /me :white_check_mark:
@@ -24,9 +26,9 @@
   * /images :x:
   * /books :x:
   * /stats :x:
-  * /{cutom_portal} shortchut to /portal/name :white_check_mark:
+  * /{cutom_portal} :white_check_mark:
 
-* /{namespace}/{document_id}[/sub_page] *page in DB*
+* /{this}/{is}/{rules} *page in DB*
   * /route/id :white_check_mark:
   * /waypoint/id :white_check_mark:
   * /user/id :x:
@@ -36,12 +38,19 @@
   * /xreport/id :x:
   * /image/id :x:
   * /book/id :x:
-  * /portal/name  :x:
-  * /{namespace}/{id_or_name}?discussions
+  * /{namespace}/{id_or_name}/discussion
   
 * api
-  * /api/document?name={namespace/name}[&mode={raw}][&version={id}]
-    * GET
-    * POST
-    * PUT
-    * DELETE
+  * /document/{name}
+    * PUT -> create
+    * GET -> no comment
+    * POST -> update
+    * DELETE -> delete
+  * /document/{name}?version={id}
+    * GET -> no comment
+  * /document/{name}?view=raw
+    * GET -> no comment
+  * /document/{name}?view=history
+    * GET -> no comment
+  * /recentchanges
+    * GET -> no comment

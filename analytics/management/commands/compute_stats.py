@@ -10,7 +10,7 @@ class Command(BaseCommand):
 
         date = datetime.date.today()
 
-        for i in range(1):
+        for i in range(3):
             _compute(date)
             date = date + datetime.timedelta(days=-1)
 
