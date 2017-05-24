@@ -9,6 +9,7 @@ class Forum(Thread):
         self._latest = "{}"
         self.lock = Lock()
         Thread.__init__(self)
+        self.daemon = True
 
     def run(self):
         while True:
