@@ -1,0 +1,32 @@
+<div class="ibox float-e-margins edit-view">
+
+    <div class="ibox-title">
+        <h1>
+            <i class="fa fa-edit"></i>
+            {{ctrl.document.name}}&nbsp;
+        </h1>
+    </div>
+    <div class="ibox-content">
+        <div class="form-group">
+            <textarea class="form-control"
+                      ng-model="ctrl.document.content"></textarea>
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control"
+                   placeholder="{{'comment' | translate }}"
+                    ng-model="ctrl.comment"
+                    />
+        </div>
+
+
+        <div class="form-group">
+            <button class="btn btn-primary"
+                    ng-click="ctrl.update()"
+                    translate>
+                update
+            </button>
+        </div>
+
+    </div>
+</div>

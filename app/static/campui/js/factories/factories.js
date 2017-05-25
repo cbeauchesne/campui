@@ -65,7 +65,7 @@ app.factory('anonymousProfile', ["gettextCatalog", function(gettextCatalog){
 
 }])
 
-app.factory('currentUser', ["api", "anonymousProfile","$state", function(api, anonymousProfile, $state){
+app.factory('currentUser', ["api", "anonymousProfile", "$state", function(api, anonymousProfile, $state){
 
     var user = api.currentUser.get(function(data){
         setUser(user, data)

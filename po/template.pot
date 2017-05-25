@@ -198,10 +198,6 @@ msgstr ""
 msgid "E"
 msgstr ""
 
-#: portals/ice_climbing.html:24
-msgid "Edit"
-msgstr ""
-
 #: factories/factories.js:727
 msgid "Elevation"
 msgstr ""
@@ -288,10 +284,6 @@ msgstr ""
 msgid "Incidents"
 msgstr ""
 
-#: portals/ice_climbing.html:22
-msgid "Informations"
-msgstr ""
-
 #: fixed_strings.html:330
 msgid "Invalid username/password."
 msgstr ""
@@ -371,10 +363,6 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: portals/ice_climbing.html:39
-msgid "News"
-msgstr ""
-
 #: common/ibox_tools.html:19
 msgid "Next"
 msgstr ""
@@ -410,7 +398,6 @@ msgstr ""
 
 #: common/navbar.html:57
 #: home.html:22
-#: portals/ice_climbing.html:48
 msgid "Outings"
 msgstr ""
 
@@ -593,10 +580,6 @@ msgstr ""
 #: factories/factories.js:732
 #: factories/factories.js:745
 msgid "Type"
-msgstr ""
-
-#: portals/ice_climbing.html:25
-msgid "Update these informations"
 msgstr ""
 
 #: c2c_items.html:66
@@ -859,6 +842,10 @@ msgstr ""
 
 #: waypoint.html:51
 msgid "climbing_styles"
+msgstr ""
+
+#: edit.html:17
+msgid "comment"
 msgstr ""
 
 #: fixed_strings.html:56
@@ -1482,12 +1469,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
@@ -1773,6 +1760,10 @@ msgstr ""
 #: fixed_strings.html:44
 #: fixed_strings.html:60
 msgid "types"
+msgstr ""
+
+#: edit.html:24
+msgid "update"
 msgstr ""
 
 #: fixed_strings.html:287

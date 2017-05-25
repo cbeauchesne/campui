@@ -30,10 +30,3 @@ def create_user_profile(sender, instance, created, **kwargs):
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 
-
-"""
-class Document(object):
-    name = models.CharField(max_length=256, unique=True)
-    metadata = JSONField(default=dict)
-    content = models.CharField()
-"""

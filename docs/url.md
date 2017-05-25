@@ -12,7 +12,8 @@
   * /register :x:
   * /me :white_check_mark:
 
-* /{portal_name}  *direct rendering of a template*
+* /{this}/{is}/{rules} *page in DB*
+
   * /routes :white_check_mark:
   * /waypoints :white_check_mark:
   * /users :white_check_mark:
@@ -26,9 +27,7 @@
   * /images :x:
   * /books :x:
   * /stats :x:
-  * /{cutom_portal} :white_check_mark:
 
-* /{this}/{is}/{rules} *page in DB*
   * /route/id :white_check_mark:
   * /waypoint/id :white_check_mark:
   * /user/id :x:
@@ -38,7 +37,9 @@
   * /xreport/id :x:
   * /image/id :x:
   * /book/id :x:
+
   * /{namespace}/{id_or_name}/discussion
+  * /{portal} :white_check_mark:
   
 * api
   * /document/{name}

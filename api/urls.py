@@ -8,7 +8,7 @@ router = routers.DefaultRouter()
 
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
+  #  url(r'^', include(router.urls)),
     url(r'^auth$', views.AuthView.as_view()),
     url(r'^user/(?P<username>[a-zA-Z0-9-]+)$', views.UserView.as_view()),
     url(r'^current_user$', views.CurrentUserView.as_view()),

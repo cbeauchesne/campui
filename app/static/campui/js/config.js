@@ -106,26 +106,32 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         controller: 'statisticsController'
     })
 
-    $stateProvider.state("portal", {
-        url: "/{name}",
-        templateProvider: ["customization", "$stateParams", "c2c", "$q", "locale", "$templateFactory", function(customization, $stateParams, c2c,  $q, locale,  $templateFactory){
+    $stateProvider.state("document", {
+        url: "/{name}?view",
+        templateUrl: function($stateParams){
 
-            var portal = customization.portals.filter(function(p){return p.name==$stateParams.name})[0]
-
-            if(portal.template_article){
-                var defer = $q.defer();
-                var t =  c2c.article.get({id:portal.document_id}).$promise.then(function(response){
-                    defer.resolve(locale.get(response).description)
-                })
-
-                return defer.promise
+            if(!$stateParams.view){
+                return 'api/document/' + $stateParams.name + '?view=raw'
             }
-            else if(portal.template_url){
-                return  $templateFactory.fromUrl(portal.template_url)
+            else if ($stateParams.view=='edit'){
+                return 'static/campui/views/edit.html'
+            }
+        },
+        controllerAs:'ctrl',
+        controller: ["wapi", "$stateParams", "$state", function(wapi, $stateParams, $state){
+            var _this = this
+            this.document = wapi.document.get({name:$stateParams.name})
+            this.update = function(){
+                wapi.document.update({name:$stateParams.name}, {document:_this.document, comment:_this.comment},
+                function(){
+                    $state.go("document", {"name":$stateParams.name, "view":undefined})
+                },
+                function(response){
+                    console.log(response)
+                })
             }
         }]
     })
-
 }]);
 
 app.config(['tmhDynamicLocaleProvider', function(tmhDynamicLocaleProvider) {
