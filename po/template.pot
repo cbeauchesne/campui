@@ -256,6 +256,7 @@ msgstr ""
 msgid "Height diff"
 msgstr ""
 
+#: history.html:6
 #: route.html:126
 msgid "History"
 msgstr ""
@@ -1469,12 +1470,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
@@ -1762,7 +1763,7 @@ msgstr ""
 msgid "types"
 msgstr ""
 
-#: edit.html:24
+#: edit.html:23
 msgid "update"
 msgstr ""
 

@@ -11,28 +11,36 @@ def get_document(name):
 
 class DocumentView(APIView):
     def get(self, request, name):
-        doc = get_document(name)
 
         view = request.query_params.get('view', None)
 
         if not view:
-            return Response({"id": doc.id,
-                             "name": doc.name,
-                             "metadata": doc.metadata,
-                             "content": doc.content})
+            doc = get_document(name)
+            return Response(doc.to_json())
 
         if view == "raw":
+            doc = get_document(name)
             response = HttpResponse(doc.content, content_type="text/plain")
             return response
+
+        if view == "history":
+            doc = get_document(name)
+            versions = doc.history.all()
+            versions = [{"date": v.history_date,
+                         "user": v.history_user.username if v.history_user else None,
+                         "document": v.history_object.to_json()} for v in versions]
+
+            return Response({"name": name,
+                             "versions": versions})
 
         return HttpResponseBadRequest("Unexpected view mode")
 
     def post(self, request, name):
         doc = get_document(name=name)
         new_doc = request.data["document"]
-        comment = request.data["comment"]
 
         doc.content = new_doc["content"]
+        doc.comment = new_doc["comment"]
         doc.save()
 
         return Response("ok")

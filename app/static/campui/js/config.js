@@ -116,19 +116,29 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             else if ($stateParams.view=='edit'){
                 return 'static/campui/views/edit.html'
             }
+            else if ($stateParams.view=='history'){
+                return 'static/campui/views/history.html'
+            }
         },
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", "$state", function(wapi, $stateParams, $state){
             var _this = this
-            this.document = wapi.document.get({name:$stateParams.name})
-            this.update = function(){
-                wapi.document.update({name:$stateParams.name}, {document:_this.document, comment:_this.comment},
-                function(){
-                    $state.go("document", {"name":$stateParams.name, "view":undefined})
-                },
-                function(response){
-                    console.log(response)
-                })
+
+            if ($stateParams.view=='edit'){
+                this.document = wapi.document.get({name:$stateParams.name})
+
+                this.update = function(){
+                    wapi.document.update({name:$stateParams.name}, {document:_this.document, comment:_this.comment},
+                    function(){
+                        $state.go("document", {"name":$stateParams.name, "view":undefined})
+                    },
+                    function(response){
+                        console.log(response)
+                    })
+                }
+            }
+            else if ($stateParams.view=='history'){
+                this.versions = wapi.document.history({name:$stateParams.name})
             }
         }]
     })

@@ -1,0 +1,22 @@
+<div class="ibox float-e-margins history-view">
+
+    <div class="ibox-title">
+        <h1>
+            <i class="fa fa-history"></i>
+            <span translate>History</span>
+            :
+            {{ctrl.versions.name}}&nbsp;
+        </h1>
+    </div>
+    <div class="ibox-content">
+
+        <ul>
+            <li ng-repeat="version in ctrl.versions.versions">
+                {{version.date}}
+                {{version.user}}
+                {{version.document.comment}}
+            </li>
+        </ul>
+
+    </div>
+</div>
