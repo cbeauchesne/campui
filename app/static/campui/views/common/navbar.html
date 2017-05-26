@@ -13,6 +13,33 @@
     <div class="navbar-collapse collapse" id="navbar">
         <ul class="nav navbar-nav">
 
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    <i class="fa fa-star"></i>
+                    <span>Wiki</span>
+                    <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li ui-sref-active="active">
+                        <a href="/recentchanges">
+                            <i class="fa fa-heart"></i>
+                            <span class="nav-label" translate>recent changes</span>
+                        </a>
+                    </li>
+
+                    <li ui-sref-active="active">
+                        <a href="/{{'Community' | translate }}">
+                            <i class="fa fa-heart"></i>
+                            <span class="nav-label" translate>Community</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
             <li class="dropdown" ng-controller="customizationController as cst" ng-hide="!cst.portals">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                    aria-expanded="false">
@@ -111,7 +138,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://forum.camptocamp.org/t/v6-faites-evoluer-la-maquette-avec-nous/183795/10000" target="_blank">
+                        <a href="https://forum.camptocamp.org/t/v6-faites-evoluer-la-maquette-avec-nous/183795/10000"
+                           target="_blank">
                             <i class="fa fa-bug"></i> <span class="nav-label" translate>Report a bug</span>
                         </a>
                     </li>

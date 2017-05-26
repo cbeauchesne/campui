@@ -1,0 +1,28 @@
+<div class="ibox">
+
+    <div class="ibox-title">
+        <h1>
+            <i class="fa fa-history"></i>
+            <span translate>Recent changes</span>
+        </h1>
+    </div>
+
+    <div class="ibox-content">
+        <ul>
+            <li ng-repeat="version in ctrl.versions.versions">
+                <a href="{{ctrl.versions.name}}?diff={{version.id}}">[diff]</a>
+                <a href="{{ctrl.versions.name}}?oldid={{version.id}}">
+                    {{version.date | date }}
+                    <span translate>at</span>
+                    {{version.date | date :'HH:mm' }}
+                </a>
+                <a href="/user/{{version.user}}">{{version.user}}</a>
+                <a ui-sref="document({name:version;document.name})">{{version.document.name}}</a>
+                :
+                <span class="history-comment">{{version.document.comment}}</span>
+            </li>
+        </ul>
+
+    </div>
+
+</div>

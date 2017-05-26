@@ -117,7 +117,7 @@ msgstr ""
 msgid "Area"
 msgstr ""
 
-#: common/navbar.html:75
+#: common/navbar.html:102
 #: factories/factories.js:721
 #: outing.html:23
 #: route.html:30
@@ -125,12 +125,12 @@ msgstr ""
 msgid "Areas"
 msgstr ""
 
-#: common/navbar.html:95
+#: common/navbar.html:122
 #: home.html:73
 msgid "Articles"
 msgstr ""
 
-#: common/navbar.html:39
+#: common/navbar.html:66
 msgid "Ask a new portal"
 msgstr ""
 
@@ -146,11 +146,16 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
+#: common/navbar.html:34
+#: common/navbar.html:36
+msgid "Community"
+msgstr ""
+
 #: outing.html:44
 msgid "Conditions"
 msgstr ""
 
-#: common/navbar.html:110
+#: common/navbar.html:137
 msgid "Contact"
 msgstr ""
 
@@ -227,7 +232,7 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
-#: common/navbar.html:125
+#: common/navbar.html:153
 msgid "FAQ"
 msgstr ""
 
@@ -291,7 +296,7 @@ msgstr ""
 msgid "Impacted people"
 msgstr ""
 
-#: common/navbar.html:102
+#: common/navbar.html:129
 msgid "Incidents"
 msgstr ""
 
@@ -307,11 +312,11 @@ msgstr ""
 msgid "Load more items"
 msgstr ""
 
-#: common/navbar.html:185
+#: common/navbar.html:213
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:150
+#: common/navbar.html:178
 #: login.html:19
 msgid "Login"
 msgstr ""
@@ -340,7 +345,7 @@ msgstr ""
 msgid "Minimum length : 8 characters"
 msgstr ""
 
-#: common/navbar.html:87
+#: common/navbar.html:114
 msgid "Misc"
 msgstr ""
 
@@ -352,7 +357,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:169
+#: common/navbar.html:197
 msgid "My page"
 msgstr ""
 
@@ -407,13 +412,13 @@ msgstr ""
 msgid "Outing"
 msgstr ""
 
-#: common/navbar.html:57
+#: common/navbar.html:84
 #: home.html:22
 msgid "Outings"
 msgstr ""
 
 #: common/ibox_tools.html:56
-#: common/navbar.html:176
+#: common/navbar.html:204
 #: me.html:6
 msgid "Parameters"
 msgstr ""
@@ -427,7 +432,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: common/navbar.html:20
+#: common/navbar.html:47
 msgid "Portals"
 msgstr ""
 
@@ -451,6 +456,10 @@ msgstr ""
 msgid "Ratings"
 msgstr ""
 
+#: recentchanges.html:6
+msgid "Recent changes"
+msgstr ""
+
 #: route.html:132
 #: waypoint.html:138
 msgid "Recent outings"
@@ -468,7 +477,7 @@ msgstr ""
 msgid "Repeat password"
 msgstr ""
 
-#: common/navbar.html:115
+#: common/navbar.html:143
 msgid "Report a bug"
 msgstr ""
 
@@ -496,7 +505,7 @@ msgstr ""
 msgid "Route length"
 msgstr ""
 
-#: common/navbar.html:63
+#: common/navbar.html:90
 #: home.html:54
 #: search.html:13
 #: waypoint.html:128
@@ -527,7 +536,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:137
+#: common/navbar.html:165
 msgid "Search"
 msgstr ""
 
@@ -555,7 +564,7 @@ msgstr ""
 msgid "Snow/ice ratings"
 msgstr ""
 
-#: common/navbar.html:120
+#: common/navbar.html:148
 msgid "Statistics"
 msgstr ""
 
@@ -583,7 +592,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: common/navbar.html:50
+#: common/navbar.html:77
 msgid "Topo"
 msgstr ""
 
@@ -610,7 +619,7 @@ msgid "W"
 msgstr ""
 
 #: c2c_items.html:71
-#: common/navbar.html:69
+#: common/navbar.html:96
 #: route.html:101
 #: search.html:24
 #: waypoint.html:142
@@ -688,6 +697,7 @@ msgid "association"
 msgstr ""
 
 #: history.html:18
+#: recentchanges.html:16
 msgid "at"
 msgstr ""
 
@@ -1507,6 +1517,10 @@ msgstr ""
 
 #: fixed_strings.html:170
 msgid "range"
+msgstr ""
+
+#: common/navbar.html:29
+msgid "recent changes"
 msgstr ""
 
 #: fixed_strings.html:175

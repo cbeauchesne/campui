@@ -101,6 +101,15 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         controller: 'statisticsController'
     })
 
+    $stateProvider.state('recentchanges', {
+        url: "/recentchanges",
+        templateUrl: 'static/campui/views/recentchanges.html',
+        controllerAs:'ctrl',
+        controller: ["wapi", function(wapi){
+            this.versions = wapi.recentChanges.get()
+        }]
+    })
+
     $stateProvider.state("document", {
         url: "/{name}?view",
         templateUrl: function($stateParams){

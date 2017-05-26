@@ -11,5 +11,8 @@ app.factory('wapi', ['$resource', function($resource){
             update : {method: 'POST'},
             history : {method: 'GET', params: {view:"history"}}
         }),
+        recentChanges : $resource('/api/recentchanges', {}, {
+            get: {method: 'GET'},
+        }),
     };
 }]);
