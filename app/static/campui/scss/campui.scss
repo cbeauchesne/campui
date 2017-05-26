@@ -82,12 +82,15 @@ gallery{
     font-size: 16px;
 }
 
-.ibox-title h3 , .ibox-title h4{
+.ibox-title h1,
+.ibox-title h2,
+.ibox-title h3,
+.ibox-title h4{
   display: inline-block;
   margin: 0 0 7px;
   padding: 0;
   text-overflow: ellipsis;
-  float: left;
+ // float: left;
 }
 
 .ibox .ibox-title,
@@ -443,7 +446,7 @@ text-align:justify
 ////////////////////////////////////////////////////////////////////
 // c2c-items-view
 
-.c2c-items-view h3:first-letter{
+.c2c-items-view h1:first-letter{
     text-transform: uppercase;
 }
 

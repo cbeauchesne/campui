@@ -1,4 +1,4 @@
-<div class="ibox float-e-margins history-view">
+<div class="ibox history-view">
 
     <div class="ibox-title">
         <h1>
@@ -9,12 +9,17 @@
         </h1>
     </div>
     <div class="ibox-content">
-
         <ul>
             <li ng-repeat="version in ctrl.versions.versions">
-                {{version.date}}
-                {{version.user}}
-                {{version.document.comment}}
+                <a href="{{ctrl.versions.name}}?diff={{version.id}}">[diff]</a>
+                <a href="{{ctrl.versions.name}}?oldid={{version.id}}">
+                    {{version.date | date }}
+                    <span translate>at</span>
+                    {{version.date | date :'HH:mm' }}
+                </a>
+                <a href="/user/{{version.user}}">{{version.user}}</a>
+                :
+                <span class="history-comment">{{version.document.comment}}</span>
             </li>
         </ul>
 

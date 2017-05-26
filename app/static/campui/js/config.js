@@ -125,7 +125,9 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             var _this = this
 
             if ($stateParams.view=='edit'){
-                this.document = wapi.document.get({name:$stateParams.name})
+                this.document = wapi.document.get({name:$stateParams.name}, function(){
+                    _this.document.comment = undefined
+                })
 
                 this.update = function(){
                     wapi.document.update({name:$stateParams.name}, {document:_this.document, comment:_this.comment},

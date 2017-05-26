@@ -1,6 +1,6 @@
-<div class="{{c2c_item}}s-view c2c-items-view ibox float-e-margins">
+<div class="{{c2c_item}}s-view c2c-items-view ibox">
     <div class="ibox-title">
-        <h3>{{c2c_item + 's' | translate}}</h3>
+        <h1>{{c2c_item + 's' | translate}}</h1>
 
         <div ng-if="data" class="onoffswitch" uib-tooltip="{{ 'map' | translate }}">
             <input type="checkbox" ng-model="mapData.visible" ng-change="mapData.toggleMapView(data)"

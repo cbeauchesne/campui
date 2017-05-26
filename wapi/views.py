@@ -26,7 +26,8 @@ class DocumentView(APIView):
         if view == "history":
             doc = get_document(name)
             versions = doc.history.all()
-            versions = [{"date": v.history_date,
+            versions = [{"id": v.history_id,
+                         "date": v.history_date,
                          "user": v.history_user.username if v.history_user else None,
                          "document": v.history_object.to_json()} for v in versions]
 

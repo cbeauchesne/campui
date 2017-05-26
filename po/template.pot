@@ -190,12 +190,20 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#: directives/wiki-tools.html:9
+msgid "Discussion"
+msgstr ""
+
 #: login.html:25
 msgid "Do not have an account?"
 msgstr ""
 
 #: fixed_strings.html:180
 msgid "E"
+msgstr ""
+
+#: directives/wiki-tools.html:4
+msgid "Edit"
 msgstr ""
 
 #: factories/factories.js:727
@@ -256,6 +264,7 @@ msgstr ""
 msgid "Height diff"
 msgstr ""
 
+#: directives/wiki-tools.html:14
 #: history.html:6
 #: route.html:126
 msgid "History"
@@ -675,6 +684,10 @@ msgstr ""
 
 #: fixed_strings.html:159
 msgid "association"
+msgstr ""
+
+#: history.html:17
+msgid "at"
 msgstr ""
 
 #: fixed_strings.html:277
