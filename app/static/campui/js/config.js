@@ -74,11 +74,6 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         controller : "searchController"
     })
 
-    $stateProvider.state('faq', {
-        url: "/faq",
-        templateUrl: "static/campui/views/faq.html",
-    })
-
     $stateProvider.state('me', {
         url: "/me",
         templateUrl: 'static/campui/views/me.html',
