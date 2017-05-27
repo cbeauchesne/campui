@@ -10,8 +10,9 @@
     <div class="ibox-content">
         <ul>
             <li ng-repeat="version in ctrl.versions.versions">
-                <a href="{{version.name}}?diff={{version.hid}}">[diff]</a>
-                <a href="{{version.name}}?oldid={{version.hid}}">
+                <a class="badge badge-primary" ui-sref="diff({name:version.name, hid:version.hid})">diff</a>
+                <a class="badge badge-info" ui-sref="edit({name:version.name, hid:version.hid})">edit</a>
+                <a ui-sref="oldDocument({name:version.name, hid:version.hid})">
                     {{version.date | date }}
                     <span translate>at</span>
                     {{version.date | date :'HH:mm' }}

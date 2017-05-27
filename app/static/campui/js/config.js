@@ -120,16 +120,15 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     })
 
     $stateProvider.state("edit", {
-        url: "/edit?name",
+        url: "/edit?name&hid",
         templateUrl: 'static/campui/views/edit.html',
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", "$state", function(wapi, $stateParams, $state){
             var _this = this
-            this.document = wapi.document.get({name:$stateParams.name}, function(document){
-                document.comment = undefined
-            })
+            this.document = wapi.document.get($stateParams)
 
             this.update = function(){
+                _this.document.comment = _this.comment
                 wapi.document.update({name:$stateParams.name}, {document:_this.document},
                 function(){
                     $state.go("document", {"name":$stateParams.name})
@@ -147,6 +146,14 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             return 'api/document/' + $stateParams.name + '?view=raw'
         },
     })
+
+    $stateProvider.state("oldDocument", {
+        url: "/old?name&hid",
+        templateUrl: function($stateParams){
+            return 'api/document/' + $stateParams.name + '?view=raw&hid=' + $stateParams.hid
+        },
+    })
+
 }]);
 
 app.config(['tmhDynamicLocaleProvider', function(tmhDynamicLocaleProvider) {

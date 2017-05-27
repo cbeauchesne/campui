@@ -10,6 +10,16 @@
         <wiki-tools/>
     </div>
     <div class="ibox-content">
+        <div>
+            Version
+            {{ctrl.document.date | date }}
+            <span translate="date at time">at</span>
+            {{ctrl.document.date | date :'HH:mm' }}
+            by
+            <a href="/user/{{ctrl.document.user}}">{{ctrl.document.user}}</a>
+            :
+            <span class="history-comment">{{ctrl.document.comment}}</span>
+        </div>
         <div class="form-group">
             <textarea class="form-control"
                       ng-model="ctrl.document.content"></textarea>
@@ -18,7 +28,7 @@
         <div class="form-group">
             <input type="text" class="form-control" required
                    placeholder="{{'comment' | translate }}"
-                    ng-model="ctrl.document.comment"
+                    ng-model="ctrl.comment"
                     />
         </div>
 

@@ -696,8 +696,9 @@ msgstr ""
 msgid "association"
 msgstr ""
 
-#: history.html:18
-#: recentchanges.html:16
+#: edit.html:16
+#: history.html:19
+#: recentchanges.html:17
 msgid "at"
 msgstr ""
 
@@ -869,7 +870,7 @@ msgstr ""
 msgid "climbing_styles"
 msgstr ""
 
-#: edit.html:20
+#: edit.html:30
 msgid "comment"
 msgstr ""
 
@@ -1791,7 +1792,7 @@ msgstr ""
 msgid "types"
 msgstr ""
 
-#: edit.html:26
+#: edit.html:36
 msgid "update"
 msgstr ""
 
