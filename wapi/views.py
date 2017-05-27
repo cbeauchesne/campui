@@ -23,7 +23,7 @@ class DocumentView(APIView):
 
         if not view:
             doc = get_document(name)
-            return Response(doc.to_json())
+            return Response({"document":doc.to_json()})
 
         if view == "raw":
             doc = get_document(name)
@@ -32,6 +32,8 @@ class DocumentView(APIView):
 
         if view == "history":
             doc = get_document(name)
+            limit = request.query_params.get('limit', None)
+            offest = request.query_params.get('offest', None)
             versions = _versions_to_json(doc.history.all())
 
             return Response({"name": name,
