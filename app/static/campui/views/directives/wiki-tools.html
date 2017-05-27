@@ -1,16 +1,16 @@
 <div class="wiki-tools dropdown pull-right hidden-print" dropdown>
 
-    <a href="{{name}}?view=edit"
+    <a ui-sref="edit({name:name})"
        uib-tooltip="{{ 'Edit'| translate }}">
         <i class="fa fa-edit"></i>
     </a>
 
-    <a href="{{name}}/Discussion"
+    <a ui-sref="discussion({name:name})"
        uib-tooltip="{{ 'Discussion'| translate }}">
-        <i class="fa fa-question"></i>
+        <i class="fa fa-comments"></i>
     </a>
 
-    <a href="{{name}}?view=history"
+    <a ui-sref="history({name:name})"
        uib-tooltip="{{ 'History'| translate }}">
         <i class="fa fa-history"></i>
     </a>

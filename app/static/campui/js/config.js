@@ -110,43 +110,42 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         }]
     })
 
-    $stateProvider.state("document", {
-        url: "/{name}?view",
-        templateUrl: function($stateParams){
+    $stateProvider.state("history", {
+        url: "/history?name",
+        templateUrl: 'static/campui/views/history.html',
+        controllerAs:'ctrl',
+        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
+            this.versions = wapi.document.history({name:$stateParams.name})
+        }]
+    })
 
-            if(!$stateParams.view){
-                return 'api/document/' + $stateParams.name + '?view=raw'
-            }
-            else if ($stateParams.view=='edit'){
-                return 'static/campui/views/edit.html'
-            }
-            else if ($stateParams.view=='history'){
-                return 'static/campui/views/history.html'
-            }
-        },
+    $stateProvider.state("edit", {
+        url: "/edit?name",
+        templateUrl: 'static/campui/views/edit.html',
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", "$state", function(wapi, $stateParams, $state){
             var _this = this
+            this.document = wapi.document.get({name:$stateParams.name}, function(document){
+                document.comment = undefined
+            })
 
-            if ($stateParams.view=='edit'){
-                this.document = wapi.document.get({name:$stateParams.name}, function(){
-                    _this.document.comment = undefined
+            this.update = function(){
+                wapi.document.update({name:$stateParams.name}, {document:_this.document},
+                function(){
+                    $state.go("document", {"name":$stateParams.name})
+                },
+                function(response){
+                    console.log(response)
                 })
-
-                this.update = function(){
-                    wapi.document.update({name:$stateParams.name}, {document:_this.document, comment:_this.comment},
-                    function(){
-                        $state.go("document", {"name":$stateParams.name, "view":undefined})
-                    },
-                    function(response){
-                        console.log(response)
-                    })
-                }
-            }
-            else if ($stateParams.view=='history'){
-                this.versions = wapi.document.history({name:$stateParams.name})
             }
         }]
+    })
+
+    $stateProvider.state("document", {
+        url: "/{name}",
+        templateUrl: function($stateParams){
+            return 'api/document/' + $stateParams.name + '?view=raw'
+        },
     })
 }]);
 

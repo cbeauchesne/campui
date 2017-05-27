@@ -49,9 +49,9 @@ class DocumentView(APIView):
 
         if view == "history":
             doc = get_document(name)
-            limit = request.query_params.get('limit', None)
-            offest = request.query_params.get('offest', None)
-            versions = _versions_to_json(doc.history.all())
+            limit = request.query_params.get('limit', 30)
+            offset = request.query_params.get('offset', 0)
+            versions = _versions_to_json(doc.history.all()[offset:offset+limit])
 
             return Response({"name": name,
                              "versions": versions})
@@ -71,9 +71,9 @@ class DocumentView(APIView):
 
 class RecentChangesView(APIView):
     def get(self, request):
-        limit = request.query_params.get('limit', None)
-        offest = request.query_params.get('offest', None)
+        limit = request.query_params.get('limit', 30)
+        offset = request.query_params.get('offset', 0)
 
-        versions = _versions_to_json(Document.history.all())
+        versions = _versions_to_json(Document.history.all()[offset:offset+limit])
 
         return Response({"versions": versions})
