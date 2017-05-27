@@ -10,8 +10,8 @@
     <div class="ibox-content">
         <ul>
             <li ng-repeat="version in ctrl.versions.versions">
-                <a href="{{ctrl.versions.name}}?diff={{version.hid}}">[diff]</a>
-                <a href="{{ctrl.versions.name}}?oldid={{version.hid}}">
+                <a href="{{version.name}}?diff={{version.hid}}">[diff]</a>
+                <a href="{{version.name}}?oldid={{version.hid}}">
                     {{version.date | date }}
                     <span translate>at</span>
                     {{version.date | date :'HH:mm' }}
@@ -22,7 +22,5 @@
                 <span class="history-comment">{{version.comment}}</span>
             </li>
         </ul>
-
     </div>
-
 </div>
