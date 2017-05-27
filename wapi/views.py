@@ -9,25 +9,42 @@ def get_document(name):
     return Document.objects.get(name=name)
 
 
+def get_document_version(name, hid=None):
+    doc = get_document(name)
+
+    if hid:
+        return doc.history.get(history_id=hid)
+    else:
+        return doc.history.first()
+
+
+def _version_to_json(v):
+    result = v.history_object.to_json()
+
+    result["hid"] = v.history_id
+    result["date"] = v.history_date
+    result["user"] = v.history_user.username if v.history_user else None
+
+    return result
+
+
 def _versions_to_json(versions):
-    return [{"id": v.history_id,
-             "date": v.history_date,
-             "user": v.history_user.username if v.history_user else None,
-             "document": v.history_object.to_json()} for v in versions]
+    return [_version_to_json(v) for v in versions]
 
 
 class DocumentView(APIView):
     def get(self, request, name):
 
         view = request.query_params.get('view', None)
+        hid = request.query_params.get('hid', None)
 
         if not view:
-            doc = get_document(name)
-            return Response({"document":doc.to_json()})
+            doc = get_document_version(name, hid)
+            return Response(_version_to_json(doc))
 
         if view == "raw":
-            doc = get_document(name)
-            response = HttpResponse(doc.content, content_type="text/plain")
+            doc = get_document_version(name, hid)
+            response = HttpResponse(doc.history_object.content, content_type="text/plain")
             return response
 
         if view == "history":
