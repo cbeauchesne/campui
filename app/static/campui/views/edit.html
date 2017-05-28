@@ -11,12 +11,10 @@
     </div>
     <div class="ibox-content">
         <div>
-            Version
-            {{ctrl.document.date | date }}
-            <span translate="date at time">at</span>
-            {{ctrl.document.date | date :'HH:mm' }}
-            by
-            <a href="/user/{{ctrl.document.user}}">{{ctrl.document.user}}</a>
+
+            <old-document-link document="ctrl.document"/>
+            <span translate>by</span>
+            <a ui-sref="contributions({username:ctrl.document.user})">{{ctrl.document.user}}</a>
             :
             <span class="history-comment">{{ctrl.document.comment}}</span>
         </div>

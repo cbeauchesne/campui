@@ -1,8 +1,8 @@
 
 var app = angular.module('campui')
 
-app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
-function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$urlMatcherFactoryProvider', '$ocLazyLoadProvider',
+function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazyLoadProvider) {
     $urlRouterProvider.otherwise("/");
 
     $ocLazyLoadProvider.config({
@@ -134,6 +134,28 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         }]
     })
 
+    $stateProvider.state("create", {
+        url: "/create?name",
+        templateUrl: 'static/campui/views/create.html',
+        controllerAs:'ctrl',
+        controller: ["wapi", "$stateParams", "$state", function(wapi, $stateParams, $state){
+            var _this = this
+            this.document = {name:$stateParams.name, comment:"creation"}
+
+            this.document.create = function(){
+
+                wapi.document.create({name:_this.document.name}, {document:_this.document},
+                    function(){
+                        $state.go("document", {"name":_this.document.name})
+                    },
+                    function(response){
+                        console.log(response)
+                    }
+                )
+            }
+        }]
+    })
+
     $stateProvider.state("edit", {
         url: "/edit?name&hid",
         templateUrl: 'static/campui/views/edit.html',
@@ -200,24 +222,48 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         }]
     })
 
+    function valToString(val) { return val != null ? val.toString() : val; }
+    function valFromString(val) { return val != null ? val.toString() : val; }
+    function regexpMatches(val) { /*jshint validthis:true */ return this.pattern.test(val); }
+
+    $urlMatcherFactoryProvider.type("WapiName", {
+        encode: valToString,
+        decode: valFromString,
+        is: regexpMatches,
+        pattern: /.+/
+    });
+
+    var getRawUrl = function($stateParams){
+        var rawUrl = '/api/document/' + $stateParams.name + '?view=raw'
+        rawUrl += $stateParams.hid? "&hid=" + $stateParams.hid : ""
+        rawUrl += $stateParams.offset? "&offset=" + $stateParams.offset : ""
+
+        return rawUrl
+    }
+
+    var getTemplateUrl = function($stateParams){
+        var elts = $stateParams.name.split("/")
+        var namespace = elts[0]
+
+        return 'static/campui/views/raw-doc.html'
+    }
 
     $stateProvider.state("oldDocument", {
         url: "/old?name&hid&offset",
-        templateUrl: 'static/campui/views/raw-doc.html',
+        templateUrl: getTemplateUrl,
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", function(wapi, $stateParams){
-            this.rawUrl = '/api/document/' + $stateParams.name + '?view=raw&hid=' + $stateParams.hid
-            this.rawUrl += $stateParams.offset? "&offset=" + $stateParams.offset : ""
-            this.document = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid, offset:$stateParams.offset})
+            this.rawUrl = getRawUrl($stateParams)
+            this.document = wapi.document.get($stateParams)
         }],
     })
 
     $stateProvider.state("document", {
-        url: "/{name}",
-        templateUrl: 'static/campui/views/raw-doc.html',
+        url: "/{name:WapiName}",
+        templateUrl: getTemplateUrl,
         controllerAs:'ctrl',
         controller: ["$stateParams", function($stateParams){
-            this.rawUrl = '/api/document/' + $stateParams.name + '?view=raw'
+            this.rawUrl = getRawUrl($stateParams)
         }]
     })
 

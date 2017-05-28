@@ -79,6 +79,14 @@ class DocumentView(APIView):
 
         return Response("ok")
 
+    def put(self, request, name):
+        assert not request.user.is_anonymous()
+        data = request.data["document"]
+        doc = Document(name=data["name"], content=data["content"], comment=data.get("comment", "creation"))
+        doc.save()
+
+        return Response("ok")
+
 
 class RecentChangesView(APIView):
     def get(self, request):
@@ -91,7 +99,7 @@ class RecentChangesView(APIView):
 
 
 class ContributionsView(APIView):
-    def get(self, request,  username):
+    def get(self, request, username):
         limit = int(request.query_params.get('limit', 30))
         offset = int(request.query_params.get('offset', 0))
 
