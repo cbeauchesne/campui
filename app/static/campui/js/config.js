@@ -115,7 +115,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
     $stateProvider.state('contributions', {
         url: "/contributions/:username?limit&offset",
-        templateUrl: 'static/campui/views/contributions.html',
+        templateUrl: 'static/campui/views/wapi/contributions.html',
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", function(wapi, $stateParams){
             this.versions = wapi.contributions.get($stateParams)
@@ -127,7 +127,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
     $stateProvider.state("history", {
         url: "/history?name",
-        templateUrl: 'static/campui/views/history.html',
+        templateUrl: 'static/campui/views/wapi/history.html',
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", function(wapi, $stateParams){
             this.versions = wapi.document.history({name:$stateParams.name})
@@ -136,7 +136,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
     $stateProvider.state("create", {
         url: "/create?name",
-        templateUrl: 'static/campui/views/create.html',
+        templateUrl: 'static/campui/views/wapi/create.html',
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", "$state", function(wapi, $stateParams, $state){
             var _this = this
@@ -158,7 +158,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
     $stateProvider.state("edit", {
         url: "/edit?name&hid",
-        templateUrl: 'static/campui/views/edit.html',
+        templateUrl: 'static/campui/views/wapi/edit.html',
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", "$state", function(wapi, $stateParams, $state){
             var _this = this
@@ -185,7 +185,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
     $stateProvider.state("diff", {
         url: "/diff?name&hid&offset",
-        templateUrl: 'static/campui/views/diff.html',
+        templateUrl: 'static/campui/views/wapi/diff.html',
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", function(wapi, $stateParams){
             var _this = this
