@@ -117,7 +117,7 @@ msgstr ""
 msgid "Area"
 msgstr ""
 
-#: common/navbar.html:102
+#: common/navbar.html:46
 #: factories/factories.js:721
 #: outing.html:23
 #: route.html:30
@@ -128,10 +128,6 @@ msgstr ""
 #: common/navbar.html:122
 #: home.html:73
 msgid "Articles"
-msgstr ""
-
-#: common/navbar.html:66
-msgid "Ask a new portal"
 msgstr ""
 
 #: factories/factories.js:541
@@ -146,8 +142,8 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: common/navbar.html:34
-#: common/navbar.html:36
+#: common/navbar.html:100
+#: common/navbar.html:102
 msgid "Community"
 msgstr ""
 
@@ -157,6 +153,10 @@ msgstr ""
 
 #: common/navbar.html:137
 msgid "Contact"
+msgstr ""
+
+#: common/navbar.html:76
+msgid "Create a new portal"
 msgstr ""
 
 #: login.html:29
@@ -304,6 +304,10 @@ msgstr ""
 msgid "Invalid username/password."
 msgstr ""
 
+#: diff.html:43
+msgid "It's the latest version"
+msgstr ""
+
 #: components/license.html:10
 msgid "List of authors"
 msgstr ""
@@ -412,7 +416,7 @@ msgstr ""
 msgid "Outing"
 msgstr ""
 
-#: common/navbar.html:84
+#: common/navbar.html:28
 #: home.html:22
 msgid "Outings"
 msgstr ""
@@ -432,7 +436,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: common/navbar.html:47
+#: common/navbar.html:57
 msgid "Portals"
 msgstr ""
 
@@ -505,7 +509,7 @@ msgstr ""
 msgid "Route length"
 msgstr ""
 
-#: common/navbar.html:90
+#: common/navbar.html:34
 #: home.html:54
 #: search.html:13
 #: waypoint.html:128
@@ -592,7 +596,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: common/navbar.html:77
+#: common/navbar.html:21
 msgid "Topo"
 msgstr ""
 
@@ -619,7 +623,7 @@ msgid "W"
 msgstr ""
 
 #: c2c_items.html:71
-#: common/navbar.html:96
+#: common/navbar.html:40
 #: route.html:101
 #: search.html:24
 #: waypoint.html:142
@@ -696,10 +700,10 @@ msgstr ""
 msgid "association"
 msgstr ""
 
-#: contributions.html:19
+#: contributions.html:34
 #: edit.html:16
 #: history.html:19
-#: recentchanges.html:17
+#: recentchanges.html:31
 msgid "at"
 msgstr ""
 
@@ -1518,12 +1522,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
@@ -1543,7 +1547,7 @@ msgstr ""
 msgid "range"
 msgstr ""
 
-#: common/navbar.html:29
+#: common/navbar.html:95
 msgid "recent changes"
 msgstr ""
 

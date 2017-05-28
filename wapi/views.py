@@ -82,8 +82,8 @@ class DocumentView(APIView):
 
 class RecentChangesView(APIView):
     def get(self, request):
-        limit = request.query_params.get('limit', 30)
-        offset = request.query_params.get('offset', 0)
+        limit = int(request.query_params.get('limit', 30))
+        offset = int(request.query_params.get('offset', 0))
 
         versions = _versions_to_json(Document.history.all()[offset:offset + limit])
 
@@ -92,8 +92,8 @@ class RecentChangesView(APIView):
 
 class ContributionsView(APIView):
     def get(self, request,  username):
-        limit = request.query_params.get('limit', 30)
-        offset = request.query_params.get('offset', 0)
+        limit = int(request.query_params.get('limit', 30))
+        offset = int(request.query_params.get('offset', 0))
 
         user = User.objects.get(username=username)
         versions = _versions_to_json(Document.history.filter(history_user=user)[offset:offset + limit])

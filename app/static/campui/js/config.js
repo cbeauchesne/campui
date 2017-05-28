@@ -102,21 +102,26 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     })
 
     $stateProvider.state('recentchanges', {
-        url: "/recentchanges",
+        url: "/recentchanges?limit&offset",
         templateUrl: 'static/campui/views/recentchanges.html',
         controllerAs:'ctrl',
-        controller: ["wapi", function(wapi){
-            this.versions = wapi.recentChanges.get()
+        controller: ["wapi","$stateParams", function(wapi, $stateParams){
+            this.versions = wapi.recentChanges.get($stateParams)
+            this.params = $stateParams
+            $stateParams.offset = parseFloat($stateParams.offset || 0)
+            $stateParams.limit = parseFloat($stateParams.offset || 30)
         }]
     })
 
     $stateProvider.state('contributions', {
-        url: "/contributions/:username",
+        url: "/contributions/:username?limit&offset",
         templateUrl: 'static/campui/views/contributions.html',
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", function(wapi, $stateParams){
-            this.versions = wapi.contributions.get({username:$stateParams.username})
-            this.username = $stateParams.username
+            this.versions = wapi.contributions.get($stateParams)
+            this.params = $stateParams
+            $stateParams.offset = parseFloat($stateParams.offset || 0)
+            $stateParams.limit = parseFloat($stateParams.offset || 30)
         }]
     })
 
@@ -135,18 +140,24 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", "$state", function(wapi, $stateParams, $state){
             var _this = this
-            this.document = wapi.document.get($stateParams)
 
-            this.update = function(){
-                _this.document.comment = _this.comment
-                wapi.document.update({name:$stateParams.name}, {document:_this.document},
-                function(){
-                    $state.go("document", {"name":$stateParams.name})
-                },
-                function(response){
-                    console.log(response)
-                })
-            }
+            this.document = wapi.document.get($stateParams,
+                function(document){
+                    document.update = function(){
+                        document.comment = document.newComment
+                        delete document.newComment
+
+                        wapi.document.update({name:$stateParams.name}, {document:document},
+                            function(){
+                                $state.go("document", {"name":$stateParams.name})
+                            },
+                            function(response){
+                                console.log(response)
+                            }
+                        )
+                    }
+                }
+            )
         }]
     })
 
@@ -156,6 +167,8 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", function(wapi, $stateParams){
             var _this = this
+
+            this.name = $stateParams.name
 
             var computeDiff = function(){
                 if(!_this.oldDoc || !_this.newDoc)

@@ -5,14 +5,14 @@
             <i class="fa fa-history"></i>
             <span translate>diff</span>
             :
-            {{ctrl.newDoc.name}}&nbsp;
+            {{ctrl.name}}&nbsp;
         </h1>
         <wiki-tools/>
     </div>
     <div class="ibox-content">
         <div class="row versions-info">
             <div class="col-md-6">
-                <div ng-if="ctrl.oldDoc">
+                <div ng-if="ctrl.oldDoc.$resolved">
                     <a ui-sref="diff({name:ctrl.oldDoc.name, hid:ctrl.oldDoc.hid, offset:undefined})"
                        class="badge badge-primary">
                         ← Previous diff
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div ng-if="ctrl.newDoc">
+                <div ng-if="ctrl.newDoc.$resolved">
                     <old-document-link document="ctrl.newDoc"/>
                     <a ui-sref="diff({name:ctrl.newDoc.name, hid:ctrl.newDoc.hid, offset:'next'})"
                        class="badge badge-primary">
@@ -39,6 +39,9 @@
                     (<a ui-sref="contributions({username:ctrl.newDoc.user})">contributions</a>)
                     <br/>
                     {{ctrl.newDoc.comment}}
+                </div>
+                <div ng-if="!ctrl.newDoc" translate>
+                    It's the latest version
                 </div>
             </div>
         </div>
