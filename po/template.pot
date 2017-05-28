@@ -698,6 +698,7 @@ msgstr ""
 
 #: edit.html:16
 #: history.html:19
+#: raw-doc.html:8
 #: recentchanges.html:17
 msgid "at"
 msgstr ""
@@ -938,6 +939,10 @@ msgstr ""
 
 #: fixed_strings.html:281
 msgid "dec"
+msgstr ""
+
+#: diff.html:6
+msgid "diff"
 msgstr ""
 
 #: fixed_strings.html:103
@@ -1352,6 +1357,10 @@ msgstr ""
 msgid "natural_avalanche"
 msgstr ""
 
+#: raw-doc.html:14
+msgid "next"
+msgstr ""
+
 #: fixed_strings.html:173
 msgid "no"
 msgstr ""
@@ -1461,6 +1470,10 @@ msgstr ""
 msgid "pressure"
 msgstr ""
 
+#: raw-doc.html:4
+msgid "previous"
+msgstr ""
+
 #: fixed_strings.html:136
 msgid "product types"
 msgstr ""
@@ -1495,12 +1508,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 

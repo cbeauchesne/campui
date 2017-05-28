@@ -1,0 +1,29 @@
+<div class="ibox diff-view">
+
+    <div class="ibox-title">
+        <h1>
+            <i class="fa fa-history"></i>
+            <span translate>diff</span>
+            :
+            {{ctrl.newDoc.name}}&nbsp;
+        </h1>
+        <wiki-tools/>
+    </div>
+    <div class="ibox-content">
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <pre>
+                    {{ctrl.oldDoc.content}}
+                </pre>
+            </div>
+            <div class="col-md-6">
+                <pre>
+                    {{ctrl.newDoc.content}}
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>

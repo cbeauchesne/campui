@@ -140,18 +140,35 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         }]
     })
 
-    $stateProvider.state("document", {
-        url: "/{name}",
-        templateUrl: function($stateParams){
-            return 'api/document/' + $stateParams.name + '?view=raw'
-        },
+    $stateProvider.state("diff", {
+        url: "/diff?name&hid",
+        templateUrl: 'static/campui/views/diff.html',
+        controllerAs:'ctrl',
+        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
+            this.newDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid})
+            this.oldDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid, offset:"prev"})
+        }]
     })
 
+
     $stateProvider.state("oldDocument", {
-        url: "/old?name&hid",
-        templateUrl: function($stateParams){
-            return 'api/document/' + $stateParams.name + '?view=raw&hid=' + $stateParams.hid
-        },
+        url: "/old?name&hid&offset",
+        templateUrl: 'static/campui/views/raw-doc.html',
+        controllerAs:'ctrl',
+        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
+            this.rawUrl = '/api/document/' + $stateParams.name + '?view=raw&hid=' + $stateParams.hid
+            this.rawUrl += $stateParams.offset? "&offset=" + $stateParams.offset : ""
+            this.document = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid, offset:$stateParams.offset})
+        }],
+    })
+
+    $stateProvider.state("document", {
+        url: "/{name}",
+        templateUrl: 'static/campui/views/raw-doc.html',
+        controllerAs:'ctrl',
+        controller: ["$stateParams", function($stateParams){
+            this.rawUrl = '/api/document/' + $stateParams.name + '?view=raw'
+        }]
     })
 
 }]);

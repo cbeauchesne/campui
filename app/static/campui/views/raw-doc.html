@@ -1,0 +1,19 @@
+<div class="row" ng-if="ctrl.document">
+    <div class="ibox col-md-12">
+        <div class="ibox-content">
+            <a class="badge badge-primary" translate
+               ui-sref="old({name:ctrl.document.name, hid:ctrl.document.hid, offset:'prev'})">previous</a>
+            Version
+            {{ctrl.document.date | date }}
+            <span translate="date at time">at</span>
+            {{ctrl.document.date | date :'HH:mm' }}
+            by
+            <a href="/user/{{ctrl.document.user}}">{{ctrl.document.user}}</a>
+            :
+            <span class="history-comment">{{ctrl.document.comment}}</span>
+            <a class="badge badge-primary" translate
+               ui-sref="old({name:ctrl.document.name, hid:ctrl.document.hid, offset:'next'})">next</a>
+        </div>
+    </div>
+</div>
+<div ng-include="ctrl.rawUrl"></div>
