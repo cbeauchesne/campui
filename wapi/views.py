@@ -69,6 +69,7 @@ class DocumentView(APIView):
         return HttpResponseBadRequest("Unexpected view mode")
 
     def post(self, request, name):
+        assert not request.user.is_anonymous()
         doc = get_document(name=name)
         new_doc = request.data["document"]
 
