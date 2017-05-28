@@ -103,7 +103,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
     $stateProvider.state('recentchanges', {
         url: "/recentchanges?limit&offset",
-        templateUrl: 'static/campui/views/recentchanges.html',
+        templateUrl: 'static/campui/views/wapi/recentchanges.html',
         controllerAs:'ctrl',
         controller: ["wapi","$stateParams", function(wapi, $stateParams){
             this.versions = wapi.recentChanges.get($stateParams)
