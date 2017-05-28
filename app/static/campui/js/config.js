@@ -38,7 +38,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
             }]
 
         $stateProvider.state(item, {
-            url: "/" + item + "/{id}",
+            url: "/" + item + "/{id:int}",
             templateUrl: "static/campui/views/" + item + ".html",
             controller: params.detailled_controller,
         })
@@ -245,7 +245,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
         var elts = $stateParams.name.split("/")
         var namespace = elts[0]
 
-        if(namespace=="article_")
+        if(namespace=="Article")
             return 'static/campui/views/ns-templates/article.html'
 
         return 'static/campui/views/ns-templates/raw-doc.html'

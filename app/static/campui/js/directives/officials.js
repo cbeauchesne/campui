@@ -2,15 +2,21 @@
 app = angular.module('campui')
 
 
-app.directive('article', ['c2c', function (c2c) {
+app.directive('article', ['wapi', "c2c", function (wapi, c2c) {
     return {
         restrict: 'E',
-        scope: {"id":"="},
+        scope: {"name":"=", "id":"="},
         template: '<markdown content="content"></div>',
         link: function(scope, element, attrs) {
             scope.$watch(attrs.id, function(id){
                 c2c.article.get({id:id}, function(article){
                     scope.content = article.locales[0].description
+                })
+            })
+
+            scope.$watch(attrs.name, function(name){
+                wapi.document.get({name:"Article/" + name}, function(document){
+                    scope.content = document.content
                 })
             })
         }
