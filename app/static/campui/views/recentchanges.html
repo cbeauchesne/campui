@@ -17,8 +17,8 @@
                     <span translate>at</span>
                     {{version.date | date :'HH:mm' }}
                 </a>
-                <a href="/user/{{version.user}}">{{version.user}}</a>
                 <a ui-sref="document({name:version.name})">{{version.name}}</a>
+                <a href="/user/{{version.user}}">{{version.user}}</a>
                 :
                 <span class="history-comment">{{version.comment}}</span>
             </li>

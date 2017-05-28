@@ -3,11 +3,9 @@
         <div class="ibox-content">
             <a class="badge badge-primary" translate
                ui-sref="oldDocument({name:ctrl.document.name, hid:ctrl.document.hid, offset:'prev'})">previous</a>
-            Version
-            <span translate>as of</span>
-            {{ctrl.document.date | date }}
-            <span translate="date at time">at</span>
-            {{ctrl.document.date | date :'HH:mm' }}
+            <a class="badge badge-info" translate
+               ui-sref="diff({name:ctrl.document.name, hid:ctrl.document.hid})">diff</a>
+            <old-document-link document="ctrl.document"/>
             by
             <a href="/user/{{ctrl.document.user}}">{{ctrl.document.user}}</a>
             :

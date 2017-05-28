@@ -144,19 +144,36 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         url: "/diff?name&hid&offset",
         templateUrl: 'static/campui/views/diff.html',
         controllerAs:'ctrl',
-        controller: ["wapi", "$stateParams", "$ocLazyLoad", function(wapi, $stateParams, $ocLazyLoad){
+        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
+            var _this = this
+
+            var computeDiff = function(){
+                if(!_this.oldDoc || !_this.newDoc)
+                    return
+
+                _this.contentDiff = JsDiff.diffLines(_this.oldDoc.content,
+                                                            _this.newDoc.content)
+                _this.contentDiff.forEach(function (d){
+                  //  if(!d.value) console.log(d)
+                    d.lines = d.value.split("\n")
+                })
+
+                console.log("diffing", _this.contentDiff)
+            }
+
+            var delNewDoc = function(r){ delete _this.newDoc }
+            var delOldDoc   = function(r){ delete _this.oldDoc }
+
             if($stateParams.offset=='next'){
-                this.oldDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid})
-                this.newDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid, offset:"next"})
+                this.oldDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid}, computeDiff, delOldDoc)
+                this.newDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid, offset:"next"},
+                                computeDiff, delNewDoc)
             }
             else{
-                this.oldDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid, offset:"prev"})
-                this.newDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid})
+                this.oldDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid, offset:"prev"},
+                                computeDiff, delOldDoc)
+                this.newDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid}, computeDiff, delNewDoc)
             }
-
-            $ocLazyLoad.load("../bower_components/jsdiff/diff.js").then(function() {
-
-            })
         }]
     })
 
