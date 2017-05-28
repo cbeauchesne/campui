@@ -141,12 +141,22 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     })
 
     $stateProvider.state("diff", {
-        url: "/diff?name&hid",
+        url: "/diff?name&hid&offset",
         templateUrl: 'static/campui/views/diff.html',
         controllerAs:'ctrl',
-        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
-            this.newDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid})
-            this.oldDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid, offset:"prev"})
+        controller: ["wapi", "$stateParams", "$ocLazyLoad", function(wapi, $stateParams, $ocLazyLoad){
+            if($stateParams.offset=='next'){
+                this.oldDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid})
+                this.newDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid, offset:"next"})
+            }
+            else{
+                this.oldDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid, offset:"prev"})
+                this.newDoc = wapi.document.get({name:$stateParams.name, hid:$stateParams.hid})
+            }
+
+            $ocLazyLoad.load("../bower_components/jsdiff/diff.js").then(function() {
+
+            })
         }]
     })
 

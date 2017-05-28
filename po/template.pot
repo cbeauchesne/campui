@@ -692,13 +692,21 @@ msgstr ""
 msgid "artificial"
 msgstr ""
 
+#: diff.html:19
+#: diff.html:31
+#: raw-doc.html:7
+msgid "as of"
+msgstr ""
+
 #: fixed_strings.html:159
 msgid "association"
 msgstr ""
 
+#: diff.html:21
+#: diff.html:33
 #: edit.html:16
 #: history.html:19
-#: raw-doc.html:8
+#: raw-doc.html:9
 #: recentchanges.html:17
 msgid "at"
 msgstr ""
@@ -769,6 +777,11 @@ msgstr ""
 
 #: fixed_strings.html:320
 msgid "bus"
+msgstr ""
+
+#: diff.html:24
+#: diff.html:39
+msgid "by"
 msgstr ""
 
 #: fixed_strings.html:156
@@ -1357,7 +1370,7 @@ msgstr ""
 msgid "natural_avalanche"
 msgstr ""
 
-#: raw-doc.html:14
+#: raw-doc.html:15
 msgid "next"
 msgstr ""
 

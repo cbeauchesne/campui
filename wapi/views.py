@@ -9,13 +9,20 @@ def get_document(name):
     return Document.objects.get(name=name)
 
 
-def get_document_version(name, hid=None):
+def get_document_version(name, hid=None, offset=None):
     doc = get_document(name)
 
-    if hid:
-        return doc.history.get(history_id=hid)
-    else:
+    if not hid:
         return doc.history.first()
+
+    if not offset:
+        return doc.history.get(history_id=hid)
+
+    if offset == "prev":
+        return doc.history.filter(history_id__lt=hid)[0]
+
+    if offset == "next":
+        return doc.history.filter(history_id__gt=hid).order_by("history_id")[0]
 
 
 def _version_to_json(v):
@@ -36,14 +43,17 @@ class DocumentView(APIView):
     def get(self, request, name):
 
         view = request.query_params.get('view', None)
-        hid = request.query_params.get('hid', None)
 
         if not view:
-            doc = get_document_version(name, hid)
+            hid = request.query_params.get('hid', None)
+            offset = request.query_params.get('offset', None)
+            doc = get_document_version(name, hid, offset)
             return Response(_version_to_json(doc))
 
         if view == "raw":
-            doc = get_document_version(name, hid)
+            hid = request.query_params.get('hid', None)
+            offset = request.query_params.get('offset', None)
+            doc = get_document_version(name, hid, offset)
             response = HttpResponse(doc.history_object.content, content_type="text/plain")
             return response
 
@@ -51,7 +61,7 @@ class DocumentView(APIView):
             doc = get_document(name)
             limit = request.query_params.get('limit', 30)
             offset = request.query_params.get('offset', 0)
-            versions = _versions_to_json(doc.history.all()[offset:offset+limit])
+            versions = _versions_to_json(doc.history.all()[offset:offset + limit])
 
             return Response({"name": name,
                              "versions": versions})
@@ -74,6 +84,6 @@ class RecentChangesView(APIView):
         limit = request.query_params.get('limit', 30)
         offset = request.query_params.get('offset', 0)
 
-        versions = _versions_to_json(Document.history.all()[offset:offset+limit])
+        versions = _versions_to_json(Document.history.all()[offset:offset + limit])
 
         return Response({"versions": versions})

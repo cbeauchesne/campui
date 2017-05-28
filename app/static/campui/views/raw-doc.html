@@ -2,8 +2,9 @@
     <div class="ibox col-md-12">
         <div class="ibox-content">
             <a class="badge badge-primary" translate
-               ui-sref="old({name:ctrl.document.name, hid:ctrl.document.hid, offset:'prev'})">previous</a>
+               ui-sref="oldDocument({name:ctrl.document.name, hid:ctrl.document.hid, offset:'prev'})">previous</a>
             Version
+            <span translate>as of</span>
             {{ctrl.document.date | date }}
             <span translate="date at time">at</span>
             {{ctrl.document.date | date :'HH:mm' }}
@@ -12,7 +13,7 @@
             :
             <span class="history-comment">{{ctrl.document.comment}}</span>
             <a class="badge badge-primary" translate
-               ui-sref="old({name:ctrl.document.name, hid:ctrl.document.hid, offset:'next'})">next</a>
+               ui-sref="oldDocument({name:ctrl.document.name, hid:ctrl.document.hid, offset:'next'})">next</a>
         </div>
     </div>
 </div>

@@ -662,11 +662,16 @@ msgstr "régions"
 msgid "artificial"
 msgstr "artificiel"
 
+#: diff.html:16 diff.html:28 raw-doc.html:7
+msgid "as of"
+msgstr "du"
+
 #: fixed_strings.html:159
 msgid "association"
 msgstr "association"
 
-#: edit.html:16 history.html:19 recentchanges.html:17
+#: diff.html:18 diff.html:30 edit.html:16 history.html:19 raw-doc.html:9
+#: recentchanges.html:17
 msgid "at"
 msgstr "à"
 
@@ -737,6 +742,10 @@ msgstr "bateau"
 #: fixed_strings.html:320
 msgid "bus"
 msgstr "bus"
+
+#: diff.html:21 diff.html:33
+msgid "by"
+msgstr "par"
 
 #: fixed_strings.html:156
 msgid "c2c_meetings"
@@ -906,6 +915,10 @@ msgstr "de"
 #: fixed_strings.html:281
 msgid "dec"
 msgstr "décembre"
+
+#: diff.html:6
+msgid "diff"
+msgstr "diff"
 
 #: fixed_strings.html:103 route.html:49
 msgid "difficulties height"
@@ -1304,6 +1317,10 @@ msgstr "grande voie"
 msgid "natural_avalanche"
 msgstr "avalanche naturelle"
 
+#: raw-doc.html:15
+msgid "next"
+msgstr ""
+
 #: fixed_strings.html:173
 msgid "no"
 msgstr "non"
@@ -1409,6 +1426,12 @@ msgstr ""
 msgid "pressure"
 msgstr ""
 
+#: raw-doc.html:4
+#, fuzzy
+#| msgid "Previous"
+msgid "previous"
+msgstr "Précédent"
+
 #: fixed_strings.html:136
 msgid "product types"
 msgstr "type de produits"
@@ -1441,12 +1464,12 @@ msgstr "qualité"
 msgid "quartzite"
 msgstr "quartzite"
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr "peu fréquenté"
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr "peu fréquenté"
 

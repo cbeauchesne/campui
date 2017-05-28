@@ -10,8 +10,37 @@
         <wiki-tools/>
     </div>
     <div class="ibox-content">
-        <div class="row">
-
+        <div class="row versions-info">
+            <div class="col-md-6">
+                <a ui-sref="diff({name:ctrl.oldDoc.name, hid:ctrl.oldDoc.hid, offset:undefined})" class="badge badge-primary">
+                    ← Previous diff
+                </a>
+                Version
+                <span translate>as of</span>
+                {{ctrl.oldDoc.date | date }}
+                <span translate>at</span>
+                {{ctrl.oldDoc.date | date :'HH:mm' }}
+                <br/>
+                <span translate>by</span>
+                {{ctrl.oldDoc.user}} (contributions)
+                <br/>
+                {{ctrl.oldDoc.comment}}
+            </div>
+            <div class="col-md-6">
+                Version
+                <span translate>as of</span>
+                {{ctrl.newDoc.date | date }}
+                <span translate>at</span>
+                {{ctrl.newDoc.date | date :'HH:mm' }}
+                <a ui-sref="diff({name:ctrl.newDoc.name, hid:ctrl.newDoc.hid, offset:'next'})" class="badge badge-primary">
+                    Next diff →
+                </a>
+                <br/>
+                <span translate>by</span>
+                {{ctrl.newDoc.user}} (contributions)
+                <br/>
+                {{ctrl.newDoc.comment}}
+            </div>
         </div>
         <div class="row">
             <div class="col-md-6">
