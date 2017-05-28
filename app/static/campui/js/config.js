@@ -245,7 +245,10 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
         var elts = $stateParams.name.split("/")
         var namespace = elts[0]
 
-        return 'static/campui/views/raw-doc.html'
+        if(namespace=="article_")
+            return 'static/campui/views/ns-templates/article.html'
+
+        return 'static/campui/views/ns-templates/raw-doc.html'
     }
 
     $stateProvider.state("oldDocument", {
@@ -255,6 +258,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
         controller: ["wapi", "$stateParams", function(wapi, $stateParams){
             this.rawUrl = getRawUrl($stateParams)
             this.document = wapi.document.get($stateParams)
+            this.isOld = true
         }],
     })
 
@@ -262,8 +266,10 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
         url: "/{name:WapiName}",
         templateUrl: getTemplateUrl,
         controllerAs:'ctrl',
-        controller: ["$stateParams", function($stateParams){
+        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
             this.rawUrl = getRawUrl($stateParams)
+            this.document = wapi.document.get($stateParams)
+            this.isOld = false
         }]
     })
 
