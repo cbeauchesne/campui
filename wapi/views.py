@@ -87,3 +87,14 @@ class RecentChangesView(APIView):
         versions = _versions_to_json(Document.history.all()[offset:offset + limit])
 
         return Response({"versions": versions})
+
+
+class ContributionsView(APIView):
+    def get(self, request,  username):
+        limit = request.query_params.get('limit', 30)
+        offset = request.query_params.get('offset', 0)
+
+        user = User.objects.get(username=username)
+        versions = _versions_to_json(Document.history.filter(history_user=user)[offset:offset + limit])
+
+        return Response({"versions": versions})

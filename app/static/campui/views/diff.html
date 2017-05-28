@@ -20,7 +20,8 @@
                     <old-document-link document="ctrl.oldDoc"/>
                     <br/>
                     <span translate>by</span>
-                    {{ctrl.oldDoc.user}} (contributions)
+                    {{ctrl.oldDoc.user}}
+                    (<a ui-sref="contributions({username:ctrl.oldDoc.user})">contributions</a>)
                     <br/>
                     {{ctrl.oldDoc.comment}}
                 </div>
@@ -34,7 +35,8 @@
                     </a>
                     <br/>
                     <span translate>by</span>
-                    {{ctrl.newDoc.user}} (contributions)
+                    {{ctrl.newDoc.user}}
+                    (<a ui-sref="contributions({username:ctrl.newDoc.user})">contributions</a>)
                     <br/>
                     {{ctrl.newDoc.comment}}
                 </div>

@@ -696,6 +696,7 @@ msgstr ""
 msgid "association"
 msgstr ""
 
+#: contributions.html:19
 #: edit.html:16
 #: history.html:19
 #: recentchanges.html:17
@@ -771,7 +772,7 @@ msgid "bus"
 msgstr ""
 
 #: diff.html:22
-#: diff.html:36
+#: diff.html:37
 msgid "by"
 msgstr ""
 
@@ -894,6 +895,10 @@ msgstr ""
 
 #: fixed_strings.html:247
 msgid "conglomerat"
+msgstr ""
+
+#: contributions.html:6
+msgid "contributions"
 msgstr ""
 
 #: fixed_strings.html:267

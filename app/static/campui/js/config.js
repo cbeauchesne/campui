@@ -110,6 +110,16 @@ function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         }]
     })
 
+    $stateProvider.state('contributions', {
+        url: "/contributions/:username",
+        templateUrl: 'static/campui/views/contributions.html',
+        controllerAs:'ctrl',
+        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
+            this.versions = wapi.contributions.get({username:$stateParams.username})
+            this.username = $stateParams.username
+        }]
+    })
+
     $stateProvider.state("history", {
         url: "/history?name",
         templateUrl: 'static/campui/views/history.html',
