@@ -261,37 +261,50 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
         return 'static/campui/views/ns-templates/article.html'
     }
 
+    var wapiController = ["wapi", "$stateParams", function(wapi, $stateParams){
+        var _this = this
+
+        if($stateParams.namespace){
+            $stateParams.name = $stateParams.namespace + "/" + $stateParams.name
+            delete $stateParams.namespace
+        }
+
+        this.rawUrl = getRawUrl($stateParams)
+        this.params = $stateParams
+
+        this.document = wapi.document.get($stateParams,
+            function(){},
+            function(response){
+                _this.error = response
+                _this.error.notFound = response.status == 404
+            }
+        )
+
+        this.isOld = typeof $stateParams.hid !== 'undefined'
+    }]
+
     $stateProvider.state("oldDocument", {
         url: "/old?name&hid&offset",
         templateUrl: getTemplateUrl,
         controllerAs:'ctrl',
-        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
-            this.rawUrl = getRawUrl($stateParams)
-            this.document = wapi.document.get($stateParams)
-            this.isOld = true
-        }],
+        controller: wapiController,
+    })
+
+    $stateProvider.state("discussion", {
+        url: "/Discussion/{name:WapiName}",
+        templateUrl: 'static/campui/views/ns-templates/discussion.html',
+        params: {
+            namespace: "Discussion"
+        },
+        controllerAs:'ctrl',
+        controller: wapiController
     })
 
     $stateProvider.state("document", {
         url: "/{name:WapiName}",
         templateUrl: getTemplateUrl,
         controllerAs:'ctrl',
-        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
-            this.rawUrl = getRawUrl($stateParams)
-            this.document = wapi.document.get($stateParams)
-            this.isOld = false
-        }]
-    })
-
-    $stateProvider.state("discussion", {
-        url: "/discussion/{name:WapiName}",
-        templateUrl: getTemplateUrl,
-        controllerAs:'ctrl',
-        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
-            this.rawUrl = getRawUrl($stateParams)
-            this.document = wapi.document.get($stateParams)
-            this.isOld = false
-        }]
+        controller: wapiController
     })
 
 }]);

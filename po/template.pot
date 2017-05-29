@@ -125,7 +125,7 @@ msgstr ""
 msgid "Areas"
 msgstr ""
 
-#: common/navbar.html:121
+#: common/navbar.html:128
 #: home.html:73
 msgid "Articles"
 msgstr ""
@@ -142,8 +142,8 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: common/navbar.html:101
-#: common/navbar.html:99
+#: common/navbar.html:92
+#: common/navbar.html:94
 msgid "Community"
 msgstr ""
 
@@ -151,7 +151,7 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
-#: common/navbar.html:136
+#: common/navbar.html:143
 msgid "Contact"
 msgstr ""
 
@@ -228,7 +228,7 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
-#: common/navbar.html:152
+#: common/navbar.html:159
 msgid "FAQ"
 msgstr ""
 
@@ -240,6 +240,10 @@ msgstr ""
 #: stories.html:19
 #: user.html:10
 msgid "Follow"
+msgstr ""
+
+#: ns-templates/article.html:51
+msgid "Fortunately, you can create it!"
 msgstr ""
 
 #: home.html:35
@@ -264,6 +268,11 @@ msgstr ""
 
 #: factories/factories.js:609
 msgid "Height diff"
+msgstr ""
+
+#: common/navbar.html:101
+#: common/navbar.html:99
+msgid "Help"
 msgstr ""
 
 #: directives/wiki-tools.html:14
@@ -292,7 +301,7 @@ msgstr ""
 msgid "Impacted people"
 msgstr ""
 
-#: common/navbar.html:128
+#: common/navbar.html:135
 msgid "Incidents"
 msgstr ""
 
@@ -316,11 +325,11 @@ msgstr ""
 msgid "Load more items"
 msgstr ""
 
-#: common/navbar.html:212
+#: common/navbar.html:219
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:177
+#: common/navbar.html:184
 #: login.html:19
 msgid "Login"
 msgstr ""
@@ -349,7 +358,7 @@ msgstr ""
 msgid "Minimum length : 8 characters"
 msgstr ""
 
-#: common/navbar.html:113
+#: common/navbar.html:120
 msgid "Misc"
 msgstr ""
 
@@ -361,7 +370,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:196
+#: common/navbar.html:203
 msgid "My page"
 msgstr ""
 
@@ -422,7 +431,7 @@ msgid "Outings"
 msgstr ""
 
 #: common/ibox_tools.html:56
-#: common/navbar.html:203
+#: common/navbar.html:210
 #: me.html:6
 msgid "Parameters"
 msgstr ""
@@ -460,7 +469,7 @@ msgstr ""
 msgid "Ratings"
 msgstr ""
 
-#: common/navbar.html:94
+#: common/navbar.html:108
 #: wapi/recentchanges.html:6
 msgid "Recent changes"
 msgstr ""
@@ -482,7 +491,7 @@ msgstr ""
 msgid "Repeat password"
 msgstr ""
 
-#: common/navbar.html:142
+#: common/navbar.html:149
 msgid "Report a bug"
 msgstr ""
 
@@ -541,7 +550,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:164
+#: common/navbar.html:171
 msgid "Search"
 msgstr ""
 
@@ -569,7 +578,7 @@ msgstr ""
 msgid "Snow/ice ratings"
 msgstr ""
 
-#: common/navbar.html:147
+#: common/navbar.html:154
 msgid "Statistics"
 msgstr ""
 
@@ -584,6 +593,10 @@ msgstr ""
 
 #: outingImages.html:2
 msgid "There is not yet images on outings linked to this route"
+msgstr ""
+
+#: ns-templates/article.html:49
+msgid "This article doesn't yet exists."
 msgstr ""
 
 #: outing.html:53
@@ -1535,12 +1548,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 

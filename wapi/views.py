@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
-from django.http.response import HttpResponse, HttpResponseBadRequest
+from django.http.response import HttpResponse, HttpResponseBadRequest, Http404
+from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.exceptions import NotFound
 from .models import Document
 
 
@@ -10,7 +12,6 @@ def get_document(name):
 
 
 def get_document_version(name, hid=None, offset=None):
-
     if not hid:
         doc = get_document(name)
         return doc.history.first()
@@ -49,7 +50,12 @@ class DocumentView(APIView):
         if not view:
             hid = request.query_params.get('hid', None)
             offset = request.query_params.get('offset', None)
-            doc = get_document_version(name, hid, offset)
+
+            try:
+                doc = get_document_version(name, hid, offset)
+            except ObjectDoesNotExist:
+                raise NotFound()
+
             return Response(_version_to_json(doc))
 
         if view == "raw":
