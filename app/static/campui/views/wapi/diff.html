@@ -25,6 +25,9 @@
                     <br/>
                     {{ctrl.oldDoc.comment}}
                 </div>
+                <div ng-if="!ctrl.oldDoc" translate>
+                    It's the oldest version
+                </div>
             </div>
             <div class="col-md-6">
                 <div ng-if="ctrl.newDoc.$resolved">
@@ -55,7 +58,7 @@
                 <pre class="content-diff">{{ctrl.newDoc.content}}</pre>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6" ng-if="ctrl.contentDiff">
                 <div class="content-diff">
                     <div ng-repeat="diff in ctrl.contentDiff">
                         <del ng-if="diff.removed" ng-repeat="line in diff.lines track by $index">{{line}}</del>
@@ -63,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" ng-if="ctrl.contentDiff">
                 <div class="content-diff">
                     <div ng-repeat="diff in ctrl.contentDiff">
                         <ins ng-if="diff.added" ng-repeat="line in diff.lines track by $index">{{line}}</ins>

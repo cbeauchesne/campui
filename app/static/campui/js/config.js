@@ -142,6 +142,10 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
             var _this = this
             this.document = {name:$stateParams.name, comment:"creation"}
 
+            if($stateParams.name){
+                this.namespace = $stateParams.name.split("/")[0]
+            }
+
             this.document.create = function(){
 
                 wapi.document.create({name:_this.document.name}, {document:_this.document},
@@ -254,6 +258,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
         if(namespace=="Portal")
             return 'static/campui/views/ns-templates/raw-doc.html'
 
+        return 'static/campui/views/ns-templates/article.html'
     }
 
     $stateProvider.state("oldDocument", {

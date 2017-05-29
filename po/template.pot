@@ -300,8 +300,12 @@ msgstr ""
 msgid "Invalid username/password."
 msgstr ""
 
-#: wapi/diff.html:43
+#: wapi/diff.html:46
 msgid "It's the latest version"
+msgstr ""
+
+#: wapi/diff.html:28
+msgid "It's the oldest version"
 msgstr ""
 
 #: components/license.html:10
@@ -772,7 +776,7 @@ msgid "bus"
 msgstr ""
 
 #: wapi/diff.html:22
-#: wapi/diff.html:37
+#: wapi/diff.html:40
 #: wapi/edit.html:16
 msgid "by"
 msgstr ""
@@ -1531,12 +1535,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 

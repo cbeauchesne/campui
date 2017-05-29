@@ -10,19 +10,21 @@ def get_document(name):
 
 
 def get_document_version(name, hid=None, offset=None):
-    doc = get_document(name)
 
     if not hid:
+        doc = get_document(name)
         return doc.history.first()
 
+    doc = Document.history.filter(history_id=hid)[0]
+
     if not offset:
-        return doc.history.get(history_id=hid)
+        return doc
 
     if offset == "prev":
-        return doc.history.filter(history_id__lt=hid)[0]
+        return doc.history_object.history.filter(history_id__lt=hid)[0]
 
     if offset == "next":
-        return doc.history.filter(history_id__gt=hid).order_by("history_id")[0]
+        return doc.history_object.history.filter(history_id__gt=hid).order_by("history_id")[0]
 
 
 def _version_to_json(v):
