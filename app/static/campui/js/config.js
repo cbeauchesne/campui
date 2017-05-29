@@ -248,7 +248,12 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
         if(namespace=="Article")
             return 'static/campui/views/ns-templates/article.html'
 
-        return 'static/campui/views/ns-templates/raw-doc.html'
+        if(namespace=="Discussion")
+            return 'static/campui/views/ns-templates/discussion.html'
+
+        if(namespace=="Portal")
+            return 'static/campui/views/ns-templates/raw-doc.html'
+
     }
 
     $stateProvider.state("oldDocument", {
@@ -264,6 +269,17 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
     $stateProvider.state("document", {
         url: "/{name:WapiName}",
+        templateUrl: getTemplateUrl,
+        controllerAs:'ctrl',
+        controller: ["wapi", "$stateParams", function(wapi, $stateParams){
+            this.rawUrl = getRawUrl($stateParams)
+            this.document = wapi.document.get($stateParams)
+            this.isOld = false
+        }]
+    })
+
+    $stateProvider.state("discussion", {
+        url: "/discussion/{name:WapiName}",
         templateUrl: getTemplateUrl,
         controllerAs:'ctrl',
         controller: ["wapi", "$stateParams", function(wapi, $stateParams){

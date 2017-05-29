@@ -11,8 +11,9 @@ function campuiCustomization(){
     return {
         portals : [
             {
-                name : "Cascade de glace",
-                template_url : "/static/campui/views/portals/ice_climbing.html"
+                name : "Portal/Cascade de glace",
+                label : "Cascade de glace"
+
             },/*
             {
                 name : "Actualités",
