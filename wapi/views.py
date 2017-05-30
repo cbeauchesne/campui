@@ -81,7 +81,8 @@ class DocumentView(APIView):
         doc = get_document(name=name)
         new_doc = request.data["document"]
 
-        doc.content = new_doc["content"]
+        doc.content = new_doc.get("content", None)
+        doc.metadata = new_doc.get("data", None)
         doc.comment = new_doc["comment"]
         doc.save()
 
@@ -90,7 +91,10 @@ class DocumentView(APIView):
     def put(self, request, name):
         assert not request.user.is_anonymous()
         data = request.data["document"]
-        doc = Document(name=data["name"], content=data["content"], comment=data.get("comment", "creation"))
+        doc = Document(name=data["name"],
+                       content=data.get("content", None),
+                       metadata=data.get("data", None),
+                       comment=data.get("comment", "creation"))
         doc.save()
 
         return Response("ok")

@@ -601,6 +601,26 @@ font-family:monospace
 
 ////////////////////////////////////////////////////
 
+.discussion-view .ibox-title,
+.discussion-view .ibox-content{
+    background-color:lightYellow
+}
+
+.discussion-view .subject{
+    border:1px solid grey;
+    margin-bottom:15px;
+}
+
+.discussion-view .title{
+    border-bottom:1px solid grey;
+}
+
+.discussion-view .response{
+    background:red
+}
+
+////////////////////////////////////////////////////
+
 .diff-view .versions-info{
     text-align:center
 }

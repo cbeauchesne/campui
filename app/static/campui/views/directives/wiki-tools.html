@@ -1,11 +1,19 @@
 <div class="wiki-tools dropdown pull-right hidden-print" dropdown>
 
-    <a ui-sref="edit({name:name})"
+    <a ui-sref="edit({name:editName})"
+       ng-if="editName"
        uib-tooltip="{{ 'Edit'| translate }}">
         <i class="fa fa-edit"></i>
     </a>
 
-    <a ui-sref="discussion({name:name})"
+    <a ui-sref="document({name:mainPageName})"
+       ng-if="mainPageName"
+       uib-tooltip="{{ 'Main page'| translate }}">
+        <i class="fa fa-eye"></i>
+    </a>
+
+    <a ui-sref="discussion({name:discussionName})"
+       ng-if="discussionName"
        uib-tooltip="{{ 'Discussion'| translate }}">
         <i class="fa fa-comments"></i>
     </a>

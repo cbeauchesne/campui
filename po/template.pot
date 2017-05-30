@@ -191,7 +191,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: directives/wiki-tools.html:9
+#: directives/wiki-tools.html:17
 msgid "Discussion"
 msgstr ""
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "E"
 msgstr ""
 
-#: directives/wiki-tools.html:4
+#: directives/wiki-tools.html:5
 #: wapi/edit.html:6
 msgid "Edit"
 msgstr ""
@@ -275,7 +275,7 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: directives/wiki-tools.html:14
+#: directives/wiki-tools.html:22
 #: route.html:126
 #: wapi/history.html:6
 msgid "History"
@@ -352,6 +352,10 @@ msgstr ""
 
 #: fixed_strings.html:94
 msgid "MTB up rating"
+msgstr ""
+
+#: directives/wiki-tools.html:11
+msgid "Main page"
 msgstr ""
 
 #: register.html:23
@@ -576,6 +580,10 @@ msgstr ""
 
 #: fixed_strings.html:145
 msgid "Snow/ice ratings"
+msgstr ""
+
+#: ns-templates/discussion.html:65
+msgid "Start a new subject"
 msgstr ""
 
 #: common/navbar.html:154
@@ -978,7 +986,8 @@ msgid "dec"
 msgstr ""
 
 #: ns-templates/article.html:6
-#: ns-templates/raw-doc.html:6
+#: ns-templates/discussion.html:6
+#: ns-templates/portal.html:7
 #: wapi/diff.html:6
 msgid "diff"
 msgstr ""
@@ -1396,7 +1405,8 @@ msgid "natural_avalanche"
 msgstr ""
 
 #: ns-templates/article.html:13
-#: ns-templates/raw-doc.html:13
+#: ns-templates/discussion.html:13
+#: ns-templates/portal.html:14
 msgid "next"
 msgstr ""
 
@@ -1510,7 +1520,8 @@ msgid "pressure"
 msgstr ""
 
 #: ns-templates/article.html:4
-#: ns-templates/raw-doc.html:4
+#: ns-templates/discussion.html:4
+#: ns-templates/portal.html:5
 msgid "previous"
 msgstr ""
 

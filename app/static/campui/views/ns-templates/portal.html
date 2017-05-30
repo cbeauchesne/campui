@@ -1,0 +1,21 @@
+<div class="portal-view">
+    <div class="row" ng-if="ctrl.isOld">
+        <div class="ibox col-md-12">
+            <div class="ibox-content">
+                <a class="badge badge-primary" translate
+                   ui-sref="oldDocument({name:ctrl.document.name, hid:ctrl.document.hid, offset:'prev'})">previous</a>
+                <a class="badge badge-info" translate
+                   ui-sref="diff({name:ctrl.document.name, hid:ctrl.document.hid})">diff</a>
+                <old-document-link document="ctrl.document"/>
+                by
+                <a href="/user/{{ctrl.document.user}}">{{ctrl.document.user}}</a>
+                :
+                <span class="history-comment">{{ctrl.document.comment}}</span>
+                <a class="badge badge-primary" translate
+                   ui-sref="oldDocument({name:ctrl.document.name, hid:ctrl.document.hid, offset:'next'})">next</a>
+            </div>
+        </div>
+    </div>
+
+    <div ng-include="ctrl.rawUrl"></div>
+</div>

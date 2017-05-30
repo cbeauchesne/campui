@@ -81,6 +81,19 @@ app.directive('wikiTools', ['$stateParams', function ($stateParams) {
         scope: {},
         templateUrl: 'static/campui/views/directives/wiki-tools.html',
         link:function(scope, element, attrs) {
+            if($stateParams.namespace){
+                $stateParams.name = $stateParams.namespace + "/" + $stateParams.name
+                delete $stateParams.namespace
+            }
+
+            if($stateParams.name.split("/")[0]=="Discussion"){
+                scope.mainPageName = $stateParams.name
+            }
+            else{
+                scope.editName = $stateParams.name
+                scope.discussionName = $stateParams.name
+            }
+
             scope.name = $stateParams.name
         }
     };

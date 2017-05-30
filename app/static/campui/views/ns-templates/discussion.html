@@ -1,0 +1,90 @@
+<div class="row" ng-if="ctrl.isOld">
+    <div class="ibox col-md-12">
+        <div class="ibox-content">
+            <a class="badge badge-primary" translate
+               ui-sref="oldDocument({name:ctrl.document.name, hid:ctrl.document.hid, offset:'prev'})">previous</a>
+            <a class="badge badge-info" translate
+               ui-sref="diff({name:ctrl.document.name, hid:ctrl.document.hid})">diff</a>
+            <old-document-link document="ctrl.document"/>
+            by
+            <a href="/user/{{ctrl.document.user}}">{{ctrl.document.user}}</a>
+            :
+            <span class="history-comment">{{ctrl.document.comment}}</span>
+            <a class="badge badge-primary" translate
+               ui-sref="oldDocument({name:ctrl.document.name, hid:ctrl.document.hid, offset:'next'})">next</a>
+        </div>
+    </div>
+</div>
+
+<div class="ibox discussion-view">
+    <div class="ibox-title">
+        <h1 ng-if="ctrl.document.$resolved && !ctrl.error">
+            <i class="fa fa-comments"></i>
+            {{ctrl.document.name}}
+        </h1>
+
+        <h1 ng-if="ctrl.error.notFound">
+            <i class="fa fa-comments"></i>
+            {{ctrl.params.name}}
+        </h1>
+        <wiki-tools document="ctrl.document"/>
+    </div>
+
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="subject" ng-repeat="subject in ctrl.document.data.subjects">
+                    <h2 class="title">{{subject.title}}</h2>
+                    <div class="row response" ng-repeat="response in subject.responses">
+                        <div class="col-md-1">
+                            {{response.author}}
+                            {{response.date}}
+                        </div>
+                        <div class="col-md-11">
+                            <markdown content="response.content"/>
+                        </div>
+                    </div>
+
+                    <div class="row response">
+                        <form ng-submit="subject.newResponse.save()">
+                            <div class="col-md-1">
+                                {{ctrl.currentUser.username}}
+                                <input type="submit" class="btn btn-sm btn-primary" value="Save"/>
+                            </div>
+                            <div class="col-md-11">
+                                <textarea class="form-control" ng-model="subject.newResponse.content"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" class="btn btn-primary"
+                           ng-if="!ctrl.showNewSubject"
+                           ng-click="ctrl.showNewSubject=true"
+                           translate>Start a new subject</a>
+                    </div>
+                </div>
+
+                <form class="subject" ng-if="ctrl.showNewSubject"
+                      ng-submit="ctrl.newSubject.save()">
+                    <h2 class="form-group title">
+                        <input class="form-control" placeholder="Title" required
+                               ng-model="ctrl.newSubject.title"/>
+                    </h2>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Message"
+                                  ng-model="ctrl.newSubject.responses[0].content"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Create"/>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

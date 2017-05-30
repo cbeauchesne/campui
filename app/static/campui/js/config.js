@@ -247,7 +247,7 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
     var getTemplateUrl = function($stateParams){
         var elts = $stateParams.name.split("/")
-        var namespace = elts[0]
+        var namespace = $stateParams.namespace || elts[0]
 
         if(namespace=="Article")
             return 'static/campui/views/ns-templates/article.html'
@@ -256,12 +256,12 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
             return 'static/campui/views/ns-templates/discussion.html'
 
         if(namespace=="Portal")
-            return 'static/campui/views/ns-templates/raw-doc.html'
+            return 'static/campui/views/ns-templates/portal.html'
 
         return 'static/campui/views/ns-templates/article.html'
     }
 
-    var wapiController = ["wapi", "$stateParams", function(wapi, $stateParams){
+    var wapiController = ["wapi", "$stateParams", "currentUser", function(wapi, $stateParams, currentUser){
         var _this = this
 
         if($stateParams.namespace){
@@ -269,12 +269,42 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
             delete $stateParams.namespace
         }
 
+        this.currentUser = currentUser
+        this.namespace = $stateParams.name.split("/")[0]
         this.rawUrl = getRawUrl($stateParams)
         this.params = $stateParams
 
+        if(this.namespace=="Discussion"){
+
+            this.newSubject = {
+                responses:[{
+                    author:currentUser.username,
+                    date:"dd",
+                }],
+                save:function(){
+                    var doc = _this.document
+                    doc.data = doc.data || {}
+                    doc.data.subjects = doc.data.subjects || []
+                    doc.data.subjects.push(this)
+                    doc.comment = "New subject : " + this.title
+                    doc.name = doc.name || $stateParams.name
+
+                    if(!doc.id)
+                        wapi.document.create({name:doc.name}, {document:doc})
+                    else
+                        wapi.document.update({name:doc.name}, {document:doc})
+
+                    delete _this.showNewSubject
+                }
+            }
+        }
+
         this.document = wapi.document.get($stateParams,
-            function(){},
-            function(response){
+            function(document){ //success
+
+            },
+
+            function(response){ //error
                 _this.error = response
                 _this.error.notFound = response.status == 404
             }
