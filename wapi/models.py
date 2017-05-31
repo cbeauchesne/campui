@@ -8,7 +8,7 @@ from simple_history.models import HistoricalRecords
 
 class Document(models.Model):
     name = models.CharField(max_length=256, unique=True)
-    metadata = JSONField(default=None, null=True, blank=True)
+    data = JSONField(default=None, null=True, blank=True)
     content = models.TextField(default=None, null=True, blank=True)
     comment = models.CharField(max_length=256, blank=True)
     history = HistoricalRecords()
@@ -19,6 +19,6 @@ class Document(models.Model):
     def to_json(self):
         return {"id": self.id,
                 "name": self.name,
-                "data": self.metadata,
+                "data": self.data,
                 "content": self.content,
                 "comment": self.comment}

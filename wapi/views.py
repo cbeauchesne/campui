@@ -1,14 +1,11 @@
 from django.contrib.auth.models import User
-from django.http.response import HttpResponse, HttpResponseBadRequest, Http404
+from django.http.response import HttpResponse, HttpResponseBadRequest
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.exceptions import NotFound
 from .models import Document
-
-
-def get_document(name):
-    return Document.objects.get(name=name)
+from .core import get_document
 
 
 def get_document_version(name, hid=None, offset=None):

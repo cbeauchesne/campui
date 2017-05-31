@@ -19,5 +19,10 @@ app.factory('wapi', ['$resource', function($resource){
         contributions : $resource('/api/contributions/:username', {}, {
             get: {method: 'GET'},
         }),
+
+        discussion : $resource('/api/discussion/:name', {}, {
+            addSubject: {method: 'PUT'},
+            addResponse : {method: 'POST'},
+        }),
     };
 }]);

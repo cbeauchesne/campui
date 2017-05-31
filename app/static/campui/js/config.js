@@ -277,25 +277,24 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
         if(this.namespace=="Discussion"){
 
             this.newSubject = {
-                responses:[{
-                    author:currentUser.username,
-                    date:"dd",
-                }],
                 save:function(){
-                    var doc = _this.document
-                    doc.data = doc.data || {}
-                    doc.data.subjects = doc.data.subjects || []
-                    doc.data.subjects.push(this)
-                    doc.comment = "New subject : " + this.title
-                    doc.name = doc.name || $stateParams.name
-
-                    if(!doc.id)
-                        wapi.document.create({name:doc.name}, {document:doc})
-                    else
-                        wapi.document.update({name:doc.name}, {document:doc})
+                    wapi.discussion.addSubject({name:$stateParams.name},
+                                               {title:this.title, response:this.response},
+                                               function(doc){
+                                                    _this.document=doc
+                                               })
 
                     delete _this.showNewSubject
                 }
+            }
+
+            this.addResponse = function(subjectId, response){
+            console.log(arguments)
+                wapi.discussion.addResponse({name:$stateParams.name},
+                                           {subjectId:subjectId, response:response},
+                                           function(doc){
+                                                _this.document=doc
+                                           })
             }
         }
 

@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^current_user$', views.CurrentUserView.as_view()),
     url(r'^users', views.CreateUserView.as_view()),
     url(r'^forum$', views.ForumView.as_view()),
+    url(r'^discussion/(?P<name>.*)$', views.DiscussionView.as_view()),
 ]

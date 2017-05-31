@@ -1,10 +1,16 @@
+from datetime import datetime
+
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from django.http.response import HttpResponseBadRequest
+from django.core.exceptions import ObjectDoesNotExist
 from django.db.utils import IntegrityError
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authentication import BasicAuthentication
+
+from wapi.core import get_document
+from wapi.models import Document
 
 from . import serializers
 from .forum import forum
@@ -13,7 +19,7 @@ from .forum import forum
 class ForumView(APIView):
     def get(self, request, *args, **kwargs):
         data = forum.latest
-        return Response({"result":data})
+        return Response({"result": data})
 
 
 class CurrentUserView(APIView):
@@ -81,3 +87,59 @@ class CreateUserView(APIView):
 
         login(request, user)
         return Response(serializers.UserSerializer(user).data)
+
+
+class DiscussionView(APIView):
+    doc = None
+
+    def _init_document(self, name):
+        assert not self.request.user.is_anonymous()
+
+        try:
+            self.doc = get_document(name)
+        except ObjectDoesNotExist:
+            self.doc = Document(name=name,
+                                comment="creation",
+                                data={"subjects": []})
+
+    @property
+    def _subjects(self):
+        return self.doc.data["subjects"]
+
+    def _add_response(self, subject, response):
+        response = {"content": response,
+                    "author": self.request.user.username,
+                    "date": str(datetime.now()),
+                    "id": "XX"}
+
+        subject["responses"].append(response)
+
+    def _get_subject(self, subject_id):
+        return [s for s in self._subjects if s["id"] == subject_id][0]
+
+    def put(self, request, name):  # create subject
+        self._init_document(name)
+
+        subject = {"responses": []}
+
+        subject["title"] = request.data["title"]
+        response = request.data["response"]
+        subject["id"] = subject["title"]
+
+        self._subjects.append(subject)
+        self._add_response(subject, response)
+
+        self.doc.save()
+
+        return Response(self.doc.to_json())
+
+    def post(self, request, name):  # create response
+        self._init_document(name)
+        response = request.data["response"]
+        subject_id = request.data["subjectId"]
+
+        self._add_response(self._get_subject(subject_id), response)
+
+        self.doc.save()
+
+        return Response(self.doc.to_json())
