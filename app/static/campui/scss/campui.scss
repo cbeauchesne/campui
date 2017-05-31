@@ -603,22 +603,52 @@ font-family:monospace
 
 .discussion-view .ibox-title,
 .discussion-view .ibox-content{
-    background-color:lightYellow
+  //  background-color:#f3f6f9
 }
 
 .discussion-view .subject{
-    border:1px solid grey;
-    margin-bottom:15px;
+    margin-bottom:35px;
 }
 
 .discussion-view .title{
-    border-bottom:1px solid grey;
+    padding-bottom:2px;
+    border-bottom:solid 1px lightgrey;
 }
 
 .discussion-view .response{
-    background:yellow
+    margin:10px 0px;
+    border:solid 1px #a7d7f9;
+    -moz-box-shadow: 1px 1px 3px 0px #ccd;
+    -webkit-box-shadow: 1px 1px 3px 0px #ccd;
+    -o-box-shadow: 1px 1px 3px 0px #ccd;
+    box-shadow: 1px 1px 3px 0px #ccd;
 }
 
+
+.discussion-view .response-header{
+    border-bottom:solid 1px #a7d7f9;
+    padding:2px 5px;
+    font-style:italic;
+    background:#d5eaff;
+}
+
+.discussion-view .response-content{
+    padding:10px;
+    padding-bottom:0px;
+}
+
+.discussion-view .response-content textarea{
+    margin-bottom:5px;
+}
+
+
+.discussion-view .response:nth-child(even){
+    background:#f5faff
+}
+
+.discussion-view .response:nth-child(odd){
+    background:#f5faff
+}
 ////////////////////////////////////////////////////
 
 .diff-view .versions-info{

@@ -108,6 +108,10 @@ msgstr ""
 msgid "All waypoints"
 msgstr ""
 
+#: ns-templates/discussion.html:68
+msgid "Answer"
+msgstr ""
+
 #: components/query_editor.html:16
 msgid "Apply"
 msgstr ""
@@ -132,6 +136,11 @@ msgstr ""
 
 #: factories/factories.js:541
 msgid "Author"
+msgstr ""
+
+#: ns-templates/discussion.html:44
+#: ns-templates/discussion.html:60
+msgid "By"
 msgstr ""
 
 #: me.html:85
@@ -582,7 +591,7 @@ msgstr ""
 msgid "Snow/ice ratings"
 msgstr ""
 
-#: ns-templates/discussion.html:65
+#: ns-templates/discussion.html:78
 msgid "Start a new subject"
 msgstr ""
 
@@ -722,8 +731,9 @@ msgstr ""
 msgid "association"
 msgstr ""
 
+#: ns-templates/discussion.html:48
 #: wapi/contributions.html:34
-#: wapi/history.html:19
+#: wapi/history.html:21
 #: wapi/recentchanges.html:31
 msgid "at"
 msgstr ""

@@ -86,12 +86,14 @@ app.directive('wikiTools', ['$stateParams', function ($stateParams) {
                 delete $stateParams.namespace
             }
 
-            if($stateParams.name.split("/")[0]=="Discussion"){
-                scope.mainPageName = $stateParams.name
+            scope.namespace = $stateParams.name.split("/")[0]
+
+            if(scope.namespace=="Discussion"){
+                scope.mainPageName = $stateParams.name.substring(11)
             }
+
             else{
-                scope.editName = $stateParams.name
-                scope.discussionName = $stateParams.name
+                scope.mainPageName = $stateParams.name
             }
 
             scope.name = $stateParams.name

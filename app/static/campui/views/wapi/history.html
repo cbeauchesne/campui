@@ -5,7 +5,9 @@
             <i class="fa fa-history"></i>
             <span translate>History</span>
             :
-            {{ctrl.versions.name}}&nbsp;
+            <a ui-sref="document({name:ctrl.versions.name})">
+                {{ctrl.versions.name}}&nbsp;
+            </a>
         </h1>
         <wiki-tools/>
     </div>

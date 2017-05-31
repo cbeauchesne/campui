@@ -90,7 +90,7 @@ class DocumentView(APIView):
         data = request.data["document"]
         doc = Document(name=data["name"],
                        content=data.get("content", None),
-                       metadata=data.get("data", None),
+                       data=data.get("data", None),
                        comment=data.get("comment", "creation"))
         doc.save()
 

@@ -1,4 +1,5 @@
 from datetime import datetime
+from uuid import uuid4
 
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
@@ -107,12 +108,13 @@ class DiscussionView(APIView):
         return self.doc.data["subjects"]
 
     def _add_response(self, subject, response):
-        response = {"content": response,
-                    "author": self.request.user.username,
-                    "date": str(datetime.now()),
-                    "id": "XX"}
 
-        subject["responses"].append(response)
+        subject["responses"].append({"content": response,
+                                     "author": self.request.user.username,
+                                     "date": datetime.utcnow().isoformat(),
+                                     "id": str(uuid4())})
+
+        self.doc.comment = subject["title"] + " : " + response[0:30]
 
     def _get_subject(self, subject_id):
         return [s for s in self._subjects if s["id"] == subject_id][0]
@@ -124,7 +126,7 @@ class DiscussionView(APIView):
 
         subject["title"] = request.data["title"]
         response = request.data["response"]
-        subject["id"] = subject["title"]
+        subject["id"] = str(uuid4())
 
         self._subjects.append(subject)
         self._add_response(subject, response)
@@ -137,8 +139,9 @@ class DiscussionView(APIView):
         self._init_document(name)
         response = request.data["response"]
         subject_id = request.data["subjectId"]
+        subject = self._get_subject(subject_id)
 
-        self._add_response(self._get_subject(subject_id), response)
+        self._add_response(subject, response)
 
         self.doc.save()
 

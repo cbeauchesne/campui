@@ -35,32 +35,45 @@
             <div class="col-sm-12">
 
                 <div class="subject" ng-repeat="subject in ctrl.document.data.subjects">
-                    <h2 class="title">{{subject.title}}</h2>
-                    <div class="row response" ng-repeat="response in subject.responses">
-                        <div class="col-md-1">
-                            {{response.author}}
-                            {{response.date}}
+                    <h2 class="title">
+                        <i class="fa fa-comment"></i>
+                        {{subject.title}}
+                    </h2>
+                    <div class="response" ng-repeat="response in subject.responses">
+                        <div class="response-header">
+                            <span translate>By</span>
+                            <a ui-sref="contributions({username:response.author})">{{response.author}}</a>
+                            <span class="pull-right">
+                                {{response.date | date }}
+                                <span translate>at</span>
+                                {{response.date | date:"HH:mm" }}
+                            </span>
                         </div>
-                        <div class="col-md-11">
+                        <div class="response-content">
                             <markdown content="response.content"/>
                         </div>
                     </div>
 
-                    <div class="row response">
+                    <div class="response" ng-if="!ctrl.isOld">
                         <form ng-submit="ctrl.addResponse(subject.id, subject.newResponse)">
-                            <div class="col-md-1">
+                            <div class="response-header">
+                                <span translate>By</span>
                                 {{ctrl.currentUser.username}}
-                                <input type="submit" class="btn btn-sm btn-primary" value="Save"/>
                             </div>
-                            <div class="col-md-11">
-                                <textarea class="form-control" ng-model="subject.newResponse"></textarea>
+                            <div class="response-content">
+                                <textarea class="form-control" required
+                                          ng-model="subject.newResponse"></textarea>
+                                <p>
+                                    <input type="submit" class="btn btn-sm btn-primary"
+                                           value="{{'Answer' | translate }}"/>
+                                </p>
                             </div>
                         </form>
                     </div>
 
                 </div>
 
-                <div class="row">
+                <div class="row" ng-if="!ctrl.isOld">
                     <div class="col-md-12">
                         <a href="#" class="btn btn-primary"
                            ng-if="!ctrl.showNewSubject"
@@ -75,15 +88,17 @@
                         <input class="form-control" placeholder="Title" required
                                ng-model="ctrl.newSubject.title"/>
                     </h2>
-                    <div class="form-group">
-                        <textarea class="form-control" placeholder="Message"
-                                  ng-model="ctrl.newSubject.response"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Create"/>
+                    <div class="form-group response">
+                        <div class="response-content">
+                            <textarea class="form-control" placeholder="Message" required
+                                      ng-model="ctrl.newSubject.response"></textarea>
+
+                            <p>
+                                <input type="submit" class="btn btn-primary" value="Create"/>
+                            </p>
+                        </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
