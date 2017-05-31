@@ -808,7 +808,7 @@ msgstr ""
 
 #: wapi/diff.html:22
 #: wapi/diff.html:40
-#: wapi/edit.html:16
+#: wapi/edit.html:17
 msgid "by"
 msgstr ""
 
@@ -913,7 +913,7 @@ msgid "climbing_styles"
 msgstr ""
 
 #: wapi/create.html:16
-#: wapi/edit.html:28
+#: wapi/edit.html:29
 msgid "comment"
 msgstr ""
 
@@ -1862,7 +1862,7 @@ msgstr ""
 msgid "types"
 msgstr ""
 
-#: wapi/edit.html:34
+#: wapi/edit.html:35
 msgid "update"
 msgstr ""
 

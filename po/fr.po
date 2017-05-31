@@ -114,6 +114,10 @@ msgstr "Tous les Itinéraires"
 msgid "All waypoints"
 msgstr "Tous les points de passage"
 
+#: ns-templates/discussion.html:68
+msgid "Answer"
+msgstr "Répondre"
+
 #: components/query_editor.html:16
 msgid "Apply"
 msgstr "Appliquer"
@@ -127,13 +131,17 @@ msgstr "Région"
 msgid "Areas"
 msgstr "Régions"
 
-#: common/navbar.html:121 home.html:73
+#: common/navbar.html:128 home.html:73
 msgid "Articles"
 msgstr "Articles"
 
 #: factories/factories.js:541
 msgid "Author"
 msgstr "Auteur"
+
+#: ns-templates/discussion.html:44 ns-templates/discussion.html:60
+msgid "By"
+msgstr "Par"
 
 #: me.html:85
 msgid "CampToCamp URL"
@@ -143,7 +151,7 @@ msgstr "URL CampToCamp"
 msgid "Categories"
 msgstr "Catégories"
 
-#: common/navbar.html:101 common/navbar.html:99
+#: common/navbar.html:92 common/navbar.html:94
 msgid "Community"
 msgstr "Communauté"
 
@@ -151,7 +159,7 @@ msgstr "Communauté"
 msgid "Conditions"
 msgstr "Conditions"
 
-#: common/navbar.html:136
+#: common/navbar.html:143
 msgid "Contact"
 msgstr "Contact"
 
@@ -187,7 +195,7 @@ msgstr "Par défaut pour les incidents"
 msgid "Description"
 msgstr "Description"
 
-#: directives/wiki-tools.html:9
+#: directives/wiki-tools.html:17
 msgid "Discussion"
 msgstr "Discussion"
 
@@ -199,7 +207,7 @@ msgstr "Vous n’avez pas encore un compte?"
 msgid "E"
 msgstr "E"
 
-#: directives/wiki-tools.html:4 wapi/edit.html:6
+#: directives/wiki-tools.html:5 wapi/edit.html:6
 msgid "Edit"
 msgstr "Modifier"
 
@@ -223,7 +231,7 @@ msgstr "Type d’incident"
 msgid "Exposition rating"
 msgstr "Exposition"
 
-#: common/navbar.html:152
+#: common/navbar.html:159
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -234,6 +242,10 @@ msgstr "Filtres"
 #: route.html:22 stories.html:19 user.html:10
 msgid "Follow"
 msgstr "Suivre"
+
+#: ns-templates/article.html:51
+msgid "Fortunately, you can create it!"
+msgstr "Heureusement, vous pouvez le créer"
 
 #: home.html:35
 msgid "Forum"
@@ -259,7 +271,11 @@ msgstr "Hauteur"
 msgid "Height diff"
 msgstr "Hauteur"
 
-#: directives/wiki-tools.html:14 route.html:126 wapi/history.html:6
+#: common/navbar.html:101 common/navbar.html:99
+msgid "Help"
+msgstr "Aide"
+
+#: directives/wiki-tools.html:22 route.html:126 wapi/history.html:6
 msgid "History"
 msgstr "Historique"
 
@@ -283,7 +299,7 @@ msgstr "Images"
 msgid "Impacted people"
 msgstr "Personnes importées"
 
-#: common/navbar.html:128
+#: common/navbar.html:135
 msgid "Incidents"
 msgstr "Incidents"
 
@@ -291,9 +307,13 @@ msgstr "Incidents"
 msgid "Invalid username/password."
 msgstr "Mauvais nom d’utilisateur/mot de passe."
 
-#: wapi/diff.html:43
+#: wapi/diff.html:46
 msgid "It's the latest version"
 msgstr "C’est la version la plus récente"
+
+#: wapi/diff.html:28
+msgid "It's the oldest version"
+msgstr "C’est la version la plus ancienne"
 
 #: components/license.html:10
 msgid "List of authors"
@@ -303,11 +323,11 @@ msgstr "Liste des auteurs"
 msgid "Load more items"
 msgstr "Charger plus d’éléments"
 
-#: common/navbar.html:212
+#: common/navbar.html:219
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: common/navbar.html:177 login.html:19
+#: common/navbar.html:184 login.html:19
 msgid "Login"
 msgstr "Se connecter"
 
@@ -331,11 +351,15 @@ msgstr "Portage VTT"
 msgid "MTB up rating"
 msgstr "Cotation VTT montée"
 
+#: directives/wiki-tools.html:11
+msgid "Main page"
+msgstr "Page principale"
+
 #: register.html:23
 msgid "Minimum length : 8 characters"
 msgstr "Minimum 8 caractères"
 
-#: common/navbar.html:113
+#: common/navbar.html:120
 msgid "Misc"
 msgstr "Divers"
 
@@ -347,7 +371,7 @@ msgstr "Divers."
 msgid "Mixed rating"
 msgstr "Cotation mixe"
 
-#: common/navbar.html:196
+#: common/navbar.html:203
 msgid "My page"
 msgstr "Ma Page"
 
@@ -403,7 +427,7 @@ msgstr "Sortie"
 msgid "Outings"
 msgstr "Sorties"
 
-#: common/ibox_tools.html:56 common/navbar.html:203 me.html:6
+#: common/ibox_tools.html:56 common/navbar.html:210 me.html:6
 msgid "Parameters"
 msgstr "Paramètres"
 
@@ -439,7 +463,7 @@ msgstr "Cotations"
 msgid "Ratings"
 msgstr "Cotations"
 
-#: common/navbar.html:94 wapi/recentchanges.html:6
+#: common/navbar.html:108 wapi/recentchanges.html:6
 msgid "Recent changes"
 msgstr "Changements récents"
 
@@ -459,7 +483,7 @@ msgstr "Remarques"
 msgid "Repeat password"
 msgstr "Répéter le mot de passe"
 
-#: common/navbar.html:142
+#: common/navbar.html:149
 msgid "Report a bug"
 msgstr "Signaler un bug"
 
@@ -515,7 +539,7 @@ msgstr "Sauvegarder ce filtre"
 msgid "Saving..."
 msgstr "Sauvegarde en cours…"
 
-#: common/navbar.html:164
+#: common/navbar.html:171
 msgid "Search"
 msgstr "Rechercher"
 
@@ -543,7 +567,11 @@ msgstr "Neige"
 msgid "Snow/ice ratings"
 msgstr "Cotations neige/glace"
 
-#: common/navbar.html:147
+#: ns-templates/discussion.html:78
+msgid "Start a new subject"
+msgstr "Commencer un nouveau sujet"
+
+#: common/navbar.html:154
 msgid "Statistics"
 msgstr "Statistiques"
 
@@ -558,6 +586,10 @@ msgstr "Test!"
 #: outingImages.html:2
 msgid "There is not yet images on outings linked to this route"
 msgstr "Il n’y a pas encore d’image de sorties associées à cet itinéraire"
+
+#: ns-templates/article.html:49
+msgid "This article doesn't yet exists."
+msgstr "Cet article n’existe pas encore"
 
 #: outing.html:53
 msgid "Timing"
@@ -666,7 +698,8 @@ msgstr "artificiel"
 msgid "association"
 msgstr "association"
 
-#: wapi/contributions.html:34 wapi/history.html:19 wapi/recentchanges.html:31
+#: ns-templates/discussion.html:48 wapi/contributions.html:34
+#: wapi/history.html:21 wapi/recentchanges.html:31
 msgid "at"
 msgstr "à"
 
@@ -738,7 +771,7 @@ msgstr "bateau"
 msgid "bus"
 msgstr "bus"
 
-#: wapi/diff.html:22 wapi/diff.html:37 wapi/edit.html:16
+#: wapi/diff.html:22 wapi/diff.html:40 wapi/edit.html:17
 msgid "by"
 msgstr "par"
 
@@ -842,7 +875,7 @@ msgstr "cotation médiane"
 msgid "climbing_styles"
 msgstr "style d’escalade"
 
-#: wapi/create.html:16 wapi/edit.html:28
+#: wapi/create.html:16 wapi/edit.html:29
 msgid "comment"
 msgstr "commentaire"
 
@@ -923,7 +956,8 @@ msgstr "de"
 msgid "dec"
 msgstr "décembre"
 
-#: ns-templates/article.html:6 ns-templates/raw-doc.html:6 wapi/diff.html:6
+#: ns-templates/article.html:6 ns-templates/discussion.html:6
+#: ns-templates/portal.html:7 wapi/diff.html:6
 msgid "diff"
 msgstr "diff"
 
@@ -1324,7 +1358,8 @@ msgstr "grande voie"
 msgid "natural_avalanche"
 msgstr "avalanche naturelle"
 
-#: ns-templates/article.html:13 ns-templates/raw-doc.html:13
+#: ns-templates/article.html:13 ns-templates/discussion.html:13
+#: ns-templates/portal.html:14
 msgid "next"
 msgstr "suivant"
 
@@ -1433,7 +1468,8 @@ msgstr ""
 msgid "pressure"
 msgstr ""
 
-#: ns-templates/article.html:4 ns-templates/raw-doc.html:4
+#: ns-templates/article.html:4 ns-templates/discussion.html:4
+#: ns-templates/portal.html:5
 msgid "previous"
 msgstr "précédent"
 
@@ -1469,12 +1505,12 @@ msgstr "qualité"
 msgid "quartzite"
 msgstr "quartzite"
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr "peu fréquenté"
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr "peu fréquenté"
 
@@ -1751,7 +1787,7 @@ msgstr "type"
 msgid "types"
 msgstr "types"
 
-#: wapi/edit.html:34
+#: wapi/edit.html:35
 msgid "update"
 msgstr "mettre à jour"
 

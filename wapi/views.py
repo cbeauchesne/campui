@@ -58,7 +58,12 @@ class DocumentView(APIView):
         if view == "raw":
             hid = request.query_params.get('hid', None)
             offset = request.query_params.get('offset', None)
-            doc = get_document_version(name, hid, offset)
+
+            try:
+                doc = get_document_version(name, hid, offset)
+            except ObjectDoesNotExist:
+                return HttpResponse("", content_type="text/plain")
+
             response = HttpResponse(doc.history_object.content, content_type="text/plain")
             return response
 

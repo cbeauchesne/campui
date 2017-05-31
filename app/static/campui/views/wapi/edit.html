@@ -10,33 +10,33 @@
         <wiki-tools/>
     </div>
     <div class="ibox-content">
-        <div>
+        <form ng-submit="ctrl.document.update()">
+            <div>
 
-            <old-document-link document="ctrl.document"/>
-            <span translate>by</span>
-            <a ui-sref="contributions({username:ctrl.document.user})">{{ctrl.document.user}}</a>
-            :
-            <span class="history-comment">{{ctrl.document.comment}}</span>
-        </div>
-        <div class="form-group">
-            <textarea class="form-control"
-                      ng-model="ctrl.document.content"></textarea>
-        </div>
+                <old-document-link document="ctrl.document"/>
+                <span translate>by</span>
+                <a ui-sref="contributions({username:ctrl.document.user})">{{ctrl.document.user}}</a>
+                :
+                <span class="history-comment">{{ctrl.document.comment}}</span>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control"
+                          ng-model="ctrl.document.content"></textarea>
+            </div>
 
-        <div class="form-group">
-            <input type="text" class="form-control" required
-                   placeholder="{{'comment' | translate }}"
-                    ng-model="ctrl.document.newComment"
-                    />
-        </div>
+            <div class="form-group">
+                <input type="text" class="form-control" required
+                       placeholder="{{'comment' | translate }}"
+                        ng-model="ctrl.document.newComment"
+                        />
+            </div>
 
-        <div class="form-group">
-            <button class="btn btn-primary"
-                    ng-click="ctrl.document.update()"
-                    translate>
-                update
-            </button>
-        </div>
-
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit"
+                        translate>
+                    update
+                </button>
+            </div>
+        </form>
     </div>
 </div>

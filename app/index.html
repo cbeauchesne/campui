@@ -22,7 +22,7 @@
     <link href="../bower_components/angular-ui-grid/ui-grid.css" rel="stylesheet" type="text/css">
     <link href="../bower_components/angular-ui-select/dist/select.css" rel="stylesheet">
 
-    <link href="../bower_components/angularjs-slider/dist/rzslider.css" rel="stylesheet" type="text/css" />
+    <link href="../bower_components/angularjs-slider/dist/rzslider.css" rel="stylesheet" type="text/css"/>
 
     <link href="../bower_components/slick-carousel/slick/slick.css" rel="stylesheet">
     <link href="../bower_components/slick-carousel/slick/slick-theme.css" rel="stylesheet">
@@ -35,6 +35,8 @@
     <link href="static/campui/css/style.css" rel="stylesheet" id="loadBefore">
     <link href="static/campui/css/campui.css" rel="stylesheet">
     <!-- endbuild -->
+
+    <link href="api/document/campui/custom.css?view=raw" rel="stylesheet">
 
     <!--build:js static/campui/js/comp.min.js -->
 
@@ -96,16 +98,18 @@
     <script src="static/campui/js/custom.js"></script>
     <!-- endbuild -->
 
+    <script src="api/document/campui/custom.js?view=raw"></script>
+
 </head>
 <body class="top-navigation gray-bg">
 
     <div ng-include="'static/campui/views/common/navbar.html'"></div>
+
     <div class="container-fluid" ui-view></div>
 
     <div ng-photoswipe
          open="photoswipe.open"
-         on-close="photoswipe.closeGallery()"
-         ></div>
+         on-close="photoswipe.closeGallery()"></div>
 
 </body>
 </html>
