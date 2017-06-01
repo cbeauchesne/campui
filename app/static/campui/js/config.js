@@ -278,13 +278,22 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
             this.newSubject = {
                 save:function(){
+                    _this.newSubject.saving = true
                     wapi.discussion.addSubject({name:$stateParams.name},
                                                {title:this.title, response:this.response},
                                                function(doc){
+                                                    delete _this.newSubject.saving
+                                                    delete _this.newSubject.title
+                                                    delete _this.newSubject.response
+                                                    delete _this.newSubject.error
+                                                    delete _this.showNewSubject
                                                     _this.document=doc
+                                               },
+                                               function(error){
+                                                    _this.newSubject.error = error.statusText
+                                                    delete _this.newSubject.saving
                                                })
 
-                    delete _this.showNewSubject
                 }
             }
 

@@ -164,6 +164,10 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#: ns-templates/discussion.html:95
+msgid "Create"
+msgstr ""
+
 #: login.html:29
 msgid "Create an account"
 msgstr ""

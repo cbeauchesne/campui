@@ -89,9 +89,17 @@
                             <textarea class="form-control" placeholder="Message" required
                                       ng-model="ctrl.newSubject.response"></textarea>
 
-                            <p>
-                                <input type="submit" class="btn btn-primary" value="Create"/>
-                            </p>
+                            <div>
+                                <button type="submit" class="btn btn-primary button-create-subject"
+                                        ng-disabled="ctrl.newSubject.saving">
+                                    <span translate>Create</span>
+                                    <span ng-if="ctrl.newSubject.saving">...</span>
+                                </button>
+                                <div class="alert alert-danger"
+                                      ng-if="ctrl.newSubject.error">
+                                    {{ctrl.newSubject.error}}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>

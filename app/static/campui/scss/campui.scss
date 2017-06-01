@@ -611,10 +611,11 @@ font-family:monospace
 }
 
 .discussion-view .title{
-    padding-bottom:2px;
-    border-bottom:solid 1px lightgrey;
+    padding:5px 5px;
+    background:#f5fff7;
 }
 
+.discussion-view .title,
 .discussion-view .response{
     margin:10px 0px;
     border:solid 1px #a7f9bd;
@@ -646,6 +647,9 @@ font-family:monospace
     margin-bottom:5px;
 }
 
+.discussion-view .button-create-subject{
+    margin-bottom:10px
+}
 
 ////////////////////////////////////////////////////
 
