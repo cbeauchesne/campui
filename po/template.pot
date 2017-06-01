@@ -256,6 +256,7 @@ msgid "Follow"
 msgstr ""
 
 #: ns-templates/article.html:51
+#: ns-templates/portal.html:36
 msgid "Fortunately, you can create it!"
 msgstr ""
 
@@ -617,6 +618,7 @@ msgid "There is not yet images on outings linked to this route"
 msgstr ""
 
 #: ns-templates/article.html:49
+#: ns-templates/portal.html:34
 msgid "This article doesn't yet exists."
 msgstr ""
 

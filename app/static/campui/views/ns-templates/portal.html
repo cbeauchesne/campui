@@ -18,4 +18,27 @@
     </div>
 
     <div ng-include="ctrl.rawUrl"></div>
+
+    <div class="ibox" ng-if="ctrl.error.notFound">
+        <div class="ibox-title">
+            <h1>
+                <i class="fa fa-file-text-o"></i>
+                {{ctrl.params.name}}
+            </h1>
+        </div>
+
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="alert alert-info">
+                        <span translate>This article doesn't yet exists.</span>
+                        <strong>
+                            <a ui-sref="create({name:ctrl.params.name})" translate>Fortunately, you can create it!</a>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
