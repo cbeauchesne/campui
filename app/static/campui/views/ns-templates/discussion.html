@@ -32,57 +32,53 @@
 
     <div class="ibox-content">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-md-12 subject" ng-repeat="subject in ctrl.document.data.subjects">
 
-                <div class="subject" ng-repeat="subject in ctrl.document.data.subjects">
-                    <h2 class="title">
-                        <i class="fa fa-comment"></i>
-                        {{subject.title}}
-                    </h2>
-                    <div class="response" ng-repeat="response in subject.responses">
-                        <div class="response-header">
-                            <span translate>By</span>
-                            <a ui-sref="contributions({username:response.author})">{{response.author}}</a>
-                            <span class="pull-right">
+                <h2 class="title">
+                    <i class="fa fa-comment"></i>
+                    {{subject.title}}
+                </h2>
+                <div class="response" ng-repeat="response in subject.responses">
+                    <div class="response-header">
+                        <span translate>By</span>
+                        <a ui-sref="contributions({username:response.author})">{{response.author}}</a>
+                        <span class="pull-right">
                                 {{response.date | date }}
                                 <span translate>at</span>
                                 {{response.date | date:"HH:mm" }}
                             </span>
+                    </div>
+                    <div class="response-content">
+                        <markdown content="response.content"/>
+                    </div>
+                </div>
+
+                <div class="response" ng-if="!ctrl.isOld">
+                    <form ng-submit="ctrl.addResponse(subject.id, subject.newResponse)">
+                        <div class="response-header">
+                            <span translate>By</span>
+                            {{ctrl.currentUser.username}}
                         </div>
                         <div class="response-content">
-                            <markdown content="response.content"/>
-                        </div>
-                    </div>
-
-                    <div class="response" ng-if="!ctrl.isOld">
-                        <form ng-submit="ctrl.addResponse(subject.id, subject.newResponse)">
-                            <div class="response-header">
-                                <span translate>By</span>
-                                {{ctrl.currentUser.username}}
-                            </div>
-                            <div class="response-content">
                                 <textarea class="form-control" required
                                           ng-model="subject.newResponse"></textarea>
-                                <p>
-                                    <input type="submit" class="btn btn-sm btn-primary"
-                                           value="{{'Answer' | translate }}"/>
-                                </p>
-                            </div>
-                        </form>
-                    </div>
-
+                            <p>
+                                <input type="submit" class="btn btn-sm btn-primary"
+                                       value="{{'Answer' | translate }}"/>
+                            </p>
+                        </div>
+                    </form>
                 </div>
+            </div>
 
-                <div class="row" ng-if="!ctrl.isOld">
-                    <div class="col-md-12">
-                        <a href="#" class="btn btn-primary"
-                           ng-if="!ctrl.showNewSubject"
-                           ng-click="ctrl.showNewSubject=true"
-                           translate>Start a new subject</a>
-                    </div>
-                </div>
-
-                <form class="subject" ng-if="ctrl.showNewSubject"
+            <div class="col-md-12 subject new-subject">
+                <center>
+                    <a href="#" class="btn btn-primary start-new-subject-button"
+                       ng-if="!ctrl.showNewSubject && !ctrl.isOld"
+                       ng-click="ctrl.showNewSubject=true"
+                       translate>Start a new subject</a>
+                </center>
+                <form ng-if="ctrl.showNewSubject"
                       ng-submit="ctrl.newSubject.save()">
                     <h2 class="form-group title">
                         <input class="form-control" placeholder="Title" required
