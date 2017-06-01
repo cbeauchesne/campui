@@ -5,7 +5,7 @@
             <i class="fa fa-edit"></i>
             <span translate>Edit</span>
             :
-            {{ctrl.document.name}}&nbsp;
+            <a ui-sref="document({name:ctrl.document.name})">{{ctrl.document.name}}</a>&nbsp;
         </h1>
         <wiki-tools/>
     </div>

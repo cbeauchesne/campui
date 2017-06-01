@@ -108,7 +108,7 @@ msgstr ""
 msgid "All waypoints"
 msgstr ""
 
-#: ns-templates/discussion.html:67
+#: ns-templates/discussion.html:69
 msgid "Answer"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: ns-templates/discussion.html:95
+#: ns-templates/discussion.html:104
 msgid "Create"
 msgstr ""
 
@@ -595,7 +595,7 @@ msgstr ""
 msgid "Snow/ice ratings"
 msgstr ""
 
-#: ns-templates/discussion.html:76
+#: ns-templates/discussion.html:85
 msgid "Start a new subject"
 msgstr ""
 

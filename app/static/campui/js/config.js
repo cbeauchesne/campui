@@ -298,11 +298,17 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
             }
 
             this.addResponse = function(subjectId, response){
-            console.log(arguments)
+                _this[subjectId] = {saving : true}
+
                 wapi.discussion.addResponse({name:$stateParams.name},
                                            {subjectId:subjectId, response:response},
                                            function(doc){
+                                                delete _this[subjectId]
                                                 _this.document=doc
+                                           },
+                                           function(error){
+                                                delete _this[subjectId].saving
+                                                _this[subjectId].error = error.statusText
                                            })
             }
         }
