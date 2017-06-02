@@ -245,7 +245,7 @@ msgstr "Suivre"
 
 #: ns-templates/article.html:51 ns-templates/portal.html:36
 msgid "Fortunately, you can create it!"
-msgstr "Heureusement, vous pouvez le créer"
+msgstr "Heureusement, vous pouvez le créer!"
 
 #: home.html:35
 msgid "Forum"
@@ -589,7 +589,7 @@ msgstr "Il n’y a pas encore d’image de sorties associées à cet itinéraire
 
 #: ns-templates/article.html:49 ns-templates/portal.html:34
 msgid "This article doesn't yet exists."
-msgstr "Cet article n’existe pas encore"
+msgstr "Cet article n’existe pas encore."
 
 #: outing.html:53
 msgid "Timing"
