@@ -147,13 +147,16 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
             }
 
             this.document.create = function(){
-
+                _this.saving = true
                 wapi.document.create({name:_this.document.name}, {document:_this.document},
                     function(){
+                        delete _this.saving
+                        delete _this.error
                         $state.go("document", {"name":_this.document.name})
                     },
                     function(response){
-                        console.log(response)
+                        delete _this.saving
+                        _this.error = response.statusText
                     }
                 )
             }
@@ -172,13 +175,16 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
                     document.update = function(){
                         document.comment = document.newComment
                         delete document.newComment
-
+                        _this.saving = true
                         wapi.document.update({name:$stateParams.name}, {document:document},
                             function(){
+                                delete _this.saving
+                                delete _this.error
                                 $state.go("document", {"name":$stateParams.name})
                             },
                             function(response){
-                                console.log(response)
+                                delete _this.saving
+                                _this.error = response.statusText
                             }
                         )
                     }

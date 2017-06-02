@@ -114,7 +114,7 @@ msgstr "Tous les Itinéraires"
 msgid "All waypoints"
 msgstr "Tous les points de passage"
 
-#: ns-templates/discussion.html:68
+#: ns-templates/discussion.html:69
 msgid "Answer"
 msgstr "Répondre"
 
@@ -139,7 +139,7 @@ msgstr "Articles"
 msgid "Author"
 msgstr "Auteur"
 
-#: ns-templates/discussion.html:44 ns-templates/discussion.html:60
+#: ns-templates/discussion.html:43 ns-templates/discussion.html:59
 msgid "By"
 msgstr "Par"
 
@@ -243,7 +243,7 @@ msgstr "Filtres"
 msgid "Follow"
 msgstr "Suivre"
 
-#: ns-templates/article.html:51
+#: ns-templates/article.html:51 ns-templates/portal.html:36
 msgid "Fortunately, you can create it!"
 msgstr "Heureusement, vous pouvez le créer"
 
@@ -567,7 +567,7 @@ msgstr "Neige"
 msgid "Snow/ice ratings"
 msgstr "Cotations neige/glace"
 
-#: ns-templates/discussion.html:78
+#: ns-templates/discussion.html:85
 msgid "Start a new subject"
 msgstr "Commencer un nouveau sujet"
 
@@ -587,7 +587,7 @@ msgstr "Test!"
 msgid "There is not yet images on outings linked to this route"
 msgstr "Il n’y a pas encore d’image de sorties associées à cet itinéraire"
 
-#: ns-templates/article.html:49
+#: ns-templates/article.html:49 ns-templates/portal.html:34
 msgid "This article doesn't yet exists."
 msgstr "Cet article n’existe pas encore"
 
@@ -694,11 +694,16 @@ msgstr "régions"
 msgid "artificial"
 msgstr "artificiel"
 
+#: fixed_strings.html:343
+msgctxt "Version as of date"
+msgid "as of"
+msgstr "du"
+
 #: fixed_strings.html:159
 msgid "association"
 msgstr "association"
 
-#: ns-templates/discussion.html:48 wapi/contributions.html:34
+#: ns-templates/discussion.html:47 wapi/contributions.html:34
 #: wapi/history.html:21 wapi/recentchanges.html:31
 msgid "at"
 msgstr "à"
@@ -771,7 +776,7 @@ msgstr "bateau"
 msgid "bus"
 msgstr "bus"
 
-#: wapi/diff.html:22 wapi/diff.html:40 wapi/edit.html:17
+#: wapi/diff.html:22 wapi/diff.html:40 wapi/edit.html:16
 msgid "by"
 msgstr "par"
 
@@ -875,7 +880,7 @@ msgstr "cotation médiane"
 msgid "climbing_styles"
 msgstr "style d’escalade"
 
-#: wapi/create.html:16 wapi/edit.html:29
+#: wapi/create.html:16 wapi/edit.html:28
 msgid "comment"
 msgstr "commentaire"
 
@@ -915,7 +920,7 @@ msgstr "fissure-dièdre"
 msgid "craie"
 msgstr "craie"
 
-#: wapi/create.html:22
+#: ns-templates/discussion.html:104 wapi/create.html:25
 msgid "create"
 msgstr "créer"
 
@@ -1787,7 +1792,7 @@ msgstr "type"
 msgid "types"
 msgstr "types"
 
-#: wapi/edit.html:35
+#: wapi/edit.html:34
 msgid "update"
 msgstr "mettre à jour"
 
@@ -1854,9 +1859,6 @@ msgstr "direction du vent"
 #: fixed_strings.html:311
 msgid "wind_speed"
 msgstr "vitesse du vent"
-
-#~ msgid "as of"
-#~ msgstr "du"
 
 #~ msgid "recent changes"
 #~ msgstr "changements récents"

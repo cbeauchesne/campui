@@ -164,10 +164,6 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: ns-templates/discussion.html:104
-msgid "Create"
-msgstr ""
-
 #: login.html:29
 msgid "Create an account"
 msgstr ""
@@ -733,6 +729,11 @@ msgstr ""
 msgid "artificial"
 msgstr ""
 
+#: fixed_strings.html:343
+msgctxt "Version as of date"
+msgid "as of"
+msgstr ""
+
 #: fixed_strings.html:159
 msgid "association"
 msgstr ""
@@ -814,7 +815,7 @@ msgstr ""
 
 #: wapi/diff.html:22
 #: wapi/diff.html:40
-#: wapi/edit.html:17
+#: wapi/edit.html:16
 msgid "by"
 msgstr ""
 
@@ -919,7 +920,7 @@ msgid "climbing_styles"
 msgstr ""
 
 #: wapi/create.html:16
-#: wapi/edit.html:29
+#: wapi/edit.html:28
 msgid "comment"
 msgstr ""
 
@@ -960,7 +961,8 @@ msgstr ""
 msgid "craie"
 msgstr ""
 
-#: wapi/create.html:22
+#: ns-templates/discussion.html:104
+#: wapi/create.html:25
 msgid "create"
 msgstr ""
 
@@ -1868,7 +1870,7 @@ msgstr ""
 msgid "types"
 msgstr ""
 
-#: wapi/edit.html:35
+#: wapi/edit.html:37
 msgid "update"
 msgstr ""
 
