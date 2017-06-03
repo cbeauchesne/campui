@@ -215,6 +215,7 @@ app.config(["$provide", function($provide) {
         return function(method, url, post, callback, headers, timeout, withCredentials, responseType) {
             url = url.replace(/,/g, '%2C');
             url = url.replace(/\+/g, '%2B');
+            url = url.replace(/%2F/g, '/');
             $delegate(method, url, post, callback, headers, timeout, withCredentials, responseType);
         };
     }])

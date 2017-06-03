@@ -3,7 +3,7 @@ from django.http.response import HttpResponse, HttpResponseBadRequest
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.exceptions import NotFound
+from rest_framework.exceptions import NotFound, PermissionDenied
 from .models import Document
 from .core import get_document
 
@@ -79,7 +79,9 @@ class DocumentView(APIView):
         return HttpResponseBadRequest("Unexpected view mode")
 
     def post(self, request, name):
-        assert not request.user.is_anonymous()
+        if request.user.is_anonymous():
+            raise PermissionDenied()
+
         doc = get_document(name=name)
         new_doc = request.data["document"]
 
@@ -91,7 +93,9 @@ class DocumentView(APIView):
         return Response("ok")
 
     def put(self, request, name):
-        assert not request.user.is_anonymous()
+        if request.user.is_anonymous():
+            raise PermissionDenied()
+
         data = request.data["document"]
         doc = Document(name=data["name"],
                        content=data.get("content", None),
