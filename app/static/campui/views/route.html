@@ -45,9 +45,14 @@
                     <rating route="route"></rating>
                 </div>
 
+                <div ng-if="route.slackline_type">
+                    <label translate>type</label>
+                    {{route.slackline_type}}
+                </div>
+
                 <div ng-if="route.height_diff_difficulties">
                     <label translate>difficulties height</label>
-                    {{route.height_diff_difficulties}}&nbsp;m
+                    {{route.height_diff_difficulties}}&#8239;m
                 </div>
 
                 <div ng-if="route.route_types">
@@ -55,7 +60,7 @@
                     {{translateArray(route.route_types).join(', ')}}
                 </div>
 
-                <div>
+                <div ng-if="glacier_gear">
                     <label translate>glacier gears</label>
                     {{route.glacier_gear | translate}}
                 </div>
@@ -92,8 +97,16 @@
                 </div>
 
                 <div ng-if="route.route_length">
-                    <label translate>Route length</label>{{route.route_length}}&#8239;m
+                    <label translate>Route length</label>
+                    {{route.route_length}}&#8239;m
                 </div>
+
+
+                <div ng-if="route.slackline_height">
+                    <label translate>height</label>
+                    {{route.slackline_height}}&#8239;m
+                </div>
+
 
             </div>
 
