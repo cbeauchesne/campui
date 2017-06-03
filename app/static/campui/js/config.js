@@ -1,13 +1,39 @@
 
 var app = angular.module('campui')
 
-app.config(['$stateProvider', '$urlRouterProvider', '$urlMatcherFactoryProvider', '$ocLazyLoadProvider',
-function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazyLoadProvider) {
-    $urlRouterProvider.otherwise("/");
+app.config(["$ocLazyLoadProvider", function($ocLazyLoadProvider){
 
     $ocLazyLoadProvider.config({
         // Set to true if you want to see what and when is dynamically loaded
         debug: true
+    });
+
+}])
+
+app.config(["$urlRouterProvider", function($urlRouterProvider){
+
+    $urlRouterProvider.otherwise("/");
+
+}])
+
+
+app.config(['$stateProvider', '$urlMatcherFactoryProvider', '$ocLazyLoadProvider', 'namespaceTemplateUrlProvider',
+function($stateProvider, $urlMatcherFactoryProvider, $ocLazyLoadProvider, namespaceTemplateUrlProvider) {
+
+    var namespaceTemplateUrl = namespaceTemplateUrlProvider.$get()
+
+    var getTemplateUrl = function($stateParams){
+        var elts = $stateParams.name.split("/")
+        var namespace = $stateParams.namespace || elts[0]
+
+        return namespaceTemplateUrl(namespace) //  console.log( namespaceTemplateUrl)
+    }
+
+    $urlMatcherFactoryProvider.type("WapiName", {
+        encode: function (val) { return val != null ? val.toString() : val; },
+        decode: function (val) { return val != null ? val.toString() : val; },
+        is: function (val) { /*jshint validthis:true */ return this.pattern.test(val); },
+        pattern: /.+/
     });
 
     $.each(c2cItems, function(item, params){
@@ -39,20 +65,20 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
         $stateProvider.state(item, {
             url: "/" + item + "/{id:int}",
-            templateUrl: "static/campui/views/" + item + ".html",
+            templateUrl: namespaceTemplateUrl(item),
             controller: params.detailled_controller,
         })
 
         $stateProvider.state(item + 's', {
             url: "/" + item + "s?u&r&a&w",
-            templateUrl: "static/campui/views/c2c_items.html",
+            templateUrl: namespaceTemplateUrl(item + "s"),
             controller: item + "sController",
         })
     });
 
     $stateProvider.state('home', {
         url: "/",
-        templateUrl: "static/campui/views/home.html",
+        templateUrl: namespaceTemplateUrl(""),
     })
 
     $stateProvider.state('login', {
@@ -95,96 +121,68 @@ function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $ocLazy
 
     $stateProvider.state('statistics', {
         url: "/statistics",
-        templateUrl: 'static/campui/views/statistics.html',
+        templateUrl: namespaceTemplateUrl("statistics"),
         controllerAs:'ctrl',
         controller: 'statisticsController'
     })
 
     $stateProvider.state('recentchanges', {
         url: "/recentchanges?limit&offset",
-        templateUrl: 'static/campui/views/wapi/recentchanges.html',
+        templateUrl: namespaceTemplateUrl("recentchanges"),
         controllerAs:'ctrl',
         controller: "recentchangesController",
     })
 
     $stateProvider.state('contributions', {
         url: "/contributions/:username?limit&offset",
-        templateUrl: 'static/campui/views/wapi/contributions.html',
+        templateUrl: namespaceTemplateUrl("contributions"),
         controllerAs:'ctrl',
         controller: "contributionsController",
     })
 
     $stateProvider.state("history", {
         url: "/history?name",
-        templateUrl: 'static/campui/views/wapi/history.html',
+        templateUrl: namespaceTemplateUrl("history"),
         controllerAs:'ctrl',
         controller: "historyController"
     })
 
     $stateProvider.state("create", {
         url: "/create?name",
-        templateUrl: 'static/campui/views/wapi/create.html',
+        templateUrl: namespaceTemplateUrl("create"),
         controllerAs:'ctrl',
         controller: "createController"
     })
 
     $stateProvider.state("edit", {
         url: "/edit?name&hid",
-        templateUrl: 'static/campui/views/wapi/edit.html',
+        templateUrl: namespaceTemplateUrl("edit"),
         controllerAs:'ctrl',
         controller: 'editController'
     })
 
     $stateProvider.state("diff", {
         url: "/diff?name&hid&offset",
-        templateUrl: 'static/campui/views/wapi/diff.html',
+        templateUrl: namespaceTemplateUrl("diff"),
         controllerAs:'ctrl',
         controller: "diffController"
     })
 
-    function valToString(val) { return val != null ? val.toString() : val; }
-    function valFromString(val) { return val != null ? val.toString() : val; }
-    function regexpMatches(val) { /*jshint validthis:true */ return this.pattern.test(val); }
-
-    $urlMatcherFactoryProvider.type("WapiName", {
-        encode: valToString,
-        decode: valFromString,
-        is: regexpMatches,
-        pattern: /.+/
-    });
-
-    var getTemplateUrl = function($stateParams){
-        var elts = $stateParams.name.split("/")
-        var namespace = $stateParams.namespace || elts[0]
-
-        if(namespace=="Article")
-            return 'static/campui/views/ns-templates/article.html'
-
-        if(namespace=="Discussion")
-            return 'static/campui/views/ns-templates/discussion.html'
-
-        if(namespace=="Portal")
-            return 'static/campui/views/ns-templates/portal.html'
-
-        return 'static/campui/views/ns-templates/article.html'
-    }
-
+    $stateProvider.state("discussion", {
+        url: "/Discussion/{name:WapiName}",
+        templateUrl: namespaceTemplateUrl("Discussion"), //'static/campui/views/ns-templates/discussion.html',
+        params: {
+            namespace: "Discussion"
+        },
+        controllerAs:'ctrl',
+        controller: "wapiController"
+    })
 
     $stateProvider.state("oldDocument", {
         url: "/old?name&hid&offset",
         templateUrl: getTemplateUrl,
         controllerAs:'ctrl',
         controller: "wapiController",
-    })
-
-    $stateProvider.state("discussion", {
-        url: "/Discussion/{name:WapiName}",
-        templateUrl: 'static/campui/views/ns-templates/discussion.html',
-        params: {
-            namespace: "Discussion"
-        },
-        controllerAs:'ctrl',
-        controller: "wapiController"
     })
 
     $stateProvider.state("document", {

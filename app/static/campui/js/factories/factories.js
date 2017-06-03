@@ -463,6 +463,11 @@ app.factory("urlQuery", ['$location', 'filterItems', function($location, filterI
     }
 }])
 
+app.factory('namespaceTemplate', function(){
+    return function(){
+    }
+})
+
 app.factory('customization', function(){
     if(window.campuiCustomization)
         return window.campuiCustomization()
