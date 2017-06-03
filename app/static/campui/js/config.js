@@ -95,7 +95,7 @@ function($stateProvider, $urlMatcherFactoryProvider, $ocLazyLoadProvider, namesp
 
     $stateProvider.state('search',{
         url: "/search",
-        templateUrl: "static/campui/views/search.html",
+        templateUrl: namespaceTemplateUrl("search"),
         controller : "searchController"
     })
 

@@ -59,6 +59,7 @@ app.factory("namespaceTemplateUrl", ["customization", function(customization){
         "books" : "static/campui/views/c2c_items.html",
         "users" : "static/campui/views/c2c_items.html",
         "images" : "static/campui/views/c2c_items.html",
+        "search" : "static/campui/views/search.html",
     }
 
     var customTemplateUrls = customization.templateUrls
