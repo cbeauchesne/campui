@@ -108,6 +108,14 @@ msgstr ""
 msgid "All waypoints"
 msgstr ""
 
+#: route.html:119
+msgid "Anchor 1"
+msgstr ""
+
+#: route.html:122
+msgid "Anchor 2"
+msgstr ""
+
 #: ns-templates/discussion.html:69
 msgid "Answer"
 msgstr ""
@@ -264,7 +272,7 @@ msgstr ""
 msgid "Frequentation"
 msgstr ""
 
-#: route.html:122
+#: route.html:128
 msgid "Gears"
 msgstr ""
 
@@ -286,7 +294,7 @@ msgid "Help"
 msgstr ""
 
 #: directives/wiki-tools.html:22
-#: route.html:126
+#: route.html:132
 #: wapi/history.html:6
 msgid "History"
 msgstr ""
@@ -488,7 +496,7 @@ msgstr ""
 msgid "Recent changes"
 msgstr ""
 
-#: route.html:132
+#: route.html:138
 #: waypoint.html:138
 msgid "Recent outings"
 msgstr ""
@@ -497,7 +505,7 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: route.html:119
+#: route.html:125
 msgid "Remarks"
 msgstr ""
 
@@ -1577,12 +1585,12 @@ msgstr ""
 msgid "quartzite"
 msgstr ""
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr ""
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr ""
 
