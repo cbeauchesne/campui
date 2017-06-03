@@ -14,35 +14,10 @@ function campuiCustomization(){
                 name : "Portal/Cascade de glace",
                 label : "Cascade de glace"
 
-            },/*
-            {
-                name : "Actualités",
-                template_article : 884062
-            },
-            {
-                name : "Grandes courses",
-                template_article : 884440
-            },
-            {
-                name : "Terrain d'aventure",
-                template_article : 884441
-            },
-            {
-                name : "Raids et expéditions",
-                template_article : 884442
-            },
-            {
-                name : "Changer d'approche",
-                template_article : 884444
-            },
-            {
-                name : "Pyrénées",
-                template_article : 884445
-            },
-            {
-                name : "Vosges",
-                template_article : 884446
-            }*/
-        ]
+            }
+        ],
+
+        templateUrls:{
+        }
     }
 }

@@ -27,61 +27,44 @@ app.factory('wapi', ['$resource', function($resource){
     };
 }]);
 
-app.factory("namespaceTemplateUrl", [function(){
+app.factory("namespaceTemplateUrl", ["customization", function(customization){
+
+    var templateUrls = {
+        "" : "static/campui/views/home.html",
+        "Article" : 'static/campui/views/ns-templates/article.html',
+        "Discussion" : 'static/campui/views/ns-templates/discussion.html',
+        "Portal" : 'static/campui/views/ns-templates/portal.html',
+        "diff" : 'static/campui/views/wapi/diff.html',
+        "history" : 'static/campui/views/wapi/history.html',
+        "create" : 'static/campui/views/wapi/create.html',
+        "edit" : 'static/campui/views/wapi/edit.html',
+        "contributions" : 'static/campui/views/wapi/contributions.html',
+        "recentchanges" : 'static/campui/views/wapi/recentchanges.html',
+        "statistics" : 'static/campui/views/statistics.html',
+        "outing" : "static/campui/views/outing.html",
+        "route" : "static/campui/views/route.html",
+        "waypoint" : "static/campui/views/waypoint.html",
+        "area" : "static/campui/views/area.html",
+        "article" : "static/campui/views/article.html",
+        "xreport" : "static/campui/views/xreport.html",
+        "book" : "static/campui/views/book.html",
+        "user" : "static/campui/views/user.html",
+        "image" : "static/campui/views/image.html",
+        "outings" : "static/campui/views/c2c_items.html",
+        "routes" : "static/campui/views/c2c_items.html",
+        "waypoints" : "static/campui/views/c2c_items.html",
+        "areas" : "static/campui/views/c2c_items.html",
+        "articles" : "static/campui/views/c2c_items.html",
+        "xreports" : "static/campui/views/c2c_items.html",
+        "books" : "static/campui/views/c2c_items.html",
+        "users" : "static/campui/views/c2c_items.html",
+        "images" : "static/campui/views/c2c_items.html",
+    }
+
+    var customTemplateUrls = customization.templateUrls
+    templateUrls = Object.assign(templateUrls, customTemplateUrls)
+
     return function(namespace){
-
-        if(namespace=="Article")
-            return 'static/campui/views/ns-templates/article.html'
-
-        if(namespace=="Discussion")
-            return 'static/campui/views/ns-templates/discussion.html'
-
-        if(namespace=="Portal")
-            return 'static/campui/views/ns-templates/portal.html'
-
-        if(namespace=="diff")
-            return 'static/campui/views/wapi/diff.html'
-
-        if(namespace=="history")
-            return 'static/campui/views/wapi/history.html'
-
-        if(namespace=="create")
-            return 'static/campui/views/wapi/create.html'
-
-        if(namespace=="edit")
-            return 'static/campui/views/wapi/edit.html'
-
-        if(namespace=="contributions")
-            return 'static/campui/views/wapi/contributions.html'
-
-        if(namespace=="recentchanges")
-            return 'static/campui/views/wapi/recentchanges.html'
-
-        if(namespace=="statistics")
-            return 'static/campui/views/statistics.html'
-
-        if(namespace=="")
-            return "static/campui/views/home.html"
-
-        if(namespace=="outing") return "static/campui/views/outing.html"
-        if(namespace=="route") return "static/campui/views/route.html"
-        if(namespace=="waypoint") return "static/campui/views/waypoint.html"
-        if(namespace=="area") return "static/campui/views/area.html"
-        if(namespace=="article") return "static/campui/views/article.html"
-        if(namespace=="xreport") return "static/campui/views/xreport.html"
-        if(namespace=="book") return "static/campui/views/book.html"
-        if(namespace=="user") return "static/campui/views/user.html"
-        if(namespace=="image") return "static/campui/views/image.html"
-        if(namespace=="outings") return "static/campui/views/c2c_items.html"
-        if(namespace=="routes") return "static/campui/views/c2c_items.html"
-        if(namespace=="waypoints") return "static/campui/views/c2c_items.html"
-        if(namespace=="areas") return "static/campui/views/c2c_items.html"
-        if(namespace=="articles") return "static/campui/views/c2c_items.html"
-        if(namespace=="xreports") return "static/campui/views/c2c_items.html"
-        if(namespace=="books") return "static/campui/views/c2c_items.html"
-        if(namespace=="users") return "static/campui/views/c2c_items.html"
-        if(namespace=="images") return "static/campui/views/c2c_items.html"
-
-        return 'static/campui/views/ns-templates/article.html'
+        return  templateUrls[namespace] || 'static/campui/views/ns-templates/article.html'
     }
 }])
