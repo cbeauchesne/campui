@@ -595,8 +595,18 @@ text-align:justify
 
 .create-view textarea,
 .edit-view textarea{
-height:400px;
-font-family:monospace
+    height:400px;
+    font-family:monospace
+}
+
+.create-view .button-create,
+.edit-view .button-update{
+    margin-bottom:10px
+}
+
+.create-view .button-create:first-letter,
+.edit-view .button-update:first-letter{
+    text-transform: uppercase;
 }
 
 ////////////////////////////////////////////////////

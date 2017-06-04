@@ -21,3 +21,4 @@ angular_view = {"view": static.serve,
                 "kwargs": {'path': 'index.html', 'document_root': BASE_DIR}}
 
 urlpatterns += [url(r'^', **angular_view)]
+

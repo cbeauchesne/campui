@@ -1,8 +1,9 @@
 
 var app = angular.module('campui')
 
-app.controller("editController", ["wapi", "$stateParams", "$state", function(wapi, $stateParams, $state){
+app.controller("editController", ["wapi", "$stateParams", "$state", "currentUser", function(wapi, $stateParams, $state, currentUser){
     var _this = this
+    this.currentUser = currentUser
 
     this.document = wapi.document.get($stateParams,
         function(document){
@@ -26,8 +27,9 @@ app.controller("editController", ["wapi", "$stateParams", "$state", function(wap
     )
 }])
 
-app.controller("createController", ["wapi", "$stateParams", "$state", function(wapi, $stateParams, $state){
+app.controller("createController", ["wapi", "$stateParams", "$state", "currentUser", function(wapi, $stateParams, $state, currentUser){
     var _this = this
+    this.currentUser = currentUser
     this.document = {name:$stateParams.name, comment:"creation"}
 
     if($stateParams.name){

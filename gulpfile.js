@@ -110,7 +110,6 @@ function getServer(baseDir){
       var proxyAnalytics = url.parse('http://localhost:8000/analytics');
       proxyAnalytics.route = '/analytics';
 
-
       var proxyAdmin = url.parse('http://localhost:8000/admin');
       proxyAdmin.route = '/admin';
 

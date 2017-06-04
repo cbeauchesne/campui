@@ -679,6 +679,11 @@ msgstr ""
 msgid "Welcome to CampUI"
 msgstr ""
 
+#: wapi/create.html:32
+#: wapi/edit.html:45
+msgid "You must be logged"
+msgstr ""
+
 #: fixed_strings.html:206
 msgid "access"
 msgstr ""

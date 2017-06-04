@@ -21,13 +21,18 @@
             <div class="form-group">
 
                 <button type="submit" class="btn btn-primary button-create"
-                        ng-disabled="ctrl.saving">
+                        ng-disabled="ctrl.saving || ctrl.currentUser.isAnonymous">
                     <span translate>create</span>
                     <span ng-if="ctrl.saving">...</span>
                 </button>
                 <div class="alert alert-danger"
                      ng-if="ctrl.error">
                     {{ctrl.error}}
+                </div>
+                <div class="alert alert-danger"
+                    ng-if="ctrl.currentUser.isAnonymous"
+                    translate>
+                    You must be logged
                 </div>
             </div>
         </div>

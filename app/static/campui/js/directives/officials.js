@@ -75,7 +75,7 @@ app.directive('images', ['c2c',  "locale", function (c2c,  locale) {
     }
 }])
 
-app.directive('wikiTools', ['$stateParams', function ($stateParams) {
+app.directive('wikiTools', ['$stateParams', "currentUser", function ($stateParams, currentUser) {
     return {
         restrict: 'E',
         scope: {},
@@ -85,7 +85,7 @@ app.directive('wikiTools', ['$stateParams', function ($stateParams) {
                 $stateParams.name = $stateParams.namespace + "/" + $stateParams.name
                 delete $stateParams.namespace
             }
-
+            scope.currentUser = currentUser
             scope.namespace = $stateParams.name.split("/")[0]
 
             if(scope.namespace=="Discussion"){
