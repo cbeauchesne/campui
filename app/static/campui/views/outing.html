@@ -11,9 +11,10 @@
 
     <div class="ibox-content" style="display: block;">
 
-        <div class="row">
-            <div gallery class="col-sm-12" ng-if="outing.associations.images.length"
-                 images="outing.associations.images"></div>
+        <div class="row" ng-if="outing.associations.images.length">
+            <div class="col-sm-12" >
+                <gallery images="outing.associations.images"/>
+            </div>
         </div>
 
         <div class="row">

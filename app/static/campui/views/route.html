@@ -153,8 +153,9 @@
                     <outings data="route.associations.recent_outings" display="'compact'"/>
                 </div>
 
-                <div gallery class="col-sm-12" ng-if="route.associations.images.length"
-                     images="route.associations.images"></div>
+                <div class="col-sm-12" ng-if="route.associations.images.length">
+                    <gallery images="route.associations.images"/>
+                </div>
             </div>
         </div>
     </div>

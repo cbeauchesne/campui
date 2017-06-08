@@ -1,5 +1,5 @@
 <div class="outings-directive outings-directive-{{display}}">
-    <loading-info></loading-info>
+    <loading-info/>
     <div ng-repeat="(date, values) in data.documents | groupBy: 'date_start'">
         <h4 ng-if="display!=='compact'">{{ date | date }}</h4>
         <div ng-repeat="outing in values" class="outing-line">

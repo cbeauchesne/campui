@@ -64,7 +64,7 @@ msgstr ""
 msgid "5min"
 msgstr ""
 
-#: outing.html:35
+#: outing.html:36
 msgid "Acces comment"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 
 #: common/navbar.html:46
 #: factories/factories.js:726
-#: outing.html:23
+#: outing.html:24
 #: route.html:30
 #: waypoint.html:15
 msgid "Areas"
@@ -164,7 +164,7 @@ msgstr ""
 msgid "Community"
 msgstr ""
 
-#: outing.html:44
+#: outing.html:45
 msgid "Conditions"
 msgstr ""
 
@@ -202,7 +202,7 @@ msgid "Default for xreports"
 msgstr ""
 
 #: area.html:21
-#: outing.html:38
+#: outing.html:39
 #: route.html:129
 #: waypoint.html:116
 msgid "Description"
@@ -245,10 +245,6 @@ msgstr ""
 msgid "Exposition rating"
 msgstr ""
 
-#: common/navbar.html:159
-msgid "FAQ"
-msgstr ""
-
 #: common/ibox_tools.html:32
 msgid "Filters"
 msgstr ""
@@ -268,7 +264,7 @@ msgstr ""
 msgid "Forum"
 msgstr ""
 
-#: outing.html:73
+#: outing.html:74
 msgid "Frequentation"
 msgstr ""
 
@@ -299,7 +295,7 @@ msgstr ""
 msgid "History"
 msgstr ""
 
-#: outing.html:50
+#: outing.html:51
 msgid "Hut comment"
 msgstr ""
 
@@ -343,11 +339,11 @@ msgstr ""
 msgid "Load more items"
 msgstr ""
 
-#: common/navbar.html:219
+#: common/navbar.html:214
 msgid "Log out"
 msgstr ""
 
-#: common/navbar.html:184
+#: common/navbar.html:179
 #: login.html:19
 msgid "Login"
 msgstr ""
@@ -392,7 +388,7 @@ msgstr ""
 msgid "Mixed rating"
 msgstr ""
 
-#: common/navbar.html:203
+#: common/navbar.html:198
 msgid "My page"
 msgstr ""
 
@@ -422,7 +418,7 @@ msgstr ""
 msgid "No filter"
 msgstr ""
 
-#: outing.html:47
+#: outing.html:48
 msgid "Observations relative to avalanches"
 msgstr ""
 
@@ -453,12 +449,12 @@ msgid "Outings"
 msgstr ""
 
 #: common/ibox_tools.html:56
-#: common/navbar.html:210
+#: common/navbar.html:205
 #: me.html:6
 msgid "Parameters"
 msgstr ""
 
-#: outing.html:60
+#: outing.html:61
 #: stories.html:37
 msgid "Participants"
 msgstr ""
@@ -533,7 +529,7 @@ msgstr ""
 msgid "Rock required rating"
 msgstr ""
 
-#: outing.html:41
+#: outing.html:42
 msgid "Route description"
 msgstr ""
 
@@ -572,7 +568,7 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: common/navbar.html:171
+#: common/navbar.html:166
 msgid "Search"
 msgstr ""
 
@@ -626,7 +622,7 @@ msgstr ""
 msgid "This article doesn't yet exists."
 msgstr ""
 
-#: outing.html:53
+#: outing.html:54
 msgid "Timing"
 msgstr ""
 
@@ -671,7 +667,7 @@ msgstr ""
 msgid "Waypoints"
 msgstr ""
 
-#: outing.html:68
+#: outing.html:69
 msgid "Weather"
 msgstr ""
 
@@ -1040,7 +1036,7 @@ msgstr ""
 #: fixed_strings.html:106
 #: fixed_strings.html:66
 #: fixed_strings.html:68
-#: outing.html:79
+#: outing.html:80
 #: route.html:91
 #: waypoint.html:33
 msgid "elevation"
@@ -1213,7 +1209,7 @@ msgstr ""
 msgid "height diff difficulties"
 msgstr ""
 
-#: outing.html:87
+#: outing.html:88
 #: route.html:83
 msgid "height difference"
 msgstr ""
@@ -1259,7 +1255,7 @@ msgstr ""
 msgid "hut"
 msgstr ""
 
-#: outing.html:99
+#: outing.html:100
 msgid "hut status"
 msgstr ""
 
@@ -1785,12 +1781,12 @@ msgid "snow elevation (up)"
 msgstr ""
 
 #: fixed_strings.html:62
-#: outing.html:104
+#: outing.html:105
 msgid "snow quality"
 msgstr ""
 
 #: fixed_strings.html:63
-#: outing.html:109
+#: outing.html:110
 msgid "snow quantity"
 msgstr ""
 
@@ -1857,7 +1853,7 @@ msgstr ""
 msgid "topoguide_supplements"
 msgstr ""
 
-#: outing.html:94
+#: outing.html:95
 msgid "total length"
 msgstr ""
 
