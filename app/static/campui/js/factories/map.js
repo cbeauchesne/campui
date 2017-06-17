@@ -65,7 +65,7 @@ app = angular.module('campui').factory("mapData", ["NgMap", "c2c", "letterToC2cI
 
             var getIcon = function(doc){
                 if(doc.type=="w"){
-                    return "/static/campui/img/spotlights/spotlight_" + doc.waypoint_type + ".svg"
+                    return "/static/campui/img/spotlights/spotlight_" + doc.waypoint_type + ".png"
                 }
             }
 
