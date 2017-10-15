@@ -43,6 +43,10 @@
                     <label translate>activities</label>
                     <activities activities="route.activities"></activities>
                     <rating route="route"></rating>
+
+                    <span ng-if="route.hiking_rating" uib-tooltip="{{'Hiking rating' | translate }}">
+                        {{route.hiking_rating}}
+                    </span>
                 </div>
 
                 <div ng-if="route.slackline_type">
@@ -153,7 +157,18 @@
                     <outings data="route.associations.recent_outings" display="'compact'"/>
                 </div>
 
-                <div class="col-sm-12" ng-if="route.associations.images.length">
+                <div class="hidden-print" ng-if="route.associations.books.length!=0">
+                    <h2>
+                        <span translate>Books</span>
+                    </h2>
+                    <ul>
+                        <li ng-repeat="book in route.associations.books">
+                            <i>{{book.locales[0].title}}</i>, {{book.author}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-12 hidden-print" ng-if="route.associations.images.length">
                     <gallery images="route.associations.images"/>
                 </div>
             </div>
