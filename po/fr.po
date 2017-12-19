@@ -72,7 +72,7 @@ msgstr "45min"
 msgid "5min"
 msgstr "5min"
 
-#: outing.html:35
+#: outing.html:36
 msgid "Acces comment"
 msgstr "Commentaires sur l’accès"
 
@@ -114,11 +114,11 @@ msgstr "Tous les Itinéraires"
 msgid "All waypoints"
 msgstr "Tous les points de passage"
 
-#: route.html:119
+#: route.html:136
 msgid "Anchor 1"
 msgstr "Ancrage 1"
 
-#: route.html:122
+#: route.html:139
 msgid "Anchor 2"
 msgstr "Ancrage 2"
 
@@ -134,7 +134,7 @@ msgstr "Appliquer"
 msgid "Area"
 msgstr "Région"
 
-#: common/navbar.html:46 factories/factories.js:726 outing.html:23
+#: common/navbar.html:46 factories/factories.js:726 outing.html:24
 #: route.html:30 waypoint.html:15
 msgid "Areas"
 msgstr "Régions"
@@ -146,6 +146,10 @@ msgstr "Articles"
 #: factories/factories.js:546
 msgid "Author"
 msgstr "Auteur"
+
+#: route.html:162
+msgid "Books"
+msgstr "Livres"
 
 #: ns-templates/discussion.html:43 ns-templates/discussion.html:59
 msgid "By"
@@ -163,7 +167,7 @@ msgstr "Catégories"
 msgid "Community"
 msgstr "Communauté"
 
-#: outing.html:44
+#: outing.html:45
 msgid "Conditions"
 msgstr "Conditions"
 
@@ -199,7 +203,7 @@ msgstr "Par défaut pour les itinéraires"
 msgid "Default for xreports"
 msgstr "Par défaut pour les incidents"
 
-#: area.html:21 outing.html:38 route.html:116 waypoint.html:116
+#: area.html:21 outing.html:39 route.html:133 waypoint.html:116
 msgid "Description"
 msgstr "Description"
 
@@ -239,10 +243,6 @@ msgstr "Type d’incident"
 msgid "Exposition rating"
 msgstr "Exposition"
 
-#: common/navbar.html:159
-msgid "FAQ"
-msgstr "FAQ"
-
 #: common/ibox_tools.html:32
 msgid "Filters"
 msgstr "Filtres"
@@ -259,11 +259,11 @@ msgstr "Heureusement, vous pouvez le créer!"
 msgid "Forum"
 msgstr "Forum"
 
-#: outing.html:73
+#: outing.html:74
 msgid "Frequentation"
 msgstr "Fréquentation"
 
-#: route.html:128
+#: route.html:145
 msgid "Gears"
 msgstr "Matériel"
 
@@ -283,11 +283,15 @@ msgstr "Hauteur"
 msgid "Help"
 msgstr "Aide"
 
-#: directives/wiki-tools.html:22 route.html:132 wapi/history.html:6
+#: route.html:47
+msgid "Hiking rating"
+msgstr "Cotation randonée"
+
+#: directives/wiki-tools.html:22 route.html:149 wapi/history.html:6
 msgid "History"
 msgstr "Historique"
 
-#: outing.html:50
+#: outing.html:51
 msgid "Hut comment"
 msgstr "Commentaires sur le refuge"
 
@@ -331,11 +335,11 @@ msgstr "Liste des auteurs"
 msgid "Load more items"
 msgstr "Charger plus d’éléments"
 
-#: common/navbar.html:219
+#: common/navbar.html:214
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: common/navbar.html:184 login.html:19
+#: common/navbar.html:179 login.html:19
 msgid "Login"
 msgstr "Se connecter"
 
@@ -379,7 +383,7 @@ msgstr "Divers."
 msgid "Mixed rating"
 msgstr "Cotation mixe"
 
-#: common/navbar.html:203
+#: common/navbar.html:198
 msgid "My page"
 msgstr "Ma Page"
 
@@ -407,7 +411,7 @@ msgstr "Suivant"
 msgid "No filter"
 msgstr "Aucun filtre"
 
-#: outing.html:47
+#: outing.html:48
 msgid "Observations relative to avalanches"
 msgstr "Observations relatives aux avalanches"
 
@@ -435,11 +439,11 @@ msgstr "Sortie"
 msgid "Outings"
 msgstr "Sorties"
 
-#: common/ibox_tools.html:56 common/navbar.html:210 me.html:6
+#: common/ibox_tools.html:56 common/navbar.html:205 me.html:6
 msgid "Parameters"
 msgstr "Paramètres"
 
-#: outing.html:60 stories.html:37
+#: outing.html:61 stories.html:37
 msgid "Participants"
 msgstr "Participants"
 
@@ -475,7 +479,7 @@ msgstr "Cotations"
 msgid "Recent changes"
 msgstr "Changements récents"
 
-#: route.html:138 waypoint.html:138
+#: route.html:155 waypoint.html:138
 msgid "Recent outings"
 msgstr "Sorties récentes"
 
@@ -483,7 +487,7 @@ msgstr "Sorties récentes"
 msgid "Register"
 msgstr "Créer un compte"
 
-#: route.html:125
+#: route.html:142
 msgid "Remarks"
 msgstr "Remarques"
 
@@ -511,11 +515,11 @@ msgstr "Cotations rochers"
 msgid "Rock required rating"
 msgstr "Cotation obligatoire"
 
-#: outing.html:41
+#: outing.html:42
 msgid "Route description"
 msgstr "Description de l’itinéraire"
 
-#: route.html:95
+#: route.html:104
 msgid "Route length"
 msgstr "Longueur"
 
@@ -547,7 +551,7 @@ msgstr "Sauvegarder ce filtre"
 msgid "Saving..."
 msgstr "Sauvegarde en cours…"
 
-#: common/navbar.html:171
+#: common/navbar.html:166
 msgid "Search"
 msgstr "Rechercher"
 
@@ -599,7 +603,7 @@ msgstr "Il n’y a pas encore d’image de sorties associées à cet itinéraire
 msgid "This article doesn't yet exists."
 msgstr "Cet article n’existe pas encore."
 
-#: outing.html:53
+#: outing.html:54
 msgid "Timing"
 msgstr "Horaires"
 
@@ -633,18 +637,22 @@ msgstr "Nom d’utilisateur"
 msgid "W"
 msgstr "W"
 
-#: c2c_items.html:71 common/navbar.html:40 route.html:101 search.html:24
+#: c2c_items.html:71 common/navbar.html:40 route.html:118 search.html:24
 #: waypoint.html:142
 msgid "Waypoints"
 msgstr "Points de passage"
 
-#: outing.html:68
+#: outing.html:69
 msgid "Weather"
 msgstr "Météo"
 
 #: login.html:3
 msgid "Welcome to CampUI"
 msgstr "Bienvenue sur CampUI"
+
+#: wapi/create.html:32 wapi/edit.html:45
+msgid "You must be logged"
+msgstr "Vous devez être authentifié"
 
 #: fixed_strings.html:206
 msgid "access"
@@ -900,7 +908,7 @@ msgstr "complétude"
 msgid "conditions"
 msgstr "conditions"
 
-#: fixed_strings.html:98 route.html:68
+#: fixed_strings.html:98 route.html:77
 msgid "configuration"
 msgstr "configuration"
 
@@ -974,7 +982,7 @@ msgstr "décembre"
 msgid "diff"
 msgstr "diff"
 
-#: fixed_strings.html:103 route.html:49
+#: fixed_strings.html:103 route.html:58
 msgid "difficulties height"
 msgstr "hauteur des difficultés"
 
@@ -987,7 +995,7 @@ msgid "edge"
 msgstr "arête"
 
 #: fixed_strings.html:106 fixed_strings.html:66 fixed_strings.html:68
-#: outing.html:79 route.html:86 waypoint.html:33
+#: outing.html:80 route.html:95 waypoint.html:33
 msgid "elevation"
 msgstr "altitude"
 
@@ -1099,7 +1107,7 @@ msgstr "gite"
 msgid "glacier"
 msgstr "glacier"
 
-#: route.html:59
+#: route.html:68
 msgid "glacier gears"
 msgstr "matériel glacier"
 
@@ -1143,7 +1151,7 @@ msgstr "grès"
 msgid "grocery"
 msgstr ""
 
-#: waypoint.html:37
+#: route.html:110 waypoint.html:37
 msgid "height"
 msgstr "hauteur"
 
@@ -1155,7 +1163,7 @@ msgstr "dénivelé de l’approche"
 msgid "height diff difficulties"
 msgstr "dénivelé des difficultés"
 
-#: outing.html:87 route.html:78
+#: outing.html:88 route.html:87
 msgid "height difference"
 msgstr "dénivelé"
 
@@ -1199,7 +1207,7 @@ msgstr "humidité"
 msgid "hut"
 msgstr "refuge/cabane"
 
-#: outing.html:99
+#: outing.html:100
 msgid "hut status"
 msgstr ""
 
@@ -1392,7 +1400,7 @@ msgstr "novembre"
 msgid "oct"
 msgstr "oct"
 
-#: route.html:73
+#: route.html:82
 msgid "orientation"
 msgstr "orientation"
 
@@ -1518,12 +1526,12 @@ msgstr "qualité"
 msgid "quartzite"
 msgstr "quartzite"
 
-#: fixed_strings.html:338
-msgctxt "frequentation"
+#: fixed_strings.html:39
 msgid "quiet"
 msgstr "peu fréquenté"
 
-#: fixed_strings.html:39
+#: fixed_strings.html:338
+msgctxt "frequentation"
 msgid "quiet"
 msgstr "peu fréquenté"
 
@@ -1607,7 +1615,7 @@ msgstr ""
 msgid "route length"
 msgstr "longueur de l’itinéraire"
 
-#: route.html:54
+#: route.html:63
 msgid "route type"
 msgstr "type d’itinéraire"
 
@@ -1707,11 +1715,11 @@ msgstr ""
 msgid "snow elevation (up)"
 msgstr ""
 
-#: fixed_strings.html:62 outing.html:104
+#: fixed_strings.html:62 outing.html:105
 msgid "snow quality"
 msgstr "qualité de la neige"
 
-#: fixed_strings.html:63 outing.html:109
+#: fixed_strings.html:63 outing.html:110
 msgid "snow quantity"
 msgstr "quantité de neige"
 
@@ -1776,7 +1784,7 @@ msgstr "à"
 msgid "topoguide_supplements"
 msgstr ""
 
-#: outing.html:94
+#: outing.html:95
 msgid "total length"
 msgstr "longueur totale"
 
@@ -1792,7 +1800,7 @@ msgstr "train"
 msgid "traverse"
 msgstr "traversée"
 
-#: fixed_strings.html:67 fixed_strings.html:74
+#: fixed_strings.html:67 fixed_strings.html:74 route.html:53
 msgid "type"
 msgstr "type"
 
@@ -1867,6 +1875,9 @@ msgstr "direction du vent"
 #: fixed_strings.html:311
 msgid "wind_speed"
 msgstr "vitesse du vent"
+
+#~ msgid "FAQ"
+#~ msgstr "FAQ"
 
 #~ msgid "recent changes"
 #~ msgstr "changements récents"
