@@ -1,7 +1,0 @@
-<div class="form-group col-md-3 slider-container" uib-tooltip="{{filterItem.label | translate }}" ng-init="_values = filterItem.values.slice().reverse()">
-    <rzslider
-            rz-slider-model="qe.queryModel[itemId][1]"
-            rz-slider-high="qe.queryModel[itemId][0]"
-            rz-slider-options="{stepsArray:_values, onEnd:qe.apply, translate:filterItem.translate}">
-    </rzslider>
-</div>
